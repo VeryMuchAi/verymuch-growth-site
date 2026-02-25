@@ -1,0 +1,173 @@
+"use client";
+
+import { FormEvent, useState } from "react";
+import type { LeadMagnetConfig } from "@/lib/lead-magnet";
+
+interface Props {
+  config: LeadMagnetConfig;
+  /** Server-side resolved URL for the guide (e.g. NOTION_URL env var) */
+  guideUrl: string;
+}
+
+type FieldErrors = Record<string, string>;
+
+function validate(
+  fields: LeadMagnetConfig["content"]["form"]["fields"],
+  data: Record<string, string>
+): FieldErrors {
+  const errors: FieldErrors = {};
+  for (const field of fields) {
+    const val = (data[field.name] ?? "").trim();
+    if (field.required && !val) {
+      errors[field.name] = `${field.label} es obligatorio.`;
+    }
+    if (field.type === "email" && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+      errors[field.name] = "Introduce un correo válido.";
+    }
+  }
+  return errors;
+}
+
+export default function LeadMagnetForm({ config, guideUrl }: Props) {
+  const { form, success } = config.content;
+  const [loading, setLoading] = useState(false);
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const [apiError, setApiError] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setApiError(null);
+
+    const formEl = e.currentTarget;
+    const rawData: Record<string, string> = {};
+    for (const field of form.fields) {
+      rawData[field.name] = (
+        formEl.elements.namedItem(field.name) as HTMLInputElement
+      ).value;
+    }
+
+    const errors = validate(form.fields, rawData);
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      return;
+    }
+    setFieldErrors({});
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          first_name: rawData["firstName"],
+          email: rawData["email"],
+          company: rawData["company"] || undefined,
+          lead_magnet: config.slug,
+          source: config.source,
+          campaign: config.campaign,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.message ?? "Error al enviar.");
+
+      setSubmitted(true);
+    } catch (err) {
+      setApiError(err instanceof Error ? err.message : "Error inesperado. Intenta de nuevo.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // ── Success state ──────────────────────────────────────────────────────────
+  if (submitted) {
+    return (
+      <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-8 text-center animate-fade-up">
+        <div className="text-4xl mb-4">🎉</div>
+        <h3 className="text-xl font-bold text-white mb-3">{success.title}</h3>
+        {success.description && (
+          <p className="text-brand-mint-dim text-sm leading-relaxed mb-6">
+            {success.description}
+          </p>
+        )}
+        {guideUrl && guideUrl !== "#" && (
+          <a
+            href={guideUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block w-full py-3.5 rounded-xl font-bold text-sm text-brand-dark bg-brand-gradient hover:opacity-90 transition-opacity text-center"
+          >
+            {success.ctaLabel}
+          </a>
+        )}
+      </div>
+    );
+  }
+
+  // ── Form ───────────────────────────────────────────────────────────────────
+  return (
+    <form
+      onSubmit={handleSubmit}
+      noValidate
+      className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-8 flex flex-col gap-5"
+    >
+      <p className="text-white font-semibold text-base -mb-1">
+        Accede gratis al Blueprint
+      </p>
+
+      {form.fields.map((field) => (
+        <div key={field.name} className="flex flex-col gap-1.5">
+          <label
+            htmlFor={field.name}
+            className="text-xs font-semibold text-white/60 uppercase tracking-wider"
+          >
+            {field.label}
+          </label>
+          <input
+            id={field.name}
+            name={field.name}
+            type={field.type}
+            placeholder={field.placeholder}
+            required={field.required}
+            autoComplete={
+              field.type === "email"
+                ? "email"
+                : field.name === "firstName"
+                ? "given-name"
+                : "organization"
+            }
+            className={[
+              "w-full rounded-lg px-4 py-3 text-sm bg-white/[0.06] border text-white placeholder:text-white/30",
+              "focus:outline-none focus:ring-2 focus:ring-brand-mint/50 transition-all",
+              fieldErrors[field.name]
+                ? "border-red-500/60"
+                : "border-white/10 hover:border-white/20",
+            ].join(" ")}
+          />
+          {fieldErrors[field.name] && (
+            <p className="text-red-400 text-xs">{fieldErrors[field.name]}</p>
+          )}
+        </div>
+      ))}
+
+      {apiError && (
+        <p className="text-red-400 text-sm bg-red-500/10 rounded-lg px-4 py-2">
+          {apiError}
+        </p>
+      )}
+
+      <button
+        type="submit"
+        disabled={loading}
+        className="w-full py-4 rounded-xl font-bold text-sm text-brand-dark bg-brand-gradient hover:opacity-90 disabled:opacity-50 transition-opacity mt-1"
+      >
+        {loading ? "Enviando…" : form.ctaLabel}
+      </button>
+
+      {form.microcopy && (
+        <p className="text-center text-xs text-white/35">{form.microcopy}</p>
+      )}
+    </form>
+  );
+}
