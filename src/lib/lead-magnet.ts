@@ -134,7 +134,7 @@ export const signalsLinkedinConfig: LeadMagnetConfig = {
     form: {
       fields: [
         {
-          name: "firstName",
+          name: "name",
           label: "Nombre",
           type: "text",
           placeholder: "Tu nombre",

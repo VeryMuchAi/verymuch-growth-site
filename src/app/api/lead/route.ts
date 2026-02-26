@@ -3,10 +3,10 @@ import { NextRequest, NextResponse } from "next/server";
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface LeadBody {
-  // New lead-magnet format (signals-linkedin and future pages)
-  first_name?: string;
-  // Legacy format (ventas-general)
+  // Primary format (signals-linkedin and future lead magnets)
   name?: string;
+  // Legacy format (kept for backward-compat)
+  first_name?: string;
   email: string;
   company?: string;
   lead_magnet?: string;
@@ -30,6 +30,18 @@ function isValidEmail(v: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 }
 
+/**
+ * Splits a full name string into firstName (first word) and lastName (remainder).
+ * "Edwin Moreno Marún" → { firstName: "Edwin", lastName: "Moreno Marún" }
+ * "Edwin"              → { firstName: "Edwin", lastName: "" }
+ */
+function splitName(fullName: string): { firstName: string; lastName: string } {
+  const parts = fullName.trim().split(/\s+/);
+  const firstName = parts[0] ?? "";
+  const lastName  = parts.slice(1).join(" ");
+  return { firstName, lastName };
+}
+
 // ─── POST /api/lead ───────────────────────────────────────────────────────────
 
 export async function POST(req: NextRequest) {
@@ -46,8 +58,19 @@ export async function POST(req: NextRequest) {
 
   const payload = body as Partial<LeadBody>;
 
-  // 2. Validate — accept first_name (new) or name (legacy)
-  const resolvedName = payload.first_name?.trim() || payload.name?.trim();
+  // ── Log incoming payload (server-only, no secrets) ──────────────────────────
+  console.log("[api/lead] incoming payload:", {
+    name:        payload.name,
+    first_name:  payload.first_name,
+    email:       payload.email,
+    company:     payload.company,
+    lead_magnet: payload.lead_magnet,
+    source:      payload.source,
+    campaign:    payload.campaign,
+  });
+
+  // 2. Validate — accept name (new) or first_name (legacy)
+  const resolvedName = payload.name?.trim() || payload.first_name?.trim();
   if (!resolvedName) {
     return NextResponse.json<ApiResponse>(
       { ok: false, message: "El nombre es obligatorio." },
@@ -63,18 +86,36 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // 3. Build GHL payload
+  // 3. Derive firstName / lastName from the full name
+  const { firstName, lastName } = splitName(resolvedName);
+
+  const company    = payload.company?.trim() || undefined;
+  const lead_magnet = payload.lead_magnet || payload.leadMagnetSlug || undefined;
+  const source     = payload.source || payload.utm_source || undefined;
+  const campaign   = payload.campaign || payload.utm_campaign || undefined;
+
+  // 4. Build GHL payload
+  //    GHL Create Contact expects camelCase (firstName, lastName).
+  //    We also include snake_case aliases and the original `name` for compatibility
+  //    with custom fields / other webhook consumers.
   const ghlPayload: Record<string, string | undefined> = {
-    first_name: resolvedName,
+    // ── GHL native contact fields (camelCase) ──
+    firstName,
+    lastName:  lastName || undefined,
     email,
-    company: payload.company?.trim() || undefined,
-    // New format fields
-    lead_magnet: payload.lead_magnet || payload.leadMagnetSlug || undefined,
-    source:   payload.source || payload.utm_source || undefined,
-    campaign: payload.campaign || payload.utm_campaign || undefined,
-    // Legacy UTM passthrough
-    utm_medium:  payload.utm_medium || undefined,
-    utm_term:    payload.utm_term || undefined,
+    // ── Snake_case aliases (backwards compat) ──
+    first_name: firstName,
+    last_name:  lastName || undefined,
+    // ── Original full name ──
+    name:      resolvedName,
+    // ── Lead-magnet metadata ──
+    company,
+    lead_magnet,
+    source,
+    campaign,
+    // ── Legacy UTM passthrough ──
+    utm_medium:  payload.utm_medium  || undefined,
+    utm_term:    payload.utm_term    || undefined,
     utm_content: payload.utm_content || undefined,
   };
 
@@ -83,26 +124,31 @@ export async function POST(req: NextRequest) {
     Object.entries(ghlPayload).filter(([, v]) => v !== undefined)
   );
 
-  // 4. Send to GHL webhook
+  // ── Log outgoing GHL payload (no webhook URL in logs) ───────────────────────
+  console.log("[api/lead] GHL payload to send:", cleanPayload);
+
+  // 5. Send to GHL webhook
   const webhookUrl = process.env.GHL_WEBHOOK_URL;
 
   if (webhookUrl) {
     try {
       const ghlRes = await fetch(webhookUrl, {
-        method: "POST",
+        method:  "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(cleanPayload),
+        body:    JSON.stringify(cleanPayload),
       });
 
       if (!ghlRes.ok) {
-        console.error("[api/lead] GHL webhook error:", ghlRes.status, await ghlRes.text());
+        console.error("[api/lead] GHL webhook responded with error:", ghlRes.status);
+      } else {
+        console.log("[api/lead] GHL webhook OK — status:", ghlRes.status);
       }
     } catch (err) {
-      console.error("[api/lead] GHL webhook unreachable:", err);
-      // Do not surface GHL errors to the client — lead was captured
+      // GHL is unreachable — lead was still captured client-side
+      console.error("[api/lead] GHL webhook unreachable:", (err as Error).message);
     }
   } else {
-    console.log("[api/lead] GHL_WEBHOOK_URL not set — mock payload:", cleanPayload);
+    console.log("[api/lead] GHL_WEBHOOK_URL not set — mock mode, no webhook fired.");
   }
 
   return NextResponse.json<ApiResponse>({ ok: true });

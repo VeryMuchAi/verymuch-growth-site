@@ -18,9 +18,13 @@ function validate(
   const errors: FieldErrors = {};
   for (const field of fields) {
     const val = (data[field.name] ?? "").trim();
+
+    // Explicit required check — catches the name field and any other required field
     if (field.required && !val) {
       errors[field.name] = `${field.label} es obligatorio.`;
+      continue;
     }
+
     if (field.type === "email" && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
       errors[field.name] = "Introduce un correo válido.";
     }
@@ -30,23 +34,23 @@ function validate(
 
 export default function LeadMagnetForm({ config, guideUrl }: Props) {
   const { form, success } = config.content;
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading]         = useState(false);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
-  const [apiError, setApiError] = useState<string | null>(null);
-  const [submitted, setSubmitted] = useState(false);
+  const [apiError, setApiError]       = useState<string | null>(null);
+  const [submitted, setSubmitted]     = useState(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setApiError(null);
 
-    const formEl = e.currentTarget;
+    // Collect values via FormData — guarantees name="name" is always read
+    const fd = new FormData(e.currentTarget);
     const rawData: Record<string, string> = {};
     for (const field of form.fields) {
-      rawData[field.name] = (
-        formEl.elements.namedItem(field.name) as HTMLInputElement
-      ).value;
+      rawData[field.name] = (fd.get(field.name) as string | null) ?? "";
     }
 
+    // Validate — explicit name check is covered by the required rule in validate()
     const errors = validate(form.fields, rawData);
     if (Object.keys(errors).length > 0) {
       setFieldErrors(errors);
@@ -55,18 +59,22 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
     setFieldErrors({});
     setLoading(true);
 
+    // Build payload — name field is always included, company only when present
+    const payload: Record<string, string> = {
+      name:        rawData["name"].trim(),
+      email:       rawData["email"].trim(),
+      lead_magnet: config.slug,
+      source:      config.source,
+      campaign:    config.campaign,
+    };
+    const company = rawData["company"]?.trim();
+    if (company) payload["company"] = company;
+
     try {
       const res = await fetch("/api/lead", {
-        method: "POST",
+        method:  "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          first_name: rawData["firstName"],
-          email: rawData["email"],
-          company: rawData["company"] || undefined,
-          lead_magnet: config.slug,
-          source: config.source,
-          campaign: config.campaign,
-        }),
+        body:    JSON.stringify(payload),
       });
 
       const data = await res.json();
@@ -133,8 +141,8 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
             autoComplete={
               field.type === "email"
                 ? "email"
-                : field.name === "firstName"
-                ? "given-name"
+                : field.name === "name"
+                ? "name"
                 : "organization"
             }
             className={[
