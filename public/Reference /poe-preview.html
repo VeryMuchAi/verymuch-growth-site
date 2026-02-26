@@ -1,0 +1,5030 @@
+<!DOCTYPE html><html lang="es"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verymuch.ai — IA que vende</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ============================================
+   CSS CUSTOM PROPERTIES
+   ============================================ */
+:root {
+  --color-charcoal: #363536;
+  --color-black: #0A0A0B;
+  --color-ice: #DDEAEE;
+  --color-mint: #A0D4AE;
+  --color-teal: #5AD4AE;
+  --color-teal-dim: #3BA88A;
+  --color-coral: #F5405E;
+  --color-amber: #F5A05E;
+  --color-amber-light: #FCEBD4;
+
+  --gradient-brand: linear-gradient(135deg, #5AD4AE 0%, #F5A05E 100%);
+  --gradient-brand-text: linear-gradient(90deg, #5AD4AE 0%, #F5A05E 100%);
+  --gradient-cta: linear-gradient(135deg, #F5405E 0%, #F5A05E 100%);
+  --gradient-hero-orb1: radial-gradient(circle, rgba(90,212,174,0.15) 0%, transparent 70%);
+  --gradient-hero-orb2: radial-gradient(circle, rgba(245,160,94,0.12) 0%, transparent 70%);
+
+  --bg-primary: #FAFBFC;
+  --bg-secondary: #F0F4F6;
+  --bg-dark: #0A0A0B;
+  --bg-dark-alt: #111115;
+  --bg-card: #FFFFFF;
+  --bg-card-dark: rgba(255,255,255,0.04);
+
+  --text-primary: #0A0A0B;
+  --text-secondary: #5A5A6A;
+  --text-tertiary: #8A8A9A;
+  --text-on-dark: #E8EAF0;
+  --text-on-dark-dim: #9A9AB0;
+
+  --border-light: rgba(0,0,0,0.06);
+  --border-dark: rgba(255,255,255,0.08);
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
+  --shadow-glow-teal: 0 0 40px rgba(90,212,174,0.2);
+  --shadow-glow-amber: 0 0 40px rgba(245,160,94,0.15);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-logo: 'Poppins', sans-serif;
+
+  --nav-height: 72px;
+  --section-padding: 100px;
+  --container-width: 1200px;
+}
+
+.dark {
+  --bg-primary: #0A0A0B;
+  --bg-secondary: #111115;
+  --bg-card: #161620;
+  --text-primary: #E8EAF0;
+  --text-secondary: #9A9AB0;
+  --text-tertiary: #6A6A80;
+  --border-light: rgba(255,255,255,0.08);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.5);
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, textarea, select { font-family: inherit; font-size: 16px; }
+ul { list-style: none; }
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weight: 700; }
+h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -0.02em; }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); letter-spacing: -0.01em; }
+
+.gradient-text {
+  background: var(--gradient-brand-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-teal);
+  margin-bottom: 16px;
+}
+
+.section-tag::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--gradient-brand);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 8%;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--gradient-cta);
+  color: #FFF;
+  box-shadow: 0 4px 20px rgba(245,64,94,0.25);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(245,64,94,0.35);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-on-dark);
+  border: 1.5px solid rgba(255,255,255,0.2);
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-light);
+}
+.btn-outline:hover {
+  background: var(--bg-secondary);
+  border-color: var(--color-teal);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-teal);
+  padding: 14px 8px;
+  font-weight: 600;
+}
+.btn-ghost:hover { color: var(--color-teal-dim); }
+.btn-ghost i { transition: transform 0.3s; }
+.btn-ghost:hover i { transform: translateX(4px); }
+
+/* ============================================
+   ANNOUNCEMENT BAR
+   ============================================ */
+.announcement-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  background: linear-gradient(105deg, #F5405E 0%, #F5A05E 45%, #5AD4AE 100%);
+  padding: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s;
+  height: var(--bar-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-bar:hover {
+  opacity: 0.92;
+}
+
+.announcement-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 20px;
+  flex-wrap: nowrap;
+}
+
+.announcement-bar-text {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  letter-spacing: 0.01em;
+}
+
+.announcement-bar-arrow {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  transition: transform 0.3s;
+}
+
+.announcement-bar:hover .announcement-bar-arrow {
+  transform: translateX(3px);
+}
+
+.announcement-bar-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 16px;
+  border-radius: 8%;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.3);
+  transition: background 0.3s;
+  white-space: nowrap;
+}
+
+.announcement-bar-btn:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+@media (max-width: 600px) {
+  .announcement-bar-text { font-size: 0.78rem; }
+  .announcement-bar-btn { font-size: 0.72rem; padding: 4px 12px; }
+  .announcement-bar-inner { gap: 8px; }
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+:root {
+  --bar-height: 40px;
+}
+
+.navbar {
+  position: fixed;
+  top: var(--bar-height);
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(10,10,11,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  z-index: 1001;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.logo-img-lg {
+  height: 32px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-on-dark-dim);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover { color: #FFF; }
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-brand);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  gap: 2px;
+}
+
+.lang-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-on-dark-dim);
+  transition: all 0.3s;
+  letter-spacing: 0.03em;
+}
+
+.lang-btn.active {
+  background: rgba(255,255,255,0.15);
+  color: #FFF;
+}
+
+.nav-cta {
+  padding: 10px 24px;
+  font-size: 0.85rem;
+  background: var(--gradient-cta);
+  color: #FFF;
+  border-radius: 8%;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 2px 12px rgba(245,64,94,0.2);
+}
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(245,64,94,0.3);
+}
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1001;
+  padding: 8px;
+}
+
+.mobile-toggle span {
+  width: 24px;
+  height: 2px;
+  background: #FFF;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.mobile-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mobile-toggle.open span:nth-child(2) { opacity: 0; }
+.mobile-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10,10,11,0.97);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-on-dark-dim);
+  transition: color 0.3s;
+}
+.mobile-menu a:hover { color: #FFF; }
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-dark);
+  overflow: hidden;
+  padding: calc(120px + var(--bar-height)) 0 80px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: orbFloat 20s ease-in-out infinite;
+}
+
+.hero-orb-1 {
+  width: 600px;
+  height: 600px;
+  background: rgba(90,212,174,0.08);
+  top: -10%;
+  right: -10%;
+  animation-delay: 0s;
+}
+
+.hero-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: rgba(245,160,94,0.06);
+  bottom: -15%;
+  left: -10%;
+  animation-delay: -7s;
+}
+
+.hero-orb-3 {
+  width: 300px;
+  height: 300px;
+  background: rgba(245,64,94,0.05);
+  top: 40%;
+  left: 50%;
+  animation-delay: -14s;
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -40px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(40px, 30px) scale(1.02); }
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(90,212,174,0.08);
+  border: 1px solid rgba(90,212,174,0.15);
+  border-radius: var(--radius-full);
+  padding: 8px 20px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+.hero-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-teal);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.hero-badge-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-teal);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  color: #FFF;
+  margin-bottom: 24px;
+  animation: fadeUp 0.8s ease 0.15s forwards;
+  opacity: 0;
+}
+
+.hero-sub {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--text-on-dark-dim);
+  max-width: 620px;
+  line-height: 1.75;
+  margin: 0 auto 40px;
+  animation: fadeUp 0.8s ease 0.3s forwards;
+  opacity: 0;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 64px;
+  animation: fadeUp 0.8s ease 0.45s forwards;
+  opacity: 0;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 0.8s ease 0.6s forwards;
+  opacity: 0;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.hero-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-on-dark-dim);
+  margin-top: 4px;
+  max-width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   PROBLEMS SECTION
+   ============================================ */
+.problems {
+  padding: var(--section-padding) 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.problems-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.problems-header .section-subtitle {
+  margin: 16px auto 0;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.problem-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.problem-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-cta);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.problem-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.problem-card:hover::before { opacity: 1; }
+
+.problem-num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+  background: var(--gradient-brand-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.15;
+  margin-bottom: 16px;
+}
+
+.problem-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.problem-card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+.services {
+  padding: var(--section-padding) 0;
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.services-bg-orb {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.08;
+}
+
+.services-bg-orb-1 {
+  background: var(--color-teal);
+  top: -20%;
+  left: -10%;
+}
+
+.services-bg-orb-2 {
+  background: var(--color-amber);
+  bottom: -20%;
+  right: -10%;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 2;
+}
+
+.services-header h2 { color: #FFF; }
+.services-header .section-subtitle {
+  margin: 16px auto 0;
+  color: var(--text-on-dark-dim);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.service-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: 40px 28px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(90,212,174,0.2);
+  transform: translateY(-4px);
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: rgba(90,212,174,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 1.3rem;
+  color: var(--color-teal);
+}
+
+.service-card:nth-child(2) .service-icon {
+  background: rgba(245,160,94,0.1);
+  color: var(--color-amber);
+}
+
+.service-card:nth-child(3) .service-icon {
+  background: rgba(245,64,94,0.1);
+  color: var(--color-coral);
+}
+
+.service-card h3 {
+  color: #FFF;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  color: var(--text-on-dark-dim);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.service-card ul {
+  margin-top: 16px;
+}
+
+.service-card li {
+  color: var(--text-on-dark-dim);
+  font-size: 0.88rem;
+  padding: 6px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.service-card li::before {
+  content: '→';
+  color: var(--color-teal);
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.btn-marketplace {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 10px 22px;
+  border-radius: 8%;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-coral);
+  border: 1.5px solid rgba(245,64,94,0.25);
+  background: rgba(245,64,94,0.06);
+  transition: all 0.3s;
+}
+
+.btn-marketplace:hover {
+  background: rgba(245,64,94,0.12);
+  border-color: rgba(245,64,94,0.5);
+  transform: translateY(-1px);
+}
+
+.btn-marketplace i { font-size: 0.75rem; }
+
+/* ============================================
+   HOW IT WORKS
+   ============================================ */
+.how-it-works {
+  padding: var(--section-padding) 0;
+  background: var(--bg-primary);
+}
+
+.how-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.how-header .section-subtitle {
+  margin: 16px auto 0;
+}
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.how-steps::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: calc(12.5% + 24px);
+  right: calc(12.5% + 24px);
+  height: 2px;
+  background: var(--gradient-brand);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.how-step {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.step-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  transition: all 0.4s;
+  position: relative;
+}
+
+.step-circle i {
+  font-size: 1.5rem;
+  background: var(--gradient-brand-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.step-num {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--gradient-cta);
+  color: #FFF;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.how-step:hover .step-circle {
+  border-color: var(--color-teal);
+  box-shadow: var(--shadow-glow-teal);
+  transform: translateY(-4px);
+}
+
+.how-step h3 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.how-step p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.step-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-teal);
+  background: rgba(90,212,174,0.08);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+/* ============================================
+   ROI CALCULATOR
+   ============================================ */
+.roi-section {
+  padding: var(--section-padding) 0;
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.roi-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse 40% 50% at 20% 50%, rgba(90,212,174,0.06) 0%, transparent 100%),
+    radial-gradient(ellipse 40% 50% at 80% 50%, rgba(245,160,94,0.04) 0%, transparent 100%);
+}
+
+.roi-header {
+  text-align: center;
+  margin-bottom: 56px;
+  position: relative;
+  z-index: 2;
+}
+
+.roi-header h2 { color: #FFF; }
+.roi-header .section-subtitle {
+  margin: 16px auto 0;
+  color: var(--text-on-dark-dim);
+}
+
+.roi-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.roi-inputs {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+.roi-slider-group {
+  margin-bottom: 36px;
+}
+
+.roi-slider-group:last-child { margin-bottom: 0; }
+
+.roi-slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.roi-slider-label {
+  font-size: 0.95rem;
+  color: var(--text-on-dark);
+  font-weight: 500;
+}
+
+.roi-slider-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #FFF;
+}
+
+.roi-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.1);
+  outline: none;
+}
+
+.roi-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gradient-cta);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(245,64,94,0.3);
+  transition: transform 0.2s;
+}
+
+.roi-range::-webkit-slider-thumb:hover { transform: scale(1.15); }
+
+.roi-range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gradient-cta);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(245,64,94,0.3);
+}
+
+.roi-results {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.roi-result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.roi-result-row:last-of-type { border-bottom: none; }
+
+.roi-result-label {
+  color: var(--text-on-dark-dim);
+  font-size: 0.95rem;
+}
+
+.roi-result-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #FFF;
+}
+
+.roi-result-value.savings { color: var(--color-teal); }
+.roi-result-value.cost-red { color: var(--color-coral); }
+
+.roi-big-number {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.roi-big-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 3.5rem;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+
+.roi-big-label {
+  color: var(--text-on-dark-dim);
+  font-size: 0.85rem;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ============================================
+   WHY US
+   ============================================ */
+.why-us {
+  padding: var(--section-padding) 0;
+  background: var(--bg-primary);
+}
+
+.why-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.why-header .section-subtitle {
+  margin: 16px auto 0;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.why-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  transition: all 0.4s;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.why-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.why-card:nth-child(odd) .why-icon {
+  background: rgba(90,212,174,0.1);
+  color: var(--color-teal);
+}
+
+.why-card:nth-child(even) .why-icon {
+  background: rgba(245,160,94,0.1);
+  color: var(--color-amber);
+}
+
+.why-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* ============================================
+   TEAM SECTION
+   ============================================ */
+.team-section {
+  padding: var(--section-padding) 0;
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 2;
+}
+
+.team-header h2 { color: #FFF; }
+.team-header .section-subtitle {
+  margin: 16px auto 0;
+  color: var(--text-on-dark-dim);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.team-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.team-card:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(90,212,174,0.2);
+  transform: translateY(-4px);
+}
+
+.team-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.team-card:first-child .team-avatar {
+  background: var(--gradient-brand);
+}
+
+.team-card:last-child .team-avatar {
+  background: linear-gradient(135deg, var(--color-amber), var(--color-coral));
+}
+
+.team-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #FFF;
+  margin-bottom: 4px;
+}
+
+.team-role {
+  color: var(--color-teal);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.team-location {
+  color: var(--text-on-dark-dim);
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.team-bio {
+  color: var(--text-on-dark-dim);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.team-creds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.team-cred {
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.06);
+  color: var(--text-on-dark-dim);
+  font-weight: 500;
+}
+
+/* ============================================
+   CTA / CONTACT SECTION
+   ============================================ */
+.cta-section {
+  padding: var(--section-padding) 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.cta-wrapper {
+  background: var(--bg-dark);
+  border-radius: var(--radius-xl);
+  padding: 72px 48px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cta-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse 50% 80% at 30% 0%, rgba(90,212,174,0.08), transparent),
+    radial-gradient(ellipse 50% 80% at 70% 100%, rgba(245,160,94,0.06), transparent);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  color: #FFF;
+  margin-bottom: 16px;
+}
+
+.cta-sub {
+  color: var(--text-on-dark-dim);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.btn-cta-large {
+  padding: 18px 48px;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 30px rgba(245,64,94,0.3);
+}
+
+.btn-cta-large:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(245,64,94,0.4);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border-dark);
+  padding: 48px 0 32px;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-desc {
+  color: var(--text-on-dark-dim);
+  font-size: 0.85rem;
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: var(--text-on-dark-dim);
+  font-size: 0.85rem;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: #FFF; }
+
+.footer-address {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-on-dark-dim);
+  font-size: 0.8rem;
+}
+
+.footer-address i {
+  color: var(--color-teal);
+  font-size: 0.85rem;
+}
+
+.footer-bottom {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copy {
+  color: var(--text-on-dark-dim);
+  font-size: 0.78rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-on-dark-dim);
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.footer-social a:hover {
+  background: rgba(90,212,174,0.15);
+  color: var(--color-teal);
+}
+
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+.anim {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.anim.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anim-delay-1 { transition-delay: 0.1s; }
+.anim-delay-2 { transition-delay: 0.2s; }
+.anim-delay-3 { transition-delay: 0.3s; }
+.anim-delay-4 { transition-delay: 0.35s; }
+
+/* ============================================
+   FLOATING CTA (MOBILE)
+   ============================================ */
+.floating-cta {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 900;
+  animation: floatUp 0.5s ease forwards;
+}
+
+.floating-cta .btn {
+  width: 100%;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(245,64,94,0.35);
+}
+
+@keyframes floatUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .problems-grid,
+  .services-grid,
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .how-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .how-steps::before { display: none; }
+  .roi-wrapper { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 72px;
+    --nav-height: 64px;
+  }
+
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .mobile-toggle { display: flex; }
+
+  .hero { padding: calc(100px + var(--bar-height)) 0 60px; min-height: auto; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-stats { gap: 32px; }
+  .hero-stat-value { font-size: 1.4rem; }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+
+  .problems-grid,
+  .services-grid,
+  .why-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .how-steps { grid-template-columns: 1fr 1fr; }
+
+  .cta-wrapper { padding: 48px 24px; }
+  .btn-cta-large { padding: 16px 32px; font-size: 1rem; }
+
+  .roi-inputs, .roi-results { padding: 28px; }
+
+  .floating-cta { display: block; }
+
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .how-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   DARK MODE OVERRIDES FOR LIGHT SECTIONS
+   ============================================ */
+.dark .problems,
+.dark .how-it-works,
+.dark .why-us,
+.dark .cta-section {
+  background: var(--bg-secondary);
+}
+
+.dark .problem-card,
+.dark .why-card {
+  background: var(--bg-card);
+  border-color: var(--border-light);
+}
+
+.dark .step-circle {
+  background: var(--bg-card);
+  border-color: var(--border-light);
+}
+
+.dark .btn-outline {
+  color: var(--text-primary);
+  border-color: var(--border-light);
+}
+.dark .btn-outline:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* ============================================
+   AGENTS IN PRODUCTION
+   ============================================ */
+.agents-section {
+  padding: var(--section-padding) 0;
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.agents-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.agents-header h2 { color: #FFF; }
+.agents-header .section-subtitle { margin: 16px auto 0; color: var(--text-on-dark-dim); }
+
+/* Category Filter Index */
+.agents-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 44px;
+  position: relative;
+  z-index: 2;
+}
+
+.agents-filter-btn {
+  padding: 8px 20px;
+  border: 1px solid var(--border-dark);
+  border-radius: 8%;
+  background: rgba(255,255,255,0.04);
+  color: var(--text-on-dark-dim);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.01em;
+}
+
+.agents-filter-btn:hover {
+  background: rgba(255,255,255,0.08);
+  color: #FFF;
+}
+
+.agents-filter-btn.active {
+  background: rgba(90,212,174,0.15);
+  border-color: rgba(90,212,174,0.35);
+  color: var(--color-teal);
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.agent-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.agent-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.35), 0 0 0 1px rgba(90,212,174,0.15);
+  border-color: rgba(90,212,174,0.25);
+  background: rgba(255,255,255,0.09);
+}
+
+.agent-card.agent-hidden {
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+.agent-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+  line-height: 1.3;
+  color: #FFF;
+}
+
+.agent-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  width: fit-content;
+}
+
+.agent-category-badge.cat-captacion {
+  background: rgba(245,64,94,0.12);
+  color: var(--color-coral);
+}
+.agent-category-badge.cat-inteligencia {
+  background: rgba(90,212,174,0.12);
+  color: var(--color-teal);
+}
+.agent-category-badge.cat-conversion {
+  background: rgba(245,160,94,0.12);
+  color: var(--color-amber);
+}
+.agent-category-badge.cat-operaciones {
+  background: rgba(160,140,255,0.15);
+  color: #a08cff;
+}
+
+.agent-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.agent-label.problem { color: var(--color-coral); }
+.agent-label.solution { color: var(--color-teal); }
+.agent-label.result { color: var(--color-amber); }
+
+.agent-text {
+  font-size: 0.88rem;
+  color: var(--text-on-dark-dim);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.agent-result-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #FFF;
+  margin-top: auto;
+}
+
+@media (max-width: 1024px) {
+  .agents-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .agents-grid { grid-template-columns: 1fr; }
+  .agents-filter { gap: 6px; }
+  .agents-filter-btn { padding: 7px 14px; font-size: 0.78rem; }
+}
+
+/* ============================================
+   ROI QUIZ
+   ============================================ */
+.quiz-section {
+  padding: var(--section-padding) 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.quiz-header .section-subtitle { margin: 16px auto 0; }
+
+.quiz-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.quiz-left {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+}
+
+.quiz-progress {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  font-family: monospace;
+}
+
+.quiz-progress-bar {
+  height: 4px;
+  background: var(--border-light);
+  border-radius: 2px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  background: var(--gradient-cta);
+  border-radius: 2px;
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+
+.quiz-question {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  line-height: 1.35;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.quiz-option {
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border-light);
+  border-radius: 8%;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+  line-height: 1.45;
+  font-family: var(--font-body);
+}
+
+.quiz-option:hover {
+  border-color: var(--color-teal);
+  background: rgba(90,212,174,0.06);
+}
+
+.quiz-option.selected {
+  border-color: var(--color-teal);
+  background: rgba(90,212,174,0.1);
+  font-weight: 600;
+}
+
+.quiz-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-result-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.quiz-result-panel.has-result {
+  border-color: rgba(90,212,174,0.3);
+}
+
+.quiz-placeholder {
+  color: var(--text-tertiary);
+  font-size: 0.95rem;
+}
+
+.quiz-result-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(90,212,174,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.4rem;
+  color: var(--color-teal);
+}
+
+.quiz-result-agent {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.quiz-result-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.quiz-result-metric {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-teal);
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.quiz-restart {
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  margin-top: 12px;
+  transition: color 0.3s;
+}
+.quiz-restart:hover { color: var(--color-teal); }
+
+@media (max-width: 768px) {
+  .quiz-wrapper { grid-template-columns: 1fr; }
+  .quiz-options { grid-template-columns: 1fr; }
+  .quiz-left { padding: 28px; }
+}
+
+.dark .quiz-section,
+.dark .how-it-works {
+  background: var(--bg-secondary);
+}
+
+.dark .quiz-left,
+.dark .quiz-result-panel {
+  background: var(--bg-card);
+  border-color: var(--border-light);
+}
+
+.dark .quiz-option {
+  background: var(--bg-primary);
+  border-color: var(--border-light);
+}
+
+/* ============================================
+   CHATBOT WIDGET
+   ============================================ */
+.chatbot-bubble {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 950;
+}
+
+.chatbot-trigger {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 24px rgba(90,212,174,0.3);
+  transition: all 0.3s;
+  position: relative;
+}
+
+.chatbot-trigger:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 32px rgba(90,212,174,0.4);
+}
+
+.chatbot-trigger .open-icon,
+.chatbot-trigger .close-icon {
+  position: absolute;
+  transition: opacity 0.3s, transform 0.3s;
+}
+.chatbot-trigger .close-icon { opacity: 0; transform: rotate(-90deg); }
+.chatbot-bubble.active .chatbot-trigger .open-icon { opacity: 0; transform: rotate(90deg); }
+.chatbot-bubble.active .chatbot-trigger .close-icon { opacity: 1; transform: rotate(0); }
+
+.chatbot-tooltip {
+  position: absolute;
+  bottom: 72px;
+  right: 0;
+  background: #FFF;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  min-width: 260px;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: all 0.4s;
+}
+
+.chatbot-tooltip.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.chatbot-tooltip-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.06);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: #666;
+}
+
+.chatbot-tooltip-text {
+  font-size: 0.88rem;
+  color: #333;
+  line-height: 1.5;
+  padding-right: 16px;
+}
+
+.chatbot-tooltip-btn {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #000;
+  color: #FFF;
+  border: none;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-body);
+  transition: background 0.3s;
+}
+.chatbot-tooltip-btn:hover { background: #222; }
+
+.chatbot-window {
+  position: absolute;
+  bottom: 72px;
+  right: 0;
+  width: 360px;
+  max-height: 520px;
+  background: #FFF;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(12px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+
+.chatbot-bubble.active .chatbot-window {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.chatbot-header {
+  background: var(--bg-dark);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chatbot-header img {
+  height: 22px;
+  width: auto;
+}
+
+.chatbot-header-status {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: var(--text-on-dark-dim);
+}
+
+.chatbot-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-teal);
+}
+
+.chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 280px;
+  max-height: 340px;
+  background: #FAFBFC;
+}
+
+.chat-msg {
+  max-width: 85%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  animation: fadeUp 0.3s ease;
+}
+
+.chat-msg.bot {
+  background: #FFF;
+  color: #333;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.chat-msg.user {
+  background: var(--bg-dark);
+  color: #FFF;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-msg a {
+  color: var(--color-teal);
+  text-decoration: underline;
+}
+
+.chat-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px 8px;
+}
+
+.chat-quick-btn {
+  padding: 8px 14px;
+  border: 1px solid #E0E0E0;
+  border-radius: var(--radius-full);
+  background: #FFF;
+  font-size: 0.78rem;
+  color: #555;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.chat-quick-btn:hover {
+  border-color: var(--color-teal);
+  color: var(--color-teal-dim);
+  background: rgba(90,212,174,0.05);
+}
+
+.chatbot-input-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid #EEE;
+  background: #FFF;
+}
+
+.chatbot-input {
+  flex: 1;
+  border: 1px solid #E5E5E5;
+  border-radius: var(--radius-full);
+  padding: 10px 16px;
+  font-size: 16px;
+  outline: none;
+  color: #333;
+  background: #FAFBFC;
+  font-family: var(--font-body);
+}
+
+.chatbot-input:focus { border-color: var(--color-teal); }
+.chatbot-input::placeholder { color: #AAA; }
+
+.chatbot-send {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-size: 0.85rem;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+.chatbot-send:hover { background: #333; }
+
+.chat-typing {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 12px 16px;
+  align-self: flex-start;
+}
+.chat-typing span {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #CCC;
+  animation: typingBounce 1.2s infinite;
+}
+.chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-6px); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .chatbot-bubble { bottom: 86px; right: 16px; }
+  .chatbot-window { width: calc(100vw - 32px); right: -8px; bottom: 68px; max-height: 60vh; }
+  .chatbot-tooltip { min-width: 230px; }
+}
+
+/* ============================================
+   HOW AI AGENTS WORK (CONCEPTUAL)
+   ============================================ */
+.how-agents {
+  padding: var(--section-padding) 0;
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.how-agents-header {
+  text-align: center;
+  margin-bottom: 72px;
+  position: relative;
+  z-index: 2;
+}
+
+.how-agents-header h2 { color: #FFF; }
+.how-agents-header .section-subtitle {
+  margin: 16px auto 0;
+  color: var(--text-on-dark-dim);
+}
+
+.how-agents-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.how-agents-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+}
+
+.how-agents-card:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(90,212,174,0.2);
+  transform: translateY(-4px);
+}
+
+.how-agents-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gradient-cta);
+  color: #FFF;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.how-agents-card h3 {
+  color: #FFF;
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+}
+
+.how-agents-card p {
+  color: var(--text-on-dark-dim);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.how-agents-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.how-agents-tag {
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid rgba(90,212,174,0.2);
+  color: var(--color-teal);
+  background: rgba(90,212,174,0.06);
+}
+
+.how-agents-card:nth-child(2) .how-agents-tag {
+  border-color: rgba(245,160,94,0.2);
+  color: var(--color-amber);
+  background: rgba(245,160,94,0.06);
+}
+
+.how-agents-card:nth-child(3) .how-agents-tag {
+  border-color: rgba(245,64,94,0.2);
+  color: var(--color-coral);
+  background: rgba(245,64,94,0.06);
+}
+
+.how-agents-card:nth-child(4) .how-agents-tag {
+  border-color: rgba(90,212,174,0.2);
+  color: var(--color-teal);
+  background: rgba(90,212,174,0.06);
+}
+
+@media (max-width: 1024px) {
+  .how-agents-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .how-agents-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   AI AGENT LITMUS TEST
+   ============================================ */
+.litmus-section {
+  padding: var(--section-padding) 0;
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.litmus-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 50% at 20% 30%, rgba(245,64,94,0.05), transparent),
+    radial-gradient(ellipse 40% 60% at 80% 70%, rgba(90,212,174,0.04), transparent);
+}
+
+.litmus-header {
+  text-align: center;
+  margin-bottom: 56px;
+  position: relative;
+  z-index: 2;
+}
+
+.litmus-header h2 { color: #FFF; }
+.litmus-header .section-subtitle {
+  margin: 16px auto 0;
+  color: var(--text-on-dark-dim);
+}
+
+.litmus-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 56px;
+}
+
+.litmus-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  transition: all 0.4s;
+  position: relative;
+}
+
+.litmus-card:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-4px);
+  border-color: rgba(90,212,174,0.2);
+}
+
+.litmus-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  color: #000;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.litmus-card h3 {
+  color: #FFF;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.litmus-card p {
+  color: var(--text-on-dark-dim);
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+
+.litmus-example {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.55;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-dark);
+}
+
+.litmus-example::before {
+  content: '→ ';
+  color: var(--color-teal);
+}
+
+.litmus-cta {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.litmus-cta-box {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xl);
+  padding: 40px 56px;
+}
+
+.litmus-score {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: #FFF;
+}
+
+.litmus-score-sub {
+  color: var(--text-on-dark-dim);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1200px) {
+  .litmus-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .litmus-grid { grid-template-columns: 1fr; }
+  .litmus-cta-box { padding: 32px 28px; width: 100%; }
+}
+
+/* ============================================
+   PRICING SECTION
+   ============================================ */
+.pricing-section {
+  padding: var(--section-padding) 0;
+  background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.pricing-header h2 { color: #FFF; }
+
+/* Modality Toggle */
+.pricing-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin: 0 auto 20px;
+  max-width: 480px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-lg);
+  padding: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.pricing-toggle-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8%;
+  background: transparent;
+  color: var(--text-on-dark-dim);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.pricing-toggle-btn i {
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+
+.pricing-toggle-btn.active {
+  background: rgba(90,212,174,0.12);
+  color: var(--color-teal);
+  box-shadow: 0 0 20px rgba(90,212,174,0.08);
+}
+
+.pricing-toggle-btn:hover:not(.active) {
+  background: rgba(255,255,255,0.04);
+  color: #FFF;
+}
+
+.pricing-toggle-sub {
+  font-size: 0.68rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.pricing-mode-desc {
+  text-align: center;
+  color: var(--text-on-dark-dim);
+  font-size: 0.88rem;
+  max-width: 620px;
+  margin: 0 auto 44px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+  min-height: 44px;
+}
+
+/* Pack Cards Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1080px;
+  margin: 0 auto 56px;
+  position: relative;
+  z-index: 2;
+}
+
+.pricing-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xl);
+  padding: 36px 28px;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-card:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(90,212,174,0.2);
+  transform: translateY(-4px);
+}
+
+.pricing-card.recommended {
+  border-color: rgba(90,212,174,0.3);
+  background: rgba(90,212,174,0.04);
+}
+
+.pricing-card.recommended::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient-brand);
+}
+
+.pricing-badge {
+  display: inline-flex;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(90,212,174,0.12);
+  color: var(--color-teal);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.pricing-card h3 {
+  color: #FFF;
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+
+.pricing-subtitle {
+  color: var(--text-on-dark-dim);
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.pricing-amount {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.55rem;
+  color: #FFF;
+  margin-bottom: 4px;
+}
+
+.pricing-period {
+  color: var(--text-on-dark-dim);
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.pricing-setup-note {
+  color: var(--text-on-dark-dim);
+  font-size: 0.72rem;
+  opacity: 0.6;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.pricing-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text-on-dark-dim);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.pricing-feature i {
+  color: var(--color-teal);
+  font-size: 0.72rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.pricing-card .btn-primary {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Individual Agent Reference */
+.pricing-agents-ref {
+  max-width: 1080px;
+  margin: 0 auto 44px;
+  position: relative;
+  z-index: 2;
+}
+
+.pricing-agents-ref h3 {
+  color: #FFF;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pricing-agents-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.pricing-agent-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  padding: 14px 12px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.pricing-agent-item:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(90,212,174,0.15);
+}
+
+.pricing-agent-name {
+  color: #FFF;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.pricing-agent-price {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--color-teal);
+}
+
+/* Maintenance Section */
+.pricing-maint-section {
+  max-width: 620px;
+  margin: 0 auto 44px;
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.4s, max-height 0.4s;
+  overflow: hidden;
+  max-height: 300px;
+}
+
+.pricing-maint-section.hidden {
+  opacity: 0;
+  max-height: 0;
+  margin-bottom: 0;
+  pointer-events: none;
+}
+
+.pricing-maint-section h4 {
+  color: #FFF;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.pricing-maint-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.pricing-maint-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.pricing-maint-card h5 {
+  color: #FFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.pricing-maint-price {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-amber);
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+}
+
+.pricing-maint-desc {
+  color: var(--text-on-dark-dim);
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+
+/* Guarantees */
+.pricing-guarantees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.pricing-guarantee-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-dark);
+  color: var(--text-on-dark-dim);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.pricing-guarantee-tag i {
+  color: var(--color-teal);
+  font-size: 0.68rem;
+}
+
+/* API Note */
+.pricing-api-note {
+  text-align: center;
+  color: var(--text-on-dark-dim);
+  font-size: 0.75rem;
+  opacity: 0.5;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Custom Dev Note */
+.pricing-custom-note {
+  text-align: center;
+  margin: 28px auto 0;
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+}
+
+.pricing-custom-note p {
+  color: var(--text-on-dark-dim);
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.pricing-custom-note a {
+  color: var(--color-amber);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pricing-custom-note a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card { padding: 32px 22px; }
+  .pricing-agents-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-maint-grid { grid-template-columns: 1fr; }
+  .pricing-toggle-btn { padding: 10px 14px; font-size: 0.85rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==========================================
+     ANNOUNCEMENT BAR
+     ========================================== -->
+<a href="https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page" target="_blank" rel="noopener" class="announcement-bar" id="announcementBar">
+  <div class="announcement-bar-inner">
+    <span class="announcement-bar-text" data-i18n="bar.text">IA que te trae clientes en automático. Pruébalo gratis</span>
+    <span class="announcement-bar-arrow">→</span>
+    <span class="announcement-bar-btn" data-i18n="bar.btn">Descubre cómo</span>
+  </div>
+</a>
+
+<!-- ==========================================
+     NAVIGATION
+     ========================================== -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#" class="logo-link" onclick="event.preventDefault()">
+      <img src="https://pfst.cf2.poecdn.net/base/image/cdc47809fd69c23e444ec263a6dc3097651058fbddf2303d84025c651e98779f?w=500&amp;h=100" alt="Verymuch.Ai" class="logo-img">
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#services" data-i18n="nav.services">Servicios</a>
+      <a href="#how" data-i18n="nav.how">Cómo funciona</a>
+      <a href="#roi" data-i18n="nav.roi">ROI</a>
+      <a href="#pricing" data-i18n="nav.pricing">Precios</a>
+      <a href="#why" data-i18n="nav.why">Por qué nosotros</a>
+      <a href="#team" data-i18n="nav.team">Equipo</a>
+    </div>
+
+    <div class="nav-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="langEs" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" id="langEn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page" target="_blank" rel="noopener" class="nav-cta" data-i18n="nav.cta">Agenda una llamada</a>
+    </div>
+
+    <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" data-i18n="nav.services" onclick="closeMobileMenu()">Servicios</a>
+  <a href="#how" data-i18n="nav.how" onclick="closeMobileMenu()">Cómo funciona</a>
+  <a href="#roi" data-i18n="nav.roi" onclick="closeMobileMenu()">ROI</a>
+  <a href="#pricing" data-i18n="nav.pricing" onclick="closeMobileMenu()">Precios</a>
+  <a href="#why" data-i18n="nav.why" onclick="closeMobileMenu()">Por qué nosotros</a>
+  <a href="#team" data-i18n="nav.team" onclick="closeMobileMenu()">Equipo</a>
+  <a href="https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="nav.cta" onclick="closeMobileMenu()" style="margin-top:12px">Agenda una llamada</a>
+  <div class="lang-toggle" style="margin-top:8px">
+    <button class="lang-btn active" onclick="setLang('es'); closeMobileMenu()">ES</button>
+    <button class="lang-btn" onclick="setLang('en'); closeMobileMenu()">EN</button>
+  </div>
+</div>
+
+<!-- ==========================================
+     HERO
+     ========================================== -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span class="hero-badge-text" data-i18n="hero.badge">IA aplicada a Marketing y Ventas</span>
+      </div>
+
+      <h1 data-i18n="hero.title">Instalamos <span class="gradient-text">agentes de IA</span> que venden mientras tú creces</h1>
+
+      <p class="hero-sub" data-i18n="hero.sub">Agentes de inteligencia artificial y sistemas de automatización para marketing y ventas. Todo lo que vendemos lo probamos primero en nuestra propia empresa. IA en producción real, no pilotos experimentales.</p>
+
+      <div class="hero-ctas">
+        <a href="https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="hero.cta1">
+          Agenda una consultoría gratuita <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#how" class="btn btn-secondary" data-i18n="hero.cta2">
+          Ver cómo funciona <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-value" data-i18n="hero.sv1">2-3 Semanas</div>
+          <div class="hero-stat-label" data-i18n="hero.stat1">Tiempo de construcción</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">100%</div>
+          <div class="hero-stat-label" data-i18n="hero.stat2">Propiedad</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-value">3x+</div>
+          <div class="hero-stat-label" data-i18n="hero.stat3">ROI en el Año 1</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     HOW AI AGENTS WORK (CONCEPTUAL)
+     ========================================== -->
+<section class="how-agents" id="howAgents">
+  <div class="container">
+    <div class="how-agents-header anim">
+      <span class="section-tag" data-i18n="howAgents.tag">Cómo funcionan</span>
+      <h2 data-i18n="howAgents.title">Cómo funcionan <span class="gradient-text">realmente</span> los agentes de IA</h2>
+      <p class="section-subtitle" data-i18n="howAgents.sub">Piénsalo como contratar un nuevo empleado — uno que nunca duerme.</p>
+    </div>
+
+    <div class="how-agents-grid">
+      <div class="how-agents-card anim anim-delay-1">
+        <div class="how-agents-num">01</div>
+        <h3 data-i18n="howAgents.s1.title">Tú defines el trabajo</h3>
+        <p data-i18n="howAgents.s1.desc">Nos dices qué trabajo manual quieres automatizar — responder leads, limpiar el CRM, investigar prospectos, enviar follow-ups, generar propuestas. Cualquier flujo repetitivo.</p>
+        <div class="how-agents-tags">
+          <span class="how-agents-tag" data-i18n="howAgents.s1.t1">Ventas</span>
+          <span class="how-agents-tag" data-i18n="howAgents.s1.t2">Marketing</span>
+          <span class="how-agents-tag" data-i18n="howAgents.s1.t3">Operaciones</span>
+          <span class="how-agents-tag" data-i18n="howAgents.s1.t4">Soporte</span>
+        </div>
+      </div>
+
+      <div class="how-agents-card anim anim-delay-2">
+        <div class="how-agents-num">02</div>
+        <h3 data-i18n="howAgents.s2.title">Entrenamos al agente</h3>
+        <p data-i18n="howAgents.s2.desc">Configuramos la IA con tus instrucciones exactas, tono de voz, criterios de cualificación y herramientas. Aprende tu proceso — no plantillas genéricas.</p>
+        <div class="how-agents-tags">
+          <span class="how-agents-tag" data-i18n="howAgents.s2.t1">Tus reglas</span>
+          <span class="how-agents-tag" data-i18n="howAgents.s2.t2">Tus criterios</span>
+          <span class="how-agents-tag" data-i18n="howAgents.s2.t3">Tu voz</span>
+        </div>
+      </div>
+
+      <div class="how-agents-card anim anim-delay-3">
+        <div class="how-agents-num">03</div>
+        <h3 data-i18n="howAgents.s3.title">Trabaja de forma autónoma</h3>
+        <p data-i18n="howAgents.s3.desc">Una vez desplegado, el agente opera 24/7. Monitorea señales, procesa datos, toma decisiones y ejecuta acciones — todo dentro de los límites que estableces.</p>
+        <div class="how-agents-tags">
+          <span class="how-agents-tag" data-i18n="howAgents.s3.t1">24/7</span>
+          <span class="how-agents-tag" data-i18n="howAgents.s3.t2">Respuesta instantánea</span>
+          <span class="how-agents-tag" data-i18n="howAgents.s3.t3">Cero errores</span>
+        </div>
+      </div>
+
+      <div class="how-agents-card anim anim-delay-4">
+        <div class="how-agents-num">04</div>
+        <h3 data-i18n="howAgents.s4.title">Tú eres el dueño de todo</h3>
+        <p data-i18n="howAgents.s4.desc">Sin lock-in de proveedor. Sin cuotas mensuales de plataforma. Eres dueño de los flujos, automatizaciones, prompts de IA y toda la infraestructura. Cancela cuando quieras.</p>
+        <div class="how-agents-tags">
+          <span class="how-agents-tag" data-i18n="howAgents.s4.t1">Tu infraestructura</span>
+          <span class="how-agents-tag" data-i18n="howAgents.s4.t2">Entrega completa</span>
+          <span class="how-agents-tag" data-i18n="howAgents.s4.t3">Sin lock-in</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     PROBLEMS
+     ========================================== -->
+<section class="problems" id="problems">
+  <div class="container">
+    <div class="problems-header anim">
+      <span class="section-tag" data-i18n="problems.tag">El desafío</span>
+      <h2 data-i18n="problems.title">Tu empresa quiere implementar IA<br>pero se enfrenta a <span class="gradient-text">tres obstáculos</span></h2>
+      <p class="section-subtitle" data-i18n="problems.sub">Las empresas mid-market necesitan IA en sus procesos comerciales pero encuentran barreras reales.</p>
+    </div>
+
+    <div class="problems-grid">
+      <div class="problem-card anim anim-delay-1">
+        <div class="problem-num">01</div>
+        <h3 data-i18n="problems.p1.title">No saben por dónde empezar</h3>
+        <p data-i18n="problems.p1.desc">Ni cómo priorizar lo que realmente impacta en negocio. La oferta de herramientas IA es abrumadora y cambia cada semana.</p>
+      </div>
+      <div class="problem-card anim anim-delay-2">
+        <div class="problem-num">02</div>
+        <h3 data-i18n="problems.p2.title">No tienen talento interno</h3>
+        <p data-i18n="problems.p2.desc">Para diseñar, construir y operar agentes de IA ni automatizaciones. El 45% cita falta de personal cualificado como barrera principal.</p>
+      </div>
+      <div class="problem-card anim anim-delay-3">
+        <div class="problem-num">03</div>
+        <h3 data-i18n="problems.p3.title">Las opciones son arriesgadas</h3>
+        <p data-i18n="problems.p3.desc">Freelancers sin verificar, agencias generalistas o consultores teóricos que no implementan. El riesgo es perder tiempo y dinero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     ROI QUIZ
+     ========================================== -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <div class="quiz-header anim">
+      <span class="section-tag" data-i18n="quiz.tag">Diagnóstico rápido</span>
+      <h2 data-i18n="quiz.title">Encuentra tu agente de <span class="gradient-text">mayor ROI</span></h2>
+      <p class="section-subtitle" data-i18n="quiz.sub">Responde 3 preguntas. Obtén una recomendación personalizada.</p>
+    </div>
+
+    <div class="quiz-wrapper anim">
+      <div class="quiz-left" id="quizLeft">
+        <div class="quiz-progress" id="quizProgress">Question 1 of 3</div>
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizBar" style="width:33%"></div></div>
+        <div class="quiz-question" id="quizQuestion"></div>
+        <div class="quiz-options" id="quizOptions"></div>
+      </div>
+      <div class="quiz-right">
+        <div class="quiz-result-panel" id="quizResult">
+          <p class="quiz-placeholder" data-i18n="quiz.placeholder">Responde las preguntas para obtener tu recomendación →</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     AGENTS IN PRODUCTION
+     ========================================== -->
+<section class="agents-section" id="agents">
+  <div class="container">
+    <div class="agents-header anim">
+      <span class="section-tag" data-i18n="agents.tag">Agentes en producción</span>
+      <h2 data-i18n="agents.title">Agentes funcionando <span class="gradient-text">ahora mismo</span></h2>
+      <p class="section-subtitle" data-i18n="agents.sub">No son conceptos. Son sistemas vivos generando resultados.</p>
+    </div>
+
+    <!-- Category Filter Index -->
+    <div class="agents-filter anim">
+      <button class="agents-filter-btn active" data-filter="all" onclick="filterAgents('all')"><span data-i18n="agents.filter.all">Todos</span></button>
+      <button class="agents-filter-btn" data-filter="captacion" onclick="filterAgents('captacion')"><i class="fas fa-magnet"></i> <span data-i18n="agents.filter.captacion">Captación</span></button>
+      <button class="agents-filter-btn" data-filter="inteligencia" onclick="filterAgents('inteligencia')"><i class="fas fa-brain"></i> <span data-i18n="agents.filter.inteligencia">Inteligencia</span></button>
+      <button class="agents-filter-btn" data-filter="conversion" onclick="filterAgents('conversion')"><i class="fas fa-handshake"></i> <span data-i18n="agents.filter.conversion">Conversión</span></button>
+      <button class="agents-filter-btn" data-filter="operaciones" onclick="filterAgents('operaciones')"><i class="fas fa-gears"></i> <span data-i18n="agents.filter.operaciones">Operaciones</span></button>
+    </div>
+
+    <div class="agents-grid" id="agentsGrid">
+      <div class="agent-card anim anim-delay-1" data-category="captacion">
+        <span class="agent-category-badge cat-captacion"><i class="fas fa-magnet"></i> <span data-i18n="agents.filter.captacion">Captación</span></span>
+        <h3 data-i18n="agents.a1.name">Lead Router Inbound</h3>
+        <div class="agent-label problem" data-i18n="agents.a1.pl">PROBLEMA</div>
+        <p class="agent-text" data-i18n="agents.a1.p">Los leads esperan +4 horas. El 78% compra al primero que responde.</p>
+        <div class="agent-label solution" data-i18n="agents.a1.sl">SOLUCIÓN</div>
+        <p class="agent-text" data-i18n="agents.a1.s">Responde en &lt;60s. Enriquece datos. Puntúa con IA. Alta puntuación → agenda. Baja → nurturing.</p>
+        <div class="agent-label result" data-i18n="agents.a1.rl">RESULTADO</div>
+        <p class="agent-result-text" data-i18n="agents.a1.r">5x más rápido → 3x más reuniones</p>
+      </div>
+
+      <div class="agent-card anim anim-delay-2" data-category="captacion">
+        <span class="agent-category-badge cat-captacion"><i class="fas fa-magnet"></i> <span data-i18n="agents.filter.captacion">Captación</span></span>
+        <h3 data-i18n="agents.a2.name">Prospección por Señales</h3>
+        <div class="agent-label problem" data-i18n="agents.a2.pl">PROBLEMA</div>
+        <p class="agent-text" data-i18n="agents.a2.p">SDRs pierden el 70% del tiempo en investigación manual.</p>
+        <div class="agent-label solution" data-i18n="agents.a2.sl">SOLUCIÓN</div>
+        <p class="agent-text" data-i18n="agents.a2.s">Monitorea señales, auto-enriquece contactos, personaliza con IA y envía por infraestructura calentada.</p>
+        <div class="agent-label result" data-i18n="agents.a2.rl">RESULTADO</div>
+        <p class="agent-result-text" data-i18n="agents.a2.r">De 2% a 5-8% tasa de respuesta</p>
+      </div>
+
+      <div class="agent-card anim anim-delay-3" data-category="inteligencia">
+        <span class="agent-category-badge cat-inteligencia"><i class="fas fa-brain"></i> <span data-i18n="agents.filter.inteligencia">Inteligencia</span></span>
+        <h3 data-i18n="agents.a3.name">CRM Hygiene Bot</h3>
+        <div class="agent-label problem" data-i18n="agents.a3.pl">PROBLEMA</div>
+        <p class="agent-text" data-i18n="agents.a3.p">CRM con 40% de datos obsoletos. Reportes poco fiables.</p>
+        <div class="agent-label solution" data-i18n="agents.a3.sl">SOLUCIÓN</div>
+        <p class="agent-text" data-i18n="agents.a3.s">Escanea datos obsoletos, enriquece desde 100+ fuentes, detecta duplicados, actualiza cambios de empleo.</p>
+        <div class="agent-label result" data-i18n="agents.a3.rl">RESULTADO</div>
+        <p class="agent-result-text" data-i18n="agents.a3.r">95%+ de precisión, cero carga manual</p>
+      </div>
+
+      <div class="agent-card anim anim-delay-4" data-category="inteligencia">
+        <span class="agent-category-badge cat-inteligencia"><i class="fas fa-brain"></i> <span data-i18n="agents.filter.inteligencia">Inteligencia</span></span>
+        <h3 data-i18n="agents.a4.name">Agente Pre-Llamada</h3>
+        <div class="agent-label problem" data-i18n="agents.a4.pl">PROBLEMA</div>
+        <p class="agent-text" data-i18n="agents.a4.p">20-30 min de investigación por cada llamada de ventas.</p>
+        <div class="agent-label solution" data-i18n="agents.a4.sl">SOLUCIÓN</div>
+        <p class="agent-text" data-i18n="agents.a4.s">Extrae noticias, LinkedIn, tech stack, funding, competencia. Briefing de 1 página 30 min antes de la llamada.</p>
+        <div class="agent-label result" data-i18n="agents.a4.rl">RESULTADO</div>
+        <p class="agent-result-text" data-i18n="agents.a4.r">Cero preparación, mejores conversaciones</p>
+      </div>
+
+      <div class="agent-card anim anim-delay-1" data-category="conversion">
+        <span class="agent-category-badge cat-conversion"><i class="fas fa-handshake"></i> <span data-i18n="agents.filter.conversion">Conversión</span></span>
+        <h3 data-i18n="agents.a5.name">Nurturing &amp; Follow-up</h3>
+        <div class="agent-label problem" data-i18n="agents.a5.pl">PROBLEMA</div>
+        <p class="agent-text" data-i18n="agents.a5.p">Follow-ups que se pierden. Leads que se enfrían.</p>
+        <div class="agent-label solution" data-i18n="agents.a5.sl">SOLUCIÓN</div>
+        <p class="agent-text" data-i18n="agents.a5.s">Rastrea señales de engagement, dispara follow-ups personalizados, reactiva leads fríos con contexto fresco.</p>
+        <div class="agent-label result" data-i18n="agents.a5.rl">RESULTADO</div>
+        <p class="agent-result-text" data-i18n="agents.a5.r">40% más pipeline recuperado</p>
+      </div>
+
+      <div class="agent-card anim anim-delay-2" data-category="conversion">
+        <span class="agent-category-badge cat-conversion"><i class="fas fa-handshake"></i> <span data-i18n="agents.filter.conversion">Conversión</span></span>
+        <h3 data-i18n="agents.a6.name">Generador de Propuestas</h3>
+        <div class="agent-label problem" data-i18n="agents.a6.pl">PROBLEMA</div>
+        <p class="agent-text" data-i18n="agents.a6.p">Propuestas personalizadas tardan +3 horas cada una.</p>
+        <div class="agent-label solution" data-i18n="agents.a6.sl">SOLUCIÓN</div>
+        <p class="agent-text" data-i18n="agents.a6.s">Extrae notas, datos CRM y tarifas. La IA genera propuesta personalizada. El humano revisa y envía.</p>
+        <div class="agent-label result" data-i18n="agents.a6.rl">RESULTADO</div>
+        <p class="agent-result-text" data-i18n="agents.a6.r">90% menos tiempo por propuesta</p>
+      </div>
+
+      <div class="agent-card anim anim-delay-3" data-category="operaciones">
+        <span class="agent-category-badge cat-operaciones"><i class="fas fa-gears"></i> <span data-i18n="agents.filter.operaciones">Operaciones</span></span>
+        <h3 data-i18n="agents.a7.name">Agente de Onboarding</h3>
+        <div class="agent-label problem" data-i18n="agents.a7.pl">PROBLEMA</div>
+        <p class="agent-text" data-i18n="agents.a7.p">El onboarding es desordenado. Se pierden pasos.</p>
+        <div class="agent-label solution" data-i18n="agents.a7.sl">SOLUCIÓN</div>
+        <p class="agent-text" data-i18n="agents.a7.s">Se activa al cerrar un deal. Crea workspace, envía secuencia de bienvenida, agenda kickoff, provisiona cuentas y rastrea hitos.</p>
+        <div class="agent-label result" data-i18n="agents.a7.rl">RESULTADO</div>
+        <p class="agent-result-text" data-i18n="agents.a7.r">Tiempo de onboarding reducido 60%</p>
+      </div>
+
+      <div class="agent-card anim anim-delay-4" data-category="operaciones">
+        <span class="agent-category-badge cat-operaciones"><i class="fas fa-gears"></i> <span data-i18n="agents.filter.operaciones">Operaciones</span></span>
+        <h3 data-i18n="agents.a8.name">Ops Interno &amp; Reportes</h3>
+        <div class="agent-label problem" data-i18n="agents.a8.pl">PROBLEMA</div>
+        <p class="agent-text" data-i18n="agents.a8.p">Hojas de cálculo manuales consumen horas cada semana.</p>
+        <div class="agent-label solution" data-i18n="agents.a8.sl">SOLUCIÓN</div>
+        <p class="agent-text" data-i18n="agents.a8.s">Monitorea herramientas, sincroniza datos, genera reportes semanales, detecta anomalías y alerta al equipo.</p>
+        <div class="agent-label result" data-i18n="agents.a8.rl">RESULTADO</div>
+        <p class="agent-result-text" data-i18n="agents.a8.r">+10h/semana ahorradas en ops</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     AI AGENT LITMUS TEST
+     ========================================== -->
+<section class="litmus-section" id="litmus">
+  <div class="container">
+    <div class="litmus-header anim">
+      <span class="section-tag" data-i18n="litmus.tag">Test de viabilidad</span>
+      <h2 data-i18n="litmus.title">El test de <span class="gradient-text">viabilidad</span> del agente de IA</h2>
+      <p class="section-subtitle" data-i18n="litmus.sub">Evalúa cualquier flujo de trabajo con estos 5 criterios. Si cumple 3+, estás dejando dinero sobre la mesa.</p>
+    </div>
+
+    <div class="litmus-grid">
+      <div class="litmus-card anim anim-delay-1">
+        <div class="litmus-num">01</div>
+        <h3 data-i18n="litmus.c1.title">Repetitivo</h3>
+        <p data-i18n="litmus.c1.desc">Se ejecuta diaria o semanalmente con los mismos pasos. Si tu equipo lo hace en piloto automático, una máquina debería hacerlo literalmente.</p>
+        <div class="litmus-example" data-i18n="litmus.c1.ex">Cada lead inbound pasa por el mismo flujo: enriquecer → puntuar → asignar</div>
+      </div>
+
+      <div class="litmus-card anim anim-delay-2">
+        <div class="litmus-num">02</div>
+        <h3 data-i18n="litmus.c2.title">Consume tiempo, no cerebro</h3>
+        <p data-i18n="litmus.c2.desc">Consume horas pero no requiere pensamiento estratégico. Entrada de datos, búsquedas, construcción de listas, actualizaciones de estado.</p>
+        <div class="litmus-example" data-i18n="litmus.c2.ex">Los reps pasan 20 min investigando cada prospecto antes de llamar</div>
+      </div>
+
+      <div class="litmus-card anim anim-delay-3">
+        <div class="litmus-num">03</div>
+        <h3 data-i18n="litmus.c3.title">Sensible a velocidad</h3>
+        <p data-i18n="litmus.c3.desc">Una respuesta más rápida cambia el resultado. El 78% de los compradores eligen al primero que responde.</p>
+        <div class="litmus-example" data-i18n="litmus.c3.ex">Los leads inbound esperan +4 horas porque el equipo está ocupado</div>
+      </div>
+
+      <div class="litmus-card anim anim-delay-1">
+        <div class="litmus-num">04</div>
+        <h3 data-i18n="litmus.c4.title">Multi-herramienta</h3>
+        <p data-i18n="litmus.c4.desc">El flujo implica copiar datos entre 2+ plataformas. Más traspasos = más ROI del agente.</p>
+        <div class="litmus-example" data-i18n="litmus.c4.ex">Después de cada llamada: actualizar HubSpot, avisar en Slack, registrar en ClickUp</div>
+      </div>
+
+      <div class="litmus-card anim anim-delay-2">
+        <div class="litmus-num">05</div>
+        <h3 data-i18n="litmus.c5.title">Propenso a errores</h3>
+        <p data-i18n="litmus.c5.desc">Cuando los humanos se apresuran u olvidan, se pierde revenue. Follow-ups perdidos, datos obsoletos, propuestas tardías.</p>
+        <div class="litmus-example" data-i18n="litmus.c5.ex">El 30% de los registros del CRM están desactualizados porque nadie los mantiene</div>
+      </div>
+    </div>
+
+    <div class="litmus-cta anim">
+      <div class="litmus-cta-box">
+        <div class="litmus-score" data-i18n="litmus.score">¿3 de 5? Es luz verde.</div>
+        <p class="litmus-score-sub" data-i18n="litmus.scoreSub">→ Agenda una llamada. Lo evaluamos en 30 min.</p>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="litmus.cta">Agenda tu llamada <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     ROI CALCULATOR
+     ========================================== -->
+<section class="roi-section" id="roi">
+  <div class="container">
+    <div class="roi-header anim">
+      <span class="section-tag" data-i18n="roi.tag">Calculadora ROI</span>
+      <h2 data-i18n="roi.title">Calcula cuánto puede <span class="gradient-text">ahorrarte la IA</span></h2>
+      <p class="section-subtitle" data-i18n="roi.sub">Mueve los controles y descubre el impacto real en tu empresa.</p>
+    </div>
+
+    <div class="roi-wrapper">
+      <div class="roi-inputs anim anim-delay-1">
+        <div class="roi-slider-group">
+          <div class="roi-slider-header">
+            <span class="roi-slider-label" data-i18n="roi.label1">Tamaño del equipo comercial</span>
+            <span class="roi-slider-value" id="roiTeamVal">5</span>
+          </div>
+          <input type="range" class="roi-range" id="roiTeam" min="1" max="50" value="5" oninput="updateROI()">
+        </div>
+
+        <div class="roi-slider-group">
+          <div class="roi-slider-header">
+            <span class="roi-slider-label" data-i18n="roi.label2">Horas manuales por persona/semana</span>
+            <span class="roi-slider-value" id="roiHoursVal">12h</span>
+          </div>
+          <input type="range" class="roi-range" id="roiHours" min="2" max="30" value="12" oninput="updateROI()">
+        </div>
+
+        <div class="roi-slider-group">
+          <div class="roi-slider-header">
+            <span class="roi-slider-label" data-i18n="roi.label3">Coste anual por empleado</span>
+            <span class="roi-slider-value" id="roiCostVal">€40.000</span>
+          </div>
+          <input type="range" class="roi-range" id="roiCost" min="20000" max="120000" value="40000" step="5000" oninput="updateROI()">
+        </div>
+      </div>
+
+      <div class="roi-results anim anim-delay-2">
+        <div class="roi-result-row">
+          <span class="roi-result-label" data-i18n="roi.r1">Coste manual anual</span>
+          <span class="roi-result-value cost-red" id="roiManual">€0</span>
+        </div>
+        <div class="roi-result-row">
+          <span class="roi-result-label" data-i18n="roi.r2">Inversión IA estimada/año</span>
+          <span class="roi-result-value" id="roiInvest">€0</span>
+        </div>
+        <div class="roi-result-row">
+          <span class="roi-result-label" data-i18n="roi.r3">Ahorro neto anual</span>
+          <span class="roi-result-value savings" id="roiSavings">€0</span>
+        </div>
+        <div class="roi-result-row">
+          <span class="roi-result-label" data-i18n="roi.r4">Período de retorno</span>
+          <span class="roi-result-value" id="roiPayback">— </span>
+        </div>
+        <div class="roi-big-number">
+          <div class="roi-big-value" id="roiPercent">0%</div>
+          <div class="roi-big-label">ROI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     HOW IT WORKS / TIMELINE
+     ========================================== -->
+<section class="how-it-works" id="how">
+  <div class="container">
+    <div class="how-header anim">
+      <span class="section-tag" data-i18n="how.tag">Proceso</span>
+      <h2 data-i18n="how.title">De llamada a <span class="gradient-text">agente funcionando</span> en 2-3 semanas</h2>
+      <p class="section-subtitle" data-i18n="how.sub">Un proceso claro, medible y sin sorpresas. Pago por hitos.</p>
+    </div>
+
+    <div class="how-steps">
+      <div class="how-step anim anim-delay-1">
+        <div class="step-circle">
+          <i class="fas fa-phone"></i>
+          <span class="step-num">01</span>
+        </div>
+        <h3 data-i18n="how.s1.title">Discovery Call</h3>
+        <p data-i18n="how.s1.desc">Entendemos tus procesos y mapeamos el flujo ideal del agente</p>
+        <span class="step-time" data-i18n="how.s1.time"><i class="fas fa-clock"></i> 30 min</span>
+      </div>
+
+      <div class="how-step anim anim-delay-2">
+        <div class="step-circle">
+          <i class="fas fa-pencil-ruler"></i>
+          <span class="step-num">02</span>
+        </div>
+        <h3 data-i18n="how.s2.title">Diseño del Agente</h3>
+        <p data-i18n="how.s2.desc">Arquitectura, integraciones y flujo de trabajo a medida</p>
+        <span class="step-time" data-i18n="how.s2.time"><i class="fas fa-clock"></i> 2–3 días</span>
+      </div>
+
+      <div class="how-step anim anim-delay-3">
+        <div class="step-circle">
+          <i class="fas fa-rocket"></i>
+          <span class="step-num">03</span>
+        </div>
+        <h3 data-i18n="how.s3.title">Construcción y Deploy</h3>
+        <p data-i18n="how.s3.desc">Construimos, probamos y desplegamos el agente en tu empresa</p>
+        <span class="step-time" data-i18n="how.s3.time"><i class="fas fa-clock"></i> 1–2 semanas</span>
+      </div>
+
+      <div class="how-step anim anim-delay-4">
+        <div class="step-circle">
+          <i class="fas fa-handshake"></i>
+          <span class="step-num">04</span>
+        </div>
+        <h3 data-i18n="how.s4.title">Entrega + Capacitación</h3>
+        <p data-i18n="how.s4.desc">Te entregamos todo. Documentación, training y soporte post-lanzamiento</p>
+        <span class="step-time" data-i18n="how.s4.time"><i class="fas fa-key"></i> Es tuyo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SERVICES
+     ========================================== -->
+<section class="services" id="services">
+  <div class="services-bg-orb services-bg-orb-1"></div>
+  <div class="services-bg-orb services-bg-orb-2"></div>
+  <div class="container">
+    <div class="services-header anim">
+      <span class="section-tag" data-i18n="services.tag">Nuestras soluciones</span>
+      <h2 data-i18n="services.title">Resolvemos los tres. <span class="gradient-text">Así.</span></h2>
+      <p class="section-subtitle" data-i18n="services.sub">Combinamos consultoría estratégica, implementación técnica y talento verificado.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card anim anim-delay-1">
+        <div class="service-icon"><i class="fas fa-compass"></i></div>
+        <h3 data-i18n="services.s1.title">Consultoría Estratégica</h3>
+        <p data-i18n="services.s1.desc">Diagnosticamos tus procesos, identificamos áreas de mayor impacto y definimos una hoja de ruta de implementación.</p>
+        <ul>
+          <li data-i18n="services.s1.f1">Análisis de procesos comerciales</li>
+          <li data-i18n="services.s1.f2">Identificación de oportunidades IA</li>
+          <li data-i18n="services.s1.f3">Hoja de ruta personalizada</li>
+        </ul>
+      </div>
+
+      <div class="service-card anim anim-delay-2">
+        <div class="service-icon"><i class="fas fa-robot"></i></div>
+        <h3 data-i18n="services.s2.title">Agentes de IA y Automatización</h3>
+        <p data-i18n="services.s2.desc">Diseñamos, construimos e instalamos agentes de IA y sistemas de automatización para todo el funnel comercial.</p>
+        <ul>
+          <li data-i18n="services.s2.f1">Inbound: detección, contenido, captación</li>
+          <li data-i18n="services.s2.f2">Outbound: prospección, secuencias, seguimiento</li>
+          <li data-i18n="services.s2.f3">Nurturing, conversión y handoff comercial</li>
+        </ul>
+      </div>
+
+      <div class="service-card anim anim-delay-3">
+        <div class="service-icon"><i class="fas fa-users-gear"></i></div>
+        <h3 data-i18n="services.s3.title">Marketplace de Talento IA</h3>
+        <p data-i18n="services.s3.desc">Si necesitas algo que no cubrimos directamente, te conectamos con especialistas verificados de nuestro marketplace.</p>
+        <ul>
+          <li data-i18n="services.s3.f1">Talento verificado, no autodeclarado</li>
+          <li data-i18n="services.s3.f2">Automatizaciones, chatbots, CRM y más</li>
+          <li data-i18n="services.s3.f3">Pago por hitos con supervisión</li>
+        </ul>
+        <a href="https://www.verymuch.ai" target="_blank" rel="noopener" class="btn-marketplace" data-i18n="services.s3.cta">
+          Explorar Marketplace <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     PRICING
+     ========================================== -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="pricing-header anim">
+      <span class="section-tag" data-i18n="pricing.tag">Precios</span>
+      <h2 data-i18n="pricing.title">Inversión <span class="gradient-text">transparente</span></h2>
+    </div>
+
+    <!-- Modality Toggle -->
+    <div class="pricing-toggle anim">
+      <button class="pricing-toggle-btn active" data-mode="install" onclick="setPricingMode('install')">
+        <i class="fas fa-download"></i>
+        <span data-i18n="pricing.toggle.install">Instalación</span>
+        <span class="pricing-toggle-sub" data-i18n="pricing.toggle.install.sub">Tú eres dueño</span>
+      </button>
+      <button class="pricing-toggle-btn" data-mode="aaas" onclick="setPricingMode('aaas')">
+        <i class="fas fa-cloud"></i>
+        <span data-i18n="pricing.toggle.aaas">AaaS</span>
+        <span class="pricing-toggle-sub" data-i18n="pricing.toggle.aaas.sub">Nosotros operamos</span>
+      </button>
+    </div>
+
+    <p class="pricing-mode-desc anim" id="pricingModeDesc" data-i18n="pricing.desc.install">Pago único por la construcción. Tú eres dueño del 100% de la infraestructura, flujos, prompts y automatizaciones. Sin lock-in. Mantenimiento opcional.</p>
+
+    <!-- Pack Cards -->
+    <div class="pricing-grid">
+      <!-- Starter -->
+      <div class="pricing-card anim anim-delay-1">
+        <h3 data-i18n="pricing.pack1.name">Starter</h3>
+        <div class="pricing-subtitle" data-i18n="pricing.pack1.agents">2–3 Agentes</div>
+        <div class="pricing-amount" id="priceAmount1" data-price-install="€2.500–€8.000" data-price-aaas="€900–€2.000">€2.500–€8.000</div>
+        <div class="pricing-period" id="pricePeriod1">pago único</div>
+        <div class="pricing-setup-note" id="priceSetup1" data-i18n="pricing.setup">+ Setup desde €500</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack1.f1">2–3 agentes de IA personalizados</span></div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack1.f2">Integraciones CRM, email, Slack</span></div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack1.f3">Testing, QA y documentación</span></div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack1.f4">2 semanas soporte post-entrega</span></div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack1.f5">Pago por hitos verificados</span></div>
+        </div>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="pricing.cta">Agenda tu llamada <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <!-- Growth (Recommended) -->
+      <div class="pricing-card recommended anim anim-delay-2">
+        <div class="pricing-badge" data-i18n="pricing.recommended">Recomendado</div>
+        <h3 data-i18n="pricing.pack2.name">Growth</h3>
+        <div class="pricing-subtitle" data-i18n="pricing.pack2.agents">4–5 Agentes</div>
+        <div class="pricing-amount" id="priceAmount2" data-price-install="€5.000–€14.000" data-price-aaas="€1.600–€3.500">€5.000–€14.000</div>
+        <div class="pricing-period" id="pricePeriod2">pago único</div>
+        <div class="pricing-setup-note" id="priceSetup2" data-i18n="pricing.setup">+ Setup desde €500</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack2.f1">4–5 agentes, cobertura de funnel completo</span></div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack2.f2">Integraciones avanzadas multi-plataforma</span></div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack2.f3">Soporte prioritario y SLA</span></div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack2.f4">Documentación y capacitación del equipo</span></div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack2.f5">Pago por hitos + project lead dedicado</span></div>
+        </div>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="pricing.cta">Agenda tu llamada <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <!-- Scale -->
+      <div class="pricing-card anim anim-delay-3">
+        <h3 data-i18n="pricing.pack3.name">Scale</h3>
+        <div class="pricing-subtitle" data-i18n="pricing.pack3.agents">6+ Agentes</div>
+        <div class="pricing-amount" id="priceAmount3" data-price-install="€8.000–€22.000" data-price-aaas="€2.500–€5.500">€8.000–€22.000</div>
+        <div class="pricing-period" id="pricePeriod3">pago único</div>
+        <div class="pricing-setup-note" id="priceSetup3" data-i18n="pricing.setup">+ Setup desde €500</div>
+        <div class="pricing-features">
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack3.f1">6+ agentes de IA a medida</span></div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack3.f2">Integraciones enterprise personalizadas</span></div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack3.f3">Project lead y SLA personalizado</span></div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack3.f4">Capacitación completa del equipo</span></div>
+          <div class="pricing-feature"><i class="fas fa-check"></i> <span data-i18n="pricing.pack3.f5">Propiedad total de la infraestructura</span></div>
+        </div>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="pricing.cta">Agenda tu llamada <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- Individual Agent Reference -->
+    <div class="pricing-agents-ref anim">
+      <h3 data-i18n="pricing.agents.title">Referencia de precios por agente individual</h3>
+      <div class="pricing-agents-grid">
+        <div class="pricing-agent-item">
+          <div class="pricing-agent-name">Radar</div>
+          <div class="pricing-agent-price" data-agent-install="€1.500–€3.000" data-agent-aaas="€500–€800/mes">€1.500–€3.000</div>
+        </div>
+        <div class="pricing-agent-item">
+          <div class="pricing-agent-name" data-i18n="pricing.agent.productor">Productor</div>
+          <div class="pricing-agent-price" data-agent-install="€1.500–€3.000" data-agent-aaas="€500–€800/mes">€1.500–€3.000</div>
+        </div>
+        <div class="pricing-agent-item">
+          <div class="pricing-agent-name" data-i18n="pricing.agent.distribuidor">Distribuidor</div>
+          <div class="pricing-agent-price" data-agent-install="€1.000–€2.000" data-agent-aaas="€400–€600/mes">€1.000–€2.000</div>
+        </div>
+        <div class="pricing-agent-item">
+          <div class="pricing-agent-name">SDR Outbound</div>
+          <div class="pricing-agent-price" data-agent-install="€2.500–€5.000" data-agent-aaas="€800–€1.500/mes">€2.500–€5.000</div>
+        </div>
+        <div class="pricing-agent-item">
+          <div class="pricing-agent-name" data-i18n="pricing.agent.clasificador">Clasificador</div>
+          <div class="pricing-agent-price" data-agent-install="€1.000–€2.500" data-agent-aaas="€400–€700/mes">€1.000–€2.500</div>
+        </div>
+        <div class="pricing-agent-item">
+          <div class="pricing-agent-name">Nurturing</div>
+          <div class="pricing-agent-price" data-agent-install="€1.500–€3.000" data-agent-aaas="€500–€800/mes">€1.500–€3.000</div>
+        </div>
+        <div class="pricing-agent-item">
+          <div class="pricing-agent-name">Deal Sourcing</div>
+          <div class="pricing-agent-price" data-agent-install="€3.000–€5.000" data-agent-aaas="€800–€1.500/mes">€3.000–€5.000</div>
+        </div>
+        <div class="pricing-agent-item">
+          <div class="pricing-agent-name">Chatbot</div>
+          <div class="pricing-agent-price" data-agent-install="€1.000–€2.500" data-agent-aaas="€400–€700/mes">€1.000–€2.500</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Maintenance (Install mode only) -->
+    <div class="pricing-maint-section anim" id="pricingMaintenance">
+      <h4 data-i18n="pricing.maint.title">Mantenimiento opcional (modalidad Instalación)</h4>
+      <div class="pricing-maint-grid">
+        <div class="pricing-maint-card">
+          <h5 data-i18n="pricing.maint.basic">Básico</h5>
+          <div class="pricing-maint-price">€200–€300/mes</div>
+          <div class="pricing-maint-desc" data-i18n="pricing.maint.basic.desc">Monitoreo, parches y correcciones menores</div>
+        </div>
+        <div class="pricing-maint-card">
+          <h5 data-i18n="pricing.maint.adv">Avanzado</h5>
+          <div class="pricing-maint-price">€400–€600/mes</div>
+          <div class="pricing-maint-desc" data-i18n="pricing.maint.adv.desc">Optimización, nuevos flujos, A/B testing y reportes</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guarantees -->
+    <div class="pricing-guarantees anim">
+      <span class="pricing-guarantee-tag"><i class="fas fa-check-circle"></i> <span data-i18n="pricing.g1">Pago por hitos</span></span>
+      <span class="pricing-guarantee-tag"><i class="fas fa-check-circle"></i> <span data-i18n="pricing.g2">2 semanas soporte post-entrega</span></span>
+      <span class="pricing-guarantee-tag"><i class="fas fa-check-circle"></i> <span data-i18n="pricing.g3">NDA incluido</span></span>
+      <span class="pricing-guarantee-tag"><i class="fas fa-check-circle"></i> <span data-i18n="pricing.g4">Sin lock-in</span></span>
+    </div>
+
+    <p class="pricing-api-note anim" data-i18n="pricing.api">* Los costes de APIs externas (OpenAI, Apollo, etc.) son por cuenta del cliente en ambas modalidades.</p>
+
+    <!-- Custom Dev -->
+    <div class="pricing-custom-note anim">
+      <p data-i18n="pricing.custom">¿Necesitas algo fuera de catálogo? Desarrollo a medida con cotización personalizada.</p>
+      <a href="https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page" target="_blank" rel="noopener" data-i18n="pricing.custom.cta">Solicitar cotización →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     WHY US
+     ========================================== -->
+<section class="why-us" id="why">
+  <div class="container">
+    <div class="why-header anim">
+      <span class="section-tag" data-i18n="why.tag">Diferenciadores</span>
+      <h2 data-i18n="why.title">¿Por qué <span class="gradient-text">Verymuch.ai</span>?</h2>
+      <p class="section-subtitle" data-i18n="why.sub">No son claims de marketing. Son hechos operativos que nos diferencian.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card anim anim-delay-1">
+        <div class="why-icon"><i class="fas fa-utensils"></i></div>
+        <h3 data-i18n="why.w1.title">Comemos nuestra propia comida</h3>
+        <p data-i18n="why.w1.desc">Todo lo que vendemos lo usamos primero internamente. Si no funciona para nosotros, no lo vendemos.</p>
+      </div>
+
+      <div class="why-card anim anim-delay-2">
+        <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
+        <h3 data-i18n="why.w2.title">Pago por hitos verificados</h3>
+        <p data-i18n="why.w2.desc">No pagas por promesas. Pagas por resultados verificados. Siempre velamos por los intereses del cliente.</p>
+      </div>
+
+      <div class="why-card anim anim-delay-3">
+        <div class="why-icon"><i class="fas fa-server"></i></div>
+        <h3 data-i18n="why.w3.title">IA en producción real</h3>
+        <p data-i18n="why.w3.desc">El cliente recibe un sistema que ya funciona en producción, no un piloto experimental. Riesgo mínimo.</p>
+      </div>
+
+      <div class="why-card anim anim-delay-1">
+        <div class="why-icon"><i class="fas fa-user-check"></i></div>
+        <h3 data-i18n="why.w4.title">Talento verificado</h3>
+        <p data-i18n="why.w4.desc">Cada especialista pasa un proceso de verificación. No es un directorio abierto donde cualquiera se registra.</p>
+      </div>
+
+      <div class="why-card anim anim-delay-2">
+        <div class="why-icon"><i class="fas fa-coins"></i></div>
+        <h3 data-i18n="why.w5.title">Precios competitivos</h3>
+        <p data-i18n="why.w5.desc">Talento LATAM verificado permite precios significativamente más competitivos sin comprometer calidad.</p>
+      </div>
+
+      <div class="why-card anim anim-delay-3">
+        <div class="why-icon"><i class="fas fa-globe-americas"></i></div>
+        <h3 data-i18n="why.w6.title">España + México + EUA</h3>
+        <p data-i18n="why.w6.desc">Presencia en los mercados clave del mundo hispanohablante y angloparlante. Operamos en español e inglés.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     TEAM
+     ========================================== -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="team-header anim">
+      <span class="section-tag" data-i18n="team.tag">Equipo</span>
+      <h2 data-i18n="team.title">Quiénes <span class="gradient-text">construyen</span> esto</h2>
+      <p class="section-subtitle" data-i18n="team.sub">Emprendedores que construyen en la intersección de IA y Go-To-Market.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card anim anim-delay-1">
+        <div class="team-avatar">JH</div>
+        <div class="team-name">Jorge Herrera Cruz</div>
+        <div class="team-role" data-i18n="team.jorge.role">Cofundador</div>
+        <div class="team-location"><i class="fas fa-map-pin"></i> <span data-i18n="team.jorge.loc">Madrid, España</span></div>
+        <p class="team-bio" data-i18n="team.jorge.bio">Estrategia, marketing, ventas y posicionamiento. Lidera la estrategia de contenido en LinkedIn y el posicionamiento de marca como motor de adquisición.</p>
+        <div class="team-creds">
+          <span class="team-cred">Executive MBA — IE Business School</span>
+          <span class="team-cred" data-i18n="team.jorge.c2">Máster IA Marketing — ESIC</span>
+          <span class="team-cred">Marketing — University of Wales</span>
+        </div>
+      </div>
+
+      <div class="team-card anim anim-delay-2">
+        <div class="team-avatar">EM</div>
+        <div class="team-name">Edwin Moreno Marún</div>
+        <div class="team-role" data-i18n="team.edwin.role">Cofundador</div>
+        <div class="team-location"><i class="fas fa-map-pin"></i> <span data-i18n="team.edwin.loc">México</span></div>
+        <p class="team-bio" data-i18n="team.edwin.bio">Implementación de IA, gobernanza, operaciones y transformación organizacional. Especialista en llevar la IA de pilotos a producción real.</p>
+        <div class="team-creds">
+          <span class="team-cred">Singularity University</span>
+          <span class="team-cred">Growth Institute</span>
+          <span class="team-cred">OpenExO Marketing Director</span>
+          <span class="team-cred" data-i18n="team.edwin.c4">Economía — Universidad Iberoamericana</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     CTA / CONTACT
+     ========================================== -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-wrapper">
+      <div class="cta-content anim">
+        <span class="section-tag" data-i18n="cta.tag">Empecemos</span>
+        <h2 data-i18n="cta.title">¿Listo para construir tu primer <span class="gradient-text">agente de IA</span>?</h2>
+        <p class="cta-sub" data-i18n="cta.sub">Agenda una llamada de descubrimiento gratuita. Te mostramos exactamente cómo un agente de IA personalizado puede funcionar para tu negocio.</p>
+
+        <a href="https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page" target="_blank" rel="noopener" class="btn btn-primary btn-cta-large" data-i18n="cta.btn">
+          Agenda tu consultoría gratuita <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     FOOTER
+     ========================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <a href="https://www.verymuch.ai" target="_blank" rel="noopener" class="logo-link">
+          <img src="https://pfst.cf2.poecdn.net/base/image/cdc47809fd69c23e444ec263a6dc3097651058fbddf2303d84025c651e98779f?w=500&amp;h=100" alt="Verymuch.Ai" class="logo-img logo-img-lg">
+        </a>
+        <p class="footer-desc" data-i18n="footer.desc">Instalamos agentes de IA y sistemas de automatización para que las empresas vendan más con menos fricción.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#services" data-i18n="nav.services">Servicios</a>
+        <a href="#how" data-i18n="nav.how">Cómo funciona</a>
+        <a href="#pricing" data-i18n="nav.pricing">Precios</a>
+        <a href="#team" data-i18n="nav.team">Equipo</a>
+        <a href="#contact" data-i18n="nav.cta">Contacto</a>
+        <a href="https://www.verymuch.ai" target="_blank" rel="noopener" data-i18n="nav.marketplace">Marketplace</a>
+      </div>
+    </div>
+    <div class="footer-address">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>1111B S Governors Ave # 94190, Dover, DE 19904</span>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Verymuch.ai — <span data-i18n="footer.rights">Todos los derechos reservados</span></span>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/verymuch-ai" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==========================================
+     FLOATING CTA (MOBILE)
+     ========================================== -->
+<div class="floating-cta" id="floatingCta">
+  <a href="https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="nav.cta">
+    Agenda una llamada <i class="fas fa-arrow-right"></i>
+  </a>
+</div>
+
+<!-- ==========================================
+     CHATBOT WIDGET
+     ========================================== -->
+<div class="chatbot-bubble" id="chatbotBubble">
+  <div class="chatbot-tooltip" id="chatbotTooltip">
+    <button class="chatbot-tooltip-close" onclick="closeChatTooltip()" aria-label="Close"><i class="fas fa-times"></i></button>
+    <p class="chatbot-tooltip-text" data-i18n="chat.tooltip">¡Hola! Soy el asistente de Verymuch.ai. ¿Tienes preguntas? Abre el chat 😊</p>
+    <button class="chatbot-tooltip-btn" onclick="openChatbot()" data-i18n="chat.tooltip.btn">Chatea conmigo</button>
+  </div>
+
+  <div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+      <img src="https://pfst.cf2.poecdn.net/base/image/cdc47809fd69c23e444ec263a6dc3097651058fbddf2303d84025c651e98779f?w=500&amp;h=100" alt="Verymuch.Ai" style="height:22px;width:auto">
+      <div class="chatbot-header-status">
+        <span class="chatbot-status-dot"></span>
+        <span data-i18n="chat.online">En línea</span>
+      </div>
+    </div>
+    <div class="chatbot-messages" id="chatMessages"></div>
+    <div class="chat-quick-actions" id="chatQuickActions"></div>
+    <div class="chatbot-input-area">
+      <input type="text" class="chatbot-input" id="chatInput" placeholder="Escribe tu mensaje..." data-i18n-placeholder="chat.input.ph" onkeydown="if(event.key==='Enter')sendChatMessage()">
+      <button class="chatbot-send" onclick="sendChatMessage()" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <button class="chatbot-trigger" onclick="toggleChatbot()" aria-label="Chat">
+    <i class="fas fa-comment-dots open-icon"></i>
+    <i class="fas fa-times close-icon"></i>
+  </button>
+</div>
+
+<!-- ==========================================
+     JAVASCRIPT
+     ========================================== -->
+<script>
+/* ============================================
+   TRANSLATIONS
+   ============================================ */
+const T = {
+  es: {
+    'nav.services': 'Servicios',
+    'nav.how': 'Cómo funciona',
+    'nav.roi': 'ROI',
+    'nav.why': 'Por qué nosotros',
+    'nav.team': 'Equipo',
+    'nav.pricing': 'Precios',
+    'nav.cta': 'Agenda una llamada',
+
+    'hero.badge': 'IA aplicada a Marketing y Ventas',
+    'hero.title': 'Instalamos <span class="gradient-text">agentes de IA</span> que venden mientras tú creces',
+    'hero.sub': 'Agentes de inteligencia artificial y sistemas de automatización para marketing y ventas. Todo lo que vendemos lo probamos primero en nuestra propia empresa. IA en producción real, no pilotos experimentales.',
+    'hero.cta1': 'Agenda una consultoría gratuita <i class="fas fa-arrow-right"></i>',
+    'hero.cta2': 'Ver cómo funciona <i class="fas fa-chevron-down"></i>',
+    'hero.sv1': '2-3 Semanas',
+    'hero.stat1': 'Tiempo de construcción',
+    'hero.stat2': 'Propiedad',
+    'hero.stat3': 'ROI en el Año 1',
+
+    'bar.text': 'IA que te trae clientes en automático. Pruébalo gratis',
+    'bar.btn': 'Descubre cómo',
+
+    'problems.tag': 'El desafío',
+    'problems.title': 'Tu empresa quiere implementar IA<br>pero se enfrenta a <span class="gradient-text">tres obstáculos</span>',
+    'problems.sub': 'Las empresas mid-market necesitan IA en sus procesos comerciales pero encuentran barreras reales.',
+    'problems.p1.title': 'No saben por dónde empezar',
+    'problems.p1.desc': 'Ni cómo priorizar lo que realmente impacta en negocio. La oferta de herramientas IA es abrumadora y cambia cada semana.',
+    'problems.p2.title': 'No tienen talento interno',
+    'problems.p2.desc': 'Para diseñar, construir y operar agentes de IA ni automatizaciones. El 45% cita falta de personal cualificado como barrera principal.',
+    'problems.p3.title': 'Las opciones son arriesgadas',
+    'problems.p3.desc': 'Freelancers sin verificar, agencias generalistas o consultores teóricos que no implementan. El riesgo es perder tiempo y dinero.',
+
+    'services.tag': 'Nuestras soluciones',
+    'services.title': 'Resolvemos los tres. <span class="gradient-text">Así.</span>',
+    'services.sub': 'Combinamos consultoría estratégica, implementación técnica y talento verificado.',
+    'services.s1.title': 'Consultoría Estratégica',
+    'services.s1.desc': 'Diagnosticamos tus procesos, identificamos áreas de mayor impacto y definimos una hoja de ruta de implementación.',
+    'services.s1.f1': 'Análisis de procesos comerciales',
+    'services.s1.f2': 'Identificación de oportunidades IA',
+    'services.s1.f3': 'Hoja de ruta personalizada',
+    'services.s2.title': 'Agentes de IA y Automatización',
+    'services.s2.desc': 'Diseñamos, construimos e instalamos agentes de IA y sistemas de automatización para todo el funnel comercial.',
+    'services.s2.f1': 'Inbound: detección, contenido, captación',
+    'services.s2.f2': 'Outbound: prospección, secuencias, seguimiento',
+    'services.s2.f3': 'Nurturing, conversión y handoff comercial',
+    'services.s3.title': 'Marketplace de Talento IA',
+    'services.s3.desc': 'Si necesitas algo que no cubrimos directamente, te conectamos con especialistas verificados de nuestro marketplace.',
+    'services.s3.f1': 'Talento verificado, no autodeclarado',
+    'services.s3.f2': 'Automatizaciones, chatbots, CRM y más',
+    'services.s3.f3': 'Pago por hitos con supervisión',
+    'services.s3.cta': 'Explorar Marketplace <i class="fas fa-external-link-alt"></i>',
+    'nav.marketplace': 'Marketplace',
+
+    'howAgents.tag': 'Cómo funcionan',
+    'howAgents.title': 'Cómo funcionan <span class="gradient-text">realmente</span> los agentes de IA',
+    'howAgents.sub': 'Piénsalo como contratar un nuevo empleado — uno que nunca duerme.',
+    'howAgents.s1.title': 'Tú defines el trabajo',
+    'howAgents.s1.desc': 'Nos dices qué trabajo manual quieres automatizar — responder leads, limpiar el CRM, investigar prospectos, enviar follow-ups, generar propuestas. Cualquier flujo repetitivo.',
+    'howAgents.s1.t1': 'Ventas', 'howAgents.s1.t2': 'Marketing', 'howAgents.s1.t3': 'Operaciones', 'howAgents.s1.t4': 'Soporte',
+    'howAgents.s2.title': 'Entrenamos al agente',
+    'howAgents.s2.desc': 'Configuramos la IA con tus instrucciones exactas, tono de voz, criterios de cualificación y herramientas. Aprende tu proceso — no plantillas genéricas.',
+    'howAgents.s2.t1': 'Tus reglas', 'howAgents.s2.t2': 'Tus criterios', 'howAgents.s2.t3': 'Tu voz',
+    'howAgents.s3.title': 'Trabaja de forma autónoma',
+    'howAgents.s3.desc': 'Una vez desplegado, el agente opera 24/7. Monitorea señales, procesa datos, toma decisiones y ejecuta acciones — todo dentro de los límites que estableces.',
+    'howAgents.s3.t1': '24/7', 'howAgents.s3.t2': 'Respuesta instantánea', 'howAgents.s3.t3': 'Cero errores',
+    'howAgents.s4.title': 'Tú eres el dueño de todo',
+    'howAgents.s4.desc': 'Sin lock-in de proveedor. Sin cuotas mensuales de plataforma. Eres dueño de los flujos, automatizaciones, prompts de IA y toda la infraestructura. Cancela cuando quieras.',
+    'howAgents.s4.t1': 'Tu infraestructura', 'howAgents.s4.t2': 'Entrega completa', 'howAgents.s4.t3': 'Sin lock-in',
+
+    'how.tag': 'Proceso',
+    'how.title': 'De llamada a <span class="gradient-text">agente funcionando</span> en 2-3 semanas',
+    'how.sub': 'Un proceso claro, medible y sin sorpresas. Pago por hitos.',
+    'how.s1.title': 'Discovery Call',
+    'how.s1.desc': 'Entendemos tus procesos y mapeamos el flujo ideal del agente',
+    'how.s1.time': '<i class="fas fa-clock"></i> 30 min',
+    'how.s2.title': 'Diseño del Agente',
+    'how.s2.desc': 'Arquitectura, integraciones y flujo de trabajo a medida',
+    'how.s2.time': '<i class="fas fa-clock"></i> 2–3 días',
+    'how.s3.title': 'Construcción y Deploy',
+    'how.s3.desc': 'Construimos, probamos y desplegamos el agente en tu empresa',
+    'how.s3.time': '<i class="fas fa-clock"></i> 1–2 semanas',
+    'how.s4.title': 'Entrega + Capacitación',
+    'how.s4.desc': 'Te entregamos todo. Documentación, training y soporte post-lanzamiento',
+    'how.s4.time': '<i class="fas fa-key"></i> Es tuyo',
+
+    'litmus.tag': 'Test de viabilidad',
+    'litmus.title': 'El test de <span class="gradient-text">viabilidad</span> del agente de IA',
+    'litmus.sub': 'Evalúa cualquier flujo de trabajo con estos 5 criterios. Si cumple 3+, estás dejando dinero sobre la mesa.',
+    'litmus.c1.title': 'Repetitivo',
+    'litmus.c1.desc': 'Se ejecuta diaria o semanalmente con los mismos pasos. Si tu equipo lo hace en piloto automático, una máquina debería hacerlo literalmente.',
+    'litmus.c1.ex': 'Cada lead inbound pasa por el mismo flujo: enriquecer → puntuar → asignar',
+    'litmus.c2.title': 'Consume tiempo, no cerebro',
+    'litmus.c2.desc': 'Consume horas pero no requiere pensamiento estratégico. Entrada de datos, búsquedas, construcción de listas, actualizaciones de estado.',
+    'litmus.c2.ex': 'Los reps pasan 20 min investigando cada prospecto antes de llamar',
+    'litmus.c3.title': 'Sensible a velocidad',
+    'litmus.c3.desc': 'Una respuesta más rápida cambia el resultado. El 78% de los compradores eligen al primero que responde.',
+    'litmus.c3.ex': 'Los leads inbound esperan +4 horas porque el equipo está ocupado',
+    'litmus.c4.title': 'Multi-herramienta',
+    'litmus.c4.desc': 'El flujo implica copiar datos entre 2+ plataformas. Más traspasos = más ROI del agente.',
+    'litmus.c4.ex': 'Después de cada llamada: actualizar HubSpot, avisar en Slack, registrar en ClickUp',
+    'litmus.c5.title': 'Propenso a errores',
+    'litmus.c5.desc': 'Cuando los humanos se apresuran u olvidan, se pierde revenue. Follow-ups perdidos, datos obsoletos, propuestas tardías.',
+    'litmus.c5.ex': 'El 30% de los registros del CRM están desactualizados porque nadie los mantiene',
+    'litmus.score': '¿3 de 5? Es luz verde.',
+    'litmus.scoreSub': '→ Agenda una llamada. Lo evaluamos en 30 min.',
+    'litmus.cta': 'Agenda tu llamada <i class="fas fa-arrow-right"></i>',
+
+    'pricing.tag': 'Precios',
+    'pricing.title': 'Inversión <span class="gradient-text">transparente</span>',
+    'pricing.toggle.install': 'Instalación',
+    'pricing.toggle.install.sub': 'Tú eres dueño',
+    'pricing.toggle.aaas': 'AaaS',
+    'pricing.toggle.aaas.sub': 'Nosotros operamos',
+    'pricing.desc.install': 'Pago único por la construcción. Tú eres dueño del 100% de la infraestructura, flujos, prompts y automatizaciones. Sin lock-in. Mantenimiento opcional.',
+    'pricing.desc.aaas': 'Setup desde €500 + suscripción mensual. Nosotros alojamos, operamos y optimizamos todo. Tú te enfocas en vender.',
+    'pricing.pack1.name': 'Starter',
+    'pricing.pack1.agents': '2–3 Agentes',
+    'pricing.pack1.f1': '2–3 agentes de IA personalizados',
+    'pricing.pack1.f2': 'Integraciones CRM, email, Slack',
+    'pricing.pack1.f3': 'Testing, QA y documentación',
+    'pricing.pack1.f4': '2 semanas soporte post-entrega',
+    'pricing.pack1.f5': 'Pago por hitos verificados',
+    'pricing.pack2.name': 'Growth',
+    'pricing.pack2.agents': '4–5 Agentes',
+    'pricing.pack2.f1': '4–5 agentes, cobertura de funnel completo',
+    'pricing.pack2.f2': 'Integraciones avanzadas multi-plataforma',
+    'pricing.pack2.f3': 'Soporte prioritario y SLA',
+    'pricing.pack2.f4': 'Documentación y capacitación del equipo',
+    'pricing.pack2.f5': 'Pago por hitos + project lead dedicado',
+    'pricing.pack3.name': 'Scale',
+    'pricing.pack3.agents': '6+ Agentes',
+    'pricing.pack3.f1': '6+ agentes de IA a medida',
+    'pricing.pack3.f2': 'Integraciones enterprise personalizadas',
+    'pricing.pack3.f3': 'Project lead y SLA personalizado',
+    'pricing.pack3.f4': 'Capacitación completa del equipo',
+    'pricing.pack3.f5': 'Propiedad total de la infraestructura',
+    'pricing.setup': '+ Setup desde €500',
+    'pricing.recommended': 'Recomendado',
+    'pricing.cta': 'Agenda tu llamada <i class="fas fa-arrow-right"></i>',
+    'pricing.agents.title': 'Referencia de precios por agente individual',
+    'pricing.agent.productor': 'Productor',
+    'pricing.agent.distribuidor': 'Distribuidor',
+    'pricing.agent.clasificador': 'Clasificador',
+    'pricing.maint.title': 'Mantenimiento opcional (modalidad Instalación)',
+    'pricing.maint.basic': 'Básico',
+    'pricing.maint.basic.desc': 'Monitoreo, parches y correcciones menores',
+    'pricing.maint.adv': 'Avanzado',
+    'pricing.maint.adv.desc': 'Optimización, nuevos flujos, A/B testing y reportes',
+    'pricing.g1': 'Pago por hitos',
+    'pricing.g2': '2 semanas soporte post-entrega',
+    'pricing.g3': 'NDA incluido',
+    'pricing.g4': 'Sin lock-in',
+    'pricing.api': '* Los costes de APIs externas (OpenAI, Apollo, etc.) son por cuenta del cliente en ambas modalidades.',
+    'pricing.custom': '¿Necesitas algo fuera de catálogo? Desarrollo a medida con cotización personalizada.',
+    'pricing.custom.cta': 'Solicitar cotización →',
+
+    'roi.tag': 'Calculadora ROI',
+    'roi.title': 'Calcula cuánto puede <span class="gradient-text">ahorrarte la IA</span>',
+    'roi.sub': 'Mueve los controles y descubre el impacto real en tu empresa.',
+    'roi.label1': 'Tamaño del equipo comercial',
+    'roi.label2': 'Horas manuales por persona/semana',
+    'roi.label3': 'Coste anual por empleado',
+    'roi.r1': 'Coste manual anual',
+    'roi.r2': 'Inversión IA estimada/año',
+    'roi.r3': 'Ahorro neto anual',
+    'roi.r4': 'Período de retorno',
+
+    'why.tag': 'Diferenciadores',
+    'why.title': '¿Por qué <span class="gradient-text">Verymuch.ai</span>?',
+    'why.sub': 'No son claims de marketing. Son hechos operativos que nos diferencian.',
+    'why.w1.title': 'Comemos nuestra propia comida',
+    'why.w1.desc': 'Todo lo que vendemos lo usamos primero internamente. Si no funciona para nosotros, no lo vendemos.',
+    'why.w2.title': 'Pago por hitos verificados',
+    'why.w2.desc': 'No pagas por promesas. Pagas por resultados verificados. Siempre velamos por los intereses del cliente.',
+    'why.w3.title': 'IA en producción real',
+    'why.w3.desc': 'El cliente recibe un sistema que ya funciona en producción, no un piloto experimental. Riesgo mínimo.',
+    'why.w4.title': 'Talento verificado',
+    'why.w4.desc': 'Cada especialista pasa un proceso de verificación. No es un directorio abierto donde cualquiera se registra.',
+    'why.w5.title': 'Precios competitivos',
+    'why.w5.desc': 'Talento LATAM verificado permite precios significativamente más competitivos sin comprometer calidad.',
+    'why.w6.title': 'España + México + EUA',
+    'why.w6.desc': 'Presencia en los mercados clave del mundo hispanohablante y angloparlante. Operamos en español e inglés.',
+
+    'team.tag': 'Equipo',
+    'team.title': 'Quiénes <span class="gradient-text">construyen</span> esto',
+    'team.sub': 'Emprendedores que construyen en la intersección de IA y Go-To-Market.',
+    'team.jorge.role': 'Cofundador',
+    'team.jorge.loc': 'Madrid, España',
+    'team.jorge.bio': 'Estrategia, marketing, ventas y posicionamiento. Lidera la estrategia de contenido en LinkedIn y el posicionamiento de marca como motor de adquisición.',
+    'team.jorge.c2': 'Máster IA Marketing — ESIC',
+    'team.edwin.role': 'Cofundador',
+    'team.edwin.loc': 'México',
+    'team.edwin.bio': 'Implementación de IA, gobernanza, operaciones y transformación organizacional. Especialista en llevar la IA de pilotos a producción real.',
+    'team.edwin.c4': 'Economía — Universidad Iberoamericana',
+
+    'cta.tag': 'Empecemos',
+    'cta.title': '¿Listo para construir tu primer <span class="gradient-text">agente de IA</span>?',
+    'cta.sub': 'Agenda una llamada de descubrimiento gratuita. Te mostramos exactamente cómo un agente de IA personalizado puede funcionar para tu negocio.',
+    'cta.btn': 'Agenda tu consultoría gratuita <i class="fas fa-arrow-right"></i>',
+
+    'agents.tag': 'Agentes en producción',
+    'agents.title': 'Agentes funcionando <span class="gradient-text">ahora mismo</span>',
+    'agents.sub': 'No son conceptos. Son sistemas vivos generando resultados.',
+    'agents.filter.all': 'Todos',
+    'agents.filter.captacion': 'Captación',
+    'agents.filter.inteligencia': 'Inteligencia',
+    'agents.filter.conversion': 'Conversión',
+    'agents.filter.operaciones': 'Operaciones',
+    'agents.a1.name': 'Lead Router Inbound',
+    'agents.a1.pl': 'PROBLEMA', 'agents.a1.sl': 'SOLUCIÓN', 'agents.a1.rl': 'RESULTADO',
+    'agents.a1.p': 'Los leads esperan +4 horas. El 78% compra al primero que responde.',
+    'agents.a1.s': 'Responde en &lt;60s. Enriquece datos. Puntúa con IA. Alta puntuación → agenda. Baja → nurturing.',
+    'agents.a1.r': '5x más rápido → 3x más reuniones',
+    'agents.a2.name': 'Prospección por Señales',
+    'agents.a2.pl': 'PROBLEMA', 'agents.a2.sl': 'SOLUCIÓN', 'agents.a2.rl': 'RESULTADO',
+    'agents.a2.p': 'SDRs pierden el 70% del tiempo en investigación manual.',
+    'agents.a2.s': 'Monitorea señales, auto-enriquece contactos, personaliza con IA y envía por infraestructura calentada.',
+    'agents.a2.r': 'De 2% a 5-8% tasa de respuesta',
+    'agents.a3.name': 'CRM Hygiene Bot',
+    'agents.a3.pl': 'PROBLEMA', 'agents.a3.sl': 'SOLUCIÓN', 'agents.a3.rl': 'RESULTADO',
+    'agents.a3.p': 'CRM con 40% de datos obsoletos. Reportes poco fiables.',
+    'agents.a3.s': 'Escanea datos obsoletos, enriquece desde 100+ fuentes, detecta duplicados, actualiza cambios de empleo.',
+    'agents.a3.r': '95%+ de precisión, cero carga manual',
+    'agents.a4.name': 'Agente Pre-Llamada',
+    'agents.a4.pl': 'PROBLEMA', 'agents.a4.sl': 'SOLUCIÓN', 'agents.a4.rl': 'RESULTADO',
+    'agents.a4.p': '20-30 min de investigación por cada llamada de ventas.',
+    'agents.a4.s': 'Extrae noticias, LinkedIn, tech stack, funding, competencia. Briefing de 1 página 30 min antes de la llamada.',
+    'agents.a4.r': 'Cero preparación, mejores conversaciones',
+    'agents.a5.name': 'Nurturing & Follow-up',
+    'agents.a5.pl': 'PROBLEMA', 'agents.a5.sl': 'SOLUCIÓN', 'agents.a5.rl': 'RESULTADO',
+    'agents.a5.p': 'Follow-ups que se pierden. Leads que se enfrían.',
+    'agents.a5.s': 'Rastrea señales de engagement, dispara follow-ups personalizados, reactiva leads fríos con contexto fresco.',
+    'agents.a5.r': '40% más pipeline recuperado',
+    'agents.a6.name': 'Generador de Propuestas',
+    'agents.a6.pl': 'PROBLEMA', 'agents.a6.sl': 'SOLUCIÓN', 'agents.a6.rl': 'RESULTADO',
+    'agents.a6.p': 'Propuestas personalizadas tardan +3 horas cada una.',
+    'agents.a6.s': 'Extrae notas, datos CRM y tarifas. La IA genera propuesta personalizada. El humano revisa y envía.',
+    'agents.a6.r': '90% menos tiempo por propuesta',
+    'agents.a7.name': 'Agente de Onboarding',
+    'agents.a7.pl': 'PROBLEMA', 'agents.a7.sl': 'SOLUCIÓN', 'agents.a7.rl': 'RESULTADO',
+    'agents.a7.p': 'El onboarding es desordenado. Se pierden pasos.',
+    'agents.a7.s': 'Se activa al cerrar un deal. Crea workspace, envía secuencia de bienvenida, agenda kickoff, provisiona cuentas y rastrea hitos.',
+    'agents.a7.r': 'Tiempo de onboarding reducido 60%',
+    'agents.a8.name': 'Ops Interno & Reportes',
+    'agents.a8.pl': 'PROBLEMA', 'agents.a8.sl': 'SOLUCIÓN', 'agents.a8.rl': 'RESULTADO',
+    'agents.a8.p': 'Hojas de cálculo manuales consumen horas cada semana.',
+    'agents.a8.s': 'Monitorea herramientas, sincroniza datos, genera reportes semanales, detecta anomalías y alerta al equipo.',
+    'agents.a8.r': '+10h/semana ahorradas en ops',
+
+    'quiz.tag': 'Diagnóstico rápido',
+    'quiz.title': 'Encuentra tu agente de <span class="gradient-text">mayor ROI</span>',
+    'quiz.sub': 'Responde 3 preguntas. Obtén una recomendación personalizada.',
+    'quiz.placeholder': 'Responde las preguntas para obtener tu recomendación →',
+
+    'chat.tooltip': '¡Hola! Soy el asistente de Verymuch.ai. ¿Tienes preguntas? Abre el chat 😊',
+    'chat.tooltip.btn': 'Chatea conmigo',
+    'chat.online': 'En línea',
+    'chat.input.ph': 'Escribe tu mensaje...',
+
+    'footer.desc': 'Instalamos agentes de IA y sistemas de automatización para que las empresas vendan más con menos fricción.',
+    'footer.rights': 'Todos los derechos reservados',
+  },
+
+  en: {
+    'nav.services': 'Services',
+    'nav.how': 'How it works',
+    'nav.roi': 'ROI',
+    'nav.why': 'Why us',
+    'nav.team': 'Team',
+    'nav.pricing': 'Pricing',
+    'nav.cta': 'Book a call',
+
+    'hero.badge': 'AI for Marketing & Sales',
+    'hero.title': 'We install <span class="gradient-text">AI agents</span> that sell while you grow',
+    'hero.sub': 'AI agents and automation systems for marketing and sales. Everything we sell, we test first in our own company. Real production AI, not experimental pilots.',
+    'hero.cta1': 'Book a free consultation <i class="fas fa-arrow-right"></i>',
+    'hero.cta2': 'See how it works <i class="fas fa-chevron-down"></i>',
+    'hero.sv1': '2-3 Weeks',
+    'hero.stat1': 'Build Time',
+    'hero.stat2': 'Ownership',
+    'hero.stat3': 'ROI in Year 1',
+
+    'bar.text': 'AI that brings you clients on autopilot. Try it free',
+    'bar.btn': 'Learn how',
+
+    'problems.tag': 'The challenge',
+    'problems.title': 'Your company wants to adopt AI<br>but faces <span class="gradient-text">three obstacles</span>',
+    'problems.sub': 'Mid-market companies need AI in their sales processes but encounter real barriers.',
+    'problems.p1.title': "They don't know where to start",
+    'problems.p1.desc': "Or how to prioritize what truly impacts the business. The AI tool landscape is overwhelming and changes every week.",
+    'problems.p2.title': "They lack internal talent",
+    'problems.p2.desc': "To design, build, and operate AI agents or automations. 45% cite lack of qualified staff as the main barrier.",
+    'problems.p3.title': 'The options are risky',
+    'problems.p3.desc': "Unverified freelancers, generalist agencies, or theoretical consultants who don't implement. The risk is wasting time and money.",
+
+    'services.tag': 'Our solutions',
+    'services.title': 'We solve all three. <span class="gradient-text">Here\'s how.</span>',
+    'services.sub': 'We combine strategic consulting, technical implementation, and verified talent.',
+    'services.s1.title': 'Strategic Consulting',
+    'services.s1.desc': 'We diagnose your processes, identify high-impact areas, and define an implementation roadmap.',
+    'services.s1.f1': 'Business process analysis',
+    'services.s1.f2': 'AI opportunity identification',
+    'services.s1.f3': 'Personalized implementation roadmap',
+    'services.s2.title': 'AI Agents & Automation',
+    'services.s2.desc': 'We design, build, and install AI agents and automation systems for your entire sales funnel.',
+    'services.s2.f1': 'Inbound: detection, content, lead capture',
+    'services.s2.f2': 'Outbound: prospecting, sequences, follow-up',
+    'services.s2.f3': 'Nurturing, conversion & sales handoff',
+    'services.s3.title': 'AI Talent Marketplace',
+    'services.s3.desc': "If you need something we don't cover directly, we connect you with verified specialists from our marketplace.",
+    'services.s3.f1': 'Verified talent, not self-declared',
+    'services.s3.f2': 'Automations, chatbots, CRM & more',
+    'services.s3.f3': 'Milestone-based payments with oversight',
+    'services.s3.cta': 'Explore Marketplace <i class="fas fa-external-link-alt"></i>',
+    'nav.marketplace': 'Marketplace',
+
+    'howAgents.tag': 'How they work',
+    'howAgents.title': 'How AI agents <span class="gradient-text">actually</span> work',
+    'howAgents.sub': 'Think of it like hiring a new employee — but one that never sleeps.',
+    'howAgents.s1.title': 'You define the job',
+    'howAgents.s1.desc': 'You tell us what manual work you want handled — responding to leads, cleaning CRM data, researching prospects, sending follow-ups, generating proposals. Any repetitive workflow.',
+    'howAgents.s1.t1': 'Sales', 'howAgents.s1.t2': 'Marketing', 'howAgents.s1.t3': 'Operations', 'howAgents.s1.t4': 'Support',
+    'howAgents.s2.title': 'We train the agent',
+    'howAgents.s2.desc': 'We configure the AI with your exact instructions, tone of voice, qualifying criteria, and tools. It learns your process — not generic templates.',
+    'howAgents.s2.t1': 'Your Rules', 'howAgents.s2.t2': 'Your Criteria', 'howAgents.s2.t3': 'Your Voice',
+    'howAgents.s3.title': 'It works autonomously',
+    'howAgents.s3.desc': 'Once deployed, the agent runs 24/7. It monitors signals, processes data, makes decisions, and takes action — all within the guardrails you set.',
+    'howAgents.s3.t1': '24/7', 'howAgents.s3.t2': 'Instant Response', 'howAgents.s3.t3': 'Zero Errors',
+    'howAgents.s4.title': 'You own everything',
+    'howAgents.s4.desc': 'No vendor lock-in. No monthly platform fees. You own the workflows, automations, AI prompts, the entire infrastructure. Cancel anytime and everything keeps running.',
+    'howAgents.s4.t1': 'Your Infrastructure', 'howAgents.s4.t2': 'Full Handoff', 'howAgents.s4.t3': 'No Lock-In',
+
+    'how.tag': 'Process',
+    'how.title': 'From call to <span class="gradient-text">running agent</span> in 2-3 weeks',
+    'how.sub': 'A clear, measurable, no-surprises process. Milestone-based payments.',
+    'how.s1.title': 'Discovery Call',
+    'how.s1.desc': 'We understand your processes and map the ideal agent workflow',
+    'how.s1.time': '<i class="fas fa-clock"></i> 30 min',
+    'how.s2.title': 'Agent Design',
+    'how.s2.desc': 'Architecture, integrations, and custom workflow',
+    'how.s2.time': '<i class="fas fa-clock"></i> 2–3 days',
+    'how.s3.title': 'Build & Deploy',
+    'how.s3.desc': 'We build, test, and deploy the agent in your company',
+    'how.s3.time': '<i class="fas fa-clock"></i> 1–2 weeks',
+    'how.s4.title': 'Handoff + Training',
+    'how.s4.desc': 'We hand everything over. Documentation, training, and post-launch support',
+    'how.s4.time': '<i class="fas fa-key"></i> You own it',
+
+    'litmus.tag': 'Litmus test',
+    'litmus.title': 'The AI Agent <span class="gradient-text">Litmus Test</span>',
+    'litmus.sub': 'Score any workflow against these 5 criteria. If it hits 3+, you\'re leaving money on the table.',
+    'litmus.c1.title': 'Repetitive',
+    'litmus.c1.desc': 'Runs daily or weekly with the same steps each time. If your team does it on autopilot, a machine should do it literally.',
+    'litmus.c1.ex': 'Every inbound lead gets the same enrich → score → route flow',
+    'litmus.c2.title': 'Time-Heavy, Not Brain-Heavy',
+    'litmus.c2.desc': 'Eats hours but requires zero strategic thinking. Data entry, research lookups, list building, status updates.',
+    'litmus.c2.ex': 'Reps spend 20 min researching every single prospect before a call',
+    'litmus.c3.title': 'Speed-Sensitive',
+    'litmus.c3.desc': 'A faster response changes the outcome. 78% of buyers choose whoever responds first.',
+    'litmus.c3.ex': 'Inbound leads wait 4+ hours because the team is busy',
+    'litmus.c4.title': 'Multi-Tool',
+    'litmus.c4.desc': 'The workflow involves copying data between 2+ platforms. More hand-offs = more agent ROI.',
+    'litmus.c4.ex': 'After every call: update HubSpot, Slack the team, log in ClickUp',
+    'litmus.c5.title': 'Error-Prone',
+    'litmus.c5.desc': 'When humans rush or forget, revenue leaks. Missed follow-ups, stale data, late proposals.',
+    'litmus.c5.ex': '30% of CRM records are outdated because nobody maintains them',
+    'litmus.score': '3 out of 5? That\'s a green light.',
+    'litmus.scoreSub': '→ Book a call. We\'ll scope it in 30 min.',
+    'litmus.cta': 'Book your call <i class="fas fa-arrow-right"></i>',
+
+    'pricing.tag': 'Pricing',
+    'pricing.title': 'Transparent <span class="gradient-text">investment</span>',
+    'pricing.toggle.install': 'Installation',
+    'pricing.toggle.install.sub': 'You own it',
+    'pricing.toggle.aaas': 'AaaS',
+    'pricing.toggle.aaas.sub': 'We operate it',
+    'pricing.desc.install': 'One-time build fee. You own 100% of the infrastructure, workflows, prompts, and automations. No lock-in. Optional maintenance.',
+    'pricing.desc.aaas': 'Setup from €500 + monthly subscription. We host, operate, and optimize everything. You focus on selling.',
+    'pricing.pack1.name': 'Starter',
+    'pricing.pack1.agents': '2–3 Agents',
+    'pricing.pack1.f1': '2–3 custom AI agents',
+    'pricing.pack1.f2': 'CRM, email & Slack integrations',
+    'pricing.pack1.f3': 'Testing, QA & documentation',
+    'pricing.pack1.f4': '2-week post-delivery support',
+    'pricing.pack1.f5': 'Verified milestone payments',
+    'pricing.pack2.name': 'Growth',
+    'pricing.pack2.agents': '4–5 Agents',
+    'pricing.pack2.f1': '4–5 agents, full funnel coverage',
+    'pricing.pack2.f2': 'Advanced multi-platform integrations',
+    'pricing.pack2.f3': 'Priority support & SLA',
+    'pricing.pack2.f4': 'Documentation & team training',
+    'pricing.pack2.f5': 'Milestone payments + dedicated project lead',
+    'pricing.pack3.name': 'Scale',
+    'pricing.pack3.agents': '6+ Agents',
+    'pricing.pack3.f1': '6+ custom AI agents',
+    'pricing.pack3.f2': 'Custom enterprise integrations',
+    'pricing.pack3.f3': 'Dedicated project lead & custom SLA',
+    'pricing.pack3.f4': 'Full team training program',
+    'pricing.pack3.f5': 'Total infrastructure ownership',
+    'pricing.setup': '+ Setup from €500',
+    'pricing.recommended': 'Recommended',
+    'pricing.cta': 'Book your call <i class="fas fa-arrow-right"></i>',
+    'pricing.agents.title': 'Individual agent price reference',
+    'pricing.agent.productor': 'Content Producer',
+    'pricing.agent.distribuidor': 'Distributor',
+    'pricing.agent.clasificador': 'Lead Scorer',
+    'pricing.maint.title': 'Optional maintenance (Installation mode)',
+    'pricing.maint.basic': 'Basic',
+    'pricing.maint.basic.desc': 'Monitoring, patches & minor fixes',
+    'pricing.maint.adv': 'Advanced',
+    'pricing.maint.adv.desc': 'Optimization, new flows, A/B testing & reports',
+    'pricing.g1': 'Milestone payments',
+    'pricing.g2': '2-week post-delivery support',
+    'pricing.g3': 'NDA included',
+    'pricing.g4': 'No lock-in',
+    'pricing.api': '* External API costs (OpenAI, Apollo, etc.) are paid by the client in both modalities.',
+    'pricing.custom': 'Need something off-catalog? Custom development with personalized quote.',
+    'pricing.custom.cta': 'Request a quote →',
+
+    'roi.tag': 'ROI Calculator',
+    'roi.title': 'Calculate how much <span class="gradient-text">AI can save you</span>',
+    'roi.sub': 'Move the sliders and discover the real impact on your business.',
+    'roi.label1': 'Sales team size',
+    'roi.label2': 'Manual hours per person/week',
+    'roi.label3': 'Annual cost per employee',
+    'roi.r1': 'Annual manual cost',
+    'roi.r2': 'Estimated AI investment/year',
+    'roi.r3': 'Annual net savings',
+    'roi.r4': 'Payback period',
+
+    'why.tag': 'Differentiators',
+    'why.title': 'Why <span class="gradient-text">Verymuch.ai</span>?',
+    'why.sub': "These aren't marketing claims. They're operational facts that set us apart.",
+    'why.w1.title': 'We eat our own dog food',
+    'why.w1.desc': "Everything we sell, we use internally first. If it doesn't work for us, we don't sell it.",
+    'why.w2.title': 'Verified milestone payments',
+    'why.w2.desc': "You don't pay for promises. You pay for verified results. We always protect the client's interests.",
+    'why.w3.title': 'Real production AI',
+    'why.w3.desc': 'The client receives a system that already works in production, not an experimental pilot. Minimal risk.',
+    'why.w4.title': 'Verified talent',
+    'why.w4.desc': "Every specialist goes through a verification process. It's not an open directory where anyone signs up.",
+    'why.w5.title': 'Competitive pricing',
+    'why.w5.desc': 'Verified LATAM talent enables significantly more competitive execution prices without sacrificing quality.',
+    'why.w6.title': 'Spain + Mexico + USA',
+    'why.w6.desc': 'Presence in key Spanish-speaking and English-speaking markets. We operate in both Spanish and English.',
+
+    'team.tag': 'Team',
+    'team.title': 'Who <span class="gradient-text">builds</span> this',
+    'team.sub': 'Entrepreneurs building at the intersection of AI and Go-To-Market.',
+    'team.jorge.role': 'Co-founder',
+    'team.jorge.loc': 'Madrid, Spain',
+    'team.jorge.bio': 'Strategy, marketing, sales, and positioning. Leads the LinkedIn content strategy and brand positioning as the acquisition engine.',
+    'team.jorge.c2': 'MSc AI Marketing — ESIC',
+    'team.edwin.role': 'Co-founder',
+    'team.edwin.loc': 'Mexico',
+    'team.edwin.bio': 'AI implementation, governance, operations, and organizational transformation. Specialist in taking AI from pilots to real production.',
+    'team.edwin.c4': 'Economics — Universidad Iberoamericana',
+
+    'cta.tag': "Let's start",
+    'cta.title': 'Ready to build your first <span class="gradient-text">AI agent</span>?',
+    'cta.sub': 'Book a free discovery call. We\'ll show you exactly how a custom AI agent can work for your business.',
+    'cta.btn': 'Book your free consultation <i class="fas fa-arrow-right"></i>',
+
+    'agents.tag': 'Agents in production',
+    'agents.title': 'Agents running <span class="gradient-text">right now</span>',
+    'agents.sub': 'Not concepts. Live systems generating results.',
+    'agents.filter.all': 'All',
+    'agents.filter.captacion': 'Acquisition',
+    'agents.filter.inteligencia': 'Intelligence',
+    'agents.filter.conversion': 'Conversion',
+    'agents.filter.operaciones': 'Operations',
+    'agents.a1.name': 'Inbound Lead Router',
+    'agents.a1.pl': 'PROBLEM', 'agents.a1.sl': 'SOLUTION', 'agents.a1.rl': 'RESULT',
+    'agents.a1.p': 'Leads wait 4+ hours. 78% buy from first responder.',
+    'agents.a1.s': 'Responds in &lt;60s. Enriches data. AI-scores. High scores get calendar. Low scores enter nurturing.',
+    'agents.a1.r': '5x faster → 3x more meetings',
+    'agents.a2.name': 'Signal-Based Prospecting',
+    'agents.a2.pl': 'PROBLEM', 'agents.a2.sl': 'SOLUTION', 'agents.a2.rl': 'RESULT',
+    'agents.a2.p': 'SDRs waste 70% of time on manual research.',
+    'agents.a2.s': 'Monitors signals, auto-enriches contacts, AI-personalizes messages, sends through warmed infrastructure.',
+    'agents.a2.r': 'From 2% to 5-8% reply rates',
+    'agents.a3.name': 'CRM Hygiene Bot',
+    'agents.a3.pl': 'PROBLEM', 'agents.a3.sl': 'SOLUTION', 'agents.a3.rl': 'RESULT',
+    'agents.a3.p': 'CRM 40% outdated. Reports unreliable.',
+    'agents.a3.s': 'Scans for stale data, enriches from 100+ sources, flags duplicates, updates job changes.',
+    'agents.a3.r': '95%+ accuracy, zero manual entry',
+    'agents.a4.name': 'Pre-Call Research Agent',
+    'agents.a4.pl': 'PROBLEM', 'agents.a4.sl': 'SOLUTION', 'agents.a4.rl': 'RESULT',
+    'agents.a4.p': '20-30 min research per sales call.',
+    'agents.a4.s': 'Pulls company news, LinkedIn, tech stack, funding, competitors. 1-page briefing 30 min before call.',
+    'agents.a4.r': 'Zero prep, better conversations',
+    'agents.a5.name': 'Nurturing & Follow-up',
+    'agents.a5.pl': 'PROBLEM', 'agents.a5.sl': 'SOLUTION', 'agents.a5.rl': 'RESULT',
+    'agents.a5.p': 'Follow-ups fall through the cracks. Leads go cold.',
+    'agents.a5.s': 'Tracks engagement signals, triggers personalized follow-ups, re-engages cold leads with fresh context.',
+    'agents.a5.r': '40% more pipeline recovered',
+    'agents.a6.name': 'Proposal Generator',
+    'agents.a6.pl': 'PROBLEM', 'agents.a6.sl': 'SOLUTION', 'agents.a6.rl': 'RESULT',
+    'agents.a6.p': 'Custom proposals take 3+ hours each.',
+    'agents.a6.s': 'Pulls call notes, CRM data, pricing tables. AI generates a tailored proposal. Human reviews and sends.',
+    'agents.a6.r': '90% less time per proposal',
+    'agents.a7.name': 'Client Onboarding Agent',
+    'agents.a7.pl': 'PROBLEM', 'agents.a7.sl': 'SOLUTION', 'agents.a7.rl': 'RESULT',
+    'agents.a7.p': 'Onboarding is messy. Steps get dropped.',
+    'agents.a7.s': 'Triggers when a deal closes. Creates workspace, sends welcome sequence, schedules kickoff, provisions accounts, and tracks milestones.',
+    'agents.a7.r': 'Onboarding time cut by 60%',
+    'agents.a8.name': 'Internal Ops & Reporting',
+    'agents.a8.pl': 'PROBLEM', 'agents.a8.sl': 'SOLUTION', 'agents.a8.rl': 'RESULT',
+    'agents.a8.p': 'Manual spreadsheet work eats hours every week.',
+    'agents.a8.s': 'Monitors tools for inconsistencies, auto-syncs records, generates weekly reports, flags anomalies and alerts.',
+    'agents.a8.r': '10+ hours/week saved on ops',
+
+    'quiz.tag': 'Quick diagnosis',
+    'quiz.title': 'Find your <span class="gradient-text">highest-ROI</span> agent',
+    'quiz.sub': 'Answer 3 questions. Get a personalized recommendation.',
+    'quiz.placeholder': 'Answer the questions to get your recommendation →',
+
+    'chat.tooltip': "Hi! I'm Verymuch.ai's assistant. Have questions? Open the chat 😊",
+    'chat.tooltip.btn': 'Chat with me',
+    'chat.online': 'Online',
+    'chat.input.ph': 'Type your message...',
+
+    'footer.desc': 'We install AI agents and automation systems so companies sell more with less friction.',
+    'footer.rights': 'All rights reserved',
+  }
+};
+
+let currentLang = 'es';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+
+  // Update toggle buttons
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+  });
+
+  // Update all translatable elements
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (T[lang] && T[lang][key]) {
+      el.innerHTML = T[lang][key];
+    }
+  });
+
+  // Update placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-placeholder');
+    if (T[lang] && T[lang][key]) {
+      el.placeholder = T[lang][key];
+    }
+  });
+
+  // Update ROI labels
+  updateROI();
+
+  // Update pricing display for current mode
+  updatePricingDisplay();
+}
+
+/* ============================================
+   DARK MODE DETECTION
+   ============================================ */
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.classList.add('dark');
+}
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(event) {
+  if (event.matches) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+});
+
+/* ============================================
+   NAVBAR SCROLL
+   ============================================ */
+var navbar = document.getElementById('navbar');
+var lastScroll = 0;
+
+window.addEventListener('scroll', function() {
+  var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+  lastScroll = scrollY;
+});
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+function toggleMobileMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var toggle = document.getElementById('mobileToggle');
+  menu.classList.toggle('open');
+  toggle.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+
+function closeMobileMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var toggle = document.getElementById('mobileToggle');
+  menu.classList.remove('open');
+  toggle.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+var animObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      animObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.anim').forEach(function(el) {
+  animObserver.observe(el);
+});
+
+/* ============================================
+   COUNTER ANIMATION
+   ============================================ */
+var counterObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      var el = entry.target;
+      var target = parseFloat(el.getAttribute('data-counter'));
+      var suffix = el.getAttribute('data-suffix') || '%';
+      var isDecimal = target % 1 !== 0;
+      var duration = 1800;
+      var startTime = null;
+
+      function animateCounter(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = target * eased;
+
+        if (isDecimal) {
+          el.textContent = current.toFixed(1) + suffix;
+        } else {
+          el.textContent = Math.round(current) + suffix;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(animateCounter);
+        }
+      }
+      requestAnimationFrame(animateCounter);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-counter]').forEach(function(el) {
+  counterObserver.observe(el);
+});
+
+/* ============================================
+   AGENTS CATEGORY FILTER
+   ============================================ */
+function filterAgents(category) {
+  // Update filter buttons
+  document.querySelectorAll('.agents-filter-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.getAttribute('data-filter') === category);
+  });
+
+  // Filter cards
+  var cards = document.querySelectorAll('.agent-card[data-category]');
+  cards.forEach(function(card) {
+    if (category === 'all' || card.getAttribute('data-category') === category) {
+      card.classList.remove('agent-hidden');
+      card.style.display = '';
+    } else {
+      card.classList.add('agent-hidden');
+      // Use timeout to allow opacity transition before hiding
+      setTimeout(function() {
+        if (card.classList.contains('agent-hidden')) {
+          card.style.display = 'none';
+        }
+      }, 50);
+    }
+  });
+}
+
+/* ============================================
+   PRICING TOGGLE
+   ============================================ */
+var currentPricingMode = 'install';
+
+var pricingPeriodTexts = {
+  'install-es': 'pago único',
+  'install-en': 'one-time',
+  'aaas-es': '/mes',
+  'aaas-en': '/mo'
+};
+
+function setPricingMode(mode) {
+  currentPricingMode = mode;
+
+  // Update toggle buttons
+  document.querySelectorAll('.pricing-toggle-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.getAttribute('data-mode') === mode);
+  });
+
+  updatePricingDisplay();
+}
+
+function updatePricingDisplay() {
+  var mode = currentPricingMode;
+  var lang = currentLang;
+
+  // Update mode description
+  var descEl = document.getElementById('pricingModeDesc');
+  if (descEl && T[lang]) {
+    var descKey = 'pricing.desc.' + mode;
+    if (T[lang][descKey]) {
+      descEl.textContent = T[lang][descKey];
+      descEl.setAttribute('data-i18n', descKey);
+    }
+  }
+
+  // Update pack prices
+  document.querySelectorAll('.pricing-amount[data-price-install]').forEach(function(el) {
+    el.textContent = el.getAttribute('data-price-' + mode);
+  });
+
+  // Update periods
+  var periodKey = mode + '-' + lang;
+  document.querySelectorAll('.pricing-period').forEach(function(el) {
+    if (el.closest('.pricing-card')) {
+      el.textContent = pricingPeriodTexts[periodKey] || '';
+    }
+  });
+
+  // Show/hide AaaS setup notes
+  document.querySelectorAll('.pricing-setup-note').forEach(function(el) {
+    el.style.display = mode === 'aaas' ? 'block' : 'none';
+  });
+
+  // Update agent prices
+  document.querySelectorAll('.pricing-agent-price[data-agent-install]').forEach(function(el) {
+    el.textContent = el.getAttribute('data-agent-' + mode);
+  });
+
+  // Show/hide maintenance section
+  var maintEl = document.getElementById('pricingMaintenance');
+  if (maintEl) {
+    maintEl.classList.toggle('hidden', mode !== 'install');
+  }
+}
+
+// Initialize pricing display
+document.addEventListener('DOMContentLoaded', function() {
+  updatePricingDisplay();
+});
+
+/* ============================================
+   ROI CALCULATOR
+   ============================================ */
+function formatCurrency(val) {
+  return '€' + val.toLocaleString('de-DE');
+}
+
+function updateROI() {
+  var team = parseInt(document.getElementById('roiTeam').value);
+  var hours = parseInt(document.getElementById('roiHours').value);
+  var costPerEmployee = parseInt(document.getElementById('roiCost').value);
+
+  // Update display values
+  document.getElementById('roiTeamVal').textContent = team;
+  document.getElementById('roiHoursVal').textContent = hours + 'h';
+  document.getElementById('roiCostVal').textContent = formatCurrency(costPerEmployee);
+
+  // Update slider fill
+  updateSliderFill(document.getElementById('roiTeam'));
+  updateSliderFill(document.getElementById('roiHours'));
+  updateSliderFill(document.getElementById('roiCost'));
+
+  // Calculate
+  var hourlyRate = costPerEmployee / 2080;
+  var annualWaste = team * hours * 52 * hourlyRate;
+  var aiSetup = Math.max(3000, team * 800);
+  var aiMonthly = Math.max(500, team * 200);
+  var aiAnnual = aiSetup + (aiMonthly * 12);
+  var savings = annualWaste - aiAnnual;
+  var roi = aiAnnual > 0 ? Math.round((savings / aiAnnual) * 100) : 0;
+  var paybackMonths = annualWaste > 0 ? Math.ceil(aiAnnual / (annualWaste / 12)) : 0;
+
+  if (savings < 0) savings = 0;
+  if (roi < 0) roi = 0;
+
+  document.getElementById('roiManual').textContent = formatCurrency(Math.round(annualWaste));
+  document.getElementById('roiInvest').textContent = formatCurrency(Math.round(aiAnnual));
+  document.getElementById('roiSavings').textContent = formatCurrency(Math.round(savings));
+
+  var paybackLabel = currentLang === 'es'
+    ? '~' + paybackMonths + (paybackMonths === 1 ? ' mes' : ' meses')
+    : '~' + paybackMonths + (paybackMonths === 1 ? ' month' : ' months');
+  document.getElementById('roiPayback').textContent = paybackLabel;
+
+  document.getElementById('roiPercent').textContent = roi + '%';
+}
+
+function updateSliderFill(slider) {
+  var min = parseFloat(slider.min);
+  var max = parseFloat(slider.max);
+  var val = parseFloat(slider.value);
+  var pct = ((val - min) / (max - min)) * 100;
+  slider.style.background = 'linear-gradient(90deg, #F5405E 0%, #F5A05E ' + pct + '%, rgba(255,255,255,0.1) ' + pct + '%)';
+}
+
+// Initialize ROI
+updateROI();
+
+/* ============================================
+   FLOATING CTA VISIBILITY
+   ============================================ */
+var floatingCta = document.getElementById('floatingCta');
+var contactSection = document.getElementById('contact');
+
+var floatingObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      floatingCta.style.display = 'none';
+    } else {
+      if (window.innerWidth <= 768) {
+        floatingCta.style.display = 'block';
+      }
+    }
+  });
+}, { threshold: 0.1 });
+
+floatingObserver.observe(contactSection);
+floatingObserver.observe(document.getElementById('hero'));
+
+/* ============================================
+   SMOOTH SCROLL FOR ANCHOR LINKS
+   ============================================ */
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    var targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    var target = document.querySelector(targetId);
+    if (target) {
+      e.preventDefault();
+      var offset = 80;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  });
+});
+
+/* ============================================
+   CHATBOT WIDGET
+   ============================================ */
+var chatOpen = false;
+var tooltipDismissed = false;
+var chatInitialized = false;
+
+var chatQuickES = [
+  { text: '¿Qué hacen?', msg: '¿Qué hace exactamente Verymuch.ai?' },
+  { text: '¿Precios?', msg: '¿Cuáles son los precios y modelo de negocio?' },
+  { text: 'Agendar llamada', msg: 'Quiero agendar una consultoría gratuita' },
+  { text: 'Agentes IA', msg: '¿Qué agentes de IA tienen disponibles?' },
+];
+
+var chatQuickEN = [
+  { text: 'What do you do?', msg: 'What does Verymuch.ai do exactly?' },
+  { text: 'Pricing?', msg: 'What are your prices and business model?' },
+  { text: 'Book a call', msg: 'I want to book a free consultation' },
+  { text: 'AI Agents', msg: 'What AI agents do you have available?' },
+];
+
+var chatWelcomeES = '¡Hola! 👋 Soy el asistente de Verymuch.ai.\n\nAyudamos a empresas a vender más con agentes de IA y automatizaciones — desde lead routing instantáneo hasta CRMs inteligentes y sistemas de marketing automatizados.\n\n¿Quieres ver cómo podría funcionar para tu empresa? Pregúntame lo que quieras o agenda una llamada gratuita 👉\nhttps://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page';
+
+var chatWelcomeEN = "Hey there! 👋 I'm Verymuch.ai's assistant.\n\nWe help businesses sell more with AI agents and automations — from instant lead routing to smart CRMs and automated marketing systems.\n\nWant to see how it could work for your business? Ask me anything or book a free call 👉\nhttps://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
+
+function toggleChatbot() {
+  var bubble = document.getElementById('chatbotBubble');
+  chatOpen = !chatOpen;
+  bubble.classList.toggle('active', chatOpen);
+  closeChatTooltip();
+  if (chatOpen && !chatInitialized) {
+    initChat();
+    chatInitialized = true;
+  }
+}
+
+function openChatbot() {
+  if (!chatOpen) toggleChatbot();
+}
+
+function closeChatTooltip() {
+  var tooltip = document.getElementById('chatbotTooltip');
+  tooltip.classList.remove('show');
+  tooltipDismissed = true;
+}
+
+function initChat() {
+  var msgs = document.getElementById('chatMessages');
+  var welcome = currentLang === 'es' ? chatWelcomeES : chatWelcomeEN;
+  addBotMessage(welcome);
+  renderQuickActions();
+}
+
+function renderQuickActions() {
+  var container = document.getElementById('chatQuickActions');
+  var actions = currentLang === 'es' ? chatQuickES : chatQuickEN;
+  container.innerHTML = '';
+  actions.forEach(function(a) {
+    var btn = document.createElement('button');
+    btn.className = 'chat-quick-btn';
+    btn.textContent = a.text;
+    btn.onclick = function() { sendQuickMessage(a.msg); };
+    container.appendChild(btn);
+  });
+}
+
+function addBotMessage(text) {
+  var msgs = document.getElementById('chatMessages');
+  var div = document.createElement('div');
+  div.className = 'chat-msg bot';
+  var html = text.replace(/\n/g, '<br>');
+  html = html.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+  div.innerHTML = html;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function addUserMessage(text) {
+  var msgs = document.getElementById('chatMessages');
+  var div = document.createElement('div');
+  div.className = 'chat-msg user';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function showTyping() {
+  var msgs = document.getElementById('chatMessages');
+  var div = document.createElement('div');
+  div.className = 'chat-typing';
+  div.id = 'chatTyping';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function hideTyping() {
+  var typing = document.getElementById('chatTyping');
+  if (typing) typing.remove();
+}
+
+function sendQuickMessage(msg) {
+  document.getElementById('chatQuickActions').innerHTML = '';
+  addUserMessage(msg);
+  respondToMessage(msg);
+}
+
+function sendChatMessage() {
+  var input = document.getElementById('chatInput');
+  var text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  document.getElementById('chatQuickActions').innerHTML = '';
+  addUserMessage(text);
+  respondToMessage(text);
+}
+
+function respondToMessage(msg) {
+  showTyping();
+  var lower = msg.toLowerCase();
+  var isES = currentLang === 'es';
+  var response = '';
+  var bookingLink = 'https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page';
+
+  setTimeout(function() {
+    hideTyping();
+
+    if (lower.includes('precio') || lower.includes('cost') || lower.includes('pricing') || lower.includes('cuánto') || lower.includes('how much')) {
+      response = isES
+        ? 'Nuestro modelo es Setup + Suscripción:\n\n• Setup (diseño, construcción e instalación): 500€ – 10.000€\n• AaaS mensual (mantenimiento y operación): 500€ – 2.000€/mes\n\nEl precio exacto depende de la complejidad. ¿Quieres agendar una llamada para un presupuesto personalizado?\n' + bookingLink
+        : 'Our model is Setup + Subscription:\n\n• Setup (design, build & install): €500 – €10,000\n• Monthly AaaS (maintenance & operation): €500 – €2,000/mo\n\nExact pricing depends on complexity. Want to book a call for a custom quote?\n' + bookingLink;
+    } else if (lower.includes('agente') || lower.includes('agent') || lower.includes('disponible') || lower.includes('available')) {
+      response = isES
+        ? 'Tenemos 8 agentes listos para instalar:\n\n🔹 Lead Router Inbound\n🔹 Prospección por Señales\n🔹 CRM Hygiene Bot\n🔹 Agente Pre-Llamada\n🔹 Nurturing & Follow-up\n🔹 Generador de Propuestas\n🔹 Agente de Onboarding\n🔹 Ops Interno & Reportes\n\n¿Cuál te interesa más? O puedo ayudarte a elegir el que más ROI tendría para tu caso.'
+        : "We have 8 agents ready to install:\n\n🔹 Inbound Lead Router\n🔹 Signal-Based Prospecting\n🔹 CRM Hygiene Bot\n🔹 Pre-Call Research Agent\n🔹 Nurturing & Follow-up\n🔹 Proposal Generator\n🔹 Client Onboarding Agent\n🔹 Internal Ops & Reporting\n\nWhich interests you most? Or I can help you pick the highest-ROI one for your case.";
+    } else if (lower.includes('agendar') || lower.includes('llamada') || lower.includes('book') || lower.includes('call') || lower.includes('consultoría') || lower.includes('consultation')) {
+      response = isES
+        ? '¡Perfecto! Puedes agendar tu consultoría gratuita de 30 minutos aquí:\n' + bookingLink + '\n\nJorge o Edwin te guiarán personalmente para identificar las mejores oportunidades de IA para tu negocio.'
+        : 'Perfect! You can book your free 30-minute consultation here:\n' + bookingLink + '\n\nJorge or Edwin will personally guide you to identify the best AI opportunities for your business.';
+    } else if (lower.includes('qué hace') || lower.includes('what do') || lower.includes('quiénes') || lower.includes('about') || lower.includes('who are')) {
+      response = isES
+        ? 'Verymuch.ai instala agentes de IA y sistemas de automatización en los departamentos de marketing y ventas de empresas que quieren vender más con menos fricción.\n\n✅ Consultoría estratégica para saber por dónde empezar\n✅ Agentes de IA listos para instalar\n✅ Marketplace de talento IA verificado\n\nTodo lo que vendemos lo usamos primero internamente. Si no funciona para nosotros, no lo vendemos.'
+        : "Verymuch.ai installs AI agents and automation systems in the marketing and sales departments of companies that want to sell more with less friction.\n\n✅ Strategic consulting to know where to start\n✅ Ready-to-install AI agents\n✅ Verified AI talent marketplace\n\nEverything we sell, we use internally first. If it doesn't work for us, we don't sell it.";
+    } else {
+      response = isES
+        ? 'Gracias por tu mensaje. Para darte la mejor respuesta, ¿te gustaría agendar una consultoría gratuita de 30 min? Nuestros cofundadores Jorge y Edwin pueden ayudarte personalmente:\n' + bookingLink + '\n\nO puedes preguntarme sobre nuestros agentes, precios o servicios.'
+        : "Thanks for your message. To give you the best answer, would you like to book a free 30-min consultation? Our co-founders Jorge and Edwin can help you personally:\n" + bookingLink + "\n\nOr you can ask me about our agents, pricing, or services.";
+    }
+
+    addBotMessage(response);
+  }, 800 + Math.random() * 600);
+}
+
+// Show tooltip after 3 seconds
+setTimeout(function() {
+  if (!chatOpen && !tooltipDismissed) {
+    document.getElementById('chatbotTooltip').classList.add('show');
+  }
+}, 3000);
+
+/* ============================================
+   ROI QUIZ
+   ============================================ */
+var quizStep = 0;
+var quizAnswers = [];
+
+var quizData = {
+  es: {
+    questions: [
+      {
+        q: '¿Cuál es el mayor cuello de botella de tu equipo?',
+        opts: [
+          { text: 'Los leads llegan pero nadie responde rápido', tag: 'lead-router' },
+          { text: 'El outbound no genera respuestas', tag: 'prospecting' },
+          { text: 'El CRM está desactualizado y es poco fiable', tag: 'crm' },
+          { text: 'Los reps pierden mucho tiempo investigando antes de llamar', tag: 'research' },
+          { text: 'Los follow-ups se pierden y los leads se enfrían', tag: 'nurturing' },
+          { text: 'Las propuestas tardan demasiado en crearse', tag: 'proposals' },
+          { text: 'El onboarding de clientes es desordenado y se pierden pasos', tag: 'content' },
+          { text: 'Ops interno y reportes manuales consumen horas', tag: 'ops' },
+        ]
+      },
+      {
+        q: '¿Cuántas personas tiene tu equipo comercial?',
+        opts: [
+          { text: '1–3 personas', tag: 'small' },
+          { text: '4–10 personas', tag: 'medium' },
+          { text: '11–25 personas', tag: 'large' },
+          { text: '25+ personas', tag: 'enterprise' },
+        ]
+      },
+      {
+        q: '¿Cuál es tu prioridad ahora mismo?',
+        opts: [
+          { text: 'Generar más leads inbound', tag: 'inbound' },
+          { text: 'Mejorar conversión del outbound', tag: 'outbound' },
+          { text: 'Reducir trabajo manual de los reps', tag: 'efficiency' },
+          { text: 'Mejores datos y reportes', tag: 'data' },
+        ]
+      }
+    ],
+    results: {
+      'lead-router': { name: 'Lead Router Inbound', desc: 'Responde leads al instante, enriquece y puntúa para priorizar.', metric: '5x más rápido → 3x más reuniones' },
+      'prospecting': { name: 'Prospección por Señales', desc: 'Encuentra prospectos ideales con señales de compra y mensajes personalizados con IA.', metric: 'De 2% a 5-8% tasa de respuesta' },
+      'crm': { name: 'CRM Hygiene Bot', desc: 'Limpia, enriquece y mantiene tu CRM actualizado automáticamente.', metric: '95%+ precisión, cero carga manual' },
+      'research': { name: 'Agente Pre-Llamada', desc: 'Briefing automático con todo lo que necesitas saber antes de cada llamada.', metric: 'Cero prep, mejores conversaciones' },
+      'nurturing': { name: 'Nurturing & Follow-up', desc: 'Follow-ups personalizados automáticos que reactivan pipeline frío.', metric: '40% más pipeline recuperado' },
+      'proposals': { name: 'Generador de Propuestas', desc: 'Propuestas personalizadas en minutos, no horas.', metric: '90% menos tiempo por propuesta' },
+      'content': { name: 'Agente de Onboarding', desc: 'Automatiza todo el proceso de onboarding de clientes.', metric: 'Tiempo de onboarding reducido 60%' },
+      'ops': { name: 'Ops Interno & Reportes', desc: 'Sincroniza datos, genera reportes y detecta anomalías automáticamente.', metric: '+10h/semana ahorradas' },
+    },
+    bookLabel: 'Agendar consultoría gratuita',
+    restartLabel: '↻ Empezar de nuevo',
+  },
+  en: {
+    questions: [
+      {
+        q: "What is your team's biggest bottleneck?",
+        opts: [
+          { text: 'Leads come in but nobody responds fast enough', tag: 'lead-router' },
+          { text: 'Outbound outreach gets no replies', tag: 'prospecting' },
+          { text: 'CRM data is outdated and unreliable', tag: 'crm' },
+          { text: 'Reps spend too long researching before calls', tag: 'research' },
+          { text: 'Follow-ups and nurture fall through the cracks', tag: 'nurturing' },
+          { text: 'Proposals and quotes take too long to create', tag: 'proposals' },
+          { text: 'Client onboarding is messy and things get dropped', tag: 'content' },
+          { text: 'Internal ops, reporting, and data eat up hours', tag: 'ops' },
+        ]
+      },
+      {
+        q: 'How many people are on your commercial team?',
+        opts: [
+          { text: '1–3 people', tag: 'small' },
+          { text: '4–10 people', tag: 'medium' },
+          { text: '11–25 people', tag: 'large' },
+          { text: '25+ people', tag: 'enterprise' },
+        ]
+      },
+      {
+        q: "What's your priority right now?",
+        opts: [
+          { text: 'Generate more inbound leads', tag: 'inbound' },
+          { text: 'Improve outbound conversion', tag: 'outbound' },
+          { text: 'Reduce manual work for reps', tag: 'efficiency' },
+          { text: 'Better data and reporting', tag: 'data' },
+        ]
+      }
+    ],
+    results: {
+      'lead-router': { name: 'Inbound Lead Router', desc: 'Responds to leads instantly, enriches and scores to prioritize.', metric: '5x faster → 3x more meetings' },
+      'prospecting': { name: 'Signal-Based Prospecting', desc: 'Finds ideal prospects with buying signals and AI-personalized outreach.', metric: 'From 2% to 5-8% reply rates' },
+      'crm': { name: 'CRM Hygiene Bot', desc: 'Cleans, enriches and keeps your CRM updated automatically.', metric: '95%+ accuracy, zero manual entry' },
+      'research': { name: 'Pre-Call Research Agent', desc: 'Automatic briefing with everything you need before each call.', metric: 'Zero prep, better conversations' },
+      'nurturing': { name: 'Nurturing & Follow-up', desc: 'Automated personalized follow-ups that reactivate cold pipeline.', metric: '40% more pipeline recovered' },
+      'proposals': { name: 'Proposal Generator', desc: 'Custom proposals in minutes, not hours.', metric: '90% less time per proposal' },
+      'content': { name: 'Client Onboarding Agent', desc: 'Automates the entire client onboarding process.', metric: 'Onboarding time cut by 60%' },
+      'ops': { name: 'Internal Ops & Reporting', desc: 'Syncs data, generates reports and flags anomalies automatically.', metric: '10+ hours/week saved' },
+    },
+    bookLabel: 'Book a free consultation',
+    restartLabel: '↻ Start over',
+  }
+};
+
+function renderQuiz() {
+  var data = quizData[currentLang];
+  var q = data.questions[quizStep];
+  var progressLabel = currentLang === 'es' ? 'Pregunta' : 'Question';
+  var ofLabel = currentLang === 'es' ? 'de' : 'of';
+
+  document.getElementById('quizProgress').textContent = progressLabel + ' ' + (quizStep + 1) + ' ' + ofLabel + ' 3';
+  document.getElementById('quizBar').style.width = ((quizStep + 1) / 3 * 100) + '%';
+  document.getElementById('quizQuestion').textContent = q.q;
+
+  var optsContainer = document.getElementById('quizOptions');
+  optsContainer.innerHTML = '';
+  q.opts.forEach(function(opt) {
+    var btn = document.createElement('button');
+    btn.className = 'quiz-option';
+    btn.textContent = opt.text;
+    btn.onclick = function() { selectQuizOption(opt.tag); };
+    optsContainer.appendChild(btn);
+  });
+}
+
+function selectQuizOption(tag) {
+  quizAnswers[quizStep] = tag;
+
+  // Highlight selected
+  document.querySelectorAll('.quiz-option').forEach(function(btn) { btn.classList.remove('selected'); });
+  event.target.classList.add('selected');
+
+  setTimeout(function() {
+    if (quizStep < 2) {
+      quizStep++;
+      renderQuiz();
+    } else {
+      showQuizResult();
+    }
+  }, 350);
+}
+
+function showQuizResult() {
+  var data = quizData[currentLang];
+  var mainTag = quizAnswers[0]; // First answer determines primary recommendation
+  var result = data.results[mainTag];
+  var bookingLink = 'https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page';
+
+  var panel = document.getElementById('quizResult');
+  panel.classList.add('has-result');
+  panel.innerHTML = '<div class="quiz-result-icon"><i class="fas fa-robot"></i></div>' +
+    '<div class="quiz-result-agent">' + result.name + '</div>' +
+    '<div class="quiz-result-desc">' + result.desc + '</div>' +
+    '<div class="quiz-result-metric">' + result.metric + '</div>' +
+    '<a href="' + bookingLink + '" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center">' + data.bookLabel + ' <i class="fas fa-arrow-right"></i></a>' +
+    '<button class="quiz-restart" onclick="restartQuiz()">' + data.restartLabel + '</button>';
+}
+
+function restartQuiz() {
+  quizStep = 0;
+  quizAnswers = [];
+  var panel = document.getElementById('quizResult');
+  panel.classList.remove('has-result');
+  var placeholder = currentLang === 'es' ? 'Responde las preguntas para obtener tu recomendación →' : 'Answer the questions to get your recommendation →';
+  panel.innerHTML = '<p class="quiz-placeholder">' + placeholder + '</p>';
+  renderQuiz();
+}
+
+// Initialize quiz
+renderQuiz();
+
+// Re-initialize quiz when language changes (patch setLang)
+var originalSetLang = setLang;
+setLang = function(lang) {
+  originalSetLang(lang);
+  quizStep = 0;
+  quizAnswers = [];
+  var panel = document.getElementById('quizResult');
+  panel.classList.remove('has-result');
+  var placeholder = lang === 'es' ? 'Responde las preguntas para obtener tu recomendación →' : 'Answer the questions to get your recommendation →';
+  panel.innerHTML = '<p class="quiz-placeholder">' + placeholder + '</p>';
+  renderQuiz();
+  // Re-render chat quick actions if open
+  if (chatInitialized) renderQuickActions();
+};
+</script>
+
+
+
+</body></html>
