@@ -1,5 +1,32 @@
 // ─── Types ────────────────────────────────────────────────────────────────────
 
+// ── Extra section types (optional, only for lead magnets that need them) ──────
+
+export interface SectionOpportunity {
+  type: "opportunity";
+  title: string;
+  subtitle?: string;
+  /** Each row: exactly 3 cells */
+  tableRows: [string, string, string][];
+}
+
+export interface SectionChangelog {
+  type: "changelog";
+  title: string;
+  items: { icon: string; title: string; description: string }[];
+}
+
+export interface SectionAgents {
+  type: "agents";
+  title: string;
+  agents: { icon: string; name: string; role: string; description: string }[];
+}
+
+export type LeadMagnetSection =
+  | SectionOpportunity
+  | SectionChangelog
+  | SectionAgents;
+
 export interface FormFieldConfig {
   name: string;
   label: string;
@@ -46,6 +73,11 @@ export interface LeadMagnetContent {
     description?: string;
     ctaLabel: string;
   };
+  /** Optional custom CTA headline (split into plain + highlighted part) */
+  ctaHeadline?: string;
+  ctaHighlight?: string;
+  /** Extra sections rendered between "Qué incluye" and "Stack técnico" */
+  extraSections?: LeadMagnetSection[];
 }
 
 export interface LeadMagnetConfig {
@@ -56,6 +88,15 @@ export interface LeadMagnetConfig {
   seo: LeadMagnetSEO;
   content: LeadMagnetContent;
 }
+
+// ─── Registry (add every new config here) ─────────────────────────────────────
+
+export function getLeadMagnetConfig(slug: string): LeadMagnetConfig | undefined {
+  return ALL_LEAD_MAGNETS[slug];
+}
+
+// Populated after configs are defined below
+export const ALL_LEAD_MAGNETS: Record<string, LeadMagnetConfig> = {};
 
 // ─── Signals LinkedIn Config ──────────────────────────────────────────────────
 
@@ -166,3 +207,196 @@ export const signalsLinkedinConfig: LeadMagnetConfig = {
     },
   },
 };
+
+// ─── Equipo de Ventas IA en 30 Minutos Config ─────────────────────────────────
+
+export const equipoVentasIa30minConfig: LeadMagnetConfig = {
+  slug: "equipo-ventas-ia-30min",
+  source: "organic",
+  campaign: "equipo-ventas-ia-30min",
+
+  seo: {
+    title: "Equipo de Ventas IA en 30 Min — Opus 4.6 | VeryMuch.ai",
+    description:
+      "Guía completa para montar 4 agentes IA en paralelo con Claude Opus 4.6: investigar, analizar, escribir y coordinar. Gratis.",
+    ogTitle:
+      "Monta tu Equipo de Ventas IA en 30 Minutos con Claude Opus 4.6",
+    ogDescription:
+      "Agent Teams con Opus 4.6: 4 agentes IA en paralelo, 1M tokens de contexto, sin código complejo. Descarga la guía gratuita.",
+  },
+
+  content: {
+    badge: "NUEVO · OPUS 4.6 · LANZADO FEB 2026",
+    headline: "Monta tu Equipo de Ventas IA en 30 Minutos",
+    highlightWords: "Equipo de Ventas IA en 30 Minutos",
+    subheadline:
+      "Usando Opus 4.6 Agent Teams para ejecutar 4 agentes IA en paralelo — investigar, analizar, escribir y coordinar.",
+    bullets: [
+      "4 agentes IA trabajando en paralelo con Claude Opus 4.6",
+      "Contexto de 1M de tokens: toda tu empresa en una sesión",
+      "Sistema montado en 30 minutos sin código complejo",
+      "Roles definidos: Investigador, Analista, Escritor, Coordinador",
+      "Configuración completa con costes reales incluida",
+    ],
+    includes: [
+      {
+        icon: "📋",
+        title: "Configuración de 4 agentes",
+        description: "Prompts system listos para copiar, ajustar y lanzar de inmediato.",
+      },
+      {
+        icon: "⚡",
+        title: "Workflow de coordinación",
+        description: "Cómo los 4 agentes colaboran entre sí sin bloquearse.",
+      },
+      {
+        icon: "💰",
+        title: "Estimación de costes reales",
+        description: "Tokens, llamadas API y límites de Opus 4.6 documentados.",
+      },
+      {
+        icon: "🎯",
+        title: "Casos de uso concretos",
+        description: "Prospecting, nurturing y cierre con ejemplos de output real.",
+      },
+      {
+        icon: "🚀",
+        title: "Guía paso a paso",
+        description: "De cero a equipo funcionando en menos de 30 minutos.",
+      },
+    ],
+    techStack: [
+      {
+        name: "Claude Opus 4.6",
+        role: "Motor de los 4 agentes. Agent Teams nativos con contexto de 1M tokens.",
+        url: "https://anthropic.com",
+      },
+      {
+        name: "Claude.ai",
+        role: "Interfaz para lanzar y coordinar los agentes sin infraestructura.",
+        url: "https://claude.ai",
+      },
+      {
+        name: "n8n (opcional)",
+        role: "Orquestación externa si quieres automatizar el flujo completo.",
+        url: "https://n8n.io",
+      },
+    ],
+    extraSections: [
+      {
+        type: "opportunity",
+        title: "La oportunidad: Opus 4.6 ha cambiado las reglas del juego",
+        subtitle:
+          "Por primera vez, puedes tener 4 agentes IA especializados trabajando juntos en tu proceso de ventas — sin código, sin infra, en 30 minutos.",
+        tableRows: [
+          ["Modelo IA #1 del mundo", "Contexto de 1M de tokens", "4 agentes en paralelo"],
+          ["Mejor puntuación global", "+750.000 palabras por sesión", "Trabajando juntos"],
+        ],
+      },
+      {
+        type: "changelog",
+        title: "Qué ha cambiado con Opus 4.6",
+        items: [
+          {
+            icon: "🤝",
+            title: "Agent Teams nativos",
+            description:
+              "Lanza múltiples agentes Claude en paralelo desde una sola sesión. Cada uno con su rol, contexto y objetivo.",
+          },
+          {
+            icon: "🧠",
+            title: "1M de tokens de contexto",
+            description:
+              "Carga toda tu base de clientes, CRM, emails y transcripciones en una sola sesión sin perder contexto.",
+          },
+          {
+            icon: "💡",
+            title: "Pensamiento adaptativo",
+            description:
+              "Opus 4.6 decide cuándo razonar en profundidad y cuándo responder directo. Resultados más precisos, menos tokens desperdiciados.",
+          },
+          {
+            icon: "🗜️",
+            title: "Compactación de contexto",
+            description:
+              "Cuando el contexto crece, Opus 4.6 lo comprime automáticamente para que el equipo nunca pierda el hilo de la conversación.",
+          },
+        ],
+      },
+      {
+        type: "agents",
+        title: "Tu equipo de ventas IA con 4 agentes",
+        agents: [
+          {
+            icon: "🔍",
+            name: "Investigador",
+            role: "Recopila intel",
+            description:
+              "Analiza el perfil del prospecto, su empresa, noticias recientes y señales de compra en LinkedIn y web.",
+          },
+          {
+            icon: "📊",
+            name: "Analista",
+            role: "Califica y puntúa",
+            description:
+              "Evalúa el fit con tu ICP, prioriza leads por potencial y genera un scorecard por cada prospecto.",
+          },
+          {
+            icon: "✍️",
+            name: "Escritor",
+            role: "Genera outreach",
+            description:
+              "Crea mensajes personalizados basados en la señal exacta del prospecto. Tono, contexto y CTA afinados.",
+          },
+          {
+            icon: "🎯",
+            name: "Coordinador",
+            role: "Orquesta el equipo",
+            description:
+              "Gestiona el flujo entre los 3 agentes, consolida resultados y entrega el output final listo para enviar.",
+          },
+        ],
+      },
+    ],
+    form: {
+      fields: [
+        {
+          name: "name",
+          label: "Nombre",
+          type: "text",
+          placeholder: "Tu nombre",
+          required: true,
+        },
+        {
+          name: "email",
+          label: "Correo electrónico",
+          type: "email",
+          placeholder: "tu@empresa.com",
+          required: true,
+        },
+        {
+          name: "company",
+          label: "Empresa (opcional)",
+          type: "text",
+          placeholder: "Tu empresa",
+          required: false,
+        },
+      ],
+      ctaLabel: "Descargar la guía gratis",
+      microcopy: "Gratis. Sin spam. Entrega inmediata.",
+    },
+    success: {
+      title: "Tu guía está lista 🎉",
+      description:
+        "Accede ahora a la configuración completa de los 4 agentes, los prompts y la estimación de costes.",
+      ctaLabel: "Abrir la guía →",
+    },
+    ctaHeadline: "Monta tu equipo de ventas IA",
+    ctaHighlight: "hoy mismo",
+  },
+};
+
+// ─── Register all configs ──────────────────────────────────────────────────────
+
+ALL_LEAD_MAGNETS[signalsLinkedinConfig.slug] = signalsLinkedinConfig;
+ALL_LEAD_MAGNETS[equipoVentasIa30minConfig.slug] = equipoVentasIa30minConfig;

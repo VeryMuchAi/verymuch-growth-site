@@ -10,6 +10,7 @@ interface LeadBody {
   email: string;
   company?: string;
   lead_magnet?: string;
+  lead_source?: string;
   source?: string;
   campaign?: string;
   // Legacy UTM fields
@@ -89,10 +90,13 @@ export async function POST(req: NextRequest) {
   // 3. Derive firstName / lastName from the full name
   const { firstName, lastName } = splitName(resolvedName);
 
-  const company    = payload.company?.trim() || undefined;
+  const company     = payload.company?.trim() || undefined;
   const lead_magnet = payload.lead_magnet || payload.leadMagnetSlug || undefined;
-  const source     = payload.source || payload.utm_source || undefined;
-  const campaign   = payload.campaign || payload.utm_campaign || undefined;
+  const lead_source = payload.lead_source || lead_magnet || undefined;
+  const source      = payload.source || payload.utm_source || undefined;
+  const campaign    = payload.campaign || payload.utm_campaign || undefined;
+  // Tag for GHL segmentation: "LM:signals-linkedin", "LM:equipo-ventas-ia-30min", etc.
+  const tags        = lead_source ? `LM:${lead_source}` : undefined;
 
   // 4. Build GHL payload
   //    GHL Create Contact expects camelCase (firstName, lastName).
@@ -111,6 +115,8 @@ export async function POST(req: NextRequest) {
     // ── Lead-magnet metadata ──
     company,
     lead_magnet,
+    lead_source,
+    tags,
     source,
     campaign,
     // ── Legacy UTM passthrough ──

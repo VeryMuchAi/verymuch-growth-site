@@ -205,6 +205,14 @@ const LEAD_MAGNETS = [
     stack: ["Trigify", "Claude Code", "n8n"],
   },
   {
+    id: "equipo-ventas-ia-30min", status: "live" as const,
+    badge: "NUEVO · Feb 2026", icon: "🤖", category: "Agent Teams",
+    title: "Monta tu Equipo de Ventas IA en 30 Minutos",
+    description: "4 agentes IA en paralelo con Claude Opus 4.6: Investigador, Analista, Escritor y Coordinador. Sin código, en 30 min.",
+    href: "/lead/equipo-ventas-ia-30min", ctaLabel: "Descargar guía gratis",
+    stack: ["Claude Opus 4.6", "Agent Teams", "Claude.ai"],
+  },
+  {
     id: "cold-email", status: "soon" as const,
     badge: "Próximamente", icon: "✉️", category: "Outreach",
     title: "Sistema de Cold Email con IA",

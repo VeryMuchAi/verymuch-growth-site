@@ -1,5 +1,11 @@
 import Image from "next/image";
-import type { LeadMagnetConfig } from "@/lib/lead-magnet";
+import type {
+  LeadMagnetConfig,
+  LeadMagnetSection,
+  SectionOpportunity,
+  SectionChangelog,
+  SectionAgents,
+} from "@/lib/lead-magnet";
 import LeadMagnetForm from "./LeadMagnetForm";
 
 interface Props {
@@ -28,6 +34,101 @@ function HeadlineWithHighlight({
     </>
   );
 }
+
+// ─── Extra section renderers ──────────────────────────────────────────────────
+
+function OpportunitySection({ s }: { s: SectionOpportunity }) {
+  return (
+    <section className="border-t border-white/[0.06] bg-brand-dark-3">
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <h2 className="text-2xl font-bold text-white mb-2">{s.title}</h2>
+        {s.subtitle && (
+          <p className="text-white/40 text-sm mb-10 max-w-2xl">{s.subtitle}</p>
+        )}
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse">
+            <tbody>
+              {s.tableRows.map((row, i) => (
+                <tr key={i} className={i === 0 ? "border-b border-white/[0.06]" : ""}>
+                  {row.map((cell, j) => (
+                    <td
+                      key={j}
+                      className={`py-5 px-6 text-sm font-semibold text-white/80 border border-white/[0.07] ${
+                        i === 0
+                          ? "bg-brand-mint/10 text-brand-mint"
+                          : "bg-white/[0.02] text-white/50"
+                      }`}
+                    >
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ChangelogSection({ s }: { s: SectionChangelog }) {
+  return (
+    <section className="border-t border-white/[0.06]">
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <h2 className="text-2xl font-bold text-white mb-10">{s.title}</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {s.items.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-5 flex flex-col gap-2 hover:border-brand-mint/30 transition-colors"
+            >
+              <span className="text-2xl">{item.icon}</span>
+              <h3 className="text-sm font-bold text-white">{item.title}</h3>
+              <p className="text-xs text-white/45 leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AgentsSection({ s }: { s: SectionAgents }) {
+  return (
+    <section className="border-t border-white/[0.06] bg-brand-dark-2">
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <h2 className="text-2xl font-bold text-white mb-10">{s.title}</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {s.agents.map((agent) => (
+            <div
+              key={agent.name}
+              className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-6 flex flex-col gap-3 hover:border-brand-amber/30 transition-colors"
+            >
+              <span className="text-3xl">{agent.icon}</span>
+              <div>
+                <h3 className="text-base font-bold text-white">{agent.name}</h3>
+                <span className="text-xs text-brand-amber font-semibold uppercase tracking-wider">
+                  {agent.role}
+                </span>
+              </div>
+              <p className="text-xs text-white/45 leading-relaxed">{agent.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ExtraSection({ section }: { section: LeadMagnetSection }) {
+  if (section.type === "opportunity") return <OpportunitySection s={section} />;
+  if (section.type === "changelog") return <ChangelogSection s={section} />;
+  if (section.type === "agents") return <AgentsSection s={section} />;
+  return null;
+}
+
+// ─── Main component ───────────────────────────────────────────────────────────
 
 export default function LeadMagnetPage({ config, guideUrl }: Props) {
   const { content } = config;
@@ -139,6 +240,11 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
         </div>
       </section>
 
+      {/* ── Extra sections (opportunity / changelog / agents) ─────────────── */}
+      {content.extraSections?.map((section, i) => (
+        <ExtraSection key={i} section={section} />
+      ))}
+
       {/* ── Tech Stack ────────────────────────────────────────────────────── */}
       <section className="border-t border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-6 py-16">
@@ -179,9 +285,9 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
             ✦ {content.badge ?? "Blueprint Gratuito"}
           </span>
           <h2 className="text-3xl font-extrabold leading-tight">
-            Empieza a capturar señales de intención{" "}
+            {content.ctaHeadline ?? "Empieza a capturar señales de intención"}{" "}
             <span className="bg-brand-gradient bg-clip-text text-transparent">
-              esta semana
+              {content.ctaHighlight ?? "esta semana"}
             </span>
           </h2>
           <p className="text-white/50 text-sm max-w-md leading-relaxed">

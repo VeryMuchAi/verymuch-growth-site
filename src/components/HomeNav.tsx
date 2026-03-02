@@ -7,6 +7,7 @@ import Link from "next/link";
 const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
 
 const NAV_LINKS = [
+  { label: "Marketplace",      href: "https://www.verymuch.ai/", external: true },
   { label: "Servicios",        href: "#services" },
   { label: "Cómo funciona",   href: "#how" },
   { label: "Agentes",         href: "#agents" },
@@ -63,6 +64,7 @@ export default function HomeNav() {
                 key={l.label}
                 href={l.href}
                 role="listitem"
+                {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="relative text-sm font-medium text-white/50 hover:text-white transition-colors duration-200 group"
               >
                 {l.label}
@@ -126,6 +128,7 @@ export default function HomeNav() {
             key={l.label}
             href={l.href}
             onClick={() => setMenuOpen(false)}
+            {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             className="text-2xl font-semibold text-white/60 hover:text-white transition-colors"
           >
             {l.label}

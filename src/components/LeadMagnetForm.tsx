@@ -64,6 +64,7 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
       name:        rawData["name"].trim(),
       email:       rawData["email"].trim(),
       lead_magnet: config.slug,
+      lead_source: config.slug,   // explicit segmentation field for GHL
       source:      config.source,
       campaign:    config.campaign,
     };
