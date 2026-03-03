@@ -36,8 +36,10 @@ export default function LeadMagnetSlugPage({ params }: Props) {
   const config = getLeadMagnetConfig(params.slug);
   if (!config) notFound();
 
-  // NOTION_URL is read server-side — never exposed to the client bundle
-  const guideUrl = process.env.NOTION_URL ?? "#";
+  // Look for a slug-specific Notion URL first, then fall back to the generic one
+  // e.g. slug "equipo-ventas-ia-30min" → NOTION_URL_EQUIPO_VENTAS_IA_30MIN
+  const envKey = `NOTION_URL_${params.slug.toUpperCase().replace(/-/g, "_")}`;
+  const guideUrl = process.env[envKey] ?? process.env.NOTION_URL ?? "#";
 
   return <LeadMagnetPage config={config} guideUrl={guideUrl} />;
 }
