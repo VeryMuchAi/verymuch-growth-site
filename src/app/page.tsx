@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HomeNav from "@/components/HomeNav";
 import AgentsSection from "@/components/AgentsSection";
+import AgentQuizSection from "@/components/AgentQuizSection";
 
 export const metadata: Metadata = {
   title: "VeryMuch.ai — IA que vende",
@@ -425,41 +426,8 @@ export default function HomePage() {
       {/* ════ AGENTS (CLIENT COMPONENT) ═════════════════════════════════════ */}
       <AgentsSection />
 
-      {/* ════ LITMUS TEST ═══════════════════════════════════════════════════ */}
-      <section className="py-24 bg-[#0A0A0B]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <SectionTag>Test de viabilidad</SectionTag>
-            <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold tracking-tight leading-tight text-white mt-2">
-              El test de <GradientText>viabilidad</GradientText> del agente de IA
-            </h2>
-            <p className="mt-4 text-[rgba(255,255,255,0.45)] max-w-lg mx-auto leading-relaxed">
-              Evalúa cualquier flujo de trabajo con estos 5 criterios. Si cumple 3+, estás dejando dinero sobre la mesa.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
-            {LITMUS.map((c) => (
-              <div
-                key={c.num}
-                className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-7 hover:border-[rgba(90,212,174,0.2)] hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="text-[2.5rem] font-extrabold leading-none bg-clip-text text-transparent opacity-20 mb-3" style={{ backgroundImage: GRAD_TEXT }}>{c.num}</div>
-                <h3 className="text-base font-bold text-white mb-2">{c.title}</h3>
-                <p className="text-[0.88rem] text-[rgba(255,255,255,0.45)] leading-relaxed mb-3">{c.desc}</p>
-                <p className="text-[0.78rem] text-[rgba(255,255,255,0.25)] italic border-l-2 border-[rgba(90,212,174,0.3)] pl-3">{c.example}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Score CTA box */}
-          <div className="max-w-xl mx-auto rounded-2xl border border-white/[0.08] bg-white/[0.04] p-8 text-center">
-            <p className="text-xl font-bold text-white mb-1">¿3 de 5? Es luz verde.</p>
-            <p className="text-[rgba(255,255,255,0.45)] text-sm mb-6">→ Agenda una llamada. Lo evaluamos en 30 min.</p>
-            <CtaPrimary href={GHL} external>Agenda tu llamada</CtaPrimary>
-          </div>
-        </div>
-      </section>
+      {/* ════ QUIZ ══════════════════════════════════════════════════════════ */}
+      <AgentQuizSection />
 
       {/* ════ HOW IT WORKS / TIMELINE ══════════════════════════════════════ */}
       <section id="how" className="py-24 bg-[#FAFBFC]">

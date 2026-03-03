@@ -26,7 +26,10 @@ const config: Config = {
           "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(74,212,174,0.15) 0%, transparent 60%)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        // DM Sans — body text (brand guideline)
+        sans:    ["var(--font-sans)", "system-ui", "sans-serif"],
+        // Plus Jakarta Sans — headings / display (brand guideline)
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
       },
       animation: {
         "fade-up": "fadeUp 0.5s ease-out forwards",
