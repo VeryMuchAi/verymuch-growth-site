@@ -307,7 +307,7 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
 
       {/* ── Footer ────────────────────────────────────────────────────────── */}
       <footer className="border-t border-white/[0.06]">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <Image
             src="/logo-white.png"
             alt="VeryMuch.ai"
@@ -315,9 +315,29 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
             height={30}
             className="h-6 w-auto object-contain opacity-50"
           />
-          <p className="text-xs text-white/25">
-            &copy; {new Date().getFullYear()} VeryMuch.ai — All rights reserved.
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
+            <a
+              href="https://www.verymuch.ai/cms/view/2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-white/25 hover:text-white/50 transition-colors"
+            >
+              Términos y condiciones
+            </a>
+            <span className="text-white/15 text-xs">·</span>
+            <a
+              href="https://www.verymuch.ai/cms/view/3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-white/25 hover:text-white/50 transition-colors"
+            >
+              Aviso de privacidad
+            </a>
+            <span className="text-white/15 text-xs">·</span>
+            <p className="text-xs text-white/25">
+              &copy; {new Date().getFullYear()} VeryMuch.ai
+            </p>
+          </div>
         </div>
       </footer>
     </div>

@@ -704,15 +704,35 @@ export default function HomePage() {
             <p className="text-xs text-white/20">
               © {new Date().getFullYear()} Verymuch.ai — Todos los derechos reservados
             </p>
-            <a
-              href="https://www.linkedin.com/company/verymuch-ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="text-white/25 hover:text-white/60 transition-colors text-sm font-semibold"
-            >
-              in LinkedIn
-            </a>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
+              <a
+                href="https://www.verymuch.ai/cms/view/2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-white/25 hover:text-white/60 transition-colors"
+              >
+                Términos y condiciones
+              </a>
+              <span className="text-white/15 text-xs">·</span>
+              <a
+                href="https://www.verymuch.ai/cms/view/3"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-white/25 hover:text-white/60 transition-colors"
+              >
+                Aviso de privacidad
+              </a>
+              <span className="text-white/15 text-xs">·</span>
+              <a
+                href="https://www.linkedin.com/company/verymuch-ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-white/25 hover:text-white/60 transition-colors text-xs font-semibold"
+              >
+                in LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </footer>
