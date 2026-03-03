@@ -213,6 +213,14 @@ const LEAD_MAGNETS = [
     stack: ["Claude Opus 4.6", "Agent Teams", "Claude.ai"],
   },
   {
+    id: "agente-investigacion-comercial", status: "live" as const,
+    badge: "Disponible ahora", icon: "🔍", category: "Inteligencia Comercial",
+    title: "Agente IA de Investigación Comercial",
+    description: "Investiga cualquier empresa con IA y genera briefings comerciales completos con DAFO, MEDDPICC y outreach personalizado.",
+    href: "/lead/agente-investigacion-comercial", ctaLabel: "Acceder a la Guía",
+    stack: ["Claude", "n8n", "Supabase"],
+  },
+  {
     id: "cold-email", status: "soon" as const,
     badge: "Próximamente", icon: "✉️", category: "Outreach",
     title: "Sistema de Cold Email con IA",

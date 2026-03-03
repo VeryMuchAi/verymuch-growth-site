@@ -396,7 +396,124 @@ export const equipoVentasIa30minConfig: LeadMagnetConfig = {
   },
 };
 
+// ─── Agente IA de Investigación Comercial Config ──────────────────────────────
+
+export const agenteInvestigacionComercialConfig: LeadMagnetConfig = {
+  slug: "agente-investigacion-comercial",
+  source: "linkedin",
+  campaign: "agente-investigacion-comercial",
+
+  seo: {
+    title: "Agente IA de Investigación Comercial — Guía Completa | VeryMuch.ai",
+    description:
+      "Guía paso a paso para construir un agente IA que investiga empresas en tiempo real y genera briefings comerciales completos con DAFO, MEDDPICC y outreach personalizado. Gratis.",
+    ogTitle:
+      "Construye un Agente IA que investiga cualquier empresa y genera briefings comerciales en minutos",
+    ogDescription:
+      "Guía completa: de un nombre de empresa a un briefing comercial con análisis DAFO, scoring MEDDPICC, puntos de conversación y próximos pasos. Stack real + implementación paso a paso.",
+  },
+
+  content: {
+    badge: "Guía Gratuita",
+    headline:
+      "Construye un Agente IA de Investigación Comercial que genera briefings en minutos",
+    highlightWords: "briefings en minutos",
+    subheadline:
+      "Guía completa para montar un sistema que investiga empresas en tiempo real usando IA y genera informes comerciales listos para vender.",
+    bullets: [
+      "Investigación automática de empresas con búsqueda web en tiempo real",
+      "Análisis DAFO y scoring MEDDPICC generados por IA",
+      "Puntos de conversación y manejo de objeciones personalizados",
+      "Arquitectura completa: frontend + Supabase + n8n + Claude",
+      "Listo para copiar, pegar y adaptar a tu negocio",
+    ],
+    includes: [
+      {
+        icon: "🔍",
+        title: "Agente de investigación IA",
+        description:
+          "Investiga cualquier empresa usando búsqueda web en tiempo real y genera un perfil completo.",
+      },
+      {
+        icon: "📊",
+        title: "Briefing comercial completo",
+        description:
+          "Análisis DAFO, marco MEDDPICC, señales de compra y puntos de dolor identificados automáticamente.",
+      },
+      {
+        icon: "💬",
+        title: "Puntos de conversación",
+        description:
+          "Talking points personalizados, manejo de objeciones y próximos pasos listos para tu primera llamada.",
+      },
+      {
+        icon: "⚙️",
+        title: "Arquitectura paso a paso",
+        description:
+          "Frontend → Supabase → n8n → Claude. Cada componente explicado con configuración exacta.",
+      },
+      {
+        icon: "🚀",
+        title: "Guía de implementación",
+        description:
+          "De cero a sistema funcionando en ~1 hora. Nivel principiante, usa capa gratuita de todas las herramientas.",
+      },
+    ],
+    techStack: [
+      {
+        name: "Claude",
+        role: "Motor de IA para investigación y generación de briefings comerciales.",
+        url: "https://anthropic.com",
+      },
+      {
+        name: "n8n",
+        role: "Orquestación del workflow: recibe webhook, ejecuta agente, actualiza resultados.",
+        url: "https://n8n.io",
+      },
+      {
+        name: "Supabase",
+        role: "Base de datos intermedia: almacena solicitudes y resultados del agente.",
+        url: "https://supabase.com",
+      },
+    ],
+    form: {
+      fields: [
+        {
+          name: "name",
+          label: "Nombre",
+          type: "text",
+          placeholder: "Tu nombre",
+          required: true,
+        },
+        {
+          name: "email",
+          label: "Correo electrónico",
+          type: "email",
+          placeholder: "tu@empresa.com",
+          required: true,
+        },
+        {
+          name: "company",
+          label: "Empresa (opcional)",
+          type: "text",
+          placeholder: "Tu empresa",
+          required: false,
+        },
+      ],
+      ctaLabel: "Recibir la Guía",
+      microcopy: "Gratis. Sin spam. Entrega inmediata.",
+    },
+    success: {
+      title: "Tu guía está lista 🎉",
+      description:
+        "Accede ahora a la guía completa. Encontrarás la arquitectura, configuración de cada componente y el agente listo para implementar.",
+      ctaLabel: "Abrir la guía →",
+    },
+  },
+};
+
 // ─── Register all configs ──────────────────────────────────────────────────────
 
 ALL_LEAD_MAGNETS[signalsLinkedinConfig.slug] = signalsLinkedinConfig;
 ALL_LEAD_MAGNETS[equipoVentasIa30minConfig.slug] = equipoVentasIa30minConfig;
+ALL_LEAD_MAGNETS[agenteInvestigacionComercialConfig.slug] = agenteInvestigacionComercialConfig;
