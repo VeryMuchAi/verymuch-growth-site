@@ -221,6 +221,14 @@ const LEAD_MAGNETS = [
     stack: ["Claude", "n8n", "Supabase"],
   },
   {
+    id: "20-agentes-ia-b2b", status: "live" as const,
+    badge: "Disponible ahora", icon: "🤖", category: "Estrategia Comercial",
+    title: "20 Agentes de IA para tu Estrategia Comercial B2B",
+    description: "Guía práctica con 20 agentes listos para montar. Tech stack, paso a paso y resultados esperados para cada uno.",
+    href: "/lead/20-agentes-ia-b2b", ctaLabel: "Descargar la Guía",
+    stack: ["Claude", "n8n", "Clay", "Instantly"],
+  },
+  {
     id: "cold-email", status: "soon" as const,
     badge: "Próximamente", icon: "✉️", category: "Outreach",
     title: "Sistema de Cold Email con IA",

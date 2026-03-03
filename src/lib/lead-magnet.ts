@@ -89,14 +89,15 @@ export interface LeadMagnetConfig {
   content: LeadMagnetContent;
 }
 
-// ─── Registry (add every new config here) ─────────────────────────────────────
+// ─── Registry — built at the bottom of this file once all configs are defined ──
+
+// Forward declaration — value is assigned after all configs are defined below.
+// Do NOT use this directly during module init; use getLeadMagnetConfig() instead.
+export let ALL_LEAD_MAGNETS: Record<string, LeadMagnetConfig> = {};
 
 export function getLeadMagnetConfig(slug: string): LeadMagnetConfig | undefined {
   return ALL_LEAD_MAGNETS[slug];
 }
-
-// Populated after configs are defined below
-export const ALL_LEAD_MAGNETS: Record<string, LeadMagnetConfig> = {};
 
 // ─── Signals LinkedIn Config ──────────────────────────────────────────────────
 
@@ -512,8 +513,136 @@ export const agenteInvestigacionComercialConfig: LeadMagnetConfig = {
   },
 };
 
-// ─── Register all configs ──────────────────────────────────────────────────────
+// ─── 20 Agentes IA para Estrategia Comercial B2B Config ──────────────────────
 
-ALL_LEAD_MAGNETS[signalsLinkedinConfig.slug] = signalsLinkedinConfig;
-ALL_LEAD_MAGNETS[equipoVentasIa30minConfig.slug] = equipoVentasIa30minConfig;
-ALL_LEAD_MAGNETS[agenteInvestigacionComercialConfig.slug] = agenteInvestigacionComercialConfig;
+export const agentesIaB2bConfig: LeadMagnetConfig = {
+  slug: "20-agentes-ia-b2b",
+  source: "linkedin",
+  campaign: "20-agentes-ia-b2b",
+
+  seo: {
+    title: "20 Agentes de IA para tu Estrategia Comercial B2B — Guía Completa | VeryMuch.ai",
+    description:
+      "Guía práctica con 20 agentes de IA listos para montar en tu equipo comercial B2B. Tech stack, paso a paso y resultados esperados para cada uno. Gratis.",
+    ogTitle:
+      "20 Agentes de IA que multiplican x10 los resultados de tu equipo comercial B2B",
+    ogDescription:
+      "Guía completa: 20 agentes de IA con tech stack, implementación paso a paso y resultados esperados. De principiante a intermedio, sin programar.",
+  },
+
+  content: {
+    badge: "Guía Gratuita",
+    headline: "20 Agentes de IA para multiplicar x10 tu Estrategia Comercial B2B",
+    highlightWords: "multiplicar x10",
+    subheadline:
+      "Guía práctica con los 20 agentes de IA que un equipo comercial B2B puede usar hoy. Cada uno con tech stack, paso a paso y resultados esperados.",
+    bullets: [
+      "20 agentes de IA listos para implementar en tu pipeline comercial",
+      "Tech stack detallado para cada agente (herramientas reales, no teoría)",
+      "Paso a paso para montarlos sin saber programar",
+      "Resultados esperados y métricas por cada agente",
+      "De prospección a cierre: agentes para cada etapa del funnel",
+    ],
+    includes: [
+      {
+        icon: "🎯",
+        title: "Agentes de prospección",
+        description:
+          "Investigación, scoring, señales de compra y enriquecimiento de datos automatizados.",
+      },
+      {
+        icon: "✉️",
+        title: "Agentes de outreach",
+        description:
+          "Cold email personalizado, secuencias multi-canal y follow-up inteligente.",
+      },
+      {
+        icon: "📊",
+        title: "Agentes de inteligencia",
+        description:
+          "CRM hygiene, briefings pre-llamada, análisis competitivo y reporting automático.",
+      },
+      {
+        icon: "🤝",
+        title: "Agentes de conversión",
+        description:
+          "Nurturing, propuestas automáticas, onboarding y gestión de pipeline.",
+      },
+      {
+        icon: "⚙️",
+        title: "Tech stack por agente",
+        description:
+          "Herramientas exactas, costes estimados y nivel de dificultad para cada implementación.",
+      },
+    ],
+    techStack: [
+      {
+        name: "Claude",
+        role: "Motor de IA para investigación, análisis y generación de contenido comercial.",
+        url: "https://anthropic.com",
+      },
+      {
+        name: "n8n",
+        role: "Orquestación de workflows para automatizar cada agente de principio a fin.",
+        url: "https://n8n.io",
+      },
+      {
+        name: "Clay",
+        role: "Enriquecimiento de datos y prospección a escala.",
+        url: "https://clay.com",
+      },
+      {
+        name: "Instantly",
+        role: "Infraestructura de cold email con calentamiento automático.",
+        url: "https://instantly.ai",
+      },
+    ],
+    form: {
+      fields: [
+        {
+          name: "name",
+          label: "Nombre",
+          type: "text",
+          placeholder: "Tu nombre",
+          required: true,
+        },
+        {
+          name: "email",
+          label: "Correo electrónico",
+          type: "email",
+          placeholder: "tu@empresa.com",
+          required: true,
+        },
+        {
+          name: "company",
+          label: "Empresa (opcional)",
+          type: "text",
+          placeholder: "Tu empresa",
+          required: false,
+        },
+      ],
+      ctaLabel: "Descargar la Guía",
+      microcopy: "Gratis. Sin spam. Los 20 agentes en tu bandeja.",
+    },
+    success: {
+      title: "¡Tu guía con 20 agentes está lista! 🤖",
+      description:
+        "Accede ahora a la guía completa. Encontrarás cada agente con su tech stack, implementación y resultados esperados.",
+      ctaLabel: "Abrir la guía →",
+    },
+    ctaHeadline: "Empieza a desplegar tus",
+    ctaHighlight: "20 agentes comerciales",
+  },
+};
+
+// ─── Build registry — single immutable assignment, all configs present ─────────
+// Adding a new lead magnet: just append it to this array. No other changes needed.
+
+const _ALL_CONFIGS: LeadMagnetConfig[] = [
+  signalsLinkedinConfig,
+  equipoVentasIa30minConfig,
+  agenteInvestigacionComercialConfig,
+  agentesIaB2bConfig,
+];
+
+ALL_LEAD_MAGNETS = Object.fromEntries(_ALL_CONFIGS.map((c) => [c.slug, c]));
