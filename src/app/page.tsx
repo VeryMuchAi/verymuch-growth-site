@@ -157,7 +157,7 @@ export default function HomePage() {
           {/* Tag */}
           <p
             className="caption uppercase tracking-widest font-semibold mb-6"
-            style={{ color: "var(--accent)" }}
+            style={{ color: "var(--accent-text)" }}
           >
             IA aplicada a ventas y marketing
           </p>
@@ -230,7 +230,7 @@ export default function HomePage() {
           <div className="mb-14">
             <p
               className="caption uppercase tracking-widest font-semibold mb-3"
-              style={{ color: "var(--accent)" }}
+              style={{ color: "var(--accent-text)" }}
             >
               ¿Suena familiar?
             </p>
@@ -326,7 +326,7 @@ export default function HomePage() {
           <div className="mb-14 max-w-3xl">
             <p
               className="caption uppercase tracking-widest font-semibold mb-3"
-              style={{ color: "var(--accent)" }}
+              style={{ color: "var(--accent-text)" }}
             >
               Proceso
             </p>
@@ -359,7 +359,7 @@ export default function HomePage() {
                 <div key={s.num} className="flex flex-col gap-3">
                   <span
                     className="text-3xl font-extrabold"
-                    style={{ color: "var(--accent)" }}
+                    style={{ color: "var(--accent-text)" }}
                   >
                     {s.num}
                   </span>
@@ -385,7 +385,7 @@ export default function HomePage() {
           >
             <p
               className="caption uppercase tracking-widest font-bold mb-4"
-              style={{ color: "var(--accent)" }}
+              style={{ color: "var(--accent-text)" }}
             >
               Fase 2 — Automation as a Service · Relación continua
             </p>
@@ -418,7 +418,7 @@ export default function HomePage() {
                 <ul className="flex flex-col gap-2">
                   {c.items.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-primary)" }}>
-                      <span style={{ color: "var(--accent)" }}>✓</span>
+                      <span style={{ color: "var(--accent-text)" }}>✓</span>
                       {item}
                     </li>
                   ))}
@@ -459,7 +459,7 @@ export default function HomePage() {
           <div className="mb-14">
             <p
               className="caption uppercase tracking-widest font-semibold mb-3"
-              style={{ color: "var(--accent)" }}
+              style={{ color: "var(--accent-text)" }}
             >
               El equipo
             </p>
@@ -502,7 +502,7 @@ export default function HomePage() {
                     className="flex items-start gap-2 text-sm"
                     style={{ color: "var(--text-secondary)" }}
                   >
-                    <span style={{ color: "var(--accent)" }}>—</span>
+                    <span style={{ color: "var(--accent-text)" }}>—</span>
                     {item}
                   </li>
                 ))}
@@ -554,7 +554,7 @@ export default function HomePage() {
                     className="flex items-start gap-2 text-sm"
                     style={{ color: "var(--text-secondary)" }}
                   >
-                    <span style={{ color: "var(--accent)" }}>—</span>
+                    <span style={{ color: "var(--accent-text)" }}>—</span>
                     {item}
                   </li>
                 ))}
@@ -578,7 +578,7 @@ export default function HomePage() {
               style={{ color: "var(--text-primary)" }}
             >
               Los agentes de IA multiplican a tu equipo{" "}
-              <span style={{ color: "var(--accent)" }}>10x–20x.</span>{" "}
+              <span style={{ color: "var(--accent-text)" }}>10x–20x.</span>{" "}
               No reemplazan a nadie.
             </h2>
             <p className="text-base mb-4" style={{ color: "var(--text-secondary)" }}>
@@ -604,7 +604,7 @@ export default function HomePage() {
           <div className="mb-12">
             <p
               className="caption uppercase tracking-widest font-semibold mb-3"
-              style={{ color: "var(--accent)" }}
+              style={{ color: "var(--accent-text)" }}
             >
               Recursos
             </p>
@@ -632,7 +632,7 @@ export default function HomePage() {
                 <div className="flex items-center justify-between gap-3">
                   <span
                     className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px]"
-                    style={{ background: "rgba(91,166,107,0.18)", color: "var(--success)" }}
+                    style={{ background: "rgba(91,166,107,0.18)", color: "var(--success-text)" }}
                   >
                     Disponible
                   </span>
@@ -656,7 +656,7 @@ export default function HomePage() {
                 </p>
                 <span
                   className="text-sm font-semibold mt-auto"
-                  style={{ color: "var(--accent)" }}
+                  style={{ color: "var(--accent-text)" }}
                 >
                   Acceder gratis →
                 </span>
@@ -674,7 +674,7 @@ export default function HomePage() {
               >
                 <span
                   className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] self-start"
-                  style={{ background: "rgba(245,160,94,0.18)", color: "var(--accent-warm)" }}
+                  style={{ background: "rgba(245,160,94,0.18)", color: "var(--accent-warm-text)" }}
                 >
                   Q2 2026
                 </span>
@@ -699,7 +699,7 @@ export default function HomePage() {
             style={{ color: "var(--text-primary)" }}
           >
             ¿Listo para instalar tu{" "}
-            <span style={{ color: "var(--accent)" }}>primer agente de IA?</span>
+            <span style={{ color: "var(--accent-text)" }}>primer agente de IA?</span>
           </h2>
           <p className="text-base max-w-[560px]" style={{ color: "var(--text-secondary)" }}>
             Agenda una consultoría gratuita de 30 minutos. Analizamos tus procesos de
@@ -731,7 +731,14 @@ export default function HomePage() {
               alt="VeryMuch.ai"
               width={140}
               height={34}
-              className="h-7 w-auto object-contain logo-adaptive opacity-80"
+              className="logo-white h-7 w-auto object-contain opacity-80"
+            />
+            <Image
+              src="/Verymuch_Logo_transparent_real.png"
+              alt="VeryMuch.ai"
+              width={140}
+              height={34}
+              className="logo-color h-7 w-auto object-contain"
             />
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: "var(--text-secondary)" }}>
               Instalamos agentes de IA y sistemas de automatización para que los equipos

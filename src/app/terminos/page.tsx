@@ -15,14 +15,9 @@ export default function TerminosPage() {
         className="px-6 py-5 border-b flex items-center justify-between"
         style={{ borderColor: "var(--border)" }}
       >
-        <Link href="/">
-          <Image
-            src="/logo-white.png"
-            alt="VeryMuch.ai"
-            width={140}
-            height={34}
-            className="h-7 w-auto object-contain logo-adaptive"
-          />
+        <Link href="/" className="flex items-center">
+          <Image src="/logo-white.png" alt="VeryMuch.ai" width={140} height={34} className="logo-white h-7 w-auto object-contain" />
+          <Image src="/Verymuch_Logo_transparent_real.png" alt="VeryMuch.ai" width={140} height={34} className="logo-color h-7 w-auto object-contain" />
         </Link>
         <Link
           href="/"

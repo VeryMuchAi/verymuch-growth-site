@@ -88,7 +88,7 @@ function AgentCard({ agent }: { agent: typeof AGENTS[number] }) {
           className="shrink-0 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
           style={{
             background: isVentas ? "rgba(170,212,174,0.2)" : "rgba(245,160,94,0.2)",
-            color: isVentas ? "var(--accent)" : "var(--accent-warm)",
+            color: isVentas ? "var(--accent-text)" : "var(--accent-warm-text)",
           }}
         >
           {isVentas ? "Ventas" : "Marketing"}
@@ -108,7 +108,7 @@ function AgentCard({ agent }: { agent: typeof AGENTS[number] }) {
 
       <div className="pt-3 border-t" style={{ borderColor: "var(--border)" }}>
         <p className="text-[10px] font-semibold uppercase tracking-wider mb-1" style={{ color: "var(--text-secondary)" }}>Resultado</p>
-        <p className="text-sm font-semibold" style={{ color: "var(--success)" }}>{agent.result}</p>
+        <p className="text-sm font-semibold" style={{ color: "var(--success-text)" }}>{agent.result}</p>
       </div>
     </article>
   );
@@ -132,7 +132,7 @@ export default function AgentsInProductionSection() {
 
         {/* Header */}
         <div className="mb-12">
-          <p className="caption uppercase tracking-widest font-semibold mb-3" style={{ color: "var(--accent)" }}>
+          <p className="caption uppercase tracking-widest font-semibold mb-3" style={{ color: "var(--accent-text)" }}>
             Agentes en producción
           </p>
           <h2 className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight mb-3" style={{ color: "var(--text-primary)" }}>

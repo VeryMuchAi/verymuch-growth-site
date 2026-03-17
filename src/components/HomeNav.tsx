@@ -50,14 +50,22 @@ export default function HomeNav() {
         }}
       >
         <div className="max-w-6xl mx-auto px-6 h-full flex items-center justify-between gap-6">
-          {/* Logo */}
+          {/* Logo — white for dark mode, color for light mode */}
           <Link href="/" className="flex-shrink-0 z-10">
             <Image
               src="/logo-white.png"
               alt="VeryMuch.ai"
               width={148}
               height={36}
-              className="h-7 w-auto object-contain logo-adaptive"
+              className="logo-white h-7 w-auto object-contain"
+              priority
+            />
+            <Image
+              src="/Verymuch_Logo_transparent_real.png"
+              alt="VeryMuch.ai"
+              width={148}
+              height={36}
+              className="logo-color h-7 w-auto object-contain"
               priority
             />
           </Link>

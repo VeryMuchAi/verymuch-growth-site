@@ -10,10 +10,13 @@
   --bg-card:          #FFFFFF;
   --text-primary:     #363536;
   --text-secondary:   #6B7280;
-  --accent:           #AAD4AE;
+  --accent:           #AAD4AE;   /* fill / background use */
+  --accent-text:      #1B6B3A;   /* text on light bg — 6.2:1 contrast on #FAF9F7 */
   --accent-warm:      #F5A05E;
+  --accent-warm-text: #9A4200;   /* text on light bg — 5.4:1 contrast */
   --accent-gradient:  linear-gradient(135deg, #AAD4AE, #DDEAEE, #F5A05E);
   --success:          #5BA66B;
+  --success-text:     #1A5E2D;   /* text on light bg — 6.8:1 contrast */
   --error:            #E85D5D;
   --border:           rgba(54, 53, 54, 0.12);
 }
@@ -25,9 +28,12 @@
   --text-primary:     #FAF9F7;
   --text-secondary:   #9CA3AF;
   --accent:           #AAD4AE;
+  --accent-text:      #AAD4AE;   /* same as accent on dark bg */
   --accent-warm:      #F5A05E;
+  --accent-warm-text: #F5A05E;
   --accent-gradient:  linear-gradient(135deg, #AAD4AE, #DDEAEE, #F5A05E);
   --success:          #5BA66B;
+  --success-text:     #5BA66B;
   --error:            #E85D5D;
   --border:           rgba(250, 249, 247, 0.12);
 }
@@ -48,13 +54,19 @@ h3       { font-size: 22px; line-height: 30px; font-weight: 600; }
 body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
 .caption { font-size: 13px; line-height: 18px; font-weight: 400; }
 
-.text-accent      { color: var(--accent); }
-.text-accent-warm { color: var(--accent-warm); }
+.text-accent      { color: var(--accent-text); }
+.text-accent-warm { color: var(--accent-warm-text); }
 
-/* Logo: white PNG inverted to dark in light mode */
-:root[data-theme="light"] .logo-adaptive {
-  filter: invert(1) brightness(0.15);
-}
+/* ── Logo variants: show color logo in light, white logo in dark ──────────── */
+/* Default (before JS / dark mode assumed by inline script) */
+.logo-color { display: none; }
+.logo-white { display: block; }
+
+:root[data-theme="light"] .logo-color { display: block; }
+:root[data-theme="light"] .logo-white { display: none; }
+
+:root[data-theme="dark"]  .logo-color { display: none; }
+:root[data-theme="dark"]  .logo-white { display: block; }
 
 /* ─── Base resets ─────────────────────────────────────────────────────────── */
 
