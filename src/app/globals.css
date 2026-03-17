@@ -2,6 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Theme variables ─────────────────────────────────────────────────────── */
+
+:root[data-theme="light"] {
+  --bg-primary:       #FAF9F7;
+  --bg-secondary:     #DDEAEE;
+  --bg-card:          #FFFFFF;
+  --text-primary:     #363536;
+  --text-secondary:   #6B7280;
+  --accent:           #AAD4AE;
+  --accent-warm:      #F5A05E;
+  --accent-gradient:  linear-gradient(135deg, #AAD4AE, #DDEAEE, #F5A05E);
+  --success:          #5BA66B;
+  --error:            #E85D5D;
+  --border:           rgba(54, 53, 54, 0.12);
+}
+
+:root[data-theme="dark"] {
+  --bg-primary:       #000000;
+  --bg-secondary:     #363536;
+  --bg-card:          #0A0A0A;
+  --text-primary:     #FAF9F7;
+  --text-secondary:   #9CA3AF;
+  --accent:           #AAD4AE;
+  --accent-warm:      #F5A05E;
+  --accent-gradient:  linear-gradient(135deg, #AAD4AE, #DDEAEE, #F5A05E);
+  --success:          #5BA66B;
+  --error:            #E85D5D;
+  --border:           rgba(250, 249, 247, 0.12);
+}
+
+/* ─── Typography scale ────────────────────────────────────────────────────── */
+
+.font-display, h1, h2, h3, h4 {
+  font-family: var(--font-display), 'Plus Jakarta Sans', sans-serif;
+}
+body, p, span, li, input, button {
+  font-family: var(--font-sans), 'DM Sans', sans-serif;
+}
+
+.display { font-size: 48px; line-height: 56px; font-weight: 800; }
+h1       { font-size: 36px; line-height: 44px; font-weight: 800; }
+h2       { font-size: 28px; line-height: 36px; font-weight: 600; }
+h3       { font-size: 22px; line-height: 30px; font-weight: 600; }
+body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
+.caption { font-size: 13px; line-height: 18px; font-weight: 400; }
+
+.text-accent      { color: var(--accent); }
+.text-accent-warm { color: var(--accent-warm); }
+
+/* Logo: white PNG inverted to dark in light mode */
+:root[data-theme="light"] .logo-adaptive {
+  filter: invert(1) brightness(0.15);
+}
+
+/* ─── Base resets ─────────────────────────────────────────────────────────── */
+
 @layer base {
   *,
   *::before,
@@ -15,11 +71,6 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  /* Brand typography: Plus Jakarta Sans for headings, DM Sans for body */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display), system-ui, sans-serif;
   }
 }
 

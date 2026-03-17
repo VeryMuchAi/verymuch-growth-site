@@ -1,706 +1,832 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import HomeNav from "@/components/HomeNav";
-import AgentsSection from "@/components/AgentsSection";
-import AgentQuizSection from "@/components/AgentQuizSection";
+import AgentsInProductionSection from "@/components/AgentsInProductionSection";
 
 export const metadata: Metadata = {
-  title: "VeryMuch.ai — IA que vende",
+  title: "VeryMuch.ai — Agentes de IA para Ventas y Marketing",
   description:
-    "Instalamos agentes de IA y sistemas de automatización para marketing y ventas. IA en producción real, no pilotos experimentales.",
+    "Instalamos agentes de IA en tus equipos de ventas y marketing. Sistemas que crean contenido, captan leads, cualifican oportunidades y aceleran tu ciclo de ventas.",
   openGraph: {
-    title: "VeryMuch.ai — Instalamos agentes de IA que venden",
+    title: "VeryMuch.ai — Agentes de IA para Ventas y Marketing",
     description:
-      "Agentes de inteligencia artificial para marketing y ventas. Todo lo que vendemos lo probamos primero en nuestra propia empresa.",
-    type: "website",
-    siteName: "VeryMuch.ai",
+      "Sistemas que crean contenido, captan leads, cualifican oportunidades y aceleran tu ciclo de ventas.",
+    url: "https://verymuch.ai",
   },
 };
 
 const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
 
-// ─── Shared design tokens (inline) ───────────────────────────────────────────
-const GRAD_BRAND = "linear-gradient(135deg,#5AD4AE 0%,#F5A05E 100%)";
-const GRAD_TEXT  = "linear-gradient(90deg,#5AD4AE 0%,#F5A05E 100%)";
-const GRAD_CTA   = "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)";
+// ── HERO metrics ──────────────────────────────────────────────────────────────
+const METRICS = [
+  { value: "~8 semanas",      label: "Setup hasta producción" },
+  { value: "Tu equipo de IA", label: "Partner estratégico, no proveedor" },
+  { value: "8 agentes",       label: "En producción ahora mismo" },
+];
 
-// ─── Reusable micro-components (server-only) ─────────────────────────────────
-
-function GradientText({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="bg-clip-text text-transparent" style={{ backgroundImage: GRAD_TEXT }}>
-      {children}
-    </span>
-  );
-}
-
-// Section tag for DARK sections (teal text + gradient line)
-function SectionTag({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#5AD4AE] uppercase tracking-[0.08em] mb-4">
-      <span aria-hidden className="inline-block w-6 h-[2px] rounded" style={{ background: GRAD_BRAND }} />
-      {children}
-    </span>
-  );
-}
-
-// Section tag for LIGHT sections
-function SectionTagDark({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#5AD4AE] uppercase tracking-[0.08em] mb-4">
-      <span aria-hidden className="inline-block w-6 h-[2px] rounded" style={{ background: GRAD_BRAND }} />
-      {children}
-    </span>
-  );
-}
-
-function CtaPrimary({ href, children, external = false }: { href: string; children: React.ReactNode; external?: boolean }) {
-  const cls = "inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-semibold text-sm text-white transition-all duration-300 hover:-translate-y-px hover:shadow-[0_8px_30px_rgba(245,64,94,0.35)]";
-  const style = { background: GRAD_CTA, boxShadow: "0 4px 20px rgba(245,64,94,0.25)" };
-  if (external) return <a href={href} target="_blank" rel="noopener noreferrer" className={cls} style={style}>{children}<ArrowRight /></a>;
-  return <a href={href} className={cls} style={style}>{children}<ArrowRight /></a>;
-}
-
-function CtaSecondary({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a
-      href={href}
-      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-semibold text-sm text-white/80 border border-white/20 hover:bg-white/[0.06] hover:border-white/40 transition-all duration-300"
-    >
-      {children}
-    </a>
-  );
-}
-
-function ArrowRight() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function CheckItem({ children }: { children: React.ReactNode }) {
-  return (
-    <li className="flex items-start gap-2 text-[0.9rem] text-[rgba(255,255,255,0.6)]">
-      <span className="mt-0.5 text-[#5AD4AE] font-bold">✓</span>
-      {children}
-    </li>
-  );
-}
-
-// ─── Section data ─────────────────────────────────────────────────────────────
-
-const HOW_AGENTS = [
+// ── SYMPTOMS data ─────────────────────────────────────────────────────────────
+const VENTAS_SYMPTOMS = [
   {
-    num: "01", title: "Tú defines el trabajo",
-    desc: "Nos dices qué trabajo manual quieres automatizar — responder leads, limpiar el CRM, investigar prospectos, enviar follow-ups, generar propuestas. Cualquier flujo repetitivo.",
-    tags: ["Ventas", "Marketing", "Operaciones", "Soporte"],
+    icon: "⏱️",
+    title: "Leads que tardan +4 horas en recibir respuesta",
+    desc: "El 78% de los compradores elige al primero que contesta.",
   },
   {
-    num: "02", title: "Entrenamos al agente",
-    desc: "Configuramos la IA con tus instrucciones exactas, tono de voz, criterios de cualificación y herramientas. Aprende tu proceso — no plantillas genéricas.",
-    tags: ["Tus reglas", "Tus criterios", "Tu voz"],
+    icon: "🔍",
+    title: "SDRs que pasan el 70% del tiempo investigando",
+    desc: "Investigación manual que debería hacer una máquina.",
   },
   {
-    num: "03", title: "Trabaja de forma autónoma",
-    desc: "Una vez desplegado, el agente opera 24/7. Monitorea señales, procesa datos, toma decisiones y ejecuta acciones — todo dentro de los límites que estableces.",
-    tags: ["24/7", "Respuesta instantánea", "Cero errores"],
-  },
-  {
-    num: "04", title: "Tú eres el dueño de todo",
-    desc: "Sin lock-in de proveedor. Sin cuotas mensuales de plataforma. Eres dueño de los flujos, automatizaciones, prompts de IA y toda la infraestructura. Cancela cuando quieras.",
-    tags: ["Tu infraestructura", "Entrega completa", "Sin lock-in"],
+    icon: "📉",
+    title: "Follow-ups que se pierden, leads que se enfrían",
+    desc: "Pipeline que se evapora sin que nadie se dé cuenta.",
   },
 ];
 
-const PROBLEMS = [
+const MARKETING_SYMPTOMS = [
   {
-    num: "01", title: "No saben por dónde empezar",
-    desc: "Ni cómo priorizar lo que realmente impacta en negocio. La oferta de herramientas IA es abrumadora y cambia cada semana.",
+    icon: "✍️",
+    title: "Contenido que tarda días en producirse",
+    desc: "Posts, emails, lead magnets: todo pasa por un cuello de botella humano que no escala.",
   },
   {
-    num: "02", title: "No tienen talento interno",
-    desc: "Para diseñar, construir y operar agentes de IA ni automatizaciones. El 45% cita falta de personal cualificado como barrera principal.",
+    icon: "📋",
+    title: "Publicación manual en 5 plataformas",
+    desc: "Tu equipo copia y pega el mismo contenido adaptándolo a mano para cada canal.",
   },
   {
-    num: "03", title: "Las opciones son arriesgadas",
-    desc: "Freelancers sin verificar, agencias generalistas o consultores teóricos que no implementan. El riesgo es perder tiempo y dinero.",
-  },
-];
-
-const LITMUS = [
-  {
-    num: "01", title: "Repetitivo",
-    desc: "Se ejecuta diaria o semanalmente con los mismos pasos. Si tu equipo lo hace en piloto automático, una máquina debería hacerlo literalmente.",
-    example: "Cada lead inbound pasa por el mismo flujo: enriquecer → puntuar → asignar",
-  },
-  {
-    num: "02", title: "Consume tiempo, no cerebro",
-    desc: "Consume horas pero no requiere pensamiento estratégico. Entrada de datos, búsquedas, construcción de listas, actualizaciones de estado.",
-    example: "Los reps pasan 20 min investigando cada prospecto antes de llamar",
-  },
-  {
-    num: "03", title: "Sensible a velocidad",
-    desc: "Una respuesta más rápida cambia el resultado. El 78% de los compradores eligen al primero que responde.",
-    example: "Los leads inbound esperan +4 horas porque el equipo está ocupado",
-  },
-  {
-    num: "04", title: "Multi-herramienta",
-    desc: "El flujo implica copiar datos entre 2+ plataformas. Más traspasos = más ROI del agente.",
-    example: "Después de cada llamada: actualizar HubSpot, avisar en Slack, registrar en ClickUp",
-  },
-  {
-    num: "05", title: "Propenso a errores",
-    desc: "Cuando los humanos se apresuran u olvidan, se pierde revenue. Follow-ups perdidos, datos obsoletos, propuestas tardías.",
-    example: "El 30% de los registros del CRM están desactualizados porque nadie los mantiene",
+    icon: "📊",
+    title: "Zero visibilidad sobre qué contenido genera leads",
+    desc: "Publicas mucho pero no sabes qué piezas realmente mueven el pipeline.",
   },
 ];
 
-const HOW_STEPS = [
-  { num: "01", icon: "📞", title: "Discovery Call",           desc: "Entendemos tus procesos y mapeamos el flujo ideal del agente",                                      time: "30 min" },
-  { num: "02", icon: "📐", title: "Diseño del Agente",        desc: "Arquitectura, integraciones y flujo de trabajo a medida",                                          time: "2–3 días" },
-  { num: "03", icon: "🚀", title: "Construcción y Deploy",    desc: "Construimos, probamos y desplegamos el agente en tu empresa",                                       time: "1–2 semanas" },
-  { num: "04", icon: "🤝", title: "Entrega + Capacitación",   desc: "Te entregamos todo. Documentación, training y soporte post-lanzamiento",                            time: "Es tuyo" },
-];
-
-const SERVICES = [
+// ── HOW WE WORK steps ─────────────────────────────────────────────────────────
+const P1_STEPS = [
   {
-    icon: "🧭",
-    title: "Consultoría Estratégica",
-    desc: "Diagnosticamos tus procesos, identificamos áreas de mayor impacto y definimos una hoja de ruta de implementación.",
-    items: ["Análisis de procesos comerciales", "Identificación de oportunidades IA", "Hoja de ruta personalizada"],
+    num: "01",
+    title: "Discovery Call",
+    desc: "Entendemos tus procesos de ventas y marketing, identificamos cuellos de botella y mapeamos dónde los agentes pueden generar mayor impacto. Si tu empresa necesita primero construir las bases, te lo decimos y empezamos por ahí.",
   },
   {
-    icon: "🤖",
-    title: "Agentes de IA y Automatización",
-    desc: "Diseñamos, construimos e instalamos agentes de IA y sistemas de automatización para todo el funnel comercial.",
-    items: ["Inbound: detección, contenido, captación", "Outbound: prospección, secuencias, seguimiento", "Nurturing, conversión y handoff comercial"],
+    num: "02",
+    title: "Diseño del agente",
+    desc: "Arquitectura a medida, integraciones con tu stack actual (CRM, email, LinkedIn, herramientas de contenido), definición de entregables y presupuesto cerrado.",
   },
   {
-    icon: "👥",
-    title: "Marketplace de Talento IA",
-    desc: "Si necesitas algo que no cubrimos directamente, te conectamos con especialistas verificados de nuestro marketplace.",
-    items: ["Talento verificado, no autodeclarado", "Automatizaciones, chatbots, CRM y más", "Pago por hitos con supervisión"],
-    cta: { label: "Explorar Marketplace", href: "https://www.verymuch.ai" },
+    num: "03",
+    title: "Construcción y deploy",
+    desc: "Construimos, probamos en tu entorno real, iteramos y desplegamos los primeros agentes. Precio cerrado, sin sorpresas.",
   },
 ];
 
-const WHY = [
-  { icon: "🍳", title: "Comemos nuestra propia comida",   desc: "Todo lo que vendemos lo usamos primero internamente. Si no funciona para nosotros, no lo vendemos." },
-  { icon: "🛡️", title: "Pago por hitos verificados",      desc: "No pagas por promesas. Pagas por resultados verificados. Siempre velamos por los intereses del cliente." },
-  { icon: "⚡",  title: "IA en producción real",           desc: "El cliente recibe un sistema que ya funciona en producción, no un piloto experimental. Riesgo mínimo." },
-  { icon: "✅", title: "Talento verificado",              desc: "Cada especialista pasa un proceso de verificación. No es un directorio abierto donde cualquiera se registra." },
-  { icon: "💰", title: "Precios competitivos",            desc: "Talento LATAM verificado permite precios significativamente más competitivos sin comprometer calidad." },
-  { icon: "🌎", title: "España + México + EUA",           desc: "Presencia en los mercados clave del mundo hispanohablante y angloparlante. Operamos en español e inglés." },
+const CALLOUTS = [
+  {
+    title: "¿Tu empresa necesita primero las bases?",
+    intro: "No todas las empresas están listas para desplegar agentes desde el día uno.",
+    items: [
+      "RAG con el conocimiento interno de tu empresa",
+      "Sistema operativo en Notion",
+      "Formación práctica del equipo",
+    ],
+    quote: "Esto no es un curso teórico. Es implementación real adaptada a tu empresa.",
+  },
+  {
+    title: "¿Necesitas una aplicación a medida?",
+    intro: "Desarrollamos aplicaciones funcionales en días usando IA.",
+    items: [
+      "Dashboards internos y herramientas de gestión",
+      "Portales de cliente y apps de seguimiento",
+      "MVPs de producto y prototipos funcionales",
+    ],
+    quote: "De idea a aplicación funcionando en días, no meses.",
+  },
 ];
 
-const LEAD_MAGNETS = [
+// ── RESOURCES data ────────────────────────────────────────────────────────────
+const LEAD_MAGNETS_LIVE = [
   {
-    id: "signals-linkedin", status: "live" as const,
-    badge: "Disponible ahora", icon: "🎯", category: "Prospección",
-    title: "Agente de Ventas IA Basado en Señales de LinkedIn",
-    description: "Detecta intención real, scoring ICP automático y outreach personalizado. Workflow n8n nodo por nodo.",
-    href: "/signals-linkedin", ctaLabel: "Acceder al Blueprint",
-    stack: ["Trigify", "Claude Code", "n8n"],
+    id: "signals-linkedin",
+    title: "Agente de Ventas IA por Señales de LinkedIn",
+    desc: "Detecta señales de intención en LinkedIn y convierte engagement en outreach personalizado.",
+    href: "/signals-linkedin",
+    stack: ["Trigify", "Claude", "n8n"],
   },
   {
-    id: "equipo-ventas-ia-30min", status: "live" as const,
-    badge: "NUEVO · Feb 2026", icon: "🤖", category: "Agent Teams",
-    title: "Monta tu Equipo de Ventas IA en 30 Minutos",
-    description: "4 agentes IA en paralelo con Claude Opus 4.6: Investigador, Analista, Escritor y Coordinador. Sin código, en 30 min.",
-    href: "/lead/equipo-ventas-ia-30min", ctaLabel: "Descargar guía gratis",
-    stack: ["Claude Opus 4.6", "Agent Teams", "Claude.ai"],
+    id: "equipo-ventas-ia-30min",
+    title: "Equipo de Ventas IA en 30 Minutos",
+    desc: "4 agentes en paralelo con Opus 4.6 — investigar, analizar, escribir y coordinar.",
+    href: "/lead/equipo-ventas-ia-30min",
+    stack: ["Claude Opus", "n8n"],
   },
   {
-    id: "agente-investigacion-comercial", status: "live" as const,
-    badge: "Disponible ahora", icon: "🔍", category: "Inteligencia Comercial",
+    id: "agente-investigacion-comercial",
     title: "Agente IA de Investigación Comercial",
-    description: "Investiga cualquier empresa con IA y genera briefings comerciales completos con DAFO, MEDDPICC y outreach personalizado.",
-    href: "/lead/agente-investigacion-comercial", ctaLabel: "Acceder a la Guía",
+    desc: "Investiga cualquier empresa y genera briefings con DAFO, MEDDPICC y outreach personalizado.",
+    href: "/lead/agente-investigacion-comercial",
     stack: ["Claude", "n8n", "Supabase"],
   },
   {
-    id: "20-agentes-ia-b2b", status: "live" as const,
-    badge: "Disponible ahora", icon: "🤖", category: "Estrategia Comercial",
+    id: "20-agentes-ia-b2b",
     title: "20 Agentes de IA para tu Estrategia Comercial B2B",
-    description: "Guía práctica con 20 agentes listos para montar. Tech stack, paso a paso y resultados esperados para cada uno.",
-    href: "/lead/20-agentes-ia-b2b", ctaLabel: "Descargar la Guía",
+    desc: "Tech stack, paso a paso y resultados esperados para 20 agentes listos para implementar.",
+    href: "/lead/20-agentes-ia-b2b",
     stack: ["Claude", "n8n", "Clay", "Instantly"],
-  },
-  {
-    id: "cold-email", status: "soon" as const,
-    badge: "Próximamente", icon: "✉️", category: "Outreach",
-    title: "Sistema de Cold Email con IA",
-    description: "Genera y envía cold emails hiper-personalizados a escala usando IA y tu propia infraestructura.",
-    href: null, ctaLabel: "Próximamente",
-    stack: ["Clay", "Claude", "Instantly"],
-  },
-  {
-    id: "lead-scoring", status: "soon" as const,
-    badge: "Próximamente", icon: "📊", category: "CRM & Scoring",
-    title: "Lead Scoring Automático en tu CRM",
-    description: "Conecta señales de intención con tu CRM y puntúa leads en tiempo real según tu ICP.",
-    href: null, ctaLabel: "Próximamente",
-    stack: ["n8n", "HubSpot", "GPT-4o"],
   },
 ];
 
-// ─── Page ─────────────────────────────────────────────────────────────────────
+const LEAD_MAGNETS_SOON = [
+  { id: "cold-email", title: "Sistema de Cold Email con IA" },
+  { id: "lead-scoring", title: "Lead Scoring Automático en tu CRM" },
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
 
 export default function HomePage() {
   return (
-    <div className="bg-[#0A0A0B] text-white overflow-x-hidden">
-
-      {/* ════ ANNOUNCEMENT BAR ══════════════════════════════════════════════ */}
-      <a
-        href="/signals-linkedin"
-        className="fixed top-0 left-0 right-0 z-[60] flex items-center justify-center gap-3 px-4 py-2.5 text-center transition-opacity hover:opacity-90"
-        style={{ height: 40, background: "linear-gradient(105deg,#F5405E 0%,#F5A05E 45%,#5AD4AE 100%)" }}
-      >
-        <span className="text-white text-[0.82rem] font-medium">
-          🎯 Nuevo: Blueprint gratuito — Agente de Ventas IA por Señales de LinkedIn
-        </span>
-        <span
-          className="hidden sm:inline-flex items-center px-3 py-1 rounded-md text-white text-[0.75rem] font-semibold border border-white/30"
-          style={{ background: "rgba(255,255,255,0.18)", backdropFilter: "blur(8px)" }}
-        >
-          Acceder →
-        </span>
-      </a>
-
-      {/* ════ NAV ════════════════════════════════════════════════════════════ */}
+    <div style={{ background: "var(--bg-primary)", color: "var(--text-primary)" }}>
       <HomeNav />
 
-      {/* ════ HERO ══════════════════════════════════════════════════════════ */}
+      {/* ══ HERO ═══════════════════════════════════════════════════════════════ */}
       <section
         id="hero"
-        className="relative flex items-center justify-center min-h-screen overflow-hidden"
-        style={{ paddingTop: 200, paddingBottom: 80 }}
+        className="pt-40 pb-24 px-6"
+        style={{ background: "var(--bg-primary)" }}
       >
-        {/* Orbs */}
-        <div aria-hidden className="pointer-events-none absolute inset-0">
-          <div className="absolute rounded-full blur-[80px]" style={{ width:600, height:600, background:"rgba(90,212,174,0.08)", top:"-10%", right:"-10%" }} />
-          <div className="absolute rounded-full blur-[80px]" style={{ width:500, height:500, background:"rgba(245,160,94,0.06)", bottom:"-15%", left:"-10%" }} />
-          <div className="absolute rounded-full blur-[80px]" style={{ width:300, height:300, background:"rgba(245,64,94,0.05)", top:"40%", left:"50%" }} />
-        </div>
-        {/* Grid */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{
-            backgroundImage: "linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px)",
-            backgroundSize: "60px 60px",
-            maskImage: "radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%)",
-            WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%)",
-          }}
-        />
-
-        <div className="relative z-10 max-w-[800px] mx-auto px-6 text-center">
-          {/* Badge */}
-          <div
-            className="inline-flex items-center gap-2.5 rounded-full border border-[rgba(90,212,174,0.15)] px-5 py-2 mb-7"
-            style={{ background: "rgba(90,212,174,0.08)" }}
+        <div className="max-w-4xl mx-auto">
+          {/* Tag */}
+          <p
+            className="caption uppercase tracking-widest font-semibold mb-6"
+            style={{ color: "var(--accent)" }}
           >
-            <span className="w-[6px] h-[6px] rounded-full bg-[#5AD4AE]" style={{ animation: "pulse 2s ease-in-out infinite" }} aria-hidden />
-            <span className="text-[0.8rem] font-semibold text-[#5AD4AE] uppercase tracking-[0.06em]">
-              IA aplicada a Marketing y Ventas
-            </span>
-          </div>
+            IA aplicada a ventas y marketing
+          </p>
 
           {/* H1 */}
-          <h1 className="text-[clamp(2.4rem,5.5vw,4rem)] font-extrabold leading-[1.12] tracking-[-0.03em] text-white mb-6">
-            Instalamos <GradientText>agentes de IA</GradientText>{" "}
-            que venden mientras tú creces
+          <h1
+            className="display font-extrabold leading-tight mb-6"
+            style={{ color: "var(--text-primary)" }}
+          >
+            Instalamos agentes de IA en tus equipos de ventas y marketing
           </h1>
 
-          <p className="text-[clamp(1.05rem,2vw,1.2rem)] text-[rgba(255,255,255,0.55)] max-w-[620px] mx-auto leading-[1.75] mb-10">
-            Agentes de inteligencia artificial y sistemas de automatización para marketing y ventas.
-            Todo lo que vendemos lo probamos primero en nuestra propia empresa.
-            IA en producción real, no pilotos experimentales.
+          {/* Subheadline */}
+          <p
+            className="text-lg leading-relaxed max-w-2xl mb-10"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            Sistemas que crean contenido, captan leads, cualifican oportunidades
+            y aceleran tu ciclo de ventas. Todo lo que vendemos lo usamos primero
+            en nuestra empresa. IA en producción real, no pilotos experimentales.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap gap-4 justify-center mb-16">
-            <CtaPrimary href={GHL} external>Agenda una consultoría gratuita</CtaPrimary>
-            <CtaSecondary href="#how">Ver cómo funciona ↓</CtaSecondary>
+          <div className="flex flex-wrap gap-4 mb-16">
+            <a
+              href={GHL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-7 py-3.5 rounded-xl text-base font-bold transition-opacity duration-200 hover:opacity-85"
+              style={{ background: "var(--accent)", color: "#363536" }}
+            >
+              Agenda una consultoría gratuita
+            </a>
+            <a
+              href="#how"
+              className="inline-flex items-center px-7 py-3.5 rounded-xl text-base font-semibold border transition-opacity duration-200 hover:opacity-100 opacity-70"
+              style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
+            >
+              Ver cómo funciona
+            </a>
           </div>
 
-          {/* Stats */}
-          <div className="flex flex-wrap gap-12 justify-center">
-            {[
-              { val: "2-3 Semanas", label: "Tiempo de construcción" },
-              { val: "100%",        label: "Propiedad" },
-              { val: "3x+",        label: "ROI en el Año 1" },
-            ].map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="text-[1.8rem] font-extrabold text-white leading-tight">{s.val}</div>
-                <div className="text-[0.8rem] text-[rgba(255,255,255,0.4)] mt-1">{s.label}</div>
+          {/* Metrics */}
+          <div
+            className="flex flex-wrap gap-x-12 gap-y-6 pt-8 border-t"
+            style={{ borderColor: "var(--border)" }}
+          >
+            {METRICS.map((m) => (
+              <div key={m.value}>
+                <p className="text-xl font-bold" style={{ color: "var(--text-primary)" }}>
+                  {m.value}
+                </p>
+                <p className="caption mt-0.5" style={{ color: "var(--text-secondary)" }}>
+                  {m.label}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ════ HOW AI AGENTS WORK ════════════════════════════════════════════ */}
-      <section className="py-24 bg-[#111115]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <SectionTag>Cómo funcionan</SectionTag>
-            <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold tracking-tight leading-tight text-white">
-              Cómo funcionan <GradientText>realmente</GradientText> los agentes de IA
-            </h2>
-            <p className="mt-4 text-[rgba(255,255,255,0.45)] max-w-lg mx-auto leading-relaxed">
-              Piénsalo como contratar un nuevo empleado — uno que nunca duerme.
+      {/* ══ SYMPTOMS ══════════════════════════════════════════════════════════ */}
+      <section
+        id="symptoms"
+        className="py-24 px-6"
+        style={{ background: "var(--bg-secondary)" }}
+      >
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="mb-14">
+            <p
+              className="caption uppercase tracking-widest font-semibold mb-3"
+              style={{ color: "var(--accent)" }}
+            >
+              ¿Suena familiar?
             </p>
+            <h2
+              className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Si tus equipos de ventas y marketing tienen estos síntomas…
+            </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {HOW_AGENTS.map((s) => (
-              <div
-                key={s.num}
-                className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-7 flex flex-col gap-4 hover:border-[rgba(90,212,174,0.2)] hover:bg-white/[0.05] transition-all duration-300"
-              >
+          {/* Ventas block */}
+          <div className="mb-10">
+            <p
+              className="caption uppercase tracking-widest font-bold mb-5"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              Ventas
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {VENTAS_SYMPTOMS.map((s) => (
                 <div
-                  className="text-[3rem] font-extrabold leading-none bg-clip-text text-transparent opacity-15"
-                  style={{ backgroundImage: GRAD_TEXT }}
+                  key={s.title}
+                  className="rounded-2xl p-6 border border-l-4"
+                  style={{
+                    background: "var(--bg-card)",
+                    borderColor: "var(--border)",
+                    borderLeftColor: "var(--error)",
+                  }}
                 >
-                  {s.num}
+                  <span className="text-3xl mb-4 block">{s.icon}</span>
+                  <h3 className="text-sm font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
+                    {s.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                    {s.desc}
+                  </p>
                 </div>
-                <h3 className="text-base font-bold text-white">{s.title}</h3>
-                <p className="text-[0.88rem] text-[rgba(255,255,255,0.45)] leading-relaxed flex-1">{s.desc}</p>
-                <div className="flex flex-wrap gap-1.5">
-                  {s.tags.map((t) => (
-                    <span key={t} className="text-[0.72rem] font-semibold text-[#5AD4AE] bg-[rgba(90,212,174,0.08)] border border-[rgba(90,212,174,0.15)] rounded-full px-2.5 py-0.5">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
+          {/* Marketing block */}
+          <div className="mb-14">
+            <p
+              className="caption uppercase tracking-widest font-bold mb-5"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              Marketing
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {MARKETING_SYMPTOMS.map((s) => (
+                <div
+                  key={s.title}
+                  className="rounded-2xl p-6 border border-l-4"
+                  style={{
+                    background: "var(--bg-card)",
+                    borderColor: "var(--border)",
+                    borderLeftColor: "var(--error)",
+                  }}
+                >
+                  <span className="text-3xl mb-4 block">{s.icon}</span>
+                  <h3 className="text-sm font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
+                    {s.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                    {s.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Closing line */}
+          <p
+            className="text-center text-base font-medium max-w-xl mx-auto"
+            style={{ color: "var(--text-primary)" }}
+          >
+            Si reconoces al menos dos de estos, tus equipos están perdiendo dinero cada día.
+            Podemos solucionarlo.
+          </p>
         </div>
       </section>
 
-      {/* ════ PROBLEMS ══════════════════════════════════════════════════════ */}
-      <section className="py-24 bg-[#FAFBFC]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <SectionTagDark>El desafío</SectionTagDark>
-            <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold tracking-tight leading-tight text-gray-900 mt-2">
-              Tu empresa quiere implementar IA<br />
-              pero se enfrenta a <GradientText>tres obstáculos</GradientText>
+      {/* ══ CÓMO TRABAJAMOS ═══════════════════════════════════════════════════ */}
+      <section
+        id="how"
+        className="py-24 px-6"
+        style={{ background: "var(--bg-primary)" }}
+      >
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="mb-14 max-w-3xl">
+            <p
+              className="caption uppercase tracking-widest font-semibold mb-3"
+              style={{ color: "var(--accent)" }}
+            >
+              Proceso
+            </p>
+            <h2
+              className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight mb-4"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Tu partner estratégico en IA para ventas y marketing
             </h2>
-            <p className="mt-4 text-gray-500 max-w-lg mx-auto leading-relaxed">
-              Las empresas mid-market necesitan IA en sus procesos comerciales pero encuentran barreras reales.
+            <p className="text-base" style={{ color: "var(--text-secondary)" }}>
+              Un proceso claro en dos fases: primero construimos tus agentes,
+              después los evolucionamos y vamos implantando nuevos. No somos un
+              proveedor puntual, somos tu equipo de IA.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {PROBLEMS.map((p) => (
-              <div
-                key={p.num}
-                className="relative bg-white border border-gray-100 rounded-2xl p-9 overflow-hidden hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 group"
-              >
-                {/* Hover top accent */}
-                <div
-                  aria-hidden
-                  className="absolute top-0 left-0 right-0 h-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: GRAD_CTA }}
-                />
-                <div
-                  className="text-[3rem] font-extrabold leading-none bg-clip-text text-transparent opacity-15 mb-4"
-                  style={{ backgroundImage: GRAD_TEXT }}
-                >
-                  {p.num}
-                </div>
-                <h3 className="text-[1.1rem] font-bold text-gray-900 mb-3">{p.title}</h3>
-                <p className="text-gray-500 text-[0.92rem] leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════ AGENTS (CLIENT COMPONENT) ═════════════════════════════════════ */}
-      <AgentsSection />
-
-      {/* ════ QUIZ ══════════════════════════════════════════════════════════ */}
-      <AgentQuizSection />
-
-      {/* ════ HOW IT WORKS / TIMELINE ══════════════════════════════════════ */}
-      <section id="how" className="py-24 bg-[#FAFBFC]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <SectionTagDark>Proceso</SectionTagDark>
-            <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold tracking-tight leading-tight text-gray-900 mt-2">
-              De llamada a <GradientText>agente funcionando</GradientText> en 2-3 semanas
-            </h2>
-            <p className="mt-4 text-gray-500 max-w-md mx-auto leading-relaxed">
-              Un proceso claro, medible y sin sorpresas. Pago por hitos.
+          {/* Fase 1 */}
+          <div
+            className="rounded-2xl p-8 lg:p-10 mb-6 border"
+            style={{ background: "var(--bg-secondary)", borderColor: "var(--border)" }}
+          >
+            <p
+              className="caption uppercase tracking-widest font-bold mb-8 pb-4 border-b"
+              style={{ color: "var(--text-secondary)", borderColor: "var(--border)" }}
+            >
+              Fase 1 — Setup · ~8 semanas · Precio cerrado desde 3.500 USD
             </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {HOW_STEPS.map((s, i) => (
-              <div key={s.num} className="relative flex flex-col items-center text-center gap-4">
-                {/* Connector line */}
-                {i < HOW_STEPS.length - 1 && (
-                  <div
-                    aria-hidden
-                    className="hidden lg:block absolute top-[28px] left-[calc(50%+36px)] right-[-calc(50%-36px)] h-[2px]"
-                    style={{ background: "linear-gradient(90deg,rgba(90,212,174,0.3),rgba(245,160,94,0.3))" }}
-                  />
-                )}
-                <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center text-2xl relative z-10"
-                  style={{ background: "linear-gradient(135deg,rgba(90,212,174,0.15),rgba(245,160,94,0.1))", border: "2px solid rgba(90,212,174,0.2)" }}
-                >
-                  {s.icon}
-                </div>
-                <h3 className="text-base font-bold text-gray-900">{s.title}</h3>
-                <p className="text-gray-500 text-[0.88rem] leading-relaxed">{s.desc}</p>
-                <span className="inline-flex items-center gap-1.5 text-[0.78rem] font-semibold text-[#5AD4AE]">
-                  ⏱ {s.time}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ════ SERVICES ══════════════════════════════════════════════════════ */}
-      <section id="services" className="py-24 bg-[#0A0A0B] relative overflow-hidden">
-        {/* Orbs */}
-        <div aria-hidden className="pointer-events-none absolute inset-0">
-          <div className="absolute rounded-full blur-[120px] opacity-[0.08]" style={{ width:500, height:500, background:"#5AD4AE", top:"-20%", left:"-10%" }} />
-          <div className="absolute rounded-full blur-[120px] opacity-[0.08]" style={{ width:500, height:500, background:"#F5A05E", bottom:"-20%", right:"-10%" }} />
-        </div>
-        <div className="relative z-10 max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <SectionTag>Nuestras soluciones</SectionTag>
-            <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold tracking-tight leading-tight text-white mt-2">
-              Resolvemos los tres. <GradientText>Así.</GradientText>
-            </h2>
-            <p className="mt-4 text-[rgba(255,255,255,0.45)] max-w-lg mx-auto leading-relaxed">
-              Combinamos consultoría estratégica, implementación técnica y talento verificado.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {SERVICES.map((svc) => (
-              <div
-                key={svc.title}
-                className="rounded-2xl border border-white/[0.07] bg-white/[0.03] p-10 flex flex-col gap-5 hover:border-[rgba(90,212,174,0.2)] hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300"
-              >
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl"
-                  style={{ background: "rgba(90,212,174,0.1)" }}
-                >
-                  {svc.icon}
-                </div>
-                <h3 className="text-[1.1rem] font-bold text-white">{svc.title}</h3>
-                <p className="text-[rgba(255,255,255,0.45)] text-[0.92rem] leading-relaxed">{svc.desc}</p>
-                <ul className="flex flex-col gap-2">
-                  {svc.items.map((item) => <CheckItem key={item}>{item}</CheckItem>)}
-                </ul>
-                {svc.cta && (
-                  <a
-                    href={svc.cta.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-[#5AD4AE] hover:text-[#3BA88A] transition-colors"
+            <div className="grid md:grid-cols-3 gap-8">
+              {P1_STEPS.map((s) => (
+                <div key={s.num} className="flex flex-col gap-3">
+                  <span
+                    className="text-3xl font-extrabold"
+                    style={{ color: "var(--accent)" }}
                   >
-                    {svc.cta.label} ↗
-                  </a>
-                )}
+                    {s.num}
+                  </span>
+                  <h3 className="text-base font-semibold" style={{ color: "var(--text-primary)" }}>
+                    {s.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                    {s.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Fase 2 */}
+          <div
+            className="rounded-2xl p-8 lg:p-10 mb-10 border border-l-4"
+            style={{
+              background: "rgba(170,212,174,0.06)",
+              borderColor: "var(--border)",
+              borderLeftColor: "var(--accent)",
+            }}
+          >
+            <p
+              className="caption uppercase tracking-widest font-bold mb-4"
+              style={{ color: "var(--accent)" }}
+            >
+              Fase 2 — Automation as a Service · Relación continua
+            </p>
+            <h3
+              className="text-xl font-bold mb-3"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Tu equipo de IA, en modo continuo
+            </h3>
+            <p className="text-base leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+              Operamos los agentes activos, los optimizamos con datos reales, y vamos
+              diseñando e implantando nuevos agentes en tu empresa. Monitorización,
+              ajustes, nuevas integraciones, reporting y soporte continuo. Tu equipo
+              de IA sin que tengas que construirlo internamente.
+            </p>
+          </div>
+
+          {/* Callouts */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {CALLOUTS.map((c) => (
+              <div
+                key={c.title}
+                className="rounded-2xl p-7 border flex flex-col gap-4"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <h3 className="text-base font-bold" style={{ color: "var(--text-primary)" }}>
+                  {c.title}
+                </h3>
+                <p className="text-sm" style={{ color: "var(--text-secondary)" }}>{c.intro}</p>
+                <ul className="flex flex-col gap-2">
+                  {c.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-primary)" }}>
+                      <span style={{ color: "var(--accent)" }}>✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-sm italic" style={{ color: "var(--text-secondary)" }}>
+                  &ldquo;{c.quote}&rdquo;
+                </p>
               </div>
             ))}
+          </div>
+
+          {/* Section CTA */}
+          <div>
+            <a
+              href={GHL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-7 py-3.5 rounded-xl text-base font-bold transition-opacity duration-200 hover:opacity-85"
+              style={{ background: "var(--accent)", color: "#363536" }}
+            >
+              Empieza con una discovery call gratuita
+            </a>
           </div>
         </div>
       </section>
 
-      {/* ════ RESOURCES / LEAD MAGNETS HUB ═════════════════════════════════ */}
-      <section id="resources" className="py-24 bg-[#111115]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-lg mb-14">
-            <SectionTag>Recursos gratuitos</SectionTag>
-            <h2 className="text-[clamp(1.8rem,4vw,2.4rem)] font-extrabold tracking-tight text-white mt-2 mb-3">
+      {/* ══ AGENTES EN PRODUCCIÓN (client component) ══════════════════════════ */}
+      <AgentsInProductionSection />
+
+      {/* ══ EQUIPO ════════════════════════════════════════════════════════════ */}
+      <section
+        id="team"
+        className="py-24 px-6"
+        style={{ background: "var(--bg-primary)" }}
+      >
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="mb-14">
+            <p
+              className="caption uppercase tracking-widest font-semibold mb-3"
+              style={{ color: "var(--accent)" }}
+            >
+              El equipo
+            </p>
+            <h2
+              className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Quiénes somos
+            </h2>
+          </div>
+
+          {/* Founders */}
+          <div className="grid md:grid-cols-2 gap-10 mb-20">
+            {/* Jorge */}
+            <div className="flex flex-col gap-5">
+              <div
+                className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold"
+                style={{ background: "var(--bg-secondary)", color: "var(--text-primary)" }}
+              >
+                JH
+              </div>
+              <div>
+                <h3 className="text-lg font-bold" style={{ color: "var(--text-primary)" }}>
+                  Jorge Herrera
+                </h3>
+                <p className="caption mt-0.5" style={{ color: "var(--text-secondary)" }}>
+                  Co-fundador · Estrategia, ventas y contenido · Madrid
+                </p>
+              </div>
+              <ul className="flex flex-col gap-2">
+                {[
+                  "EMBA por IE Business School",
+                  "Máster en IA aplicada a Marketing y Ventas (ESIC)",
+                  "+15 años de experiencia emprendedora",
+                  "Ex-WikiTribune (con Jimmy Wales)",
+                  "Referencia en LinkedIn sobre IA para equipos comerciales",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-sm"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    <span style={{ color: "var(--accent)" }}>—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://www.linkedin.com/in/jorgeherreracruz/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="self-start text-sm font-semibold border px-4 py-2 rounded-lg transition-opacity hover:opacity-100 opacity-70"
+                style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
+              >
+                LinkedIn →
+              </a>
+            </div>
+
+            {/* Edwin */}
+            <div className="flex flex-col gap-5">
+              <div
+                className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold"
+                style={{ background: "var(--bg-secondary)", color: "var(--text-primary)" }}
+              >
+                EM
+              </div>
+              <div>
+                <h3 className="text-lg font-bold" style={{ color: "var(--text-primary)" }}>
+                  Edwin Moreno
+                </h3>
+                <p className="caption mt-0.5" style={{ color: "var(--text-secondary)" }}>
+                  Co-fundador · Operaciones, IA y talento · Ciudad de México
+                </p>
+              </div>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                Instalamos agentes de IA que ayudan a empresas mid-market a vender más.
+                Antes de vender cualquier sistema, lo probamos internamente. Si no funciona
+                para nosotros, no te lo vendemos.
+              </p>
+              <ul className="flex flex-col gap-2">
+                {[
+                  "Executive Program, Singularity University (NASA campus)",
+                  "TEDx Speaker",
+                  "Columnista Forbes México (40+ artículos publicados)",
+                  "Instructor Coursera & edX — AI Business Innovation",
+                  "Director General MVS Exponencial (2022-2025)",
+                  "Fundador Surfing Digital (10 años)",
+                  "ExO Coach & Ambassador México — OpenExO",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-sm"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    <span style={{ color: "var(--accent)" }}>—</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://www.linkedin.com/in/edwinmorenoai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="self-start text-sm font-semibold border px-4 py-2 rounded-lg transition-opacity hover:opacity-100 opacity-70"
+                style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
+              >
+                LinkedIn →
+              </a>
+            </div>
+          </div>
+
+          {/* Positioning statement */}
+          <div className="text-center max-w-2xl mx-auto">
+            <h2
+              className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight mb-4"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Los agentes de IA multiplican a tu equipo{" "}
+              <span style={{ color: "var(--accent)" }}>10x–20x.</span>{" "}
+              No reemplazan a nadie.
+            </h2>
+            <p className="text-base mb-4" style={{ color: "var(--text-secondary)" }}>
+              Nosotros los diseñamos, construimos y operamos para que tu equipo de ventas
+              y marketing rinda como uno de 50.
+            </p>
+            <p className="caption" style={{ color: "var(--text-secondary)" }}>
+              Si tu empresa necesita incorporar talento IA dedicado, te ayudamos a
+              encontrar especialistas verificados de nuestra red.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ RECURSOS ══════════════════════════════════════════════════════════ */}
+      <section
+        id="resources"
+        className="py-24 px-6"
+        style={{ background: "var(--bg-secondary)" }}
+      >
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="mb-12">
+            <p
+              className="caption uppercase tracking-widest font-semibold mb-3"
+              style={{ color: "var(--accent)" }}
+            >
+              Recursos
+            </p>
+            <h2
+              className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight mb-3"
+              style={{ color: "var(--text-primary)" }}
+            >
               Blueprints para construir tus propios agentes
             </h2>
-            <p className="text-[rgba(255,255,255,0.40)] text-sm leading-relaxed">
-              Workflows completos, stack técnico real y costes detallados. Sin relleno, todo accionable.
+            <p className="text-base max-w-xl" style={{ color: "var(--text-secondary)" }}>
+              Workflows completos, stack técnico real y costes detallados. Sin relleno,
+              todo accionable.
             </p>
           </div>
 
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" role="list">
-            {LEAD_MAGNETS.map((lm) => {
-              const isLive = lm.status === "live";
-              return (
-                <li key={lm.id}>
-                  <article
-                    className={[
-                      "group relative h-full rounded-2xl border flex flex-col gap-5 p-6 transition-all duration-300",
-                      isLive
-                        ? "border-white/10 bg-white/[0.04] hover:border-[rgba(90,212,174,0.3)] hover:bg-white/[0.06] hover:-translate-y-1"
-                        : "border-white/[0.05] bg-white/[0.02] opacity-60",
-                    ].join(" ")}
-                  >
-                    {isLive && (
-                      <div aria-hidden className="absolute top-0 left-8 right-8 h-px rounded-full opacity-50" style={{ background: "linear-gradient(90deg,#5AD4AE,#F5A05E)" }} />
-                    )}
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="flex items-center gap-3">
-                        <span className="flex items-center justify-center w-10 h-10 rounded-xl text-lg" style={{ background: isLive ? "rgba(90,212,174,0.1)" : "rgba(255,255,255,0.04)" }}>
-                          {lm.icon}
-                        </span>
-                        <span className="text-[10px] font-semibold text-white/35 uppercase tracking-wider">{lm.category}</span>
-                      </div>
-                      <span className={["shrink-0 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border", isLive ? "text-[#5AD4AE] border-[rgba(90,212,174,0.3)] bg-[rgba(90,212,174,0.1)]" : "text-white/25 border-white/[0.08]"].join(" ")}>
-                        {lm.badge}
-                      </span>
-                    </div>
-                    <div className="flex flex-col gap-2 flex-1">
-                      <h3 className="text-base font-bold text-white leading-snug">{lm.title}</h3>
-                      <p className="text-xs text-white/40 leading-relaxed">{lm.description}</p>
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {lm.stack.map((t) => (
-                        <span key={t} className="text-[10px] font-medium text-white/25 bg-white/[0.04] border border-white/[0.06] rounded-md px-2 py-0.5">{t}</span>
-                      ))}
-                    </div>
-                    {isLive && lm.href ? (
-                      <Link
-                        href={lm.href}
-                        className="mt-auto flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-bold text-[#0A0A0B] hover:opacity-90 transition-opacity"
-                        style={{ background: GRAD_BRAND }}
-                        aria-label={`${lm.ctaLabel}: ${lm.title}`}
-                      >
-                        {lm.ctaLabel} <ArrowRight />
-                      </Link>
-                    ) : (
-                      <button disabled aria-disabled className="mt-auto w-full py-3 rounded-xl text-sm font-bold text-white/20 border border-white/[0.06] cursor-not-allowed">
-                        {lm.ctaLabel}
-                      </button>
-                    )}
-                  </article>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
-
-      {/* ════ WHY US ════════════════════════════════════════════════════════ */}
-      <section id="why" className="py-24 bg-[#FAFBFC]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <SectionTagDark>Diferenciadores</SectionTagDark>
-            <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold tracking-tight leading-tight text-gray-900 mt-2">
-              ¿Por qué <GradientText>Verymuch.ai</GradientText>?
-            </h2>
-            <p className="mt-4 text-gray-500 max-w-md mx-auto leading-relaxed">
-              No son claims de marketing. Son hechos operativos que nos diferencian.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {WHY.map((w) => (
-              <div
-                key={w.title}
-                className="bg-white border border-gray-100 rounded-2xl p-7 hover:shadow-[0_8px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300"
+          {/* Live cards */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-5 mb-5">
+            {LEAD_MAGNETS_LIVE.map((lm) => (
+              <a
+                key={lm.id}
+                href={lm.href}
+                className="group rounded-2xl p-6 border flex flex-col gap-4 transition-opacity duration-200 hover:opacity-90"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-5"
-                  style={{ background: "linear-gradient(135deg,rgba(90,212,174,0.12),rgba(245,160,94,0.08))" }}
-                >
-                  {w.icon}
+                <div className="flex items-center justify-between gap-3">
+                  <span
+                    className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px]"
+                    style={{ background: "rgba(91,166,107,0.18)", color: "var(--success)" }}
+                  >
+                    Disponible
+                  </span>
+                  <div className="flex flex-wrap gap-1.5 justify-end">
+                    {lm.stack.map((t) => (
+                      <span
+                        key={t}
+                        className="text-[10px] px-2 py-0.5 rounded border"
+                        style={{ borderColor: "var(--border)", color: "var(--text-secondary)" }}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-base font-bold text-gray-900 mb-2">{w.title}</h3>
-                <p className="text-gray-500 text-[0.88rem] leading-relaxed">{w.desc}</p>
+                <h3 className="text-base font-semibold leading-snug" style={{ color: "var(--text-primary)" }}>
+                  {lm.title}
+                </h3>
+                <p className="text-sm leading-relaxed flex-1" style={{ color: "var(--text-secondary)" }}>
+                  {lm.desc}
+                </p>
+                <span
+                  className="text-sm font-semibold mt-auto"
+                  style={{ color: "var(--accent)" }}
+                >
+                  Acceder gratis →
+                </span>
+              </a>
+            ))}
+          </div>
+
+          {/* Soon cards */}
+          <div className="grid sm:grid-cols-2 gap-5">
+            {LEAD_MAGNETS_SOON.map((lm) => (
+              <div
+                key={lm.id}
+                className="rounded-2xl p-6 border flex flex-col gap-3 opacity-50"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <span
+                  className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] self-start"
+                  style={{ background: "rgba(245,160,94,0.18)", color: "var(--accent-warm)" }}
+                >
+                  Q2 2026
+                </span>
+                <h3 className="text-base font-semibold" style={{ color: "var(--text-primary)" }}>
+                  {lm.title}
+                </h3>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ════ FINAL CTA ═════════════════════════════════════════════════════ */}
-      <section className="py-24 bg-[#111115] relative overflow-hidden">
-        <div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(90,212,174,0.06) 0%, transparent 70%)" }} />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-          <SectionTag>Empecemos</SectionTag>
-          <h2 className="text-[clamp(1.8rem,4vw,2.8rem)] font-extrabold tracking-tight leading-tight text-white mt-2 mb-6">
-            ¿Listo para construir tu primer <GradientText>agente de IA</GradientText>?
+      {/* ══ FINAL CTA ══════════════════════════════════════════════════════════ */}
+      <section
+        id="cta"
+        className="py-28 px-6 text-center"
+        style={{ background: "var(--bg-primary)" }}
+      >
+        <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
+          <h2
+            className="text-[clamp(1.8rem,4vw,2.5rem)] font-bold leading-tight"
+            style={{ color: "var(--text-primary)" }}
+          >
+            ¿Listo para instalar tu{" "}
+            <span style={{ color: "var(--accent)" }}>primer agente de IA?</span>
           </h2>
-          <p className="text-[rgba(255,255,255,0.45)] max-w-xl mx-auto leading-relaxed mb-10">
-            Agenda una llamada de descubrimiento gratuita. Te mostramos exactamente cómo un agente de IA
-            personalizado puede funcionar para tu negocio.
+          <p className="text-base max-w-[560px]" style={{ color: "var(--text-secondary)" }}>
+            Agenda una consultoría gratuita de 30 minutos. Analizamos tus procesos de
+            ventas y marketing, identificamos oportunidades y te proponemos una solución
+            con entregables claros y precio cerrado.
           </p>
-          <CtaPrimary href={GHL} external>Agenda tu consultoría gratuita</CtaPrimary>
+          <a
+            href={GHL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-8 py-4 rounded-xl text-base font-bold transition-opacity duration-200 hover:opacity-85"
+            style={{ background: "var(--accent)", color: "#363536" }}
+          >
+            Agenda tu consultoría gratuita
+          </a>
         </div>
       </section>
 
-      {/* ════ FOOTER ════════════════════════════════════════════════════════ */}
-      <footer className="border-t border-white/[0.06] bg-[#0A0A0B]">
-        <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="flex flex-col md:flex-row justify-between gap-8 mb-10">
-            <div className="max-w-xs">
-              <Image src="/logo-white.png" alt="VeryMuch.ai" width={140} height={36} className="h-7 w-auto object-contain mb-4" />
-              <p className="text-[rgba(255,255,255,0.35)] text-sm leading-relaxed">
-                Instalamos agentes de IA y sistemas de automatización para que las empresas vendan más con menos fricción.
-              </p>
-            </div>
-            <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-10 gap-y-3">
-              {[
-                { label: "Servicios",        href: "#services" },
-                { label: "Cómo funciona",   href: "#how" },
-                { label: "Agentes",         href: "#agents" },
-                { label: "Por qué nosotros",href: "#why" },
-                { label: "Recursos",        href: "#resources" },
-                { label: "Marketplace",     href: "https://www.verymuch.ai", ext: true },
-              ].map((l) =>
-                l.ext ? (
-                  <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer" className="text-sm text-white/35 hover:text-white/70 transition-colors">{l.label}</a>
-                ) : (
-                  <a key={l.label} href={l.href} className="text-sm text-white/35 hover:text-white/70 transition-colors">{l.label}</a>
-                )
-              )}
-            </nav>
+      {/* ══ FOOTER ════════════════════════════════════════════════════════════ */}
+      <footer
+        className="border-t px-6 py-16"
+        style={{ background: "var(--bg-secondary)", borderColor: "var(--border)" }}
+      >
+        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 mb-12">
+          {/* Col 1 — Brand */}
+          <div className="flex flex-col gap-4">
+            <Image
+              src="/logo-white.png"
+              alt="VeryMuch.ai"
+              width={140}
+              height={34}
+              className="h-7 w-auto object-contain logo-adaptive opacity-80"
+            />
+            <p className="text-sm leading-relaxed max-w-xs" style={{ color: "var(--text-secondary)" }}>
+              Instalamos agentes de IA y sistemas de automatización para que los equipos
+              de ventas y marketing vendan más con menos fricción.
+            </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6 border-t border-white/[0.06]">
-            <p className="text-xs text-white/20">
-              © {new Date().getFullYear()} Verymuch.ai — Todos los derechos reservados
+          {/* Col 2 — Links */}
+          <div className="flex flex-col gap-3">
+            <p className="caption uppercase tracking-widest font-semibold mb-2" style={{ color: "var(--text-secondary)" }}>
+              Navegación
             </p>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
+            {[
+              { label: "Servicios",       href: "#services" },
+              { label: "Cómo funciona",  href: "#how" },
+              { label: "Agentes",        href: "#agents" },
+              { label: "Recursos",       href: "#resources" },
+            ].map((l) => (
               <a
-                href="https://www.verymuch.ai/cms/view/2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-white/25 hover:text-white/60 transition-colors"
+                key={l.label}
+                href={l.href}
+                className="text-sm transition-opacity hover:opacity-100 opacity-60"
+                style={{ color: "var(--text-primary)" }}
               >
-                Términos y condiciones
+                {l.label}
               </a>
-              <span className="text-white/15 text-xs">·</span>
-              <a
-                href="https://www.verymuch.ai/cms/view/3"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-white/25 hover:text-white/60 transition-colors"
-              >
-                Aviso de privacidad
-              </a>
-              <span className="text-white/15 text-xs">·</span>
-              <a
-                href="https://www.linkedin.com/company/verymuch-ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="text-white/25 hover:text-white/60 transition-colors text-xs font-semibold"
-              >
-                in LinkedIn
-              </a>
-            </div>
+            ))}
+          </div>
+
+          {/* Col 3 — Contact */}
+          <div className="flex flex-col gap-3">
+            <p className="caption uppercase tracking-widest font-semibold mb-2" style={{ color: "var(--text-secondary)" }}>
+              Contacto
+            </p>
+            <a
+              href="https://www.linkedin.com/company/verymuch-ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm transition-opacity hover:opacity-100 opacity-60"
+              style={{ color: "var(--text-primary)" }}
+            >
+              LinkedIn empresa
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jorgeherreracruz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm transition-opacity hover:opacity-100 opacity-60"
+              style={{ color: "var(--text-primary)" }}
+            >
+              LinkedIn Jorge Herrera
+            </a>
+            <a
+              href="https://www.linkedin.com/in/edwinmorenoai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm transition-opacity hover:opacity-100 opacity-60"
+              style={{ color: "var(--text-primary)" }}
+            >
+              LinkedIn Edwin Moreno
+            </a>
+            <a
+              href="mailto:info@verymuch.ai"
+              className="text-sm transition-opacity hover:opacity-100 opacity-60"
+              style={{ color: "var(--text-primary)" }}
+            >
+              info@verymuch.ai
+            </a>
+          </div>
+        </div>
+
+        {/* Bottom line */}
+        <div
+          className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-8 border-t"
+          style={{ borderColor: "var(--border)" }}
+        >
+          <p className="caption" style={{ color: "var(--text-secondary)" }}>
+            © {new Date().getFullYear()} VeryMuch.ai — Todos los derechos reservados
+          </p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
+            <a
+              href="/terminos"
+              className="caption transition-opacity hover:opacity-100 opacity-50"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Términos y condiciones
+            </a>
+            <span className="caption opacity-20" style={{ color: "var(--text-primary)" }}>·</span>
+            <a
+              href="/privacidad"
+              className="caption transition-opacity hover:opacity-100 opacity-50"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Aviso de privacidad
+            </a>
           </div>
         </div>
       </footer>

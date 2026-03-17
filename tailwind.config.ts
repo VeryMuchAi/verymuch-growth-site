@@ -9,15 +9,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // ── Theme-aware CSS variable colors (light / dark) ──────────────────
+        vm: {
+          bg:      "var(--bg-primary)",
+          "bg-2":  "var(--bg-secondary)",
+          card:    "var(--bg-card)",
+          fg:      "var(--text-primary)",
+          "fg-2":  "var(--text-secondary)",
+          accent:  "var(--accent)",
+          warm:    "var(--accent-warm)",
+          success: "var(--success)",
+          error:   "var(--error)",
+        },
+        // ── Lead-magnet component palette (fixed, dark-theme only) ──────────
         brand: {
-          // Core brand palette — from VeryMuch.ai style guide
-          dark:       "#0C0C0E",   // near-black LP background
-          "dark-2":   "#111113",   // surface / card
-          "dark-3":   "#1A1A1D",   // elevated card
-          mint:       "#4AD4AE",   // primary accent (teal-mint)
-          "mint-dim": "#DDEAEE",   // light mint / muted text on dark
-          amber:      "#F5A040",   // warm accent (amber/orange)
-          gray:       "#363536",   // dark gray
+          dark:       "#0C0C0E",
+          "dark-2":   "#111113",
+          "dark-3":   "#1A1A1D",
+          mint:       "#4AD4AE",
+          "mint-dim": "#DDEAEE",
+          amber:      "#F5A040",
+          gray:       "#363536",
         },
       },
       backgroundImage: {

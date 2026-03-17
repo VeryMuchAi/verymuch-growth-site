@@ -3,21 +3,22 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "@/hooks/useTheme";
 
 const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
 
 const NAV_LINKS = [
-  { label: "Marketplace",      href: "https://www.verymuch.ai/", external: true },
   { label: "Servicios",        href: "#services" },
   { label: "Cómo funciona",   href: "#how" },
   { label: "Agentes",         href: "#agents" },
-  { label: "Por qué nosotros",href: "#why" },
   { label: "Recursos",        href: "#resources" },
+  { label: "Marketplace",     href: "https://app.verymuch.ai", external: true },
 ];
 
 export default function HomeNav() {
-  const [scrolled, setScrolled]   = useState(false);
-  const [menuOpen, setMenuOpen]   = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { theme, toggleTheme }  = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -25,7 +26,6 @@ export default function HomeNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // lock body scroll when menu open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -37,58 +37,68 @@ export default function HomeNav() {
       <nav
         aria-label="Navegación principal"
         className={[
-          "fixed left-0 right-0 z-50 transition-all duration-400",
+          "fixed left-0 right-0 z-50 transition-all duration-300",
           scrolled
-            ? "bg-[rgba(10,10,11,0.88)] backdrop-blur-2xl border-b border-white/[0.07]"
+            ? "backdrop-blur-xl border-b"
             : "bg-transparent",
         ].join(" ")}
-        style={{ top: 40, height: 72 }}
+        style={{
+          top: 0,
+          height: 64,
+          background: scrolled ? "color-mix(in srgb, var(--bg-primary) 92%, transparent)" : undefined,
+          borderColor: scrolled ? "var(--border)" : undefined,
+        }}
       >
-        <div className="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 h-full flex items-center justify-between gap-6">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 z-10">
             <Image
               src="/logo-white.png"
               alt="VeryMuch.ai"
-              width={160}
-              height={40}
-              className="h-7 w-auto object-contain"
+              width={148}
+              height={36}
+              className="h-7 w-auto object-contain logo-adaptive"
               priority
             />
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8" role="list">
+          <div className="hidden md:flex items-center gap-7" role="list">
             {NAV_LINKS.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
                 role="listitem"
                 {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="relative text-sm font-medium text-white/50 hover:text-white transition-colors duration-200 group"
+                className="text-sm font-medium transition-opacity duration-200 hover:opacity-100 opacity-60"
+                style={{ color: "var(--text-primary)" }}
               >
                 {l.label}
-                <span
-                  aria-hidden="true"
-                  className="absolute -bottom-1 left-0 w-0 h-[2px] rounded-full bg-brand-gradient group-hover:w-full transition-all duration-300"
-                />
               </a>
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <a
-            href={GHL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-px hover:shadow-[0_4px_20px_rgba(245,64,94,0.3)]"
-            style={{
-              background: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)",
-              boxShadow: "0 2px 12px rgba(245,64,94,0.2)",
-            }}
-          >
-            Agenda una llamada
-          </a>
+          {/* Desktop right: theme toggle + CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              aria-label={theme === "dark" ? "Modo claro" : "Modo oscuro"}
+              className="w-9 h-9 rounded-lg flex items-center justify-center text-sm transition-all duration-200 opacity-50 hover:opacity-100 border"
+              style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}
+            >
+              {theme === "dark" ? "☀️" : "🌙"}
+            </button>
+
+            <a
+              href={GHL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-opacity duration-200 hover:opacity-85"
+              style={{ background: "var(--accent)", color: "#363536" }}
+            >
+              Agenda una consultoría gratuita
+            </a>
+          </div>
 
           {/* Mobile hamburger */}
           <button
@@ -104,7 +114,8 @@ export default function HomeNav() {
             ].map((extra, i) => (
               <span
                 key={i}
-                className={`block w-6 h-[2px] bg-white rounded transition-all duration-300 ${extra}`}
+                className={`block w-6 h-[2px] rounded transition-all duration-300 ${extra}`}
+                style={{ background: "var(--text-primary)" }}
               />
             ))}
           </button>
@@ -117,11 +128,11 @@ export default function HomeNav() {
         aria-label="Menú móvil"
         role="dialog"
         className={[
-          "fixed inset-0 z-40 flex flex-col items-center justify-center gap-8",
-          "bg-[rgba(10,10,11,0.97)] backdrop-blur-2xl transition-all duration-300",
+          "fixed inset-0 z-40 flex flex-col items-center justify-center gap-7",
+          "transition-all duration-300",
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
         ].join(" ")}
-        style={{ paddingTop: 112 }}
+        style={{ background: "var(--bg-primary)", paddingTop: 80 }}
       >
         {NAV_LINKS.map((l) => (
           <a
@@ -129,7 +140,8 @@ export default function HomeNav() {
             href={l.href}
             onClick={() => setMenuOpen(false)}
             {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-            className="text-2xl font-semibold text-white/60 hover:text-white transition-colors"
+            className="text-2xl font-semibold transition-opacity hover:opacity-100 opacity-60"
+            style={{ color: "var(--text-primary)" }}
           >
             {l.label}
           </a>
@@ -139,11 +151,20 @@ export default function HomeNav() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setMenuOpen(false)}
-          className="mt-4 px-8 py-3.5 rounded-xl text-base font-bold text-white"
-          style={{ background: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)" }}
+          className="mt-2 px-8 py-3.5 rounded-xl text-base font-bold"
+          style={{ background: "var(--accent)", color: "#363536" }}
         >
-          Agenda una llamada
+          Agenda una consultoría gratuita
         </a>
+        <button
+          onClick={() => { toggleTheme(); setMenuOpen(false); }}
+          aria-label={theme === "dark" ? "Modo claro" : "Modo oscuro"}
+          className="flex items-center gap-2 text-sm opacity-50 hover:opacity-80 transition-opacity"
+          style={{ color: "var(--text-primary)" }}
+        >
+          <span>{theme === "dark" ? "☀️" : "🌙"}</span>
+          {theme === "dark" ? "Modo claro" : "Modo oscuro"}
+        </button>
       </div>
     </>
   );

@@ -103,7 +103,7 @@ export function getLeadMagnetConfig(slug: string): LeadMagnetConfig | undefined 
 
 export const signalsLinkedinConfig: LeadMagnetConfig = {
   slug: "signals-linkedin",
-  source: "linkedin",
+  source: "signals-linkedin",
   campaign: "signals-linkedin",
 
   seo: {
@@ -213,7 +213,7 @@ export const signalsLinkedinConfig: LeadMagnetConfig = {
 
 export const equipoVentasIa30minConfig: LeadMagnetConfig = {
   slug: "equipo-ventas-ia-30min",
-  source: "organic",
+  source: "equipo-ventas-ia-30min",
   campaign: "equipo-ventas-ia-30min",
 
   seo: {
@@ -401,7 +401,7 @@ export const equipoVentasIa30minConfig: LeadMagnetConfig = {
 
 export const agenteInvestigacionComercialConfig: LeadMagnetConfig = {
   slug: "agente-investigacion-comercial",
-  source: "linkedin",
+  source: "agente-investigacion-comercial",
   campaign: "agente-investigacion-comercial",
 
   seo: {
@@ -517,7 +517,7 @@ export const agenteInvestigacionComercialConfig: LeadMagnetConfig = {
 
 export const agentesIaB2bConfig: LeadMagnetConfig = {
   slug: "20-agentes-ia-b2b",
-  source: "linkedin",
+  source: "20-agentes-ia-b2b",
   campaign: "20-agentes-ia-b2b",
 
   seo: {
