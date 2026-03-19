@@ -608,7 +608,9 @@ function setLang(l){
   document.getElementById('langEn').classList.toggle('active', l === 'en');
   document.documentElement.lang = l;
   
-  // Update back button text
+  // Back to site home — match next-intl routes (es = /, en = /en)
+  var backEl = document.getElementById('backBtn');
+  backEl.href = l === 'en' ? '/en' : '/';
   document.getElementById('backTxt').textContent = L[l].backBtn;
   
   // Re-render active sections
