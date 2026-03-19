@@ -33,7 +33,10 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 .bg-atm::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(42,191,170,.06) 0%,transparent 70%);bottom:-100px;left:-150px;animation:fOrb 25s ease-in-out infinite reverse}
 @keyframes fOrb{0%,100%{transform:translate(0,0)}33%{transform:translate(40px,-30px)}66%{transform:translate(-20px,20px)}}
 .app{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:20px}
-.lang-bar{display:flex;justify-content:flex-end;margin-bottom:8px;gap:4px}
+.lang-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:4px}
+.lang-bar-right{display:flex;gap:4px}
+.back-btn{padding:6px 14px;border:1.5px solid var(--border);border-radius:100px;background:transparent;font-family:'Sora',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--text-muted);cursor:pointer;transition:var(--transition);display:inline-flex;align-items:center;gap:5px;text-decoration:none}
+.back-btn:hover{border-color:var(--accent-warm);color:var(--accent-warm)}
 .lang-btn{padding:6px 14px;border:1.5px solid var(--border);border-radius:100px;background:transparent;font-family:'Sora',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);cursor:pointer;transition:var(--transition);display:flex;align-items:center;gap:5px}
 .lang-btn:hover{border-color:var(--accent-warm);color:var(--accent-warm)}
 .lang-btn.active{background:var(--accent);color:var(--bg-primary);border-color:var(--accent)}
@@ -225,8 +228,11 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 <div class="moverlay" id="mo"><div class="mbox"><p id="mm"></p><button class="btn-p" onclick="closeModal()">OK</button></div></div>
 <div class="app">
 <div class="lang-bar">
-  <button class="lang-btn active" id="langEs" onclick="setLang('es')"><em class="lang-flag">🇪🇸</em> ES</button>
-  <button class="lang-btn" id="langEn" onclick="setLang('en')"><em class="lang-flag">🇺🇸</em> EN</button>
+  <a class="back-btn" id="backBtn" href="/"><span>←</span> <span id="backTxt">Volver al inicio</span></a>
+  <div class="lang-bar-right">
+    <button class="lang-btn active" id="langEs" onclick="setLang('es')"><em class="lang-flag">🇪🇸</em> ES</button>
+    <button class="lang-btn" id="langEn" onclick="setLang('en')"><em class="lang-flag">🇺🇸</em> EN</button>
+  </div>
 </div>
 
 <!-- LANDING -->
@@ -360,6 +366,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',func
 /* ========== i18n ========== */
 var L={
 es:{
+  backBtn:'Volver al inicio',
   landTitle:'¿Está tu empresa lista para<br><span class="hl">multiplicar ingresos con IA?</span>',
   landSub:'El diagnóstico de madurez AI más accionable para empresas B2B.',
   landDesc:'El <strong>82% de empresas B2B medianas</strong> quieren adoptar IA, pero solo el 14% tiene una estrategia clara. Este diagnóstico de 3 minutos te muestra exactamente <strong>dónde estás y qué hacer primero</strong> para convertir la IA en tu ventaja competitiva más rentable.',
@@ -447,6 +454,7 @@ es:{
   ]
 },
 en:{
+  backBtn:'Back to home',
   landTitle:'Is your company ready to<br><span class="hl">multiply revenue with AI?</span>',
   landSub:'The most actionable AI maturity assessment for B2B companies.',
   landDesc:'<strong>82% of mid-size B2B companies</strong> want to adopt AI, but only 14% have a clear strategy. This 3-minute diagnostic shows you exactly <strong>where you stand and what to do first</strong> to turn AI into your most profitable competitive advantage.',
@@ -599,6 +607,9 @@ function setLang(l){
   document.getElementById('langEs').classList.toggle('active', l === 'es');
   document.getElementById('langEn').classList.toggle('active', l === 'en');
   document.documentElement.lang = l;
+  
+  // Update back button text
+  document.getElementById('backTxt').textContent = L[l].backBtn;
   
   // Re-render active sections
   renderLanding();
