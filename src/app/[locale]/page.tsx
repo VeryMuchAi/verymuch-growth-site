@@ -106,13 +106,6 @@ export default async function HomePage({ params }: Props) {
     { id: "lead-scoring", title: t("lm_soon_1") },
   ];
 
-  const jorgeCredentials = [
-    t("jorge_bio_0"), t("jorge_bio_1"), t("jorge_bio_2"), t("jorge_bio_3"), t("jorge_bio_4"),
-  ];
-  const edwinCredentials = [
-    t("edwin_bio_0"), t("edwin_bio_1"), t("edwin_bio_2"), t("edwin_bio_3"),
-    t("edwin_bio_4"), t("edwin_bio_5"), t("edwin_bio_6"),
-  ];
 
   return (
     <div style={{ background: "var(--bg-primary)", color: "var(--text-primary)" }}>
@@ -342,44 +335,54 @@ export default async function HomePage({ params }: Props) {
       {/* ══ EQUIPO ════════════════════════════════════════════════════════════════ */}
       <section id="team" className="py-24 px-6" style={{ background: "var(--bg-primary)" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="mb-14">
+
+          {/* Header */}
+          <div className="mb-10">
             <p className="mb-3">
               <span className="badge-label" style={{ color: "var(--accent-text)" }}>{t("team_badge")}</span>
             </p>
             <h2
-              className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight"
+              className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight mb-5"
               style={{ color: "var(--text-primary)" }}
             >
               {t("team_h2")}
             </h2>
+            {/* Company narrative */}
+            <p
+              className="text-base leading-relaxed max-w-2xl"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              {t("team_intro")}
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 mb-20">
+          {/* Founder cards */}
+          <div className="grid md:grid-cols-2 gap-8 mb-20">
             {/* Jorge */}
-            <div className="flex flex-col gap-5">
-              <div
-                className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold"
-                style={{ background: "var(--bg-secondary)", color: "var(--text-primary)" }}
-              >
-                JH
+            <div
+              className="flex flex-col gap-5 rounded-2xl p-8 border card-elevated"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center gap-4">
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0"
+                  style={{ background: "var(--bg-secondary)", color: "var(--text-primary)" }}
+                >
+                  JH
+                </div>
+                <div>
+                  <h3 className="text-base font-bold" style={{ color: "var(--text-primary)" }}>Jorge Herrera</h3>
+                  <p className="caption mt-0.5" style={{ color: "var(--text-secondary)" }}>{t("jorge_role")}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-bold" style={{ color: "var(--text-primary)" }}>Jorge Herrera</h3>
-                <p className="caption mt-0.5" style={{ color: "var(--text-secondary)" }}>{t("jorge_role")}</p>
-              </div>
-              <ul className="flex flex-col gap-2">
-                {jorgeCredentials.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-secondary)" }}>
-                    <span style={{ color: "var(--accent-text)" }}>—</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                {t("jorge_bio")}
+              </p>
               <a
                 href="https://www.linkedin.com/in/jorgeherreracruz/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="self-start text-sm font-semibold border px-4 py-2 rounded-lg transition-opacity hover:opacity-100 opacity-70"
+                className="self-start text-sm font-semibold border px-4 py-2 rounded-lg transition-opacity hover:opacity-100 opacity-70 mt-auto"
                 style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
               >
                 LinkedIn →
@@ -387,33 +390,30 @@ export default async function HomePage({ params }: Props) {
             </div>
 
             {/* Edwin */}
-            <div className="flex flex-col gap-5">
-              <div
-                className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold"
-                style={{ background: "var(--bg-secondary)", color: "var(--text-primary)" }}
-              >
-                EM
-              </div>
-              <div>
-                <h3 className="text-lg font-bold" style={{ color: "var(--text-primary)" }}>Edwin Moreno</h3>
-                <p className="caption mt-0.5" style={{ color: "var(--text-secondary)" }}>{t("edwin_role")}</p>
+            <div
+              className="flex flex-col gap-5 rounded-2xl p-8 border card-elevated"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center gap-4">
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0"
+                  style={{ background: "var(--bg-secondary)", color: "var(--text-primary)" }}
+                >
+                  EM
+                </div>
+                <div>
+                  <h3 className="text-base font-bold" style={{ color: "var(--text-primary)" }}>Edwin Moreno</h3>
+                  <p className="caption mt-0.5" style={{ color: "var(--text-secondary)" }}>{t("edwin_role")}</p>
+                </div>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                {t("edwin_bio_intro")}
+                {t("edwin_bio")}
               </p>
-              <ul className="flex flex-col gap-2">
-                {edwinCredentials.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-secondary)" }}>
-                    <span style={{ color: "var(--accent-text)" }}>—</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
               <a
                 href="https://www.linkedin.com/in/edwinmorenoai/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="self-start text-sm font-semibold border px-4 py-2 rounded-lg transition-opacity hover:opacity-100 opacity-70"
+                className="self-start text-sm font-semibold border px-4 py-2 rounded-lg transition-opacity hover:opacity-100 opacity-70 mt-auto"
                 style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
               >
                 LinkedIn →

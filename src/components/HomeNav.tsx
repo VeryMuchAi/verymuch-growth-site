@@ -26,7 +26,6 @@ export default function HomeNav() {
     { label: locale === "es" ? "Agentes"        : "Agents",        href: "#agents" },
     { label: locale === "es" ? "Recursos"       : "Resources",     href: "#resources" },
     { label: locale === "es" ? "Test de IA"     : "AI Readiness",  href: "/ai-readiness", highlight: true },
-    { label: "Marketplace", href: "https://app.verymuch.ai", external: true },
   ];
 
   useEffect(() => {
