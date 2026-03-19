@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import HomeNav from "@/components/HomeNav";
 import AgentsInProductionSection from "@/components/AgentsInProductionSection";
+import IconBlock, { type ColorVariant } from "@/components/IconBlock";
 
 export const metadata: Metadata = {
   title: "VeryMuch.ai — Agentes de IA para Ventas y Marketing",
@@ -25,31 +26,43 @@ const METRICS = [
 ];
 
 // ── SYMPTOMS data ─────────────────────────────────────────────────────────────
-const VENTAS_SYMPTOMS = [
+const VENTAS_SYMPTOMS: { icon: string; iconColor: ColorVariant; title: string; desc: string }[] = [
   {
+    icon: "clock",
+    iconColor: "orange",
     title: "Leads que tardan +4 horas en recibir respuesta",
     desc: "El 78% de los compradores elige al primero que contesta.",
   },
   {
+    icon: "search",
+    iconColor: "teal",
     title: "SDRs que pasan el 70% del tiempo investigando",
     desc: "Investigación manual que debería hacer una máquina.",
   },
   {
+    icon: "trending-down",
+    iconColor: "dark",
     title: "Follow-ups que se pierden, leads que se enfrían",
     desc: "Pipeline que se evapora sin que nadie se dé cuenta.",
   },
 ];
 
-const MARKETING_SYMPTOMS = [
+const MARKETING_SYMPTOMS: { icon: string; iconColor: ColorVariant; title: string; desc: string }[] = [
   {
+    icon: "edit",
+    iconColor: "purple",
     title: "Contenido que tarda días en producirse",
     desc: "Posts, emails, lead magnets: todo pasa por un cuello de botella humano que no escala.",
   },
   {
+    icon: "share",
+    iconColor: "orange",
     title: "Publicación manual en 5 plataformas",
     desc: "Tu equipo copia y pega el mismo contenido adaptándolo a mano para cada canal.",
   },
   {
+    icon: "bar-chart",
+    iconColor: "dark",
     title: "Zero visibilidad sobre qué contenido genera leads",
     desc: "Publicas mucho pero no sabes qué piezas realmente mueven el pipeline.",
   },
@@ -74,8 +87,13 @@ const P1_STEPS = [
   },
 ];
 
-const CALLOUTS = [
+const CALLOUTS: {
+  icon: string; iconColor: ColorVariant;
+  title: string; intro: string; items: string[]; quote: string;
+}[] = [
   {
+    icon: "settings",
+    iconColor: "dark",
     title: "¿Tu empresa necesita primero las bases?",
     intro: "No todas las empresas están listas para desplegar agentes desde el día uno.",
     items: [
@@ -86,6 +104,8 @@ const CALLOUTS = [
     quote: "Esto no es un curso teórico. Es implementación real adaptada a tu empresa.",
   },
   {
+    icon: "laptop",
+    iconColor: "teal",
     title: "¿Necesitas una aplicación a medida?",
     intro: "Desarrollamos aplicaciones funcionales en días usando IA.",
     items: [
@@ -259,28 +279,25 @@ export default function HomePage() {
               Ventas
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {VENTAS_SYMPTOMS.map((s, i) => (
+              {VENTAS_SYMPTOMS.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4 card-elevated"
+                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4"
                   style={{
                     background: "var(--bg-card)",
                     borderColor: "var(--border)",
                     borderLeftColor: "var(--error)",
                   }}
                 >
-                  <span
-                    className="caption uppercase tracking-widest font-bold mb-4 block"
-                    style={{ color: "var(--error)", opacity: 0.6 }}
-                  >
-                    0{i + 1}
-                  </span>
-                  <h3 className="text-sm font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
-                    {s.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                    {s.desc}
-                  </p>
+                  <IconBlock icon={s.icon} color={s.iconColor} size="md" />
+                  <div>
+                    <h3 className="text-sm font-semibold mb-1.5" style={{ color: "var(--text-primary)" }}>
+                      {s.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                      {s.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -295,28 +312,25 @@ export default function HomePage() {
               Marketing
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {MARKETING_SYMPTOMS.map((s, i) => (
+              {MARKETING_SYMPTOMS.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4 card-elevated"
+                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4"
                   style={{
                     background: "var(--bg-card)",
                     borderColor: "var(--border)",
                     borderLeftColor: "var(--error)",
                   }}
                 >
-                  <span
-                    className="caption uppercase tracking-widest font-bold mb-4 block"
-                    style={{ color: "var(--error)", opacity: 0.6 }}
-                  >
-                    0{i + 1}
-                  </span>
-                  <h3 className="text-sm font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
-                    {s.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                    {s.desc}
-                  </p>
+                  <IconBlock icon={s.icon} color={s.iconColor} size="md" />
+                  <div>
+                    <h3 className="text-sm font-semibold mb-1.5" style={{ color: "var(--text-primary)" }}>
+                      {s.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                      {s.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -426,6 +440,7 @@ export default function HomePage() {
                 className="rounded-2xl p-7 border flex flex-col gap-4 card-elevated"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
+                <IconBlock icon={c.icon} color={c.iconColor} size="md" />
                 <h3 className="text-base font-bold" style={{ color: "var(--text-primary)" }}>
                   {c.title}
                 </h3>

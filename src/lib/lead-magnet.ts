@@ -133,27 +133,27 @@ export const signalsLinkedinConfig: LeadMagnetConfig = {
     ],
     includes: [
       {
-        icon: "🗺️",
+        icon: "git-branch",
         title: "Flujo completo en n8n",
         description: "12+ nodos documentados paso a paso, listos para importar.",
       },
       {
-        icon: "🎯",
+        icon: "target",
         title: "Sistema de scoring ICP",
         description: "Ficha de puntuación para calificar señales contra tu cliente ideal.",
       },
       {
-        icon: "✉️",
+        icon: "mail",
         title: "Plantillas de outreach",
         description: "5 mensajes personalizados por tipo de señal, generados con Claude.",
       },
       {
-        icon: "⚙️",
+        icon: "settings",
         title: "Stack técnico detallado",
         description: "Costos reales, límites de API y configuración de cada herramienta.",
       },
       {
-        icon: "🚀",
+        icon: "zap",
         title: "Guía de implementación",
         description: "De cero a sistema funcionando en un fin de semana.",
       },
@@ -243,27 +243,27 @@ export const equipoVentasIa30minConfig: LeadMagnetConfig = {
     ],
     includes: [
       {
-        icon: "📋",
+        icon: "list",
         title: "Configuración de 4 agentes",
         description: "Prompts system listos para copiar, ajustar y lanzar de inmediato.",
       },
       {
-        icon: "⚡",
+        icon: "zap",
         title: "Workflow de coordinación",
         description: "Cómo los 4 agentes colaboran entre sí sin bloquearse.",
       },
       {
-        icon: "💰",
+        icon: "trending-up",
         title: "Estimación de costes reales",
         description: "Tokens, llamadas API y límites de Opus 4.6 documentados.",
       },
       {
-        icon: "🎯",
+        icon: "target",
         title: "Casos de uso concretos",
         description: "Prospecting, nurturing y cierre con ejemplos de output real.",
       },
       {
-        icon: "🚀",
+        icon: "activity",
         title: "Guía paso a paso",
         description: "De cero a equipo funcionando en menos de 30 minutos.",
       },
@@ -301,25 +301,25 @@ export const equipoVentasIa30minConfig: LeadMagnetConfig = {
         title: "Qué ha cambiado con Opus 4.6",
         items: [
           {
-            icon: "🤝",
+            icon: "users",
             title: "Agent Teams nativos",
             description:
               "Lanza múltiples agentes Claude en paralelo desde una sola sesión. Cada uno con su rol, contexto y objetivo.",
           },
           {
-            icon: "🧠",
+            icon: "cpu",
             title: "1M de tokens de contexto",
             description:
               "Carga toda tu base de clientes, CRM, emails y transcripciones en una sola sesión sin perder contexto.",
           },
           {
-            icon: "💡",
+            icon: "bot",
             title: "Pensamiento adaptativo",
             description:
               "Opus 4.6 decide cuándo razonar en profundidad y cuándo responder directo. Resultados más precisos, menos tokens desperdiciados.",
           },
           {
-            icon: "🗜️",
+            icon: "settings",
             title: "Compactación de contexto",
             description:
               "Cuando el contexto crece, Opus 4.6 lo comprime automáticamente para que el equipo nunca pierda el hilo de la conversación.",
@@ -331,28 +331,28 @@ export const equipoVentasIa30minConfig: LeadMagnetConfig = {
         title: "Tu equipo de ventas IA con 4 agentes",
         agents: [
           {
-            icon: "🔍",
+            icon: "search",
             name: "Investigador",
             role: "Recopila intel",
             description:
               "Analiza el perfil del prospecto, su empresa, noticias recientes y señales de compra en LinkedIn y web.",
           },
           {
-            icon: "📊",
+            icon: "bar-chart",
             name: "Analista",
             role: "Califica y puntúa",
             description:
               "Evalúa el fit con tu ICP, prioriza leads por potencial y genera un scorecard por cada prospecto.",
           },
           {
-            icon: "✍️",
+            icon: "edit",
             name: "Escritor",
             role: "Genera outreach",
             description:
               "Crea mensajes personalizados basados en la señal exacta del prospecto. Tono, contexto y CTA afinados.",
           },
           {
-            icon: "🎯",
+            icon: "target",
             name: "Coordinador",
             role: "Orquesta el equipo",
             description:
@@ -432,31 +432,31 @@ export const agenteInvestigacionComercialConfig: LeadMagnetConfig = {
     ],
     includes: [
       {
-        icon: "🔍",
+        icon: "search",
         title: "Agente de investigación IA",
         description:
           "Investiga cualquier empresa usando búsqueda web en tiempo real y genera un perfil completo.",
       },
       {
-        icon: "📊",
+        icon: "bar-chart",
         title: "Briefing comercial completo",
         description:
           "Análisis DAFO, marco MEDDPICC, señales de compra y puntos de dolor identificados automáticamente.",
       },
       {
-        icon: "💬",
+        icon: "message",
         title: "Puntos de conversación",
         description:
           "Talking points personalizados, manejo de objeciones y próximos pasos listos para tu primera llamada.",
       },
       {
-        icon: "⚙️",
+        icon: "settings",
         title: "Arquitectura paso a paso",
         description:
           "Frontend → Supabase → n8n → Claude. Cada componente explicado con configuración exacta.",
       },
       {
-        icon: "🚀",
+        icon: "zap",
         title: "Guía de implementación",
         description:
           "De cero a sistema funcionando en ~1 hora. Nivel principiante, usa capa gratuita de todas las herramientas.",
@@ -547,31 +547,31 @@ export const agentesIaB2bConfig: LeadMagnetConfig = {
     ],
     includes: [
       {
-        icon: "🎯",
+        icon: "target",
         title: "Agentes de prospección",
         description:
           "Investigación, scoring, señales de compra y enriquecimiento de datos automatizados.",
       },
       {
-        icon: "✉️",
+        icon: "mail",
         title: "Agentes de outreach",
         description:
           "Cold email personalizado, secuencias multi-canal y follow-up inteligente.",
       },
       {
-        icon: "📊",
+        icon: "bar-chart",
         title: "Agentes de inteligencia",
         description:
           "CRM hygiene, briefings pre-llamada, análisis competitivo y reporting automático.",
       },
       {
-        icon: "🤝",
+        icon: "users",
         title: "Agentes de conversión",
         description:
           "Nurturing, propuestas automáticas, onboarding y gestión de pipeline.",
       },
       {
-        icon: "⚙️",
+        icon: "settings",
         title: "Tech stack por agente",
         description:
           "Herramientas exactas, costes estimados y nivel de dificultad para cada implementación.",
@@ -671,31 +671,31 @@ export const dosAgentesLeadsCalientesConfig: LeadMagnetConfig = {
     ],
     includes: [
       {
-        icon: "hunter",
+        icon: "target",
         title: "Agente Cazador de Señales",
         description:
           "Monitoriza las 5 plataformas y entrega una lista diaria de prospectos calientes con el extracto exacto de lo que dijeron.",
       },
       {
-        icon: "writer",
+        icon: "edit",
         title: "Agente Escritor de Contexto",
         description:
           "Redacta mensajes de outreach hiperpersonalizados basándose en las propias palabras del prospecto. Listos para enviar.",
       },
       {
-        icon: "trigify",
+        icon: "radio",
         title: "Configuración completa de Trigify",
         description:
           "Setup paso a paso para monitorizar LinkedIn, X, Reddit, YouTube y más de 4 millones de podcasts en tiempo real.",
       },
       {
-        icon: "signals",
+        icon: "activity",
         title: "Framework de 5 señales de compra",
         description:
           "Las señales exactas que indican intención real: comentarios en competidores, preguntas sobre dolor, menciones de herramientas de tu categoría.",
       },
       {
-        icon: "templates",
+        icon: "file-text",
         title: "Plantillas de outreach por señal",
         description:
           "Mensajes base para cada tipo de señal, adaptados por la IA al contexto concreto de cada prospecto.",
@@ -736,31 +736,31 @@ export const dosAgentesLeadsCalientesConfig: LeadMagnetConfig = {
         title: "Las 5 señales de compra que detectamos",
         items: [
           {
-            icon: "competitors",
+            icon: "users",
             title: "Comentarios en posts de competidores",
             description:
               "Interacción activa con tu competencia: señal directa de interés en la categoría. El timing es perfecto.",
           },
           {
-            icon: "questions",
+            icon: "help-circle",
             title: "Preguntas sobre problemas que resuelves",
             description:
               "La señal más caliente: alguien buscando activamente una solución a un dolor que tú puedes resolver.",
           },
           {
-            icon: "complaints",
+            icon: "alert-triangle",
             title: "Quejas de pain points del sector",
             description:
               "Personas frustradas con soluciones actuales. Ventana de oportunidad perfecta para entrar con contexto.",
           },
           {
-            icon: "thought-leaders",
+            icon: "star",
             title: "Interacción con thought leaders",
             description:
               "Seguimiento activo de referentes del sector: indica interés real, no casual, en la industria.",
           },
           {
-            icon: "tools",
+            icon: "wrench",
             title: "Menciones de herramientas de tu categoría",
             description:
               "Están evaluando opciones. El timing es perfecto para un outreach contextualizado antes del cierre.",
