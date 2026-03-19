@@ -33,7 +33,7 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        "brand-gradient": "linear-gradient(135deg, #4AD4AE 0%, #F5A040 100%)",
+        "brand-gradient": "linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)",
         "hero-glow":
           "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(74,212,174,0.15) 0%, transparent 60%)",
       },
