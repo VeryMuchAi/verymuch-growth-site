@@ -438,7 +438,7 @@ export default async function HomePage({ params }: Props) {
 
           {/* Featured tool — AI Readiness Test */}
           <a
-            href="/sales-intelligence"
+            href="/ai-readiness"
             className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-8 card-elevated transition-all duration-200 hover:opacity-95"
             style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
           >

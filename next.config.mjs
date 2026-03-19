@@ -7,14 +7,6 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/sales-intelligence",
-        destination: "https://test-ai.verymuch.ai",
-      },
-      {
-        source: "/sales-intelligence/:path*",
-        destination: "https://test-ai.verymuch.ai/:path*",
-      },
-      {
         source: "/ai-readiness",
         destination: "https://test-ai.verymuch.ai",
       },
