@@ -296,7 +296,7 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
           </p>
           <a
             href="#hero"
-            className="inline-block px-8 py-4 rounded-xl font-bold text-sm text-brand-dark bg-brand-gradient hover:opacity-90 transition-opacity"
+            className="inline-block px-8 py-4 rounded-xl font-bold text-sm text-white btn-animated-bg"
           >
             {content.form.ctaLabel} →
           </a>

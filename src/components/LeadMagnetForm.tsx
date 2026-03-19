@@ -154,7 +154,7 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
             href={guideUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block w-full py-3.5 rounded-xl font-bold text-sm text-brand-dark bg-brand-gradient hover:opacity-90 transition-opacity text-center"
+            className="inline-block w-full py-3.5 rounded-xl font-bold text-sm text-white btn-animated-bg text-center"
           >
             {success.ctaLabel}
           </a>
@@ -218,7 +218,7 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-4 rounded-xl font-bold text-sm text-brand-dark bg-brand-gradient hover:opacity-90 disabled:opacity-50 transition-opacity mt-1"
+        className="w-full py-4 rounded-xl font-bold text-sm text-white btn-animated-bg disabled:opacity-50 mt-1"
       >
         {loading ? t("submitting") : form.ctaLabel}
       </button>

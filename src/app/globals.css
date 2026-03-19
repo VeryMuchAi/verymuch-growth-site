@@ -91,6 +91,13 @@ body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
   }
 }
 
+/* ─── Button color-cycle animation ───────────────────────────────────────── */
+@keyframes btn-color-cycle {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
 @layer utilities {
   /* Gradient text — teal → amber (brand signature) */
   .text-gradient {
@@ -121,6 +128,25 @@ body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
     opacity: 0.9;
   }
 
+  /* ── Animated brand gradient (cycles through full brand palette) ───────── */
+  /*    orange → teal → purple → green → back to orange                      */
+  .btn-animated-bg {
+    background: linear-gradient(
+      90deg,
+      #F5A040 0%,
+      #4AD4AE 25%,
+      #8B5CF6 50%,
+      #5BA66B 75%,
+      #F5A040 100%
+    );
+    background-size: 300% 100%;
+    animation: btn-color-cycle 5s ease infinite;
+  }
+  .btn-animated-bg:hover {
+    animation-play-state: paused;
+    opacity: 0.9;
+  }
+
   /* Gradient CTA pill button */
   .btn-gradient {
     display: inline-flex;
@@ -131,13 +157,23 @@ body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
     font-weight: 700;
     font-size: 1rem;
     line-height: 1;
-    background: var(--accent-gradient);
     color: #FFFFFF;
-    transition: opacity 0.2s ease;
     text-decoration: none;
+    background: linear-gradient(
+      90deg,
+      #F5A040 0%,
+      #4AD4AE 25%,
+      #8B5CF6 50%,
+      #5BA66B 75%,
+      #F5A040 100%
+    );
+    background-size: 300% 100%;
+    animation: btn-color-cycle 5s ease infinite;
+    transition: opacity 0.2s ease;
   }
   .btn-gradient:hover {
-    opacity: 0.88;
+    animation-play-state: paused;
+    opacity: 0.9;
   }
 
   /* Small variant */
@@ -150,12 +186,22 @@ body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
     font-weight: 700;
     font-size: 0.875rem;
     line-height: 1;
-    background: var(--accent-gradient);
     color: #FFFFFF;
-    transition: opacity 0.2s ease;
     text-decoration: none;
+    background: linear-gradient(
+      90deg,
+      #F5A040 0%,
+      #4AD4AE 25%,
+      #8B5CF6 50%,
+      #5BA66B 75%,
+      #F5A040 100%
+    );
+    background-size: 300% 100%;
+    animation: btn-color-cycle 5s ease infinite;
+    transition: opacity 0.2s ease;
   }
   .btn-gradient-sm:hover {
-    opacity: 0.88;
+    animation-play-state: paused;
+    opacity: 0.9;
   }
 }
