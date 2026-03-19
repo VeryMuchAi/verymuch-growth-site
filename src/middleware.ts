@@ -6,7 +6,7 @@ export default createMiddleware(routing);
 export const config = {
   // Exclude static files, api, legal pages, and the sales-intelligence proxy route
   matcher: [
-    "/((?!api|_next|_vercel|favicon\\.ico|icon\\.png|logo.*|Verymuch.*|.*\\..*|privacidad|terminos|sales-intelligence).*)",
+    "/((?!api|_next|_vercel|favicon\\.ico|icon\\.png|logo.*|Verymuch.*|.*\\..*|privacidad|terminos|sales-intelligence|ai-readiness).*)",
     "/en/:path*",
   ],
 };

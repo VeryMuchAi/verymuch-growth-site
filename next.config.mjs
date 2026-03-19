@@ -14,6 +14,14 @@ const nextConfig = {
         source: "/sales-intelligence/:path*",
         destination: "https://test-ai.verymuch.ai/:path*",
       },
+      {
+        source: "/ai-readiness",
+        destination: "https://test-ai.verymuch.ai",
+      },
+      {
+        source: "/ai-readiness/:path*",
+        destination: "https://test-ai.verymuch.ai/:path*",
+      },
     ];
   },
 };
