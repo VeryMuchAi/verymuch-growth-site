@@ -11,7 +11,11 @@ const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landin
 type Props = { params: Promise<{ locale: string }> };
 
 const BASE_URL  = "https://www.verymuch.ai";
-const OG_IMAGE  = `${BASE_URL}/og-image.jpg`;
+const OG_HOME_IMAGE = `${BASE_URL}/og_home_verymuch.png`;
+const OG_HOME_TITLE =
+  "Verymuch.Ai — We install AI agents in your sales and marketing teams";
+const OG_HOME_DESC =
+  "AI in real production, not experimental pilots. Systems that create content, capture leads, qualify opportunities, and accelerate your sales cycle.";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -36,15 +40,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName:    "VeryMuch.ai",
       locale:      ogLocale,
       url:         canonical,
-      title:       t("meta_title"),
-      description: t("meta_description"),
-      images:      [{ url: OG_IMAGE, width: 1200, height: 630, alt: "VeryMuch.ai" }],
+      title:       OG_HOME_TITLE,
+      description: OG_HOME_DESC,
+      images:      [
+        { url: OG_HOME_IMAGE, width: 1200, height: 630, alt: OG_HOME_TITLE },
+      ],
     },
     twitter: {
       card:        "summary_large_image",
-      title:       t("meta_title"),
-      description: t("meta_description"),
-      images:      [OG_IMAGE],
+      title:       OG_HOME_TITLE,
+      description: OG_HOME_DESC,
+      images:      [OG_HOME_IMAGE],
     },
   };
 }
