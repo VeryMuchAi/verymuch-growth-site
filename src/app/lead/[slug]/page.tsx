@@ -36,10 +36,13 @@ export default function LeadMagnetSlugPage({ params }: Props) {
   const config = getLeadMagnetConfig(params.slug);
   if (!config) notFound();
 
-  // Look for a slug-specific Notion URL first, then fall back to the generic one
-  // e.g. slug "equipo-ventas-ia-30min" → NOTION_URL_EQUIPO_VENTAS_IA_30MIN
+  // Priority: 1) config.notionUrl  2) slug-specific env var  3) generic NOTION_URL
   const envKey = `NOTION_URL_${params.slug.toUpperCase().replace(/-/g, "_")}`;
-  const guideUrl = process.env[envKey] ?? process.env.NOTION_URL ?? "#";
+  const guideUrl =
+    config.notionUrl ??
+    process.env[envKey] ??
+    process.env.NOTION_URL ??
+    "#";
 
   return <LeadMagnetPage config={config} guideUrl={guideUrl} />;
 }

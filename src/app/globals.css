@@ -5,37 +5,41 @@
 /* ─── Theme variables ─────────────────────────────────────────────────────── */
 
 :root[data-theme="light"] {
-  --bg-primary:       #FAF9F7;
-  --bg-secondary:     #DDEAEE;
+  --bg-primary:       #F8F5F0;
+  --bg-secondary:     #EEEAE3;       /* warm neutral section bg */
   --bg-card:          #FFFFFF;
-  --text-primary:     #363536;
+  --text-primary:     #1A1A1D;
   --text-secondary:   #6B7280;
-  --accent:           #AAD4AE;   /* fill / background use */
-  --accent-text:      #1B6B3A;   /* text on light bg — 6.2:1 contrast on #FAF9F7 */
-  --accent-warm:      #F5A05E;
-  --accent-warm-text: #9A4200;   /* text on light bg — 5.4:1 contrast */
-  --accent-gradient:  linear-gradient(135deg, #AAD4AE, #DDEAEE, #F5A05E);
+  --accent:           #F5A040;       /* amber — kept for isolated uses */
+  --accent-text:      #1B6B3A;       /* dark green text — 6.2:1 contrast */
+  --accent-cool:      #4AD4AE;
+  --accent-warm:      #F5A040;
+  --accent-warm-text: #9A4200;
+  --accent-gradient:  linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%);
   --success:          #5BA66B;
-  --success-text:     #1A5E2D;   /* text on light bg — 6.8:1 contrast */
+  --success-text:     #1A5E2D;
   --error:            #E85D5D;
-  --border:           rgba(54, 53, 54, 0.12);
+  --border:           rgba(26, 26, 29, 0.08);
+  --card-shadow:      0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 :root[data-theme="dark"] {
-  --bg-primary:       #000000;
-  --bg-secondary:     #363536;
-  --bg-card:          #0A0A0A;
+  --bg-primary:       #0C0C0E;
+  --bg-secondary:     #111113;
+  --bg-card:          #18181B;
   --text-primary:     #FAF9F7;
   --text-secondary:   #9CA3AF;
-  --accent:           #AAD4AE;
-  --accent-text:      #AAD4AE;   /* same as accent on dark bg */
-  --accent-warm:      #F5A05E;
-  --accent-warm-text: #F5A05E;
-  --accent-gradient:  linear-gradient(135deg, #AAD4AE, #DDEAEE, #F5A05E);
+  --accent:           #F5A040;
+  --accent-text:      #4AD4AE;
+  --accent-cool:      #4AD4AE;
+  --accent-warm:      #F5A040;
+  --accent-warm-text: #F5A040;
+  --accent-gradient:  linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%);
   --success:          #5BA66B;
   --success-text:     #5BA66B;
   --error:            #E85D5D;
-  --border:           rgba(250, 249, 247, 0.12);
+  --border:           rgba(250, 249, 247, 0.08);
+  --card-shadow:      none;
 }
 
 /* ─── Typography scale ────────────────────────────────────────────────────── */
@@ -47,18 +51,19 @@ body, p, span, li, input, button {
   font-family: var(--font-sans), 'DM Sans', sans-serif;
 }
 
-.display { font-size: 48px; line-height: 56px; font-weight: 800; }
-h1       { font-size: 36px; line-height: 44px; font-weight: 800; }
-h2       { font-size: 28px; line-height: 36px; font-weight: 600; }
+h1       { font-size: 40px; line-height: 48px; font-weight: 800; letter-spacing: -0.015em; }
+h2       { font-size: 30px; line-height: 38px; font-weight: 700; letter-spacing: -0.01em; }
 h3       { font-size: 22px; line-height: 30px; font-weight: 600; }
 body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
-.caption { font-size: 13px; line-height: 18px; font-weight: 400; }
+.caption { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.06em; }
+
+/* Hero display — class specificity wins over h1 element */
+.display { font-size: 56px; line-height: 64px; font-weight: 800; letter-spacing: -0.025em; }
 
 .text-accent      { color: var(--accent-text); }
 .text-accent-warm { color: var(--accent-warm-text); }
 
-/* ── Logo variants: show color logo in light, white logo in dark ──────────── */
-/* Default (before JS / dark mode assumed by inline script) */
+/* ── Logo variants ────────────────────────────────────────────────────────── */
 .logo-color { display: none; }
 .logo-white { display: block; }
 
@@ -87,11 +92,70 @@ body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
 }
 
 @layer utilities {
+  /* Gradient text — teal → amber (brand signature) */
   .text-gradient {
     @apply bg-brand-gradient bg-clip-text text-transparent;
   }
 
   .border-gradient {
     border-image: linear-gradient(135deg, #4ad4ae, #f5a040) 1;
+  }
+
+  /* Floating card — shadow only in light mode via CSS var */
+  .card-elevated {
+    box-shadow: var(--card-shadow, none);
+  }
+
+  /* Section label pill badge */
+  .badge-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 12px;
+    border-radius: 100px;
+    border: 1.5px solid currentColor;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  /* Gradient CTA pill button */
+  .btn-gradient {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1;
+    background: var(--accent-gradient);
+    color: #FFFFFF;
+    transition: opacity 0.2s ease;
+    text-decoration: none;
+  }
+  .btn-gradient:hover {
+    opacity: 0.88;
+  }
+
+  /* Small variant */
+  .btn-gradient-sm {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1;
+    background: var(--accent-gradient);
+    color: #FFFFFF;
+    transition: opacity 0.2s ease;
+    text-decoration: none;
+  }
+  .btn-gradient-sm:hover {
+    opacity: 0.88;
   }
 }

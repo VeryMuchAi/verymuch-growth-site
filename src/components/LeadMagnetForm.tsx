@@ -93,7 +93,14 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
   if (submitted) {
     return (
       <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-8 text-center animate-fade-up">
-        <div className="text-4xl mb-4">🎉</div>
+        <div
+          className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-5"
+          style={{ background: "linear-gradient(135deg, #4AD4AE 0%, #F5A040 100%)" }}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0C0E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M20 6L9 17l-5-5" />
+          </svg>
+        </div>
         <h3 className="text-xl font-bold text-white mb-3">{success.title}</h3>
         {success.description && (
           <p className="text-brand-mint-dim text-sm leading-relaxed mb-6">

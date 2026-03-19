@@ -87,6 +87,8 @@ export interface LeadMagnetConfig {
   campaign: string;
   seo: LeadMagnetSEO;
   content: LeadMagnetContent;
+  /** Public Notion/guide URL — overrides the NOTION_URL_* env variable when set */
+  notionUrl?: string;
 }
 
 // ─── Registry — built at the bottom of this file once all configs are defined ──
@@ -201,7 +203,7 @@ export const signalsLinkedinConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Entrega inmediata.",
     },
     success: {
-      title: "Tu Blueprint está listo 🎉",
+      title: "Tu Blueprint está listo",
       description:
         "Accede ahora a la guía completa. Encontrarás el flujo n8n, el sistema de scoring y todas las plantillas.",
       ctaLabel: "Abrir la guía →",
@@ -387,7 +389,7 @@ export const equipoVentasIa30minConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Entrega inmediata.",
     },
     success: {
-      title: "Tu guía está lista 🎉",
+      title: "Tu guía está lista",
       description:
         "Accede ahora a la configuración completa de los 4 agentes, los prompts y la estimación de costes.",
       ctaLabel: "Abrir la guía →",
@@ -505,7 +507,7 @@ export const agenteInvestigacionComercialConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Entrega inmediata.",
     },
     success: {
-      title: "Tu guía está lista 🎉",
+      title: "Tu guía está lista",
       description:
         "Accede ahora a la guía completa. Encontrarás la arquitectura, configuración de cada componente y el agente listo para implementar.",
       ctaLabel: "Abrir la guía →",
@@ -625,13 +627,182 @@ export const agentesIaB2bConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Los 20 agentes en tu bandeja.",
     },
     success: {
-      title: "¡Tu guía con 20 agentes está lista! 🤖",
+      title: "Tu guía con 20 agentes está lista",
       description:
         "Accede ahora a la guía completa. Encontrarás cada agente con su tech stack, implementación y resultados esperados.",
       ctaLabel: "Abrir la guía →",
     },
     ctaHeadline: "Empieza a desplegar tus",
     ctaHighlight: "20 agentes comerciales",
+  },
+};
+
+// ─── 2 Agentes IA que encuentran leads calientes Config ───────────────────────
+
+export const dosAgentesLeadsCalientesConfig: LeadMagnetConfig = {
+  slug: "2-agentes-leads-calientes",
+  source: "2-agentes-leads-calientes",
+  campaign: "2-agentes-leads-calientes",
+  notionUrl:
+    "https://www.notion.so/2-Agentes-IA-que-encuentran-leads-calientes-Gu-a-completa-de-montaje-3279fc1023f6817a8c21d8bfad3ec99f",
+
+  seo: {
+    title: "2 Agentes IA que encuentran leads calientes — Guía de montaje | VeryMuch.ai",
+    description:
+      "Guía completa para construir dos agentes IA que monitorizan 5 plataformas buscando señales de compra reales y escriben mensajes personalizados automáticamente. Sin llamadas en frío.",
+    ogTitle:
+      "2 Agentes IA que encuentran leads calientes sin llamadas en frío",
+    ogDescription:
+      "Un Cazador de Señales que monitoriza LinkedIn, X, Reddit, YouTube y Podcasts, y un Escritor de Contexto que redacta outreach basado en las palabras exactas del prospecto. Guía gratuita.",
+  },
+
+  content: {
+    badge: "Guía Gratuita · Nivel Intermedio",
+    headline: "2 Agentes IA que encuentran leads calientes sin llamadas en frío",
+    highlightWords: "leads calientes sin llamadas en frío",
+    subheadline:
+      "Un Cazador de Señales que monitoriza 5 plataformas buscando intención de compra real, y un Escritor de Contexto que redacta outreach basado en las palabras exactas del prospecto.",
+    bullets: [
+      "Monitorización en tiempo real: LinkedIn, X/Twitter, Reddit, YouTube y Podcasts",
+      "Detección de las 5 señales de compra clave (comentarios, preguntas, quejas, interacciones)",
+      "Lista diaria de prospectos calientes con contexto exacto de qué dijeron",
+      "Mensajes de outreach personalizados generados automáticamente",
+      "Tiempo de montaje: ~2 horas · Sin necesidad de programar",
+    ],
+    includes: [
+      {
+        icon: "hunter",
+        title: "Agente Cazador de Señales",
+        description:
+          "Monitoriza las 5 plataformas y entrega una lista diaria de prospectos calientes con el extracto exacto de lo que dijeron.",
+      },
+      {
+        icon: "writer",
+        title: "Agente Escritor de Contexto",
+        description:
+          "Redacta mensajes de outreach hiperpersonalizados basándose en las propias palabras del prospecto. Listos para enviar.",
+      },
+      {
+        icon: "trigify",
+        title: "Configuración completa de Trigify",
+        description:
+          "Setup paso a paso para monitorizar LinkedIn, X, Reddit, YouTube y más de 4 millones de podcasts en tiempo real.",
+      },
+      {
+        icon: "signals",
+        title: "Framework de 5 señales de compra",
+        description:
+          "Las señales exactas que indican intención real: comentarios en competidores, preguntas sobre dolor, menciones de herramientas de tu categoría.",
+      },
+      {
+        icon: "templates",
+        title: "Plantillas de outreach por señal",
+        description:
+          "Mensajes base para cada tipo de señal, adaptados por la IA al contexto concreto de cada prospecto.",
+      },
+    ],
+    techStack: [
+      {
+        name: "Trigify",
+        role: "Monitorización en tiempo real de señales en LinkedIn, X, Reddit, YouTube y 4M+ podcasts.",
+        url: "https://trigify.io",
+      },
+      {
+        name: "Claude",
+        role: "Generación de mensajes de outreach hiperpersonalizados basados en el contexto exacto del prospecto.",
+        url: "https://anthropic.com",
+      },
+      {
+        name: "n8n",
+        role: "Orquestación del pipeline completo: detección de señal → enriquecimiento → generación de mensaje.",
+        url: "https://n8n.io",
+      },
+    ],
+    extraSections: [
+      {
+        type: "opportunity",
+        title: "5 plataformas monitorizadas en tiempo real",
+        subtitle:
+          "Trigify detecta cuándo alguien expresa intención de compra real — antes de que tu competencia lo contacte.",
+        tableRows: [
+          ["LinkedIn", "X / Twitter", "Reddit"],
+          ["Posts, comentarios, artículos · Datos de contacto directos", "Tweets, respuestas, hilos · Localizar en LinkedIn", "Posts en subreddits relevantes · Localizar en LinkedIn"],
+          ["YouTube", "Podcasts", ""],
+          ["Comentarios en vídeos del sector · Localizar en LinkedIn", "4M+ podcasts · 38,5M+ episodios indexados", ""],
+        ],
+      },
+      {
+        type: "changelog",
+        title: "Las 5 señales de compra que detectamos",
+        items: [
+          {
+            icon: "competitors",
+            title: "Comentarios en posts de competidores",
+            description:
+              "Interacción activa con tu competencia: señal directa de interés en la categoría. El timing es perfecto.",
+          },
+          {
+            icon: "questions",
+            title: "Preguntas sobre problemas que resuelves",
+            description:
+              "La señal más caliente: alguien buscando activamente una solución a un dolor que tú puedes resolver.",
+          },
+          {
+            icon: "complaints",
+            title: "Quejas de pain points del sector",
+            description:
+              "Personas frustradas con soluciones actuales. Ventana de oportunidad perfecta para entrar con contexto.",
+          },
+          {
+            icon: "thought-leaders",
+            title: "Interacción con thought leaders",
+            description:
+              "Seguimiento activo de referentes del sector: indica interés real, no casual, en la industria.",
+          },
+          {
+            icon: "tools",
+            title: "Menciones de herramientas de tu categoría",
+            description:
+              "Están evaluando opciones. El timing es perfecto para un outreach contextualizado antes del cierre.",
+          },
+        ],
+      },
+    ],
+    form: {
+      fields: [
+        {
+          name: "name",
+          label: "Nombre",
+          type: "text",
+          placeholder: "Tu nombre",
+          required: true,
+        },
+        {
+          name: "email",
+          label: "Correo electrónico",
+          type: "email",
+          placeholder: "tu@empresa.com",
+          required: true,
+        },
+        {
+          name: "company",
+          label: "Empresa (opcional)",
+          type: "text",
+          placeholder: "Tu empresa",
+          required: false,
+        },
+      ],
+      ctaLabel: "Recibir la Guía Gratuita",
+      microcopy: "Gratis. Sin spam. Acceso inmediato.",
+    },
+    success: {
+      title: "Tu guía está lista",
+      description:
+        "Accede ahora a la guía completa. Encontrarás la configuración de ambos agentes, el setup de Trigify y las plantillas de outreach.",
+      ctaLabel: "Abrir la guía →",
+    },
+    ctaHeadline: "Empieza a capturar leads calientes",
+    ctaHighlight: "esta semana",
   },
 };
 
@@ -643,6 +814,7 @@ const _ALL_CONFIGS: LeadMagnetConfig[] = [
   equipoVentasIa30minConfig,
   agenteInvestigacionComercialConfig,
   agentesIaB2bConfig,
+  dosAgentesLeadsCalientesConfig,
 ];
 
 ALL_LEAD_MAGNETS = Object.fromEntries(_ALL_CONFIGS.map((c) => [c.slug, c]));

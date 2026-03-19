@@ -77,7 +77,7 @@ function AgentCard({ agent }: { agent: typeof AGENTS[number] }) {
   const isVentas = agent.cat === "ventas";
   return (
     <article
-      className="rounded-2xl p-6 flex flex-col gap-4 border"
+      className="rounded-2xl p-6 flex flex-col gap-4 border card-elevated"
       style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
     >
       <div className="flex items-center justify-between gap-3">
@@ -132,8 +132,8 @@ export default function AgentsInProductionSection() {
 
         {/* Header */}
         <div className="mb-12">
-          <p className="caption uppercase tracking-widest font-semibold mb-3" style={{ color: "var(--accent-text)" }}>
-            Agentes en producción
+          <p className="mb-3">
+            <span className="badge-label" style={{ color: "var(--accent-text)" }}>Agentes en producción</span>
           </p>
           <h2 className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight mb-3" style={{ color: "var(--text-primary)" }}>
             Sistemas funcionando ahora mismo
@@ -151,12 +151,12 @@ export default function AgentsInProductionSection() {
               <button
                 key={t.id}
                 onClick={() => { setTab(t.id); setExpanded(false); }}
-                className="px-5 py-2 rounded-xl text-sm font-semibold transition-all duration-200 border"
+                className="px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 border"
                 style={{
-                  background: active ? "var(--accent)" : "transparent",
-                  color:      active ? "#363536" : "var(--text-primary)",
-                  borderColor: active ? "var(--accent)" : "var(--border)",
-                  opacity: active ? 1 : 0.7,
+                  background: active ? "var(--accent-gradient)" : "transparent",
+                  color:      active ? "#FFFFFF" : "var(--text-primary)",
+                  borderColor: active ? "transparent" : "var(--border)",
+                  opacity: active ? 1 : 0.65,
                 }}
               >
                 {t.label}
@@ -175,7 +175,7 @@ export default function AgentsInProductionSection() {
           <div className="text-center">
             <button
               onClick={() => setExpanded(true)}
-              className="px-7 py-3 rounded-xl text-sm font-semibold border transition-opacity hover:opacity-100 opacity-70"
+              className="px-7 py-3 rounded-full text-sm font-semibold border transition-opacity hover:opacity-100 opacity-65"
               style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
             >
               Ver todos los agentes ↓

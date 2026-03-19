@@ -83,7 +83,10 @@ function ChangelogSection({ s }: { s: SectionChangelog }) {
               key={item.title}
               className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-5 flex flex-col gap-2 hover:border-brand-mint/30 transition-colors"
             >
-              <span className="text-2xl">{item.icon}</span>
+              <div
+                className="w-6 h-[3px] rounded-full mb-1"
+                style={{ background: "linear-gradient(90deg, #4AD4AE 0%, #F5A040 100%)" }}
+              />
               <h3 className="text-sm font-bold text-white">{item.title}</h3>
               <p className="text-xs text-white/45 leading-relaxed">{item.description}</p>
             </div>
@@ -100,12 +103,14 @@ function AgentsSection({ s }: { s: SectionAgents }) {
       <div className="max-w-6xl mx-auto px-6 py-16">
         <h2 className="text-2xl font-bold text-white mb-10">{s.title}</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {s.agents.map((agent) => (
+          {s.agents.map((agent, i) => (
             <div
               key={agent.name}
               className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-6 flex flex-col gap-3 hover:border-brand-amber/30 transition-colors"
             >
-              <span className="text-3xl">{agent.icon}</span>
+              <span className="text-[10px] font-bold tracking-widest text-brand-amber/60 uppercase">
+                0{i + 1}
+              </span>
               <div>
                 <h3 className="text-base font-bold text-white">{agent.name}</h3>
                 <span className="text-xs text-brand-amber font-semibold uppercase tracking-wider">
@@ -224,12 +229,14 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
             Todo lo que necesitas para implementarlo este fin de semana.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {content.includes.map((item) => (
+            {content.includes.map((item, i) => (
               <div
                 key={item.title}
                 className="rounded-xl border border-white/[0.07] bg-white/[0.03] p-5 flex flex-col gap-2 hover:border-brand-mint/30 transition-colors"
               >
-                <span className="text-2xl">{item.icon}</span>
+                <span className="text-[10px] font-bold tracking-widest text-brand-mint/60 uppercase">
+                  0{i + 1}
+                </span>
                 <h3 className="text-sm font-bold text-white">{item.title}</h3>
                 <p className="text-xs text-white/45 leading-relaxed">
                   {item.description}

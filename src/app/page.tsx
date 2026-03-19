@@ -27,17 +27,14 @@ const METRICS = [
 // ── SYMPTOMS data ─────────────────────────────────────────────────────────────
 const VENTAS_SYMPTOMS = [
   {
-    icon: "⏱️",
     title: "Leads que tardan +4 horas en recibir respuesta",
     desc: "El 78% de los compradores elige al primero que contesta.",
   },
   {
-    icon: "🔍",
     title: "SDRs que pasan el 70% del tiempo investigando",
     desc: "Investigación manual que debería hacer una máquina.",
   },
   {
-    icon: "📉",
     title: "Follow-ups que se pierden, leads que se enfrían",
     desc: "Pipeline que se evapora sin que nadie se dé cuenta.",
   },
@@ -45,17 +42,14 @@ const VENTAS_SYMPTOMS = [
 
 const MARKETING_SYMPTOMS = [
   {
-    icon: "✍️",
     title: "Contenido que tarda días en producirse",
     desc: "Posts, emails, lead magnets: todo pasa por un cuello de botella humano que no escala.",
   },
   {
-    icon: "📋",
     title: "Publicación manual en 5 plataformas",
     desc: "Tu equipo copia y pega el mismo contenido adaptándolo a mano para cada canal.",
   },
   {
-    icon: "📊",
     title: "Zero visibilidad sobre qué contenido genera leads",
     desc: "Publicas mucho pero no sabes qué piezas realmente mueven el pipeline.",
   },
@@ -133,6 +127,13 @@ const LEAD_MAGNETS_LIVE = [
     href: "/lead/20-agentes-ia-b2b",
     stack: ["Claude", "n8n", "Clay", "Instantly"],
   },
+  {
+    id: "2-agentes-leads-calientes",
+    title: "2 Agentes IA que encuentran leads calientes",
+    desc: "Monitoriza LinkedIn, X, Reddit, YouTube y Podcasts buscando señales de compra reales y escribe outreach personalizado automáticamente.",
+    href: "/lead/2-agentes-leads-calientes",
+    stack: ["Trigify", "Claude", "n8n"],
+  },
 ];
 
 const LEAD_MAGNETS_SOON = [
@@ -150,16 +151,23 @@ export default function HomePage() {
       {/* ══ HERO ═══════════════════════════════════════════════════════════════ */}
       <section
         id="hero"
-        className="pt-40 pb-24 px-6"
+        className="relative overflow-hidden pt-40 pb-24 px-6"
         style={{ background: "var(--bg-primary)" }}
       >
-        <div className="max-w-4xl mx-auto">
+        {/* Ambient glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(245,160,64,0.07) 0%, rgba(74,212,174,0.05) 45%, transparent 70%)",
+          }}
+        />
+        <div className="max-w-4xl mx-auto relative">
           {/* Tag */}
-          <p
-            className="caption uppercase tracking-widest font-semibold mb-6"
-            style={{ color: "var(--accent-text)" }}
-          >
-            IA aplicada a ventas y marketing
+          <p className="mb-6">
+            <span className="badge-label" style={{ color: "var(--accent-text)" }}>
+              IA aplicada a ventas y marketing
+            </span>
           </p>
 
           {/* H1 */}
@@ -167,7 +175,11 @@ export default function HomePage() {
             className="display font-extrabold leading-tight mb-6"
             style={{ color: "var(--text-primary)" }}
           >
-            Instalamos agentes de IA en tus equipos de ventas y marketing
+            Instalamos{" "}
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
+              agentes de IA
+            </span>
+            {" "}en tus equipos de ventas y marketing
           </h1>
 
           {/* Subheadline */}
@@ -186,14 +198,13 @@ export default function HomePage() {
               href={GHL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-7 py-3.5 rounded-xl text-base font-bold transition-opacity duration-200 hover:opacity-85"
-              style={{ background: "var(--accent)", color: "#363536" }}
+              className="btn-gradient text-base"
             >
-              Agenda una consultoría gratuita
+              Agenda una consultoría gratuita →
             </a>
             <a
               href="#how"
-              className="inline-flex items-center px-7 py-3.5 rounded-xl text-base font-semibold border transition-opacity duration-200 hover:opacity-100 opacity-70"
+              className="inline-flex items-center px-7 py-3.5 rounded-full text-base font-semibold border transition-opacity duration-200 hover:opacity-100 opacity-60"
               style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
             >
               Ver cómo funciona
@@ -228,11 +239,8 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-14">
-            <p
-              className="caption uppercase tracking-widest font-semibold mb-3"
-              style={{ color: "var(--accent-text)" }}
-            >
-              ¿Suena familiar?
+            <p className="mb-3">
+              <span className="badge-label" style={{ color: "var(--accent-text)" }}>¿Suena familiar?</span>
             </p>
             <h2
               className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight"
@@ -251,17 +259,22 @@ export default function HomePage() {
               Ventas
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {VENTAS_SYMPTOMS.map((s) => (
+              {VENTAS_SYMPTOMS.map((s, i) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4"
+                  className="rounded-2xl p-6 border border-l-4 card-elevated"
                   style={{
                     background: "var(--bg-card)",
                     borderColor: "var(--border)",
                     borderLeftColor: "var(--error)",
                   }}
                 >
-                  <span className="text-3xl mb-4 block">{s.icon}</span>
+                  <span
+                    className="caption uppercase tracking-widest font-bold mb-4 block"
+                    style={{ color: "var(--error)", opacity: 0.6 }}
+                  >
+                    0{i + 1}
+                  </span>
                   <h3 className="text-sm font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
                     {s.title}
                   </h3>
@@ -282,17 +295,22 @@ export default function HomePage() {
               Marketing
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {MARKETING_SYMPTOMS.map((s) => (
+              {MARKETING_SYMPTOMS.map((s, i) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4"
+                  className="rounded-2xl p-6 border border-l-4 card-elevated"
                   style={{
                     background: "var(--bg-card)",
                     borderColor: "var(--border)",
                     borderLeftColor: "var(--error)",
                   }}
                 >
-                  <span className="text-3xl mb-4 block">{s.icon}</span>
+                  <span
+                    className="caption uppercase tracking-widest font-bold mb-4 block"
+                    style={{ color: "var(--error)", opacity: 0.6 }}
+                  >
+                    0{i + 1}
+                  </span>
                   <h3 className="text-sm font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
                     {s.title}
                   </h3>
@@ -324,11 +342,8 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-14 max-w-3xl">
-            <p
-              className="caption uppercase tracking-widest font-semibold mb-3"
-              style={{ color: "var(--accent-text)" }}
-            >
-              Proceso
+            <p className="mb-3">
+              <span className="badge-label" style={{ color: "var(--accent-text)" }}>Proceso</span>
             </p>
             <h2
               className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight mb-4"
@@ -408,7 +423,7 @@ export default function HomePage() {
             {CALLOUTS.map((c) => (
               <div
                 key={c.title}
-                className="rounded-2xl p-7 border flex flex-col gap-4"
+                className="rounded-2xl p-7 border flex flex-col gap-4 card-elevated"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <h3 className="text-base font-bold" style={{ color: "var(--text-primary)" }}>
@@ -436,10 +451,9 @@ export default function HomePage() {
               href={GHL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-7 py-3.5 rounded-xl text-base font-bold transition-opacity duration-200 hover:opacity-85"
-              style={{ background: "var(--accent)", color: "#363536" }}
+              className="btn-gradient text-base"
             >
-              Empieza con una discovery call gratuita
+              Empieza con una discovery call gratuita →
             </a>
           </div>
         </div>
@@ -457,11 +471,8 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-14">
-            <p
-              className="caption uppercase tracking-widest font-semibold mb-3"
-              style={{ color: "var(--accent-text)" }}
-            >
-              El equipo
+            <p className="mb-3">
+              <span className="badge-label" style={{ color: "var(--accent-text)" }}>El equipo</span>
             </p>
             <h2
               className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight"
@@ -578,7 +589,7 @@ export default function HomePage() {
               style={{ color: "var(--text-primary)" }}
             >
               Los agentes de IA multiplican a tu equipo{" "}
-              <span style={{ color: "var(--accent-text)" }}>10x–20x.</span>{" "}
+              <span className="bg-brand-gradient bg-clip-text text-transparent">10x–20x.</span>{" "}
               No reemplazan a nadie.
             </h2>
             <p className="text-base mb-4" style={{ color: "var(--text-secondary)" }}>
@@ -602,11 +613,8 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-12">
-            <p
-              className="caption uppercase tracking-widest font-semibold mb-3"
-              style={{ color: "var(--accent-text)" }}
-            >
-              Recursos
+            <p className="mb-3">
+              <span className="badge-label" style={{ color: "var(--accent-text)" }}>Recursos</span>
             </p>
             <h2
               className="text-[clamp(1.6rem,3.5vw,2.2rem)] font-bold leading-tight mb-3"
@@ -626,7 +634,7 @@ export default function HomePage() {
               <a
                 key={lm.id}
                 href={lm.href}
-                className="group rounded-2xl p-6 border flex flex-col gap-4 transition-opacity duration-200 hover:opacity-90"
+                className="group rounded-2xl p-6 border flex flex-col gap-4 transition-all duration-200 hover:opacity-90 card-elevated"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <div className="flex items-center justify-between gap-3">
@@ -669,7 +677,7 @@ export default function HomePage() {
             {LEAD_MAGNETS_SOON.map((lm) => (
               <div
                 key={lm.id}
-                className="rounded-2xl p-6 border flex flex-col gap-3 opacity-50"
+                className="rounded-2xl p-6 border flex flex-col gap-3 opacity-50 card-elevated"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <span
@@ -690,16 +698,25 @@ export default function HomePage() {
       {/* ══ FINAL CTA ══════════════════════════════════════════════════════════ */}
       <section
         id="cta"
-        className="py-28 px-6 text-center"
+        className="relative overflow-hidden py-28 px-6 text-center"
         style={{ background: "var(--bg-primary)" }}
       >
-        <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(245,160,64,0.06) 0%, rgba(74,212,174,0.04) 45%, transparent 70%)",
+          }}
+        />
+        <div className="max-w-2xl mx-auto flex flex-col items-center gap-6 relative">
           <h2
             className="text-[clamp(1.8rem,4vw,2.5rem)] font-bold leading-tight"
             style={{ color: "var(--text-primary)" }}
           >
             ¿Listo para instalar tu{" "}
-            <span style={{ color: "var(--accent-text)" }}>primer agente de IA?</span>
+            <span className="bg-brand-gradient bg-clip-text text-transparent">
+              primer agente de IA?
+            </span>
           </h2>
           <p className="text-base max-w-[560px]" style={{ color: "var(--text-secondary)" }}>
             Agenda una consultoría gratuita de 30 minutos. Analizamos tus procesos de
@@ -710,10 +727,9 @@ export default function HomePage() {
             href={GHL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 rounded-xl text-base font-bold transition-opacity duration-200 hover:opacity-85"
-            style={{ background: "var(--accent)", color: "#363536" }}
+            className="btn-gradient text-base"
           >
-            Agenda tu consultoría gratuita
+            Agenda tu consultoría gratuita →
           </a>
         </div>
       </section>
