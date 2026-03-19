@@ -87,7 +87,7 @@ export default function HomeNav() {
                   key={l.label}
                   href={l.href}
                   role="listitem"
-                  className="text-[11px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider transition-opacity hover:opacity-90"
+                  className="text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wide whitespace-nowrap transition-opacity hover:opacity-90"
                   style={{ background: "linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)", color: "#fff" }}
                 >
                   {l.label}

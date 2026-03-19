@@ -4,9 +4,9 @@ import { routing } from "./i18n/routing";
 export default createMiddleware(routing);
 
 export const config = {
-  // Run middleware on all paths EXCEPT static files, api, and legal pages
+  // Exclude static files, api, legal pages, and the sales-intelligence proxy route
   matcher: [
-    "/((?!api|_next|_vercel|favicon\\.ico|icon\\.png|logo.*|Verymuch.*|.*\\..*|privacidad|terminos).*)",
+    "/((?!api|_next|_vercel|favicon\\.ico|icon\\.png|logo.*|Verymuch.*|.*\\..*|privacidad|terminos|sales-intelligence).*)",
     "/en/:path*",
   ],
 };
