@@ -53,34 +53,34 @@ export default function HomeNav() {
         ].join(" ")}
         style={{
           top: 0,
-          height: 64,
+          height: 76,
           background: scrolled ? "color-mix(in srgb, var(--bg-primary) 92%, transparent)" : undefined,
           borderColor: scrolled ? "var(--border)" : undefined,
         }}
       >
-        <div className="max-w-6xl mx-auto px-6 h-full flex items-center justify-between gap-6">
+        <div className="w-full max-w-[1800px] mx-auto px-8 md:px-10 xl:px-16 2xl:px-24 h-full flex items-center justify-between gap-8 xl:gap-12">
           {/* Logo — white for dark mode, color for light mode */}
           <Link href="/" className="flex-shrink-0 z-10">
             <Image
               src="/logo-white.png"
               alt="VeryMuch.ai"
-              width={148}
-              height={36}
-              className="logo-white h-7 w-auto object-contain"
+              width={200}
+              height={48}
+              className="logo-white h-9 xl:h-10 w-auto object-contain"
               priority
             />
             <Image
               src="/Verymuch_Logo_transparent_real.png"
               alt="VeryMuch.ai"
-              width={148}
-              height={36}
-              className="logo-color h-7 w-auto object-contain"
+              width={200}
+              height={48}
+              className="logo-color h-9 xl:h-10 w-auto object-contain"
               priority
             />
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-7" role="list">
+          <div className="hidden md:flex items-center gap-7 lg:gap-9 xl:gap-11" role="list">
             {NAV_LINKS.map((l) => (
               l.highlight ? (
                 <a
@@ -98,7 +98,7 @@ export default function HomeNav() {
                   href={l.href}
                   role="listitem"
                   {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="text-sm font-medium transition-opacity duration-200 hover:opacity-100 opacity-60"
+                  className="text-sm xl:text-[15px] font-medium transition-opacity duration-200 hover:opacity-100 opacity-60 whitespace-nowrap"
                   style={{ color: "var(--text-primary)" }}
                 >
                   {l.label}
@@ -108,7 +108,7 @@ export default function HomeNav() {
           </div>
 
           {/* Desktop right: locale switcher + theme toggle + CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3 xl:gap-5">
             {/* Language switcher */}
             <button
               onClick={() => router.replace(pathname, { locale: otherLocale })}

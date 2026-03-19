@@ -134,7 +134,7 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
   // ── Success state ──────────────────────────────────────────────────────────
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-8 text-center animate-fade-up">
+      <div className="rounded-xl border border-white/10 bg-white/[0.07] backdrop-blur-sm p-8 text-center animate-fade-up">
         <div
           className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-5"
           style={{ background: "linear-gradient(135deg, #4AD4AE 0%, #F5A040 100%)" }}
@@ -154,7 +154,7 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
             href={guideUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block w-full py-3.5 rounded-xl font-bold text-sm text-white btn-animated-bg text-center"
+            className="inline-block w-full py-3.5 rounded-[10px] font-bold text-sm text-white btn-animated-bg text-center"
           >
             {success.ctaLabel}
           </a>
@@ -168,7 +168,7 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-8 flex flex-col gap-5"
+      className="rounded-xl border border-white/10 bg-white/[0.07] backdrop-blur-sm p-8 flex flex-col gap-5"
     >
       <p className="text-white font-semibold text-base -mb-1">
         {t("heading")}
@@ -218,7 +218,7 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-4 rounded-xl font-bold text-sm text-white btn-animated-bg disabled:opacity-50 mt-1"
+        className="w-full py-4 rounded-[10px] font-bold text-sm text-white btn-animated-bg disabled:opacity-50 mt-1"
       >
         {loading ? t("submitting") : form.ctaLabel}
       </button>
