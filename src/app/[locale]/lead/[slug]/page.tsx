@@ -18,19 +18,32 @@ export function generateStaticParams() {
   return params;
 }
 
+const BASE_URL = "https://www.verymuch.ai";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const config = getLeadMagnetConfig(slug);
   if (!config) return {};
   const { seo } = config;
+  const esPath = `/lead/${slug}`;
+  const enPath = `/en/lead/${slug}`;
+  const canonical = locale === "es" ? `${BASE_URL}${esPath}` : `${BASE_URL}${enPath}`;
   return {
     title: seo.title,
     description: seo.description,
+    alternates: {
+      canonical,
+      languages: {
+        es: `${BASE_URL}${esPath}`,
+        en: `${BASE_URL}${enPath}`,
+      },
+    },
     openGraph: {
       title: seo.ogTitle ?? seo.title,
       description: seo.ogDescription ?? seo.description,
       type: "website",
       siteName: "VeryMuch.ai",
+      url: canonical,
     },
     twitter: {
       card: "summary_large_image",

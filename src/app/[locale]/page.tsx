@@ -10,16 +10,26 @@ const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landin
 
 type Props = { params: Promise<{ locale: string }> };
 
+const BASE_URL = "https://www.verymuch.ai";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "HomePage" });
+  const canonical = locale === "es" ? `${BASE_URL}/` : `${BASE_URL}/en`;
   return {
     title: t("meta_title"),
     description: t("meta_description"),
+    alternates: {
+      canonical,
+      languages: {
+        es: `${BASE_URL}/`,
+        en: `${BASE_URL}/en`,
+      },
+    },
     openGraph: {
       title: t("meta_title"),
       description: t("meta_description"),
-      url: "https://verymuch.ai",
+      url: canonical,
     },
   };
 }

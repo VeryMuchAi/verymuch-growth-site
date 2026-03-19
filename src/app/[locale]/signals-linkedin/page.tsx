@@ -4,14 +4,26 @@ import LeadMagnetPage from "@/components/LeadMagnetPage";
 
 const { seo } = signalsLinkedinConfig;
 
+const BASE_URL = "https://www.verymuch.ai";
+const esPath   = "/signals-linkedin";
+const enPath   = "/en/signals-linkedin";
+
 export const metadata: Metadata = {
   title: seo.title,
   description: seo.description,
+  alternates: {
+    canonical: `${BASE_URL}${esPath}`,
+    languages: {
+      es: `${BASE_URL}${esPath}`,
+      en: `${BASE_URL}${enPath}`,
+    },
+  },
   openGraph: {
     title: seo.ogTitle ?? seo.title,
     description: seo.ogDescription ?? seo.description,
     type: "website",
     siteName: "VeryMuch.ai",
+    url: `${BASE_URL}${esPath}`,
   },
   twitter: {
     card: "summary_large_image",
