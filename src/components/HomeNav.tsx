@@ -21,10 +21,11 @@ export default function HomeNav() {
   const otherLocale = routing.locales.find((l) => l !== locale) as string;
 
   const NAV_LINKS = [
-    { label: locale === "es" ? "Servicios"      : "Services",    href: "#services" },
-    { label: locale === "es" ? "Cómo funciona"  : "How it works",href: "#how" },
-    { label: locale === "es" ? "Agentes"        : "Agents",      href: "#agents" },
-    { label: locale === "es" ? "Recursos"       : "Resources",   href: "#resources" },
+    { label: locale === "es" ? "Servicios"      : "Services",      href: "#services" },
+    { label: locale === "es" ? "Cómo funciona"  : "How it works",  href: "#how" },
+    { label: locale === "es" ? "Agentes"        : "Agents",        href: "#agents" },
+    { label: locale === "es" ? "Recursos"       : "Resources",     href: "#resources" },
+    { label: locale === "es" ? "Test de IA"     : "AI Readiness",  href: "/sales-intelligence", highlight: true },
     { label: "Marketplace", href: "https://app.verymuch.ai", external: true },
   ];
 
@@ -81,16 +82,28 @@ export default function HomeNav() {
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-7" role="list">
             {NAV_LINKS.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                role="listitem"
-                {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="text-sm font-medium transition-opacity duration-200 hover:opacity-100 opacity-60"
-                style={{ color: "var(--text-primary)" }}
-              >
-                {l.label}
-              </a>
+              l.highlight ? (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  role="listitem"
+                  className="text-[11px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider transition-opacity hover:opacity-90"
+                  style={{ background: "linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)", color: "#fff" }}
+                >
+                  {l.label}
+                </a>
+              ) : (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  role="listitem"
+                  {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="text-sm font-medium transition-opacity duration-200 hover:opacity-100 opacity-60"
+                  style={{ color: "var(--text-primary)" }}
+                >
+                  {l.label}
+                </a>
+              )
             ))}
           </div>
 
@@ -177,8 +190,16 @@ export default function HomeNav() {
             href={l.href}
             onClick={() => setMenuOpen(false)}
             {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-            className="text-2xl font-semibold transition-opacity hover:opacity-100 opacity-60"
-            style={{ color: "var(--text-primary)" }}
+            className={
+              l.highlight
+                ? "text-xl font-bold px-6 py-2 rounded-full transition-opacity hover:opacity-90"
+                : "text-2xl font-semibold transition-opacity hover:opacity-100 opacity-60"
+            }
+            style={
+              l.highlight
+                ? { background: "linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)", color: "#fff" }
+                : { color: "var(--text-primary)" }
+            }
           >
             {l.label}
           </a>

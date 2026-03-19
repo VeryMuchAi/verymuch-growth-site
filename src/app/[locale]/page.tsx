@@ -436,6 +436,45 @@ export default async function HomePage({ params }: Props) {
             </p>
           </div>
 
+          {/* Featured tool — AI Readiness Test */}
+          <a
+            href="/sales-intelligence"
+            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-8 card-elevated transition-all duration-200 hover:opacity-95"
+            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            {/* Ambient glow */}
+            <div
+              className="absolute inset-0 pointer-events-none rounded-2xl"
+              style={{
+                background:
+                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(245,160,64,0.07) 0%, rgba(74,212,174,0.05) 60%, transparent 100%)",
+              }}
+            />
+            <div className="flex-shrink-0 relative">
+              <IconBlock icon="activity" color="orange" size="lg" />
+            </div>
+            <div className="flex-1 min-w-0 relative">
+              <span
+                className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] inline-block mb-3"
+                style={{ background: "rgba(245,160,64,0.15)", color: "var(--accent-warm-text)" }}
+              >
+                {t("test_badge")}
+              </span>
+              <h3 className="text-lg font-bold leading-snug mb-2" style={{ color: "var(--text-primary)" }}>
+                {t("test_title")}
+              </h3>
+              <p className="text-sm leading-relaxed max-w-xl" style={{ color: "var(--text-secondary)" }}>
+                {t("test_desc")}
+              </p>
+            </div>
+            <span
+              className="flex-shrink-0 text-sm font-bold whitespace-nowrap relative"
+              style={{ color: "var(--accent-text)" }}
+            >
+              {t("test_cta")}
+            </span>
+          </a>
+
           {/* Live */}
           <div className="grid sm:grid-cols-2 gap-5 mb-5">
             {LEAD_MAGNETS_LIVE.map((lm) => (
