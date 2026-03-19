@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -35,13 +36,10 @@ export const metadata: Metadata = {
   },
 };
 
-type Props = {
-  children: React.ReactNode;
-  params?: Promise<{ locale?: string }>;
-};
-
-export default async function RootLayout({ children, params }: Props) {
-  const locale = (await params)?.locale ?? "es";
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  // getLocale() reads the locale set by the next-intl middleware — works for
+  // all routes including [locale]/*, so the <html lang> is always correct.
+  const locale = await getLocale();
 
   return (
     <html lang={locale} className={`${plusJakartaSans.variable} ${dmSans.variable}`}>

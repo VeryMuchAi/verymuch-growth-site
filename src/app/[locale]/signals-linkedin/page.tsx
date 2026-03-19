@@ -14,8 +14,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `${BASE_URL}${esPath}`,
     languages: {
-      es: `${BASE_URL}${esPath}`,
-      en: `${BASE_URL}${enPath}`,
+      es:          `${BASE_URL}${esPath}`,
+      en:          `${BASE_URL}${enPath}`,
+      "x-default": `${BASE_URL}${esPath}`,
     },
   },
   openGraph: {
