@@ -20,7 +20,7 @@ export default function HomeNav() {
 
   const otherLocale = routing.locales.find((l) => l !== locale) as string;
 
-  const NAV_LINKS = [
+  const NAV_LINKS: { label: string; href: string; highlight?: boolean; external?: boolean }[] = [
     { label: locale === "es" ? "Servicios"      : "Services",      href: "#services" },
     { label: locale === "es" ? "Cómo funciona"  : "How it works",  href: "#how" },
     { label: locale === "es" ? "Agentes"        : "Agents",        href: "#agents" },
