@@ -11,6 +11,32 @@ interface Props {
 
 type FieldErrors = Record<string, string>;
 
+// Free/consumer email providers — not accepted in lead magnet forms
+const BLOCKED_DOMAINS = new Set([
+  "gmail.com", "googlemail.com",
+  "hotmail.com", "hotmail.es", "hotmail.co.uk", "hotmail.fr", "hotmail.de",
+  "outlook.com", "outlook.es",
+  "live.com", "live.es",
+  "yahoo.com", "yahoo.es", "yahoo.co.uk", "yahoo.fr", "yahoo.de",
+  "icloud.com", "me.com", "mac.com",
+  "aol.com",
+  "msn.com",
+  "protonmail.com", "proton.me",
+  "tutanota.com", "tuta.io",
+  "yandex.com", "yandex.ru",
+  "mail.com", "mail.ru",
+  "inbox.com",
+  "zoho.com",
+  "gmx.com", "gmx.de", "gmx.net",
+  "web.de",
+  "qq.com", "163.com", "126.com",
+]);
+
+function isPersonalEmail(email: string): boolean {
+  const domain = email.split("@")[1]?.toLowerCase();
+  return !!domain && BLOCKED_DOMAINS.has(domain);
+}
+
 function validate(
   fields: LeadMagnetConfig["content"]["form"]["fields"],
   data: Record<string, string>
@@ -19,14 +45,17 @@ function validate(
   for (const field of fields) {
     const val = (data[field.name] ?? "").trim();
 
-    // Explicit required check — catches the name field and any other required field
     if (field.required && !val) {
       errors[field.name] = `${field.label} es obligatorio.`;
       continue;
     }
 
-    if (field.type === "email" && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
-      errors[field.name] = "Introduce un correo válido.";
+    if (field.type === "email" && val) {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+        errors[field.name] = "Introduce un correo válido.";
+      } else if (isPersonalEmail(val)) {
+        errors[field.name] = "Usa tu correo corporativo (no Gmail, Hotmail, Yahoo…).";
+      }
     }
   }
   return errors;
