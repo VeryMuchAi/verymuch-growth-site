@@ -2,17 +2,25 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getLeadMagnetConfig, ALL_LEAD_MAGNETS } from "@/lib/lead-magnet";
 import LeadMagnetPage from "@/components/LeadMagnetPage";
+import { routing } from "@/i18n/routing";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export function generateStaticParams() {
-  return Object.keys(ALL_LEAD_MAGNETS).map((slug) => ({ slug }));
+  const params = [];
+  for (const locale of routing.locales) {
+    for (const slug of Object.keys(ALL_LEAD_MAGNETS)) {
+      params.push({ locale, slug });
+    }
+  }
+  return params;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const config = getLeadMagnetConfig(params.slug);
+  const { slug } = await params;
+  const config = getLeadMagnetConfig(slug);
   if (!config) return {};
   const { seo } = config;
   return {
@@ -32,12 +40,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function LeadMagnetSlugPage({ params }: Props) {
-  const config = getLeadMagnetConfig(params.slug);
+export default async function LeadMagnetSlugPage({ params }: Props) {
+  const { slug } = await params;
+  const config = getLeadMagnetConfig(slug);
   if (!config) notFound();
 
-  // Priority: 1) config.notionUrl  2) slug-specific env var  3) generic NOTION_URL
-  const envKey = `NOTION_URL_${params.slug.toUpperCase().replace(/-/g, "_")}`;
+  const envKey = `NOTION_URL_${slug.toUpperCase().replace(/-/g, "_")}`;
   const guideUrl =
     config.notionUrl ??
     process.env[envKey] ??

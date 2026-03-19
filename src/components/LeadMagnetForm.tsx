@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import type { LeadMagnetConfig } from "@/lib/lead-magnet";
+import { useTranslations } from "next-intl";
 
 interface Props {
   config: LeadMagnetConfig;
@@ -9,7 +10,7 @@ interface Props {
   guideUrl: string;
 }
 
-type FieldErrors = Record<string, string>;
+type FieldErrors = Record<string, string | "required" | "invalid_email" | "personal_email">;
 
 // Free/consumer email providers — not accepted in lead magnet forms
 const BLOCKED_DOMAINS = new Set([
@@ -37,24 +38,26 @@ function isPersonalEmail(email: string): boolean {
   return !!domain && BLOCKED_DOMAINS.has(domain);
 }
 
+type ErrorCode = "required" | "invalid_email" | "personal_email";
+
 function validate(
   fields: LeadMagnetConfig["content"]["form"]["fields"],
   data: Record<string, string>
-): FieldErrors {
-  const errors: FieldErrors = {};
+): Record<string, ErrorCode | string> {
+  const errors: Record<string, ErrorCode | string> = {};
   for (const field of fields) {
     const val = (data[field.name] ?? "").trim();
 
     if (field.required && !val) {
-      errors[field.name] = `${field.label} es obligatorio.`;
+      errors[field.name] = "required";
       continue;
     }
 
     if (field.type === "email" && val) {
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
-        errors[field.name] = "Introduce un correo válido.";
+        errors[field.name] = "invalid_email";
       } else if (isPersonalEmail(val)) {
-        errors[field.name] = "Usa tu correo corporativo (no Gmail, Hotmail, Yahoo…).";
+        errors[field.name] = "personal_email";
       }
     }
   }
@@ -67,6 +70,16 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
   const [apiError, setApiError]       = useState<string | null>(null);
   const [submitted, setSubmitted]     = useState(false);
+  const t = useTranslations("LeadMagnetForm");
+
+  function errorMessage(fieldName: string, fieldLabel: string): string {
+    const code = fieldErrors[fieldName];
+    if (!code) return "";
+    if (code === "required")       return `${fieldLabel} ${t("error_required")}`;
+    if (code === "invalid_email")  return t("error_invalid_email");
+    if (code === "personal_email") return t("error_personal_email");
+    return code;
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -158,7 +171,7 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
       className="rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-8 flex flex-col gap-5"
     >
       <p className="text-white font-semibold text-base -mb-1">
-        Accede gratis al Blueprint
+        {t("heading")}
       </p>
 
       {form.fields.map((field) => (
@@ -191,7 +204,7 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
             ].join(" ")}
           />
           {fieldErrors[field.name] && (
-            <p className="text-red-400 text-xs">{fieldErrors[field.name]}</p>
+            <p className="text-red-400 text-xs">{errorMessage(field.name, field.label)}</p>
           )}
         </div>
       ))}
@@ -207,7 +220,7 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
         disabled={loading}
         className="w-full py-4 rounded-xl font-bold text-sm text-brand-dark bg-brand-gradient hover:opacity-90 disabled:opacity-50 transition-opacity mt-1"
       >
-        {loading ? "Enviando…" : form.ctaLabel}
+        {loading ? t("submitting") : form.ctaLabel}
       </button>
 
       {form.microcopy && (

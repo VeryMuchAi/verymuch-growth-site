@@ -21,8 +21,6 @@ export const metadata: Metadata = {
 };
 
 export default function SignalsLinkedinPage() {
-  // NOTION_URL is read server-side — never exposed to the client bundle
-  const guideUrl = process.env.NOTION_URL ?? "#";
-
+  const guideUrl = process.env.NOTION_URL_SIGNALS_LINKEDIN ?? process.env.NOTION_URL ?? "#";
   return <LeadMagnetPage config={signalsLinkedinConfig} guideUrl={guideUrl} />;
 }

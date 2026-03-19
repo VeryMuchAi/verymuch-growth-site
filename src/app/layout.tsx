@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-// Brand typography: Plus Jakarta Sans (headings) + DM Sans (body)
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-display",
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
     default: "VeryMuch.ai",
     template: "%s | VeryMuch.ai",
   },
-  description: "VeryMuch.ai — Growth pages and lead magnets.",
+  description: "VeryMuch.ai — AI Agents for Sales & Marketing.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -36,16 +35,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
+type Props = {
   children: React.ReactNode;
-}) {
+  params?: Promise<{ locale?: string }>;
+};
+
+export default async function RootLayout({ children, params }: Props) {
+  const locale = (await params)?.locale ?? "es";
+
   return (
-    <html lang="es" className={`${plusJakartaSans.variable} ${dmSans.variable}`}>
+    <html lang={locale} className={`${plusJakartaSans.variable} ${dmSans.variable}`}>
       <body className="font-sans">
-        {/* No-FOUC theme init: runs synchronously before React hydrates.
-            Priority: 1) localStorage preference  2) time-based (light 07-19, dark 19-07) */}
+        {/* No-FOUC theme init — priority: localStorage → time-based */}
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script
           dangerouslySetInnerHTML={{

@@ -2,23 +2,31 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useTheme } from "@/hooks/useTheme";
+import { useTranslations, useLocale } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 
 const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
-
-const NAV_LINKS = [
-  { label: "Servicios",        href: "#services" },
-  { label: "Cómo funciona",   href: "#how" },
-  { label: "Agentes",         href: "#agents" },
-  { label: "Recursos",        href: "#resources" },
-  { label: "Marketplace",     href: "https://app.verymuch.ai", external: true },
-];
 
 export default function HomeNav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggleTheme }  = useTheme();
+  const t       = useTranslations("Nav");
+  const locale  = useLocale();
+  const pathname = usePathname();
+  const router   = useRouter();
+
+  const otherLocale = routing.locales.find((l) => l !== locale) as string;
+
+  const NAV_LINKS = [
+    { label: locale === "es" ? "Servicios"      : "Services",    href: "#services" },
+    { label: locale === "es" ? "Cómo funciona"  : "How it works",href: "#how" },
+    { label: locale === "es" ? "Agentes"        : "Agents",      href: "#agents" },
+    { label: locale === "es" ? "Recursos"       : "Resources",   href: "#resources" },
+    { label: "Marketplace", href: "https://app.verymuch.ai", external: true },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -86,8 +94,19 @@ export default function HomeNav() {
             ))}
           </div>
 
-          {/* Desktop right: theme toggle + CTA */}
+          {/* Desktop right: locale switcher + theme toggle + CTA */}
           <div className="hidden md:flex items-center gap-3">
+            {/* Language switcher */}
+            <button
+              onClick={() => router.replace(pathname, { locale: otherLocale })}
+              aria-label={`Switch to ${otherLocale === "en" ? "English" : "Español"}`}
+              className="px-3 py-1.5 rounded-lg text-xs font-bold border uppercase tracking-widest transition-opacity opacity-50 hover:opacity-100"
+              style={{ borderColor: "var(--border)", color: "var(--text-primary)", background: "var(--bg-card)" }}
+            >
+              {otherLocale === "en" ? "EN" : "ES"}
+            </button>
+
+            {/* Theme toggle */}
             <button
               onClick={toggleTheme}
               aria-label={theme === "dark" ? "Modo claro" : "Modo oscuro"}
@@ -113,13 +132,8 @@ export default function HomeNav() {
               )}
             </button>
 
-            <a
-              href={GHL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-gradient-sm"
-            >
-              Agenda una consultoría gratuita
+            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient-sm">
+              {t("cta")}
             </a>
           </div>
 
@@ -176,8 +190,16 @@ export default function HomeNav() {
           onClick={() => setMenuOpen(false)}
           className="btn-gradient mt-2"
         >
-          Agenda una consultoría gratuita
+          {t("cta")}
         </a>
+        {/* Mobile locale switcher */}
+        <button
+          onClick={() => { router.replace(pathname, { locale: otherLocale }); setMenuOpen(false); }}
+          className="text-sm font-bold uppercase tracking-widest opacity-50 hover:opacity-80 transition-opacity"
+          style={{ color: "var(--text-primary)" }}
+        >
+          {otherLocale === "en" ? "Switch to English" : "Cambiar a Español"}
+        </button>
         <button
           onClick={() => { toggleTheme(); setMenuOpen(false); }}
           aria-label={theme === "dark" ? "Modo claro" : "Modo oscuro"}
