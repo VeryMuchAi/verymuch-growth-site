@@ -17,12 +17,12 @@ const dmSans = DM_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const OG_IMAGE = "https://www.verymuch.ai/og-image.jpg";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://verymuch.ai"
-  ),
+  metadataBase: new URL("https://www.verymuch.ai"),
   title: {
-    default: "VeryMuch.ai",
+    default:  "VeryMuch.ai",
     template: "%s | VeryMuch.ai",
   },
   description: "VeryMuch.ai — AI Agents for Sales & Marketing.",
@@ -32,7 +32,16 @@ export const metadata: Metadata = {
       { url: "/icon.png",    type: "image/png" },
     ],
     shortcut: "/favicon.ico",
-    apple: "/icon.png",
+    apple:    "/icon.png",
+  },
+  openGraph: {
+    type:      "website",
+    siteName:  "VeryMuch.ai",
+    images:    [{ url: OG_IMAGE, width: 1200, height: 630, alt: "VeryMuch.ai" }],
+  },
+  twitter: {
+    card:   "summary_large_image",
+    images: [OG_IMAGE],
   },
 };
 

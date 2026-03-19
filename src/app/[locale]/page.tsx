@@ -10,14 +10,18 @@ const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landin
 
 type Props = { params: Promise<{ locale: string }> };
 
-const BASE_URL = "https://www.verymuch.ai";
+const BASE_URL  = "https://www.verymuch.ai";
+const OG_IMAGE  = `${BASE_URL}/og-image.jpg`;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "HomePage" });
+  const t         = await getTranslations({ locale, namespace: "HomePage" });
   const canonical = locale === "es" ? `${BASE_URL}/` : `${BASE_URL}/en`;
+  const ogLocale  = locale === "es" ? "es_ES" : "en_US";
+
   return {
-    title: t("meta_title"),
+    // absolute bypasses the root template — avoids "Title | VeryMuch.ai | VeryMuch.ai"
+    title:       { absolute: t("meta_title") },
     description: t("meta_description"),
     alternates: {
       canonical,
@@ -28,9 +32,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: t("meta_title"),
+      type:        "website",
+      siteName:    "VeryMuch.ai",
+      locale:      ogLocale,
+      url:         canonical,
+      title:       t("meta_title"),
       description: t("meta_description"),
-      url: canonical,
+      images:      [{ url: OG_IMAGE, width: 1200, height: 630, alt: "VeryMuch.ai" }],
+    },
+    twitter: {
+      card:        "summary_large_image",
+      title:       t("meta_title"),
+      description: t("meta_description"),
+      images:      [OG_IMAGE],
     },
   };
 }

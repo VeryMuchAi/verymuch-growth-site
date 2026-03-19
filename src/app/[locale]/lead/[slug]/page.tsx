@@ -19,17 +19,22 @@ export function generateStaticParams() {
 }
 
 const BASE_URL = "https://www.verymuch.ai";
+const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const config = getLeadMagnetConfig(slug);
   if (!config) return {};
-  const { seo } = config;
-  const esPath = `/lead/${slug}`;
-  const enPath = `/en/lead/${slug}`;
-  const canonical = locale === "es" ? `${BASE_URL}${esPath}` : `${BASE_URL}${enPath}`;
+  const { seo }    = config;
+  const ogTitle    = seo.ogTitle    ?? seo.title;
+  const ogDesc     = seo.ogDescription ?? seo.description;
+  const esPath     = `/lead/${slug}`;
+  const enPath     = `/en/lead/${slug}`;
+  const canonical  = locale === "es" ? `${BASE_URL}${esPath}` : `${BASE_URL}${enPath}`;
+  const ogLocale   = locale === "es" ? "es_ES" : "en_US";
+
   return {
-    title: seo.title,
+    title:       { absolute: seo.title },
     description: seo.description,
     alternates: {
       canonical,
@@ -40,16 +45,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: seo.ogTitle ?? seo.title,
-      description: seo.ogDescription ?? seo.description,
-      type: "website",
-      siteName: "VeryMuch.ai",
-      url: canonical,
+      type:        "website",
+      siteName:    "VeryMuch.ai",
+      locale:      ogLocale,
+      url:         canonical,
+      title:       ogTitle,
+      description: ogDesc,
+      images:      [{ url: OG_IMAGE, width: 1200, height: 630, alt: ogTitle }],
     },
     twitter: {
-      card: "summary_large_image",
-      title: seo.ogTitle ?? seo.title,
-      description: seo.ogDescription ?? seo.description,
+      card:        "summary_large_image",
+      title:       ogTitle,
+      description: ogDesc,
+      images:      [OG_IMAGE],
     },
   };
 }
