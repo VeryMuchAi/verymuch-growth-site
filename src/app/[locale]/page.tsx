@@ -673,13 +673,13 @@ export default async function HomePage({ params }: Props) {
             © {new Date().getFullYear()} VeryMuch.ai — {t("footer_rights")}
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
-            <a href="/terminos" className="caption transition-opacity hover:opacity-100 opacity-50" style={{ color: "var(--text-primary)" }}>
+            <Link href="/legal/terminos" className="caption transition-opacity hover:opacity-100 opacity-50" style={{ color: "var(--text-primary)" }}>
               {t("footer_terms")}
-            </a>
+            </Link>
             <span className="caption opacity-20" style={{ color: "var(--text-primary)" }}>·</span>
-            <a href="/privacidad" className="caption transition-opacity hover:opacity-100 opacity-50" style={{ color: "var(--text-primary)" }}>
+            <Link href="/legal/privacidad" className="caption transition-opacity hover:opacity-100 opacity-50" style={{ color: "var(--text-primary)" }}>
               {t("footer_privacy")}
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

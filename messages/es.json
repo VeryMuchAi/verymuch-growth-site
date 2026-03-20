@@ -117,8 +117,11 @@
     "footer_contact_label": "Contacto",
     "footer_linkedin_company": "LinkedIn empresa",
     "footer_rights": "Todos los derechos reservados",
-    "footer_terms": "Términos y condiciones",
-    "footer_privacy": "Aviso de privacidad"
+    "footer_terms": "Términos y Condiciones",
+    "footer_privacy": "Aviso de Privacidad"
+  },
+  "Legal": {
+    "back_home": "← Volver al inicio"
   },
   "LeadMagnetForm": {
     "heading": "Accede gratis al Blueprint",

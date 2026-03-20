@@ -117,8 +117,11 @@
     "footer_contact_label": "Contact",
     "footer_linkedin_company": "Company LinkedIn",
     "footer_rights": "All rights reserved",
-    "footer_terms": "Terms & conditions",
-    "footer_privacy": "Privacy policy"
+    "footer_terms": "Terms and Conditions",
+    "footer_privacy": "Privacy Notice"
+  },
+  "Legal": {
+    "back_home": "← Back to home"
   },
   "LeadMagnetForm": {
     "heading": "Get free access to the Blueprint",

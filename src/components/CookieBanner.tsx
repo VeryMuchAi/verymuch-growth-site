@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 const STORAGE_KEY = "vm-cookie-consent";
 
@@ -48,13 +49,13 @@ export default function CookieBanner() {
         <div className="flex-1 min-w-0">
           <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
             {t("message")}{" "}
-            <a
-              href="/privacidad"
+            <Link
+              href="/legal/privacidad"
               className="underline underline-offset-2 hover:opacity-80 transition-opacity font-medium"
               style={{ color: "var(--accent-text)" }}
             >
               {t("learnMore")}
-            </a>
+            </Link>
           </p>
         </div>
 
