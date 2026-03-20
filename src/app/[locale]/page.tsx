@@ -611,6 +611,20 @@ export default async function HomePage({ params }: Props) {
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: "var(--text-secondary)" }}>
               {t("footer_desc")}
             </p>
+            <p className="text-sm leading-relaxed max-w-xs mt-3" style={{ color: "var(--text-secondary)" }}>
+              {t("footer_presence")}
+            </p>
+            <div className="mt-4">
+              <p className="caption uppercase tracking-widest font-semibold mb-1.5" style={{ color: "var(--text-secondary)" }}>
+                {t("footer_address_label")}
+              </p>
+              <address
+                className="text-sm leading-relaxed not-italic whitespace-pre-line max-w-xs"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                {t("footer_address")}
+              </address>
+            </div>
           </div>
 
           {/* Nav links */}
