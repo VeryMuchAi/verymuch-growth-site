@@ -152,22 +152,31 @@ export default async function HomePage({ params }: Props) {
           >
             {t("hero_sub")}
           </p>
-          <div className="flex flex-wrap gap-4 mb-16">
-            <a
-              href={GHL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-gradient text-base"
+          <div className="flex flex-col gap-4 mb-16">
+            <div className="flex flex-wrap gap-4">
+              <a
+                href={GHL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-gradient text-base"
+              >
+                {t("hero_cta_primary")}
+              </a>
+              <a
+                href="#how"
+                className="inline-flex items-center px-7 py-3.5 rounded-full text-base font-semibold border transition-opacity duration-200 hover:opacity-100 opacity-60"
+                style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
+              >
+                {t("hero_cta_secondary")}
+              </a>
+            </div>
+            <Link
+              href="/newsletter"
+              className="text-sm font-medium transition-opacity hover:opacity-100 opacity-70 w-fit"
+              style={{ color: "var(--accent-text)" }}
             >
-              {t("hero_cta_primary")}
-            </a>
-            <a
-              href="#how"
-              className="inline-flex items-center px-7 py-3.5 rounded-full text-base font-semibold border transition-opacity duration-200 hover:opacity-100 opacity-60"
-              style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
-            >
-              {t("hero_cta_secondary")}
-            </a>
+              {t("hero_newsletter_cta")}
+            </Link>
           </div>
           <div
             className="flex flex-wrap gap-x-12 gap-y-6 pt-8 border-t"
@@ -592,9 +601,18 @@ export default async function HomePage({ params }: Props) {
           <p className="text-base max-w-[560px]" style={{ color: "var(--text-secondary)" }}>
             {t("cta_sub")}
           </p>
-          <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient text-base">
-            {t("cta_primary")}
-          </a>
+          <div className="flex flex-col items-center gap-4">
+            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient text-base">
+              {t("cta_primary")}
+            </a>
+            <Link
+              href="/newsletter"
+              className="text-sm font-medium transition-opacity hover:opacity-100 opacity-70"
+              style={{ color: "var(--accent-text)" }}
+            >
+              {t("cta_newsletter_secondary")}
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -637,10 +655,17 @@ export default async function HomePage({ params }: Props) {
               { label: t("footer_nav_how"),      href: "#how" },
               { label: t("footer_nav_agents"),   href: "#agents" },
               { label: t("footer_nav_resources"),href: "#resources" },
+              { label: t("footer_nav_newsletter"), href: "/newsletter" },
             ].map((l) => (
-              <a key={l.label} href={l.href} className="text-sm transition-opacity hover:opacity-100 opacity-60" style={{ color: "var(--text-primary)" }}>
-                {l.label}
-              </a>
+              l.href.startsWith("#") ? (
+                <a key={l.label} href={l.href} className="text-sm transition-opacity hover:opacity-100 opacity-60" style={{ color: "var(--text-primary)" }}>
+                  {l.label}
+                </a>
+              ) : (
+                <Link key={l.label} href={l.href} className="text-sm transition-opacity hover:opacity-100 opacity-60" style={{ color: "var(--text-primary)" }}>
+                  {l.label}
+                </Link>
+              )
             ))}
           </div>
 
