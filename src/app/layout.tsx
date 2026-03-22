@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const OG_IMAGE = "https://www.verymuch.ai/og-image.jpg";
+const OG_IMAGE = "https://verymuch.ai/og-image.jpg";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.verymuch.ai"),
+  metadataBase: new URL("https://verymuch.ai"),
   title: {
     default:  "VeryMuch.ai",
     template: "%s | VeryMuch.ai",

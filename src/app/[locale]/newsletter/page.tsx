@@ -4,7 +4,7 @@ import HomeNav from "@/components/HomeNav";
 import NewsletterForm from "@/components/NewsletterForm";
 import IconBlock, { type ColorVariant } from "@/components/IconBlock";
 
-const BASE_URL = "https://www.verymuch.ai";
+const BASE_URL = "https://verymuch.ai";
 const OG_IMAGE = `${BASE_URL}/og_home_verymuch.png`;
 
 type Props = { params: Promise<{ locale: string }> };

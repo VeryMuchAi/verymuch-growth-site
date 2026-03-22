@@ -4,7 +4,7 @@ import LeadMagnetPage from "@/components/LeadMagnetPage";
 
 const { seo } = signalsLinkedinConfig;
 
-const BASE_URL = "https://www.verymuch.ai";
+const BASE_URL = "https://verymuch.ai";
 const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 const esPath   = "/signals-linkedin";
 const enPath   = "/en/signals-linkedin";

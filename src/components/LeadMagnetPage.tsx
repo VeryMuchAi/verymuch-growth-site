@@ -318,18 +318,14 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
           />
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
             <a
-              href="https://www.verymuch.ai/cms/view/2"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/legal/terminos"
               className="text-xs text-white/25 hover:text-white/50 transition-colors"
             >
               Términos y condiciones
             </a>
             <span className="text-white/15 text-xs">·</span>
             <a
-              href="https://www.verymuch.ai/cms/view/3"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/legal/privacidad"
               className="text-xs text-white/25 hover:text-white/50 transition-colors"
             >
               Aviso de privacidad

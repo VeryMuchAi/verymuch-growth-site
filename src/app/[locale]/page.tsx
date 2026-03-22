@@ -10,7 +10,7 @@ const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landin
 
 type Props = { params: Promise<{ locale: string }> };
 
-const BASE_URL  = "https://www.verymuch.ai";
+const BASE_URL  = "https://verymuch.ai";
 const OG_HOME_IMAGE = `${BASE_URL}/og_home_verymuch.png`;
 const OG_HOME_TITLE =
   "Verymuch.Ai — We install AI agents in your sales and marketing teams";

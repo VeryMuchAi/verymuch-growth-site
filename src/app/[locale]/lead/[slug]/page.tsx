@@ -18,7 +18,7 @@ export function generateStaticParams() {
   return params;
 }
 
-const BASE_URL = "https://www.verymuch.ai";
+const BASE_URL = "https://verymuch.ai";
 const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
