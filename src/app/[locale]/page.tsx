@@ -216,7 +216,7 @@ export default async function HomePage({ params }: Props) {
               {VENTAS_SYMPTOMS.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4"
+                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4 transition-all duration-200 card-hover-mint"
                   style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftColor: "var(--error)" }}
                 >
                   <IconBlock icon={s.icon} color={s.iconColor} size="md" />
@@ -238,7 +238,7 @@ export default async function HomePage({ params }: Props) {
               {MARKETING_SYMPTOMS.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4"
+                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4 transition-all duration-200 card-hover-mint"
                   style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftColor: "var(--error)" }}
                 >
                   <IconBlock icon={s.icon} color={s.iconColor} size="md" />
@@ -315,7 +315,7 @@ export default async function HomePage({ params }: Props) {
             {CALLOUTS.map((c) => (
               <div
                 key={c.title}
-                className="rounded-2xl p-7 border flex flex-col gap-4 card-elevated"
+                className="rounded-2xl p-7 border flex flex-col gap-4 card-elevated transition-all duration-200 card-hover-mint"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <IconBlock icon={c.icon} color={c.iconColor} size="md" />
@@ -479,7 +479,7 @@ export default async function HomePage({ params }: Props) {
           {/* Featured tool — AI Readiness Test */}
           <a
             href={`/ai-readiness?lang=${locale}`}
-            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-8 card-elevated transition-all duration-200 hover:opacity-95"
+            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-8 card-elevated transition-all duration-200 card-hover-amber"
             style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
           >
             {/* Ambient glow */}
@@ -521,7 +521,7 @@ export default async function HomePage({ params }: Props) {
               <Link
                 key={lm.id}
                 href={lm.href}
-                className="group rounded-2xl p-6 border flex flex-col gap-4 transition-all duration-200 hover:opacity-90 card-elevated"
+                className="group rounded-2xl p-6 border flex flex-col gap-4 transition-all duration-200 card-elevated card-hover-mint"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <div className="flex items-center justify-between gap-3">

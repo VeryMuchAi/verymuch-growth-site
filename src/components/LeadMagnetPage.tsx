@@ -82,7 +82,7 @@ function ChangelogSection({ s }: { s: SectionChangelog }) {
           {s.items.map((item, i) => (
             <div
               key={item.title}
-              className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-5 flex flex-col gap-3 hover:border-brand-mint/30 transition-colors"
+              className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-5 flex flex-col gap-3 hover:border-brand-mint/30 transition-all duration-200 card-hover-mint"
             >
               <IconBlock icon={item.icon} color={cycleColor(i)} size="sm" />
               <h3 className="text-sm font-bold text-white">{item.title}</h3>
@@ -104,7 +104,7 @@ function AgentsSection({ s }: { s: SectionAgents }) {
           {s.agents.map((agent, i) => (
             <div
               key={agent.name}
-              className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-6 flex flex-col gap-3 hover:border-brand-amber/30 transition-colors"
+              className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-6 flex flex-col gap-3 hover:border-brand-amber/30 transition-all duration-200 card-hover-amber"
             >
               <IconBlock icon={agent.icon} color={cycleColor(i)} size="sm" />
               <div>
@@ -257,7 +257,7 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
             {content.techStack.map((tool) => (
               <div
                 key={tool.name}
-                className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-6 flex flex-col gap-3"
+                className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-6 flex flex-col gap-3 transition-all duration-200 card-hover-mint"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-base font-bold text-white">{tool.name}</span>

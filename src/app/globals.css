@@ -204,4 +204,15 @@ body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
     animation-play-state: paused;
     opacity: 0.9;
   }
+
+  /* ── Card hover glow effects ───────────────────────────────────────────── */
+  .card-hover-mint:hover {
+    box-shadow: 0 0 0 1px rgba(74, 212, 174, 0.30), 0 8px 32px rgba(74, 212, 174, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .card-hover-amber:hover {
+    box-shadow: 0 0 0 1px rgba(245, 160, 64, 0.35), 0 8px 32px rgba(245, 160, 64, 0.12);
+    transform: translateY(-1px);
+  }
 }
