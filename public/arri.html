@@ -253,7 +253,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 <div class="section active" id="secLand">
   <div class="logo-c"><img class="logo-light" src="https://pfst.cf2.poecdn.net/base/image/7acc8063baa2a9f87946978eb1a5a61344158b488bbfcabaf4476708d04e63b1?w=500&h=100" alt="Verymuch.Ai"><img class="logo-dark" src="https://pfst.cf2.poecdn.net/base/image/641c32536e8cea22f6a917a41d1211cd17f3ce765d79fb79c80a34b1510dae0f?w=500&h=100" alt="Verymuch.Ai"></div>
   <div class="hero">
-    <div class="badge"><i class="fa-solid fa-bolt"></i> AI Readiness Test</div>
+    <div class="badge" id="heroBadge"><i class="fa-solid fa-bolt"></i> AI Readiness Test</div>
     <h1 class="h-title" id="landTitle"></h1>
     <p class="h-sub" id="landSub"></p>
     <p class="h-desc" id="landDesc"></p>
@@ -621,6 +621,7 @@ function setLang(l){
   document.getElementById('langEs').classList.toggle('active', l === 'es');
   document.getElementById('langEn').classList.toggle('active', l === 'en');
   document.documentElement.lang = l;
+  document.getElementById('heroBadge').innerHTML = '<i class="fa-solid fa-bolt"></i> ' + (l === 'es' ? 'Test de Madurez AI' : 'AI Readiness Test');
   
   // Back to site home — match next-intl routes (es = /, en = /en)
   var backEl = document.getElementById('backBtn');
@@ -640,6 +641,7 @@ function t(){return L[lang]}
 /* ========== RENDER ========== */
 function renderLanding(){
   var c=t();
+  document.getElementById('heroBadge').innerHTML = '<i class="fa-solid fa-bolt"></i> ' + (lang === 'es' ? 'Test de Madurez AI' : 'AI Readiness Test');
   document.getElementById('landTitle').innerHTML=c.landTitle;
   document.getElementById('landSub').textContent=c.landSub;
   document.getElementById('landDesc').innerHTML=c.landDesc;
