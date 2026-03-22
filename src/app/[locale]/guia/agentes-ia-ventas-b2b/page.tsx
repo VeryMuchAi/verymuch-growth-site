@@ -529,7 +529,7 @@ export default async function PillarPage() {
               </table>
             </div>
             <HighlightBox>
-              El 90% de los proyectos de "IA para ventas" que fracasan habían intentado
+              El 90% de los proyectos de &ldquo;IA para ventas&rdquo; que fracasan habían intentado
               usar un agente donde una automatización simple era suficiente — o viceversa.
               El diagnóstico previo vale más que la herramienta.
             </HighlightBox>
