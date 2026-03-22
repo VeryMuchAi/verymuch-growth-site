@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import HomeNav from "@/components/HomeNav";
 import NewsletterForm from "@/components/NewsletterForm";
+import IconBlock, { type ColorVariant } from "@/components/IconBlock";
 
 const BASE_URL = "https://www.verymuch.ai";
 const OG_IMAGE = `${BASE_URL}/og_home_verymuch.png`;
@@ -92,12 +93,12 @@ export default async function NewsletterPage({ params }: Props) {
     mainEntity: faqItems,
   };
 
-  const features = [
-    { emoji: "📊", title: t("feature_0_title"), desc: t("feature_0_desc") },
-    { emoji: "🛠️", title: t("feature_1_title"), desc: t("feature_1_desc") },
-    { emoji: "📈", title: t("feature_2_title"), desc: t("feature_2_desc") },
-    { emoji: "🎯", title: t("feature_3_title"), desc: t("feature_3_desc") },
-    { emoji: "🌎", title: t("feature_4_title"), desc: t("feature_4_desc") },
+  const features: { icon: string; color: ColorVariant; title: string; desc: string }[] = [
+    { icon: "bar-chart",   color: "orange", title: t("feature_0_title"), desc: t("feature_0_desc") },
+    { icon: "wrench",      color: "teal",   title: t("feature_1_title"), desc: t("feature_1_desc") },
+    { icon: "trending-up", color: "green",  title: t("feature_2_title"), desc: t("feature_2_desc") },
+    { icon: "target",      color: "purple", title: t("feature_3_title"), desc: t("feature_3_desc") },
+    { icon: "users",       color: "amber",  title: t("feature_4_title"), desc: t("feature_4_desc") },
   ];
 
   return (
@@ -159,9 +160,7 @@ export default async function NewsletterPage({ params }: Props) {
               className="rounded-2xl p-6 border card-elevated transition-all duration-200 card-hover-mint"
               style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
             >
-              <div className="text-2xl mb-3" aria-hidden>
-                {f.emoji}
-              </div>
+              <IconBlock icon={f.icon} color={f.color} size="md" />
               <h3 className="text-base font-bold mb-2" style={{ color: "var(--text-primary)" }}>
                 {f.title}
               </h3>
