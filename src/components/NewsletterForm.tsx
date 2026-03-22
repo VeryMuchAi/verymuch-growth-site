@@ -68,20 +68,22 @@ export default function NewsletterForm({ locale }: Props) {
           {t("success_desc")}
         </p>
         <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3">
+          {/* Ghost — lowest priority */}
           <Link
             href="/"
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-[10px] text-sm font-semibold border transition-opacity hover:opacity-100 opacity-80"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-[10px] text-sm font-semibold border transition-all duration-200 hover:opacity-100 opacity-70"
             style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
           >
             {t("success_link_home")}
           </Link>
+          {/* Mint outlined — mid priority */}
           <Link
             href={`/ai-readiness?lang=${locale}`}
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-[10px] text-sm font-semibold border transition-opacity hover:opacity-100 opacity-80"
-            style={{ borderColor: "var(--border)", color: "var(--text-primary)" }}
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-[10px] text-sm font-semibold btn-outline-mint"
           >
             {t("success_link_arri")}
           </Link>
+          {/* Gradient — primary action */}
           <Link
             href="/#resources"
             className="inline-flex items-center justify-center px-5 py-2.5 rounded-[10px] text-sm font-semibold btn-gradient-sm"

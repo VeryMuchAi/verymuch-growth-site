@@ -207,12 +207,26 @@ body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
 
   /* ── Card hover glow effects ───────────────────────────────────────────── */
   .card-hover-mint:hover {
-    box-shadow: 0 0 0 1px rgba(74, 212, 174, 0.30), 0 8px 32px rgba(74, 212, 174, 0.12);
-    transform: translateY(-1px);
+    box-shadow: 0 0 0 1.5px rgba(74, 212, 174, 0.45), 0 10px 40px rgba(74, 212, 174, 0.16);
+    transform: translateY(-2px);
   }
 
   .card-hover-amber:hover {
-    box-shadow: 0 0 0 1px rgba(245, 160, 64, 0.35), 0 8px 32px rgba(245, 160, 64, 0.12);
-    transform: translateY(-1px);
+    box-shadow: 0 0 0 1.5px rgba(245, 160, 64, 0.50), 0 10px 40px rgba(245, 160, 64, 0.16);
+    transform: translateY(-2px);
+  }
+
+  /* ── Mint outlined button (secondary CTA) ──────────────────────────────── */
+  .btn-outline-mint {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(74, 212, 174, 0.40);
+    color: var(--accent-text);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-outline-mint:hover {
+    background: rgba(74, 212, 174, 0.08);
+    border-color: rgba(74, 212, 174, 0.65);
   }
 }

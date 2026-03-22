@@ -156,7 +156,7 @@ export default async function NewsletterPage({ params }: Props) {
           {features.map((f) => (
             <div
               key={f.title}
-              className="rounded-2xl p-6 border card-elevated transition-opacity hover:opacity-95"
+              className="rounded-2xl p-6 border card-elevated transition-all duration-200 card-hover-mint"
               style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
             >
               <div className="text-2xl mb-3" aria-hidden>
@@ -204,7 +204,7 @@ export default async function NewsletterPage({ params }: Props) {
             {[0, 1, 2, 3, 4].map((i) => (
               <details
                 key={i}
-                className="group rounded-xl border p-5 card-elevated"
+                className="group rounded-xl border p-5 card-elevated transition-all duration-200 card-hover-mint"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <summary
