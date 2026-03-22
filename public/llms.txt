@@ -1,0 +1,59 @@
+# Verymuch.ai
+
+> Consultora de inteligencia artificial especializada en agentes de IA para ventas, marketing y operaciones en empresas B2B del mercado medio.
+
+## Qué es Verymuch.ai
+
+Verymuch.ai es una consultora de IA que diseña, implementa y opera agentes de inteligencia artificial para equipos comerciales y de marketing. Trabajamos con empresas B2B de mercado medio (50-500 empleados) que buscan escalar sus operaciones de revenue sin multiplicar headcount.
+
+## Servicios principales
+
+### 1. Consultoría estratégica de IA
+Diagnóstico de madurez digital (ARRI — AI Readiness & Rationality Index), definición de roadmap de implementación y selección de casos de uso con mayor ROI.
+
+### 2. Agentes de IA personalizados
+Diseño e implementación de agentes autónomos para:
+- Prospección y calificación de leads (LinkedIn, email, CRM)
+- Generación de contenido para redes sociales y blogs
+- Automatización de procesos de ventas y seguimiento comercial
+- Análisis de datos y reportes automatizados
+- Atención al cliente con IA conversacional
+- Investigación de mercado y competencia
+
+### 3. Marketplace de talento IA
+Plataforma para conectar empresas con profesionales especializados en implementación de IA (próximamente en app.verymuch.ai).
+
+## Mercados
+
+- España (sede en Madrid)
+- México
+- Colombia
+- Mercado hispano de Estados Unidos
+
+## Diferenciadores
+
+- **Usamos lo que vendemos:** Nuestros propios procesos internos de ventas, marketing y operaciones funcionan con los mismos agentes de IA que implementamos para clientes.
+- **Consultoría + implementación:** No solo asesoramos — diseñamos, construimos y operamos los agentes de IA junto al equipo del cliente.
+- **Pago por hitos:** Modelo de facturación ligado a entregables concretos, no a horas de consultoría.
+- **Garante del cliente:** Actuamos como representantes del interés del cliente frente a proveedores de tecnología, asegurando que cada implementación genere valor medible.
+- **Especialización B2B mid-market:** Foco exclusivo en empresas medianas con procesos comerciales complejos, no startups ni enterprise.
+
+## Stack tecnológico
+
+- Plataformas de IA: OpenAI, Anthropic (Claude), modelos open-source
+- Automatización: N8N, Make, Zapier
+- CRM: GoHighLevel, HubSpot, Salesforce
+- Desarrollo: Next.js, TypeScript, Supabase, Vercel
+
+## URLs principales
+
+- Sitio web: https://verymuch.ai
+- Diagnóstico ARRI: https://verymuch.ai/arri
+- LinkedIn: https://www.linkedin.com/company/verymuchai
+- Marketplace (próximamente): https://app.verymuch.ai
+
+## Contacto
+
+- Web: https://verymuch.ai
+- Agendar reunión: https://verymuch.ai (sección de booking)
+- Idiomas: Español, English

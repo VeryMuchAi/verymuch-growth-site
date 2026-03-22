@@ -1,4 +1,12 @@
+# robots.txt — verymuch.ai
+# Allow all crawlers to index the site
+
 User-agent: *
 Allow: /
 Disallow: /api/
-Sitemap: https://www.verymuch.ai/sitemap.xml
+
+# Sitemap
+Sitemap: https://verymuch.ai/sitemap.xml
+
+# LLMs structured summary
+# See https://verymuch.ai/llms.txt for AI-readable site information
