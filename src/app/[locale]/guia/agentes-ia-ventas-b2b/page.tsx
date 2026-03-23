@@ -150,7 +150,7 @@ const es: PageContent = {
   },
   s2: {
     heading: "1. Qué es un agente de IA para ventas (y qué no es)",
-    p1: "La industria tiene un problema grave de vocabulario. Todo se llama \"IA\" y todo se llama \"agente\". Gartner lo llama agentwashing: de los miles de proveedores que dicen tener capacidades agénticas, solo ~130 tienen algo genuinamente diferente a una automatización con un LLM encima.",
+    p1: "La industria tiene un problema grave de vocabulario. Todo se llama \"IA\" y todo se llama \"agente\". Gartner lo llama agentwashing: de los miles de proveedores que dicen tener capacidades de agentes autónomos, solo ~130 tienen algo genuinamente diferente a una automatización con un modelo de IA encima.",
     p2: "La diferencia real está en la arquitectura:",
     tradTitle: "Automatización tradicional",
     tradItems: [
@@ -181,7 +181,7 @@ const es: PageContent = {
     stats: [
       { stat: "$4.4B", label: "Mercado representantes de ventas IA en 2025" },
       { stat: "$15–18B", label: "Proyección para 2030" },
-      { stat: "46.3%", label: "CAGR del sector" },
+      { stat: "46.3%", label: "crecimiento anual proyectado del sector" },
       { stat: "$211B", label: "Inversión global en IA empresarial, 2025" },
     ],
     paradoxTitle: "La paradoja de la adopción",
@@ -205,12 +205,12 @@ const es: PageContent = {
     nuanceTitle: "Los matices que los titulares no cuentan",
     nuances: [
       "La tasa de conversión lead → reunión es 21.3% para representantes de ventas humanos vs 8.2% para agentes de IA puro. Los agentes son mejores en volumen y velocidad; los humanos siguen ganando en conversión.",
-      "Bain reporta +30% en win rates cuando los agentes gestionan la calificación y el pre-call briefing mientras el humano cierra.",
-      "El caso SaaStr es el más citado: $5M de pipeline generado, $2.4M cerrados en 8 meses. Pero requirió 15–20 horas semanales de supervisión senior. No es fire-and-forget.",
+      "Bain reporta +30% en tasas de cierre cuando los agentes gestionan la calificación y el resumen previo a la llamada mientras el humano cierra.",
+      "El caso SaaStr es el más citado: $5M de pipeline generado, $2.4M cerrados en 8 meses. Pero requirió 15–20 horas semanales de supervisión senior. No funciona sin supervisión activa.",
     ],
     caseTitle: "El caso SaaStr en detalle",
-    caseText: "$5M de pipeline generado, $2.4M cerrados en 8 meses con un agente de ventas. ROI positivo y claro. Pero el equipo dedicó 15–20 horas semanales a supervisión, ajuste de prompts y revisión de calidad. Los mejores resultados vienen cuando alguien interno domina la herramienta.",
-    highlight: "Los agentes son mejores que un representante de ventas promedio. No superan a tus mejores performers. El modelo que gana es el híbrido: agente que genera volumen y contexto, humano que construye relación y cierra.",
+    caseText: "$5M de pipeline generado, $2.4M cerrados en 8 meses con un agente de ventas. ROI positivo y claro. Pero el equipo dedicó 15–20 horas semanales a supervisión, ajuste de instrucciones del agente y revisión de calidad. Los mejores resultados vienen cuando alguien interno domina la herramienta.",
+    highlight: "Los agentes son mejores que un representante de ventas promedio. No superan a tus mejores vendedores. El modelo que gana es el híbrido: agente que genera volumen y contexto, humano que construye relación y cierra.",
   },
   s5: {
     heading: "4. Los 5 agentes que necesitas",
@@ -223,7 +223,7 @@ const es: PageContent = {
         num: "01",
         title: "Agente de Prospección por Señales",
         problem: "Tu equipo contacta en frío. Tasa de respuesta: ~2%. Los mensajes son genéricos aunque digan que son personalizados.",
-        solution: "Monitoriza señales de compra en LinkedIn (cambios de cargo, nuevas contrataciones, publicaciones sobre retos específicos), CRM y web intent. Activa outreach en el momento de mayor receptividad con contexto real.",
+        solution: "Monitoriza señales de compra en LinkedIn (cambios de cargo, nuevas contrataciones, publicaciones sobre retos específicos), CRM y señales de intención en la web. Activa outreach en el momento de mayor receptividad con contexto real.",
         result: "Tasa de respuesta 5–8%. Caso Sendoso: 20% de respuesta en señales de alta intención. El timing lo cambia todo.",
       },
       {
@@ -238,7 +238,7 @@ const es: PageContent = {
         title: "Agente Pre-Llamada",
         problem: "Antes de cada reunión, el ejecutivo de cuentas invierte 20–30 minutos preparando contexto. Ese tiempo se multiplica por cada meeting del pipeline.",
         solution: "Briefing automático: resumen de la empresa y sector, noticias de los últimos 7 días, perfil del contacto (LinkedIn, publicaciones recientes), posibles objeciones, preguntas sugeridas, estado del deal en CRM.",
-        result: "+66% en win rate cuando el ejecutivo de cuentas llega preparado con contexto real vs contexto genérico. Cero tiempo de preparación manual.",
+        result: "+66% en tasa de cierre cuando el ejecutivo de cuentas llega preparado con contexto real vs contexto genérico. Cero tiempo de preparación manual.",
       },
       {
         num: "04",
@@ -250,9 +250,9 @@ const es: PageContent = {
       {
         num: "05",
         title: "Agente de Sales Intelligence",
-        problem: "Los deals complejos requieren análisis profundo, DAFO competitivo, MEDDPICC, mapa de stakeholders, que nadie hace porque tarda horas y siempre hay algo más urgente.",
-        solution: "Genera automáticamente análisis estructurado del deal: situación competitiva, mapa de poder de decisión, señales de urgencia o riesgo, MEDDPICC parcial. Antes de cada reunión importante.",
-        result: "Los AEs con Sales Intelligence agéntico cierran deals 22% más rápido según datos internos de usuarios de Gong + n8n. El análisis que antes no ocurría, ahora ocurre siempre.",
+        problem: "Los deals complejos requieren análisis que nadie hace porque tarda horas: análisis competitivo, mapa de quién decide, y las ocho preguntas clave de cada venta, quién tiene autoridad para firmar, qué presupuesto hay, contra quién compites, qué métricas importan al cliente, qué pasa si no hace nada, y quién dentro de la empresa quiere que ganes.",
+        solution: "Genera automáticamente el análisis completo del deal: situación competitiva, mapa de quién tiene poder de decisión, señales de urgencia o riesgo, y respuestas a las preguntas clave de la venta. Antes de cada reunión importante.",
+        result: "Los ejecutivos de cuentas que usan este agente cierran deals 22% más rápido según datos internos de usuarios de Gong + n8n. El análisis que antes no ocurría, ahora ocurre siempre.",
       },
     ],
   },
@@ -287,7 +287,7 @@ const es: PageContent = {
         num: "02",
         title: "Fase 1 de validación",
         weeks: "4–8 semanas",
-        desc: "Implementa con el 10–20% del equipo, no con todos. Define el handoff humano-agente con SLA explícito: qué hace el agente solo, qué escala y en cuánto tiempo. Métricas mínimas desde el día 1: volumen de actividad, tasa de conversión en cada paso del funnel, coste por resultado. Sin datos de línea base, no puedes saber si el agente está funcionando.",
+        desc: "Implementa con el 10–20% del equipo, no con todos. Define las reglas de traspaso entre agente y humano: qué hace el agente solo, qué escala, y en cuánto tiempo debe responder un humano. Métricas mínimas desde el día 1: volumen de actividad, tasa de conversión en cada paso del funnel, coste por resultado. Sin datos de línea base, no puedes saber si el agente está funcionando.",
       },
       {
         num: "03",
@@ -317,7 +317,7 @@ const es: PageContent = {
       },
       {
         title: "Expectativa de autonomía total desde el día uno",
-        desc: "Los representantes de ventas IA puros tienen entre 50–70% de churn anual, no porque la tecnología falle, sino porque las expectativas se gestionan mal. Los agentes requieren supervisión activa, ajuste de prompts y revisión continua, especialmente en los primeros 90 días. Fire-and-forget no funciona.",
+        desc: "Los representantes de ventas IA puros tienen entre 50–70% de churn anual, no porque la tecnología falle, sino porque las expectativas se gestionan mal. Los agentes requieren supervisión activa, ajuste de instrucciones del agente y revisión continua, especialmente en los primeros 90 días. Operar sin supervisión no funciona.",
       },
       {
         title: "Comprar herramientas sin estrategia",
@@ -337,7 +337,7 @@ const es: PageContent = {
       {
         flag: "🇲🇽",
         name: "México",
-        desc: "El 72% de empresas medianas ya adoptó IA en alguna forma, pero solo el 14% tiene capacidades agénticas reales. WhatsApp domina la comunicación B2B, los agentes que integran WhatsApp como canal principal superan a los que solo hacen email.",
+        desc: "El 72% de empresas medianas ya adoptó IA en alguna forma, pero solo el 14% tiene capacidades reales de agentes autónomos. WhatsApp domina la comunicación B2B, los agentes que integran WhatsApp como canal principal superan a los que solo hacen email.",
       },
       {
         flag: "🇨🇴",
@@ -368,8 +368,8 @@ const es: PageContent = {
       },
       {
         num: "03",
-        title: "Pricing por resultados reemplaza per-seat",
-        desc: "El modelo per-seat en SaaS de ventas cayó del 21% al 15% del mercado en 18 meses. El modelo que crece: cobrar por reunión agendada, por deal calificado, por pipeline generado. Alinea incentivos correctamente. Obliga a los proveedores a mejorar la tecnología en lugar de vender licencias.",
+        title: "Cobrar por resultados reemplaza el pago por licencia",
+        desc: "El modelo de cobrar una tarifa fija por usuario, sin importar los resultados, cayó del 21% al 15% del mercado en 18 meses. El modelo que crece: cobrar por reunión agendada, por deal calificado, por pipeline generado. Alinea incentivos correctamente. Obliga a los proveedores a mejorar la tecnología en lugar de vender licencias.",
       },
       {
         num: "04",
@@ -388,7 +388,7 @@ const es: PageContent = {
     items: [
       {
         q: "¿Cuánto cuesta implementar un agente de IA para ventas?",
-        a: "Depende del alcance. Un agente básico (prospección o lead routing) puede implementarse en 2–3 semanas por €3.000–€8.000 en modalidad de instalación (el agente es tuyo). El modelo AaaS parte de €1.500/mes e incluye operación, iteraciones y soporte continuo. Los costes de los LLMs suelen ser €50–€300/mes según volumen.",
+        a: "Depende del alcance. Un agente básico (prospección o lead routing) puede implementarse en 2–3 semanas por €3.000–€8.000 en modalidad de instalación (el agente es tuyo). El modelo AaaS parte de €1.500/mes e incluye operación, iteraciones y soporte continuo. Los costes de uso de los modelos de IA suelen ser €50–€300/mes según volumen.",
       },
       {
         q: "¿Los agentes reemplazan al equipo de ventas?",
@@ -396,7 +396,7 @@ const es: PageContent = {
       },
       {
         q: "¿Cuánto tiempo tarda la implementación?",
-        a: "Un agente bien definido tarda 2–6 semanas desde kick-off hasta producción. La variable más importante no es la tecnología sino la calidad de los datos de entrada y la claridad del proceso. Si el proceso no está documentado, la implementación se alarga.",
+        a: "Un agente bien definido tarda 2–6 semanas desde el inicio del proyecto hasta producción. La variable más importante no es la tecnología sino la calidad de los datos de entrada y la claridad del proceso. Si el proceso no está documentado, la implementación se alarga.",
       },
       {
         q: "¿Qué herramientas necesito tener antes?",
@@ -412,7 +412,7 @@ const es: PageContent = {
       },
       {
         q: "¿Qué es el modelo AaaS?",
-        a: "Agent as a Service: en lugar de una instalación única, nosotros operamos, monitorizamos y mejoramos el agente continuamente como servicio mensual. Incluye ajuste de prompts, revisión de calidad de outputs, iteraciones según resultados y soporte directo. Ideal para equipos sin capacidad técnica interna o que quieren resultados desde el mes 1.",
+        a: "Agent as a Service: en lugar de una instalación única, nosotros operamos, monitorizamos y mejoramos el agente continuamente como servicio mensual. Incluye ajuste de instrucciones del agente, revisión de calidad de outputs, iteraciones según resultados y soporte directo. Ideal para equipos sin capacidad técnica interna o que quieren resultados desde el mes 1.",
       },
       {
         q: "¿Cómo mido el ROI de un agente?",
@@ -487,7 +487,7 @@ const en: PageContent = {
   },
   s2: {
     heading: "1. What is an AI sales agent (and what it isn't)",
-    p1: "The industry has a serious vocabulary problem. Everything is called 'AI' and everything is called 'agent.' Gartner calls it agentwashing: of the thousands of vendors claiming agentic capabilities, only ~130 have something genuinely different from automation with an LLM on top.",
+    p1: "The industry has a serious vocabulary problem. Everything is called 'AI' and everything is called 'agent.' Gartner calls it agentwashing: of the thousands of vendors claiming agentic capabilities, only ~130 have something genuinely different from automation with an AI model on top.",
     p2: "The real difference is in the architecture:",
     tradTitle: "Traditional automation",
     tradItems: [
@@ -518,7 +518,7 @@ const en: PageContent = {
     stats: [
       { stat: "$4.4B", label: "AI sales rep market in 2025" },
       { stat: "$15–18B", label: "Projection for 2030" },
-      { stat: "46.3%", label: "Sector CAGR" },
+      { stat: "46.3%", label: "Annual growth rate" },
       { stat: "$211B", label: "Global enterprise AI investment, 2025" },
     ],
     paradoxTitle: "The adoption paradox",
@@ -543,7 +543,7 @@ const en: PageContent = {
     nuances: [
       "Lead → meeting conversion rate is 21.3% for human sales reps vs 8.2% for pure AI agents. Agents win on volume and speed; humans still win on conversion.",
       "Bain reports +30% win rates when agents handle qualification and pre-call briefing while humans close.",
-      "The SaaStr case is the most cited: $5M pipeline generated, $2.4M closed in 8 months. But it required 15–20 hours of senior supervision per week. Not fire-and-forget.",
+      "The SaaStr case is the most cited: $5M pipeline generated, $2.4M closed in 8 months. But it required 15–20 hours of senior supervision per week. It requires active supervision.",
     ],
     caseTitle: "The SaaStr case in detail",
     caseText: "$5M in pipeline generated, $2.4M closed in 8 months with an AI sales rep agent. Clear, positive ROI. But the team spent 15–20 hours per week on supervision, prompt tuning, and quality review. The best results come when someone internal masters the tool.",
@@ -560,7 +560,7 @@ const en: PageContent = {
         num: "01",
         title: "Signal-Based Prospecting Agent",
         problem: "Your team reaches out cold. Response rate: ~2%. Messages are generic even when they claim to be personalized.",
-        solution: "Monitors buying signals on LinkedIn (job changes, new hires, posts about specific challenges), CRM, and web intent. Triggers outreach at peak receptivity with real context.",
+        solution: "Monitors buying signals on LinkedIn (job changes, new hires, posts about specific challenges), CRM, and web-intent signals. Triggers outreach at peak receptivity with real context.",
         result: "Response rate 5–8%. Sendoso case: 20% response on high-intent signals. Timing changes everything.",
       },
       {
@@ -587,9 +587,9 @@ const en: PageContent = {
       {
         num: "05",
         title: "Sales Intelligence Agent",
-        problem: "Complex deals need deep analysis, competitive SWOT, MEDDPICC, stakeholder map, that nobody does because it takes hours and there's always something more urgent.",
-        solution: "Automatically generates structured deal analysis: competitive landscape, decision-power map, urgency or risk signals, partial MEDDPICC. Before every important meeting.",
-        result: "AEs with agentic Sales Intelligence close deals 22% faster according to internal data from Gong + n8n users. The analysis that previously never happened now always happens.",
+        problem: "Complex deals need deep analysis that nobody does because it takes hours: competitive landscape, stakeholder map, and the eight deal-qualification questions every rep needs answered before a meeting, who has authority to sign, what budget exists, who you're competing against, what metrics matter to the buyer, what happens if they do nothing, and who inside the company wants you to win.",
+        solution: "Automatically generates structured deal analysis: competitive landscape, decision-power map, urgency or risk signals, and answers to the eight deal-qualification questions. Before every important meeting.",
+        result: "Account executives using this agent close deals 22% faster according to internal data from Gong + n8n users. The analysis that previously never happened now always happens.",
       },
     ],
   },
@@ -624,7 +624,7 @@ const en: PageContent = {
         num: "02",
         title: "Validation Phase 1",
         weeks: "4–8 weeks",
-        desc: "Deploy with 10–20% of the team, not everyone. Define human-agent handoff with explicit SLA: what the agent does alone, what it escalates and in how long. Minimum metrics from day 1: activity volume, conversion rate at each funnel step, cost per result. Without baseline data, you can't know if the agent is working.",
+        desc: "Deploy with 10–20% of the team, not everyone. Define the handover rules between agent and human: what the agent does alone, what it escalates, and how quickly a human must respond. Minimum metrics from day 1: activity volume, conversion rate at each funnel step, cost per result. Without baseline data, you can't know if the agent is working.",
       },
       {
         num: "03",
@@ -654,7 +654,7 @@ const en: PageContent = {
       },
       {
         title: "Expecting full autonomy from day one",
-        desc: "pure AI sales reps see 50–70% annual churn, not because the technology fails, but because expectations are mismanaged. Agents require active supervision, prompt adjustment, and continuous review, especially in the first 90 days. Fire-and-forget doesn't work.",
+        desc: "pure AI sales reps see 50–70% annual churn, not because the technology fails, but because expectations are mismanaged. Agents require active supervision, prompt adjustment, and continuous review, especially in the first 90 days. Hands-off operation doesn't work.",
       },
       {
         title: "Buying tools without a strategy",
@@ -705,8 +705,8 @@ const en: PageContent = {
       },
       {
         num: "03",
-        title: "Results-based pricing replaces per-seat",
-        desc: "The per-seat model in sales SaaS fell from 21% to 15% of the market in 18 months. The growing model: charging per meeting booked, per qualified deal, per pipeline generated. Correctly aligns incentives. Forces vendors to improve technology rather than sell licenses.",
+        title: "Results-based pricing replaces per-user flat fees",
+        desc: "The flat per-user subscription model in sales software fell from 21% to 15% of the market in 18 months. The growing model: charging per meeting booked, per qualified deal, per pipeline generated. Correctly aligns incentives. Forces vendors to improve technology rather than sell licenses.",
       },
       {
         num: "04",
@@ -725,7 +725,7 @@ const en: PageContent = {
     items: [
       {
         q: "How much does it cost to implement an AI sales agent?",
-        a: "It depends on scope. A basic agent (prospecting or lead routing) can be implemented in 2–3 weeks for €3,000–€8,000 in installation mode (the agent is yours). The AaaS model starts at €1,500/month and includes operation, iterations and ongoing support. LLM costs are typically €50–€300/month depending on volume.",
+        a: "It depends on scope. A basic agent (prospecting or lead routing) can be implemented in 2–3 weeks for €3,000–€8,000 in installation mode (the agent is yours). The AaaS model starts at €1,500/month and includes operation, iterations and ongoing support. AI model running costs are typically €50–€300/month depending on volume.",
       },
       {
         q: "Do agents replace the sales team?",
@@ -733,7 +733,7 @@ const en: PageContent = {
       },
       {
         q: "How long does implementation take?",
-        a: "A well-defined agent takes 2–6 weeks from kick-off to production. The most important variable isn't the technology but the quality of input data and process clarity. If the process isn't documented, implementation takes longer.",
+        a: "A well-defined agent takes 2–6 weeks from project start to production. The most important variable isn't the technology but the quality of input data and process clarity. If the process isn't documented, implementation takes longer.",
       },
       {
         q: "What tools do I need first?",
