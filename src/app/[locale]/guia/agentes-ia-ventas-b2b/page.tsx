@@ -144,7 +144,7 @@ const es: PageContent = {
   },
   intro: {
     p1: "¿Por qué Uber no vino de la industria del transporte? ¿Por qué Airbnb no nació de una cadena hotelera? La respuesta siempre es la misma: las empresas establecidas están tan ocupadas optimizando lo que ya tienen que no ven la disrupción hasta que les pasa por encima. En 2026, esa disrupción tiene un nombre concreto en ventas B2B: agentes de IA.",
-    p2: "No hablamos de chatbots que responden preguntas frecuentes ni de automatizaciones que mueven leads entre etapas. Un agente de IA para ventas investiga prospectos en tiempo real, escribe outreach personalizado con contexto real, cualifica leads con criterio definido por ti, hace seguimiento con juicio — y lo hace mientras tu equipo duerme. La diferencia no es de velocidad. Es de naturaleza.",
+    p2: "No hablamos de chatbots que responden preguntas frecuentes ni de automatizaciones que mueven leads entre etapas. Un agente de IA para ventas investiga prospectos en tiempo real, escribe outreach personalizado con contexto real, cualifica leads con criterio definido por ti, hace seguimiento con juicio, y lo hace mientras tu equipo duerme. La diferencia no es de velocidad. Es de naturaleza.",
     p3: "Esta guía cruza tres investigaciones independientes, datos de McKinsey, Gartner, Bain, Forrester y más de 80 fuentes verificadas con lo que nosotros mismos construimos e implementamos para equipos B2B en España, México, Colombia y el mercado hispano de EE.UU. No es teoría. Es lo que funciona.",
     sources: "Cruzando McKinsey, Gartner, Bain, Forrester, ResearchAndMarkets, SaaStr, Stanford SLEI, EY LATAM, IndesIA y más de 80 fuentes verificadas.",
   },
@@ -168,16 +168,16 @@ const es: PageContent = {
     ],
     layersTitle: "Las tres capas de sofisticación",
     layers: [
-      ["Nivel 1 — Copilot", "Asiste al vendedor: sugiere respuestas, busca información, prepara briefings. El humano decide y ejecuta."],
-      ["Nivel 2 — Agente con tareas acotadas", "Ejecuta autónomamente dentro de un alcance definido: calificar leads, hacer seguimiento, enriquecer datos. El humano supervisa."],
-      ["Nivel 3 — SDR digital de extremo a extremo", "Gestiona el ciclo completo desde señal hasta reunión agendada. Opera sin intervención humana salvo en escalados. Solo el ~3% de implementaciones llega aquí."],
+      ["Nivel 1, Copilot", "Asiste al vendedor: sugiere respuestas, busca información, prepara briefings. El humano decide y ejecuta."],
+      ["Nivel 2, Agente con tareas acotadas", "Ejecuta autónomamente dentro de un alcance definido: calificar leads, hacer seguimiento, enriquecer datos. El humano supervisa."],
+      ["Nivel 3, SDR digital de extremo a extremo", "Gestiona el ciclo completo desde señal hasta reunión agendada. Opera sin intervención humana salvo en escalados. Solo el ~3% de implementaciones llega aquí."],
     ],
     agentWashTitle: "El problema del agentwashing",
     agentWashText: "Gartner identifica que solo ~130 de los miles de proveedores que usan el término \"agente\" tienen capacidades genuinamente distintas a automatización con IA. Antes de comprar cualquier plataforma, pide ver qué hace el sistema cuando el prospecto responde algo inesperado. Si no puede manejarlo, no es un agente.",
   },
   s3: {
     heading: "2. El mercado en números",
-    intro: "El contexto importa. Estos no son números de analistas entusiastas — son las señales que indican por qué equipos conservadores están empezando a moverse.",
+    intro: "El contexto importa. Estos no son números de analistas entusiastas, son las señales que indican por qué equipos conservadores están empezando a moverse.",
     stats: [
       { stat: "$4.4B", label: "Mercado AI SDRs en 2025" },
       { stat: "$15–18B", label: "Proyección para 2030" },
@@ -186,16 +186,16 @@ const es: PageContent = {
     ],
     paradoxTitle: "La paradoja de la adopción",
     paradox: [
-      "El 88% de los equipos de ventas B2B ya usa alguna forma de IA — pero solo el 4% tiene datos lo suficientemente limpios para que funcione bien.",
+      "El 88% de los equipos de ventas B2B ya usa alguna forma de IA, pero solo el 4% tiene datos lo suficientemente limpios para que funcione bien.",
       "Gartner proyecta que más del 40% de los proyectos de IA iniciados en 2025-2026 se cancelarán antes de producción, principalmente por problemas de calidad de datos y expectativas mal gestionadas.",
       "El dinero de riesgo lo confirma: 11x.ai levantó $76M, Regie.ai $50.8M, Artisan $39–46M en los últimos 18 meses. Pero la mayoría de esas empresas venden herramientas, no resultados.",
     ],
     roundsTitle: "Lo que dice el dinero",
-    rounds: "Las rondas de financiación reflejan donde está la apuesta, no donde está la ejecución. La oportunidad real no está en construir las herramientas — está en saber implementarlas. La mayoría de empresas que adoptan IA lo hacen sin un proceso claro. Ese es el gap.",
+    rounds: "Las rondas de financiación reflejan donde está la apuesta, no donde está la ejecución. La oportunidad real no está en construir las herramientas, está en saber implementarlas. La mayoría de empresas que adoptan IA lo hacen sin un proceso claro. Ese es el gap.",
   },
   s4: {
     heading: "3. ROI real: lo que dicen los datos",
-    intro: "Los titulares dicen que la IA reduce costes un 85%. La realidad es más matizada — y más interesante.",
+    intro: "Los titulares dicen que la IA reduce costes un 85%. La realidad es más matizada, y más interesante.",
     stats: [
       { stat: "$39", label: "Coste por lead con AI SDR" },
       { stat: "$262", label: "Coste por lead con SDR humano" },
@@ -243,14 +243,14 @@ const es: PageContent = {
       {
         num: "04",
         title: "Agente de Nurturing y Follow-up",
-        problem: "El 80% de los deals muertos se pierden por falta de seguimiento — no porque el prospecto dijera que no. El equipo está ocupado con los calientes.",
+        problem: "El 80% de los deals muertos se pierden por falta de seguimiento, no porque el prospecto dijera que no. El equipo está ocupado con los calientes.",
         solution: "Secuencias de follow-up personalizadas según el contexto del deal, el comportamiento del prospecto y el momento del ciclo. Sabe cuándo escalar al humano y cuándo continuar.",
         result: "40% más pipeline recuperado. Caso consultora española B2B: tasa de respuesta en nurturing del 45% al 78% tras implementar secuencias adaptativas.",
       },
       {
         num: "05",
         title: "Agente de Sales Intelligence",
-        problem: "Los deals complejos requieren análisis profundo — DAFO competitivo, MEDDPICC, mapa de stakeholders — que nadie hace porque tarda horas y siempre hay algo más urgente.",
+        problem: "Los deals complejos requieren análisis profundo, DAFO competitivo, MEDDPICC, mapa de stakeholders, que nadie hace porque tarda horas y siempre hay algo más urgente.",
         solution: "Genera automáticamente análisis estructurado del deal: situación competitiva, mapa de poder de decisión, señales de urgencia o riesgo, MEDDPICC parcial. Antes de cada reunión importante.",
         result: "Los AEs con Sales Intelligence agéntico cierran deals 22% más rápido según datos internos de usuarios de Gong + n8n. El análisis que antes no ocurría, ahora ocurre siempre.",
       },
@@ -269,9 +269,9 @@ const es: PageContent = {
     ],
     stat1: "Solo el 22% de las empresas ha reemplazado SDRs completamente por IA.",
     stat2: "El 55% usa modelo híbrido y reporta los mejores resultados.",
-    stat3: "El 23% restante no ha adoptado IA significativa — y está perdiendo cuota.",
+    stat3: "El 23% restante no ha adoptado IA significativa, y está perdiendo cuota.",
     gartnerTitle: "La advertencia de Gartner",
-    gartnerText: "Para 2028, los agentes de IA superarán a vendedores humanos en ratio 10:1 en cuanto a volumen gestionado. Pero Gartner también advierte que menos del 40% de las empresas reportará mejora real en productividad de ventas — porque la mayoría implementará sin proceso. El ratio de agentes por humano no es el problema. El diseño del proceso es el problema.",
+    gartnerText: "Para 2028, los agentes de IA superarán a vendedores humanos en ratio 10:1 en cuanto a volumen gestionado. Pero Gartner también advierte que menos del 40% de las empresas reportará mejora real en productividad de ventas, porque la mayoría implementará sin proceso. El ratio de agentes por humano no es el problema. El diseño del proceso es el problema.",
   },
   s7: {
     heading: "6. Cómo implementar: las 3 fases",
@@ -293,15 +293,15 @@ const es: PageContent = {
         num: "03",
         title: "Escalado",
         weeks: "8–12 semanas",
-        desc: "Amplía la autonomía del agente donde ha demostrado precisión. No amplíes el alcance y la autonomía al mismo tiempo. Introduce el segundo o tercer agente solo cuando el primero esté estable y en producción. La arquitectura multi-agente es poderosa — y el punto de mayor riesgo si se hace antes de tiempo.",
+        desc: "Amplía la autonomía del agente donde ha demostrado precisión. No amplíes el alcance y la autonomía al mismo tiempo. Introduce el segundo o tercer agente solo cuando el primero esté estable y en producción. La arquitectura multi-agente es poderosa, y el punto de mayor riesgo si se hace antes de tiempo.",
       },
     ],
     modalitiesTitle: "Dos modalidades de trabajo",
     modality1Title: "Instalación (compra única)",
     modality1Desc: "El agente queda en tu infraestructura. Lo operas tú. Mayor control y menor coste a largo plazo. Requiere capacidad interna para mantener y mejorar.",
-    modality2Title: "AaaS — Agent as a Service",
+    modality2Title: "AaaS, Agent as a Service",
     modality2Desc: "Servicio gestionado mensual. Nosotros operamos, monitorizamos y mejoramos continuamente. Ideal si no tienes equipo técnico interno o quieres resultados desde el primer mes.",
-    highlight: "Si en 30–60 días no puedes contestar qué métrica cambió, cuánto y a qué coste, no tienes un agente — tienes un experimento caro. El éxito de la implementación se mide antes de escribir una sola línea de código.",
+    highlight: "Si en 30–60 días no puedes contestar qué métrica cambió, cuánto y a qué coste, no tienes un agente, tienes un experimento caro. El éxito de la implementación se mide antes de escribir una sola línea de código.",
   },
   s8: {
     heading: "7. Los 4 errores que matan proyectos de IA en ventas",
@@ -309,7 +309,7 @@ const es: PageContent = {
     errors: [
       {
         title: "Automatizar un proceso que no funciona manualmente",
-        desc: "Si tu proceso de prospección manual no convierte, el agente no lo va a arreglar — lo va a escalar a mayor velocidad. El resultado es más actividad con los mismos malos resultados, pero más visible. Primero valida el proceso con humanos. Cuando funciona manualmente, automatiza.",
+        desc: "Si tu proceso de prospección manual no convierte, el agente no lo va a arreglar, lo va a escalar a mayor velocidad. El resultado es más actividad con los mismos malos resultados, pero más visible. Primero valida el proceso con humanos. Cuando funciona manualmente, automatiza.",
       },
       {
         title: "CRM con datos sucios",
@@ -317,11 +317,11 @@ const es: PageContent = {
       },
       {
         title: "Expectativa de autonomía total desde el día uno",
-        desc: "Los AI SDRs puros tienen entre 50–70% de churn anual — no porque la tecnología falle, sino porque las expectativas se gestionan mal. Los agentes requieren supervisión activa, ajuste de prompts y revisión continua, especialmente en los primeros 90 días. Fire-and-forget no funciona.",
+        desc: "Los AI SDRs puros tienen entre 50–70% de churn anual, no porque la tecnología falle, sino porque las expectativas se gestionan mal. Los agentes requieren supervisión activa, ajuste de prompts y revisión continua, especialmente en los primeros 90 días. Fire-and-forget no funciona.",
       },
       {
         title: "Comprar herramientas sin estrategia",
-        desc: "Clay, Apollo, Instantly, Salesloft, Outreach, 11x, Artisan — cada semana aparece una nueva plataforma que promete resultados inmediatos. El problema no es la herramienta. Es no tener claro qué proceso quieres mejorar, qué métricas vas a medir y quién va a operar el sistema internamente. La herramienta es el último paso, no el primero.",
+        desc: "Clay, Apollo, Instantly, Salesloft, Outreach, 11x, Artisan, cada semana aparece una nueva plataforma que promete resultados inmediatos. El problema no es la herramienta. Es no tener claro qué proceso quieres mejorar, qué métricas vas a medir y quién va a operar el sistema internamente. La herramienta es el último paso, no el primero.",
       },
     ],
   },
@@ -332,17 +332,17 @@ const es: PageContent = {
       {
         flag: "🇪🇸",
         name: "España",
-        desc: "El 70% de las empresas usa IA de forma diaria — pero solo el 21.6% tiene integración estratégica real. Kit Digital financia hasta 19.000€ para soluciones de IA. El gap entre adopción táctica y estratégica es la oportunidad.",
+        desc: "El 70% de las empresas usa IA de forma diaria, pero solo el 21.6% tiene integración estratégica real. Kit Digital financia hasta 19.000€ para soluciones de IA. El gap entre adopción táctica y estratégica es la oportunidad.",
       },
       {
         flag: "🇲🇽",
         name: "México",
-        desc: "El 72% de empresas medianas ya adoptó IA en alguna forma, pero solo el 14% tiene capacidades agénticas reales. WhatsApp domina la comunicación B2B — los agentes que integran WhatsApp como canal principal superan a los que solo hacen email.",
+        desc: "El 72% de empresas medianas ya adoptó IA en alguna forma, pero solo el 14% tiene capacidades agénticas reales. WhatsApp domina la comunicación B2B, los agentes que integran WhatsApp como canal principal superan a los que solo hacen email.",
       },
       {
         flag: "🇨🇴",
         name: "Colombia",
-        desc: "El 22% de empresas colombianas ya implementó IA en más del 40% de sus procesos — el doble del promedio regional latinoamericano. Mercado con mayor velocidad de adopción en la región.",
+        desc: "El 22% de empresas colombianas ya implementó IA en más del 40% de sus procesos, el doble del promedio regional latinoamericano. Mercado con mayor velocidad de adopción en la región.",
       },
       {
         flag: "🇺🇸",
@@ -364,7 +364,7 @@ const es: PageContent = {
       {
         num: "02",
         title: "Voice AI entra en el proceso comercial",
-        desc: "El mercado de Voice AI alcanzará $126B antes de 2030. Los agentes de voz actuales responden en 500–800ms — suficientemente rápido para conversaciones naturales. Los primeros casos de uso en ventas B2B no son llamadas en frío (ahí sigue ganando el humano) sino calificación inbound y seguimiento de leads de bajo ticket.",
+        desc: "El mercado de Voice AI alcanzará $126B antes de 2030. Los agentes de voz actuales responden en 500–800ms, suficientemente rápido para conversaciones naturales. Los primeros casos de uso en ventas B2B no son llamadas en frío (ahí sigue ganando el humano) sino calificación inbound y seguimiento de leads de bajo ticket.",
       },
       {
         num: "03",
@@ -374,12 +374,12 @@ const es: PageContent = {
       {
         num: "04",
         title: "CRMs con IA nativa redefinen el stack",
-        desc: "Salesforce Agentforce, HubSpot Breeze y Microsoft Copilot for Sales no son features — son apuestas de plataforma. GPT-5 integrado nativamente en el CRM cambia qué tiene sentido construir por separado. El stack de ventas se va a consolidar. Las herramientas punto-a-punto que no se integren van a desaparecer.",
+        desc: "Salesforce Agentforce, HubSpot Breeze y Microsoft Copilot for Sales no son features, son apuestas de plataforma. GPT-5 integrado nativamente en el CRM cambia qué tiene sentido construir por separado. El stack de ventas se va a consolidar. Las herramientas punto-a-punto que no se integren van a desaparecer.",
       },
       {
         num: "05",
         title: "GEO redefine cómo llegan los leads B2B",
-        desc: "El 60% de las búsquedas ya son zero-click — el usuario encuentra la respuesta en la SERP o en el resumen de IA sin visitar el sitio. ChatGPT, Perplexity y Google AI Overviews generan recomendaciones de proveedores. Las empresas que optimicen para ser citadas por IA (GEO) ganarán pipeline orgánico que las que solo hacen SEO tradicional no ven.",
+        desc: "El 60% de las búsquedas ya son zero-click, el usuario encuentra la respuesta en la SERP o en el resumen de IA sin visitar el sitio. ChatGPT, Perplexity y Google AI Overviews generan recomendaciones de proveedores. Las empresas que optimicen para ser citadas por IA (GEO) ganarán pipeline orgánico que las que solo hacen SEO tradicional no ven.",
       },
     ],
   },
@@ -400,7 +400,7 @@ const es: PageContent = {
       },
       {
         q: "¿Qué herramientas necesito tener antes?",
-        a: "Lo mínimo viable: un CRM con datos medianamente limpios y un dominio de email con buena reputación. No necesitas n8n, Clay ni ninguna herramienta específica antes de empezar — eso forma parte del diseño de la solución.",
+        a: "Lo mínimo viable: un CRM con datos medianamente limpios y un dominio de email con buena reputación. No necesitas n8n, Clay ni ninguna herramienta específica antes de empezar, eso forma parte del diseño de la solución.",
       },
       {
         q: "¿Los agentes funcionan en español?",
@@ -423,7 +423,7 @@ const es: PageContent = {
   cta: {
     badge: "Siguiente paso",
     heading: "¿Listo para implementar tu primer agente?",
-    sub: "En una sesión de 30 minutos identificamos el caso de uso con mayor ROI para tu equipo específico y te damos un plan de implementación concreto — sin compromiso.",
+    sub: "En una sesión de 30 minutos identificamos el caso de uso con mayor ROI para tu equipo específico y te damos un plan de implementación concreto, sin compromiso.",
     ctaPrimary: "Agenda una consultoría gratuita",
     ctaSecondary: "Haz el Test de Madurez IA →",
   },
@@ -481,7 +481,7 @@ const en: PageContent = {
   },
   intro: {
     p1: "Why didn't Uber come from the transportation industry? Why wasn't Airbnb founded by a hotel chain? The answer is always the same: established companies are so busy optimizing what they already have that they don't see disruption until it runs them over. In 2026, that disruption has a specific name in B2B sales: AI agents.",
-    p2: "We're not talking about chatbots that answer FAQs or automations that move leads between pipeline stages. An AI sales agent researches prospects in real time, writes personalized outreach with actual context, qualifies leads according to criteria you define, follows up with judgment — and does all of this while your team sleeps. The difference isn't one of speed. It's one of nature.",
+    p2: "We're not talking about chatbots that answer FAQs or automations that move leads between pipeline stages. An AI sales agent researches prospects in real time, writes personalized outreach with actual context, qualifies leads according to criteria you define, follows up with judgment, and does all of this while your team sleeps. The difference isn't one of speed. It's one of nature.",
     p3: "This guide crosses three independent research streams, data from McKinsey, Gartner, Bain, Forrester and 80+ verified sources with what we actually build and deploy for B2B teams in Spain, Mexico, Colombia and the US Hispanic market. This isn't theory. It's what works.",
     sources: "Crossing McKinsey, Gartner, Bain, Forrester, ResearchAndMarkets, SaaStr, Stanford SLEI, EY LATAM, IndesIA and 80+ verified sources.",
   },
@@ -505,16 +505,16 @@ const en: PageContent = {
     ],
     layersTitle: "The three sophistication layers",
     layers: [
-      ["Level 1 — Copilot", "Assists the seller: suggests responses, finds information, prepares briefings. The human decides and executes."],
-      ["Level 2 — Agent with bounded tasks", "Executes autonomously within a defined scope: qualifying leads, following up, enriching data. The human supervises."],
-      ["Level 3 — End-to-end digital SDR", "Manages the full cycle from signal to booked meeting. Operates without human intervention except on escalations. Only ~3% of implementations reach this level."],
+      ["Level 1, Copilot", "Assists the seller: suggests responses, finds information, prepares briefings. The human decides and executes."],
+      ["Level 2, Agent with bounded tasks", "Executes autonomously within a defined scope: qualifying leads, following up, enriching data. The human supervises."],
+      ["Level 3, End-to-end digital SDR", "Manages the full cycle from signal to booked meeting. Operates without human intervention except on escalations. Only ~3% of implementations reach this level."],
     ],
     agentWashTitle: "The agentwashing problem",
     agentWashText: "Gartner identifies that only ~130 of the thousands of vendors using the term 'agent' have capabilities genuinely different from AI-enhanced automation. Before buying any platform, ask what the system does when a prospect responds with something unexpected. If it can't handle it, it isn't an agent.",
   },
   s3: {
     heading: "2. The market in numbers",
-    intro: "Context matters. These aren't numbers from enthusiastic analysts — they're signals indicating why conservative teams are starting to move.",
+    intro: "Context matters. These aren't numbers from enthusiastic analysts, they're signals indicating why conservative teams are starting to move.",
     stats: [
       { stat: "$4.4B", label: "AI SDR market in 2025" },
       { stat: "$15–18B", label: "Projection for 2030" },
@@ -523,16 +523,16 @@ const en: PageContent = {
     ],
     paradoxTitle: "The adoption paradox",
     paradox: [
-      "88% of B2B sales teams already use some form of AI — but only 4% have data clean enough for it to work well.",
+      "88% of B2B sales teams already use some form of AI, but only 4% have data clean enough for it to work well.",
       "Gartner projects that more than 40% of AI projects started in 2025–2026 will be cancelled before production, mainly due to data quality issues and mismanaged expectations.",
       "Venture capital confirms the bet: 11x.ai raised $76M, Regie.ai $50.8M, Artisan $39–46M in the last 18 months. But most of those companies sell tools, not results.",
     ],
     roundsTitle: "What the money says",
-    rounds: "Funding rounds reflect where the bet is, not where the execution is. The real opportunity isn't building the tools — it's knowing how to implement them. Most companies adopting AI do so without a clear process. That's the gap.",
+    rounds: "Funding rounds reflect where the bet is, not where the execution is. The real opportunity isn't building the tools, it's knowing how to implement them. Most companies adopting AI do so without a clear process. That's the gap.",
   },
   s4: {
     heading: "3. Real ROI: what the data says",
-    intro: "Headlines say AI reduces costs by 85%. The reality is more nuanced — and more interesting.",
+    intro: "Headlines say AI reduces costs by 85%. The reality is more nuanced, and more interesting.",
     stats: [
       { stat: "$39", label: "Cost per lead with AI SDR" },
       { stat: "$262", label: "Cost per lead with human SDR" },
@@ -580,14 +580,14 @@ const en: PageContent = {
       {
         num: "04",
         title: "Nurturing & Follow-up Agent",
-        problem: "80% of dead deals are lost due to lack of follow-up — not because the prospect said no. The team is busy with hot ones.",
+        problem: "80% of dead deals are lost due to lack of follow-up, not because the prospect said no. The team is busy with hot ones.",
         solution: "Personalized follow-up sequences based on deal context, prospect behavior, and cycle stage. Knows when to escalate to human and when to continue.",
         result: "40% more pipeline recovered. Spanish B2B consulting case: nurturing response rate from 45% to 78% after implementing adaptive sequences.",
       },
       {
         num: "05",
         title: "Sales Intelligence Agent",
-        problem: "Complex deals need deep analysis — competitive SWOT, MEDDPICC, stakeholder map — that nobody does because it takes hours and there's always something more urgent.",
+        problem: "Complex deals need deep analysis, competitive SWOT, MEDDPICC, stakeholder map, that nobody does because it takes hours and there's always something more urgent.",
         solution: "Automatically generates structured deal analysis: competitive landscape, decision-power map, urgency or risk signals, partial MEDDPICC. Before every important meeting.",
         result: "AEs with agentic Sales Intelligence close deals 22% faster according to internal data from Gong + n8n users. The analysis that previously never happened now always happens.",
       },
@@ -606,9 +606,9 @@ const en: PageContent = {
     ],
     stat1: "Only 22% of companies have fully replaced SDRs with AI.",
     stat2: "55% use the hybrid model and report the best results.",
-    stat3: "The remaining 23% haven't adopted significant AI — and are losing market share.",
+    stat3: "The remaining 23% haven't adopted significant AI, and are losing market share.",
     gartnerTitle: "Gartner's warning",
-    gartnerText: "By 2028, AI agents will outnumber human sellers 10:1 in terms of managed volume. But Gartner also warns that fewer than 40% of companies will report actual improvement in sales productivity — because most will implement without process. The agent-to-human ratio isn't the problem. Process design is the problem.",
+    gartnerText: "By 2028, AI agents will outnumber human sellers 10:1 in terms of managed volume. But Gartner also warns that fewer than 40% of companies will report actual improvement in sales productivity, because most will implement without process. The agent-to-human ratio isn't the problem. Process design is the problem.",
   },
   s7: {
     heading: "6. How to implement: the 3 phases",
@@ -630,15 +630,15 @@ const en: PageContent = {
         num: "03",
         title: "Scaling",
         weeks: "8–12 weeks",
-        desc: "Expand the agent's autonomy where it has proven precision. Don't expand scope and autonomy at the same time. Introduce the second or third agent only when the first is stable and in production. Multi-agent architecture is powerful — and the highest-risk point if done prematurely.",
+        desc: "Expand the agent's autonomy where it has proven precision. Don't expand scope and autonomy at the same time. Introduce the second or third agent only when the first is stable and in production. Multi-agent architecture is powerful, and the highest-risk point if done prematurely.",
       },
     ],
     modalitiesTitle: "Two engagement models",
     modality1Title: "Installation (one-time purchase)",
     modality1Desc: "The agent lives in your infrastructure. You operate it. More control and lower long-term cost. Requires internal capacity to maintain and improve.",
-    modality2Title: "AaaS — Agent as a Service",
+    modality2Title: "AaaS, Agent as a Service",
     modality2Desc: "Monthly managed service. We operate, monitor and continuously improve it. Ideal if you have no internal technical team or want results from month one.",
-    highlight: "If after 30–60 days you can't answer which metric changed, by how much and at what cost, you don't have an agent — you have an expensive experiment. Implementation success is measured before writing a single line of code.",
+    highlight: "If after 30–60 days you can't answer which metric changed, by how much and at what cost, you don't have an agent, you have an expensive experiment. Implementation success is measured before writing a single line of code.",
   },
   s8: {
     heading: "7. The 4 mistakes that kill AI sales projects",
@@ -646,7 +646,7 @@ const en: PageContent = {
     errors: [
       {
         title: "Automating a process that doesn't work manually",
-        desc: "If your manual prospecting process doesn't convert, the agent won't fix it — it will scale it at higher speed. The result is more activity with the same bad results, but more visible. First validate the process with humans. When it works manually, automate.",
+        desc: "If your manual prospecting process doesn't convert, the agent won't fix it, it will scale it at higher speed. The result is more activity with the same bad results, but more visible. First validate the process with humans. When it works manually, automate.",
       },
       {
         title: "Dirty CRM data",
@@ -654,11 +654,11 @@ const en: PageContent = {
       },
       {
         title: "Expecting full autonomy from day one",
-        desc: "Pure AI SDRs see 50–70% annual churn — not because the technology fails, but because expectations are mismanaged. Agents require active supervision, prompt adjustment, and continuous review, especially in the first 90 days. Fire-and-forget doesn't work.",
+        desc: "Pure AI SDRs see 50–70% annual churn, not because the technology fails, but because expectations are mismanaged. Agents require active supervision, prompt adjustment, and continuous review, especially in the first 90 days. Fire-and-forget doesn't work.",
       },
       {
         title: "Buying tools without a strategy",
-        desc: "Clay, Apollo, Instantly, Salesloft, Outreach, 11x, Artisan — every week a new platform promises immediate results. The problem isn't the tool. It's not being clear on which process you want to improve, which metrics you'll measure, and who will operate the system internally. The tool is the last step, not the first.",
+        desc: "Clay, Apollo, Instantly, Salesloft, Outreach, 11x, Artisan, every week a new platform promises immediate results. The problem isn't the tool. It's not being clear on which process you want to improve, which metrics you'll measure, and who will operate the system internally. The tool is the last step, not the first.",
       },
     ],
   },
@@ -669,17 +669,17 @@ const en: PageContent = {
       {
         flag: "🇪🇸",
         name: "Spain",
-        desc: "70% of companies use AI daily — but only 21.6% have real strategic integration. Kit Digital funds up to €19,000 for AI solutions. The gap between tactical and strategic adoption is the opportunity.",
+        desc: "70% of companies use AI daily, but only 21.6% have real strategic integration. Kit Digital funds up to €19,000 for AI solutions. The gap between tactical and strategic adoption is the opportunity.",
       },
       {
         flag: "🇲🇽",
         name: "Mexico",
-        desc: "72% of mid-market companies already adopted AI in some form, but only 14% have real agentic capabilities. WhatsApp dominates B2B communication — agents that integrate WhatsApp as primary channel outperform email-only ones.",
+        desc: "72% of mid-market companies already adopted AI in some form, but only 14% have real agentic capabilities. WhatsApp dominates B2B communication, agents that integrate WhatsApp as primary channel outperform email-only ones.",
       },
       {
         flag: "🇨🇴",
         name: "Colombia",
-        desc: "22% of Colombian companies have already implemented AI in 40%+ of their processes — double the regional Latin American average. The fastest-adoption market in the region.",
+        desc: "22% of Colombian companies have already implemented AI in 40%+ of their processes, double the regional Latin American average. The fastest-adoption market in the region.",
       },
       {
         flag: "🇺🇸",
@@ -701,7 +701,7 @@ const en: PageContent = {
       {
         num: "02",
         title: "Voice AI enters the sales process",
-        desc: "The Voice AI market will reach $126B before 2030. Current voice agents respond in 500–800ms — fast enough for natural conversations. The first B2B sales use cases aren't cold calls (humans still win there) but inbound qualification and low-ticket lead follow-up.",
+        desc: "The Voice AI market will reach $126B before 2030. Current voice agents respond in 500–800ms, fast enough for natural conversations. The first B2B sales use cases aren't cold calls (humans still win there) but inbound qualification and low-ticket lead follow-up.",
       },
       {
         num: "03",
@@ -711,12 +711,12 @@ const en: PageContent = {
       {
         num: "04",
         title: "CRMs with native AI redefine the stack",
-        desc: "Salesforce Agentforce, HubSpot Breeze and Microsoft Copilot for Sales aren't features — they're platform bets. GPT-5 natively integrated in the CRM changes what makes sense to build separately. The sales stack will consolidate. Point-to-point tools that don't integrate will disappear.",
+        desc: "Salesforce Agentforce, HubSpot Breeze and Microsoft Copilot for Sales aren't features, they're platform bets. GPT-5 natively integrated in the CRM changes what makes sense to build separately. The sales stack will consolidate. Point-to-point tools that don't integrate will disappear.",
       },
       {
         num: "05",
         title: "GEO redefines how B2B leads arrive",
-        desc: "60% of searches are already zero-click — the user finds the answer in the SERP or AI summary without visiting the site. ChatGPT, Perplexity and Google AI Overviews generate vendor recommendations. Companies optimizing to be cited by AI (GEO) will win organic pipeline that SEO-only companies won't see.",
+        desc: "60% of searches are already zero-click, the user finds the answer in the SERP or AI summary without visiting the site. ChatGPT, Perplexity and Google AI Overviews generate vendor recommendations. Companies optimizing to be cited by AI (GEO) will win organic pipeline that SEO-only companies won't see.",
       },
     ],
   },
@@ -737,7 +737,7 @@ const en: PageContent = {
       },
       {
         q: "What tools do I need first?",
-        a: "The minimum viable set: a CRM with reasonably clean data and an email domain with good reputation. You don't need n8n, Clay, or any specific tool before starting — that's part of the solution design.",
+        a: "The minimum viable set: a CRM with reasonably clean data and an email domain with good reputation. You don't need n8n, Clay, or any specific tool before starting, that's part of the solution design.",
       },
       {
         q: "Do agents work in Spanish?",
@@ -760,7 +760,7 @@ const en: PageContent = {
   cta: {
     badge: "Next step",
     heading: "Ready to implement your first agent?",
-    sub: "In a 30-minute session we identify the use case with the highest ROI for your specific team and give you a concrete implementation plan — no commitment.",
+    sub: "In a 30-minute session we identify the use case with the highest ROI for your specific team and give you a concrete implementation plan, no commitment.",
     ctaPrimary: "Book a free strategy call",
     ctaSecondary: "Take the AI Readiness Test →",
   },
@@ -988,7 +988,7 @@ export default async function PillarPage({ params }: Props) {
             </p>
           </div>
 
-          {/* ── Section 1 — Qué es ──────────────────────────────────────── */}
+          {/* ── Section 1, Qué es ──────────────────────────────────────── */}
           <section id="que-es" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
               {c.s2.heading}
@@ -1038,7 +1038,7 @@ export default async function PillarPage({ params }: Props) {
             </div>
           </section>
 
-          {/* ── Section 2 — Mercado ─────────────────────────────────────── */}
+          {/* ── Section 2, Mercado ─────────────────────────────────────── */}
           <section id="mercado" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
               {c.s3.heading}
@@ -1064,7 +1064,7 @@ export default async function PillarPage({ params }: Props) {
             </div>
           </section>
 
-          {/* ── Section 3 — ROI ─────────────────────────────────────────── */}
+          {/* ── Section 3, ROI ─────────────────────────────────────────── */}
           <section id="roi" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
               {c.s4.heading}
@@ -1091,7 +1091,7 @@ export default async function PillarPage({ params }: Props) {
             <HighlightBox>{c.s4.highlight}</HighlightBox>
           </section>
 
-          {/* ── Section 4 — 5 Agents ────────────────────────────────────── */}
+          {/* ── Section 4, 5 Agents ────────────────────────────────────── */}
           <section id="5-agentes" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
               {c.s5.heading}
@@ -1135,7 +1135,7 @@ export default async function PillarPage({ params }: Props) {
             </div>
           </section>
 
-          {/* ── Section 5 — Hybrid model ────────────────────────────────── */}
+          {/* ── Section 5, Hybrid model ────────────────────────────────── */}
           <section id="modelo-hibrido" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
               {c.s6.heading}
@@ -1176,7 +1176,7 @@ export default async function PillarPage({ params }: Props) {
             </div>
           </section>
 
-          {/* ── Section 6 — Implementar ─────────────────────────────────── */}
+          {/* ── Section 6, Implementar ─────────────────────────────────── */}
           <section id="implementar" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
               {c.s7.heading}
@@ -1224,7 +1224,7 @@ export default async function PillarPage({ params }: Props) {
             <HighlightBox>{c.s7.highlight}</HighlightBox>
           </section>
 
-          {/* ── Section 7 — Errores ─────────────────────────────────────── */}
+          {/* ── Section 7, Errores ─────────────────────────────────────── */}
           <section id="errores" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
               {c.s8.heading}
@@ -1246,7 +1246,7 @@ export default async function PillarPage({ params }: Props) {
             </div>
           </section>
 
-          {/* ── Section 8 — Mercado hispano ─────────────────────────────── */}
+          {/* ── Section 8, Mercado hispano ─────────────────────────────── */}
           <section id="mercado-hispano" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
               {c.s9.heading}
@@ -1270,7 +1270,7 @@ export default async function PillarPage({ params }: Props) {
             <HighlightBox>{c.s9.highlight}</HighlightBox>
           </section>
 
-          {/* ── Section 9 — Tendencias ──────────────────────────────────── */}
+          {/* ── Section 9, Tendencias ──────────────────────────────────── */}
           <section id="tendencias" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl font-bold mb-4" style={{ color: "var(--text-primary)" }}>
               {c.s10.heading}
@@ -1299,7 +1299,7 @@ export default async function PillarPage({ params }: Props) {
             </div>
           </section>
 
-          {/* ── Section 10 — FAQ ────────────────────────────────────────── */}
+          {/* ── Section 10, FAQ ────────────────────────────────────────── */}
           <section id="faq" className="mb-16 scroll-mt-24">
             <h2 className="text-2xl font-bold mb-6" style={{ color: "var(--text-primary)" }}>
               {c.faq.heading}
