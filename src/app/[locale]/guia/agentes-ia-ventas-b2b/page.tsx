@@ -936,7 +936,7 @@ export default async function PillarPage({ params }: Props) {
             {c.hero.sub}
           </p>
           <div className="flex flex-wrap items-center gap-4 text-xs" style={{ color: "var(--text-secondary)" }}>
-            <span>{c.hero.by} <strong style={{ color: "var(--text-primary)" }}>Verymuch.ai</strong></span>
+            <span>{c.hero.by} <strong style={{ color: "var(--text-primary)" }}>Edwin Moreno</strong></span>
             <span className="opacity-30">·</span>
             <time dateTime={PUBLISHED}>{c.hero.date}</time>
             <span className="opacity-30">·</span>
