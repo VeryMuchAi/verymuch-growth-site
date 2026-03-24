@@ -66,6 +66,7 @@ interface PageContent {
     thModel: string; thPipeline: string; thWinRate: string;
     rows: string[][];
     stat1: string; stat2: string; stat3: string;
+    statsNote: string; statsNoteLink: string;
     gartnerTitle: string; gartnerText: string;
   };
   s7: {
@@ -276,6 +277,8 @@ const es: PageContent = {
     stat1: "Solo el 22% de las empresas ha reemplazado representantes de ventas completamente por IA.",
     stat2: "El 55% usa modelo híbrido y reporta los mejores resultados.",
     stat3: "El 23% restante no ha adoptado IA significativa, y está perdiendo cuota.",
+    statsNote: "Fuentes: McKinsey Global Institute, HubSpot State of Sales 2025, Gartner Sales Technology Report 2025",
+    statsNoteLink: "ver fuentes completas",
     gartnerTitle: "La advertencia de Gartner",
     gartnerText: "Para 2028, los agentes de IA superarán a vendedores humanos en ratio 10:1 en cuanto a volumen gestionado. Pero Gartner también advierte que menos del 40% de las empresas reportará mejora real en productividad de ventas, porque la mayoría implementará sin proceso. El ratio de agentes por humano no es el problema. El diseño del proceso es el problema.",
   },
@@ -617,6 +620,8 @@ const en: PageContent = {
     stat1: "Only 22% of companies have fully replaced sales reps with AI.",
     stat2: "55% use the hybrid model and report the best results.",
     stat3: "The remaining 23% haven't adopted significant AI, and are losing market share.",
+    statsNote: "Sources: McKinsey Global Institute, HubSpot State of Sales 2025, Gartner Sales Technology Report 2025",
+    statsNoteLink: "see all sources",
     gartnerTitle: "Gartner's warning",
     gartnerText: "By 2028, AI agents will outnumber human sellers 10:1 in terms of managed volume. But Gartner also warns that fewer than 40% of companies will report actual improvement in sales productivity, because most will implement without process. The agent-to-human ratio isn't the problem. Process design is the problem.",
   },
@@ -1192,6 +1197,12 @@ export default async function PillarPage({ params }: Props) {
                 </li>
               ))}
             </ul>
+            <p className="text-xs mb-6" style={{ color: "var(--text-secondary)" }}>
+              {c.s6.statsNote} ·{" "}
+              <a href="#fuentes" className="hover:underline" style={{ color: "var(--accent-text)" }}>
+                {c.s6.statsNoteLink} ↓
+              </a>
+            </p>
             <div className="rounded-xl p-5 border" style={{ background: "var(--bg-secondary)", borderColor: "var(--border)" }}>
               <p className="text-sm font-bold mb-2" style={{ color: "var(--text-primary)" }}>{c.s6.gartnerTitle}</p>
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{c.s6.gartnerText}</p>
