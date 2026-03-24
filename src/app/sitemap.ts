@@ -18,15 +18,21 @@ const routes: Route[] = [
   { path: "/lead/agente-investigacion-comercial", changeFrequency: "monthly", priority: 0.8 },
   { path: "/lead/20-agentes-ia-b2b",              changeFrequency: "monthly", priority: 0.8 },
   { path: "/lead/2-agentes-leads-calientes",      changeFrequency: "monthly", priority: 0.8 },
+  { path: "/lead/claude-remote-control",          changeFrequency: "monthly", priority: 0.8 },
   { path: "/legal/privacidad",                    changeFrequency: "monthly", priority: 0.8 },
   { path: "/legal/terminos",                      changeFrequency: "monthly", priority: 0.8 },
   { path: "/guia/agentes-ia-ventas-b2b",          changeFrequency: "monthly", priority: 0.9 },
 ];
 
+// Pages without locale variants — single entry, no /en duplicate.
+const standaloneRoutes: Route[] = [
+  { path: "/ai-readiness", changeFrequency: "monthly", priority: 0.9 },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  return routes.flatMap(({ path, changeFrequency, priority }) => [
+  const bilingual = routes.flatMap(({ path, changeFrequency, priority }) => [
     // Spanish — default locale, no prefix (home → "/", rest → "/path")
     {
       url: `${BASE}${path || "/"}`,
@@ -42,4 +48,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority,
     },
   ]);
+
+  const standalone = standaloneRoutes.map(({ path, changeFrequency, priority }) => ({
+    url: `${BASE}${path}`,
+    lastModified: now,
+    changeFrequency,
+    priority,
+  }));
+
+  return [...bilingual, ...standalone];
 }
