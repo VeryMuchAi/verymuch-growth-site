@@ -806,6 +806,116 @@ export const dosAgentesLeadsCalientesConfig: LeadMagnetConfig = {
   },
 };
 
+// ─── Claude Remote Control Config ────────────────────────────────────────────
+
+export const remoteControlConfig: LeadMagnetConfig = {
+  slug: "claude-remote-control",
+  source: "linkedin",
+  campaign: "claude-remote-control",
+  notionUrl:
+    "https://www.notion.so/Claude-Remote-Control-Construye-Agentes-IA-desde-tu-M-vil-Gu-a-Completa-de-Configuraci-n-32c9fc1023f681498d3ad64246ab5808",
+
+  seo: {
+    title: "Claude Remote Control — Construye Agentes IA desde tu Movil | VeryMuch.ai",
+    description:
+      "Guia paso a paso para configurar Claude Code Remote Control. Inicia sesiones en tu ordenador y continua construyendo agentes IA desde tu movil. Configuracion en 10 minutos.",
+    ogTitle:
+      "Construye Agentes IA desde tu Movil con Claude Remote Control",
+    ogDescription:
+      "Guia completa de configuracion: lanza Claude Code en tu ordenador, continua desde cualquier lugar. 10 minutos de setup, acceso remoto completo.",
+  },
+
+  content: {
+    badge: "Guia Gratuita",
+    headline: "Construye Agentes IA desde tu Movil con Claude Remote Control",
+    highlightWords: "desde tu Movil",
+    subheadline:
+      "Guia completa para configurar Claude Code Remote Control en 10 minutos. Inicia una sesion en tu ordenador y continua construyendo desde cualquier lugar.",
+    bullets: [
+      "Configuracion paso a paso desde cero (incluso si nunca usaste el terminal)",
+      "Acceso remoto completo: prompts, aprobaciones y diffs en tiempo real",
+      "Casos de uso para equipos comerciales y builders",
+      "Solucion de problemas y trucos avanzados",
+      "Referencia rapida de comandos lista para copiar y pegar",
+    ],
+    includes: [
+      {
+        icon: "📱",
+        title: "Guia de configuracion completa",
+        description: "De cero a sesion remota funcionando en 10 minutos. Paso a paso con capturas.",
+      },
+      {
+        icon: "⚡",
+        title: "Referencia rapida de comandos",
+        description: "Todos los comandos que necesitas en una sola pagina. Copia, pega y listo.",
+      },
+      {
+        icon: "🛠️",
+        title: "Solucion de problemas",
+        description: "Los errores mas comunes y como resolverlos en segundos.",
+      },
+      {
+        icon: "💡",
+        title: "Casos de uso para equipos comerciales",
+        description: "Como usar Remote Control para construir y supervisar agentes IA sobre la marcha.",
+      },
+      {
+        icon: "✅",
+        title: "Checklist de configuracion",
+        description: "Lista verificable para asegurarte de que todo esta listo antes de empezar.",
+      },
+    ],
+    techStack: [
+      {
+        name: "Claude Code",
+        role: "CLI de Anthropic para coding con agentes IA. El motor que ejecuta todo.",
+        url: "https://docs.anthropic.com/en/docs/claude-code",
+      },
+      {
+        name: "Claude App (iOS/Android)",
+        role: "Tu ventana remota a la sesion. Envia prompts y aprueba acciones.",
+        url: "https://claude.ai/download",
+      },
+      {
+        name: "Node.js",
+        role: "Requisito previo para instalar Claude Code. Version 18 o superior.",
+        url: "https://nodejs.org",
+      },
+    ],
+    form: {
+      fields: [
+        {
+          name: "name",
+          label: "Nombre",
+          type: "text",
+          placeholder: "Tu nombre",
+          required: true,
+        },
+        {
+          name: "email",
+          label: "Email",
+          type: "email",
+          placeholder: "tu@empresa.com",
+          required: true,
+        },
+        {
+          name: "company",
+          label: "Empresa (opcional)",
+          type: "text",
+          placeholder: "Tu empresa",
+        },
+      ],
+      ctaLabel: "Recibir la Guia",
+      microcopy: "Gratis. Sin spam. Acceso inmediato.",
+    },
+    success: {
+      title: "Tu guia esta lista",
+      description: "Accede ahora a la guia completa de configuracion de Remote Control.",
+      ctaLabel: "Abrir la guia →",
+    },
+  },
+};
+
 // ─── Build registry — single immutable assignment, all configs present ─────────
 // Adding a new lead magnet: just append it to this array. No other changes needed.
 
@@ -815,6 +925,7 @@ const _ALL_CONFIGS: LeadMagnetConfig[] = [
   agenteInvestigacionComercialConfig,
   agentesIaB2bConfig,
   dosAgentesLeadsCalientesConfig,
+  remoteControlConfig,
 ];
 
 ALL_LEAD_MAGNETS = Object.fromEntries(_ALL_CONFIGS.map((c) => [c.slug, c]));
