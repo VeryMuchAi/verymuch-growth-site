@@ -46,6 +46,7 @@ interface PageContent {
     heading: string; intro: string; stats: StatItem[];
     paradoxTitle: string; paradox: string[];
     roundsTitle: string; rounds: string;
+    statsNote: string; statsNoteLink: string;
   };
   s4: {
     heading: string; intro: string;
@@ -53,6 +54,7 @@ interface PageContent {
     nuanceTitle: string; nuances: string[];
     caseTitle: string; caseText: string;
     highlight: string;
+    statsNote: string; statsNoteLink: string;
   };
   s5: {
     heading: string; intro: string;
@@ -190,6 +192,8 @@ const es: PageContent = {
       "Gartner proyecta que más del 40% de los proyectos de IA iniciados en 2025-2026 se cancelarán antes de producción, principalmente por problemas de calidad de datos y expectativas mal gestionadas.",
       "El dinero de riesgo lo confirma: 11x.ai levantó $76M, Regie.ai $50.8M, Artisan $39–46M en los últimos 18 meses. Pero la mayoría de esas empresas venden herramientas, no resultados.",
     ],
+    statsNote: "Cifras en dólares (USD). Fuentes: ResearchAndMarkets, Gartner, McKinsey",
+    statsNoteLink: "ver fuentes completas",
     roundsTitle: "Lo que dice el dinero",
     rounds: "Las rondas de financiación reflejan donde está la apuesta, no donde está la ejecución. La oportunidad real no está en construir las herramientas, está en saber implementarlas. La mayoría de empresas que adoptan IA lo hacen sin un proceso claro. Ese es el gap.",
   },
@@ -209,7 +213,9 @@ const es: PageContent = {
       "El caso SaaStr es el más citado: $5M de pipeline generado, $2.4M cerrados en 8 meses. Pero requirió 15–20 horas semanales de supervisión senior. No funciona sin supervisión activa.",
     ],
     caseTitle: "El caso SaaStr en detalle",
-    caseText: "$5M de pipeline generado, $2.4M cerrados en 8 meses con un agente de ventas. ROI positivo y claro. Pero el equipo dedicó 15–20 horas semanales a supervisión, ajuste de instrucciones del agente y revisión de calidad. Los mejores resultados vienen cuando alguien interno domina la herramienta.",
+    caseText: "$5M de pipeline generado, $2.4M cerrados en 8 meses con un agente de ventas. ROI positivo y claro. Pero el equipo dedicó 15–20 horas semanales a supervisión, ajuste de instrucciones del agente y revisión de calidad. Los mejores resultados vienen cuando alguien del equipo interno domina la herramienta y la va afinando con el tiempo. No es una instalación, es un proceso de mejora continua.",
+    statsNote: "Cifras en dólares (USD). Fuentes: Gartner, McKinsey, Qualified, HubSpot State of Sales 2025",
+    statsNoteLink: "ver fuentes completas",
     highlight: "Los agentes son mejores que un representante de ventas promedio. No superan a tus mejores vendedores. El modelo que gana es el híbrido: agente que genera volumen y contexto, humano que construye relación y cierra.",
   },
   s5: {
@@ -527,6 +533,8 @@ const en: PageContent = {
       "Gartner projects that more than 40% of AI projects started in 2025–2026 will be cancelled before production, mainly due to data quality issues and mismanaged expectations.",
       "Venture capital confirms the bet: 11x.ai raised $76M, Regie.ai $50.8M, Artisan $39–46M in the last 18 months. But most of those companies sell tools, not results.",
     ],
+    statsNote: "Figures in USD. Sources: ResearchAndMarkets, Gartner, McKinsey",
+    statsNoteLink: "see all sources",
     roundsTitle: "What the money says",
     rounds: "Funding rounds reflect where the bet is, not where the execution is. The real opportunity isn't building the tools, it's knowing how to implement them. Most companies adopting AI do so without a clear process. That's the gap.",
   },
@@ -546,7 +554,9 @@ const en: PageContent = {
       "The SaaStr case is the most cited: $5M pipeline generated, $2.4M closed in 8 months. But it required 15–20 hours of senior supervision per week. It requires active supervision.",
     ],
     caseTitle: "The SaaStr case in detail",
-    caseText: "$5M in pipeline generated, $2.4M closed in 8 months with an AI sales rep agent. Clear, positive ROI. But the team spent 15–20 hours per week on supervision, prompt tuning, and quality review. The best results come when someone internal masters the tool.",
+    caseText: "$5M in pipeline generated, $2.4M closed in 8 months with an AI sales rep agent. Clear, positive ROI. But the team spent 15–20 hours per week on supervision, prompt tuning, and quality review. The best results come when someone on the internal team masters the tool and keeps refining it over time. It's not an installation, it's a continuous improvement process.",
+    statsNote: "Figures in USD. Sources: Gartner, McKinsey, Qualified, HubSpot State of Sales 2025",
+    statsNoteLink: "see all sources",
     highlight: "Agents outperform the average sales rep. They don't beat your best performers. The winning model is hybrid: agent generates volume and context, human builds relationship and closes.",
   },
   s5: {
@@ -1049,6 +1059,12 @@ export default async function PillarPage({ params }: Props) {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
               {c.s3.stats.map((s) => <StatCard key={s.stat} stat={s.stat} label={s.label} />)}
             </div>
+            <p className="text-xs mb-6" style={{ color: "var(--text-secondary)" }}>
+              {c.s3.statsNote} ·{" "}
+              <a href="#fuentes" className="hover:underline" style={{ color: "var(--accent-text)" }}>
+                {c.s3.statsNoteLink} ↓
+              </a>
+            </p>
             <p className="text-sm font-bold mb-3" style={{ color: "var(--text-primary)" }}>{c.s3.paradoxTitle}</p>
             <ul className="flex flex-col gap-3 mb-6">
               {c.s3.paradox.map((item) => (
@@ -1075,6 +1091,12 @@ export default async function PillarPage({ params }: Props) {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
               {c.s4.stats.map((s) => <StatCard key={s.label} stat={s.stat} label={s.label} />)}
             </div>
+            <p className="text-xs mb-6" style={{ color: "var(--text-secondary)" }}>
+              {c.s4.statsNote} ·{" "}
+              <a href="#fuentes" className="hover:underline" style={{ color: "var(--accent-text)" }}>
+                {c.s4.statsNoteLink} ↓
+              </a>
+            </p>
             <p className="text-sm font-bold mb-3" style={{ color: "var(--text-primary)" }}>{c.s4.nuanceTitle}</p>
             <ul className="flex flex-col gap-3 mb-6">
               {c.s4.nuances.map((item) => (
