@@ -130,7 +130,7 @@ const es: PageContent = {
   toc: {
     label: "En este artículo",
     items: [
-      { id: "que-es",          label: "Qué es un agente de IA (y qué no es)" },
+      { id: "que-es",          label: "¿Qué es un agente de IA (y qué no es)?" },
       { id: "mercado",         label: "El mercado en números" },
       { id: "roi",             label: "ROI real: lo que dicen los datos" },
       { id: "5-agentes",       label: "Los 5 agentes que necesitas" },
@@ -149,7 +149,7 @@ const es: PageContent = {
     sources: "Cruzando McKinsey, Gartner, Bain, Forrester, ResearchAndMarkets, SaaStr, Stanford SLEI, EY LATAM, IndesIA y más de 80 fuentes verificadas.",
   },
   s2: {
-    heading: "1. Qué es un agente de IA para ventas (y qué no es)",
+    heading: "1. ¿Qué es un agente de IA para ventas (y qué no es)?",
     p1: "La industria tiene un problema grave de vocabulario. Todo se llama \"IA\" y todo se llama \"agente\". Gartner lo llama agentwashing: de los miles de proveedores que dicen tener capacidades de agentes autónomos, solo ~130 tienen algo genuinamente diferente a una automatización con un modelo de IA encima.",
     p2: "La diferencia real está en la arquitectura:",
     tradTitle: "Automatización tradicional",
