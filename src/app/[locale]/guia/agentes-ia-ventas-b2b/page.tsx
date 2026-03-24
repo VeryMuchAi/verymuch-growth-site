@@ -318,7 +318,7 @@ const es: PageContent = {
     errors: [
       {
         title: "Automatizar un proceso que no funciona manualmente",
-        desc: "Si tu proceso de prospección manual no convierte, el agente no lo va a arreglar, lo va a escalar a mayor velocidad. El resultado es más actividad con los mismos malos resultados, pero más visible. Primero valida el proceso con humanos. Cuando funciona manualmente, automatiza.",
+        desc: "Si tu proceso de prospección manual no convierte, el agente no lo va a arreglar, lo va a escalar a mayor velocidad. El resultado es más actividad con los mismos malos resultados, pero más visible. Primero valida el proceso con humanos. Cuando funciona manualmente, automatiza e implementa agentes.",
       },
       {
         title: "CRM con datos sucios",
@@ -661,7 +661,7 @@ const en: PageContent = {
     errors: [
       {
         title: "Automating a process that doesn't work manually",
-        desc: "If your manual prospecting process doesn't convert, the agent won't fix it, it will scale it at higher speed. The result is more activity with the same bad results, but more visible. First validate the process with humans. When it works manually, automate.",
+        desc: "If your manual prospecting process doesn't convert, the agent won't fix it, it will scale it at higher speed. The result is more activity with the same bad results, but more visible. First validate the process with humans. When it works manually, automate and deploy agents.",
       },
       {
         title: "Dirty CRM data",
