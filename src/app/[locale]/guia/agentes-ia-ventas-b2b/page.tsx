@@ -425,7 +425,7 @@ const es: PageContent = {
       },
       {
         q: "¿Qué pasa si no tengo CRM?",
-        a: "Podemos empezar con Google Sheets o Notion como punto de partida. Sin embargo, si tienes más de 3 personas en el equipo comercial, el primer paso real debería ser adoptar un CRM básico (HubSpot free es suficiente). Un agente sobre datos desorganizados produce resultados desorganizados.",
+        a: "Podemos empezar con Google Sheets o Notion como punto de partida, pero si tienes más de 3 personas en el equipo comercial, lo primero es adoptar un CRM. Somos agnósticos: trabajamos con Go High Level (el que usamos internamente y recomendamos para equipos que quieren un sistema todo en uno), Pipedrive, Zoho, HubSpot, Salesforce y otros. El mejor CRM no es el más conocido, es el que tu equipo realmente va a usar y mantener limpio. Dependiendo del tamaño del equipo, el sector y el proceso de ventas, uno encaja mejor que otro. Lo evaluamos contigo antes de recomendar. Un agente sobre datos desorganizados produce resultados desorganizados, independientemente del CRM.",
       },
       {
         q: "¿Qué es el modelo AaaS?",
@@ -773,7 +773,7 @@ const en: PageContent = {
       },
       {
         q: "What if I don't have a CRM?",
-        a: "We can start with Google Sheets or Notion as a starting point. However, if you have more than 3 people on the sales team, the real first step should be adopting a basic CRM (HubSpot free is sufficient). An agent on disorganized data produces disorganized results.",
+        a: "We can start with Google Sheets or Notion as a starting point, but if you have more than 3 people on the sales team, the first step is adopting a CRM. We're tool-agnostic: we work with Go High Level (what we use internally and recommend for teams that want an all-in-one system), Pipedrive, Zoho, HubSpot, Salesforce, and others. The best CRM isn't the most well-known one, it's the one your team will actually use and keep clean. Depending on team size, industry, and sales process, one fits better than another. We evaluate that with you before making a recommendation. An agent on disorganized data produces disorganized results, regardless of the CRM.",
       },
       {
         q: "What is the AaaS model?",
