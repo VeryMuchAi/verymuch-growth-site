@@ -83,8 +83,10 @@ interface PageContent {
   };
   s9: {
     heading: string; intro: string;
-    markets: { flag: string; name: string; desc: string }[];
+    markets: { flag: string; name: string; desc: string; source: string }[];
     highlight: string;
+    sourceLabel: string;
+    sourceLinkLabel: string;
   };
   s10: {
     heading: string; intro: string;
@@ -342,23 +344,29 @@ const es: PageContent = {
         flag: "🇪🇸",
         name: "España",
         desc: "El 70% de las empresas usa IA de forma diaria, pero solo el 21.6% tiene integración estratégica real. Kit Digital financia hasta 19.000€ para soluciones de IA. El gap entre adopción táctica y estratégica es la oportunidad.",
+        source: "IndesIA Spain 2025, OECD AI Policy Observatory",
       },
       {
         flag: "🇲🇽",
         name: "México",
         desc: "El 72% de empresas medianas ya adoptó IA en alguna forma, pero solo el 14% tiene capacidades reales de agentes autónomos. WhatsApp domina la comunicación B2B, los agentes que integran WhatsApp como canal principal superan a los que solo hacen email.",
+        source: "EY LATAM Digitalization Report, Stanford SLEI",
       },
       {
         flag: "🇨🇴",
         name: "Colombia",
         desc: "El 22% de empresas colombianas ya implementó IA en más del 40% de sus procesos, el doble del promedio regional latinoamericano. Mercado con mayor velocidad de adopción en la región.",
+        source: "EY LATAM Digitalization Report",
       },
       {
         flag: "🇺🇸",
         name: "EE.UU. hispano",
         desc: "5M+ negocios hispanos. Tasa de adopción de IA al doble que empresas no hispanas en el mismo segmento. Cero agencias dedicadas que resuelvan ventas B2B con IA en español. La brecha es enorme.",
+        source: "Stanford SLEI, US Small Business Administration",
       },
     ],
+    sourceLabel: "Fuente:",
+    sourceLinkLabel: "ver fuentes",
     highlight: "Quien construya la primera agencia de escala que resuelva ventas B2B con IA en español capturará un mercado enorme con competencia mínima. Nosotros ya lo estamos construyendo.",
   },
   s10: {
@@ -685,16 +693,19 @@ const en: PageContent = {
         flag: "🇪🇸",
         name: "Spain",
         desc: "70% of companies use AI daily, but only 21.6% have real strategic integration. Kit Digital funds up to €19,000 for AI solutions. The gap between tactical and strategic adoption is the opportunity.",
+        source: "IndesIA Spain 2025, OECD AI Policy Observatory",
       },
       {
         flag: "🇲🇽",
         name: "Mexico",
         desc: "72% of mid-market companies already adopted AI in some form, but only 14% have real agentic capabilities. WhatsApp dominates B2B communication, agents that integrate WhatsApp as primary channel outperform email-only ones.",
+        source: "EY LATAM Digitalization Report, Stanford SLEI",
       },
       {
         flag: "🇨🇴",
         name: "Colombia",
         desc: "22% of Colombian companies have already implemented AI in 40%+ of their processes, double the regional Latin American average. The fastest-adoption market in the region.",
+        source: "EY LATAM Digitalization Report",
       },
       {
         flag: "🇺🇸",
@@ -702,6 +713,8 @@ const en: PageContent = {
         desc: "5M+ Hispanic businesses. AI adoption rate at twice that of non-Hispanic businesses in the same segment. Zero dedicated agencies solving B2B sales with AI in Spanish. The gap is enormous.",
       },
     ],
+    sourceLabel: "Source:",
+    sourceLinkLabel: "see all sources",
     highlight: "Whoever builds the first at-scale agency that solves B2B sales with AI in Spanish will capture an enormous market with minimal competition. We're already building it.",
   },
   s10: {
@@ -1296,7 +1309,13 @@ export default async function PillarPage({ params }: Props) {
                 >
                   <p className="text-xl mb-2">{market.flag}</p>
                   <h3 className="text-sm font-bold mb-2" style={{ color: "var(--text-primary)" }}>{market.name}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{market.desc}</p>
+                  <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--text-secondary)" }}>{market.desc}</p>
+                  <p className="text-xs" style={{ color: "var(--text-secondary)", opacity: 0.6 }}>
+                    {c.s9.sourceLabel} {market.source} ·{" "}
+                    <a href="#fuentes" className="hover:underline" style={{ color: "var(--accent-text)" }}>
+                      {c.s9.sourceLinkLabel} ↓
+                    </a>
+                  </p>
                 </div>
               ))}
             </div>
