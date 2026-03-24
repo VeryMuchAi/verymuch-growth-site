@@ -711,6 +711,7 @@ const en: PageContent = {
         flag: "🇺🇸",
         name: "US Hispanic",
         desc: "5M+ Hispanic businesses. AI adoption rate at twice that of non-Hispanic businesses in the same segment. Zero dedicated agencies solving B2B sales with AI in Spanish. The gap is enormous.",
+        source: "Stanford SLEI, US Small Business Administration",
       },
     ],
     sourceLabel: "Source:",
