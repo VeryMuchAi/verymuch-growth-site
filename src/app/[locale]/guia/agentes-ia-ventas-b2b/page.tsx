@@ -405,7 +405,7 @@ const es: PageContent = {
     items: [
       {
         q: "¿Cuánto cuesta implementar un agente de IA para ventas?",
-        a: "Depende del alcance. Un agente básico (prospección o lead routing) puede implementarse en 2–3 semanas por €3.000–€8.000 en modalidad de instalación (el agente es tuyo). El modelo AaaS parte de €1.500/mes e incluye operación, iteraciones y soporte continuo. Los costes de uso de los modelos de IA suelen ser €50–€300/mes según volumen.",
+        a: "Depende del alcance. Podemos implementar algo funcional desde $1.000 USD para casos de uso específicos y bien definidos. Un agente más completo (prospección o enrutamiento de leads) está entre $3.000 y $8.000 en modalidad de instalación, donde el agente queda en tu infraestructura y es tuyo. El modelo AaaS parte de $1.500/mes e incluye operación, iteraciones y soporte continuo. Los costes de uso de los modelos de IA suelen ser $50–$300/mes según volumen.",
       },
       {
         q: "¿Los agentes reemplazan al equipo de ventas?",
@@ -753,7 +753,7 @@ const en: PageContent = {
     items: [
       {
         q: "How much does it cost to implement an AI sales agent?",
-        a: "It depends on scope. A basic agent (prospecting or lead routing) can be implemented in 2–3 weeks for €3,000–€8,000 in installation mode (the agent is yours). The AaaS model starts at €1,500/month and includes operation, iterations and ongoing support. AI model running costs are typically €50–€300/month depending on volume.",
+        a: "It depends on scope. We can implement something functional starting from $1,000 USD for specific, well-defined use cases. A more complete agent (prospecting or lead routing) runs between $3,000 and $8,000 in installation mode, where the agent lives in your infrastructure and is yours. The AaaS model starts at $1,500/month and includes operation, iterations and ongoing support. AI model running costs are typically $50–$300/month depending on volume.",
       },
       {
         q: "Do agents replace the sales team?",
