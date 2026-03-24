@@ -367,7 +367,7 @@ const es: PageContent = {
     ],
     sourceLabel: "Fuente:",
     sourceLinkLabel: "ver fuentes",
-    highlight: "Quien construya la primera agencia de escala que resuelva ventas B2B con IA en español capturará un mercado enorme con competencia mínima. Nosotros ya lo estamos construyendo.",
+    highlight: "Quien construya la primera agencia de escala que resuelva ventas B2B con IA en español capturará un mercado enorme con competencia mínima. Nosotros ya lo estamos construyendo, trabajando con empresas de distintas industrias y países. Lo que vemos en el camino: las empresas más ágiles y con cultura tecnológica implementan más rápido, ajustan con más criterio y empiezan a ver resultados antes. No es solo velocidad, es la capacidad de aprender del agente y mejorarlo continuamente.",
   },
   s10: {
     heading: "9. Lo que viene: 5 tendencias que definirán los próximos 18 meses",
@@ -715,7 +715,7 @@ const en: PageContent = {
     ],
     sourceLabel: "Source:",
     sourceLinkLabel: "see all sources",
-    highlight: "Whoever builds the first at-scale agency that solves B2B sales with AI in Spanish will capture an enormous market with minimal competition. We're already building it.",
+    highlight: "Whoever builds the first at-scale agency that solves B2B sales with AI in Spanish will capture an enormous market with minimal competition. We're already building it, working with companies across industries and countries. What we see along the way: the most agile, tech-forward companies implement faster, adjust with better judgment, and start seeing results sooner. It's not just speed, it's the ability to learn from the agent and keep improving it.",
   },
   s10: {
     heading: "9. What's coming: 5 trends that will define the next 18 months",
