@@ -913,6 +913,8 @@ export const remoteControlConfig: LeadMagnetConfig = {
       description: "Accede ahora a la guia completa de configuracion de Remote Control.",
       ctaLabel: "Abrir la guia →",
     },
+    ctaHeadline: "Construye agentes IA desde tu movil",
+    ctaHighlight: "en 10 minutos",
   },
 };
 
