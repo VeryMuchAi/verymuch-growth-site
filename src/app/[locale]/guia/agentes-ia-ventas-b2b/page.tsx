@@ -420,8 +420,8 @@ const es: PageContent = {
         a: "Lo mínimo viable: un CRM con datos medianamente limpios y un dominio de email con buena reputación. No necesitas n8n, Clay ni ninguna herramienta específica antes de empezar, eso forma parte del diseño de la solución.",
       },
       {
-        q: "¿Los agentes funcionan en español?",
-        a: "Sí, sin pérdida de calidad relevante. Claude y GPT-4o generan mensajes en español de la misma calidad que en inglés. Todos nuestros agentes para el mercado hispano operan en español nativo, incluyendo integración con WhatsApp para México y Colombia.",
+        q: "¿En qué idiomas funcionan los agentes?",
+        a: "En español e inglés con la misma calidad, y en otros idiomas según el proyecto. Claude y GPT-4o generan mensajes en ambos idiomas sin diferencia de calidad perceptible, lo que es clave para equipos que operan en mercados mixtos o que tienen prospectos en EE.UU. en inglés y en LATAM o España en español. Podemos configurar el mismo agente para que opere en varios idiomas simultáneamente, adaptando el tono y el canal según el perfil del prospecto. También hemos trabajado con agentes en portugués, francés e italiano para mercados específicos.",
       },
       {
         q: "¿Qué pasa si no tengo CRM?",
@@ -768,8 +768,8 @@ const en: PageContent = {
         a: "The minimum viable set: a CRM with reasonably clean data and an email domain with good reputation. You don't need n8n, Clay, or any specific tool before starting, that's part of the solution design.",
       },
       {
-        q: "Do agents work in Spanish?",
-        a: "Yes, without significant quality loss. Claude and GPT-4o generate messages in Spanish at the same quality as in English. All our agents for the Hispanic market operate in native Spanish, including WhatsApp integration for Mexico and Colombia.",
+        q: "What languages do agents work in?",
+        a: "Spanish and English at the same quality level, and other languages depending on the project. Claude and GPT-4o generate messages in both languages with no perceptible quality difference — which is key for teams operating in mixed markets or those with prospects in the US in English and in LATAM or Spain in Spanish. We can configure the same agent to operate in multiple languages simultaneously, adapting tone and channel to the prospect's profile. We've also worked with agents in Portuguese, French, and Italian for specific markets.",
       },
       {
         q: "What if I don't have a CRM?",
