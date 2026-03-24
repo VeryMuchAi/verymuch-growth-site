@@ -395,8 +395,8 @@ const es: PageContent = {
       },
       {
         num: "05",
-        title: "GEO redefine cómo llegan los leads B2B",
-        desc: "El 60% de las búsquedas ya son zero-click, el usuario encuentra la respuesta en la SERP o en el resumen de IA sin visitar el sitio. ChatGPT, Perplexity y Google AI Overviews generan recomendaciones de proveedores. Las empresas que optimicen para ser citadas por IA (GEO) ganarán pipeline orgánico que las que solo hacen SEO tradicional no ven.",
+        title: "La optimización para IA redefine cómo llegan los leads B2B",
+        desc: "El 60% de las búsquedas ya terminan sin que el usuario visite ningún sitio: encuentra la respuesta directamente en Google, ChatGPT o Perplexity. Esto cambia cómo llegan los clientes potenciales. Antes, las empresas competían por aparecer en los primeros resultados de búsqueda (SEO). Ahora también compiten por ser las que los sistemas de IA recomiendan cuando alguien pregunta 'qué empresa me ayuda con X'. Esa nueva disciplina se llama GEO (Generative Engine Optimization). Las empresas que optimicen para ser citadas por IA ganarán oportunidades de negocio que las que solo hacen posicionamiento web tradicional no verán.",
       },
     ],
   },
@@ -743,8 +743,8 @@ const en: PageContent = {
       },
       {
         num: "05",
-        title: "GEO redefines how B2B leads arrive",
-        desc: "60% of searches are already zero-click, the user finds the answer in the SERP or AI summary without visiting the site. ChatGPT, Perplexity and Google AI Overviews generate vendor recommendations. Companies optimizing to be cited by AI (GEO) will win organic pipeline that SEO-only companies won't see.",
+        title: "AI-search optimization redefines how B2B leads arrive",
+        desc: "60% of searches now end without the user visiting any website: they find the answer directly in Google, ChatGPT, or Perplexity. This changes how potential customers discover you. Previously, companies competed to appear at the top of search results (SEO — Search Engine Optimization). Now they also compete to be the ones AI systems recommend when someone asks 'which company can help me with X'. That new discipline is called GEO (Generative Engine Optimization). Companies that optimize to be cited by AI will win business opportunities that traditional search-only companies won't see.",
       },
     ],
   },
