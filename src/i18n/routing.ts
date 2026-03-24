@@ -5,4 +5,5 @@ export const routing = defineRouting({
   defaultLocale: "es",
   // Default locale (es) has no prefix: / → Spanish, /en → English
   localePrefix: "as-needed",
+  localeDetection: false,
 });
