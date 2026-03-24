@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://www.verymuch.ai",
+  siteUrl: "https://verymuch.ai",
   generateRobotsTxt: false,       // using our own /public/robots.txt
   generateIndexSitemap: false,
   outDir: "public",
@@ -30,9 +30,9 @@ module.exports = {
       priority,
       lastmod:    new Date().toISOString(),
       alternateRefs: [
-        { href: `https://www.verymuch.ai${esPath}`, hreflang: "es" },
-        { href: `https://www.verymuch.ai${enPath}`, hreflang: "en" },
-        { href: `https://www.verymuch.ai${esPath}`, hreflang: "x-default" },
+        { href: `https://verymuch.ai${esPath}`, hreflang: "es" },
+        { href: `https://verymuch.ai${enPath}`, hreflang: "en" },
+        { href: `https://verymuch.ai${esPath}`, hreflang: "x-default" },
       ],
     };
   },
