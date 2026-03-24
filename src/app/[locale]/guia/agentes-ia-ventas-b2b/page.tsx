@@ -386,7 +386,7 @@ const es: PageContent = {
       {
         num: "03",
         title: "Cobrar por resultados reemplaza el pago por licencia",
-        desc: "El modelo de cobrar una tarifa fija por usuario, sin importar los resultados, cayó del 21% al 15% del mercado en 18 meses. El modelo que crece: cobrar por reunión agendada, por deal calificado, por pipeline generado. Alinea incentivos correctamente. Obliga a los proveedores a mejorar la tecnología en lugar de vender licencias.",
+        desc: "El modelo de cobrar una tarifa fija por usuario, sin importar los resultados, cayó del 21% al 15% del mercado en 18 meses. El modelo que crece: cobrar por reunión agendada, por deal calificado, por pipeline generado. Alinea incentivos correctamente. Obliga a los proveedores a mejorar la tecnología en lugar de vender licencias, y a mantener el agente actualizado con las mejores herramientas disponibles para que los resultados mejoren con el tiempo.",
       },
       {
         num: "04",
@@ -734,7 +734,7 @@ const en: PageContent = {
       {
         num: "03",
         title: "Results-based pricing replaces per-user flat fees",
-        desc: "The flat per-user subscription model in sales software fell from 21% to 15% of the market in 18 months. The growing model: charging per meeting booked, per qualified deal, per pipeline generated. Correctly aligns incentives. Forces vendors to improve technology rather than sell licenses.",
+        desc: "The flat per-user subscription model in sales software fell from 21% to 15% of the market in 18 months. The growing model: charging per meeting booked, per qualified deal, per pipeline generated. Correctly aligns incentives. Forces vendors to improve technology rather than sell licenses, and to keep the agent updated with the best available tools so results improve over time.",
       },
       {
         num: "04",
