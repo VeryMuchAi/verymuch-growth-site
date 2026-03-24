@@ -530,7 +530,7 @@ export default async function HomePage({ params }: Props) {
               }}
             />
             <div className="flex-shrink-0 relative">
-              <IconBlock icon="book-open" color="mint" size="lg" />
+              <IconBlock icon="file-text" color="teal" size="lg" />
             </div>
             <div className="flex-1 min-w-0 relative">
               <span
