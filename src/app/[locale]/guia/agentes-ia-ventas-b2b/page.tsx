@@ -290,7 +290,7 @@ const es: PageContent = {
         num: "01",
         title: "Preparación",
         weeks: "2–4 semanas",
-        desc: "Define un objetivo único y medible: no 'mejorar ventas' sino 'reducir tiempo de respuesta inbound a <60s' o 'aumentar reuniones de prospección outbound en 30%'. Audita el CRM: si más del 30% de los registros tienen campos clave vacíos, el primer sprint es de limpieza de datos, no de IA. Revisa compliance: GDPR en Europa, legislación local en LATAM para comunicaciones comerciales automatizadas.",
+        desc: "Define un objetivo único y medible: no 'mejorar ventas' sino 'reducir tiempo de respuesta inbound a <60s' o 'aumentar reuniones de prospección outbound en 30%'. Audita el CRM: si más del 30% de los registros tienen campos clave vacíos, el primer sprint es de limpieza de datos, no de IA. Revisa las obligaciones legales según tu mercado: GDPR en Europa (requiere base legal para procesar datos de contacto), CAN-SPAM y TCPA en EE.UU. (regula email comercial y mensajes automatizados, con opt-out obligatorio y restricciones en llamadas y SMS), CCPA en California (derechos de privacidad similares al GDPR para residentes del estado), y legislación local en México, Colombia y España para comunicaciones comerciales automatizadas.",
       },
       {
         num: "02",
@@ -633,7 +633,7 @@ const en: PageContent = {
         num: "01",
         title: "Preparation",
         weeks: "2–4 weeks",
-        desc: "Define one single measurable objective: not 'improve sales' but 'reduce inbound response time to <60s' or 'increase outbound prospecting meetings by 30%'. Audit the CRM: if more than 30% of records have key fields empty, the first sprint is data cleanup, not AI. Review compliance: GDPR in Europe, local legislation in LATAM for automated commercial communications.",
+        desc: "Define one single measurable objective: not 'improve sales' but 'reduce inbound response time to <60s' or 'increase outbound prospecting meetings by 30%'. Audit the CRM: if more than 30% of records have key fields empty, the first sprint is data cleanup, not AI. Review your legal obligations by market: GDPR in Europe (requires a legal basis to process contact data), CAN-SPAM and TCPA in the US (regulates commercial email and automated messages, with mandatory opt-out and restrictions on automated calls and SMS), CCPA in California (privacy rights similar to GDPR for state residents), and local legislation in Mexico, Colombia and Spain for automated commercial communications.",
       },
       {
         num: "02",
