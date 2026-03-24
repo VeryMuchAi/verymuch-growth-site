@@ -376,7 +376,7 @@ const es: PageContent = {
       {
         num: "01",
         title: "Arquitecturas multi-agente con MCP y A2A",
-        desc: "El protocolo MCP (Model Context Protocol) de Anthropic y el estándar A2A (Agent-to-Agent) están creando el primer lenguaje común para que agentes de distintos proveedores se coordinen. En ventas: el agente de prospección le pasa contexto al de pre-call, que se lo pasa al de follow-up. Sin intervención humana entre pasos. Los primeros sistemas de este tipo están en producción ahora.",
+        desc: "El protocolo MCP (Model Context Protocol) de Anthropic y el estándar A2A (Agent-to-Agent) están creando el primer lenguaje común para que agentes de distintos proveedores se coordinen. En ventas: el agente de prospección le pasa contexto al de preparación de reunión, que se lo pasa al de seguimiento. Sin intervención humana entre pasos. Nosotros hemos construido nuestro propio sistema de inteligencia comercial sobre esta arquitectura y estamos viendo algo que nos sorprende: cuando el agente entiende bien al prospecto en cada etapa, la conversión no termina en el cierre. El cliente satisfecho se convierte en alguien que quiere seguir trabajando contigo y que te recomienda. El pipeline se alimenta solo.",
       },
       {
         num: "02",
@@ -724,7 +724,7 @@ const en: PageContent = {
       {
         num: "01",
         title: "Multi-agent architectures with MCP and A2A",
-        desc: "Anthropic's MCP (Model Context Protocol) and the A2A (Agent-to-Agent) standard are creating the first common language for agents from different providers to coordinate. In sales: the prospecting agent passes context to the pre-call agent, which passes it to the follow-up agent. No human intervention between steps. The first systems of this type are in production now.",
+        desc: "Anthropic's MCP (Model Context Protocol) and the A2A (Agent-to-Agent) standard are creating the first common language for agents from different providers to coordinate. In sales: the prospecting agent passes context to the meeting-prep agent, which passes it to the follow-up agent. No human intervention between steps. We've built our own commercial intelligence system on this architecture and we're seeing something that surprises us: when the agent truly understands the prospect at every stage, conversion doesn't end at the close. The satisfied client becomes someone who wants to keep working with you and refers others. The pipeline feeds itself.",
       },
       {
         num: "02",
