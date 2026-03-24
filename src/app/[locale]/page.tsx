@@ -516,6 +516,44 @@ export default async function HomePage({ params }: Props) {
             </span>
           </a>
 
+          {/* Featured Guide — Agentes de IA para Ventas B2B */}
+          <Link
+            href="/guia/agentes-ia-ventas-b2b"
+            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-5 card-elevated transition-all duration-200 card-hover-mint"
+            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div
+              className="absolute inset-0 pointer-events-none rounded-2xl"
+              style={{
+                background:
+                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(90,212,174,0.07) 0%, rgba(245,160,64,0.04) 60%, transparent 100%)",
+              }}
+            />
+            <div className="flex-shrink-0 relative">
+              <IconBlock icon="book-open" color="mint" size="lg" />
+            </div>
+            <div className="flex-1 min-w-0 relative">
+              <span
+                className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] inline-block mb-3"
+                style={{ background: "rgba(245,160,64,0.15)", color: "var(--accent-warm-text)" }}
+              >
+                Guía completa
+              </span>
+              <h3 className="text-lg font-bold leading-snug mb-2" style={{ color: "var(--text-primary)" }}>
+                Agentes de IA para Ventas B2B: Guía Completa 2026
+              </h3>
+              <p className="text-sm leading-relaxed max-w-xl" style={{ color: "var(--text-secondary)" }}>
+                Datos reales de McKinsey, Gartner, Bain y +80 fuentes. Sin teoría vacía. ROI, implementación y los 5 agentes que necesitas.
+              </p>
+            </div>
+            <span
+              className="flex-shrink-0 text-sm font-bold whitespace-nowrap relative"
+              style={{ color: "var(--accent-text)" }}
+            >
+              Leer la guía →
+            </span>
+          </Link>
+
           {/* Live */}
           <div className="grid sm:grid-cols-2 gap-5 mb-5">
             {LEAD_MAGNETS_LIVE.map((lm) => (
