@@ -19,6 +19,7 @@ const routes: Route[] = [
   { path: "/lead/20-agentes-ia-b2b",              changeFrequency: "monthly", priority: 0.8 },
   { path: "/lead/2-agentes-leads-calientes",      changeFrequency: "monthly", priority: 0.8 },
   { path: "/lead/claude-skills-linkedin",         changeFrequency: "monthly", priority: 0.8 },
+  { path: "/6-agentes-ia",                        changeFrequency: "monthly", priority: 0.8 },
   { path: "/legal/privacidad",                    changeFrequency: "monthly", priority: 0.8 },
   { path: "/legal/terminos",                      changeFrequency: "monthly", priority: 0.8 },
   { path: "/guia/agentes-ia-ventas-b2b",          changeFrequency: "monthly", priority: 0.9 },
