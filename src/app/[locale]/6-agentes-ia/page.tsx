@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { sixAgentsConfig } from "@/lib/lead-magnet";
 import LeadMagnetPage from "@/components/LeadMagnetPage";
 
-const { seo } = sixAgentsConfig;
+const { seo, content } = sixAgentsConfig;
 
 const BASE_URL = "https://verymuch.ai";
 const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
@@ -39,7 +39,49 @@ export const metadata: Metadata = {
   },
 };
 
+// ─── JSON-LD structured data ───────────────────────────────────────────────────
+
+const webPageJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: seo.title,
+  description: seo.description,
+  url: `${BASE_URL}${esPath}`,
+  inLanguage: "es",
+  isPartOf: { "@type": "WebSite", url: BASE_URL, name: "VeryMuch.ai" },
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Recursos", item: `${BASE_URL}/#resources` },
+      { "@type": "ListItem", position: 3, name: content.headline, item: `${BASE_URL}${esPath}` },
+    ],
+  },
+};
+
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: content.headline,
+  description: content.subheadline,
+  url: `${BASE_URL}${esPath}`,
+  numberOfItems: content.bullets.length,
+  itemListElement: content.bullets.map((bullet, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: bullet,
+  })),
+};
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
+
 export default function SixAgentesIaPage() {
   const guideUrl = process.env.NOTION_URL_6_AGENTES ?? process.env.NOTION_URL ?? "#";
-  return <LeadMagnetPage config={sixAgentsConfig} guideUrl={guideUrl} />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
+      <LeadMagnetPage config={sixAgentsConfig} guideUrl={guideUrl} />
+    </>
+  );
 }

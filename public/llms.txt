@@ -45,6 +45,14 @@ Plataforma para conectar empresas con profesionales especializados en implementa
 - CRM: GoHighLevel, HubSpot, Salesforce
 - Desarrollo: Next.js, TypeScript, Supabase, Vercel
 
+## Recursos gratuitos (lead magnets)
+
+Guías técnicas gratuitas con workflows reales, stack y costes detallados:
+
+- **Los 6 Agentes IA que gestionan tu negocio**: Sistema para hacer el trabajo de +100.000€ en contrataciones con 6 agentes IA (Cazador de Señales, CRM Ops, Sales Coach, Cerebro, Motor de Contenido, Developer) por menos de 800€/mes. Incluye flujos n8n, prompts de Claude y análisis de ROI. URL: https://verymuch.ai/6-agentes-ia
+- **Agente de Ventas IA por Señales de LinkedIn**: Detecta señales de intención en LinkedIn y convierte engagement en outreach personalizado automático. URL: https://verymuch.ai/signals-linkedin
+- **Guía completa: Agentes de IA para Ventas B2B 2026**: Datos de McKinsey, Gartner y +80 fuentes. ROI esperado, errores comunes y los 5 agentes clave para ventas B2B. URL: https://verymuch.ai/guia/agentes-ia-ventas-b2b
+
 ## URLs principales
 
 - Sitio web: https://verymuch.ai
