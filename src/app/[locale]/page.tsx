@@ -101,6 +101,7 @@ export default async function HomePage({ params }: Props) {
   ];
 
   const LEAD_MAGNETS_LIVE = [
+    { id: "6-agentes-ia",              title: t("lm_7_title"), desc: t("lm_7_desc"), href: "/6-agentes-ia",                      stack: ["n8n","Claude API","Clay"] },
     { id: "signals-linkedin",          title: t("lm_0_title"), desc: t("lm_0_desc"), href: "/signals-linkedin",                  stack: ["Trigify","Claude","n8n"] },
     { id: "claude-remote-control",     title: t("lm_5_title"), desc: t("lm_5_desc"), href: "/lead/claude-remote-control",        stack: ["Claude Code","Claude App","Node.js"] },
     { id: "claude-skills-linkedin",    title: t("lm_6_title"), desc: t("lm_6_desc"), href: "/lead/claude-skills-linkedin",       stack: ["Claude.ai","LinkedIn"] },
