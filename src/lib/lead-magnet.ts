@@ -175,11 +175,13 @@ export const signalsLinkedinConfig: LeadMagnetConfig = {
         name: "Claude Code",
         role: "Generación de outreach hiper-personalizado con IA de Anthropic.",
         url: "https://anthropic.com",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "n8n",
         role: "Orquestación y automatización de todo el workflow, self-hosteable.",
         url: "https://n8n.io",
+        logoUrl: "https://cdn.simpleicons.org/n8n/EA4B71",
       },
     ],
     form: {
@@ -280,16 +282,19 @@ export const equipoVentasIa30minConfig: LeadMagnetConfig = {
         name: "Claude Opus 4.6",
         role: "Motor de los 4 agentes. Agent Teams nativos con contexto de 1M tokens.",
         url: "https://anthropic.com",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "Claude.ai",
         role: "Interfaz para lanzar y coordinar los agentes sin infraestructura.",
         url: "https://claude.ai",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "n8n (opcional)",
         role: "Orquestación externa si quieres automatizar el flujo completo.",
         url: "https://n8n.io",
+        logoUrl: "https://cdn.simpleicons.org/n8n/EA4B71",
       },
     ],
     extraSections: [
@@ -474,16 +479,19 @@ export const agenteInvestigacionComercialConfig: LeadMagnetConfig = {
         name: "Claude",
         role: "Motor de IA para investigación y generación de briefings comerciales.",
         url: "https://anthropic.com",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "n8n",
         role: "Orquestación del workflow: recibe webhook, ejecuta agente, actualiza resultados.",
         url: "https://n8n.io",
+        logoUrl: "https://cdn.simpleicons.org/n8n/EA4B71",
       },
       {
         name: "Supabase",
         role: "Base de datos intermedia: almacena solicitudes y resultados del agente.",
         url: "https://supabase.com",
+        logoUrl: "https://cdn.simpleicons.org/supabase/3ECF8E",
       },
     ],
     form: {
@@ -589,11 +597,13 @@ export const agentesIaB2bConfig: LeadMagnetConfig = {
         name: "Claude",
         role: "Motor de IA para investigación, análisis y generación de contenido comercial.",
         url: "https://anthropic.com",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "n8n",
         role: "Orquestación de workflows para automatizar cada agente de principio a fin.",
         url: "https://n8n.io",
+        logoUrl: "https://cdn.simpleicons.org/n8n/EA4B71",
       },
       {
         name: "Clay",
@@ -718,11 +728,13 @@ export const dosAgentesLeadsCalientesConfig: LeadMagnetConfig = {
         name: "Claude",
         role: "Generación de mensajes de outreach hiperpersonalizados basados en el contexto exacto del prospecto.",
         url: "https://anthropic.com",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "n8n",
         role: "Orquestación del pipeline completo: detección de señal → enriquecimiento → generación de mensaje.",
         url: "https://n8n.io",
+        logoUrl: "https://cdn.simpleicons.org/n8n/EA4B71",
       },
     ],
     extraSections: [
@@ -877,16 +889,19 @@ export const remoteControlConfig: LeadMagnetConfig = {
         name: "Claude Code",
         role: "CLI de Anthropic para coding con agentes IA. El motor que ejecuta todo.",
         url: "https://docs.anthropic.com/en/docs/claude-code",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "Claude App (iOS/Android)",
         role: "Tu ventana remota a la sesion. Envia prompts y aprueba acciones.",
         url: "https://claude.ai/download",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "Node.js",
         role: "Requisito previo para instalar Claude Code. Version 18 o superior.",
         url: "https://nodejs.org",
+        logoUrl: "https://cdn.simpleicons.org/nodedotjs/339933",
       },
     ],
     form: {
