@@ -103,6 +103,7 @@ export default async function HomePage({ params }: Props) {
   const LEAD_MAGNETS_LIVE = [
     { id: "signals-linkedin",          title: t("lm_0_title"), desc: t("lm_0_desc"), href: "/signals-linkedin",                  stack: ["Trigify","Claude","n8n"] },
     { id: "claude-remote-control",     title: t("lm_5_title"), desc: t("lm_5_desc"), href: "/lead/claude-remote-control",        stack: ["Claude Code","Claude App","Node.js"] },
+    { id: "claude-skills-linkedin",    title: t("lm_6_title"), desc: t("lm_6_desc"), href: "/lead/claude-skills-linkedin",       stack: ["Claude.ai","LinkedIn"] },
     { id: "equipo-ventas-ia-30min",    title: t("lm_1_title"), desc: t("lm_1_desc"), href: "/lead/equipo-ventas-ia-30min",       stack: ["Claude Opus","n8n"] },
     { id: "agente-investigacion",      title: t("lm_2_title"), desc: t("lm_2_desc"), href: "/lead/agente-investigacion-comercial",stack: ["Claude","n8n","Supabase"] },
     { id: "20-agentes-ia-b2b",         title: t("lm_3_title"), desc: t("lm_3_desc"), href: "/lead/20-agentes-ia-b2b",            stack: ["Claude","n8n","Clay","Instantly"] },

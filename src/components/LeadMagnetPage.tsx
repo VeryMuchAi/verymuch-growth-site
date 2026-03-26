@@ -262,14 +262,26 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
                 key={tool.name}
                 className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-6 flex flex-col gap-3 transition-all duration-200 card-hover-mint"
               >
-                <div className="flex items-center justify-between">
+                {/* Logo — shown when logoUrl is provided */}
+                {tool.logoUrl && (
+                  <div className="w-9 h-9 rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center p-2 flex-shrink-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={tool.logoUrl}
+                      alt={`${tool.name} logo`}
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div className="flex items-center justify-between gap-2">
                   <span className="text-base font-bold text-white">{tool.name}</span>
                   {tool.url && (
                     <a
                       href={tool.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-brand-mint/60 hover:text-brand-mint transition-colors"
+                      className="text-xs text-brand-mint/60 hover:text-brand-mint transition-colors flex-shrink-0"
                     >
                       ↗
                     </a>

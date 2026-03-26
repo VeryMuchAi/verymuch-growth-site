@@ -26,16 +26,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const config = getLeadMagnetConfig(slug);
   if (!config) return {};
   const { seo }    = config;
-  const ogTitle    = seo.ogTitle    ?? seo.title;
-  const ogDesc     = seo.ogDescription ?? seo.description;
+  const isEn       = locale === "en";
+  const title      = isEn ? (seo.enTitle       ?? seo.title)       : seo.title;
+  const desc       = isEn ? (seo.enDescription  ?? seo.description) : seo.description;
+  const ogTitle    = isEn ? (seo.enOgTitle      ?? seo.ogTitle    ?? title) : (seo.ogTitle    ?? seo.title);
+  const ogDesc     = isEn ? (seo.enOgDescription ?? seo.ogDescription ?? desc) : (seo.ogDescription ?? seo.description);
   const esPath     = `/lead/${slug}`;
   const enPath     = `/en/lead/${slug}`;
   const canonical  = locale === "es" ? `${BASE_URL}${esPath}` : `${BASE_URL}${enPath}`;
   const ogLocale   = locale === "es" ? "es_ES" : "en_US";
 
   return {
-    title:       { absolute: seo.title },
-    description: seo.description,
+    title:       { absolute: title },
+    description: desc,
     alternates: {
       canonical,
       languages: {

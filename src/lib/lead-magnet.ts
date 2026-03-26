@@ -45,6 +45,8 @@ export interface TechStackItem {
   name: string;
   role: string;
   url?: string;
+  /** Optional logo image URL (e.g. Simple Icons CDN). Shown in the tech stack card. */
+  logoUrl?: string;
 }
 
 export interface LeadMagnetSEO {
@@ -52,6 +54,11 @@ export interface LeadMagnetSEO {
   description: string;
   ogTitle?: string;
   ogDescription?: string;
+  /** English locale overrides — used when locale === "en" */
+  enTitle?: string;
+  enDescription?: string;
+  enOgTitle?: string;
+  enOgDescription?: string;
 }
 
 export interface LeadMagnetContent {
@@ -918,6 +925,212 @@ export const remoteControlConfig: LeadMagnetConfig = {
   },
 };
 
+// ─── Claude Skills LinkedIn Config ────────────────────────────────────────────
+
+export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
+  slug: "claude-skills-linkedin",
+  source: "linkedin",
+  campaign: "claude-skills-linkedin",
+
+  seo: {
+    title: "Skill de Claude para LinkedIn — Frameworks de +700K Impresiones | VeryMuch.ai",
+    description:
+      "Descarga la Skill personalizada de Claude con los frameworks exactos que generaron +700K impresiones y +500 comentarios por post en LinkedIn en 50 días. Gratis.",
+    ogTitle:
+      "La Skill de Claude que convierte cualquier tema en un post viral de LinkedIn",
+    ogDescription:
+      "6 hooks probados, estructura para móvil, guardarrails de tono, CTAs de conversión y 3 plantillas listas. Configúrala una vez, úsala siempre.",
+    enTitle:
+      "Claude Skill for LinkedIn — Frameworks Behind +700K Impressions | VeryMuch.ai",
+    enDescription:
+      "Download the custom Claude Skill with the exact frameworks that generated +700K impressions and +500 comments per post on LinkedIn in 50 days. Free.",
+    enOgTitle:
+      "The Claude Skill that turns any topic into a viral LinkedIn post",
+    enOgDescription:
+      "6 proven hooks, mobile-first structure, tone guardrails, conversion CTAs and 3 ready-to-use templates. Set it up once, use it forever.",
+  },
+
+  content: {
+    badge: "NUEVO · CLAUDE SKILLS · LINKEDIN",
+    headline:
+      "La Skill de Claude que escribe posts de LinkedIn con los frameworks de +700K impresiones",
+    highlightWords: "+700K impresiones",
+    subheadline:
+      "Configúrala una vez en Claude. Dile de qué quieres publicar. Obtén un post con tu voz, tu estructura y tus reglas — sin volver a explicar nada.",
+    bullets: [
+      "6 patrones de hook que frenan el scroll (probados en +700K impresiones reales)",
+      "Estructura optimizada para lectura móvil: una idea por línea, flechas, frases cortas",
+      "Guardarrails de tono para que tus posts nunca suenen a IA ni a relleno corporativo",
+      "Fórmulas de CTA que generan comentarios de verdad, no solo likes",
+      "3 plantillas listas: Sistema de Agentes, Nueva Herramienta, Tendencia/Cambio",
+    ],
+    includes: [
+      {
+        icon: "zap",
+        title: "6 patrones de hook probados",
+        description:
+          "Número + resultado, declaración contraintuitiva, antes/después con datos, presentación personal, pregunta provocadora, historia + lección. Las 6 estructuras que detienen el scroll.",
+      },
+      {
+        icon: "list",
+        title: "Reglas de estructura para móvil",
+        description:
+          "Una idea por línea, saltos de línea deliberados, flechas (→) en lugar de viñetas, frases cortas y directas. El 'leer más' siempre cae en un punto de tensión.",
+      },
+      {
+        icon: "settings",
+        title: "Guardarrails de tono anti-IA",
+        description:
+          "Reglas explícitas para evitar lenguaje corporativo vacío, superlativos genéricos y tono de chatbot. Tu post suena a ti, no a ChatGPT.",
+      },
+      {
+        icon: "target",
+        title: "Fórmulas de CTA que convierten",
+        description:
+          "\"Comenta [PALABRA] y te lo envío\", \"Dale like + comenta\", \"Comparte si tu red necesita ver esto\". CTAs que convierten impresiones en leads reales.",
+      },
+      {
+        icon: "file-text",
+        title: "3 plantillas listas para usar",
+        description:
+          "Sistema de Agentes: resultado → agentes → CTA. Nueva Herramienta: problema → solución → CTA. Tendencia/Cambio: dato → por qué importa → CTA.",
+      },
+      {
+        icon: "check",
+        title: "Checklist final de publicación",
+        description:
+          "Hook, estructura, tono, formato Unicode para negritas en LinkedIn y CTA efectivo. Revisa cada post antes de publicar en menos de 60 segundos.",
+      },
+    ],
+    techStack: [
+      {
+        name: "Claude.ai",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
+        role: "Motor de escritura. Crea un Proyecto, sube la Skill y Claude escribe posts con tu voz y estructura sin que tengas que volver a explicar nada.",
+        url: "https://claude.ai",
+      },
+      {
+        name: "Claude Projects",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/4AD4AE",
+        role: "El contenedor donde vive tu Skill. Sube el archivo .md a Project Knowledge y cada conversación nueva carga tus instrucciones automáticamente.",
+        url: "https://claude.ai",
+      },
+      {
+        name: "LinkedIn",
+        logoUrl: "https://cdn.simpleicons.org/linkedin/0A66C2",
+        role: "El canal donde publicas. La Skill escribe con la estructura exacta de LinkedIn: saltos de línea, flechas, punto de tensión y CTA que genera comentarios.",
+        url: "https://linkedin.com",
+      },
+    ],
+    extraSections: [
+      {
+        type: "changelog",
+        title: "Los 6 patrones de hook que frenan el scroll",
+        items: [
+          {
+            icon: "trending-up",
+            title: "Número + resultado concreto",
+            description:
+              "\"700K impresiones en 50 días\". Los datos concretos detienen el scroll antes de que el cerebro procese el tema. El número ancla la credibilidad.",
+          },
+          {
+            icon: "alert-triangle",
+            title: "Declaración contraintuitiva",
+            description:
+              "\"Dejé de hacer outbound en frío\". Contradice lo que el lector espera → necesita saber por qué. Genera fricción cognitiva que obliga a seguir leyendo.",
+          },
+          {
+            icon: "bar-chart",
+            title: "Antes/después con datos",
+            description:
+              "\"De 200 impresiones a 300K en 6 semanas\". La transformación concreta genera credibilidad y curiosidad simultáneamente. El lector quiere saber el mecanismo.",
+          },
+          {
+            icon: "users",
+            title: "Presentación personal",
+            description:
+              "\"Os presento a mi nueva contratación\". El formato de presentación dispara el engagement por expectativa de contenido original. Patrón narrativo clásico.",
+          },
+          {
+            icon: "help-circle",
+            title: "Pregunta provocadora",
+            description:
+              "\"¿Sabíais que el 99% de los SDRs desaparecerán en 3 años?\". La pregunta retórica obliga al cerebro a buscar la respuesta. No se puede leer solo la primera línea.",
+          },
+          {
+            icon: "star",
+            title: "Historia + lección",
+            description:
+              "\"Hace 6 meses mis posts eran invisibles. Hoy tengo 300K impresiones.\". El formato narrativo genera empatía: la audiencia se ve reflejada en el punto de partida.",
+          },
+        ],
+      },
+      {
+        type: "agents",
+        title: "3 plantillas de post incluidas en la Skill",
+        agents: [
+          {
+            icon: "bot",
+            name: "Sistema de Agentes",
+            role: "Post de caso de uso técnico",
+            description:
+              "Hook con resultado concreto → cómo funciona cada agente del sistema → resultado final medible → CTA con lead magnet o recurso descargable.",
+          },
+          {
+            icon: "zap",
+            name: "Nueva Herramienta",
+            role: "Post de descubrimiento",
+            description:
+              "Problema específico que resuelve → qué hace la herramienta en términos concretos → cómo configurarla en X pasos → CTA con demo o recurso.",
+          },
+          {
+            icon: "trending-up",
+            name: "Tendencia / Cambio",
+            role: "Post de perspectiva de mercado",
+            description:
+              "El cambio que está pasando → por qué importa para tu audiencia → datos concretos que lo respaldan → qué significa para ellos → CTA de conversación.",
+          },
+        ],
+      },
+    ],
+    form: {
+      fields: [
+        {
+          name: "name",
+          label: "Nombre",
+          type: "text",
+          placeholder: "Tu nombre",
+          required: true,
+        },
+        {
+          name: "email",
+          label: "Correo electrónico",
+          type: "email",
+          placeholder: "tu@empresa.com",
+          required: true,
+        },
+        {
+          name: "company",
+          label: "Empresa (opcional)",
+          type: "text",
+          placeholder: "Tu empresa",
+          required: false,
+        },
+      ],
+      ctaLabel: "Descargar la Skill Gratis",
+      microcopy: "Gratis. Sin spam. Descarga inmediata del archivo .md.",
+    },
+    success: {
+      title: "Tu Skill de LinkedIn está lista",
+      description:
+        "Descarga el archivo .md, ve a claude.ai, crea un Proyecto, súbelo a Project Knowledge y empieza a escribir posts con los frameworks de +700K impresiones.",
+      ctaLabel: "Descargar la Skill →",
+    },
+    ctaHeadline: "Empieza a publicar posts con los frameworks que",
+    ctaHighlight: "generaron +700K impresiones",
+  },
+};
+
 // ─── Build registry — single immutable assignment, all configs present ─────────
 // Adding a new lead magnet: just append it to this array. No other changes needed.
 
@@ -928,6 +1141,7 @@ const _ALL_CONFIGS: LeadMagnetConfig[] = [
   agentesIaB2bConfig,
   dosAgentesLeadsCalientesConfig,
   remoteControlConfig,
+  claudeSkillsLinkedinConfig,
 ];
 
 ALL_LEAD_MAGNETS = Object.fromEntries(_ALL_CONFIGS.map((c) => [c.slug, c]));
