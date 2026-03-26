@@ -4,6 +4,7 @@ import Image from "next/image";
 import HomeNav from "@/components/HomeNav";
 import AgentsInProductionSection from "@/components/AgentsInProductionSection";
 import IconBlock, { type ColorVariant } from "@/components/IconBlock";
+import BrandMarquee from "@/components/BrandMarquee";
 import { Link } from "@/i18n/navigation";
 
 const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
@@ -192,6 +193,8 @@ export default async function HomePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      <BrandMarquee variant="adaptive" />
 
       {/* ══ SYMPTOMS ══════════════════════════════════════════════════════════════ */}
       <section id="symptoms" className="py-24 px-6" style={{ background: "var(--bg-secondary)" }}>

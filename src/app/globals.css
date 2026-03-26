@@ -91,6 +91,20 @@ body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
   }
 }
 
+/* ─── Brand marquee animations ───────────────────────────────────────────── */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+/* Pause all child marquee tracks on hover */
+section:hover .marquee-wrap {
+  animation-play-state: paused;
+}
+
 /* ─── Button color-cycle animation ───────────────────────────────────────── */
 @keyframes btn-color-cycle {
   0%   { background-position: 0%   50%; }

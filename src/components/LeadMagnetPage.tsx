@@ -8,6 +8,7 @@ import type {
 } from "@/lib/lead-magnet";
 import LeadMagnetForm from "./LeadMagnetForm";
 import IconBlock, { cycleColor } from "./IconBlock";
+import BrandMarquee from "./BrandMarquee";
 
 interface Props {
   config: LeadMagnetConfig;
@@ -216,6 +217,8 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
           </div>
         </div>
       </section>
+
+      <BrandMarquee variant="dark" label="Stack real usado en esta guía" />
 
       {/* ── Qué incluye ───────────────────────────────────────────────────── */}
       <section className="border-t border-white/[0.06] bg-brand-dark-2">

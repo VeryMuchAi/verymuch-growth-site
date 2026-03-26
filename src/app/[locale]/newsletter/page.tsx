@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import HomeNav from "@/components/HomeNav";
 import NewsletterForm from "@/components/NewsletterForm";
 import IconBlock, { type ColorVariant } from "@/components/IconBlock";
+import BrandMarquee from "@/components/BrandMarquee";
 
 const BASE_URL = "https://verymuch.ai";
 const OG_IMAGE = `${BASE_URL}/og_home_verymuch.png`;
@@ -171,6 +172,8 @@ export default async function NewsletterPage({ params }: Props) {
           ))}
         </div>
       </section>
+
+      <BrandMarquee variant="adaptive" label="Herramientas que analizamos cada semana" />
 
       {/* Featured Guide */}
       <section className="px-6 pb-8" style={{ background: "var(--bg-primary)" }}>
