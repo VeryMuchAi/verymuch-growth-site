@@ -21,6 +21,7 @@ const routes: Route[] = [
   { path: "/legal/privacidad",                    changeFrequency: "monthly", priority: 0.8 },
   { path: "/legal/terminos",                      changeFrequency: "monthly", priority: 0.8 },
   { path: "/guia/agentes-ia-ventas-b2b",          changeFrequency: "monthly", priority: 0.9 },
+  { path: "/servicios/talent-marketplace",        changeFrequency: "weekly",  priority: 0.9 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
