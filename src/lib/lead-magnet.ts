@@ -1141,10 +1141,10 @@ export const sixAgentsConfig: LeadMagnetConfig = {
   seo: {
     title: "6 Agentes IA que Gestionan tu Negocio | VeryMuch.ai",
     description:
-      "El sistema exacto con 6 agentes IA para sustituir +100.000€ en contrataciones. Cazador de Señales, CRM Ops, Sales Coach, Cerebro, Motor de Contenido y Developer. Gratis.",
+      "El sistema exacto con 6 agentes IA para ahorrar +100.000€/año en contrataciones. Cazador de Señales, CRM Ops, Sales Coach, Cerebro, Motor de Contenido y Developer. Gratis.",
     ogTitle: "Los 6 Agentes IA que Gestionan mi Negocio (Sistema Completo)",
     ogDescription:
-      "Cómo sustituir +100.000€ en contrataciones con empleados IA. 6 agentes, paso a paso, ~50-600€/mes vs 130.000-190.000€/año en equipo humano.",
+      "Cómo hacer el trabajo de +100.000€ en contrataciones con 6 agentes IA. 6 agentes, paso a paso, ~50-600€/mes vs 130.000-190.000€/año en equipo humano.",
   },
 
   content: {
@@ -1152,7 +1152,7 @@ export const sixAgentsConfig: LeadMagnetConfig = {
     headline: "Los 6 Agentes IA que gestionan tu negocio por menos de 800€ al mes",
     highlightWords: "menos de 800€ al mes",
     subheadline:
-      "El sistema exacto para sustituir +100.000€ en contrataciones con 6 agentes IA. Paso a paso, herramientas reales, costes detallados.",
+      "El sistema exacto para hacer el trabajo de +100.000€ en contrataciones con 6 agentes IA. Paso a paso, herramientas reales, costes detallados.",
     bullets: [
       "Agente 1: El Cazador de Señales — leads calientes en automático",
       "Agente 2: El CRM Ops — cero data entry manual",
@@ -1238,6 +1238,8 @@ export const sixAgentsConfig: LeadMagnetConfig = {
         "Accede ahora a la guía completa con workflows, prompts y costes detallados de cada agente.",
       ctaLabel: "Abrir el sistema →",
     },
+    ctaHeadline: "Pon a trabajar a tus 6 agentes",
+    ctaHighlight: "esta semana",
   },
 };
 
