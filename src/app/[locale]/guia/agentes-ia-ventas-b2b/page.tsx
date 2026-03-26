@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 const BASE_URL = "https://verymuch.ai";
 const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
 const PUBLISHED = "2026-03-22";
-const OG_IMAGE = `${BASE_URL}/og_home_verymuch.png`;
+const OG_IMAGE = `${BASE_URL}/og_guia_agentes_ia_ventas_b2b.png`;
 
 type Props = { params: Promise<{ locale: string }> };
 
