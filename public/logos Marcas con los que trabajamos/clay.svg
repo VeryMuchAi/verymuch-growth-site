@@ -1,0 +1,11 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <!-- Clay: Stacked horizontal bars for data enrichment -->
+  <g fill="#2B2B2B">
+    <!-- Top bar -->
+    <rect x="3" y="4" width="18" height="3" rx="1.5"/>
+    <!-- Middle bar -->
+    <rect x="3" y="10.5" width="18" height="3" rx="1.5"/>
+    <!-- Bottom bar -->
+    <rect x="3" y="17" width="18" height="3" rx="1.5"/>
+  </g>
+</svg>

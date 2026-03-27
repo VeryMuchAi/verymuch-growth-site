@@ -1,0 +1,11 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <!-- GoHighLevel: Upward rocket/arrow in rounded shape -->
+  <g fill="#188AF5">
+    <!-- Rounded background shape -->
+    <circle cx="12" cy="12" r="10" opacity="0.15"/>
+    <!-- Rocket/Arrow body -->
+    <path d="M 12 3 L 12 16 M 12 16 L 8 13 M 12 16 L 16 13 M 12 3 C 10.5 5.5 10.5 8.5 12 10 C 13.5 8.5 13.5 5.5 12 3 Z"/>
+    <!-- Rocket tip -->
+    <circle cx="12" cy="2.5" r="1.5"/>
+  </g>
+</svg>

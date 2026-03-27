@@ -2,30 +2,32 @@
 
 // ─── Brand data ───────────────────────────────────────────────────────────────
 
-interface Brand { name: string; dot: string }
+interface Brand { name: string; logo: string; dot: string }
+
+const LOGOS_PATH = "/logos Marcas con los que trabajamos";
 
 const ROW1: Brand[] = [
-  { name: "Claude",      dot: "#E8832A" },
-  { name: "ChatGPT",     dot: "#10A37F" },
-  { name: "Gemini",      dot: "#4285F4" },
-  { name: "Perplexity",  dot: "#1FB8CD" },
-  { name: "Google",      dot: "#EA4335" },
-  { name: "n8n",         dot: "#EA4B71" },
-  { name: "Make",        dot: "#7B2CFF" },
-  { name: "Zapier",      dot: "#FF4A00" },
-  { name: "Supabase",    dot: "#3ECF8E" },
-  { name: "Vercel",      dot: "#888888" },
+  { name: "Claude",      logo: `${LOGOS_PATH}/claude.svg`,      dot: "#E8832A" },
+  { name: "ChatGPT",     logo: `${LOGOS_PATH}/chatgpt.svg`,     dot: "#10A37F" },
+  { name: "Gemini",      logo: `${LOGOS_PATH}/gemini.svg`,      dot: "#4285F4" },
+  { name: "Perplexity",  logo: `${LOGOS_PATH}/perplexity.svg`,  dot: "#1FB8CD" },
+  { name: "Google",      logo: `${LOGOS_PATH}/google.svg`,      dot: "#EA4335" },
+  { name: "n8n",         logo: `${LOGOS_PATH}/n8n.svg`,         dot: "#EA4B71" },
+  { name: "Make",        logo: `${LOGOS_PATH}/make.svg`,        dot: "#7B2CFF" },
+  { name: "Zapier",      logo: `${LOGOS_PATH}/zapier.svg`,      dot: "#FF4A00" },
+  { name: "Supabase",    logo: `${LOGOS_PATH}/supabase.svg`,    dot: "#3ECF8E" },
+  { name: "Vercel",      logo: `${LOGOS_PATH}/vercel.svg`,      dot: "#888888" },
 ];
 
 const ROW2: Brand[] = [
-  { name: "GoHighLevel", dot: "#F97316" },
-  { name: "HubSpot",     dot: "#FF7A59" },
-  { name: "Salesforce",  dot: "#00A1E0" },
-  { name: "Pipedrive",   dot: "#067279" },
-  { name: "Clay",        dot: "#C084FC" },
-  { name: "Trigify",     dot: "#F5A040" },
-  { name: "Instantly",   dot: "#6366F1" },
-  { name: "Anthropic",   dot: "#E8832A" },
+  { name: "GoHighLevel", logo: `${LOGOS_PATH}/gohighlevel.svg`, dot: "#F97316" },
+  { name: "HubSpot",     logo: `${LOGOS_PATH}/hubspot.svg`,     dot: "#FF7A59" },
+  { name: "Salesforce",  logo: `${LOGOS_PATH}/salesforce.svg`,  dot: "#00A1E0" },
+  { name: "Pipedrive",   logo: `${LOGOS_PATH}/pipedrive.svg`,   dot: "#067279" },
+  { name: "Clay",        logo: `${LOGOS_PATH}/clay.svg`,        dot: "#C084FC" },
+  { name: "Trigify",     logo: `${LOGOS_PATH}/trigify.svg`,     dot: "#F5A040" },
+  { name: "Instantly",   logo: `${LOGOS_PATH}/instantly.svg`,   dot: "#6366F1" },
+  { name: "Anthropic",   logo: `${LOGOS_PATH}/anthropic.svg`,   dot: "#E8832A" },
 ];
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -36,7 +38,12 @@ interface Props {
   variant?: "adaptive" | "dark";
   /** Optional label above the marquee. Pass null to hide. */
   label?: string | null;
+  /** Override which brands to show (e.g. for lead magnet pages) */
+  brands?: { row1?: Brand[]; row2?: Brand[] };
 }
+
+export type { Brand };
+export { ROW1, ROW2 };
 
 // ─── Single brand chip ────────────────────────────────────────────────────────
 
@@ -51,9 +58,25 @@ function BrandChip({ brand, dark }: { brand: Brand; dark: boolean }) {
         boxShadow:   dark ? "none" : "var(--card-shadow)",
       }}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={brand.logo}
+        alt={brand.name}
+        width={18}
+        height={18}
+        className="w-[18px] h-[18px] object-contain flex-shrink-0"
+        style={{ filter: dark ? "brightness(0) invert(0.6)" : undefined }}
+        onError={(e) => {
+          // Fallback to colored dot if SVG fails to load
+          const target = e.currentTarget;
+          target.style.display = "none";
+          const dot = target.nextElementSibling as HTMLElement | null;
+          if (dot) dot.style.display = "inline-block";
+        }}
+      />
       <span
-        className="inline-block w-2 h-2 rounded-full flex-shrink-0"
-        style={{ backgroundColor: brand.dot }}
+        className="inline-block w-[7px] h-[7px] rounded-full flex-shrink-0"
+        style={{ backgroundColor: brand.dot, display: "none" }}
       />
       {brand.name}
     </span>
@@ -73,7 +96,6 @@ function MarqueeRow({
   duration: number;
   dark: boolean;
 }) {
-  // Duplicate for seamless loop
   const doubled = [...brands, ...brands];
 
   return (
@@ -97,8 +119,11 @@ function MarqueeRow({
 export default function BrandMarquee({
   variant = "adaptive",
   label = "Stack tecnológico probado en producción",
+  brands,
 }: Props) {
   const dark = variant === "dark";
+  const row1 = brands?.row1 ?? ROW1;
+  const row2 = brands?.row2 ?? ROW2;
 
   return (
     <section
@@ -129,11 +154,11 @@ export default function BrandMarquee({
         )}
 
         {/* Row 1 — scrolls left */}
-        <MarqueeRow brands={ROW1} direction="left"  duration={28} dark={dark} />
+        <MarqueeRow brands={row1} direction="left"  duration={28} dark={dark} />
 
         {/* Row 2 — scrolls right (offset cadence) */}
         <div className="mt-3">
-          <MarqueeRow brands={ROW2} direction="right" duration={34} dark={dark} />
+          <MarqueeRow brands={row2} direction="right" duration={34} dark={dark} />
         </div>
       </div>
     </section>

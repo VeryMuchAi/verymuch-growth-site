@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HomeNav from "@/components/HomeNav";
+import NewsletterCTA from "@/components/NewsletterCTA";
 import { Link } from "@/i18n/navigation";
 
 const BASE_URL = "https://verymuch.ai";
@@ -1413,6 +1414,9 @@ export default async function PillarPage({ params }: Props) {
               </div>
             </div>
           </section>
+
+          {/* ── Newsletter CTA ───────────────────────────────────────────── */}
+          <NewsletterCTA locale={locale} />
 
           {/* ── Sources ─────────────────────────────────────────────────── */}
           <div
