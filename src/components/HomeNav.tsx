@@ -25,6 +25,7 @@ export default function HomeNav() {
     { label: locale === "es" ? "Cómo funciona"  : "How it works",  href: "/#how" },
     { label: locale === "es" ? "Agentes"        : "Agents",        href: "/#agents" },
     { label: locale === "es" ? "Recursos"       : "Resources",     href: "/#resources" },
+    { label: locale === "es" ? "Blog"           : "Blog",          href: "/blog" },
     { label: t("nav_newsletter"), href: "/newsletter" },
     { label: locale === "es" ? "Test de IA"     : "AI Readiness",  href: `/ai-readiness?lang=${locale}`, highlight: true },
   ];
