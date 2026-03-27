@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { useTheme } from "@/hooks/useTheme";
 import { useTranslations, useLocale } from "next-intl";
@@ -9,9 +9,30 @@ import { routing } from "@/i18n/routing";
 
 const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
 
+const SERVICE_LINKS = [
+  {
+    labelEs: "Agentes & Automatización",
+    labelEn: "Agents & Automation",
+    href: "/servicios/agentes-automatizacion",
+  },
+  {
+    labelEs: "Consultoría de IA",
+    labelEn: "AI Consulting",
+    href: "/servicios/consultoria-ia",
+  },
+  {
+    labelEs: "Talent Marketplace",
+    labelEn: "Talent Marketplace",
+    href: "/servicios/talent-marketplace",
+  },
+];
+
 export default function HomeNav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const { theme, toggleTheme }  = useTheme();
   const t       = useTranslations("Nav");
   const locale  = useLocale();
@@ -20,8 +41,8 @@ export default function HomeNav() {
 
   const otherLocale = routing.locales.find((l) => l !== locale) as string;
 
-  const NAV_LINKS: { label: string; href: string; highlight?: boolean; external?: boolean }[] = [
-    { label: locale === "es" ? "Servicios"      : "Services",      href: "/#services" },
+  const NAV_LINKS: { label: string; href: string; highlight?: boolean; external?: boolean; isServices?: boolean }[] = [
+    { label: locale === "es" ? "Servicios"      : "Services",      href: "/#services", isServices: true },
     { label: locale === "es" ? "Cómo funciona"  : "How it works",  href: "/#how" },
     { label: locale === "es" ? "Agentes"        : "Agents",        href: "/#agents" },
     { label: locale === "es" ? "Recursos"       : "Resources",     href: "/#resources" },
@@ -40,6 +61,16 @@ export default function HomeNav() {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <>
@@ -93,6 +124,47 @@ export default function HomeNav() {
                 >
                   {l.label}
                 </a>
+              ) : l.isServices ? (
+                <div key={l.label} className="relative" ref={dropdownRef} role="listitem">
+                  <button
+                    onClick={() => setServicesOpen((v) => !v)}
+                    className="flex items-center gap-1 text-sm xl:text-[15px] font-medium transition-opacity duration-200 hover:opacity-100 opacity-60 whitespace-nowrap"
+                    style={{ color: "var(--text-primary)" }}
+                    aria-expanded={servicesOpen}
+                    aria-haspopup="true"
+                  >
+                    {l.label}
+                    <svg
+                      width="12" height="12" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                      className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  {servicesOpen && (
+                    <div
+                      className="absolute top-full left-0 mt-2 w-56 rounded-xl border overflow-hidden shadow-lg z-50"
+                      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+                    >
+                      {SERVICE_LINKS.map((s) => (
+                        <a
+                          key={s.href}
+                          href={s.href}
+                          onClick={() => setServicesOpen(false)}
+                          className="flex items-center gap-2 px-4 py-3 text-sm font-medium transition-all duration-150 hover:opacity-100 opacity-70 border-b last:border-0"
+                          style={{ color: "var(--text-primary)", borderColor: "var(--border)" }}
+                        >
+                          <span
+                            className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                            style={{ background: "linear-gradient(135deg, #5AD4AE, #F5A05E)" }}
+                          />
+                          {locale === "es" ? s.labelEs : s.labelEn}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ) : (
                 <a
                   key={l.label}
@@ -186,6 +258,39 @@ export default function HomeNav() {
         style={{ background: "var(--bg-primary)", paddingTop: 80 }}
       >
         {NAV_LINKS.map((l) => (
+          l.isServices ? (
+            <div key={l.label} className="flex flex-col items-center gap-3">
+              <button
+                onClick={() => setMobileServicesOpen((v) => !v)}
+                className="flex items-center gap-2 text-2xl font-semibold transition-opacity hover:opacity-100 opacity-60"
+                style={{ color: "var(--text-primary)" }}
+              >
+                {l.label}
+                <svg
+                  width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                  className={`transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              {mobileServicesOpen && (
+                <div className="flex flex-col items-center gap-2">
+                  {SERVICE_LINKS.map((s) => (
+                    <a
+                      key={s.href}
+                      href={s.href}
+                      onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }}
+                      className="text-lg font-medium transition-opacity hover:opacity-100 opacity-50"
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      {locale === "es" ? s.labelEs : s.labelEn}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
           <a
             key={l.label}
             href={l.href}
@@ -204,6 +309,7 @@ export default function HomeNav() {
           >
             {l.label}
           </a>
+          )
         ))}
         <a
           href={GHL}
