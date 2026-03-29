@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { headers } from "next/headers";
 import type { Metadata } from "next";
+import Script from "next/script";
 import CookieBanner from "@/components/CookieBanner";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -117,6 +118,19 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
       </head>
       <body className="font-sans">
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-62L2WK2WBK"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-62L2WK2WBK');
+          `}
+        </Script>
         {/* No-FOUC theme init — priority: localStorage → time-based */}
         {/* eslint-disable-next-line @next/next/no-sync-scripts */}
         <script
