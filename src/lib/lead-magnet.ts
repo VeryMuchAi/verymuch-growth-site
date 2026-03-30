@@ -1020,13 +1020,13 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
     techStack: [
       {
         name: "Claude.ai",
-        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
+        logoUrl: "/logos/claude.svg",
         role: "Motor de escritura. Crea un Proyecto, sube la Skill y Claude escribe posts con tu voz y estructura sin que tengas que volver a explicar nada.",
         url: "https://claude.ai",
       },
       {
         name: "Claude Projects",
-        logoUrl: "https://cdn.simpleicons.org/anthropic/4AD4AE",
+        logoUrl: "/logos/anthropic.svg",
         role: "El contenedor donde vive tu Skill. Sube el archivo .md a Project Knowledge y cada conversación nueva carga tus instrucciones automáticamente.",
         url: "https://claude.ai",
       },
