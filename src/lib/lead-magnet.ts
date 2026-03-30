@@ -175,11 +175,13 @@ export const signalsLinkedinConfig: LeadMagnetConfig = {
         name: "Claude Code",
         role: "Generación de outreach hiper-personalizado con IA de Anthropic.",
         url: "https://anthropic.com",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "n8n",
         role: "Orquestación y automatización de todo el workflow, self-hosteable.",
         url: "https://n8n.io",
+        logoUrl: "https://cdn.simpleicons.org/n8n/EA4B71",
       },
     ],
     form: {
@@ -280,16 +282,19 @@ export const equipoVentasIa30minConfig: LeadMagnetConfig = {
         name: "Claude Opus 4.6",
         role: "Motor de los 4 agentes. Agent Teams nativos con contexto de 1M tokens.",
         url: "https://anthropic.com",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "Claude.ai",
         role: "Interfaz para lanzar y coordinar los agentes sin infraestructura.",
         url: "https://claude.ai",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "n8n (opcional)",
         role: "Orquestación externa si quieres automatizar el flujo completo.",
         url: "https://n8n.io",
+        logoUrl: "https://cdn.simpleicons.org/n8n/EA4B71",
       },
     ],
     extraSections: [
@@ -474,16 +479,19 @@ export const agenteInvestigacionComercialConfig: LeadMagnetConfig = {
         name: "Claude",
         role: "Motor de IA para investigación y generación de briefings comerciales.",
         url: "https://anthropic.com",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "n8n",
         role: "Orquestación del workflow: recibe webhook, ejecuta agente, actualiza resultados.",
         url: "https://n8n.io",
+        logoUrl: "https://cdn.simpleicons.org/n8n/EA4B71",
       },
       {
         name: "Supabase",
         role: "Base de datos intermedia: almacena solicitudes y resultados del agente.",
         url: "https://supabase.com",
+        logoUrl: "https://cdn.simpleicons.org/supabase/3ECF8E",
       },
     ],
     form: {
@@ -589,11 +597,13 @@ export const agentesIaB2bConfig: LeadMagnetConfig = {
         name: "Claude",
         role: "Motor de IA para investigación, análisis y generación de contenido comercial.",
         url: "https://anthropic.com",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "n8n",
         role: "Orquestación de workflows para automatizar cada agente de principio a fin.",
         url: "https://n8n.io",
+        logoUrl: "https://cdn.simpleicons.org/n8n/EA4B71",
       },
       {
         name: "Clay",
@@ -718,11 +728,13 @@ export const dosAgentesLeadsCalientesConfig: LeadMagnetConfig = {
         name: "Claude",
         role: "Generación de mensajes de outreach hiperpersonalizados basados en el contexto exacto del prospecto.",
         url: "https://anthropic.com",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "n8n",
         role: "Orquestación del pipeline completo: detección de señal → enriquecimiento → generación de mensaje.",
         url: "https://n8n.io",
+        logoUrl: "https://cdn.simpleicons.org/n8n/EA4B71",
       },
     ],
     extraSections: [
@@ -877,16 +889,19 @@ export const remoteControlConfig: LeadMagnetConfig = {
         name: "Claude Code",
         role: "CLI de Anthropic para coding con agentes IA. El motor que ejecuta todo.",
         url: "https://docs.anthropic.com/en/docs/claude-code",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "Claude App (iOS/Android)",
         role: "Tu ventana remota a la sesion. Envia prompts y aprueba acciones.",
         url: "https://claude.ai/download",
+        logoUrl: "https://cdn.simpleicons.org/anthropic/E8832A",
       },
       {
         name: "Node.js",
         role: "Requisito previo para instalar Claude Code. Version 18 o superior.",
         url: "https://nodejs.org",
+        logoUrl: "https://cdn.simpleicons.org/nodedotjs/339933",
       },
     ],
     form: {
@@ -1131,6 +1146,118 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
   },
 };
 
+// ─── 6 Agentes IA Config ───────────────────────────────────────────────────────
+
+export const sixAgentsConfig: LeadMagnetConfig = {
+  slug: "6-agentes-ia",
+  source: "linkedin",
+  campaign: "6-agentes-ia",
+
+  seo: {
+    title: "6 Agentes IA que Gestionan tu Negocio | VeryMuch.ai",
+    description:
+      "El sistema exacto con 6 agentes IA para ahorrar +100.000€/año en contrataciones. Cazador de Señales, CRM Ops, Sales Coach, Cerebro, Motor de Contenido y Developer. Gratis.",
+    ogTitle: "Los 6 Agentes IA que Gestionan mi Negocio (Sistema Completo)",
+    ogDescription:
+      "Cómo hacer el trabajo de +100.000€ en contrataciones con 6 agentes IA. 6 agentes, paso a paso, ~50-600€/mes vs 130.000-190.000€/año en equipo humano.",
+  },
+
+  content: {
+    badge: "Sistema Completo · Gratuito",
+    headline: "Los 6 Agentes IA que gestionan tu negocio por menos de 800€ al mes",
+    highlightWords: "menos de 800€ al mes",
+    subheadline:
+      "El sistema exacto para hacer el trabajo de +100.000€ en contrataciones con 6 agentes IA. Paso a paso, herramientas reales, costes detallados.",
+    bullets: [
+      "Agente 1: El Cazador de Señales — leads calientes en automático",
+      "Agente 2: El CRM Ops — cero data entry manual",
+      "Agente 3: El Sales Coach — feedback brutal después de cada llamada",
+      "Agente 4: El Cerebro de la Empresa — knowledge base que responde solo",
+      "Agente 5: El Motor de Contenido — 5-7 posts/semana en 30 min",
+      "Agente 6: El Developer — automatizaciones a medida 24/7",
+    ],
+    includes: [
+      {
+        icon: "🎯",
+        title: "Sistema completo con 6 agentes",
+        description: "Cada agente documentado con herramientas, pasos de configuración y costes reales.",
+      },
+      {
+        icon: "⚙️",
+        title: "Workflows listos para implementar",
+        description: "Flujos n8n, prompts de Claude y configuraciones de cada herramienta.",
+      },
+      {
+        icon: "💶",
+        title: "Análisis coste vs contratación",
+        description: "465-765€/mes de IA vs 130.000-190.000€/año de equipo humano equivalente.",
+      },
+      {
+        icon: "🗓️",
+        title: "Plan de implementación por días",
+        description: "Guía de inicio rápido: desde 1 hora hasta 1 semana para tener todo operativo.",
+      },
+      {
+        icon: "🚀",
+        title: "Guía de ROI por agente",
+        description: "Cuándo esperar resultados y qué métricas trackear en cada sistema.",
+      },
+    ],
+    techStack: [
+      {
+        name: "n8n",
+        role: "Orquestación central de todos los agentes, self-hosteable.",
+        url: "https://n8n.io",
+      },
+      {
+        name: "Claude API",
+        role: "Motor de inteligencia: procesa llamadas, redacta outreach, gestiona knowledge base.",
+        url: "https://anthropic.com",
+      },
+      {
+        name: "Trigify + Clay",
+        role: "Detección de señales de LinkedIn y enriquecimiento de leads.",
+        url: "https://trigify.io",
+      },
+    ],
+    form: {
+      fields: [
+        {
+          name: "name",
+          label: "Nombre",
+          type: "text",
+          placeholder: "Tu nombre",
+          required: true,
+        },
+        {
+          name: "email",
+          label: "Correo electrónico",
+          type: "email",
+          placeholder: "tu@empresa.com",
+          required: true,
+        },
+        {
+          name: "company",
+          label: "Empresa (opcional)",
+          type: "text",
+          placeholder: "Tu empresa",
+          required: false,
+        },
+      ],
+      ctaLabel: "Recibir el Sistema Completo",
+      microcopy: "Gratis. Sin spam. Entrega inmediata.",
+    },
+    success: {
+      title: "Tu sistema de 6 agentes está listo 🤖",
+      description:
+        "Accede ahora a la guía completa con workflows, prompts y costes detallados de cada agente.",
+      ctaLabel: "Abrir el sistema →",
+    },
+    ctaHeadline: "Pon a trabajar a tus 6 agentes",
+    ctaHighlight: "esta semana",
+  },
+};
+
 // ─── Build registry — single immutable assignment, all configs present ─────────
 // Adding a new lead magnet: just append it to this array. No other changes needed.
 
@@ -1142,6 +1269,7 @@ const _ALL_CONFIGS: LeadMagnetConfig[] = [
   dosAgentesLeadsCalientesConfig,
   remoteControlConfig,
   claudeSkillsLinkedinConfig,
+  sixAgentsConfig,
 ];
 
 ALL_LEAD_MAGNETS = Object.fromEntries(_ALL_CONFIGS.map((c) => [c.slug, c]));

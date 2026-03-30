@@ -65,6 +65,7 @@ function BrandChip({ brand, dark }: { brand: Brand; dark: boolean }) {
         className="w-[18px] h-[18px] object-contain flex-shrink-0"
         style={{ filter: dark ? "brightness(0) invert(0.6)" : undefined }}
         onError={(e) => {
+          // Fallback to colored dot if SVG fails to load
           const target = e.currentTarget;
           target.style.display = "none";
           const dot = target.nextElementSibling as HTMLElement | null;

@@ -13,16 +13,14 @@ type Props = { params: Promise<{ locale: string }> };
 
 const BASE_URL  = "https://verymuch.ai";
 const OG_HOME_IMAGE = `${BASE_URL}/og_home_verymuch.png`;
-const OG_HOME_TITLE =
-  "Verymuch.Ai — We install AI agents in your sales and marketing teams";
-const OG_HOME_DESC =
-  "AI in real production, not experimental pilots. Systems that create content, capture leads, qualify opportunities, and accelerate your sales cycle.";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t         = await getTranslations({ locale, namespace: "HomePage" });
   const canonical = locale === "es" ? `${BASE_URL}/` : `${BASE_URL}/en`;
   const ogLocale  = locale === "es" ? "es_ES" : "en_US";
+  const ogTitle   = t("og_title");
+  const ogDesc    = t("og_description");
 
   return {
     // absolute bypasses the root template — avoids "Title | VeryMuch.ai | VeryMuch.ai"
@@ -41,16 +39,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName:    "VeryMuch.ai",
       locale:      ogLocale,
       url:         canonical,
-      title:       OG_HOME_TITLE,
-      description: OG_HOME_DESC,
+      title:       ogTitle,
+      description: ogDesc,
       images:      [
-        { url: OG_HOME_IMAGE, width: 1200, height: 630, alt: OG_HOME_TITLE },
+        { url: OG_HOME_IMAGE, width: 1200, height: 630, alt: ogTitle },
       ],
     },
     twitter: {
       card:        "summary_large_image",
-      title:       OG_HOME_TITLE,
-      description: OG_HOME_DESC,
+      title:       ogTitle,
+      description: ogDesc,
       images:      [OG_HOME_IMAGE],
     },
   };
@@ -101,6 +99,7 @@ export default async function HomePage({ params }: Props) {
   ];
 
   const LEAD_MAGNETS_LIVE = [
+    { id: "6-agentes-ia",              title: t("lm_7_title"), desc: t("lm_7_desc"), href: "/6-agentes-ia",                      stack: ["n8n","Claude API","Clay"] },
     { id: "signals-linkedin",          title: t("lm_0_title"), desc: t("lm_0_desc"), href: "/signals-linkedin",                  stack: ["Trigify","Claude","n8n"] },
     { id: "claude-remote-control",     title: t("lm_5_title"), desc: t("lm_5_desc"), href: "/lead/claude-remote-control",        stack: ["Claude Code","Claude App","Node.js"] },
     { id: "claude-skills-linkedin",    title: t("lm_6_title"), desc: t("lm_6_desc"), href: "/lead/claude-skills-linkedin",       stack: ["Claude.ai","LinkedIn"] },

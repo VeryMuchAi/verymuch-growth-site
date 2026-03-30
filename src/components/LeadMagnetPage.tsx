@@ -193,21 +193,6 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
                 ))}
               </ul>
 
-              {/* Trust bar */}
-              <div className="flex items-center gap-3 mt-4 pt-6 border-t border-white/[0.08]">
-                <div className="flex -space-x-2">
-                  {["#4AD4AE", "#F5A040", "#8B5CF6"].map((c) => (
-                    <div
-                      key={c}
-                      className="w-7 h-7 rounded-full border-2 border-brand-dark"
-                      style={{ backgroundColor: c }}
-                    />
-                  ))}
-                </div>
-                <p className="text-xs text-white/40">
-                  Descargado por +300 growth builders
-                </p>
-              </div>
             </div>
 
             {/* Right col — form */}

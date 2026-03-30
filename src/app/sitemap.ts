@@ -19,10 +19,16 @@ const routes: Route[] = [
   { path: "/lead/20-agentes-ia-b2b",              changeFrequency: "monthly", priority: 0.8 },
   { path: "/lead/2-agentes-leads-calientes",      changeFrequency: "monthly", priority: 0.8 },
   { path: "/lead/claude-skills-linkedin",         changeFrequency: "monthly", priority: 0.8 },
+  { path: "/6-agentes-ia",                        changeFrequency: "monthly", priority: 0.8 },
   { path: "/legal/privacidad",                    changeFrequency: "monthly", priority: 0.8 },
   { path: "/legal/terminos",                      changeFrequency: "monthly", priority: 0.8 },
-  { path: "/guia/agentes-ia-ventas-b2b",          changeFrequency: "monthly", priority: 0.9 },
-  { path: "/servicios/talent-marketplace",        changeFrequency: "weekly",  priority: 0.9 },
+  { path: "/guia/agentes-ia-ventas-b2b",              changeFrequency: "monthly", priority: 0.9 },
+  { path: "/servicios/talent-marketplace",            changeFrequency: "weekly",  priority: 0.9 },
+  { path: "/blog",                                    changeFrequency: "weekly",  priority: 0.8 },
+  { path: "/blog/que-es-agente-ia-ventas",            changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/automatizacion-marketing-ia-2026",   changeFrequency: "monthly", priority: 0.8 },
+  { path: "/servicios/consultoria-ia",               changeFrequency: "monthly", priority: 0.9 },
+  { path: "/servicios/agentes-automatizacion",       changeFrequency: "monthly", priority: 0.9 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
