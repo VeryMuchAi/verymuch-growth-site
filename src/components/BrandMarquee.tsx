@@ -2,30 +2,30 @@
 
 // ─── Brand data ───────────────────────────────────────────────────────────────
 
-interface Brand { name: string; dot: string }
+interface Brand { name: string; logo: string }
 
 const ROW1: Brand[] = [
-  { name: "Claude",      dot: "#E8832A" },
-  { name: "ChatGPT",     dot: "#10A37F" },
-  { name: "Gemini",      dot: "#4285F4" },
-  { name: "Perplexity",  dot: "#1FB8CD" },
-  { name: "Google",      dot: "#EA4335" },
-  { name: "n8n",         dot: "#EA4B71" },
-  { name: "Make",        dot: "#7B2CFF" },
-  { name: "Zapier",      dot: "#FF4A00" },
-  { name: "Supabase",    dot: "#3ECF8E" },
-  { name: "Vercel",      dot: "#888888" },
+  { name: "Claude",      logo: "/logos/claude.svg" },
+  { name: "ChatGPT",     logo: "/logos/chatgpt.svg" },
+  { name: "Gemini",      logo: "/logos/gemini.svg" },
+  { name: "Perplexity",  logo: "/logos/perplexity.svg" },
+  { name: "Google",      logo: "/logos/google.svg" },
+  { name: "n8n",         logo: "/logos/n8n.svg" },
+  { name: "Make",        logo: "/logos/make.svg" },
+  { name: "Zapier",      logo: "/logos/zapier.svg" },
+  { name: "Supabase",    logo: "/logos/supabase.svg" },
+  { name: "Vercel",      logo: "/logos/vercel.svg" },
 ];
 
 const ROW2: Brand[] = [
-  { name: "GoHighLevel", dot: "#F97316" },
-  { name: "HubSpot",     dot: "#FF7A59" },
-  { name: "Salesforce",  dot: "#00A1E0" },
-  { name: "Pipedrive",   dot: "#067279" },
-  { name: "Clay",        dot: "#C084FC" },
-  { name: "Trigify",     dot: "#F5A040" },
-  { name: "Instantly",   dot: "#6366F1" },
-  { name: "Anthropic",   dot: "#E8832A" },
+  { name: "GoHighLevel", logo: "/logos/gohighlevel.svg" },
+  { name: "HubSpot",     logo: "/logos/hubspot.svg" },
+  { name: "Salesforce",  logo: "/logos/salesforce.svg" },
+  { name: "Pipedrive",   logo: "/logos/pipedrive.svg" },
+  { name: "Clay",        logo: "/logos/clay.svg" },
+  { name: "Trigify",     logo: "/logos/trigify.svg" },
+  { name: "Instantly",   logo: "/logos/instantly.svg" },
+  { name: "Anthropic",   logo: "/logos/anthropic.svg" },
 ];
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -51,10 +51,8 @@ function BrandChip({ brand, dark }: { brand: Brand; dark: boolean }) {
         boxShadow:   dark ? "none" : "var(--card-shadow)",
       }}
     >
-      <span
-        className="inline-block w-2 h-2 rounded-full flex-shrink-0"
-        style={{ backgroundColor: brand.dot }}
-      />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={brand.logo} alt="" className="w-4 h-4 flex-shrink-0 object-contain" aria-hidden="true" />
       {brand.name}
     </span>
   );
