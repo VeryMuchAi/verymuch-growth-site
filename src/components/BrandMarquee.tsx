@@ -4,30 +4,28 @@
 
 interface Brand { name: string; logo: string; dot: string }
 
-const LOGOS_PATH = "/logos Marcas con los que trabajamos";
-
 const ROW1: Brand[] = [
-  { name: "Claude",      logo: `${LOGOS_PATH}/claude.svg`,      dot: "#E8832A" },
-  { name: "ChatGPT",     logo: `${LOGOS_PATH}/chatgpt.svg`,     dot: "#10A37F" },
-  { name: "Gemini",      logo: `${LOGOS_PATH}/gemini.svg`,      dot: "#4285F4" },
-  { name: "Perplexity",  logo: `${LOGOS_PATH}/perplexity.svg`,  dot: "#1FB8CD" },
-  { name: "Google",      logo: `${LOGOS_PATH}/google.svg`,      dot: "#EA4335" },
-  { name: "n8n",         logo: `${LOGOS_PATH}/n8n.svg`,         dot: "#EA4B71" },
-  { name: "Make",        logo: `${LOGOS_PATH}/make.svg`,        dot: "#7B2CFF" },
-  { name: "Zapier",      logo: `${LOGOS_PATH}/zapier.svg`,      dot: "#FF4A00" },
-  { name: "Supabase",    logo: `${LOGOS_PATH}/supabase.svg`,    dot: "#3ECF8E" },
-  { name: "Vercel",      logo: `${LOGOS_PATH}/vercel.svg`,      dot: "#888888" },
+  { name: "Claude",      logo: "/logos/claude.svg",      dot: "#E8832A" },
+  { name: "ChatGPT",     logo: "/logos/chatgpt.svg",     dot: "#10A37F" },
+  { name: "Gemini",      logo: "/logos/gemini.svg",      dot: "#4285F4" },
+  { name: "Perplexity",  logo: "/logos/perplexity.svg",  dot: "#1FB8CD" },
+  { name: "Google",      logo: "/logos/google.svg",      dot: "#EA4335" },
+  { name: "n8n",         logo: "/logos/n8n.svg",         dot: "#EA4B71" },
+  { name: "Make",        logo: "/logos/make.svg",        dot: "#7B2CFF" },
+  { name: "Zapier",      logo: "/logos/zapier.svg",      dot: "#FF4A00" },
+  { name: "Supabase",    logo: "/logos/supabase.svg",    dot: "#3ECF8E" },
+  { name: "Vercel",      logo: "/logos/vercel.svg",      dot: "#888888" },
 ];
 
 const ROW2: Brand[] = [
-  { name: "GoHighLevel", logo: `${LOGOS_PATH}/gohighlevel.svg`, dot: "#F97316" },
-  { name: "HubSpot",     logo: `${LOGOS_PATH}/hubspot.svg`,     dot: "#FF7A59" },
-  { name: "Salesforce",  logo: `${LOGOS_PATH}/salesforce.svg`,  dot: "#00A1E0" },
-  { name: "Pipedrive",   logo: `${LOGOS_PATH}/pipedrive.svg`,   dot: "#067279" },
-  { name: "Clay",        logo: `${LOGOS_PATH}/clay.svg`,        dot: "#C084FC" },
-  { name: "Trigify",     logo: `${LOGOS_PATH}/trigify.svg`,     dot: "#F5A040" },
-  { name: "Instantly",   logo: `${LOGOS_PATH}/instantly.svg`,   dot: "#6366F1" },
-  { name: "Anthropic",   logo: `${LOGOS_PATH}/anthropic.svg`,   dot: "#E8832A" },
+  { name: "GoHighLevel", logo: "/logos/gohighlevel.svg", dot: "#F97316" },
+  { name: "HubSpot",     logo: "/logos/hubspot.svg",     dot: "#FF7A59" },
+  { name: "Salesforce",  logo: "/logos/salesforce.svg",  dot: "#00A1E0" },
+  { name: "Pipedrive",   logo: "/logos/pipedrive.svg",   dot: "#067279" },
+  { name: "Clay",        logo: "/logos/clay.svg",        dot: "#C084FC" },
+  { name: "Trigify",     logo: "/logos/trigify.svg",     dot: "#F5A040" },
+  { name: "Instantly",   logo: "/logos/instantly.svg",   dot: "#6366F1" },
+  { name: "Anthropic",   logo: "/logos/anthropic.svg",   dot: "#E8832A" },
 ];
 
 // ─── Types ────────────────────────────────────────────────────────────────────

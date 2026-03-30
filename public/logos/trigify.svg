@@ -1,0 +1,11 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <!-- Trigify: Triangle signal/listening icon -->
+  <g fill="#FF6B35">
+    <!-- Central triangle -->
+    <path d="M 12 2 L 22 20 L 2 20 Z"/>
+    <!-- Signal waves inside -->
+    <path d="M 12 8 L 16 16 L 8 16 Z" fill="white" opacity="0.8"/>
+    <!-- Center signal dot -->
+    <circle cx="12" cy="15" r="1.5" fill="white" opacity="0.9"/>
+  </g>
+</svg>
