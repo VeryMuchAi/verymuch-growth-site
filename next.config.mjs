@@ -12,12 +12,6 @@ const nextConfig = {
         destination: "/en/ai-readiness",
         permanent: true,
       },
-      {
-        source: "/ai-readiness",
-        has: [{ type: "query", key: "lang", value: "es" }],
-        destination: "/es/ai-readiness",
-        permanent: true,
-      },
     ];
   },
 };
