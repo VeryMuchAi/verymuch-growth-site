@@ -40,6 +40,7 @@ function StaticBrandStrip({ brands, label }: { brands: MarqueeBrand[]; label: st
               width={18}
               height={18}
               className="w-[18px] h-[18px] object-contain flex-shrink-0"
+              style={{ filter: "brightness(0) invert(0.8)" }}
             />
             {brand.name}
           </span>
