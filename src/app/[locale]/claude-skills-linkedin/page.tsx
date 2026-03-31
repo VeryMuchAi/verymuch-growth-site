@@ -5,7 +5,6 @@ import LeadMagnetPage from "@/components/LeadMagnetPage";
 const { seo } = claudeSkillsLinkedinConfig;
 
 const BASE_URL  = "https://verymuch.ai";
-const OG_IMAGE  = `${BASE_URL}/og_home_verymuch.png`;
 const esPath    = "/claude-skills-linkedin";
 const enPath    = "/en/claude-skills-linkedin";
 
@@ -41,13 +40,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url:         canonical,
       title:       ogTitle,
       description: ogDesc,
-      images:      [{ url: OG_IMAGE, width: 1200, height: 630, alt: ogTitle }],
     },
     twitter: {
       card:        "summary_large_image",
       title:       ogTitle,
       description: ogDesc,
-      images:      [OG_IMAGE],
     },
   };
 }
