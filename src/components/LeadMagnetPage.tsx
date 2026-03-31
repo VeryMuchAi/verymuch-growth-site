@@ -203,7 +203,13 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
         </div>
       </section>
 
-      <BrandMarquee variant="dark" label="Stack real usado en esta guía" />
+      <BrandMarquee
+        variant="dark"
+        label="Stack real usado en esta guía"
+        {...(content.marqueeBrands
+          ? { brands: { row1: content.marqueeBrands, row2: content.marqueeBrands } }
+          : {})}
+      />
 
       {/* ── Qué incluye ───────────────────────────────────────────────────── */}
       <section className="border-t border-white/[0.06] bg-brand-dark-2">

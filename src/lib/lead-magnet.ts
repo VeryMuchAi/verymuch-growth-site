@@ -49,6 +49,13 @@ export interface TechStackItem {
   logoUrl?: string;
 }
 
+/** Brand chip shown in the BrandMarquee for this lead magnet */
+export interface MarqueeBrand {
+  name: string;
+  logo: string;
+  dot: string;
+}
+
 export interface LeadMagnetSEO {
   title: string;
   description: string;
@@ -85,6 +92,8 @@ export interface LeadMagnetContent {
   ctaHighlight?: string;
   /** Extra sections rendered between "Qué incluye" and "Stack técnico" */
   extraSections?: LeadMagnetSection[];
+  /** Override which brands appear in the BrandMarquee. If omitted, all brands are shown. */
+  marqueeBrands?: MarqueeBrand[];
 }
 
 export interface LeadMagnetConfig {
@@ -1032,10 +1041,15 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
       },
       {
         name: "LinkedIn",
-        logoUrl: "https://cdn.simpleicons.org/linkedin/0A66C2",
+        logoUrl: "/logos/linkedin.svg",
         role: "El canal donde publicas. La Skill escribe con la estructura exacta de LinkedIn: saltos de línea, flechas, punto de tensión y CTA que genera comentarios.",
         url: "https://linkedin.com",
       },
+    ],
+    marqueeBrands: [
+      { name: "Claude.ai",       logo: "/logos/claude.svg",    dot: "#E8832A" },
+      { name: "Claude Projects", logo: "/logos/anthropic.svg", dot: "#E8832A" },
+      { name: "LinkedIn",        logo: "/logos/linkedin.svg",  dot: "#0A66C2" },
     ],
     extraSections: [
       {
