@@ -1183,6 +1183,196 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
   },
 };
 
+// ─── 6 Agentes IA Config ──────────────────────────────────────────────────────
+
+export const sixAgentsConfig: LeadMagnetConfig = {
+  slug: "6-agentes-ia",
+  source: "6-agentes-ia",
+  campaign: "6-agentes-ia",
+  brands: [
+    { name: "Claude",   dot: "#E8832A", iconSlug: "anthropic" },
+    { name: "n8n",      dot: "#EA4B71", iconSlug: "n8n" },
+    { name: "Make",     dot: "#6D00CC", iconSlug: "make" },
+    { name: "Notion",   dot: "#000000", iconSlug: "notion" },
+  ],
+
+  seo: {
+    title: "Los 6 Agentes IA que gestionan tu negocio | VeryMuch.ai",
+    description:
+      "El sistema exacto para sustituir +100.000€ en contrataciones con 6 agentes IA por menos de 800€/mes. Workflows, prompts y costes incluidos. Gratis.",
+    ogTitle:
+      "Los 6 Agentes IA que gestionan tu negocio completo por menos de 800€/mes",
+    ogDescription:
+      "Sustituye +100.000€ en contrataciones con 6 agentes IA. Workflows listos para implementar, prompts detallados y desglose de costes reales incluidos.",
+    enTitle: "The 6 AI Agents That Run Your Business | VeryMuch.ai",
+    enDescription:
+      "The exact system to replace +€100K in hiring with 6 AI agents for under €800/month. Workflows, prompts and costs included. Free.",
+    enOgTitle: "The 6 AI Agents That Run Your Entire Business for Under €800/month",
+    enOgDescription:
+      "Replace +€100K in hiring with 6 AI agents. Ready-to-implement workflows, detailed prompts and real cost breakdown included.",
+  },
+
+  content: {
+    badge: "Guía Gratuita · Sistema de 6 Agentes",
+    headline: "Los 6 Agentes IA que gestionan tu negocio completo",
+    highlightWords: "6 Agentes IA",
+    subheadline:
+      "El sistema exacto para sustituir más de 100.000€ en contrataciones con 6 agentes IA por menos de 800€/mes. Workflows, prompts y costes reales incluidos.",
+    bullets: [
+      "Los 6 agentes y su función exacta dentro del negocio",
+      "Workflows listos para importar en n8n y Make",
+      "Prompts detallados para cada agente, optimizados para Claude",
+      "Desglose de costes reales: menos de 800€/mes para el sistema completo",
+      "Casos de uso en ventas, marketing, operaciones y atención al cliente",
+    ],
+    includes: [
+      {
+        icon: "bot",
+        title: "Agente de Prospección",
+        description:
+          "Identifica y cualifica leads automáticamente. Investiga empresas, detecta señales de compra y prioriza el pipeline sin intervención manual.",
+      },
+      {
+        icon: "mail",
+        title: "Agente de Outreach",
+        description:
+          "Redacta y envía secuencias de mensajes hiperpersonalizados basados en el contexto real de cada prospecto. Responde preguntas frecuentes de forma autónoma.",
+      },
+      {
+        icon: "trending-up",
+        title: "Agente de Marketing de Contenidos",
+        description:
+          "Genera posts, artículos y newsletters adaptados a tu voz. Repurposea un contenido en múltiples formatos y plataformas de forma automática.",
+      },
+      {
+        icon: "settings",
+        title: "Agente de Operaciones",
+        description:
+          "Gestiona tareas repetitivas: informes, seguimiento de proyectos, actualizaciones de CRM y coordinación interna sin fricción.",
+      },
+      {
+        icon: "message",
+        title: "Agente de Atención al Cliente",
+        description:
+          "Resuelve consultas frecuentes 24/7, escala casos complejos al equipo humano y mantiene un registro completo de cada interacción.",
+      },
+      {
+        icon: "bar-chart",
+        title: "Agente de Análisis e Informes",
+        description:
+          "Monitoriza métricas clave, detecta anomalías y genera informes semanales accionables con recomendaciones concretas.",
+      },
+    ],
+    techStack: [
+      {
+        name: "Claude",
+        role: "Motor de razonamiento de cada agente. Genera texto, analiza datos y toma decisiones complejas.",
+        url: "https://anthropic.com",
+      },
+      {
+        name: "n8n",
+        role: "Orquestación de workflows. Conecta los agentes entre sí y con el resto de tu stack.",
+        url: "https://n8n.io",
+      },
+      {
+        name: "Make",
+        role: "Automatizaciones visuales para conectar apps sin código. Complementa n8n en flujos más simples.",
+        url: "https://make.com",
+      },
+      {
+        name: "Notion",
+        role: "Base de conocimiento de los agentes. Almacena contexto, plantillas y registros de cada flujo.",
+        url: "https://notion.so",
+      },
+    ],
+    extraSections: [
+      {
+        type: "agents",
+        title: "Los 6 agentes y su rol en el sistema",
+        agents: [
+          {
+            icon: "target",
+            name: "Agente de Prospección",
+            role: "Pipeline de ventas",
+            description:
+              "Investiga empresas, detecta señales de compra en LinkedIn y fuentes web, y entrega una lista diaria de prospectos cualificados con contexto completo.",
+          },
+          {
+            icon: "mail",
+            name: "Agente de Outreach",
+            role: "Comunicación comercial",
+            description:
+              "Redacta mensajes personalizados basados en la señal exacta de cada prospecto, gestiona follow-ups y responde preguntas frecuentes de forma autónoma.",
+          },
+          {
+            icon: "edit",
+            name: "Agente de Contenidos",
+            role: "Marketing y autoridad",
+            description:
+              "Convierte ideas y datos en posts de LinkedIn, artículos de blog y newsletters con tu voz. Un input, múltiples formatos en minutos.",
+          },
+          {
+            icon: "settings",
+            name: "Agente de Operaciones",
+            role: "Eficiencia interna",
+            description:
+              "Automatiza informes, actualiza el CRM, gestiona seguimientos de proyectos y coordina tareas entre herramientas sin intervención manual.",
+          },
+          {
+            icon: "message",
+            name: "Agente de Soporte",
+            role: "Atención al cliente 24/7",
+            description:
+              "Resuelve el 80% de las consultas frecuentes al instante, escala los casos complejos con contexto completo y mantiene satisfacción alta sin coste adicional.",
+          },
+          {
+            icon: "activity",
+            name: "Agente de Análisis",
+            role: "Inteligencia del negocio",
+            description:
+              "Monitoriza KPIs, detecta caídas o anomalías en tiempo real y envía informes semanales con recomendaciones concretas y datos accionables.",
+          },
+        ],
+      },
+    ],
+    form: {
+      fields: [
+        {
+          name: "name",
+          label: "Nombre",
+          type: "text",
+          placeholder: "Tu nombre",
+          required: true,
+        },
+        {
+          name: "email",
+          label: "Correo electrónico",
+          type: "email",
+          placeholder: "tu@empresa.com",
+          required: true,
+        },
+        {
+          name: "company",
+          label: "Empresa (opcional)",
+          type: "text",
+          placeholder: "Tu empresa",
+          required: false,
+        },
+      ],
+      ctaLabel: "Descargar el sistema gratis",
+      microcopy: "Gratis. Sin spam. Acceso inmediato.",
+    },
+    success: {
+      title: "Tu guía está lista",
+      description:
+        "Accede ahora al sistema completo: los 6 agentes, sus workflows, prompts y desglose de costes reales.",
+      ctaLabel: "Abrir la guía →",
+    },
+    ctaHeadline: "Monta tu equipo de agentes IA",
+    ctaHighlight: "esta semana",
+  },
+};
+
 // ─── Build registry — single immutable assignment, all configs present ─────────
 // Adding a new lead magnet: just append it to this array. No other changes needed.
 
@@ -1194,6 +1384,7 @@ const _ALL_CONFIGS: LeadMagnetConfig[] = [
   dosAgentesLeadsCalientesConfig,
   remoteControlConfig,
   claudeSkillsLinkedinConfig,
+  sixAgentsConfig,
 ];
 
 ALL_LEAD_MAGNETS = Object.fromEntries(_ALL_CONFIGS.map((c) => [c.slug, c]));
