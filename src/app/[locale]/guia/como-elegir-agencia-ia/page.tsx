@@ -4,7 +4,7 @@ import NewsletterForm from "@/components/NewsletterForm";
 import { Link } from "@/i18n/navigation";
 
 const BASE_URL = "https://verymuch.ai";
-const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
+const GHL = "https://api.leadconnectorhq.com/widget/booking/zU0QrkmOM9x1eRfwmNye";
 const PUBLISHED = "2026-03-29";
 const OG_IMAGE = `${BASE_URL}/og_como_elegir_agencia_ia.png`;
 

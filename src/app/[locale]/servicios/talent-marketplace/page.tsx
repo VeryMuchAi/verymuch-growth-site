@@ -4,7 +4,7 @@ import HomeNav from "@/components/HomeNav";
 import IconBlock, { type ColorVariant } from "@/components/IconBlock";
 
 const BASE_URL = "https://verymuch.ai";
-const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
+const GHL = "https://api.leadconnectorhq.com/widget/booking/zU0QrkmOM9x1eRfwmNye";
 const MARKETPLACE = "https://www.verymuch.ai";
 const OG_IMAGE = `${BASE_URL}/og_home_verymuch.png`;
 

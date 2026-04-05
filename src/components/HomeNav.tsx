@@ -7,7 +7,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
-const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
+const GHL = "https://api.leadconnectorhq.com/widget/booking/zU0QrkmOM9x1eRfwmNye";
 
 const SERVICE_LINKS = [
   {

@@ -5,7 +5,7 @@ import NewsletterCTA from "@/components/NewsletterCTA";
 import { Link } from "@/i18n/navigation";
 
 const BASE_URL = "https://verymuch.ai";
-const GHL = "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
+const GHL = "https://api.leadconnectorhq.com/widget/booking/zU0QrkmOM9x1eRfwmNye";
 const OG_IMAGE = `${BASE_URL}/og_home_verymuch.png`;
 
 type Props = { params: Promise<{ locale: string }> };

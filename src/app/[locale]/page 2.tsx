@@ -4,23 +4,24 @@ import Image from "next/image";
 import HomeNav from "@/components/HomeNav";
 import AgentsInProductionSection from "@/components/AgentsInProductionSection";
 import IconBlock, { type ColorVariant } from "@/components/IconBlock";
-import BrandMarquee from "@/components/BrandMarquee";
 import { Link } from "@/i18n/navigation";
 
 const GHL = "https://api.leadconnectorhq.com/widget/booking/zU0QrkmOM9x1eRfwmNye";
 
 type Props = { params: Promise<{ locale: string }> };
 
-const BASE_URL  = "https://verymuch.ai";
+const BASE_URL  = "https://www.verymuch.ai";
 const OG_HOME_IMAGE = `${BASE_URL}/og_home_verymuch.png`;
+const OG_HOME_TITLE =
+  "Verymuch.Ai — We install AI agents in your sales and marketing teams";
+const OG_HOME_DESC =
+  "AI in real production, not experimental pilots. Systems that create content, capture leads, qualify opportunities, and accelerate your sales cycle.";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t         = await getTranslations({ locale, namespace: "HomePage" });
   const canonical = locale === "es" ? `${BASE_URL}/` : `${BASE_URL}/en`;
   const ogLocale  = locale === "es" ? "es_ES" : "en_US";
-  const ogTitle   = t("og_title");
-  const ogDesc    = t("og_description");
 
   return {
     // absolute bypasses the root template — avoids "Title | VeryMuch.ai | VeryMuch.ai"
@@ -39,16 +40,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName:    "VeryMuch.ai",
       locale:      ogLocale,
       url:         canonical,
-      title:       ogTitle,
-      description: ogDesc,
+      title:       OG_HOME_TITLE,
+      description: OG_HOME_DESC,
       images:      [
-        { url: OG_HOME_IMAGE, width: 1200, height: 630, alt: ogTitle },
+        { url: OG_HOME_IMAGE, width: 1200, height: 630, alt: OG_HOME_TITLE },
       ],
     },
     twitter: {
       card:        "summary_large_image",
-      title:       ogTitle,
-      description: ogDesc,
+      title:       OG_HOME_TITLE,
+      description: OG_HOME_DESC,
       images:      [OG_HOME_IMAGE],
     },
   };
@@ -99,10 +100,7 @@ export default async function HomePage({ params }: Props) {
   ];
 
   const LEAD_MAGNETS_LIVE = [
-    { id: "6-agentes-ia",              title: t("lm_7_title"), desc: t("lm_7_desc"), href: "/6-agentes-ia",                      stack: ["n8n","Claude API","Clay"] },
     { id: "signals-linkedin",          title: t("lm_0_title"), desc: t("lm_0_desc"), href: "/signals-linkedin",                  stack: ["Trigify","Claude","n8n"] },
-    { id: "claude-remote-control",     title: t("lm_5_title"), desc: t("lm_5_desc"), href: "/lead/claude-remote-control",        stack: ["Claude Code","Claude App","Node.js"] },
-    { id: "claude-skills-linkedin",    title: t("lm_6_title"), desc: t("lm_6_desc"), href: "/lead/claude-skills-linkedin",       stack: ["Claude.ai","LinkedIn"] },
     { id: "equipo-ventas-ia-30min",    title: t("lm_1_title"), desc: t("lm_1_desc"), href: "/lead/equipo-ventas-ia-30min",       stack: ["Claude Opus","n8n"] },
     { id: "agente-investigacion",      title: t("lm_2_title"), desc: t("lm_2_desc"), href: "/lead/agente-investigacion-comercial",stack: ["Claude","n8n","Supabase"] },
     { id: "20-agentes-ia-b2b",         title: t("lm_3_title"), desc: t("lm_3_desc"), href: "/lead/20-agentes-ia-b2b",            stack: ["Claude","n8n","Clay","Instantly"] },
@@ -194,8 +192,6 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
-      <BrandMarquee variant="adaptive" />
-
       {/* ══ SYMPTOMS ══════════════════════════════════════════════════════════════ */}
       <section id="symptoms" className="py-24 px-6" style={{ background: "var(--bg-secondary)" }}>
         <div className="max-w-6xl mx-auto">
@@ -220,7 +216,7 @@ export default async function HomePage({ params }: Props) {
               {VENTAS_SYMPTOMS.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4 transition-all duration-200 card-hover-mint"
+                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4"
                   style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftColor: "var(--error)" }}
                 >
                   <IconBlock icon={s.icon} color={s.iconColor} size="md" />
@@ -242,7 +238,7 @@ export default async function HomePage({ params }: Props) {
               {MARKETING_SYMPTOMS.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4 transition-all duration-200 card-hover-mint"
+                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4"
                   style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftColor: "var(--error)" }}
                 >
                   <IconBlock icon={s.icon} color={s.iconColor} size="md" />
@@ -319,7 +315,7 @@ export default async function HomePage({ params }: Props) {
             {CALLOUTS.map((c) => (
               <div
                 key={c.title}
-                className="rounded-2xl p-7 border flex flex-col gap-4 card-elevated transition-all duration-200 card-hover-mint"
+                className="rounded-2xl p-7 border flex flex-col gap-4 card-elevated"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <IconBlock icon={c.icon} color={c.iconColor} size="md" />
@@ -483,7 +479,7 @@ export default async function HomePage({ params }: Props) {
           {/* Featured tool — AI Readiness Test */}
           <a
             href={`/ai-readiness?lang=${locale}`}
-            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-8 card-elevated transition-all duration-200 card-hover-amber"
+            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-8 card-elevated transition-all duration-200 hover:opacity-95"
             style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
           >
             {/* Ambient glow */}
@@ -519,89 +515,13 @@ export default async function HomePage({ params }: Props) {
             </span>
           </a>
 
-          {/* Featured Guide — Agentes de IA para Ventas B2B */}
-          <Link
-            href="/guia/agentes-ia-ventas-b2b"
-            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-5 card-elevated transition-all duration-200 card-hover-mint"
-            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-          >
-            <div
-              className="absolute inset-0 pointer-events-none rounded-2xl"
-              style={{
-                background:
-                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(90,212,174,0.07) 0%, rgba(245,160,64,0.04) 60%, transparent 100%)",
-              }}
-            />
-            <div className="flex-shrink-0 relative">
-              <IconBlock icon="file-text" color="teal" size="lg" />
-            </div>
-            <div className="flex-1 min-w-0 relative">
-              <span
-                className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] inline-block mb-3"
-                style={{ background: "rgba(245,160,64,0.15)", color: "var(--accent-warm-text)" }}
-              >
-                Guía completa
-              </span>
-              <h3 className="text-lg font-bold leading-snug mb-2" style={{ color: "var(--text-primary)" }}>
-                Agentes de IA para Ventas B2B: Guía Completa 2026
-              </h3>
-              <p className="text-sm leading-relaxed max-w-xl" style={{ color: "var(--text-secondary)" }}>
-                Datos reales de McKinsey, Gartner, Bain y +80 fuentes. Sin teoría vacía. ROI, implementación y los 5 agentes que necesitas.
-              </p>
-            </div>
-            <span
-              className="flex-shrink-0 text-sm font-bold whitespace-nowrap relative"
-              style={{ color: "var(--accent-text)" }}
-            >
-              Leer la guía →
-            </span>
-          </Link>
-
-          {/* Featured Guide — Cómo elegir agencia IA */}
-          <Link
-            href="/guia/como-elegir-agencia-ia"
-            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-5 card-elevated transition-all duration-200 card-hover-mint"
-            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-          >
-            <div
-              className="absolute inset-0 pointer-events-none rounded-2xl"
-              style={{
-                background:
-                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(245,160,64,0.07) 0%, rgba(90,212,174,0.04) 60%, transparent 100%)",
-              }}
-            />
-            <div className="flex-shrink-0 relative">
-              <IconBlock icon="search" color="orange" size="lg" />
-            </div>
-            <div className="flex-1 min-w-0 relative">
-              <span
-                className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] inline-block mb-3"
-                style={{ background: "rgba(245,160,64,0.15)", color: "var(--accent-warm-text)" }}
-              >
-                Guía completa
-              </span>
-              <h3 className="text-lg font-bold leading-snug mb-2" style={{ color: "var(--text-primary)" }}>
-                Cómo Elegir una Agencia de IA: Guía Completa 2026
-              </h3>
-              <p className="text-sm leading-relaxed max-w-xl" style={{ color: "var(--text-secondary)" }}>
-                El 88% de los proyectos de IA fracasan. 7 criterios, 5 red flags y un framework de evaluación paso a paso. +60 fuentes verificadas.
-              </p>
-            </div>
-            <span
-              className="flex-shrink-0 text-sm font-bold whitespace-nowrap relative"
-              style={{ color: "var(--accent-text)" }}
-            >
-              Leer la guía →
-            </span>
-          </Link>
-
           {/* Live */}
           <div className="grid sm:grid-cols-2 gap-5 mb-5">
             {LEAD_MAGNETS_LIVE.map((lm) => (
               <Link
                 key={lm.id}
                 href={lm.href}
-                className="group rounded-2xl p-6 border flex flex-col gap-4 transition-all duration-200 card-elevated card-hover-mint"
+                className="group rounded-2xl p-6 border flex flex-col gap-4 transition-all duration-200 hover:opacity-90 card-elevated"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <div className="flex items-center justify-between gap-3">
