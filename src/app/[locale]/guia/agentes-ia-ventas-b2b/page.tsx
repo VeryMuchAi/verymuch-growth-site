@@ -1418,35 +1418,61 @@ export default async function PillarPage({ params }: Props) {
           {/* ── Newsletter CTA ───────────────────────────────────────────── */}
           <NewsletterCTA locale={locale} />
 
-          {/* ── Related guide ───────────────────────────────────────────── */}
+          {/* ── También te puede interesar ──────────────────────────────── */}
           <div className="mb-10">
             <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "var(--text-secondary)" }}>
               {locale === "en" ? "You might also like" : "También te puede interesar"}
             </p>
-            <Link
-              href="/guia/como-elegir-agencia-ia"
-              className="group flex flex-col sm:flex-row sm:items-center gap-4 rounded-2xl p-5 border transition-all duration-200 hover:scale-[1.01]"
-              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-            >
-              <div className="flex-1 min-w-0">
-                <p className="text-xs font-bold mb-1" style={{ color: "var(--accent-warm-text)" }}>
-                  {locale === "en" ? "Complete guide · 2026" : "Guía completa · 2026"}
-                </p>
-                <h3 className="text-base font-bold leading-snug mb-1" style={{ color: "var(--text-primary)" }}>
-                  {locale === "en"
-                    ? "How to Choose an AI Agency: Complete Guide 2026"
-                    : "Cómo elegir una agencia de IA para tu empresa: guía completa 2026"}
-                </h3>
-                <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
-                  {locale === "en"
-                    ? "88% of AI projects fail. 7 criteria, 5 red flags and a step-by-step evaluation framework. 60+ verified sources."
-                    : "El 88% de los proyectos de IA fracasan. 7 criterios, 5 red flags y un framework de evaluación paso a paso. +60 fuentes verificadas."}
-                </p>
-              </div>
-              <span className="shrink-0 text-sm font-semibold" style={{ color: "var(--accent-text)" }}>
-                {locale === "en" ? "Read guide →" : "Leer guía →"}
-              </span>
-            </Link>
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/newsletter"
+                className="group flex flex-col sm:flex-row sm:items-center gap-4 rounded-2xl p-5 border transition-all duration-200 hover:scale-[1.01]"
+                style={{ background: "rgba(74,212,174,0.05)", borderColor: "rgba(74,212,174,0.2)" }}
+              >
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs font-bold mb-1" style={{ color: "var(--accent-text)" }}>
+                    {locale === "en" ? "Weekly newsletter · Free" : "Newsletter semanal · Gratis"}
+                  </p>
+                  <h3 className="text-base font-bold leading-snug mb-1" style={{ color: "var(--text-primary)" }}>
+                    {locale === "en"
+                      ? "AI that sells: what works, what doesn't, and what's coming"
+                      : "IA que vende: lo que funciona, lo que no, y lo que viene"}
+                  </h3>
+                  <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                    {locale === "en"
+                      ? "Real cases, tools we test, market data and actionable tactics. Once a week, no spam."
+                      : "Casos reales, herramientas que probamos, datos de mercado y tácticas accionables. Una vez por semana, sin spam."}
+                  </p>
+                </div>
+                <span className="shrink-0 text-sm font-semibold" style={{ color: "var(--accent-text)" }}>
+                  {locale === "en" ? "Subscribe free →" : "Suscribirme gratis →"}
+                </span>
+              </Link>
+              <Link
+                href="/guia/como-elegir-agencia-ia"
+                className="group flex flex-col sm:flex-row sm:items-center gap-4 rounded-2xl p-5 border transition-all duration-200 hover:scale-[1.01]"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs font-bold mb-1" style={{ color: "var(--accent-warm-text)" }}>
+                    {locale === "en" ? "Complete guide · 2026" : "Guía completa · 2026"}
+                  </p>
+                  <h3 className="text-base font-bold leading-snug mb-1" style={{ color: "var(--text-primary)" }}>
+                    {locale === "en"
+                      ? "How to Choose an AI Agency: Complete Guide 2026"
+                      : "Cómo elegir una agencia de IA para tu empresa: guía completa 2026"}
+                  </h3>
+                  <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                    {locale === "en"
+                      ? "88% of AI projects fail. 7 criteria, 5 red flags and a step-by-step evaluation framework."
+                      : "El 88% de los proyectos de IA fracasan. 7 criterios, 5 red flags y framework de evaluación paso a paso."}
+                  </p>
+                </div>
+                <span className="shrink-0 text-sm font-semibold" style={{ color: "var(--accent-text)" }}>
+                  {locale === "en" ? "Read guide →" : "Leer guía →"}
+                </span>
+              </Link>
+            </div>
           </div>
 
           {/* ── Sources ─────────────────────────────────────────────────── */}
