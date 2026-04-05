@@ -1,51 +1,66 @@
 "use client";
 
-// ─── Brand data ───────────────────────────────────────────────────────────────
+// ─── Brand type (also used in lead-magnet.ts via BrandEntry) ─────────────────
 
-interface Brand { name: string; logo: string; dot: string }
+export interface Brand {
+  name: string;
+  /** Fallback dot color (hex) — used when no iconSlug or image fails to load */
+  dot: string;
+  /** Simple Icons slug — renders real logo via cdn.simpleicons.org */
+  iconSlug?: string;
+}
+
+// ─── Default brand sets (homepage / newsletter) ───────────────────────────────
 
 const ROW1: Brand[] = [
-  { name: "Claude",      logo: "/logos/claude.svg",      dot: "#E8832A" },
-  { name: "ChatGPT",     logo: "/logos/chatgpt.svg",     dot: "#10A37F" },
-  { name: "Gemini",      logo: "/logos/gemini.svg",      dot: "#4285F4" },
-  { name: "Perplexity",  logo: "/logos/perplexity.svg",  dot: "#1FB8CD" },
-  { name: "Google",      logo: "/logos/google.svg",      dot: "#EA4335" },
-  { name: "n8n",         logo: "/logos/n8n.svg",         dot: "#EA4B71" },
-  { name: "Make",        logo: "/logos/make.svg",        dot: "#7B2CFF" },
-  { name: "Zapier",      logo: "/logos/zapier.svg",      dot: "#FF4A00" },
-  { name: "Supabase",    logo: "/logos/supabase.svg",    dot: "#3ECF8E" },
-  { name: "Vercel",      logo: "/logos/vercel.svg",      dot: "#888888" },
+  { name: "Claude",      dot: "#E8832A", iconSlug: "anthropic" },
+  { name: "ChatGPT",     dot: "#10A37F", iconSlug: "openai" },
+  { name: "Gemini",      dot: "#4285F4", iconSlug: "googlegemini" },
+  { name: "Perplexity",  dot: "#1FB8CD", iconSlug: "perplexity" },
+  { name: "Google",      dot: "#EA4335", iconSlug: "google" },
+  { name: "n8n",         dot: "#EA4B71", iconSlug: "n8n" },
+  { name: "Zapier",      dot: "#FF4A00", iconSlug: "zapier" },
+  { name: "Supabase",    dot: "#3ECF8E", iconSlug: "supabase" },
+  { name: "Vercel",      dot: "#888888", iconSlug: "vercel" },
+  { name: "Make",        dot: "#7B2CFF" },
 ];
 
 const ROW2: Brand[] = [
-  { name: "GoHighLevel", logo: "/logos/gohighlevel.svg", dot: "#F97316" },
-  { name: "HubSpot",     logo: "/logos/hubspot.svg",     dot: "#FF7A59" },
-  { name: "Salesforce",  logo: "/logos/salesforce.svg",  dot: "#00A1E0" },
-  { name: "Pipedrive",   logo: "/logos/pipedrive.svg",   dot: "#067279" },
-  { name: "Clay",        logo: "/logos/clay.svg",        dot: "#C084FC" },
-  { name: "Trigify",     logo: "/logos/trigify.svg",     dot: "#F5A040" },
-  { name: "Instantly",   logo: "/logos/instantly.svg",   dot: "#6366F1" },
-  { name: "Anthropic",   logo: "/logos/anthropic.svg",   dot: "#E8832A" },
+  { name: "HubSpot",     dot: "#FF7A59", iconSlug: "hubspot" },
+  { name: "Salesforce",  dot: "#00A1E0", iconSlug: "salesforce" },
+  { name: "Pipedrive",   dot: "#067279", iconSlug: "pipedrive" },
+  { name: "LinkedIn",    dot: "#0A66C2", iconSlug: "linkedin" },
+  { name: "GoHighLevel", dot: "#F97316" },
+  { name: "Clay",        dot: "#C084FC" },
+  { name: "Trigify",     dot: "#F5A040" },
+  { name: "Instantly",   dot: "#6366F1" },
+  { name: "Node.js",     dot: "#339933", iconSlug: "nodedotjs" },
 ];
 
-// ─── Types ────────────────────────────────────────────────────────────────────
+// ─── Component props ──────────────────────────────────────────────────────────
 
 interface Props {
   /** "adaptive" uses CSS vars (homepage / newsletter — light + dark aware)
    *  "dark" forces dark treatment (standalone lead magnet pages) */
   variant?: "adaptive" | "dark";
-  /** Optional label above the marquee. Pass null to hide. */
+  /** Optional label above the marquee. Pass null to hide completely. */
   label?: string | null;
-  /** Override which brands to show (e.g. for lead magnet pages) */
-  brands?: { row1?: Brand[]; row2?: Brand[] };
+  /**
+   * Custom brand list for lead-magnet pages.
+   * When provided, overrides default ROW1/ROW2 and shows two rows
+   * with the same set (one left, one right) for a focused stack display.
+   */
+  brands?: Brand[];
 }
-
-export type { Brand };
-export { ROW1, ROW2 };
 
 // ─── Single brand chip ────────────────────────────────────────────────────────
 
 function BrandChip({ brand, dark }: { brand: Brand; dark: boolean }) {
+  // Simple Icons CDN — white on dark, brand color on light
+  const logoUrl = brand.iconSlug
+    ? `https://cdn.simpleicons.org/${brand.iconSlug}/${dark ? "ffffff" : brand.dot.replace("#", "")}`
+    : null;
+
   return (
     <span
       className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-semibold whitespace-nowrap flex-shrink-0 select-none"
@@ -56,25 +71,32 @@ function BrandChip({ brand, dark }: { brand: Brand; dark: boolean }) {
         boxShadow:   dark ? "none" : "var(--card-shadow)",
       }}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={brand.logo}
-        alt={brand.name}
-        width={18}
-        height={18}
-        className="w-[18px] h-[18px] object-contain flex-shrink-0"
-        style={{ filter: dark ? "brightness(0) invert(0.6)" : undefined }}
-        onError={(e) => {
-          // Fallback to colored dot if SVG fails to load
-          const target = e.currentTarget;
-          target.style.display = "none";
-          const dot = target.nextElementSibling as HTMLElement | null;
-          if (dot) dot.style.display = "inline-block";
-        }}
-      />
+      {logoUrl ? (
+        /* Real brand logo */
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={logoUrl}
+          alt={brand.name}
+          width={14}
+          height={14}
+          className="w-3.5 h-3.5 object-contain flex-shrink-0"
+          loading="lazy"
+          onError={(e) => {
+            // Fallback to dot if CDN image fails
+            const el = e.currentTarget;
+            el.style.display = "none";
+            const dot = el.nextElementSibling as HTMLElement | null;
+            if (dot) dot.style.display = "inline-block";
+          }}
+        />
+      ) : null}
+      {/* Dot fallback — hidden when logo loads, visible when no iconSlug */}
       <span
-        className="inline-block w-[7px] h-[7px] rounded-full flex-shrink-0"
-        style={{ backgroundColor: brand.dot, display: "none" }}
+        className="inline-block w-2 h-2 rounded-full flex-shrink-0"
+        style={{
+          backgroundColor: brand.dot,
+          display: logoUrl ? "none" : "inline-block",
+        }}
       />
       {brand.name}
     </span>
@@ -95,7 +117,6 @@ function MarqueeRow({
   dark: boolean;
 }) {
   const doubled = [...brands, ...brands];
-
   return (
     <div className="overflow-hidden w-full">
       <div
@@ -120,8 +141,17 @@ export default function BrandMarquee({
   brands,
 }: Props) {
   const dark = variant === "dark";
-  const row1 = brands?.row1 ?? ROW1;
-  const row2 = brands?.row2 ?? ROW2;
+
+  // When custom brands provided: split into two rows (half each, or duplicate)
+  // for a cleaner focused display
+  const row1 = brands ?? ROW1;
+  const row2 = brands
+    ? [...brands].reverse()  // reversed set for visual contrast
+    : ROW2;
+
+  // Durations: custom brand list is shorter so needs faster animation
+  const dur1 = brands ? Math.max(12, brands.length * 3.5) : 28;
+  const dur2 = brands ? Math.max(15, brands.length * 4.2) : 34;
 
   return (
     <section
@@ -143,7 +173,7 @@ export default function BrandMarquee({
           <p
             className="text-center caption mb-5 px-6"
             style={{
-              color: dark ? "rgba(255,255,255,0.20)" : "var(--text-secondary)",
+              color:   dark ? "rgba(255,255,255,0.20)" : "var(--text-secondary)",
               opacity: 0.7,
             }}
           >
@@ -152,11 +182,11 @@ export default function BrandMarquee({
         )}
 
         {/* Row 1 — scrolls left */}
-        <MarqueeRow brands={row1} direction="left"  duration={28} dark={dark} />
+        <MarqueeRow brands={row1} direction="left"  duration={dur1} dark={dark} />
 
-        {/* Row 2 — scrolls right (offset cadence) */}
+        {/* Row 2 — scrolls right */}
         <div className="mt-3">
-          <MarqueeRow brands={row2} direction="right" duration={34} dark={dark} />
+          <MarqueeRow brands={row2} direction="right" duration={dur2} dark={dark} />
         </div>
       </div>
     </section>

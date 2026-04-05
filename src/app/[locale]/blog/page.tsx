@@ -166,6 +166,69 @@ export default async function BlogIndexPage({ params }: Props) {
               </Link>
             ))}
           </div>
+
+          {/* ── Guías pillar ─────────────────────────────────────────────── */}
+          <div className="mt-16">
+            <p className="caption uppercase tracking-widest font-bold mb-5" style={{ color: "var(--text-secondary)" }}>
+              {lang === "en" ? "Complete guides" : "Guías completas"}
+            </p>
+            <div className="flex flex-col gap-4">
+
+              {/* Guía 1 — Agentes IA Ventas B2B */}
+              <Link
+                href="/guia/agentes-ia-ventas-b2b"
+                className="group rounded-2xl p-6 border flex flex-col sm:flex-row sm:items-center gap-4 card-elevated transition-all duration-200 hover:scale-[1.01] card-hover-mint"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <div className="flex-1 min-w-0">
+                  <span className="text-xs font-bold uppercase tracking-widest mb-2 inline-block" style={{ color: "var(--accent-text)" }}>
+                    {lang === "en" ? "Complete guide · 18 min" : "Guía completa · 18 min"}
+                  </span>
+                  <h2 className="text-base font-bold leading-snug mb-1" style={{ color: "var(--text-primary)" }}>
+                    {lang === "en"
+                      ? "AI Agents for B2B Sales: Complete Guide 2026"
+                      : "Agentes de IA para Ventas B2B: Guía Completa 2026"}
+                  </h2>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                    {lang === "en"
+                      ? "What they are, how they work, real ROI data and how to implement them. McKinsey, Gartner, Bain and 80+ sources."
+                      : "Qué son, cómo funcionan, ROI real y cómo implementarlos. Datos de McKinsey, Gartner, Bain y +80 fuentes."}
+                  </p>
+                </div>
+                <span className="shrink-0 text-sm font-semibold" style={{ color: "var(--accent-text)" }}>
+                  {lang === "en" ? "Read guide →" : "Leer guía →"}
+                </span>
+              </Link>
+
+              {/* Guía 2 — Cómo elegir agencia IA */}
+              <Link
+                href="/guia/como-elegir-agencia-ia"
+                className="group rounded-2xl p-6 border flex flex-col sm:flex-row sm:items-center gap-4 card-elevated transition-all duration-200 hover:scale-[1.01] card-hover-mint"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <div className="flex-1 min-w-0">
+                  <span className="text-xs font-bold uppercase tracking-widest mb-2 inline-block" style={{ color: "var(--accent-text)" }}>
+                    {lang === "en" ? "Complete guide · 22 min" : "Guía completa · 22 min"}
+                  </span>
+                  <h2 className="text-base font-bold leading-snug mb-1" style={{ color: "var(--text-primary)" }}>
+                    {lang === "en"
+                      ? "How to Choose an AI Agency: Complete Guide 2026"
+                      : "Cómo elegir una agencia de IA para tu empresa: guía completa 2026"}
+                  </h2>
+                  <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                    {lang === "en"
+                      ? "88% of AI projects fail. 7 criteria, 5 red flags and a step-by-step framework. 60+ verified sources."
+                      : "El 88% de los proyectos de IA fracasan. 7 criterios, 5 red flags y framework de evaluación. +60 fuentes verificadas."}
+                  </p>
+                </div>
+                <span className="shrink-0 text-sm font-semibold" style={{ color: "var(--accent-text)" }}>
+                  {lang === "en" ? "Read guide →" : "Leer guía →"}
+                </span>
+              </Link>
+
+            </div>
+          </div>
+
         </div>
       </section>
     </div>

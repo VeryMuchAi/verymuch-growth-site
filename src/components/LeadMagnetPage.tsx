@@ -5,50 +5,10 @@ import type {
   SectionOpportunity,
   SectionChangelog,
   SectionAgents,
-  MarqueeBrand,
 } from "@/lib/lead-magnet";
 import LeadMagnetForm from "./LeadMagnetForm";
 import IconBlock, { cycleColor } from "./IconBlock";
-import BrandMarquee from "./BrandMarquee";
-
-// ─── Static brand strip (used when ≤6 specific brands are defined) ────────────
-
-function StaticBrandStrip({ brands, label }: { brands: MarqueeBrand[]; label: string }) {
-  return (
-    <section className="py-8" style={{ background: "rgba(0,0,0,0.2)" }}>
-      <p
-        className="text-center text-xs font-semibold mb-5 px-6"
-        style={{ color: "rgba(255,255,255,0.20)" }}
-      >
-        {label}
-      </p>
-      <div className="flex flex-wrap items-center justify-center gap-3 px-6">
-        {brands.map((brand) => (
-          <span
-            key={brand.name}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-semibold whitespace-nowrap select-none"
-            style={{
-              background: "rgba(255,255,255,0.04)",
-              borderColor: "rgba(255,255,255,0.08)",
-              color: "rgba(255,255,255,0.55)",
-            }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={brand.logo}
-              alt={brand.name}
-              width={18}
-              height={18}
-              className="w-[18px] h-[18px] object-contain flex-shrink-0"
-              style={{ filter: "brightness(0) invert(0.8)" }}
-            />
-            {brand.name}
-          </span>
-        ))}
-      </div>
-    </section>
-  );
-}
+import BrandMarquee, { type Brand } from "./BrandMarquee";
 
 interface Props {
   config: LeadMagnetConfig;
@@ -233,6 +193,21 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
                 ))}
               </ul>
 
+              {/* Trust bar */}
+              <div className="flex items-center gap-3 mt-4 pt-6 border-t border-white/[0.08]">
+                <div className="flex -space-x-2">
+                  {["#4AD4AE", "#F5A040", "#8B5CF6"].map((c) => (
+                    <div
+                      key={c}
+                      className="w-7 h-7 rounded-full border-2 border-brand-dark"
+                      style={{ backgroundColor: c }}
+                    />
+                  ))}
+                </div>
+                <p className="text-xs text-white/40">
+                  Descargado por +300 growth builders
+                </p>
+              </div>
             </div>
 
             {/* Right col — form */}
@@ -243,17 +218,11 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
         </div>
       </section>
 
-      {content.marqueeBrands && content.marqueeBrands.length <= 6 ? (
-        <StaticBrandStrip brands={content.marqueeBrands} label="Stack real usado en esta guía" />
-      ) : (
-        <BrandMarquee
-          variant="dark"
-          label="Stack real usado en esta guía"
-          {...(content.marqueeBrands
-            ? { brands: { row1: content.marqueeBrands, row2: content.marqueeBrands } }
-            : {})}
-        />
-      )}
+      <BrandMarquee
+        variant="dark"
+        label="Stack real usado en esta guía"
+        brands={config.brands as Brand[] | undefined}
+      />
 
       {/* ── Qué incluye ───────────────────────────────────────────────────── */}
       <section className="border-t border-white/[0.06] bg-brand-dark-2">

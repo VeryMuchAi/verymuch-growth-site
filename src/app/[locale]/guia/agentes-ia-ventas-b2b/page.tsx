@@ -1418,6 +1418,37 @@ export default async function PillarPage({ params }: Props) {
           {/* ── Newsletter CTA ───────────────────────────────────────────── */}
           <NewsletterCTA locale={locale} />
 
+          {/* ── Related guide ───────────────────────────────────────────── */}
+          <div className="mb-10">
+            <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "var(--text-secondary)" }}>
+              {locale === "en" ? "You might also like" : "También te puede interesar"}
+            </p>
+            <Link
+              href="/guia/como-elegir-agencia-ia"
+              className="group flex flex-col sm:flex-row sm:items-center gap-4 rounded-2xl p-5 border transition-all duration-200 hover:scale-[1.01]"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-bold mb-1" style={{ color: "var(--accent-warm-text)" }}>
+                  {locale === "en" ? "Complete guide · 2026" : "Guía completa · 2026"}
+                </p>
+                <h3 className="text-base font-bold leading-snug mb-1" style={{ color: "var(--text-primary)" }}>
+                  {locale === "en"
+                    ? "How to Choose an AI Agency: Complete Guide 2026"
+                    : "Cómo elegir una agencia de IA para tu empresa: guía completa 2026"}
+                </h3>
+                <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                  {locale === "en"
+                    ? "88% of AI projects fail. 7 criteria, 5 red flags and a step-by-step evaluation framework. 60+ verified sources."
+                    : "El 88% de los proyectos de IA fracasan. 7 criterios, 5 red flags y un framework de evaluación paso a paso. +60 fuentes verificadas."}
+                </p>
+              </div>
+              <span className="shrink-0 text-sm font-semibold" style={{ color: "var(--accent-text)" }}>
+                {locale === "en" ? "Read guide →" : "Leer guía →"}
+              </span>
+            </Link>
+          </div>
+
           {/* ── Sources ─────────────────────────────────────────────────── */}
           <div
             className="rounded-xl p-5 border"
