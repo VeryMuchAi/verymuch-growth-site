@@ -493,13 +493,17 @@ export default function YCPage() {
             </div>
           </div>
           <h2
-            className="font-display mb-10"
+            className="font-display mb-3"
             style={{ fontSize: '28px', fontWeight: 700, letterSpacing: '-0.01em' }}
           >
             A $65B market that nobody is building for in Spanish
           </h2>
+          <p style={{ color: '#6B7280' }} className="mb-10 text-base">
+            600M+ Spanish speakers across 6 major markets — all underserved by AI tooling built for English-first enterprise.
+          </p>
 
-          <div className="grid gap-6 sm:grid-cols-3">
+          {/* Primary market stats */}
+          <div className="grid gap-4 sm:grid-cols-3 mb-6">
             {[
               {
                 stat: '600M+',
@@ -512,7 +516,7 @@ export default function YCPage() {
                 stat: '$3.7B → $65B',
                 context: 'AI market in Mexico alone by 2030',
                 detail:
-                  'Mexico, Colombia, Spain: three high-growth markets with low AI penetration and high B2B sales volume.',
+                  'Mexico, Colombia, Argentina: three high-growth markets with low AI penetration and high B2B sales volume.',
                 color: '#F5A040',
               },
               {
@@ -545,10 +549,81 @@ export default function YCPage() {
             ))}
           </div>
 
-          <p style={{ color: '#6B7280' }} className="mt-8 text-sm">
+          {/* Market breakdown — individual flags */}
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-8">
+            {[
+              {
+                flag: '🇺🇸',
+                market: 'US Hispanic Market',
+                stat: '41M+ native speakers',
+                detail: '$2.7T purchasing power. Fastest-growing B2B segment in the US. Massively underserved by Spanish-language AI tools.',
+                color: '#4AD4AE',
+              },
+              {
+                flag: '🇦🇷',
+                market: 'Argentina',
+                stat: '45M people · booming tech scene',
+                detail: 'Top LATAM tech talent hub. Growing startup ecosystem with acute need for sales automation as economic conditions shift.',
+                color: '#F5A040',
+              },
+              {
+                flag: '🇵🇭',
+                market: 'Philippines',
+                stat: '115M people · BPO capital of the world',
+                detail: '$32B BPO industry. Thousands of outbound sales teams in English and Spanish — a natural expansion market for our agents.',
+                color: '#4AD4AE',
+              },
+              {
+                flag: '🇨🇦',
+                market: 'Canada (Francophone + Hispanic)',
+                stat: '1.3M+ Spanish speakers',
+                detail: 'Growing LATAM immigrant B2B community. Tech-forward market with strong AI adoption appetite and proximity to US deals.',
+                color: '#F5A040',
+              },
+              {
+                flag: '🇪🇸',
+                market: 'Spain',
+                stat: 'Gateway to EU + LATAM',
+                detail: 'Our operational base in Madrid. Spain-headquartered companies often manage LATAM sales from Madrid — one agent serves both markets.',
+                color: '#4AD4AE',
+              },
+              {
+                flag: '🌎',
+                market: 'Colombia · Chile · Peru',
+                stat: 'Pacific Alliance bloc',
+                detail: 'Combined GDP of $1.2T, strong nearshoring growth, and mid-market B2B sectors rapidly modernizing their sales stacks.',
+                color: '#F5A040',
+              },
+            ].map((item) => (
+              <div
+                key={item.market}
+                style={{
+                  backgroundColor: '#141416',
+                  border: '1px solid rgba(250,249,247,0.07)',
+                }}
+                className="rounded-2xl p-5"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xl">{item.flag}</span>
+                  <span className="font-semibold text-sm">{item.market}</span>
+                </div>
+                <div
+                  className="font-display text-lg font-bold mb-2"
+                  style={{ color: item.color }}
+                >
+                  {item.stat}
+                </div>
+                <p style={{ color: '#6B7280' }} className="text-xs leading-relaxed">
+                  {item.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ color: '#6B7280' }} className="text-sm">
             We&apos;re positioned at the intersection of{' '}
-            <span style={{ color: '#FAF9F7' }}>AI + LATAM + B2B sales</span>. The big players
-            are building for English-first enterprise. We&apos;re building for the market they&apos;re ignoring.
+            <span style={{ color: '#FAF9F7' }}>AI + Spanish-speaking B2B + global sales automation</span>.
+            The big players are building for English-first enterprise. We&apos;re building for the 600M they&apos;re ignoring.
           </p>
         </div>
       </section>
