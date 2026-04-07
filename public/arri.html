@@ -4,67 +4,96 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Readiness Test — Verymuch.Ai</title>
-<meta name="description" content="El diagnóstico de madurez AI más accionable para empresas B2B. 3 minutos. Resultados inmediatos. Gratis.">
+<meta name="description" content="Descubre qué agentes de IA necesita tu empresa para vender más. 8 preguntas. Resultados inmediatos. Recomendaciones específicas.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Verymuch.Ai">
-<meta property="og:url" content="https://www.verymuch.ai/ai-readiness">
-<meta property="og:title" content="AI Readiness Test — ¿Está tu empresa lista para IA? | Verymuch.Ai">
-<meta property="og:description" content="El diagnóstico de madurez AI más accionable para empresas B2B. 3 minutos. Resultados inmediatos. Gratis.">
-<meta property="og:image" content="https://www.verymuch.ai/og_arri_readiness.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://verymuch.ai/ai-readiness">
+<meta property="og:title" content="AI Readiness Test — ¿Qué agentes de IA necesita tu empresa? | Verymuch.Ai">
+<meta property="og:description" content="Descubre qué agentes de IA necesita tu empresa para vender más. 8 preguntas. Resultados inmediatos.">
+<meta property="og:image" content="https://verymuch.ai/og_arri_readiness.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Readiness Test — ¿Está tu empresa lista para IA? | Verymuch.Ai">
-<meta name="twitter:description" content="El diagnóstico de madurez AI más accionable para empresas B2B. 3 minutos. Resultados inmediatos. Gratis.">
-<meta name="twitter:image" content="https://www.verymuch.ai/og_arri_readiness.png">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
+/* ══════════ BRAND TOKENS (Brand Board v3) ══════════ */
 :root{
+  --charcoal:#363536;
+  --accent-warm:#E8703A;
+  --accent-amber:#F4A261;
+  --accent-teal:#2ABFAA;
+  --accent-ice:#7EC8D9;
+  --accent-purple:#9B59B6;
+  --success:#5BA66B;
+  --error:#E85D5D;
+  --icon-gradient:linear-gradient(135deg,#E8B88A,#E4CCA0,#C5DBBE,#A8D5C8,#9FD0DA);
+  --accent-gradient:linear-gradient(135deg,#E8703A,#F4A261,#2ABFAA,#7EC8D9);
+  --btn-gradient:linear-gradient(135deg,#E8703A,#F4A261,#2ABFAA,#7EC8D9,#9B59B6,#E8703A);
+  /* Light mode */
   --bg-primary:#FAFAF8;--bg-secondary:#F0EFEB;--bg-card:#FFFFFF;
   --text-primary:#1A1A1A;--text-secondary:#555;--text-muted:#888;
-  --accent:#0D0D0D;--accent-warm:#E8703A;--accent-teal:#2ABFAA;
-  --accent-gradient:linear-gradient(135deg,#E8703A,#F4A261,#2ABFAA,#7EC8D9);
   --border:#E0DED8;--border-hover:#C0BDB5;
   --shadow-sm:0 1px 3px rgba(0,0,0,.04);--shadow-md:0 4px 20px rgba(0,0,0,.06);
   --shadow-lg:0 12px 40px rgba(0,0,0,.08);--shadow-glow:0 0 40px rgba(232,112,58,.15);
+  --logo-text:var(--charcoal);--logo-icon-text:var(--charcoal);
   --radius:16px;--radius-sm:10px;--radius-xs:6px;
   --transition:.3s cubic-bezier(.4,0,.2,1);
 }
 .dark{
   --bg-primary:#0D0F11;--bg-secondary:#161A1E;--bg-card:#1C2127;
   --text-primary:#F0EFEB;--text-secondary:#A0A0A0;--text-muted:#666;
-  --accent:#F0EFEB;--border:#2A2F36;--border-hover:#3A4048;
+  --border:#2A2F36;--border-hover:#3A4048;
   --shadow-sm:0 1px 3px rgba(0,0,0,.2);--shadow-md:0 4px 20px rgba(0,0,0,.3);
   --shadow-lg:0 12px 40px rgba(0,0,0,.4);--shadow-glow:0 0 40px rgba(232,112,58,.2);
+  --logo-text:#FFFFFF;--logo-icon-text:var(--charcoal);
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;min-height:100vh}
+body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--text-primary);line-height:1.6;overflow-x:hidden;min-height:100vh;-webkit-font-smoothing:antialiased}
+
+/* ══════════ BG ATMOSPHERE ══════════ */
 .bg-atm{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.bg-atm::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,112,58,.08) 0%,transparent 70%);top:-100px;right:-200px;animation:fOrb 20s ease-in-out infinite}
-.bg-atm::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(42,191,170,.06) 0%,transparent 70%);bottom:-100px;left:-150px;animation:fOrb 25s ease-in-out infinite reverse}
+.bg-atm::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(232,112,58,.07) 0%,transparent 70%);top:-100px;right:-200px;animation:fOrb 20s ease-in-out infinite}
+.bg-atm::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(42,191,170,.05) 0%,transparent 70%);bottom:-100px;left:-150px;animation:fOrb 25s ease-in-out infinite reverse}
 @keyframes fOrb{0%,100%{transform:translate(0,0)}33%{transform:translate(40px,-30px)}66%{transform:translate(-20px,20px)}}
+
 .app{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:20px}
-.lang-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:4px}
-.lang-bar-right{display:flex;gap:4px}
+
+/* ══════════ LOGO (Brand Board v3) ══════════ */
+/* PNG logo for light mode, CSS logo for dark mode */
+.vm-logo{display:inline-flex;align-items:center;text-decoration:none}
+.vm-logo-img{height:32px;width:auto;display:block}
+.vm-logo-css{display:none}
+.vm-logo-text{font-family:'Sora',sans-serif;font-weight:800;font-size:1.35rem;color:var(--logo-text);letter-spacing:-.03em;line-height:1}
+.vm-logo-icon{font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:var(--logo-icon-text);background:var(--icon-gradient);border-radius:7px;padding:3px 8px;margin-left:1px;line-height:1.3}
+.dark .vm-logo-img{display:none}
+.dark .vm-logo-css{display:inline-flex;align-items:center}
+.logo-c{text-align:center;margin-bottom:12px}
+
+/* ══════════ TOP BAR ══════════ */
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:4px}
+.top-bar-left{display:flex;align-items:center;gap:8px}
+.top-bar-right{display:flex;align-items:center;gap:4px}
 .back-btn{padding:6px 14px;border:1.5px solid var(--border);border-radius:100px;background:transparent;font-family:'Sora',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.06em;color:var(--text-muted);cursor:pointer;transition:var(--transition);display:inline-flex;align-items:center;gap:5px;text-decoration:none}
 .back-btn:hover{border-color:var(--accent-warm);color:var(--accent-warm)}
 .lang-btn{padding:6px 14px;border:1.5px solid var(--border);border-radius:100px;background:transparent;font-family:'Sora',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);cursor:pointer;transition:var(--transition);display:flex;align-items:center;gap:5px}
 .lang-btn:hover{border-color:var(--accent-warm);color:var(--accent-warm)}
-.lang-btn.active{background:var(--accent);color:var(--bg-primary);border-color:var(--accent)}
-.lang-flag{font-style:normal;font-size:.9rem}
+.lang-btn.active{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}
+.dark .lang-btn.active{background:#F0EFEB;color:var(--charcoal);border-color:#F0EFEB}
+
+/* ══════════ THEME TOGGLE ══════════ */
+.theme-btn{width:36px;height:36px;border:1.5px solid var(--border);border-radius:50%;background:var(--bg-card);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--transition);color:var(--text-muted);font-size:.85rem}
+.theme-btn:hover{border-color:var(--accent-warm);color:var(--accent-warm);transform:rotate(15deg)}
+
+/* ══════════ SECTIONS ══════════ */
 .section{display:none}.section.active{display:block;animation:fadeUp .6s ease forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes scaleIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
 @keyframes slideR{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
 @keyframes pulseR{0%{transform:scale(.9);opacity:1}100%{transform:scale(1.4);opacity:0}}
-.logo-c{text-align:center;margin-bottom:12px}
-.logo-c img{height:40px;object-fit:contain}
-.logo-c .logo-dark{display:none}
-.dark .logo-c .logo-light{display:none}
-.dark .logo-c .logo-dark{display:inline}
+
+/* ══════════ HERO ══════════ */
 .hero{text-align:center;padding:40px 0 20px}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:var(--bg-card);border:1px solid var(--border);border-radius:100px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-warm);margin-bottom:24px;animation:scaleIn .5s ease .2s both}
 .badge i{font-size:.7rem}
@@ -72,56 +101,59 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 .h-title .hl{background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .h-sub{font-family:'Sora',sans-serif;font-size:clamp(1.1rem,2.5vw,1.4rem);font-weight:300;color:var(--text-secondary);margin-bottom:32px;animation:fadeUp .6s ease .4s both}
 .h-desc{font-size:1rem;color:var(--text-secondary);max-width:640px;margin:0 auto 40px;line-height:1.75;animation:fadeUp .6s ease .5s both}
+
+/* ══════════ VALUE CARDS ══════════ */
 .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:40px}
 .vcard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:var(--transition);animation:fadeUp .5s ease both}
 .vcard:nth-child(1){animation-delay:.5s}.vcard:nth-child(2){animation-delay:.6s}.vcard:nth-child(3){animation-delay:.7s}
 .vcard:hover{border-color:var(--accent-warm);box-shadow:var(--shadow-glow);transform:translateY(-3px)}
 .vicon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:14px;color:#fff}
-.vicon.og{background:linear-gradient(135deg,#E8703A,#F4A261)}.vicon.tl{background:linear-gradient(135deg,#2ABFAA,#7EC8D9)}.vicon.dk{background:linear-gradient(135deg,#333,#555)}
+.vicon.og{background:linear-gradient(135deg,#E8703A,#F4A261)}.vicon.tl{background:linear-gradient(135deg,#2ABFAA,#7EC8D9)}.vicon.dk{background:linear-gradient(135deg,var(--charcoal),#555)}
 .vcard h3{font-family:'Sora',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:8px}
 .vcard p{font-size:.85rem;color:var(--text-secondary);line-height:1.6}
+
+/* ══════════ DIMS PREVIEW ══════════ */
 .dimprev{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:40px;animation:fadeUp .5s ease .8s both}
 .dimprev h3{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;margin-bottom:20px;text-align:center}
 .dlist{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .ditem{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:var(--radius-sm);background:var(--bg-secondary);font-size:.82rem;font-weight:600;transition:var(--transition)}
 .ditem:hover{transform:translateX(4px)}
 .ddot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.ddot.c1{background:#E8703A}.ddot.c2{background:#F4A261}.ddot.c3{background:#2ABFAA}.ddot.c4{background:#7EC8D9}.ddot.c5{background:#9B59B6}
+.ddot.c1{background:#E8703A}.ddot.c2{background:#F4A261}.ddot.c3{background:#2ABFAA}.ddot.c4{background:#7EC8D9}.ddot.c5{background:#9B59B6}.ddot.c6{background:#E67E22}
+
+/* ══════════ CTA ══════════ */
 .cta-s{text-align:center;padding:32px 0 20px;animation:fadeUp .5s ease 1s both}
-.btn-p{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--accent);color:var(--bg-primary);border:none;border-radius:100px;font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:var(--transition);letter-spacing:-.01em}
+.btn-p{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:var(--charcoal);color:#fff;border:none;border-radius:100px;font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:var(--transition);letter-spacing:-.01em}
+.dark .btn-p{background:#F0EFEB;color:var(--charcoal)}
 .btn-p:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}.btn-p:active{transform:translateY(0)}
-/* GRADIENT CTA */
-.btn-gradient{position:relative;background:linear-gradient(135deg,#E8703A,#F4A261,#2ABFAA,#7EC8D9,#9B59B6,#E8703A);background-size:300% 300%;color:#fff;padding:18px 44px;font-size:1.05rem;border:none;animation:gradShift 6s ease infinite;overflow:hidden;box-shadow:0 6px 30px rgba(232,112,58,.3),0 2px 10px rgba(42,191,170,.2)}
-.btn-gradient::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);transition:none;animation:shimmer 3.5s ease-in-out infinite 1.5s}
-.btn-gradient:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 10px 40px rgba(232,112,58,.4),0 4px 16px rgba(42,191,170,.3),0 0 60px rgba(232,112,58,.15)}
-.btn-gradient:active{transform:translateY(0) scale(.98)}
+.btn-gradient{position:relative;background:var(--btn-gradient)!important;background-size:300% 300%!important;color:#fff!important;padding:18px 44px;font-size:1.05rem;border:none;animation:gradShift 6s ease infinite;overflow:hidden;box-shadow:0 6px 30px rgba(232,112,58,.3),0 2px 10px rgba(42,191,170,.2)}
+.btn-gradient::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);animation:shimmer 3.5s ease-in-out infinite 1.5s}
+.btn-gradient:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 10px 40px rgba(232,112,58,.4),0 4px 16px rgba(42,191,170,.3)}
 @keyframes gradShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 @keyframes shimmer{0%{left:-100%}100%{left:150%}}
 .btn-s{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:transparent;color:var(--text-primary);border:2px solid var(--border);border-radius:100px;font-family:'Sora',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer;transition:var(--transition)}
 .btn-s:hover{border-color:var(--accent-warm);color:var(--accent-warm)}
 .cta-note{font-size:.78rem;color:var(--text-muted);margin-top:14px}
-/* FORMS */
-.rcard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;max-width:520px;margin:40px auto}
-.rcard h2{font-family:'Sora',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:6px}
-.rcard .st{font-size:.88rem;color:var(--text-secondary);margin-bottom:28px}
-.fg{margin-bottom:18px}
-.fg label{display:block;font-size:.8rem;font-weight:600;margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-secondary)}
+
+/* ══════════ FORMS ══════════ */
+.fg{margin-bottom:14px}
 .fg input,.fg select{width:100%;padding:14px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'Manrope',sans-serif;font-size:16px;background:var(--bg-primary);color:var(--text-primary);transition:var(--transition);-webkit-appearance:none}
 .fg input:focus,.fg select:focus{outline:none;border-color:var(--accent-warm);box-shadow:0 0 0 3px rgba(232,112,58,.1)}
 .fg input::placeholder{color:var(--text-muted)}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.ferr{font-size:.75rem;color:#E74C3C;margin-top:4px;display:none}
-/* ASSESSMENT */
+
+/* ══════════ PROGRESS ══════════ */
 .pw{margin-bottom:24px}
 .pi{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .pl{font-size:.78rem;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.06em}
 .pc{font-family:'Sora',sans-serif;font-size:.85rem;font-weight:700;color:var(--accent-warm)}
 .pbar{width:100%;height:6px;background:var(--bg-secondary);border-radius:100px;overflow:hidden}
 .pfill{height:100%;background:var(--accent-gradient);border-radius:100px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+
+/* ══════════ QUESTIONS ══════════ */
 .dtag{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
 .dtag.d1{background:rgba(232,112,58,.12);color:#E8703A}.dtag.d2{background:rgba(244,162,97,.12);color:#D4883A}
 .dtag.d3{background:rgba(42,191,170,.12);color:#2ABFAA}.dtag.d4{background:rgba(126,200,217,.12);color:#5AA8BD}
-.dtag.d5{background:rgba(155,89,182,.12);color:#9B59B6}
+.dtag.d5{background:rgba(155,89,182,.12);color:#9B59B6}.dtag.d6{background:rgba(230,126,34,.12);color:#E67E22}
 .dark .dtag.d2{color:#F4A261}.dark .dtag.d4{color:#7EC8D9}
 .qcard{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-bottom:20px;animation:scaleIn .4s ease both}
 .qnum{font-family:'Sora',sans-serif;font-size:.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
@@ -136,15 +168,18 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 .btn-n{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border:1.5px solid var(--border);border-radius:100px;background:transparent;color:var(--text-primary);font-family:'Sora',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;transition:var(--transition)}
 .btn-n:hover{border-color:var(--accent-warm);color:var(--accent-warm)}
 .btn-n:disabled{opacity:.3;cursor:not-allowed}.btn-n:disabled:hover{border-color:var(--border);color:var(--text-primary)}
-.btn-n.fin{background:var(--accent);color:var(--bg-primary);border-color:var(--accent)}
+.btn-n.fin{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}
+.dark .btn-n.fin{background:#F0EFEB;color:var(--charcoal);border-color:#F0EFEB}
 .btn-n.fin:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
-/* LOADING */
+
+/* ══════════ LOADING ══════════ */
 .ld-s{text-align:center;padding:80px 0}
 .ld-orb{width:80px;height:80px;margin:0 auto 30px;border-radius:50%;background:var(--accent-gradient);animation:pulseR 1.5s ease-in-out infinite;position:relative}
 .ld-orb::after{content:'';position:absolute;inset:8px;border-radius:50%;background:var(--bg-primary)}
 .ld-t{font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:8px}
 .ld-st{font-size:.85rem;color:var(--text-muted)}
-/* RESULTS */
+
+/* ══════════ RESULTS ══════════ */
 .rh{text-align:center;padding:30px 0 20px}
 .rfor{font-size:.82rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
 .rname{font-family:'Sora',sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:4px}
@@ -154,11 +189,13 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 .sbig{font-family:'Sora',sans-serif;font-size:clamp(3rem,8vw,4.5rem);font-weight:800;line-height:1;margin-bottom:4px;background:var(--accent-gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .stot{font-size:.85rem;color:var(--text-muted);margin-bottom:16px}
 .lvlb{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:100px;font-family:'Sora',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:16px}
-.lvlb.l1{background:rgba(231,76,60,.1);color:#E74C3C}.lvlb.l2{background:rgba(241,196,15,.1);color:#C5A10B}
+.lvlb.l1{background:rgba(232,93,93,.1);color:var(--error)}.lvlb.l2{background:rgba(244,162,97,.12);color:#D4883A}
 .lvlb.l3{background:rgba(42,191,170,.1);color:#2ABFAA}.lvlb.l4{background:rgba(232,112,58,.1);color:#E8703A}
-.dark .lvlb.l2{color:#F1C40F}
+.dark .lvlb.l2{color:#F4A261}
 .lvld{font-size:.92rem;color:var(--text-secondary);line-height:1.7;max-width:580px;margin:0 auto}
 .bnote{font-size:.78rem;color:var(--accent-warm);margin-top:12px;font-weight:600}
+
+/* ══════════ DIM BARS ══════════ */
 .dimr{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:24px}
 .dimr h3{font-family:'Sora',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:20px}
 .dbr{margin-bottom:16px;animation:slideR .4s ease both}
@@ -170,35 +207,40 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 .dbf{height:100%;border-radius:100px;transition:width 1s cubic-bezier(.4,0,.2,1)}
 .dbf.c1{background:linear-gradient(90deg,#E8703A,#F4A261)}.dbf.c2{background:linear-gradient(90deg,#F4A261,#F7C97E)}
 .dbf.c3{background:linear-gradient(90deg,#2ABFAA,#5CD4C1)}.dbf.c4{background:linear-gradient(90deg,#7EC8D9,#A5DBE8)}
-.dbf.c5{background:linear-gradient(90deg,#9B59B6,#BB8FCE)}
+.dbf.c5{background:linear-gradient(90deg,#9B59B6,#BB8FCE)}.dbf.c6{background:linear-gradient(90deg,#E67E22,#F0A04B)}
+
+/* ══════════ RECS ══════════ */
 .recs{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-bottom:24px}
 .recs h3{font-family:'Sora',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:20px}
 .recc{display:flex;gap:14px;padding:18px;border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:12px;transition:var(--transition);animation:slideR .4s ease both}
-.recc:nth-child(2){animation-delay:.15s}.recc:nth-child(3){animation-delay:.3s}.recc:nth-child(4){animation-delay:.45s}
+.recc:nth-child(2){animation-delay:.15s}.recc:nth-child(3){animation-delay:.3s}
 .recc:hover{border-color:var(--accent-warm);transform:translateX(4px)}
 .recn{flex-shrink:0;width:32px;height:32px;border-radius:10px;background:var(--accent-gradient);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:.75rem;font-weight:800;color:#fff}
 .recb h4{font-family:'Sora',sans-serif;font-size:.88rem;font-weight:700;margin-bottom:4px}
 .recb p{font-size:.82rem;color:var(--text-secondary);line-height:1.6}
-/* SYSTEM REC */
-.sysbox{background:var(--bg-card);border:2px solid var(--accent-teal);border-radius:var(--radius);padding:28px;margin-bottom:24px;position:relative;overflow:hidden}
-.sysbox::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(42,191,170,.04),rgba(126,200,217,.04));pointer-events:none}
-.sysbox .sys-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:100px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:rgba(42,191,170,.12);color:var(--accent-teal);margin-bottom:12px;position:relative}
-.sysbox h3{font-family:'Sora',sans-serif;font-size:1.15rem;font-weight:800;margin-bottom:6px;position:relative}
-.sysbox .sys-desc{font-size:.88rem;color:var(--text-secondary);line-height:1.7;position:relative;margin-bottom:16px}
-.sysbox .sys-includes{position:relative}
-.sysbox .sys-includes h4{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:10px}
-.sys-feat{display:flex;align-items:flex-start;gap:10px;padding:8px 0;font-size:.84rem;color:var(--text-primary);line-height:1.5}
-.sys-feat i{color:var(--accent-teal);margin-top:3px;font-size:.7rem;flex-shrink:0}
-/* NEXT STEP */
+
+/* ══════════ AGENT BOX ══════════ */
+.agentbox{background:var(--bg-card);border:2px solid var(--accent-teal);border-radius:var(--radius);padding:28px;margin-bottom:24px;position:relative;overflow:hidden}
+.agentbox::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(42,191,170,.04),rgba(126,200,217,.04));pointer-events:none}
+.agentbox .agent-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:100px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:rgba(42,191,170,.12);color:var(--accent-teal);margin-bottom:12px;position:relative}
+.agentbox h3{font-family:'Sora',sans-serif;font-size:1.15rem;font-weight:800;margin-bottom:6px;position:relative}
+.agentbox .agent-desc{font-size:.88rem;color:var(--text-secondary);line-height:1.7;position:relative;margin-bottom:16px}
+.agentbox .agent-list{position:relative}
+.agentbox .agent-list h4{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);margin-bottom:10px}
+.agent-item{display:flex;align-items:flex-start;gap:10px;padding:10px 0;font-size:.84rem;color:var(--text-primary);line-height:1.5;border-bottom:1px solid var(--border)}
+.agent-item:last-child{border-bottom:none}
+.agent-item i{color:var(--accent-teal);margin-top:3px;font-size:.7rem;flex-shrink:0}
+.agent-item strong{color:var(--accent-warm)}
+
+/* ══════════ NEXT STEP ══════════ */
 .nsbox{background:var(--bg-card);border:2px solid var(--accent-warm);border-radius:var(--radius);padding:28px;margin-bottom:24px;position:relative;overflow:hidden}
 .nsbox::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,112,58,.04),rgba(42,191,170,.04));pointer-events:none}
 .nsbox h3{font-family:'Sora',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:8px;position:relative}.nsbox h3 i{color:var(--accent-warm);margin-right:8px}
 .nst{font-size:.9rem;color:var(--text-secondary);line-height:1.7;position:relative;margin-bottom:20px}
 .btn-book{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:var(--accent-warm);color:#fff;border:none;border-radius:100px;font-family:'Sora',sans-serif;font-size:.92rem;font-weight:700;cursor:pointer;transition:var(--transition);text-decoration:none;position:relative}
 .btn-book:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,112,58,.35);filter:brightness(1.08)}
-.btn-book:active{transform:translateY(0)}
-.btn-book i{font-size:.85rem}
-/* SOFT GATE */
+
+/* ══════════ GATE ══════════ */
 .gate-box{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-bottom:24px;text-align:center;animation:scaleIn .4s ease both}
 .gate-box h3{font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:6px}
 .gate-box .gate-sub{font-size:.85rem;color:var(--text-secondary);margin-bottom:20px;line-height:1.6}
@@ -206,15 +248,16 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 .gate-box .gate-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
 .gate-check{display:flex;align-items:flex-start;gap:8px;font-size:.75rem;color:var(--text-muted);margin-bottom:16px;text-align:left;max-width:400px;margin-left:auto;margin-right:auto}
 .gate-check i{color:var(--accent-teal);margin-top:2px;flex-shrink:0}
-/* SHARE */
+
+/* ══════════ SHARE ══════════ */
 .shsec{text-align:center;padding:20px 0 40px}
 .shsec h3{font-family:'Sora',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:16px}
 .shbtns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 .btn-sh{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1.5px solid var(--border);border-radius:100px;background:var(--bg-card);color:var(--text-primary);font-family:'Manrope',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;transition:var(--transition)}
 .btn-sh:hover{border-color:var(--accent-warm);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
-.btn-sh i{font-size:.9rem}
 .btn-rst{margin-top:20px}
-/* MODAL */
+
+/* ══════════ MODAL ══════════ */
 .moverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;align-items:center;justify-content:center;padding:20px}
 .moverlay.act{display:flex}
 .mbox{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;max-width:400px;width:100%;text-align:center;animation:scaleIn .3s ease}
@@ -222,17 +265,14 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 .mbox .btn-p{padding:12px 28px;font-size:.85rem}
 .fmini{text-align:center;padding:20px 0 30px;font-size:.72rem;color:var(--text-muted)}
 .fmini a{color:var(--accent-warm);text-decoration:none}
-.skip-link{display:inline-block;font-size:.78rem;color:var(--text-muted);cursor:pointer;margin-top:12px;text-decoration:underline;transition:var(--transition)}
-.skip-link:hover{color:var(--accent-warm)}
+
 @media(max-width:600px){
   .app{padding:14px}
-  .qcard,.rcard,.scard,.dimr,.recs,.nsbox,.sysbox,.gate-box{padding:22px}
-  .frow,.gate-box .gate-row{grid-template-columns:1fr}
+  .qcard,.scard,.dimr,.recs,.nsbox,.agentbox,.gate-box{padding:22px}
+  .gate-box .gate-row{grid-template-columns:1fr}
   .vgrid{grid-template-columns:1fr}
   .dlist{grid-template-columns:1fr 1fr}
-  .dlist .ditem:last-child{grid-column:1/-1;max-width:50%;margin:0 auto}
-  .navb{flex-direction:column}
-  .btn-n{width:100%;justify-content:center}
+  .navb{flex-direction:column}.btn-n{width:100%;justify-content:center}
   .shbtns{flex-direction:column;align-items:center}
 }
 </style>
@@ -241,17 +281,20 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 <div class="bg-atm"></div>
 <div class="moverlay" id="mo"><div class="mbox"><p id="mm"></p><button class="btn-p" onclick="closeModal()">OK</button></div></div>
 <div class="app">
-<div class="lang-bar">
-  <a class="back-btn" id="backBtn" href="/"><span>←</span> <span id="backTxt">Volver al inicio</span></a>
-  <div class="lang-bar-right">
-    <button class="lang-btn active" id="langEs" onclick="setLang('es')"><em class="lang-flag">🇪🇸</em> ES</button>
-    <button class="lang-btn" id="langEn" onclick="setLang('en')"><em class="lang-flag">🇺🇸</em> EN</button>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <a class="back-btn" id="backBtn" href="/"><span>&larr;</span> <span id="backTxt">Volver al inicio</span></a>
+  <div class="top-bar-right">
+    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+    <button class="lang-btn active" id="langEs" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" id="langEn" onclick="setLang('en')">EN</button>
   </div>
 </div>
 
 <!-- LANDING -->
 <div class="section active" id="secLand">
-  <div class="logo-c"><img class="logo-light" src="https://pfst.cf2.poecdn.net/base/image/7acc8063baa2a9f87946978eb1a5a61344158b488bbfcabaf4476708d04e63b1?w=500&h=100" alt="Verymuch.Ai"><img class="logo-dark" src="https://pfst.cf2.poecdn.net/base/image/641c32536e8cea22f6a917a41d1211cd17f3ce765d79fb79c80a34b1510dae0f?w=500&h=100" alt="Verymuch.Ai"></div>
+  <div class="logo-c"><a class="vm-logo" href="https://verymuch.ai" target="_blank"><img src="/logo-light.png" alt="Verymuch.Ai" class="vm-logo-img"><span class="vm-logo-css"><span class="vm-logo-text">Verymuch.</span><span class="vm-logo-icon">Ai</span></span></a></div>
   <div class="hero">
     <div class="badge" id="heroBadge"><i class="fa-solid fa-bolt"></i> AI Readiness Test</div>
     <h1 class="h-title" id="landTitle"></h1>
@@ -260,43 +303,27 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
   </div>
   <div class="vgrid" id="vgrid"></div>
   <div class="dimprev"><h3 id="dimPrevTitle"></h3><div class="dlist" id="dlistEl"></div></div>
-  <div class="cta-s">
-    <button class="btn-p btn-gradient" onclick="startAssessment()" id="landCta"></button>
-    <p class="cta-note" id="landNote"></p>
-  </div>
+  <div class="cta-s"><button class="btn-p btn-gradient" onclick="startAssessment()" id="landCta"></button><p class="cta-note" id="landNote"></p></div>
   <div class="fmini" id="footLand"></div>
 </div>
 
-<!-- ASSESSMENT (no registration needed) -->
+<!-- ASSESSMENT -->
 <div class="section" id="secAss">
-  <div class="logo-c"><img class="logo-light" src="https://pfst.cf2.poecdn.net/base/image/7acc8063baa2a9f87946978eb1a5a61344158b488bbfcabaf4476708d04e63b1?w=500&h=100" alt="Verymuch.Ai"><img class="logo-dark" src="https://pfst.cf2.poecdn.net/base/image/641c32536e8cea22f6a917a41d1211cd17f3ce765d79fb79c80a34b1510dae0f?w=500&h=100" alt="Verymuch.Ai"></div>
-  <div class="pw">
-    <div class="pi"><span class="pl" id="pDim"></span><span class="pc" id="pCnt"></span></div>
-    <div class="pbar"><div class="pfill" id="pFill" style="width:8.33%"></div></div>
-  </div>
+  <div class="logo-c"><a class="vm-logo" href="https://verymuch.ai" target="_blank"><img src="/logo-light.png" alt="Verymuch.Ai" class="vm-logo-img"><span class="vm-logo-css"><span class="vm-logo-text">Verymuch.</span><span class="vm-logo-icon">Ai</span></span></a></div>
+  <div class="pw"><div class="pi"><span class="pl" id="pDim"></span><span class="pc" id="pCnt"></span></div><div class="pbar"><div class="pfill" id="pFill" style="width:12.5%"></div></div></div>
   <div id="qCont"></div>
-  <div class="navb">
-    <button class="btn-n" id="bPrev" onclick="prevQ()" disabled></button>
-    <button class="btn-n" id="bNext" onclick="nextQ()"></button>
-  </div>
+  <div class="navb"><button class="btn-n" id="bPrev" onclick="prevQ()" disabled></button><button class="btn-n" id="bNext" onclick="nextQ()"></button></div>
 </div>
 
-<!-- MANDATORY GATE (before results) -->
+<!-- GATE -->
 <div class="section" id="secGate">
-  <div class="logo-c"><img class="logo-light" src="https://pfst.cf2.poecdn.net/base/image/7acc8063baa2a9f87946978eb1a5a61344158b488bbfcabaf4476708d04e63b1?w=500&h=100" alt="Verymuch.Ai"><img class="logo-dark" src="https://pfst.cf2.poecdn.net/base/image/641c32536e8cea22f6a917a41d1211cd17f3ce765d79fb79c80a34b1510dae0f?w=500&h=100" alt="Verymuch.Ai"></div>
-  <div class="gate-box" id="gateBox" style="max-width:520px;margin:30px auto">
+  <div class="logo-c"><a class="vm-logo" href="https://verymuch.ai" target="_blank"><img src="/logo-light.png" alt="Verymuch.Ai" class="vm-logo-img"><span class="vm-logo-css"><span class="vm-logo-text">Verymuch.</span><span class="vm-logo-icon">Ai</span></span></a></div>
+  <div class="gate-box" style="max-width:520px;margin:30px auto">
     <div style="margin-bottom:16px"><i class="fa-solid fa-chart-pie" style="font-size:2.2rem;color:var(--accent-warm)"></i></div>
-    <h3 id="gateTitle"></h3>
-    <p class="gate-sub" id="gateSub"></p>
+    <h3 id="gateTitle"></h3><p class="gate-sub" id="gateSub"></p>
     <div class="gate-form">
-      <div class="gate-row">
-        <div class="fg"><input type="text" id="gName" autocomplete="given-name"></div>
-        <div class="fg"><input type="email" id="gEmail" autocomplete="email"></div>
-      </div>
-      <div class="gate-row">
-        <div class="fg"><input type="text" id="gComp" autocomplete="organization"></div>
-        <div class="fg"><input type="text" id="gRole" autocomplete="organization-title"></div>
-      </div>
+      <div class="gate-row"><div class="fg"><input type="text" id="gName" autocomplete="given-name"></div><div class="fg"><input type="email" id="gEmail" autocomplete="email"></div></div>
+      <div class="gate-row"><div class="fg"><input type="text" id="gComp" autocomplete="organization"></div><div class="fg"><input type="text" id="gRole" autocomplete="organization-title"></div></div>
       <div class="fg"><input type="url" id="gWebsite" autocomplete="url"></div>
       <div class="fg"><div style="position:relative"><i class="fa-brands fa-whatsapp" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--accent-teal);font-size:1.1rem"></i><input type="tel" id="gWhatsapp" style="padding-left:40px" autocomplete="tel"></div></div>
       <div class="gate-check"><i class="fa-solid fa-shield-check"></i><span id="gatePrivacy"></span></div>
@@ -306,349 +333,231 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 </div>
 
 <!-- LOADING -->
-<div class="section" id="secLoad">
-  <div class="ld-s"><div class="ld-orb"></div><p class="ld-t" id="ldT"></p><p class="ld-st" id="ldSt"></p></div>
-</div>
+<div class="section" id="secLoad"><div class="ld-s"><div class="ld-orb"></div><p class="ld-t" id="ldT"></p><p class="ld-st" id="ldSt"></p></div></div>
 
 <!-- RESULTS -->
 <div class="section" id="secRes">
-  <div class="logo-c"><img class="logo-light" src="https://pfst.cf2.poecdn.net/base/image/7acc8063baa2a9f87946978eb1a5a61344158b488bbfcabaf4476708d04e63b1?w=500&h=100" alt="Verymuch.Ai"><img class="logo-dark" src="https://pfst.cf2.poecdn.net/base/image/641c32536e8cea22f6a917a41d1211cd17f3ce765d79fb79c80a34b1510dae0f?w=500&h=100" alt="Verymuch.Ai"></div>
-  <div class="rh">
-    <p class="rfor" id="rFor"></p>
-    <h2 class="rname" id="rNm"></h2>
-    <p class="rcomp" id="rCo"></p>
-  </div>
-  <div class="scard">
-    <div class="sbig" id="sBig">0</div>
-    <div class="stot" id="sTot"></div>
-    <div class="lvlb" id="lvBadge"></div>
-    <p class="lvld" id="lvDesc"></p>
-    <p class="bnote" id="bNote"></p>
-  </div>
+  <div class="logo-c"><a class="vm-logo" href="https://verymuch.ai" target="_blank"><img src="/logo-light.png" alt="Verymuch.Ai" class="vm-logo-img"><span class="vm-logo-css"><span class="vm-logo-text">Verymuch.</span><span class="vm-logo-icon">Ai</span></span></a></div>
+  <div class="rh"><p class="rfor" id="rFor"></p><h2 class="rname" id="rNm"></h2><p class="rcomp" id="rCo"></p></div>
+  <div class="scard"><div class="sbig" id="sBig">0</div><div class="stot" id="sTot"></div><div class="lvlb" id="lvBadge"></div><p class="lvld" id="lvDesc"></p><p class="bnote" id="bNote"></p></div>
   <div class="dimr"><h3 id="dimrH"></h3><div id="dimBars"></div></div>
   <div class="recs"><h3 id="recsH"></h3><div id="recsList"></div></div>
-  <div class="sysbox" id="sysBox"></div>
+  <div class="agentbox" id="agentBox"></div>
   <div class="nsbox"><h3 id="nsH"></h3><p class="nst" id="nsT"></p><div style="position:relative;text-align:center"><a class="btn-book" id="bookBtn" href="#" target="_blank" rel="noopener"><i class="fa-solid fa-calendar-check"></i> <span id="bookTxt"></span></a></div></div>
-  <div class="shsec">
-    <h3 id="shH"></h3>
-    <div class="shbtns">
-      <button class="btn-sh" onclick="copyRes()"><i class="fa-solid fa-copy"></i> <span id="shCopy"></span></button>
-      <button class="btn-sh" onclick="dlRes()"><i class="fa-solid fa-download"></i> <span id="shDl"></span></button>
-      <button class="btn-sh" onclick="shareWA()"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
-      <button class="btn-sh" onclick="shareLI()"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
-    </div>
-    <button class="btn-s btn-rst" onclick="restart()" id="shRestart"></button>
-  </div>
+  <div class="shsec"><h3 id="shH"></h3><div class="shbtns"><button class="btn-sh" onclick="copyRes()"><i class="fa-solid fa-copy"></i> <span id="shCopy"></span></button><button class="btn-sh" onclick="dlRes()"><i class="fa-solid fa-download"></i> <span id="shDl"></span></button><button class="btn-sh" onclick="shareWA()"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button><button class="btn-sh" onclick="shareLI()"><i class="fa-brands fa-linkedin"></i> LinkedIn</button></div><button class="btn-s btn-rst" onclick="restart()" id="shRestart"></button></div>
   <div class="fmini" id="footRes"></div>
 </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
 <script>
-/* SUPABASE CLIENT — lazy init so a CDN failure never breaks the page */
-var _supa = null;
-// These are injected by page.tsx from environment variables
-var _supabaseUrl = window.__SUPABASE_URL__ || '';
-var _supabaseKey = window.__SUPABASE_ANON_KEY__ || '';
+/* ========== SUPABASE ========== */
+var _supa=null,_supabaseUrl=window.__SUPABASE_URL__||'',_supabaseKey=window.__SUPABASE_ANON_KEY__||'';
+function getSupabase(){if(_supa)return _supa;try{if(window.supabase&&window.supabase.createClient){_supa=window.supabase.createClient(_supabaseUrl,_supabaseKey)}}catch(e){}return _supa}
 
-function getSupabase() {
-  if (_supa) return _supa;
-  try {
-    console.log('[Supabase] Initializing client...');
-    console.log('[Supabase] URL present:', !!_supabaseUrl, '(' + _supabaseUrl + ')');
-    console.log('[Supabase] Key present:', !!_supabaseKey);
-    console.log('[Supabase] Key looks like JWT:', _supabaseKey ? _supabaseKey.startsWith('eyJ') : false);
-    console.log('[Supabase] window.supabase available:', !!window.supabase);
-    
-    if (window.supabase && window.supabase.createClient) {
-      _supa = window.supabase.createClient(_supabaseUrl, _supabaseKey);
-      console.log('[Supabase] Client created successfully');
-    } else {
-      console.warn('[Supabase] SDK not loaded yet (window.supabase missing)');
-    }
-  } catch (e) { 
-    console.error('[Supabase] Init failed:', e);
-    try { console.error('[Supabase] Error details:', JSON.stringify(e, Object.getOwnPropertyNames(e))); } catch(x){}
-  }
-  return _supa;
+/* ========== THEME TOGGLE ========== */
+function getInitialTheme(){
+  try{var s=localStorage.getItem('vm_theme');if(s==='dark'||s==='light')return s}catch(e){}
+  return(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light';
 }
-
-/* DARK MODE */
-if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.classList.add('dark')}
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){if(e.matches){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}});
+function applyTheme(th){
+  document.documentElement.classList.toggle('dark',th==='dark');
+  var icon=document.getElementById('themeBtn');
+  if(icon)icon.innerHTML=th==='dark'?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>';
+  try{localStorage.setItem('vm_theme',th)}catch(e){}
+}
+function toggleTheme(){
+  var isDark=document.documentElement.classList.contains('dark');
+  applyTheme(isDark?'light':'dark');
+}
+applyTheme(getInitialTheme());
 
 /* ========== i18n ========== */
 var L={
 es:{
   backBtn:'Volver al inicio',
-  landTitle:'¿Está tu empresa lista para<br><span class="hl">multiplicar ingresos con IA?</span>',
-  landSub:'El diagnóstico de madurez AI más accionable para empresas B2B.',
-  landDesc:'El <strong>82% de empresas B2B medianas</strong> quieren adoptar IA, pero solo el 14% tiene una estrategia clara. Este diagnóstico de 3 minutos te muestra exactamente <strong>dónde estás y qué hacer primero</strong> para convertir la IA en tu ventaja competitiva más rentable.',
+  landTitle:'Descubre qu\u00e9 <span class="hl">agentes de IA</span><br>necesita tu empresa',
+  landSub:'El diagn\u00f3stico que te dice exactamente d\u00f3nde automatizar para vender m\u00e1s.',
+  landDesc:'El <strong>82% de empresas B2B</strong> quieren usar IA en ventas, pero solo el 14% sabe por d\u00f3nde empezar. Este test de 3 minutos analiza 6 \u00e1reas clave de tu operaci\u00f3n comercial y te recomienda <strong>los agentes de IA espec\u00edficos</strong> que mayor impacto tendr\u00edan en tu negocio.',
   vcards:[
-    {icon:'fa-solid fa-crosshairs',cls:'og',t:'Diagnóstico preciso',p:'Evaluamos 5 dimensiones críticas de madurez AI específicas para operaciones comerciales B2B y generación de ingresos.'},
-    {icon:'fa-solid fa-route',cls:'tl',t:'Roadmap personalizado',p:'Recibes recomendaciones accionables con el próximo paso estratégico concreto para avanzar inmediatamente.'},
-    {icon:'fa-solid fa-chart-line',cls:'dk',t:'Enfoque en ROI',p:'Cada recomendación impacta directamente ingresos, eficiencia comercial y pipeline de ventas.'}
+    {icon:'fa-solid fa-robot',cls:'og',t:'Agentes espec\u00edficos',p:'No recomendaciones gen\u00e9ricas. Te decimos exactamente qu\u00e9 agentes de IA necesitas y en qu\u00e9 orden implementarlos.'},
+    {icon:'fa-solid fa-route',cls:'tl',t:'Mapa de tu funnel',p:'Evaluamos 6 \u00e1reas de tu operaci\u00f3n comercial: desde inteligencia de mercado hasta medici\u00f3n de ROI.'},
+    {icon:'fa-solid fa-bolt',cls:'dk',t:'Accionable en 30 d\u00edas',p:'Cada recomendaci\u00f3n viene con el agente, el impacto esperado y el primer paso concreto para implementarlo.'}
   ],
-  dimPrevTitle:'5 dimensiones que evaluamos',
-  dims:['Estrategia','Datos / CRM','Automatización','Demanda / Marketing','ROI / Medición'],
-  landCta:'Comenzar diagnóstico gratis <i class="fa-solid fa-arrow-right"></i>',
-  landNote:'<i class="fa-solid fa-clock"></i> 2 minutos · 5 preguntas · Sin registro previo',
-  footLand:'Framework desarrollado por <a href="https://verymuch.ai" target="_blank" rel="noopener">Verymuch.Ai</a> · AI Readiness Test',
+  dimPrevTitle:'6 \u00e1reas de tu operaci\u00f3n que evaluamos',
+  dims:['Inteligencia de Mercado','Contenido y Autoridad','Prospecci\u00f3n Outbound','Cualificaci\u00f3n y Nurturing','Datos e Infraestructura','Medici\u00f3n y ROI'],
+  landCta:'Descubrir mis agentes ideales <i class="fa-solid fa-arrow-right"></i>',
+  landNote:'<i class="fa-solid fa-clock"></i> 3 minutos \u00b7 8 preguntas \u00b7 Sin registro previo',
+  footLand:'Diagn\u00f3stico dise\u00f1ado por <a href="https://verymuch.ai" target="_blank" rel="noopener">Verymuch.Ai</a> \u00b7 AI Readiness Test',
   qOf:'de',qPregunta:'Pregunta',
   prevBtn:'<i class="fa-solid fa-arrow-left"></i> Anterior',
   nextBtn:'Siguiente <i class="fa-solid fa-arrow-right"></i>',
-  finBtn:'Ver resultados <i class="fa-solid fa-chart-pie"></i>',
-  modalSelect:'Por favor selecciona una opción antes de continuar.',
-  modalMissing:'Aún no has respondido la pregunta {n}. Por favor completa todas las preguntas.',
-  ldT:'Analizando tu madurez AI...',ldSt:'Calculando tu perfil de cuello de botella y recomendaciones',
-  rFor:'Diagnóstico AI Readiness de',sTot:'de 20 puntos',
-  bottleneckNote:'Nivel definido por tu dimensión más débil (cuello de botella): {dim}',
-  dimrH:'<i class="fa-solid fa-chart-bar" style="color:var(--accent-warm);margin-right:8px"></i>Resultados por dimensión',
-  bottleneckTag:'cuello de botella',
-  recsH:'<i class="fa-solid fa-lightbulb" style="color:var(--accent-warm);margin-right:8px"></i>Recomendaciones estratégicas',
-  sysTag:'Sistema recomendado',
-  sysIncludes:'Qué incluye:',
-  nsH:'<i class="fa-solid fa-rocket"></i> Tu próximo paso estratégico',
-  gateTitle:'¡Tu diagnóstico está listo!',
-  gateSub:'Completa tus datos para ver tu reporte personalizado con resultados, recomendaciones y roadmap de 90 días.',
+  finBtn:'Ver mis resultados <i class="fa-solid fa-chart-pie"></i>',
+  modalSelect:'Por favor selecciona una opci\u00f3n antes de continuar.',
+  modalMissing:'A\u00fan no has respondido la pregunta {n}. Por favor completa todas las preguntas.',
+  ldT:'Analizando tu operaci\u00f3n comercial...',ldSt:'Identificando los agentes de IA con mayor impacto para tu empresa',
+  rFor:'Diagn\u00f3stico de agentes IA para',sTot:'de 32 puntos',
+  bottleneckNote:'Nivel definido por tu \u00e1rea m\u00e1s d\u00e9bil (cuello de botella): {dim}',
+  dimrH:'<i class="fa-solid fa-chart-bar" style="color:var(--accent-warm);margin-right:8px"></i>Resultados por \u00e1rea',
+  bottleneckTag:'mayor oportunidad',
+  recsH:'<i class="fa-solid fa-lightbulb" style="color:var(--accent-warm);margin-right:8px"></i>Recomendaciones estrat\u00e9gicas',
+  agentTag:'Agentes recomendados para tu empresa',agentIncludes:'Agentes que te recomendamos:',
+  nsH:'<i class="fa-solid fa-rocket"></i> Tu pr\u00f3ximo paso',
+  gateTitle:'\u00a1Tu diagn\u00f3stico est\u00e1 listo!',
+  gateSub:'Completa tus datos para ver qu\u00e9 agentes de IA necesita tu empresa, con resultados detallados y tu plan de implementaci\u00f3n.',
   gPhName:'Tu nombre *',gPhEmail:'Email corporativo *',gPhComp:'Empresa *',gPhRole:'Cargo *',gPhWebsite:'Sitio web *',gPhWhatsapp:'WhatsApp (opcional)',
-  gatePrivacy:'No spam. Solo recibirás tu reporte y una invitación a sesión estratégica gratuita.',
-  gateBtn:'Ver mis resultados <i class="fa-solid fa-arrow-right"></i>',
-  gateValidation:'Por favor completa nombre, email, empresa, cargo y sitio web válido.',
-  shH:'Comparte este diagnóstico con tu equipo',
-  shCopy:'Copiar resumen',shDl:'Descargar reporte',
-  shRestart:'<i class="fa-solid fa-redo"></i> Volver a realizar el diagnóstico',
-  footRes:'AI Readiness Test por <a href="https://verymuch.ai" target="_blank" rel="noopener">Verymuch.Ai</a><br>Diagnóstico generado el ',
+  gatePrivacy:'No spam. Solo recibir\u00e1s tu reporte y una invitaci\u00f3n a sesi\u00f3n estrat\u00e9gica gratuita.',
+  gateBtn:'Ver mis agentes recomendados <i class="fa-solid fa-arrow-right"></i>',
+  gateValidation:'Por favor completa nombre, email, empresa, cargo y sitio web v\u00e1lido.',
+  shH:'Comparte este diagn\u00f3stico con tu equipo',shCopy:'Copiar resumen',shDl:'Descargar reporte',
+  shRestart:'<i class="fa-solid fa-redo"></i> Volver a realizar el diagn\u00f3stico',
+  footRes:'AI Readiness Test por <a href="https://verymuch.ai" target="_blank" rel="noopener">Verymuch.Ai</a><br>Diagn\u00f3stico generado el ',
   copied:'Resumen copiado al portapapeles.',copyFail:'No se pudo copiar.',
-  shareText:'Acabo de completar el diagnóstico de madurez AI para',
-  shareScore:'Score',shareLvl:'Nivel',shareDo:'Realiza tu diagnóstico gratuito en verymuch.ai',
-  bookBtn:'Agenda tu sesión estratégica gratuita',
+  shareText:'Acabo de descubrir qu\u00e9 agentes de IA necesita',shareScore:'Score',shareLvl:'Nivel',
+  shareDo:'Descubre los tuyos gratis en verymuch.ai/ai-readiness',bookBtn:'Agenda tu sesi\u00f3n estrat\u00e9gica gratuita',
   shareLinked:'Acabo de completar el AI Readiness Test de @Verymuch.Ai',
-  shareLinked2:'\u00bfTu empresa B2B est\u00e1 lista para multiplicar ingresos con IA? Haz el diagn\u00f3stico gratuito en verymuch.ai',
+  shareLinked2:'\u00bfSabes qu\u00e9 agentes de IA necesita tu empresa B2B? Desc\u00fabrelo gratis en verymuch.ai/ai-readiness',
   questions:[
-    {d:0,t:'\u00bfTu empresa tiene un plan claro para usar IA en ventas?',o:['No hay plan.','Hay ideas sueltas, pero sin plan.','Hay plan simple y una persona responsable.','Hay plan claro, metas y seguimiento mensual.']},
-    {d:1,t:'\u00bfQu\u00e9 tan ordenados est\u00e1n tus datos en el CRM?',o:['No usamos CRM o est\u00e1 muy desordenado.','Tenemos CRM, pero muchos datos faltan o est\u00e1n viejos.','La mayor\u00eda de datos est\u00e1 bien y se revisa seguido.','Los datos est\u00e1n limpios y actualizados casi siempre.']},
-    {d:2,t:'\u00bfCu\u00e1nto de tu proceso de ventas est\u00e1 automatizado?',o:['Casi todo es manual.','Algunas partes est\u00e1n automatizadas.','Gran parte est\u00e1 automatizada.','Casi todo est\u00e1 automatizado y funciona bien.']},
-    {d:3,t:'\u00bfQu\u00e9 tan constante es tu marketing para generar demanda?',o:['Publicamos o lanzamos campa\u00f1as muy pocas veces.','Hacemos campa\u00f1as, pero sin rutina clara.','Tenemos campa\u00f1as frecuentes y medimos resultados b\u00e1sicos.','Tenemos campa\u00f1as constantes y mejoramos con datos cada semana.']},
-    {d:4,t:'\u00bfMides si la IA y marketing te traen ingresos reales?',o:['No lo medimos.','Vemos m\u00e9tricas simples, pero no ingresos.','Medimos impacto en ventas cada mes.','Medimos ingresos y ROI con claridad y tomamos decisiones con eso.']}
+    {d:0,t:'\u00bfC\u00f3mo detecta tu empresa oportunidades de negocio y se\u00f1ales de compra en el mercado?',o:['No tenemos un proceso. Dependemos de que nos lleguen leads o de contactos personales.','Revisamos LinkedIn o noticias de vez en cuando, pero sin rutina ni herramientas.','Monitorizamos algunas fuentes (LinkedIn, prensa del sector) con cierta regularidad.','Tenemos un proceso activo: monitorizamos se\u00f1ales de compra, movimientos de competidores y oportunidades de forma sistem\u00e1tica.']},
+    {d:1,t:'\u00bfTu empresa genera contenido de marketing que atrae prospectos de forma recurrente?',o:['No generamos contenido de marketing o lo hacemos muy pocas veces al a\u00f1o.','Publicamos contenido espor\u00e1dicamente, sin calendario ni estrategia clara.','Tenemos un calendario de contenido y publicamos en al menos 2 canales de forma regular.','Generamos contenido adaptado a nuestros perfiles de cliente ideal, lo distribuimos en m\u00faltiples canales y medimos su impacto en pipeline.']},
+    {d:2,t:'\u00bfC\u00f3mo es tu proceso de prospecci\u00f3n outbound (contactar prospectos nuevos)?',o:['No hacemos prospecci\u00f3n activa. Esperamos a que lleguen leads inbound.','Hacemos prospecci\u00f3n manual: b\u00fasquedas en LinkedIn, emails uno a uno.','Tenemos secuencias de prospecci\u00f3n con listas segmentadas, pero la personalizaci\u00f3n es limitada.','Usamos datos del ICP para identificar prospectos, personalizar mensajes autom\u00e1ticamente y hacer seguimiento con secuencias multicanal.']},
+    {d:2,t:'\u00bfCu\u00e1nto tiempo invierte tu equipo comercial en tareas de prospecci\u00f3n manual por semana?',o:['M\u00e1s de 15 horas/semana: casi todo el tiempo se va en buscar, investigar y escribir emails manualmente.','8-15 horas/semana: mucho tiempo manual buscando prospectos y preparando outreach.','3-8 horas/semana: algunas partes est\u00e1n automatizadas pero a\u00fan hay mucho trabajo manual.','Menos de 3 horas/semana: la mayor parte del proceso est\u00e1 automatizado y el equipo se enfoca en cerrar.']},
+    {d:3,t:'\u00bfC\u00f3mo cualificas y priorizas los leads que llegan a tu empresa?',o:['No tenemos criterios claros. Todos los leads se tratan igual.','Tenemos criterios b\u00e1sicos (tama\u00f1o, sector) pero la cualificaci\u00f3n es manual y depende de cada vendedor.','Usamos un sistema de scoring con criterios definidos que asigna prioridad autom\u00e1ticamente.','Tenemos scoring autom\u00e1tico basado en datos de comportamiento y perfil, con enrutamiento al vendedor correcto seg\u00fan el tipo de lead.']},
+    {d:3,t:'\u00bfQu\u00e9 pasa con los leads que no est\u00e1n listos para comprar hoy?',o:['Se pierden. No tenemos un proceso de seguimiento para leads fr\u00edos o tibios.','Intentamos hacer seguimiento manual, pero la mayor\u00eda se nos olvida o se enfr\u00eda.','Tenemos secuencias de email b\u00e1sicas para mantener el contacto, pero no son personalizadas.','Tenemos nurturing automatizado con contenido relevante seg\u00fan el perfil e inter\u00e9s del lead, y detectamos cu\u00e1ndo est\u00e1 listo para comprar.']},
+    {d:4,t:'\u00bfQu\u00e9 tan ordenados est\u00e1n los datos de tu CRM y herramientas comerciales?',o:['No usamos CRM o est\u00e1 muy desordenado. La informaci\u00f3n est\u00e1 en hojas de c\u00e1lculo, emails y cabezas de personas.','Tenemos CRM, pero muchos contactos est\u00e1n desactualizados, duplicados o sin completar.','El CRM est\u00e1 razonablemente bien. La mayor\u00eda de datos est\u00e1n actualizados y el equipo lo usa consistentemente.','Los datos est\u00e1n limpios, actualizados y conectados entre herramientas (CRM, email, marketing). Confiamos en los datos para tomar decisiones.']},
+    {d:5,t:'\u00bfMides el retorno real de tus esfuerzos de marketing y ventas?',o:['No medimos casi nada. No tenemos claro qu\u00e9 funciona y qu\u00e9 no.','Vemos m\u00e9tricas b\u00e1sicas (visitas, emails enviados) pero no las conectamos con ingresos reales.','Medimos el impacto en pipeline y tenemos dashboards mensuales con m\u00e9tricas comerciales.','Medimos ROI por canal, por campa\u00f1a y por vendedor. Tomamos decisiones de inversi\u00f3n basadas en datos de conversi\u00f3n y revenue.']}
   ],
   levels:[
     {name:'Explorador',icon:'fa-solid fa-compass',css:'l1',
-     desc:'Est\u00e1s empezando. Hay mucho trabajo manual y poca claridad en datos y medici\u00f3n.',
-     recs:[
-       {t:'Auditor\u00eda de datos y CRM en 30 d\u00edas',p:'Limpia tu CRM, establece campos obligatorios y migra la informaci\u00f3n dispersa. Sin datos limpios, ninguna IA generar\u00e1 valor.'},
-       {t:'Programa de alfabetizaci\u00f3n AI para el equipo comercial',p:'Entrena a tu equipo en uso de IA para emails, research de prospectos y res\u00famenes de reuniones. Impacto inmediato en productividad.'},
-       {t:'Define tu primer caso de uso con ROI medible',p:'Selecciona UNA tarea repetitiva del ciclo de ventas y autom\u00e1tizala con IA. Documenta tiempo ahorrado y pipeline impactado.'}],
-     sys:{name:'Speed-to-Lead OS',desc:'Sistema para construir tu fundaci\u00f3n de datos y activar IA en tu primer proceso comercial en 30 d\u00edas. Pasa de cero a tu primer quick win medible.',feats:['Auditor\u00eda y limpieza de CRM con protocolo de calidad de datos','Configuraci\u00f3n de primer flujo de prospecci\u00f3n asistido por IA','Dashboard de m\u00e9tricas base para medir antes/despu\u00e9s','Playbook de IA para tu equipo comercial (5 casos de uso inmediatos)']},
-     ns:'Agenda una sesi\u00f3n de diagn\u00f3stico gratuita con Verymuch.Ai para mapear tus 3 quick wins con IA en 45 minutos. Dise\u00f1aremos tu primer piloto comercial que puedas ejecutar en 30 d\u00edas y medir en 60.'},
-    {name:'Operador Experimental',icon:'fa-solid fa-flask',css:'l2',
-     desc:'Ya tienes avances, pero a\u00fan hay procesos sueltos y no todo se mide bien.',
-     recs:[
-       {t:'Construye tu stack AI comercial integrado',p:'Conecta CRM + email + IA en un flujo unificado. Implementa secuencias automatizadas de nurturing con personalizaci\u00f3n AI y scoring de leads.'},
-       {t:'Implementa un framework de medici\u00f3n ROI de IA',p:'Establece baseline de m\u00e9tricas (tiempo por tarea, tasa de conversi\u00f3n, deals cerrados) y mide mensualmente el impacto de cada herramienta AI.'},
-       {t:'Nombra un AI Champion con mandato ejecutivo',p:'Designa a un l\u00edder que coordine la adopci\u00f3n de IA comercial con OKRs claros, presupuesto y autoridad para tomar decisiones t\u00e9cnicas.'}],
-     sys:{name:'Conversion Architect',desc:'Sistema para conectar tus herramientas aisladas en un pipeline integrado que convierta m\u00e1s leads en deals cerrados, con m\u00e9tricas claras de ROI.',feats:['Integraci\u00f3n CRM + email + IA en flujo unificado con scoring','Secuencias multi-canal automatizadas con personalizaci\u00f3n contextual','Framework de medici\u00f3n ROI: dashboard mensual de impacto por herramienta','Programa de 90 d\u00edas con hitos semanales y m\u00e9tricas de avance']},
-     ns:'Solicita un AI Revenue Blueprint con Verymuch.Ai: mapeamos tu stack actual, identificamos las 3 integraciones de mayor impacto en tu pipeline, y dise\u00f1amos tu roadmap de 90 d\u00edas hacia el siguiente nivel.'},
-    {name:'Arquitecto de Procesos',icon:'fa-solid fa-cubes',css:'l3',
-     desc:'Vas bien. Tus procesos son m\u00e1s s\u00f3lidos y ya puedes escalar con mejor control.',
-     recs:[
-       {t:'Despliega scoring predictivo en tu pipeline',p:'Implementa modelos que combinan datos de CRM + actividad web para predecir probabilidad de cierre y recomendar next-best-action por vendedor.'},
-       {t:'Orquesta campa\u00f1as de demanda AI-driven',p:'Conecta generaci\u00f3n de contenido AI + audiencias din\u00e1micas + optimizaci\u00f3n de campaigns. Mide ROAS por segmento semanalmente.'},
-       {t:'Centraliza datos comerciales en un dashboard unificado',p:'Re\u00fane datos de interacci\u00f3n, conversi\u00f3n y revenue en un solo lugar que alimente atribuci\u00f3n y forecasting.'}],
-     sys:{name:'Authority Engine',desc:'Sistema para posicionar tu empresa como referente en tu industria mientras escalas la generaci\u00f3n de demanda calificada con IA de forma predecible.',feats:['Motor de contenido AI: producci\u00f3n multi-formato con medici\u00f3n de conversi\u00f3n por pieza','Campa\u00f1as de demand gen con segmentaci\u00f3n din\u00e1mica y optimizaci\u00f3n semanal','Pipeline predictivo: alertas de next-best-action por oportunidad','Atribuci\u00f3n multi-touch conectada a decisiones de inversi\u00f3n']},
-     ns:'Trabaja con Verymuch.Ai en un proyecto de AI Revenue Acceleration: scoring predictivo, automatizaci\u00f3n avanzada de outbound y medici\u00f3n de ROI completa en 90 d\u00edas.'},
-    {name:'AI Revenue Engine',icon:'fa-solid fa-rocket',css:'l4',
-     desc:'Nivel alto. Tienes procesos claros, buena automatizaci\u00f3n y decisiones basadas en datos.',
-     recs:[
-       {t:'Desarrolla modelos de scoring propios con tus datos',p:'Entrena modelos con tu historial de conversiones para predecir qu\u00e9 leads tienen mayor probabilidad de cerrar y a qu\u00e9 precio. Esto es tu ventaja competitiva.'},
-       {t:'Integra IA en tu propuesta de valor al cliente',p:'Usa tu madurez AI para ofrecer insights, recomendaciones autom\u00e1ticas y experiencias personalizadas que tus competidores no pueden replicar.'},
-       {t:'Sistematiza la experimentaci\u00f3n con nuevas tecnolog\u00edas AI',p:'Dedica tiempo mensual a testear nuevas herramientas (agentes AI, RAG, multimodal) aplicadas a ventas. Documenta resultados y escala lo que funcione.'}],
-     sys:{name:'Signal Hunter',desc:'Sistema avanzado para detectar se\u00f1ales de compra antes que tu competencia y activar respuestas autom\u00e1ticas que maximicen conversi\u00f3n y LTV.',feats:['Detecci\u00f3n de intent signals multi-fuente (web, email, social, CRM)','Modelos de scoring propietarios entrenados con tu data hist\u00f3rica','Activaci\u00f3n autom\u00e1tica de secuencias personalizadas por signal type','Benchmark trimestral vs. industria con recomendaciones de optimizaci\u00f3n']},
-     ns:'\u00danete al AI Revenue Leaders Circle de Verymuch.Ai: comunidad exclusiva de empresas B2B con madurez AI avanzada donde compartimos benchmarks, early access a nuevas tecnolog\u00edas y oportunidades de co-innovaci\u00f3n.'}
+     desc:'Tu operaci\u00f3n comercial es principalmente manual. Hay mucho espacio para que los agentes de IA multipliquen la productividad de tu equipo desde el primer mes.',
+     recs:[{t:'Instala un Agente SDR para activar tu outbound',p:'Tu equipo pierde demasiado tiempo en prospecci\u00f3n manual. Un Agente SDR automatiza la identificaci\u00f3n de prospectos, personalizaci\u00f3n de mensajes y seguimiento.'},{t:'Ordena tu CRM como base de todo',p:'Sin datos limpios, ning\u00fan agente genera valor. Limpia tu CRM, establece campos obligatorios y centraliza la informaci\u00f3n comercial dispersa en 30 d\u00edas.'},{t:'Define tu primer flujo automatizado con ROI medible',p:'Selecciona UNA tarea repetitiva del ciclo de ventas y autom\u00e1tizala. Documenta el tiempo ahorrado y el pipeline impactado.'}],
+     pack:{name:'Pack Starter \u2014 Sistema Outbound',desc:'Automatiza la prospecci\u00f3n de tu equipo y empieza a generar pipeline con IA desde la primera semana.',agents:[{name:'Agente SDR',desc:'Identifica prospectos, enriquece datos, genera secuencias personalizadas y hace seguimiento autom\u00e1tico.'},{name:'Agente Clasificador',desc:'Punt\u00faa leads entrantes y los enruta autom\u00e1ticamente al vendedor o secuencia correcta.'}]},
+     ns:'Agenda una sesi\u00f3n de diagn\u00f3stico gratuita con Verymuch.Ai. En 45 minutos mapeamos tu operaci\u00f3n comercial y dise\u00f1amos tu primer sistema de agentes operativo en 2-3 semanas.'},
+    {name:'Operador T\u00e1ctico',icon:'fa-solid fa-flask',css:'l2',
+     desc:'Ya tienes avances pero los procesos est\u00e1n desconectados. El mayor impacto est\u00e1 en integrar agentes que conecten tu contenido, prospecci\u00f3n y cualificaci\u00f3n.',
+     recs:[{t:'Conecta contenido y distribuci\u00f3n con agentes',p:'Un Agente Productor + Distribuidor crea contenido adaptado a tus ICPs y lo publica autom\u00e1ticamente en todos tus canales.'},{t:'Implementa nurturing automatizado',p:'Un Agente Nurturing mantiene la relaci\u00f3n con leads que no compran hoy y detecta cu\u00e1ndo est\u00e1n listos.'},{t:'Establece m\u00e9tricas de impacto por agente',p:'Define baseline (tiempo por tarea, tasa de conversi\u00f3n, deals cerrados) y mide mensualmente el impacto de cada agente.'}],
+     pack:{name:'Pack Growth \u2014 Inbound + Outbound',desc:'Cubre el ciclo comercial completo: genera demanda, captura leads, cualifica y hace seguimiento sin perder oportunidades.',agents:[{name:'Agente Productor',desc:'Genera contenido adaptado a tus ICPs: posts, art\u00edculos, emails de nurturing.'},{name:'Agente Distribuidor',desc:'Publica autom\u00e1ticamente en canales configurados adaptando formato y horarios.'},{name:'Agente SDR',desc:'Prospecci\u00f3n outbound con secuencias personalizadas.'},{name:'Agente Clasificador',desc:'Scoring autom\u00e1tico y enrutamiento de leads.'},{name:'Agente Nurturing',desc:'Seguimiento de leads fr\u00edos/tibios. Detecta cu\u00e1ndo est\u00e1n listos.'}]},
+     ns:'Solicita un AI Revenue Blueprint: mapeamos tu stack actual, identificamos las 3 integraciones de mayor impacto y dise\u00f1amos tu roadmap de 90 d\u00edas con agentes espec\u00edficos.'},
+    {name:'Arquitecto de Crecimiento',icon:'fa-solid fa-cubes',css:'l3',
+     desc:'Tus procesos son s\u00f3lidos. El siguiente salto es agregar inteligencia de mercado y optimizar cada punto del funnel con agentes coordinados.',
+     recs:[{t:'Activa inteligencia de mercado con Agente Radar',p:'Detecta se\u00f1ales de compra antes que tu competencia. El timing es el diferenciador en este nivel.'},{t:'Integra un Asistente 24/7 para captura multicanal',p:'Un chatbot en web y WhatsApp cualifica leads fuera de horario y escala al equipo humano.'},{t:'Orquesta agentes para que trabajen juntos',p:'Radar alimenta al SDR, el Clasificador activa al Nurturing, el Productor genera contenido para cada etapa.'}],
+     pack:{name:'Pack Scale \u2014 Infraestructura Completa',desc:'Todos los agentes trabajando juntos. Cobertura completa del ciclo comercial con inteligencia de mercado en tiempo real.',agents:[{name:'Agente Radar',desc:'Monitoriza se\u00f1ales de compra y oportunidades en tiempo real.'},{name:'Agente Productor + Distribuidor',desc:'Motor de contenido multicanal con publicaci\u00f3n autom\u00e1tica.'},{name:'Agente SDR',desc:'Prospecci\u00f3n outbound alimentada por se\u00f1ales del Radar.'},{name:'Agente Clasificador + Nurturing',desc:'Scoring, enrutamiento y seguimiento de todo el pipeline.'},{name:'Agente Asistente',desc:'Chatbot 24/7 en web y WhatsApp.'}]},
+     ns:'Trabaja con Verymuch.Ai en un proyecto de AI Revenue Acceleration: sistema multi-agente coordinado con medici\u00f3n de ROI completa en 90 d\u00edas.'},
+    {name:'Revenue Engine',icon:'fa-solid fa-rocket',css:'l4',
+     desc:'Nivel avanzado. Tu operaci\u00f3n est\u00e1 bien automatizada. La ventaja ahora es optimizar, escalar y construir ventajas competitivas dif\u00edciles de replicar.',
+     recs:[{t:'Despliega Deal Sourcing para oportunidades de alto valor',p:'Detecta licitaciones, empresas en expansi\u00f3n, rondas de inversi\u00f3n y cambios organizacionales.'},{t:'Desarrolla modelos de scoring propios',p:'Entrena modelos con tu historial de conversiones para predecir probabilidad de cierre y valor del deal.'},{t:'Sistematiza la experimentaci\u00f3n con nuevos agentes',p:'Testea configuraciones avanzadas: RAG, personalizaci\u00f3n multimodal, workflows cross-\u00e1rea.'}],
+     pack:{name:'Pack Scale+ \u2014 Optimizaci\u00f3n Avanzada',desc:'Infraestructura completa. Foco en optimizaci\u00f3n avanzada, inteligencia predictiva y ventaja competitiva sostenible.',agents:[{name:'Todos los agentes del Pack Scale',desc:'Infraestructura completa ya operativa y optimizada.'},{name:'Agente Deal Sourcing',desc:'Rastrea licitaciones, rondas de inversi\u00f3n y oportunidades de alto valor.'},{name:'Scoring predictivo propietario',desc:'Modelos entrenados con tus datos hist\u00f3ricos.'},{name:'RAG sobre tu knowledge base',desc:'Agentes con acceso a tu base de conocimiento para respuestas hiperpersonalizadas.'}]},
+     ns:'\u00danete al AI Revenue Leaders Circle de Verymuch.Ai: comunidad exclusiva de empresas B2B avanzadas con benchmarks, early access y co-innovaci\u00f3n.'}
   ]
 },
 en:{
   backBtn:'Back to home',
-  landTitle:'Is your company ready to<br><span class="hl">multiply revenue with AI?</span>',
-  landSub:'The most actionable AI maturity assessment for B2B companies.',
-  landDesc:'<strong>82% of mid-size B2B companies</strong> want to adopt AI, but only 14% have a clear strategy. This 3-minute diagnostic shows you exactly <strong>where you stand and what to do first</strong> to turn AI into your most profitable competitive advantage.',
+  landTitle:'Discover which <span class="hl">AI agents</span><br>your company needs',
+  landSub:'The diagnostic that tells you exactly where to automate to sell more.',
+  landDesc:'<strong>82% of B2B companies</strong> want to use AI in sales, but only 14% know where to start. This 3-minute test analyzes 6 key areas and recommends <strong>the specific AI agents</strong> with highest impact on your business.',
   vcards:[
-    {icon:'fa-solid fa-crosshairs',cls:'og',t:'Precise Diagnostic',p:'We assess 5 critical AI maturity dimensions specific to B2B commercial operations and revenue generation.'},
-    {icon:'fa-solid fa-route',cls:'tl',t:'Personalized Roadmap',p:'Receive actionable recommendations with the concrete next strategic step to advance immediately.'},
-    {icon:'fa-solid fa-chart-line',cls:'dk',t:'ROI-Focused',p:'Every recommendation directly impacts revenue, sales efficiency, and pipeline performance.'}
+    {icon:'fa-solid fa-robot',cls:'og',t:'Specific agents',p:'No generic recommendations. We tell you exactly which AI agents you need and in what order.'},
+    {icon:'fa-solid fa-route',cls:'tl',t:'Funnel mapping',p:'We assess 6 areas of your commercial operations: from market intelligence to ROI measurement.'},
+    {icon:'fa-solid fa-bolt',cls:'dk',t:'Actionable in 30 days',p:'Every recommendation comes with the agent, expected impact, and first concrete step.'}
   ],
-  dimPrevTitle:'5 dimensions we assess',
-  dims:['Strategy','Data / CRM','Automation','Demand / Marketing','ROI / Measurement'],
-  landCta:'Start free assessment <i class="fa-solid fa-arrow-right"></i>',
-  landNote:'<i class="fa-solid fa-clock"></i> 2 minutes \u00b7 5 questions \u00b7 No signup required',
-  footLand:'Framework developed by <a href="https://verymuch.ai" target="_blank" rel="noopener">Verymuch.Ai</a> \u00b7 AI Readiness Test',
+  dimPrevTitle:'6 areas of your operations we assess',
+  dims:['Market Intelligence','Content & Authority','Outbound Prospecting','Lead Qualification & Nurturing','Data & Infrastructure','Measurement & ROI'],
+  landCta:'Discover my ideal agents <i class="fa-solid fa-arrow-right"></i>',
+  landNote:'<i class="fa-solid fa-clock"></i> 3 minutes \u00b7 8 questions \u00b7 No signup required',
+  footLand:'Diagnostic by <a href="https://verymuch.ai" target="_blank" rel="noopener">Verymuch.Ai</a> \u00b7 AI Readiness Test',
   qOf:'of',qPregunta:'Question',
-  prevBtn:'<i class="fa-solid fa-arrow-left"></i> Previous',
-  nextBtn:'Next <i class="fa-solid fa-arrow-right"></i>',
-  finBtn:'See results <i class="fa-solid fa-chart-pie"></i>',
-  modalSelect:'Please select an option before continuing.',
-  modalMissing:'You haven\'t answered question {n} yet. Please complete all questions.',
-  ldT:'Analyzing your AI maturity...',ldSt:'Computing your bottleneck profile and recommendations',
-  rFor:'AI Readiness diagnostic for',sTot:'out of 20 points',
-  bottleneckNote:'Level defined by your weakest dimension (bottleneck): {dim}',
-  dimrH:'<i class="fa-solid fa-chart-bar" style="color:var(--accent-warm);margin-right:8px"></i>Results by dimension',
-  bottleneckTag:'bottleneck',
+  prevBtn:'<i class="fa-solid fa-arrow-left"></i> Previous',nextBtn:'Next <i class="fa-solid fa-arrow-right"></i>',finBtn:'See my results <i class="fa-solid fa-chart-pie"></i>',
+  modalSelect:'Please select an option before continuing.',modalMissing:'You haven\'t answered question {n}.',
+  ldT:'Analyzing your commercial operations...',ldSt:'Identifying highest-impact AI agents for your company',
+  rFor:'AI agent diagnostic for',sTot:'out of 32 points',
+  bottleneckNote:'Level defined by your weakest area (bottleneck): {dim}',
+  dimrH:'<i class="fa-solid fa-chart-bar" style="color:var(--accent-warm);margin-right:8px"></i>Results by area',
+  bottleneckTag:'biggest opportunity',
   recsH:'<i class="fa-solid fa-lightbulb" style="color:var(--accent-warm);margin-right:8px"></i>Strategic recommendations',
-  sysTag:'Recommended system',
-  sysIncludes:'What\'s included:',
-  nsH:'<i class="fa-solid fa-rocket"></i> Your next strategic step',
-  gateTitle:'Your diagnostic is ready!',
-  gateSub:'Fill in your details to see your personalized report with results, recommendations, and 90-day roadmap.',
+  agentTag:'Recommended agents for your company',agentIncludes:'Agents we recommend:',
+  nsH:'<i class="fa-solid fa-rocket"></i> Your next step',
+  gateTitle:'Your diagnostic is ready!',gateSub:'Fill in your details to see which AI agents your company needs.',
   gPhName:'Your name *',gPhEmail:'Work email *',gPhComp:'Company *',gPhRole:'Role *',gPhWebsite:'Website *',gPhWhatsapp:'WhatsApp (optional)',
   gatePrivacy:'No spam. You\'ll only receive your report and a free strategy session invite.',
-  gateBtn:'See my results <i class="fa-solid fa-arrow-right"></i>',
+  gateBtn:'See my recommended agents <i class="fa-solid fa-arrow-right"></i>',
   gateValidation:'Please complete name, email, company, role, and a valid website.',
-  shH:'Share this diagnostic with your team',
-  shCopy:'Copy summary',shDl:'Download report',
+  shH:'Share this diagnostic with your team',shCopy:'Copy summary',shDl:'Download report',
   shRestart:'<i class="fa-solid fa-redo"></i> Retake the assessment',
-  footRes:'AI Readiness Test by <a href="https://verymuch.ai" target="_blank" rel="noopener">Verymuch.Ai</a><br>Diagnostic generated on ',
-  copied:'Summary copied to clipboard.',copyFail:'Could not copy.',
-  shareText:'I just completed the AI maturity diagnostic for',
-  shareScore:'Score',shareLvl:'Level',shareDo:'Take your free assessment at verymuch.ai',
-  bookBtn:'Book your free strategy session',
+  footRes:'AI Readiness Test by <a href="https://verymuch.ai" target="_blank" rel="noopener">Verymuch.Ai</a><br>Generated on ',
+  copied:'Summary copied.',copyFail:'Could not copy.',
+  shareText:'I just discovered which AI agents',shareScore:'Score',shareLvl:'Level',
+  shareDo:'Discover yours free at verymuch.ai/ai-readiness',bookBtn:'Book your free strategy session',
   shareLinked:'I just completed the AI Readiness Test by @Verymuch.Ai',
-  shareLinked2:'Is your B2B company ready to multiply revenue with AI? Take the free diagnostic at verymuch.ai',
+  shareLinked2:'Which AI agents does your B2B company need? Find out free at verymuch.ai/ai-readiness',
   questions:[
-    {d:0,t:'Does your company have a clear plan to use AI in sales?',o:['No plan yet.','Some ideas, but no real plan.','Simple plan with one owner.','Clear plan with goals and monthly follow-up.']},
-    {d:1,t:'How clean and organized is your CRM data?',o:['No CRM or very messy data.','CRM exists, but many records are missing or old.','Most data is clean and reviewed often.','Data is clean, updated, and trusted by the team.']},
-    {d:2,t:'How much of your sales process is automated?',o:['Almost everything is manual.','A few steps are automated.','Most steps are automated.','Almost all steps are automated and reliable.']},
-    {d:3,t:'How consistent is your marketing to generate demand?',o:['We run campaigns rarely.','We run campaigns, but not on a clear schedule.','We run campaigns often and track basic results.','We run campaigns consistently and improve them weekly with data.']},
-    {d:4,t:'Do you measure if AI and marketing bring real revenue?',o:['No, we do not measure this.','We track simple metrics, not revenue.','We measure sales impact monthly.','We clearly track revenue and ROI and use it to decide next steps.']}
+    {d:0,t:'How does your company detect business opportunities and buying signals?',o:['No process. We depend on inbound leads or personal contacts.','We check LinkedIn or news occasionally, no routine.','We monitor some sources with some regularity.','Active process: we systematically monitor buying signals, competitor moves, and opportunities.']},
+    {d:1,t:'Does your company generate marketing content that attracts prospects recurrently?',o:['We don\'t generate content or do so very rarely.','We publish sporadically, no calendar or strategy.','We have a content calendar and publish on 2+ channels regularly.','We generate ICP-tailored content, distribute multi-channel, and measure pipeline impact.']},
+    {d:2,t:'What does your outbound prospecting process look like?',o:['No active prospecting. We wait for inbound.','Manual: LinkedIn searches, one-by-one emails.','Sequences with segmented lists, limited personalization.','ICP data to identify, auto-personalize, and multi-channel follow-up.']},
+    {d:2,t:'How much time does your sales team spend on manual prospecting per week?',o:['15+ hours/week: almost all time on manual search and emails.','8-15 hours/week: significant manual time.','3-8 hours/week: some automated, still manual work.','<3 hours/week: mostly automated, team focuses on closing.']},
+    {d:3,t:'How do you qualify and prioritize incoming leads?',o:['No clear criteria. All leads treated equally.','Basic criteria but manual, depends on each seller.','Scoring system with defined criteria, auto-priority.','Auto scoring on behavior+profile, routing to right seller.']},
+    {d:3,t:'What happens with leads not ready to buy today?',o:['Lost. No follow-up process for cold/warm leads.','Manual follow-up, most forgotten or go cold.','Basic email sequences, not personalized.','Automated nurturing with relevant content, detect when ready.']},
+    {d:4,t:'How organized is your CRM and commercial tool data?',o:['No CRM or very messy. Info in spreadsheets and heads.','CRM exists but outdated, duplicated, incomplete.','Reasonably good. Most data current, team uses it consistently.','Clean, current, connected between tools. Trusted for decisions.']},
+    {d:5,t:'Do you measure real return on marketing and sales efforts?',o:['Barely measure anything.','Basic metrics, not connected to revenue.','Measure pipeline impact, monthly dashboards.','ROI by channel, campaign, seller. Data-driven investment decisions.']}
   ],
   levels:[
-    {name:'Explorer',icon:'fa-solid fa-compass',css:'l1',
-     desc:'You are just getting started. There is a lot of manual work and limited measurement.',
-     recs:[
-       {t:'30-day data & CRM audit',p:'Clean your CRM, set required fields, and migrate scattered data. No AI will generate value without clean data.'},
-       {t:'AI literacy program for your sales team',p:'Train your team on using AI for emails, prospect research, and meeting summaries. Immediate productivity impact.'},
-       {t:'Define your first use case with measurable ROI',p:'Pick ONE repetitive task in the sales cycle and automate it with AI. Document time saved and pipeline impacted.'}],
-     sys:{name:'Speed-to-Lead OS',desc:'System to build your data foundation and activate AI in your first commercial process within 30 days. Go from zero to your first measurable quick win.',feats:['CRM audit and cleanup with data quality protocol','First AI-assisted prospecting flow configuration','Baseline metrics dashboard to measure before/after','AI playbook for your sales team (5 immediate use cases)']},
-     ns:'Schedule a free diagnostic session with Verymuch.Ai to map your 3 AI quick wins in 45 minutes. We\'ll design your first commercial AI pilot you can execute in 30 days and measure in 60.'},
-    {name:'Experimental Operator',icon:'fa-solid fa-flask',css:'l2',
-     desc:'You have progress, but systems are still not fully connected and results are uneven.',
-     recs:[
-       {t:'Build your integrated AI commercial stack',p:'Connect CRM + email + AI in a unified flow. Implement automated nurturing with AI personalization and lead scoring.'},
-       {t:'Implement an AI ROI measurement framework',p:'Establish metric baselines (time per task, conversion rate, deals closed) and measure monthly impact of each AI tool.'},
-       {t:'Appoint an AI Champion with executive mandate',p:'Designate a leader to coordinate AI sales adoption with clear OKRs, budget, and technical decision authority.'}],
-     sys:{name:'Conversion Architect',desc:'System to connect your siloed tools into an integrated pipeline that converts more leads into closed deals, with clear ROI metrics.',feats:['CRM + email + AI integration in unified flow with scoring','Automated multi-channel sequences with contextual personalization','ROI measurement framework: monthly impact dashboard per tool','90-day program with weekly milestones and progress metrics']},
-     ns:'Request an AI Revenue Blueprint with Verymuch.Ai: we map your current stack, identify the 3 highest-impact pipeline integrations, and design your 90-day roadmap to the next level.'},
-    {name:'Process Architect',icon:'fa-solid fa-cubes',css:'l3',
-     desc:'You are doing well. Core processes are stronger and you can scale with better control.',
-     recs:[
-       {t:'Deploy predictive scoring in your pipeline',p:'Implement models combining CRM + web activity data to predict close probability and recommend next-best-action per seller.'},
-       {t:'Orchestrate AI-driven demand campaigns',p:'Connect AI content generation + dynamic audiences + campaign optimization. Measure ROAS per segment weekly.'},
-       {t:'Centralize commercial data in a unified dashboard',p:'Bring interaction, conversion, and revenue data together in one place feeding attribution and forecasting.'}],
-     sys:{name:'Authority Engine',desc:'System to position your company as an industry authority while scaling qualified demand generation with AI predictably.',feats:['AI content engine: multi-format production with per-piece conversion tracking','Demand gen campaigns with dynamic segmentation and weekly optimization','Predictive pipeline: next-best-action alerts per opportunity','Multi-touch attribution connected to investment decisions']},
-     ns:'Work with Verymuch.Ai on an AI Revenue Acceleration project: predictive scoring, advanced outbound automation, and complete ROI measurement in 90 days.'},
-    {name:'AI Revenue Engine',icon:'fa-solid fa-rocket',css:'l4',
-     desc:'High level. Processes are clear, automation is strong, and decisions are data-based.',
-     recs:[
-       {t:'Develop proprietary scoring models with your data',p:'Train models with your conversion history to predict which leads are most likely to close and at what price. This is your competitive moat.'},
-       {t:'Integrate AI into your client value proposition',p:'Use your AI maturity to offer insights, automatic recommendations, and personalized experiences your competitors can\'t replicate.'},
-       {t:'Systematize experimentation with new AI tech',p:'Dedicate monthly time to test new tools (AI agents, RAG, multimodal) applied to sales. Document results and scale what works.'}],
-     sys:{name:'Signal Hunter',desc:'Advanced system to detect buying signals before your competition and trigger automated responses that maximize conversion and LTV.',feats:['Multi-source intent signal detection (web, email, social, CRM)','Proprietary scoring models trained on your historical data','Automatic activation of personalized sequences by signal type','Quarterly industry benchmark with optimization recommendations']},
-     ns:'Join the Verymuch.Ai AI Revenue Leaders Circle: an exclusive community of advanced AI-mature B2B companies sharing benchmarks, early access to new technologies, and co-innovation opportunities.'}
+    {name:'Explorer',icon:'fa-solid fa-compass',css:'l1',desc:'Your commercial operation is mainly manual. Huge space for AI agents to multiply productivity from month one.',
+     recs:[{t:'Install an SDR Agent to activate outbound',p:'Automates prospect identification, message personalization, and follow-up.'},{t:'Clean up your CRM as foundation',p:'Without clean data, no agent generates value. Clean CRM in 30 days.'},{t:'Define first automated flow with measurable ROI',p:'Pick ONE repetitive task, automate it, document impact.'}],
+     pack:{name:'Starter Pack \u2014 Outbound System',desc:'Automate prospecting and generate pipeline with AI from week one.',agents:[{name:'SDR Agent',desc:'Identifies prospects, enriches data, generates personalized sequences.'},{name:'Classifier Agent',desc:'Scores and routes incoming leads automatically.'}]},
+     ns:'Book a free diagnostic session with Verymuch.Ai. In 45 minutes we design your first agent system, operational in 2-3 weeks.'},
+    {name:'Tactical Operator',icon:'fa-solid fa-flask',css:'l2',desc:'Progress but disconnected. Biggest impact: integrate agents connecting content, prospecting, and qualification.',
+     recs:[{t:'Connect content and distribution with agents',p:'Producer + Distributor Agent creates ICP-tailored content and auto-publishes.'},{t:'Implement automated nurturing',p:'Nurturing Agent maintains relationships and detects purchase readiness.'},{t:'Establish impact metrics per agent',p:'Define baselines, measure each agent\'s impact monthly.'}],
+     pack:{name:'Growth Pack \u2014 Inbound + Outbound',desc:'Full commercial cycle: demand gen, lead capture, auto-qualification, and follow-up.',agents:[{name:'Producer Agent',desc:'ICP-tailored marketing content with brand voice.'},{name:'Distributor Agent',desc:'Auto-publishes across channels, adapts format/timing.'},{name:'SDR Agent',desc:'Personalized outbound prospecting sequences.'},{name:'Classifier Agent',desc:'Auto scoring and lead routing.'},{name:'Nurturing Agent',desc:'Cold/warm lead management, readiness detection.'}]},
+     ns:'Request an AI Revenue Blueprint: we map your stack, identify top 3 integrations, and design your 90-day agent roadmap.'},
+    {name:'Growth Architect',icon:'fa-solid fa-cubes',css:'l3',desc:'Solid processes. Next leap: market intelligence and coordinated specialized agents.',
+     recs:[{t:'Activate market intelligence with Radar Agent',p:'Detect buying signals before competition. Timing is the differentiator.'},{t:'Integrate 24/7 Assistant for multi-channel capture',p:'Web+WhatsApp chatbot qualifies leads outside hours, escalates to humans.'},{t:'Orchestrate agents to work together',p:'Radar feeds SDR, Classifier triggers Nurturing, Producer generates stage-specific content.'}],
+     pack:{name:'Scale Pack \u2014 Complete Infrastructure',desc:'All agents coordinated. Full cycle coverage with real-time market intelligence.',agents:[{name:'Radar Agent',desc:'Real-time buying signals and opportunity monitoring.'},{name:'Producer + Distributor',desc:'Multi-channel content engine with auto-publishing.'},{name:'SDR Agent',desc:'Outbound fed by Radar signals.'},{name:'Classifier + Nurturing',desc:'Full pipeline scoring, routing, and follow-up.'},{name:'Assistant Agent',desc:'24/7 web+WhatsApp chatbot.'}]},
+     ns:'Work with Verymuch.Ai on AI Revenue Acceleration: coordinated multi-agent system with complete ROI measurement in 90 days.'},
+    {name:'Revenue Engine',icon:'fa-solid fa-rocket',css:'l4',desc:'Advanced. Well automated, solid data. Optimize, scale, build hard-to-replicate competitive moats.',
+     recs:[{t:'Deploy Deal Sourcing for high-value opportunities',p:'Detect tenders, expansions, funding rounds, org changes.'},{t:'Develop proprietary scoring models',p:'Train on your conversion history to predict close probability and deal value.'},{t:'Systematize experimentation with new agents',p:'RAG, multimodal personalization, cross-department workflows.'}],
+     pack:{name:'Scale+ Pack \u2014 Advanced Optimization',desc:'Complete infrastructure. Focus: advanced optimization, predictive intelligence, sustainable advantage.',agents:[{name:'All Scale Pack agents',desc:'Complete infrastructure, operational and optimized.'},{name:'Deal Sourcing Agent',desc:'Tracks tenders, funding rounds, high-value opportunities.'},{name:'Proprietary predictive scoring',desc:'Models trained on your historical data.'},{name:'RAG on knowledge base',desc:'Agents with full internal knowledge access.'}]},
+     ns:'Join the Verymuch.Ai AI Revenue Leaders Circle: exclusive B2B community with benchmarks, early access, and co-innovation.'}
   ]
 }
 };
 
 /* ========== GHL BOOKING ========== */
-var GHL_BOOKING_URL = 'https://api.leadconnectorhq.com/widget/booking/zU0QrkmOM9x1eRfwmNye';
+var GHL_BOOKING_URL='https://api.leadconnectorhq.com/widget/booking/zU0QrkmOM9x1eRfwmNye';
 
 /* ========== STATE ========== */
-/* 
- * LANGUAGE AUTO-DETECTION (Priority order):
- * 1. URL query param ?lang=es|en
- * 2. localStorage "vm_ai_test_lang"
- * 3. Browser language detection (navigator.language)
- */
-function detectLanguage() {
-  // Priority 1: URL query param
-  var urlParams = new URLSearchParams(window.location.search);
-  var urlLang = urlParams.get('lang');
-  if (urlLang === 'es' || urlLang === 'en') {
-    console.log('[Lang] Detected from URL param:', urlLang);
-    localStorage.setItem('vm_ai_test_lang', urlLang);
-    return urlLang;
-  }
-
-  // Priority 2: localStorage
-  var storedLang = localStorage.getItem('vm_ai_test_lang');
-  if (storedLang === 'es' || storedLang === 'en') {
-    console.log('[Lang] Detected from localStorage:', storedLang);
-    return storedLang;
-  }
-
-  // Priority 3: Browser language detection
-  var browserLang = navigator.language || navigator.userLanguage || '';
-  var detectedLang = browserLang.toLowerCase().startsWith('es') ? 'es' : 'en';
-  console.log('[Lang] Detected from browser:', browserLang, '→', detectedLang);
-  localStorage.setItem('vm_ai_test_lang', detectedLang);
-  return detectedLang;
+function detectLanguage(){
+  try{var p=new URLSearchParams(window.location.search).get('lang');if(p==='es'||p==='en')return p}catch(e){}
+  try{var s=localStorage.getItem('vm_ai_test_lang');if(s==='es'||s==='en')return s}catch(e){}
+  return(navigator.language||'').toLowerCase().startsWith('es')?'es':'en';
 }
-
-var lang = detectLanguage();
-var ans = {};
-var curQ = 0;
-var dims=[
-  {id:'d1',color:'c1',tag:'d1',qs:[0]},
-  {id:'d2',color:'c2',tag:'d2',qs:[1]},
-  {id:'d3',color:'c3',tag:'d3',qs:[2]},
-  {id:'d4',color:'c4',tag:'d4',qs:[3]},
-  {id:'d5',color:'c5',tag:'d5',qs:[4]}
-];
-/* Bottleneck dims: D2(idx1), D3(idx2), D5(idx4) */
-var bottleneckDims=[1,2,4];
+var lang=detectLanguage(),ans={},curQ=0;
+var dims=[{id:'d1',color:'c1',tag:'d1',qs:[0]},{id:'d2',color:'c2',tag:'d2',qs:[1]},{id:'d3',color:'c3',tag:'d3',qs:[2,3]},{id:'d4',color:'c4',tag:'d4',qs:[4,5]},{id:'d5',color:'c5',tag:'d5',qs:[6]},{id:'d6',color:'c6',tag:'d6',qs:[7]}];
+var bottleneckDims=[2,3,4];
 
 function setLang(l){
-  if (l !== 'es' && l !== 'en') return;
-  lang = l;
-  
-  // Persist to localStorage
-  localStorage.setItem('vm_ai_test_lang', l);
-  
-  // Update URL param (optional, keeps URL in sync)
-  var url = new URL(window.location);
-  url.searchParams.set('lang', l);
-  window.history.replaceState({}, '', url);
-  
-  // Update UI
-  document.getElementById('langEs').classList.toggle('active', l === 'es');
-  document.getElementById('langEn').classList.toggle('active', l === 'en');
-  document.documentElement.lang = l;
-  document.getElementById('heroBadge').innerHTML = '<i class="fa-solid fa-bolt"></i> ' + (l === 'es' ? 'Test de Madurez AI' : 'AI Readiness Test');
-  
-  // Back to site home — match next-intl routes (es = /, en = /en)
-  var backEl = document.getElementById('backBtn');
-  backEl.href = l === 'en' ? '/en' : '/';
-  document.getElementById('backTxt').textContent = L[l].backBtn;
-  
-  // Re-render active sections
-  renderLanding();
-  renderLoadingText();
-  if (document.getElementById('secAss').classList.contains('active')) renderQ();
-  if (document.getElementById('secGate').classList.contains('active')) renderGate();
-  
-  console.log('[Lang] Switched to:', l);
+  if(l!=='es'&&l!=='en')return;lang=l;
+  try{localStorage.setItem('vm_ai_test_lang',l)}catch(e){}
+  try{var u=new URL(window.location);u.searchParams.set('lang',l);window.history.replaceState({},'',u)}catch(e){}
+  document.getElementById('langEs').classList.toggle('active',l==='es');
+  document.getElementById('langEn').classList.toggle('active',l==='en');
+  document.documentElement.lang=l;
+  var b=document.getElementById('backBtn');b.href=l==='en'?'/en':'/';
+  document.getElementById('backTxt').textContent=L[l].backBtn;
+  renderLanding();renderLoadingText();
+  if(document.getElementById('secAss').classList.contains('active'))renderQ();
+  if(document.getElementById('secGate').classList.contains('active'))renderGate();
 }
 function t(){return L[lang]}
 
 /* ========== RENDER ========== */
 function renderLanding(){
   var c=t();
-  document.getElementById('heroBadge').innerHTML = '<i class="fa-solid fa-bolt"></i> ' + (lang === 'es' ? 'Test de Madurez AI' : 'AI Readiness Test');
   document.getElementById('landTitle').innerHTML=c.landTitle;
   document.getElementById('landSub').textContent=c.landSub;
   document.getElementById('landDesc').innerHTML=c.landDesc;
   var vh='';c.vcards.forEach(function(v){vh+='<div class="vcard"><div class="vicon '+v.cls+'"><i class="'+v.icon+'"></i></div><h3>'+v.t+'</h3><p>'+v.p+'</p></div>'});
   document.getElementById('vgrid').innerHTML=vh;
   document.getElementById('dimPrevTitle').textContent=c.dimPrevTitle;
-  var dh='',cols=['c1','c2','c3','c4','c5'];
+  var dh='',cols=['c1','c2','c3','c4','c5','c6'];
   c.dims.forEach(function(d,i){dh+='<div class="ditem"><div class="ddot '+cols[i]+'"></div>'+d+'</div>'});
   document.getElementById('dlistEl').innerHTML=dh;
   document.getElementById('landCta').innerHTML=c.landCta;
@@ -661,315 +570,86 @@ function renderLoadingText(){var c=t();document.getElementById('ldT').textConten
 function goTo(id){document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active')});document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
 function showModal(msg){document.getElementById('mm').textContent=msg;document.getElementById('mo').classList.add('act')}
 function closeModal(){document.getElementById('mo').classList.remove('act')}
-
-/* ========== VALUE-FIRST: Skip registration ========== */
 function startAssessment(){curQ=0;ans={};window._userData=null;renderQ();goTo('secAss')}
 
 /* ========== QUESTIONS ========== */
 function getDimForQ(qi){for(var i=0;i<dims.length;i++){if(dims[i].qs.indexOf(qi)!==-1)return i}return 0}
 function renderQ(){
   var c=t(),q=c.questions[curQ],di=getDimForQ(curQ);
-  var pct=((curQ+1)/c.questions.length)*100;
-  document.getElementById('pFill').style.width=pct+'%';
+  document.getElementById('pFill').style.width=((curQ+1)/c.questions.length*100)+'%';
   document.getElementById('pCnt').textContent=(curQ+1)+' / '+c.questions.length;
   document.getElementById('pDim').textContent=c.dims[di];
-  var h='<div class="qcard">';
-  h+='<div class="dtag d'+(di+1)+'"><i class="fa-solid fa-layer-group"></i> '+c.dims[di]+'</div>';
-  h+='<div class="qnum">'+c.qPregunta+' '+(curQ+1)+' '+c.qOf+' '+c.questions.length+'</div>';
-  h+='<div class="qtxt">'+q.t+'</div><div class="olist">';
+  var h='<div class="qcard"><div class="dtag d'+(di+1)+'"><i class="fa-solid fa-layer-group"></i> '+c.dims[di]+'</div><div class="qnum">'+c.qPregunta+' '+(curQ+1)+' '+c.qOf+' '+c.questions.length+'</div><div class="qtxt">'+q.t+'</div><div class="olist">';
   var lvls=['N1','N2','N3','N4'];
-  q.o.forEach(function(opt,idx){
-    var sel=ans[curQ]===(idx+1)?' sel':'';
-    h+='<button class="obtn'+sel+'" onclick="selOpt('+curQ+','+(idx+1)+')"><span class="olevel">'+lvls[idx]+'</span><span>'+opt+'</span></button>';
-  });
-  h+='</div></div>';
-  document.getElementById('qCont').innerHTML=h;
-  document.getElementById('bPrev').disabled=curQ===0;
-  document.getElementById('bPrev').innerHTML=c.prevBtn;
+  q.o.forEach(function(opt,idx){h+='<button class="obtn'+(ans[curQ]===(idx+1)?' sel':'')+'" onclick="selOpt('+curQ+','+(idx+1)+')"><span class="olevel">'+lvls[idx]+'</span><span>'+opt+'</span></button>'});
+  h+='</div></div>';document.getElementById('qCont').innerHTML=h;
+  document.getElementById('bPrev').disabled=curQ===0;document.getElementById('bPrev').innerHTML=c.prevBtn;
   var bn=document.getElementById('bNext');
-  if(curQ===c.questions.length-1){bn.innerHTML=c.finBtn;bn.classList.add('fin')}
-  else{bn.innerHTML=c.nextBtn;bn.classList.remove('fin')}
+  if(curQ===c.questions.length-1){bn.innerHTML=c.finBtn;bn.classList.add('fin')}else{bn.innerHTML=c.nextBtn;bn.classList.remove('fin')}
 }
-function selOpt(qi,val){ans[qi]=val;var btns=document.querySelectorAll('.obtn');btns.forEach(function(b,i){if(i===val-1)b.classList.add('sel');else b.classList.remove('sel')})}
+function selOpt(qi,val){ans[qi]=val;document.querySelectorAll('.obtn').forEach(function(b,i){b.classList.toggle('sel',i===val-1)})}
 function nextQ(){var c=t();if(ans[curQ]===undefined){showModal(c.modalSelect);return}if(curQ<c.questions.length-1){curQ++;renderQ();document.getElementById('qCont').scrollIntoView({behavior:'smooth',block:'start'})}else{showResults()}}
 function prevQ(){if(curQ>0){curQ--;renderQ()}}
 
-/* ========== BOTTLENECK SCORING ========== */
-function dimLevel(dimIdx){
-  var d=dims[dimIdx],sum=0;
-  d.qs.forEach(function(qi){sum+=(ans[qi]||1)});
-  var mx=d.qs.length*4;
-  var ratio=sum/mx;
-  if(ratio>=0.875) return 3; /* >=87.5% => L4 */
-  if(ratio>=0.625) return 2; /* >=62.5% => L3 */
-  if(ratio>=0.375) return 1; /* >=37.5% => L2 */
-  return 0; /* L1 */
-}
+/* ========== SCORING ========== */
+function dimLevel(di){var d=dims[di],s=0;d.qs.forEach(function(qi){s+=(ans[qi]||1)});var r=s/(d.qs.length*4);return r>=.875?3:r>=.625?2:r>=.375?1:0}
+function computeBottleneck(){var ml=3,md=2;bottleneckDims.forEach(function(di){var l=dimLevel(di);if(l<ml){ml=l;md=di}});return{level:ml,dimIdx:md}}
 
-function computeBottleneck(){
-  var minLvl=3,minDim=1;
-  bottleneckDims.forEach(function(di){
-    var lv=dimLevel(di);
-    if(lv<minLvl){minLvl=lv;minDim=di}
-  });
-  return{level:minLvl,dimIdx:minDim};
-}
-
-function saveToSupabase(payload){
-  var sb=getSupabase();
-  if(!sb){
-    console.warn('[Supabase] Client not available, skipping save');
-    return;
-  }
-  
-  console.log('[Supabase] Preparing insert for payload:', payload);
-  
-  var row={
-    email:payload.email||null,
-    industry:payload.industry||null,
-    company_size:payload.companySize||null,
-    lang:payload.lang||'en',
-    total_score:payload.total||payload.totalScore||0,
-    level_name:payload.level||payload.levelName||'',
-    level_index:payload.levelIndex||0,
-    bottleneck_dimension:payload.bottleneckDimension||null,
-    recommended_system:payload.sys||payload.recommendedSystem||null,
-    dimension_scores:payload.dimScores||payload.dimensionScores||null,
-    raw_payload:payload
-  };
-  
-  console.log('[Supabase] Mapped row:', row);
-  console.log('[Supabase] Attempting insert to arri_submissions...');
-  
-  // Fire-and-forget insert (no .select())
-  sb.from('arri_submissions').insert([row]).then(function(res){
-    console.log('[Supabase] Insert response:', res);
-    if(res.error){
-      console.error('[Supabase] Insert error object:', res.error);
-      try {
-        console.error('[Supabase] Error stringified:', JSON.stringify(res.error, null, 2));
-      } catch(e){}
-      console.error('[Supabase] Error code:', res.error.code);
-      console.error('[Supabase] Error message:', res.error.message);
-      console.error('[Supabase] Error details:', res.error.details);
-      console.error('[Supabase] Error hint:', res.error.hint);
-    } else {
-      console.log('[Supabase] ✅ Insert successful (fire-and-forget)');
-    }
-  }).catch(function(err){
-    console.error('[Supabase] Request failed with exception:', err);
-    try {
-      console.error('[Supabase] Exception stringified:', JSON.stringify(err, Object.getOwnPropertyNames(err)));
-    } catch(e){}
-  });
-}
-
-function sendAssessmentPayload(payload){
-  console.log('Sending assessment payload',payload);
-  window._lastAssessmentPayloadSent=payload;
-  saveToSupabase(payload);
-  return fetch('/api/assessment',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(payload)
-  }).then(function(res){
-    if(!res.ok){throw new Error('Assessment API '+res.status)}
-    return res.json();
-  }).then(function(data){
-    console.log('Assessment API OK',data);
-    return data;
-  }).catch(function(err){
-    console.error('Assessment API failed:',err);
-  });
-}
-
-function sendOptEmail(email){
-  var cleanEmail=(email||'').trim();
-  if(!cleanEmail){return}
-  var basePayload=window._resultPayload||window._rd||{};
-  var payload=Object.assign({},basePayload,{email:cleanEmail});
-  window._resultPayload=payload;
-  sendAssessmentPayload(payload);
-}
-
-function bindOptionalEmailHandler(){
-  var input=document.getElementById('optEmail')||document.getElementById('optionalEmail');
-  if(!input){return}
-  input.addEventListener('change',function(){sendOptEmail(input.value)});
-}
+/* ========== SUPABASE+API ========== */
+function saveToSupabase(p){var sb=getSupabase();if(!sb)return;sb.from('arri_submissions').insert([{email:p.email||null,lang:p.lang||'en',total_score:p.total||0,level_name:p.level||'',level_index:p.levelIndex||0,bottleneck_dimension:p.bottleneckDimension||null,recommended_system:p.sys||null,dimension_scores:p.dimScores||null,raw_payload:p}]).then(function(r){if(r.error)console.error('[Supabase]',r.error)}).catch(function(e){console.error('[Supabase]',e)})}
+function sendPayload(p){window._lastPayload=p;saveToSupabase(p);fetch('/api/assessment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)}).catch(function(e){console.error('API',e)})}
 
 /* ========== RESULTS ========== */
-function showResults(){
-  var c=t();
-  for(var i=0;i<c.questions.length;i++){if(ans[i]===undefined){showModal(c.modalMissing.replace('{n}',i+1));curQ=i;renderQ();return}}
-  renderGate();
-  goTo('secGate');
-}
-
+function showResults(){var c=t();for(var i=0;i<c.questions.length;i++){if(ans[i]===undefined){showModal(c.modalMissing.replace('{n}',i+1));curQ=i;renderQ();return}}renderGate();goTo('secGate')}
 function computeResults(){
-  var c=t();
-  var total=0;for(var k in ans){total+=ans[k]}
-
-  var dimScores=dims.map(function(d,di){
-    var sum=0,mx=d.qs.length*4;
-    d.qs.forEach(function(qi){sum+=(ans[qi]||1)});
-    return{name:c.dims[di],color:d.color,score:sum,max:mx,pct:Math.round((sum/mx)*100),dimIdx:di};
-  });
-
-  var bn=computeBottleneck();
-  var li=bn.level;
-  var lv=c.levels[li];
-  var bnDimName=c.dims[bn.dimIdx];
-
+  var c=t(),total=0;for(var k in ans)total+=ans[k];
+  var ds=dims.map(function(d,di){var s=0,m=d.qs.length*4;d.qs.forEach(function(qi){s+=(ans[qi]||1)});return{name:c.dims[di],color:d.color,score:s,max:m,pct:Math.round(s/m*100),dimIdx:di}});
+  var bn=computeBottleneck(),li=bn.level,lv=c.levels[li],bdn=c.dims[bn.dimIdx];
   var ud=window._userData||{};
-  window._resultPayload={
-    name:ud.name||'',
-    company:ud.company||'',
-    role:ud.role||'',
-    email:ud.email||'',
-    whatsapp:ud.whatsapp||'',
-    total:total,
-    totalScore:total,
-    level:lv.name,
-    levelName:lv.name,
-    levelIndex:li,
-    dimScores:dimScores,
-    dimensionScores:dimScores,
-    recs:lv.recs,
-    sys:lv.sys.name,
-    recommendedSystem:lv.sys.name,
-    ns:lv.ns,
-    bottleneckDimension:bnDimName,
-    lang:lang||'en',
-    industry:null, // Can be enhanced later
-    companySize:null, // Can be enhanced later
-    timestamp:new Date().toISOString()
-  };
-  sendAssessmentPayload(window._resultPayload);
-
+  window._resultPayload={name:ud.name||'',company:ud.company||'',role:ud.role||'',email:ud.email||'',whatsapp:ud.whatsapp||'',total:total,level:lv.name,levelIndex:li,dimScores:ds,recs:lv.recs,sys:lv.pack.name,recommendedAgents:lv.pack.agents.map(function(a){return a.name}),ns:lv.ns,bottleneckDimension:bdn,lang:lang,timestamp:new Date().toISOString(),version:'3.0'};
+  sendPayload(window._resultPayload);
   document.getElementById('rFor').textContent=ud.company?(c.rFor+' '+ud.company):c.rFor;
-  document.getElementById('rNm').textContent=ud.name||'';
-  document.getElementById('rCo').textContent=ud.role||'';
-
-  animScore(document.getElementById('sBig'),total);
-  document.getElementById('sTot').textContent=c.sTot;
-  document.getElementById('lvBadge').className='lvlb '+lv.css;
-  document.getElementById('lvBadge').innerHTML='<i class="'+lv.icon+'"></i> '+lv.name;
-  document.getElementById('lvDesc').textContent=lv.desc;
-  document.getElementById('bNote').textContent=c.bottleneckNote.replace('{dim}',bnDimName);
-
+  document.getElementById('rNm').textContent=ud.name||'';document.getElementById('rCo').textContent=ud.role||'';
+  animScore(document.getElementById('sBig'),total);document.getElementById('sTot').textContent=c.sTot;
+  document.getElementById('lvBadge').className='lvlb '+lv.css;document.getElementById('lvBadge').innerHTML='<i class="'+lv.icon+'"></i> '+lv.name;
+  document.getElementById('lvDesc').textContent=lv.desc;document.getElementById('bNote').textContent=c.bottleneckNote.replace('{dim}',bdn);
   document.getElementById('dimrH').innerHTML=c.dimrH;
-  var bh='';
-  dimScores.forEach(function(d){
-    var isBn=(bottleneckDims.indexOf(d.dimIdx)!==-1&&dimLevel(d.dimIdx)===bn.level);
-    bh+='<div class="dbr"><div class="dbl"><span class="dbn">'+d.name+(isBn?' <span class="btl">\u26a0 '+c.bottleneckTag+'</span>':'')+'</span><span class="dbs">'+d.score+'/'+d.max+'</span></div>';
-    bh+='<div class="dbt"><div class="dbf '+d.color+'" style="width:0%"></div></div></div>';
-  });
-  document.getElementById('dimBars').innerHTML=bh;
-  setTimeout(function(){document.querySelectorAll('.dbf').forEach(function(b,i){b.style.width=dimScores[i].pct+'%'})},300);
-
-  document.getElementById('recsH').innerHTML=c.recsH;
-  var rh='';lv.recs.forEach(function(r,i){rh+='<div class="recc"><div class="recn">'+(i+1)+'</div><div class="recb"><h4>'+r.t+'</h4><p>'+r.p+'</p></div></div>'});
-  document.getElementById('recsList').innerHTML=rh;
-
-  /* SYSTEM REC */
-  var sys=lv.sys;
-  var sh='<div class="sys-tag"><i class="fa-solid fa-cube"></i> '+c.sysTag+'</div>';
-  sh+='<h3>'+sys.name+'</h3>';
-  sh+='<p class="sys-desc">'+sys.desc+'</p>';
-  sh+='<div class="sys-includes"><h4>'+c.sysIncludes+'</h4>';
-  sys.feats.forEach(function(f){sh+='<div class="sys-feat"><i class="fa-solid fa-check-circle"></i><span>'+f+'</span></div>'});
-  sh+='</div>';
-  document.getElementById('sysBox').innerHTML=sh;
-
-  document.getElementById('nsH').innerHTML=c.nsH;
-  document.getElementById('nsT').textContent=lv.ns;
-  document.getElementById('bookBtn').href=GHL_BOOKING_URL;
-  document.getElementById('bookTxt').textContent=c.bookBtn;
-
-  document.getElementById('shH').textContent=c.shH;
-  document.getElementById('shCopy').textContent=c.shCopy;
-  document.getElementById('shDl').textContent=c.shDl;
-  document.getElementById('shRestart').innerHTML=c.shRestart;
-
-  var now=new Date(),locale=lang==='es'?'es-ES':'en-US';
-  document.getElementById('footRes').innerHTML=c.footRes+now.toLocaleDateString(locale,{year:'numeric',month:'long',day:'numeric'});
-
-  window._rd={name:ud.name||'',company:ud.company||'',role:ud.role||'',email:ud.email||'',whatsapp:ud.whatsapp||'',total:total,level:lv.name,dimScores:dimScores,recs:lv.recs,sys:sys.name,ns:lv.ns};
+  var bh='';ds.forEach(function(d){var ib=bottleneckDims.indexOf(d.dimIdx)!==-1&&dimLevel(d.dimIdx)===bn.level;bh+='<div class="dbr"><div class="dbl"><span class="dbn">'+d.name+(ib?' <span class="btl">\u26a0 '+c.bottleneckTag+'</span>':'')+'</span><span class="dbs">'+d.score+'/'+d.max+'</span></div><div class="dbt"><div class="dbf '+d.color+'" style="width:0%"></div></div></div>'});
+  document.getElementById('dimBars').innerHTML=bh;setTimeout(function(){document.querySelectorAll('.dbf').forEach(function(b,i){b.style.width=ds[i].pct+'%'})},300);
+  document.getElementById('recsH').innerHTML=c.recsH;var rh='';lv.recs.forEach(function(r,i){rh+='<div class="recc"><div class="recn">'+(i+1)+'</div><div class="recb"><h4>'+r.t+'</h4><p>'+r.p+'</p></div></div>'});document.getElementById('recsList').innerHTML=rh;
+  var pk=lv.pack,sh='<div class="agent-tag"><i class="fa-solid fa-robot"></i> '+c.agentTag+'</div><h3>'+pk.name+'</h3><p class="agent-desc">'+pk.desc+'</p><div class="agent-list"><h4>'+c.agentIncludes+'</h4>';pk.agents.forEach(function(a){sh+='<div class="agent-item"><i class="fa-solid fa-check-circle"></i><span><strong>'+a.name+'</strong> \u2014 '+a.desc+'</span></div>'});sh+='</div>';document.getElementById('agentBox').innerHTML=sh;
+  document.getElementById('nsH').innerHTML=c.nsH;document.getElementById('nsT').textContent=lv.ns;document.getElementById('bookBtn').href=GHL_BOOKING_URL;document.getElementById('bookTxt').textContent=c.bookBtn;
+  document.getElementById('shH').textContent=c.shH;document.getElementById('shCopy').textContent=c.shCopy;document.getElementById('shDl').textContent=c.shDl;document.getElementById('shRestart').innerHTML=c.shRestart;
+  document.getElementById('footRes').innerHTML=c.footRes+new Date().toLocaleDateString(lang==='es'?'es-ES':'en-US',{year:'numeric',month:'long',day:'numeric'});
+  window._rd={name:ud.name||'',company:ud.company||'',role:ud.role||'',email:ud.email||'',whatsapp:ud.whatsapp||'',total:total,level:lv.name,dimScores:ds,recs:lv.recs,pack:pk.name,agents:pk.agents,ns:lv.ns};
 }
-
-function renderGate(){
-  var c=t();
-  document.getElementById('gateTitle').textContent=c.gateTitle;
-  document.getElementById('gateSub').textContent=c.gateSub;
-  document.getElementById('gName').placeholder=c.gPhName;
-  document.getElementById('gEmail').placeholder=c.gPhEmail;
-  document.getElementById('gComp').placeholder=c.gPhComp;
-  document.getElementById('gRole').placeholder=c.gPhRole;
-  document.getElementById('gWebsite').placeholder=c.gPhWebsite;
-  document.getElementById('gWhatsapp').placeholder=c.gPhWhatsapp;
-  document.getElementById('gatePrivacy').textContent=c.gatePrivacy;
-  document.getElementById('gateBtn').innerHTML=c.gateBtn;
-}
-
-function submitGate(){
-  var c=t();
-  var n=document.getElementById('gName').value.trim();
-  var e=document.getElementById('gEmail').value.trim();
-  var comp=document.getElementById('gComp').value.trim();
-  var role=document.getElementById('gRole').value.trim();
-  var web=document.getElementById('gWebsite').value.trim();
-  var wa=document.getElementById('gWhatsapp').value.trim();
-  if(web&&!/^https?:\/\//i.test(web)){web='https://'+web}
-  var webOk=/^https?:\/\/[^\s/$.?#].[^\s]*$/i.test(web);
-  if(!n||!e||!comp||!role||!web||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)||!webOk){showModal(c.gateValidation);return}
-  document.getElementById('gWebsite').value=web;
-  window._userData={name:n,email:e,company:comp,role:role,website_url:web,whatsapp:wa};
-  goTo('secLoad');
-  setTimeout(function(){computeResults();goTo('secRes')},2200);
-}
-
+function renderGate(){var c=t();document.getElementById('gateTitle').textContent=c.gateTitle;document.getElementById('gateSub').textContent=c.gateSub;document.getElementById('gName').placeholder=c.gPhName;document.getElementById('gEmail').placeholder=c.gPhEmail;document.getElementById('gComp').placeholder=c.gPhComp;document.getElementById('gRole').placeholder=c.gPhRole;document.getElementById('gWebsite').placeholder=c.gPhWebsite;document.getElementById('gWhatsapp').placeholder=c.gPhWhatsapp;document.getElementById('gatePrivacy').textContent=c.gatePrivacy;document.getElementById('gateBtn').innerHTML=c.gateBtn}
+function submitGate(){var c=t(),n=document.getElementById('gName').value.trim(),e=document.getElementById('gEmail').value.trim(),comp=document.getElementById('gComp').value.trim(),role=document.getElementById('gRole').value.trim(),web=document.getElementById('gWebsite').value.trim(),wa=document.getElementById('gWhatsapp').value.trim();if(web&&!/^https?:\/\//i.test(web))web='https://'+web;if(!n||!e||!comp||!role||!web||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)||!/^https?:\/\/[^\s/$.?#].[^\s]*$/i.test(web)){showModal(c.gateValidation);return}document.getElementById('gWebsite').value=web;window._userData={name:n,email:e,company:comp,role:role,website_url:web,whatsapp:wa};goTo('secLoad');setTimeout(function(){computeResults();goTo('secRes')},2200)}
 function animScore(el,tgt){var cur=0,step=Math.max(1,Math.floor(tgt/30));var iv=setInterval(function(){cur+=step;if(cur>=tgt){cur=tgt;clearInterval(iv)}el.textContent=cur},40)}
 
 /* ========== SHARING ========== */
-function getSummary(){
-  var c=t(),d=window._rd;
-  var maxScore=t().questions.length*4;
-  var x='\u2550'.repeat(30)+'\nAI REVENUE READINESS INDEX\u2122\n'+(lang==='es'?'Diagn\u00f3stico por':'Diagnostic by')+' Verymuch.Ai\n'+'\u2550'.repeat(30)+'\n\n';
-  if(d.name)x+='\ud83d\udc64 '+d.name+(d.role?' | '+d.role:'')+'\n';
-  if(d.company)x+='\ud83c\udfe2 '+d.company+'\n';
-  x+='\ud83d\udcca '+c.shareScore+': '+d.total+'/'+maxScore+'\n\ud83c\udfc6 '+c.shareLvl+': '+d.level+'\n\ud83d\udce6 '+c.sysTag+': '+d.sys+'\n\n';
-  d.dimScores.forEach(function(ds){x+='\u2588'.repeat(Math.round(ds.pct/10))+'\u2591'.repeat(10-Math.round(ds.pct/10))+' '+ds.pct+'% '+ds.name+'\n'});
-  x+='\n';d.recs.forEach(function(r,i){x+=(i+1)+'. '+r.t+'\n'});
-  x+='\n\ud83d\udd17 '+c.shareDo+'\n';return x;
-}
-function copyRes(){var c=t(),txt=getSummary();if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){showModal(c.copied)}).catch(function(){showModal(c.copyFail)})}else{showModal(c.copyFail)}}
+function getSummary(){var c=t(),d=window._rd,m=c.questions.length*4;var x='\u2550'.repeat(30)+'\nAI READINESS TEST\nby Verymuch.Ai\n'+'\u2550'.repeat(30)+'\n\n';if(d.name)x+=d.name+(d.role?' | '+d.role:'')+'\n';if(d.company)x+=d.company+'\n';x+='\n'+c.shareScore+': '+d.total+'/'+m+'\n'+c.shareLvl+': '+d.level+'\n'+c.agentTag+': '+d.pack+'\n\n';d.dimScores.forEach(function(ds){x+='\u2588'.repeat(Math.round(ds.pct/10))+'\u2591'.repeat(10-Math.round(ds.pct/10))+' '+ds.pct+'% '+ds.name+'\n'});x+='\n'+c.agentIncludes+'\n';d.agents.forEach(function(a){x+='  \u2713 '+a.name+'\n'});x+='\n'+c.shareDo+'\n';return x}
+function copyRes(){var c=t();if(navigator.clipboard){navigator.clipboard.writeText(getSummary()).then(function(){showModal(c.copied)}).catch(function(){showModal(c.copyFail)})}else showModal(c.copyFail)}
 function dlRes(){
-  var d=window._rd,c=t();
-  var maxScore=t().questions.length*4;
-  var tl=lang==='es'?'Diagn\u00f3stico':'Diagnostic',dl=lang==='es'?'Resultados por dimensi\u00f3n':'Results by dimension',rl=lang==='es'?'Recomendaciones estrat\u00e9gicas':'Strategic recommendations',nl=lang==='es'?'Pr\u00f3ximo paso estrat\u00e9gico':'Next strategic step',gl=lang==='es'?'Generado por':'Generated by';
-  var h='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>ARRI</title><style>body{font-family:Arial,sans-serif;max-width:700px;margin:40px auto;padding:20px;color:#1a1a1a;line-height:1.6}h1{font-size:1.8rem;border-bottom:3px solid #E8703A;padding-bottom:12px}h2{font-size:1.2rem;color:#E8703A;margin-top:24px}.sc{font-size:3rem;font-weight:800;text-align:center;color:#E8703A;margin:20px 0}.lv{text-align:center;font-size:1.3rem;font-weight:700;margin-bottom:20px}.dm{padding:8px 0;border-bottom:1px solid #eee}.rc{padding:12px;margin:8px 0;background:#f8f8f6;border-left:3px solid #E8703A;border-radius:4px}.rc h4{margin:0 0 4px}.rc p{margin:0;color:#555;font-size:.9rem}.sys{padding:16px;background:#F0FBF9;border:2px solid #2ABFAA;border-radius:8px;margin-top:20px}.ns{padding:16px;background:#FFF3ED;border:2px solid #E8703A;border-radius:8px;margin-top:20px}.ft{text-align:center;color:#888;font-size:.8rem;margin-top:30px}</style></head><body>';
-  h+='<h1>AI Readiness Test</h1>';
-  if(d.name)h+='<p><strong>'+d.name+'</strong>'+(d.role?' \u00b7 '+d.role:'')+(d.company?'<br>'+d.company:'')+'</p>';
-  h+='<div class="sc">'+d.total+'/'+maxScore+'</div><div class="lv">'+c.shareLvl+': '+d.level+'</div>';
-  h+='<h2>'+dl+'</h2>';d.dimScores.forEach(function(ds){h+='<div class="dm"><strong>'+ds.name+'</strong>: '+ds.score+'/'+ds.max+' ('+ds.pct+'%)</div>'});
-  h+='<h2>'+rl+'</h2>';d.recs.forEach(function(r,i){h+='<div class="rc"><h4>'+(i+1)+'. '+r.t+'</h4><p>'+r.p+'</p></div>'});
-  h+='<div class="sys"><strong>\ud83d\udce6 '+c.sysTag+': '+d.sys+'</strong></div>';
-  h+='<div class="ns"><strong>\ud83d\ude80 '+nl+':</strong><br>'+d.ns+'</div>';
-  h+='<div class="ft">'+gl+' Verymuch.Ai \u00b7 '+new Date().toLocaleDateString(lang==='es'?'es-ES':'en-US')+'</div></body></html>';
-  var blob=new Blob([h],{type:'text/html'}),url=URL.createObjectURL(blob),a=document.createElement('a');
-  a.href=url;a.download='ARRI_'+tl+'_'+(d.company||'report').replace(/\s+/g,'_')+'.html';
-  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+  var d=window._rd,c=t(),m=c.questions.length*4;
+  var h='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>AI Readiness \u2014 Verymuch.Ai</title><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Manrope,Arial,sans-serif;max-width:700px;margin:40px auto;padding:32px;color:#1A1A1A;line-height:1.6;background:#FAFAF8}.hdr{display:flex;align-items:center;margin-bottom:32px;padding-bottom:20px;border-bottom:2px solid #E0DED8}.hdr-logo{font-family:Sora,sans-serif;font-weight:800;font-size:1.4rem;color:#363536;letter-spacing:-.03em}.hdr-icon{font-family:Sora,sans-serif;font-weight:700;font-size:.95rem;color:#363536;background:linear-gradient(135deg,#E8B88A,#E4CCA0,#C5DBBE,#A8D5C8,#9FD0DA);border-radius:7px;padding:3px 8px;margin-left:1px}.hdr-tag{margin-left:auto;font-size:.65rem;color:#888;letter-spacing:.3em;text-transform:uppercase}h2{font-family:Sora,sans-serif;font-size:1.1rem;color:#E8703A;margin:28px 0 14px;letter-spacing:-.02em}.sc{font-family:Sora,sans-serif;font-size:3.5rem;font-weight:800;text-align:center;background:linear-gradient(135deg,#E8703A,#F4A261,#2ABFAA,#7EC8D9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:20px 0 4px}.stot{text-align:center;font-size:.85rem;color:#888;margin-bottom:4px}.lv{text-align:center;font-family:Sora,sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:8px}.ldesc{text-align:center;font-size:.88rem;color:#555;margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.6}.dm{padding:10px 0;border-bottom:1px solid #E0DED8;display:flex;justify-content:space-between;align-items:center}.dm-name{font-weight:600;font-size:.85rem}.dm-score{font-family:Sora,sans-serif;font-weight:700;font-size:.82rem;color:#E8703A}.rc{padding:14px;margin:8px 0;background:#F0EFEB;border-left:3px solid #E8703A;border-radius:6px}.rc h4{font-family:Sora,sans-serif;margin:0 0 4px;font-size:.88rem}.rc p{margin:0;color:#555;font-size:.82rem;line-height:1.55}.ag{padding:20px;background:#F0EFEB;border:2px solid #2ABFAA;border-radius:12px;margin-top:20px}.ag-title{font-family:Sora,sans-serif;font-weight:800;font-size:1rem;margin-bottom:4px}.ag-desc{font-size:.85rem;color:#555;margin-bottom:12px}.ag-item{padding:8px 0;border-bottom:1px solid #E0DED8;font-size:.84rem}.ag-item:last-child{border-bottom:none}.ag-item strong{color:#E8703A}.ns{padding:20px;background:rgba(232,112,58,.06);border:2px solid #E8703A;border-radius:12px;margin-top:20px}.ns-title{font-family:Sora,sans-serif;font-weight:700;font-size:.9rem;margin-bottom:8px;color:#E8703A}.ns p{font-size:.85rem;color:#555;line-height:1.6}.ft{text-align:center;color:#888;font-size:.72rem;margin-top:40px;padding-top:20px;border-top:1px solid #E0DED8}</style></head><body>';
+  h+='<div class="hdr"><span class="hdr-logo">Verymuch.</span><span class="hdr-icon">Ai</span><span class="hdr-tag">AI Readiness Test</span></div>';
+  if(d.name)h+='<p style="font-size:.95rem"><strong>'+d.name+'</strong>'+(d.role?' \u00b7 '+d.role:'')+(d.company?'<br>'+d.company:'')+'</p>';
+  h+='<div class="sc">'+d.total+'/'+m+'</div><div class="stot">'+c.sTot+'</div><div class="lv">'+c.shareLvl+': '+d.level+'</div>';
+  var lvl=c.levels.find(function(l){return l.name===d.level});if(lvl)h+='<div class="ldesc">'+lvl.desc+'</div>';
+  h+='<h2>'+(lang==='es'?'Resultados por \u00e1rea':'Results by area')+'</h2>';d.dimScores.forEach(function(ds){h+='<div class="dm"><span class="dm-name">'+ds.name+'</span><span class="dm-score">'+ds.score+'/'+ds.max+' ('+ds.pct+'%)</span></div>'});
+  h+='<h2>'+(lang==='es'?'Recomendaciones estrat\u00e9gicas':'Strategic recommendations')+'</h2>';d.recs.forEach(function(r,i){h+='<div class="rc"><h4>'+(i+1)+'. '+r.t+'</h4><p>'+r.p+'</p></div>'});
+  h+='<div class="ag"><div class="ag-title">\ud83e\udd16 '+d.pack+'</div>';var pk=c.levels.find(function(l){return l.name===d.level});if(pk)h+='<div class="ag-desc">'+pk.pack.desc+'</div>';d.agents.forEach(function(a){h+='<div class="ag-item"><strong>'+a.name+'</strong> \u2014 '+a.desc+'</div>'});h+='</div>';
+  h+='<div class="ns"><div class="ns-title">\ud83d\ude80 '+(lang==='es'?'Tu pr\u00f3ximo paso':'Your next step')+'</div><p>'+d.ns+'</p></div>';
+  h+='<div class="ft">Verymuch.Ai \u00b7 verymuch.ai \u00b7 '+new Date().toLocaleDateString(lang==='es'?'es-ES':'en-US',{year:'numeric',month:'long',day:'numeric'})+'</div></body></html>';
+  var blob=new Blob([h],{type:'text/html'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='AI_Readiness_'+(d.company||'report').replace(/\s+/g,'_')+'.html';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url)
 }
-function shareWA(){var c=t(),d=window._rd,m=t().questions.length*4;var x='\ud83e\udd16 *AI Readiness Test*\n\n'+c.shareText+' '+(d.company||'my company')+'.\n\n\ud83d\udcca '+c.shareScore+': *'+d.total+'/'+m+'*\n\ud83c\udfc6 '+c.shareLvl+': *'+d.level+'*\n\n'+c.shareDo;window.open('https://wa.me/?text='+encodeURIComponent(x),'_blank')}
-function shareLI(){var c=t(),d=window._rd,m=t().questions.length*4;var x='\ud83e\udd16 '+c.shareLinked+'\n\n'+c.shareScore+': '+d.total+'/'+m+' \u2014 '+c.shareLvl+': '+d.level+'\n\n'+c.shareLinked2+'\n\n#AI #B2B #RevenueOps';window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent('https://verymuch.ai')+'&summary='+encodeURIComponent(x),'_blank')}
+function shareWA(){var c=t(),d=window._rd,m=c.questions.length*4;window.open('https://wa.me/?text='+encodeURIComponent('\ud83e\udd16 *AI Readiness Test*\n\n'+c.shareText+' '+(d.company||'mi empresa')+'.\n\n'+c.shareScore+': *'+d.total+'/'+m+'*\n'+c.shareLvl+': *'+d.level+'*\n\n'+c.shareDo),'_blank')}
+function shareLI(){var c=t(),d=window._rd,m=c.questions.length*4;window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent('https://verymuch.ai/ai-readiness')+'&summary='+encodeURIComponent(c.shareLinked+'\n\n'+c.shareScore+': '+d.total+'/'+m+' \u2014 '+c.shareLvl+': '+d.level+'\n\n'+c.shareLinked2+'\n\n#AI #B2B #AIAgents'),'_blank')}
 function restart(){curQ=0;ans={};window._userData=null;goTo('secLand')}
 
 /* INIT */
-// Apply detected language to UI on first load
 setLang(lang);
-bindOptionalEmailHandler();
 </script>
 </body>
 </html>
-
