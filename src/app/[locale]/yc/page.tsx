@@ -496,36 +496,22 @@ export default function YCPage() {
             className="font-display mb-3"
             style={{ fontSize: '28px', fontWeight: 700, letterSpacing: '-0.01em' }}
           >
-            A $65B market that nobody is building for in Spanish
+            The world&apos;s largest untapped AI market speaks Spanish
           </h2>
           <p style={{ color: '#6B7280' }} className="mb-10 text-base">
-            600M+ Spanish speakers across 6 major markets — all underserved by AI tooling built for English-first enterprise.
+            600M+ speakers. $500B+ in addressable B2B revenue. AI penetration below 10%. The tools exist — but nobody is building them in Spanish.
           </p>
 
-          {/* Primary market stats */}
-          <div className="grid gap-4 sm:grid-cols-3 mb-6">
+          {/* Global macro stats */}
+          <p style={{ color: '#9CA3AF' }} className="mb-3 text-xs font-bold uppercase tracking-widest">
+            Global picture
+          </p>
+          <div className="grid gap-3 sm:grid-cols-4 mb-10">
             {[
-              {
-                stat: '600M+',
-                context: 'Spanish speakers worldwide',
-                detail:
-                  'Only 7% of LATAM SMBs use AI beyond the basics. The tooling gap is enormous.',
-                color: '#4AD4AE',
-              },
-              {
-                stat: '$3.7B → $65B',
-                context: 'AI market in Mexico alone by 2030',
-                detail:
-                  'Mexico, Colombia, Argentina: three high-growth markets with low AI penetration and high B2B sales volume.',
-                color: '#F5A040',
-              },
-              {
-                stat: '$43B',
-                context: 'Nearshoring FDI into Mexico (2025)',
-                detail:
-                  'Manufacturing boom → hundreds of mid-market B2B companies that need modern sales infrastructure — now.',
-                color: '#4AD4AE',
-              },
+              { stat: '600M+', context: 'Native Spanish speakers', color: '#4AD4AE' },
+              { stat: '<10%', context: 'LATAM SMBs using AI in sales', color: '#F5A040' },
+              { stat: '$500B+', context: 'B2B revenue across Spanish markets', color: '#4AD4AE' },
+              { stat: '7 countries', context: 'Where we can sell today', color: '#F5A040' },
             ].map((item) => (
               <div
                 key={item.stat}
@@ -533,66 +519,72 @@ export default function YCPage() {
                   backgroundColor: '#141416',
                   border: '1px solid rgba(250,249,247,0.07)',
                 }}
-                className="rounded-2xl p-6"
+                className="rounded-2xl p-5 text-center"
               >
                 <div
-                  className="font-display mb-1 text-3xl font-extrabold"
+                  className="font-display mb-1 text-2xl font-extrabold"
                   style={{ color: item.color }}
                 >
                   {item.stat}
                 </div>
-                <div className="mb-3 text-sm font-semibold">{item.context}</div>
-                <p style={{ color: '#6B7280' }} className="text-sm leading-relaxed">
-                  {item.detail}
-                </p>
+                <div style={{ color: '#6B7280' }} className="text-xs leading-snug">{item.context}</div>
               </div>
             ))}
           </div>
 
-          {/* Market breakdown — individual flags */}
+          {/* Individual markets */}
+          <p style={{ color: '#9CA3AF' }} className="mb-3 text-xs font-bold uppercase tracking-widest">
+            Market by market
+          </p>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-8">
             {[
               {
                 flag: '🇺🇸',
-                market: 'US Hispanic Market',
-                stat: '41M+ native speakers',
-                detail: '$2.7T purchasing power. Fastest-growing B2B segment in the US. Massively underserved by Spanish-language AI tools.',
-                color: '#4AD4AE',
+                market: 'United States',
+                label: 'Primary market',
+                labelColor: '#4AD4AE',
+                stats: ['41M native Spanish speakers', '$2.7T Hispanic purchasing power', '62% of US Hispanics are business owners or decision-makers'],
+                yc: 'Biggest B2B prize. Our agents close deals in English and Spanish — doubling reach for US sales teams targeting LATAM clients.',
               },
               {
-                flag: '🇦🇷',
-                market: 'Argentina',
-                stat: '45M people · booming tech scene',
-                detail: 'Top LATAM tech talent hub. Growing startup ecosystem with acute need for sales automation as economic conditions shift.',
-                color: '#F5A040',
-              },
-              {
-                flag: '🇵🇭',
-                market: 'Philippines',
-                stat: '115M people · BPO capital of the world',
-                detail: '$32B BPO industry. Thousands of outbound sales teams in English and Spanish — a natural expansion market for our agents.',
-                color: '#4AD4AE',
-              },
-              {
-                flag: '🇨🇦',
-                market: 'Canada (Francophone + Hispanic)',
-                stat: '1.3M+ Spanish speakers',
-                detail: 'Growing LATAM immigrant B2B community. Tech-forward market with strong AI adoption appetite and proximity to US deals.',
-                color: '#F5A040',
+                flag: '🇲🇽',
+                market: 'Mexico',
+                label: 'Operational base',
+                labelColor: '#4AD4AE',
+                stats: ['$3.7B AI market → $65B by 2030', '$43B nearshoring FDI (2025)', '7% of SMBs use AI in sales today'],
+                yc: 'Where Edwin builds. 400K+ mid-market B2B companies. Nearshoring boom is creating hundreds of new sales teams that need automation — now.',
               },
               {
                 flag: '🇪🇸',
                 market: 'Spain',
-                stat: 'Gateway to EU + LATAM',
-                detail: 'Our operational base in Madrid. Spain-headquartered companies often manage LATAM sales from Madrid — one agent serves both markets.',
-                color: '#4AD4AE',
+                label: 'Operational base',
+                labelColor: '#4AD4AE',
+                stats: ['€150B+ B2B services market', 'EU headquarters for LATAM ops', '300K+ companies with €1M–€50M revenue'],
+                yc: 'Where Jorge sells. Spain-based companies manage LATAM accounts from Madrid — one agent deployment serves both EU and LatAm markets.',
+              },
+              {
+                flag: '🇦🇷',
+                market: 'Argentina',
+                label: 'High priority',
+                labelColor: '#F5A040',
+                stats: ['45M people, 98% literacy', '#1 LATAM tech talent density', 'Devaluation → SaaS costs 60–80% lower in USD'],
+                yc: 'Best LATAM technical talent. Economic pressure creates urgency for automation. Strong startup ecosystem primed for AI sales tools.',
+              },
+              {
+                flag: '🇵🇭',
+                market: 'Philippines',
+                label: 'Expansion target',
+                labelColor: '#F5A040',
+                stats: ['115M people, English + Spanish heritage', '$32B BPO industry', '1M+ outbound sales agents'],
+                yc: 'BPO capital of the world. Sales teams already operate in Spanish and English. Our agents plug directly into existing outbound pipelines.',
               },
               {
                 flag: '🌎',
-                market: 'Colombia · Chile · Peru',
-                stat: 'Pacific Alliance bloc',
-                detail: 'Combined GDP of $1.2T, strong nearshoring growth, and mid-market B2B sectors rapidly modernizing their sales stacks.',
-                color: '#F5A040',
+                market: 'Colombia · Chile · Canada',
+                label: 'Pipeline',
+                labelColor: '#6B7280',
+                stats: ['Colombia: $17B AI market by 2030', 'Chile: highest AI readiness in LATAM', 'Canada: 1.3M+ Spanish speakers, tech-forward'],
+                yc: 'Pacific Alliance + diaspora markets. Colombia and Chile are the most AI-ready countries in LATAM after Mexico. Canada is a natural bridge to US enterprise.',
               },
             ].map((item) => (
               <div
@@ -601,21 +593,41 @@ export default function YCPage() {
                   backgroundColor: '#141416',
                   border: '1px solid rgba(250,249,247,0.07)',
                 }}
-                className="rounded-2xl p-5"
+                className="rounded-2xl p-5 flex flex-col"
               >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-xl">{item.flag}</span>
-                  <span className="font-semibold text-sm">{item.market}</span>
+                {/* Header */}
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xl">{item.flag}</span>
+                    <span className="font-display font-bold text-base">{item.market}</span>
+                  </div>
+                  <span
+                    style={{ color: item.labelColor, borderColor: item.labelColor, opacity: 0.8 }}
+                    className="text-xs font-bold border rounded-full px-2 py-0.5"
+                  >
+                    {item.label}
+                  </span>
                 </div>
+
+                {/* Stats */}
+                <ul className="mb-4 space-y-1">
+                  {item.stats.map((s) => (
+                    <li key={s} className="flex items-start gap-1.5 text-xs" style={{ color: '#9CA3AF' }}>
+                      <span style={{ color: '#4AD4AE' }} className="shrink-0 mt-0.5">›</span>
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* YC angle */}
                 <div
-                  className="font-display text-lg font-bold mb-2"
-                  style={{ color: item.color }}
+                  style={{ backgroundColor: 'rgba(74,212,174,0.05)', borderLeft: '2px solid rgba(74,212,174,0.3)' }}
+                  className="mt-auto rounded-r-lg pl-3 py-2"
                 >
-                  {item.stat}
+                  <p style={{ color: '#6B7280' }} className="text-xs leading-relaxed italic">
+                    {item.yc}
+                  </p>
                 </div>
-                <p style={{ color: '#6B7280' }} className="text-xs leading-relaxed">
-                  {item.detail}
-                </p>
               </div>
             ))}
           </div>
