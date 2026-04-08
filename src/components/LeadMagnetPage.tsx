@@ -227,11 +227,43 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
         </div>
       </section>
 
-      <BrandMarquee
-        variant="dark"
-        label="Stack real usado en esta guía"
-        brands={config.brands as Brand[] | undefined}
-      />
+      {config.brands && config.brands.length <= 6 ? (
+        /* Static display for small brand sets */
+        <section className="py-10" style={{ background: "rgba(0,0,0,0.2)" }}>
+          <p className="text-center caption mb-5 px-6" style={{ color: "rgba(255,255,255,0.20)", opacity: 0.7 }}>
+            Stack real usado en esta guía
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 px-6">
+            {config.brands.map((b) => {
+              const logoUrl = b.iconSlug
+                ? `https://cdn.simpleicons.org/${b.iconSlug}/ffffff`
+                : null;
+              return (
+                <span
+                  key={b.name}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-semibold whitespace-nowrap"
+                  style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.55)" }}
+                >
+                  {logoUrl && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={logoUrl} alt={b.name} width={14} height={14} className="w-3.5 h-3.5 object-contain flex-shrink-0" loading="lazy" />
+                  )}
+                  {!logoUrl && (
+                    <span className="inline-block w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: b.dot }} />
+                  )}
+                  {b.name}
+                </span>
+              );
+            })}
+          </div>
+        </section>
+      ) : (
+        <BrandMarquee
+          variant="dark"
+          label="Stack real usado en esta guía"
+          brands={config.brands as Brand[] | undefined}
+        />
+      )}
 
       {/* ── Qué incluye ───────────────────────────────────────────────────── */}
       <section className="border-t border-white/[0.06] bg-brand-dark-2">
