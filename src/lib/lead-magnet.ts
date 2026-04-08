@@ -1373,6 +1373,128 @@ export const sixAgentsConfig: LeadMagnetConfig = {
   },
 };
 
+// ─── Claude Code Remote Control Config ───────────────────────────────────────
+
+export const claudeCodeConfig: LeadMagnetConfig = {
+  slug: "claude-code-remote-control",
+  source: "linkedin",
+  campaign: "claude-code-remote-control",
+
+  seo: {
+    title: "Claude Code Remote Control — Guía Completa | VeryMuch.ai",
+    description:
+      "Guía paso a paso para instalar Claude Code, configurar tu primer agente de IA y construir automatizaciones reales. Framework incluido. Gratis.",
+    ogTitle: "Claude Code Remote Control: De cero a tu primer agente de IA",
+    ogDescription:
+      "Instalación, configuración, framework para decidir qué construir, y 9 ideas de agentes listos para montar. Todo gratis.",
+  },
+
+  content: {
+    badge: "Guía Gratuita",
+    headline:
+      "Deja de pagar por herramientas que puedes construir tú mismo",
+    highlightWords: "construir tú mismo",
+    subheadline:
+      "Guía completa para instalar Claude Code, configurar tu workspace y construir tu primer agente de IA. Framework + ideas + comandos esenciales.",
+    bullets: [
+      "Instalación paso a paso en Mac y Windows",
+      "Framework para identificar qué automatizar primero",
+      "Plantilla CLAUDE.md lista para usar",
+      "9 ideas de agentes que puedes montar hoy",
+      "Comandos esenciales y trucos avanzados",
+      "Stack de herramientas de terceros recomendadas",
+    ],
+    includes: [
+      {
+        icon: "🛠️",
+        title: "Instalación completa",
+        description:
+          "Mac, Windows, VS Code, extensión oficial. De cero a Claude Code funcionando.",
+      },
+      {
+        icon: "🧠",
+        title: "Framework de decisión",
+        description:
+          "5 pasos para identificar tu cuello de botella y construir el agente exacto que necesitas.",
+      },
+      {
+        icon: "📋",
+        title: "Plantilla CLAUDE.md",
+        description:
+          "Archivo de configuración listo para copiar y personalizar. Tu agente arranca sabiendo tu contexto.",
+      },
+      {
+        icon: "💡",
+        title: "9 ideas de agentes",
+        description:
+          "Investigador de prospectos, personalizador de emails, lead scoring, monitor de competencia y más.",
+      },
+      {
+        icon: "⚡",
+        title: "Comandos y trucos",
+        description:
+          "Los atajos que usan los power users: /clear, Shift+Tab, think hard, subagentes.",
+      },
+      {
+        icon: "🔌",
+        title: "Stack de herramientas",
+        description:
+          "Apify, n8n, Make, Instantly, OpenClaw — cuándo usar cada una y costes reales.",
+      },
+    ],
+    techStack: [
+      {
+        name: "Claude Code",
+        role: "Agente de código IA de Anthropic. Tu builder principal.",
+        url: "https://code.claude.com",
+      },
+      {
+        name: "VS Code",
+        role: "Editor de código gratuito con extensión oficial de Claude Code.",
+        url: "https://code.visualstudio.com",
+      },
+      {
+        name: "n8n",
+        role: "Orquestación y automatización de workflows, self-hosteable.",
+        url: "https://n8n.io",
+      },
+    ],
+    form: {
+      fields: [
+        {
+          name: "name",
+          label: "Nombre",
+          type: "text" as const,
+          placeholder: "Tu nombre",
+          required: true,
+        },
+        {
+          name: "email",
+          label: "Correo electrónico",
+          type: "email" as const,
+          placeholder: "tu@empresa.com",
+          required: true,
+        },
+        {
+          name: "company",
+          label: "Empresa (opcional)",
+          type: "text" as const,
+          placeholder: "Tu empresa",
+          required: false,
+        },
+      ],
+      ctaLabel: "Recibir la Guía",
+      microcopy: "Gratis. Sin spam. Entrega inmediata.",
+    },
+    success: {
+      title: "Tu guía está lista 🎉",
+      description:
+        "Accede ahora a Claude Code Remote Control. Encontrarás la instalación, el framework, la plantilla CLAUDE.md y todas las ideas de agentes.",
+      ctaLabel: "Abrir la guía →",
+    },
+  },
+};
+
 // ─── Build registry — single immutable assignment, all configs present ─────────
 // Adding a new lead magnet: just append it to this array. No other changes needed.
 
@@ -1385,6 +1507,7 @@ const _ALL_CONFIGS: LeadMagnetConfig[] = [
   remoteControlConfig,
   claudeSkillsLinkedinConfig,
   sixAgentsConfig,
+  claudeCodeConfig,
 ];
 
 ALL_LEAD_MAGNETS = Object.fromEntries(_ALL_CONFIGS.map((c) => [c.slug, c]));
