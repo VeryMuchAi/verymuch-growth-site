@@ -235,9 +235,8 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
           </p>
           <div className="flex flex-wrap justify-center gap-3 px-6">
             {config.brands.map((b) => {
-              const logoUrl = b.iconSlug
-                ? `https://cdn.simpleicons.org/${b.iconSlug}/ffffff`
-                : null;
+              const logoUrl = b.logoUrl
+                ?? (b.iconSlug ? `https://cdn.simpleicons.org/${b.iconSlug}/ffffff` : null);
               return (
                 <span
                   key={b.name}

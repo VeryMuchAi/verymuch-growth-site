@@ -56,6 +56,8 @@ export interface BrandEntry {
   dot: string;
   /** Simple Icons slug — renders real logo via cdn.simpleicons.org */
   iconSlug?: string;
+  /** Local or absolute URL — takes priority over iconSlug */
+  logoUrl?: string;
 }
 
 export interface LeadMagnetSEO {
@@ -1384,7 +1386,7 @@ export const claudeCodeConfig: LeadMagnetConfig = {
   hideSocialProof: true,
   brands: [
     { name: "Claude Code", dot: "#D4A27F", iconSlug: "anthropic" },
-    { name: "VS Code",     dot: "#007ACC", iconSlug: "visualstudiocode" },
+    { name: "VS Code",     dot: "#007ACC", logoUrl: "/logos/vscode.png" },
     { name: "n8n",         dot: "#EA4B71", iconSlug: "n8n" },
   ],
 
