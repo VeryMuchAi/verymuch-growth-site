@@ -10,6 +10,7 @@
   --bg-card:          #FFFFFF;
   --text-primary:     #1A1A1D;
   --text-secondary:   #6B7280;
+  --text-muted:       #9CA3AF;
   --accent:           #F5A040;       /* amber — kept for isolated uses */
   --accent-text:      #1B6B3A;       /* dark green text — 6.2:1 contrast */
   --accent-cool:      #4AD4AE;
@@ -29,6 +30,7 @@
   --bg-card:          #242428;
   --text-primary:     #FAF9F7;
   --text-secondary:   #9CA3AF;
+  --text-muted:       #6B7280;
   --accent:           #F5A040;
   --accent-text:      #4AD4AE;
   --accent-cool:      #4AD4AE;

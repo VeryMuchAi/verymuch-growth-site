@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
+import YCNav from '@/components/YCNav'
 
 export const metadata: Metadata = {
   title: 'Verymuch.ai — AI Agents for B2B Sales | YC Startup School 2026',
@@ -137,7 +137,6 @@ const founders = [
       'Coursera Instructor — AI Business Innovation',
     ],
     closer: 'Ships code. Every agent we sell, I build and test first.',
-    // TODO: verify LinkedIn URL
     linkedin: 'https://www.linkedin.com/in/edwinmorenovera/',
   },
   {
@@ -151,7 +150,6 @@ const founders = [
       'Based in Madrid, Spain',
     ],
     closer: "The commercial brain. If an agent can't sell, it doesn't ship.",
-    // TODO: verify LinkedIn URL
     linkedin: 'https://www.linkedin.com/in/jorgeherreracruz/',
   },
 ]
@@ -164,43 +162,11 @@ const BOOKING_URL =
 export default function YCPage() {
   return (
     <div
-      style={{ backgroundColor: '#0A0A0A', color: '#FAF9F7' }}
+      style={{ backgroundColor: 'var(--bg-primary)', color: 'var(--text-primary)' }}
       className="min-h-screen font-sans antialiased"
     >
       {/* ── Sticky Nav ──────────────────────────────────────────────────────── */}
-      <header
-        style={{
-          backgroundColor: 'rgba(10,10,10,0.85)',
-          backdropFilter: 'blur(16px)',
-          borderBottom: '1px solid rgba(250,249,247,0.07)',
-        }}
-        className="sticky top-0 z-50"
-      >
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <a href="https://verymuch.ai" aria-label="Back to Verymuch.ai homepage">
-            <Image
-              src="/logo-white.png"
-              alt="Verymuch.ai"
-              width={140}
-              height={32}
-              className="h-7 w-auto"
-              priority
-            />
-          </a>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              background: 'linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)',
-              color: '#0A0A0A',
-            }}
-            className="rounded-lg px-5 py-2 text-sm font-bold transition-opacity hover:opacity-90"
-          >
-            Book a call →
-          </a>
-        </div>
-      </header>
+      <YCNav />
 
       {/* ── Hero ────────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden px-6 pb-28 pt-24 text-center">
@@ -217,7 +183,7 @@ export default function YCPage() {
 
         <div className="relative mx-auto max-w-4xl">
           <div
-            style={{ borderColor: 'rgba(74,212,174,0.3)', color: '#4AD4AE' }}
+            style={{ borderColor: 'rgba(74,212,174,0.3)', color: 'var(--accent-cool)' }}
             className="badge-label mb-8 inline-flex"
           >
             YC Startup School 2026 · San Francisco, July 25–26
@@ -246,11 +212,11 @@ export default function YCPage() {
           </h1>
 
           <p
-            style={{ color: '#9CA3AF' }}
+            style={{ color: 'var(--text-secondary)' }}
             className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed"
           >
             8 production agents. Real companies. Real revenue.{' '}
-            <span style={{ color: '#FAF9F7' }}>
+            <span style={{ color: 'var(--text-primary)' }}>
               Built from Mexico City and Madrid.
             </span>
           </p>
@@ -268,8 +234,8 @@ export default function YCPage() {
             </a>
             <a
               href="#traction"
-              style={{ borderColor: 'rgba(250,249,247,0.15)', color: '#9CA3AF' }}
-              className="rounded-xl border px-8 py-4 text-base font-medium transition-colors hover:border-white/30 hover:text-white"
+              style={{ borderColor: 'var(--border)', color: 'var(--text-secondary)' }}
+              className="rounded-xl border px-8 py-4 text-base font-medium transition-colors hover:opacity-80"
             >
               View traction
             </a>
@@ -277,23 +243,27 @@ export default function YCPage() {
 
           {/* Quick stats bar */}
           <div
-            style={{ borderColor: 'rgba(250,249,247,0.07)' }}
-            className="mx-auto mt-16 grid max-w-3xl grid-cols-2 divide-x divide-white/5 rounded-2xl border sm:grid-cols-4"
+            style={{ borderColor: 'var(--border)' }}
+            className="mx-auto mt-16 grid max-w-3xl grid-cols-2 rounded-2xl border sm:grid-cols-4"
           >
             {[
               { v: '8', l: 'agents live' },
               { v: '3', l: 'countries' },
               { v: '$20K+', l: 'pipeline' },
               { v: '~60%', l: 'net margin' },
-            ].map((s) => (
-              <div key={s.l} className="px-4 py-5 text-center">
+            ].map((s, i) => (
+              <div
+                key={s.l}
+                className="px-4 py-5 text-center"
+                style={i > 0 ? { borderLeft: '1px solid var(--border)' } : undefined}
+              >
                 <div
-                  style={{ color: '#4AD4AE' }}
+                  style={{ color: 'var(--accent-cool)' }}
                   className="font-display text-2xl font-extrabold"
                 >
                   {s.v}
                 </div>
-                <div style={{ color: '#6B7280' }} className="mt-1 text-xs uppercase tracking-widest">
+                <div style={{ color: 'var(--text-muted)' }} className="mt-1 text-xs uppercase tracking-widest">
                   {s.l}
                 </div>
               </div>
@@ -304,12 +274,12 @@ export default function YCPage() {
 
       {/* ── The Problem ─────────────────────────────────────────────────────── */}
       <section
-        style={{ backgroundColor: '#0F0F0F', borderTop: '1px solid rgba(250,249,247,0.06)' }}
+        style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border)' }}
         className="px-6 py-20"
       >
         <div className="mx-auto max-w-3xl">
           <div
-            style={{ borderColor: 'rgba(245,160,64,0.3)', color: '#F5A040' }}
+            style={{ borderColor: 'rgba(245,160,64,0.3)', color: 'var(--accent-warm)' }}
             className="badge-label mb-8 inline-flex"
           >
             The Problem
@@ -319,17 +289,17 @@ export default function YCPage() {
             style={{ letterSpacing: '-0.015em' }}
           >
             Mid-market B2B companies waste{' '}
-            <span style={{ color: '#F5A040' }}>70% of their sales team&apos;s time</span> on
+            <span style={{ color: 'var(--accent-warm)' }}>70% of their sales team&apos;s time</span> on
             manual research, slow follow-ups, and zero personalization.
           </p>
-          <p style={{ color: '#9CA3AF' }} className="mb-4 text-lg leading-relaxed">
+          <p style={{ color: 'var(--text-secondary)' }} className="mb-4 text-lg leading-relaxed">
             The tools exist — but{' '}
-            <span style={{ color: '#FAF9F7' }}>88% of AI projects fail because they never
+            <span style={{ color: 'var(--text-primary)' }}>88% of AI projects fail because they never
             make it to production.</span> Most vendors sell workshops. We sell agents that run.
           </p>
-          <p style={{ color: '#9CA3AF' }} className="text-lg leading-relaxed">
+          <p style={{ color: 'var(--text-secondary)' }} className="text-lg leading-relaxed">
             Our edge:{' '}
-            <span style={{ color: '#4AD4AE' }}>
+            <span style={{ color: 'var(--accent-cool)' }}>
               every agent we sell runs in our own sales pipeline first.
             </span>{' '}
             We don&apos;t pitch what we haven&apos;t shipped.
@@ -342,7 +312,7 @@ export default function YCPage() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-4">
             <div
-              style={{ borderColor: 'rgba(74,212,174,0.3)', color: '#4AD4AE' }}
+              style={{ borderColor: 'rgba(74,212,174,0.3)', color: 'var(--accent-cool)' }}
               className="badge-label inline-flex"
             >
               What We&apos;ve Built
@@ -354,7 +324,7 @@ export default function YCPage() {
           >
             8 production AI agents
           </h2>
-          <p style={{ color: '#6B7280' }} className="mb-12 text-base">
+          <p style={{ color: 'var(--text-muted)' }} className="mb-12 text-base">
             Each agent solves one sales or marketing bottleneck. All in production. All generating revenue.
           </p>
 
@@ -363,10 +333,10 @@ export default function YCPage() {
               <div
                 key={agent.name}
                 style={{
-                  backgroundColor: '#141416',
-                  border: '1px solid rgba(250,249,247,0.07)',
+                  backgroundColor: 'var(--bg-secondary)',
+                  border: '1px solid var(--border)',
                 }}
-                className="group relative rounded-2xl p-6 transition-all duration-200 hover:border-white/15"
+                className="group relative rounded-2xl p-6 transition-all duration-200 hover:opacity-90"
               >
                 {/* Status badge */}
                 <div className="mb-4 flex items-center justify-between">
@@ -393,7 +363,7 @@ export default function YCPage() {
                       href={agent.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: '#4AD4AE' }}
+                      style={{ color: 'var(--accent-cool)' }}
                       className="text-xs font-medium opacity-70 transition-opacity hover:opacity-100"
                     >
                       View live →
@@ -407,19 +377,19 @@ export default function YCPage() {
                 >
                   {agent.name}
                 </h3>
-                <p style={{ color: '#9CA3AF' }} className="mb-5 text-sm leading-relaxed">
+                <p style={{ color: 'var(--text-secondary)' }} className="mb-5 text-sm leading-relaxed">
                   {agent.description}
                 </p>
 
                 {/* Metric */}
                 <div
                   style={{
-                    backgroundColor: 'rgba(250,249,247,0.04)',
-                    borderTop: '1px solid rgba(250,249,247,0.06)',
+                    backgroundColor: 'var(--bg-primary)',
+                    borderTop: '1px solid var(--border)',
                   }}
                   className="-mx-6 -mb-6 rounded-b-2xl px-6 py-3"
                 >
-                  <span style={{ color: '#FAF9F7' }} className="text-sm font-semibold">
+                  <span style={{ color: 'var(--text-primary)' }} className="text-sm font-semibold">
                     {agent.metric}
                   </span>
                 </div>
@@ -432,13 +402,13 @@ export default function YCPage() {
       {/* ── Traction ────────────────────────────────────────────────────────── */}
       <section
         id="traction"
-        style={{ backgroundColor: '#0F0F0F', borderTop: '1px solid rgba(250,249,247,0.06)' }}
+        style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border)' }}
         className="px-6 py-24"
       >
         <div className="mx-auto max-w-5xl">
           <div className="mb-4">
             <div
-              style={{ borderColor: 'rgba(74,212,174,0.3)', color: '#4AD4AE' }}
+              style={{ borderColor: 'rgba(74,212,174,0.3)', color: 'var(--accent-cool)' }}
               className="badge-label inline-flex"
             >
               Traction
@@ -456,10 +426,10 @@ export default function YCPage() {
               <div
                 key={m.label}
                 style={{
-                  backgroundColor: '#141416',
-                  border: '1px solid rgba(250,249,247,0.07)',
+                  backgroundColor: 'var(--bg-card)',
+                  border: '1px solid var(--border)',
                 }}
-                className="rounded-2xl p-6"
+                className="rounded-2xl p-6 card-elevated"
               >
                 <div
                   className="font-display mb-2 text-3xl font-extrabold"
@@ -472,7 +442,7 @@ export default function YCPage() {
                 >
                   {m.value}
                 </div>
-                <div style={{ color: '#6B7280' }} className="text-xs leading-snug">
+                <div style={{ color: 'var(--text-muted)' }} className="text-xs leading-snug">
                   {m.label}
                 </div>
               </div>
@@ -486,7 +456,7 @@ export default function YCPage() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-4">
             <div
-              style={{ borderColor: 'rgba(245,160,64,0.3)', color: '#F5A040' }}
+              style={{ borderColor: 'rgba(245,160,64,0.3)', color: 'var(--accent-warm)' }}
               className="badge-label inline-flex"
             >
               Why Now
@@ -498,12 +468,12 @@ export default function YCPage() {
           >
             The world&apos;s largest untapped AI market speaks Spanish
           </h2>
-          <p style={{ color: '#6B7280' }} className="mb-10 text-base">
+          <p style={{ color: 'var(--text-muted)' }} className="mb-10 text-base">
             600M+ speakers. $500B+ in addressable B2B revenue. AI penetration below 10%. The tools exist — but nobody is building them in Spanish.
           </p>
 
           {/* Global macro stats */}
-          <p style={{ color: '#9CA3AF' }} className="mb-3 text-xs font-bold uppercase tracking-widest">
+          <p style={{ color: 'var(--text-secondary)' }} className="mb-3 text-xs font-bold uppercase tracking-widest">
             Global picture
           </p>
           <div className="grid gap-3 sm:grid-cols-4 mb-10">
@@ -516,8 +486,8 @@ export default function YCPage() {
               <div
                 key={item.stat}
                 style={{
-                  backgroundColor: '#141416',
-                  border: '1px solid rgba(250,249,247,0.07)',
+                  backgroundColor: 'var(--bg-secondary)',
+                  border: '1px solid var(--border)',
                 }}
                 className="rounded-2xl p-5 text-center"
               >
@@ -527,13 +497,13 @@ export default function YCPage() {
                 >
                   {item.stat}
                 </div>
-                <div style={{ color: '#6B7280' }} className="text-xs leading-snug">{item.context}</div>
+                <div style={{ color: 'var(--text-muted)' }} className="text-xs leading-snug">{item.context}</div>
               </div>
             ))}
           </div>
 
           {/* Individual markets */}
-          <p style={{ color: '#9CA3AF' }} className="mb-3 text-xs font-bold uppercase tracking-widest">
+          <p style={{ color: 'var(--text-secondary)' }} className="mb-3 text-xs font-bold uppercase tracking-widest">
             Market by market
           </p>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 mb-8">
@@ -590,8 +560,8 @@ export default function YCPage() {
               <div
                 key={item.market}
                 style={{
-                  backgroundColor: '#141416',
-                  border: '1px solid rgba(250,249,247,0.07)',
+                  backgroundColor: 'var(--bg-secondary)',
+                  border: '1px solid var(--border)',
                 }}
                 className="rounded-2xl p-5 flex flex-col"
               >
@@ -612,7 +582,7 @@ export default function YCPage() {
                 {/* Stats */}
                 <ul className="mb-4 space-y-1">
                   {item.stats.map((s) => (
-                    <li key={s} className="flex items-start gap-1.5 text-xs" style={{ color: '#9CA3AF' }}>
+                    <li key={s} className="flex items-start gap-1.5 text-xs" style={{ color: 'var(--text-secondary)' }}>
                       <span style={{ color: '#4AD4AE' }} className="shrink-0 mt-0.5">›</span>
                       {s}
                     </li>
@@ -624,7 +594,7 @@ export default function YCPage() {
                   style={{ backgroundColor: 'rgba(74,212,174,0.05)', borderLeft: '2px solid rgba(74,212,174,0.3)' }}
                   className="mt-auto rounded-r-lg pl-3 py-2"
                 >
-                  <p style={{ color: '#6B7280' }} className="text-xs leading-relaxed italic">
+                  <p style={{ color: 'var(--text-muted)' }} className="text-xs leading-relaxed italic">
                     {item.yc}
                   </p>
                 </div>
@@ -632,9 +602,9 @@ export default function YCPage() {
             ))}
           </div>
 
-          <p style={{ color: '#6B7280' }} className="text-sm">
+          <p style={{ color: 'var(--text-muted)' }} className="text-sm">
             We&apos;re positioned at the intersection of{' '}
-            <span style={{ color: '#FAF9F7' }}>AI + Spanish-speaking B2B + global sales automation</span>.
+            <span style={{ color: 'var(--text-primary)' }}>AI + Spanish-speaking B2B + global sales automation</span>.
             The big players are building for English-first enterprise. We&apos;re building for the 600M they&apos;re ignoring.
           </p>
         </div>
@@ -642,13 +612,13 @@ export default function YCPage() {
 
       {/* ── Team ────────────────────────────────────────────────────────────── */}
       <section
-        style={{ backgroundColor: '#0F0F0F', borderTop: '1px solid rgba(250,249,247,0.06)' }}
+        style={{ backgroundColor: 'var(--bg-secondary)', borderTop: '1px solid var(--border)' }}
         className="px-6 py-24"
       >
         <div className="mx-auto max-w-5xl">
           <div className="mb-4">
             <div
-              style={{ borderColor: 'rgba(74,212,174,0.3)', color: '#4AD4AE' }}
+              style={{ borderColor: 'rgba(74,212,174,0.3)', color: 'var(--accent-cool)' }}
               className="badge-label inline-flex"
             >
               The Team
@@ -666,10 +636,10 @@ export default function YCPage() {
               <div
                 key={f.name}
                 style={{
-                  backgroundColor: '#141416',
-                  border: '1px solid rgba(250,249,247,0.07)',
+                  backgroundColor: 'var(--bg-card)',
+                  border: '1px solid var(--border)',
                 }}
-                className="rounded-2xl p-7"
+                className="rounded-2xl p-7 card-elevated"
               >
                 <div className="mb-5">
                   <h3
@@ -678,10 +648,10 @@ export default function YCPage() {
                   >
                     {f.name}
                   </h3>
-                  <p style={{ color: '#F5A040' }} className="mt-0.5 text-sm font-semibold">
+                  <p style={{ color: 'var(--accent-warm)' }} className="mt-0.5 text-sm font-semibold">
                     {f.role}
                   </p>
-                  <p style={{ color: '#9CA3AF' }} className="mt-2 text-sm">
+                  <p style={{ color: 'var(--text-secondary)' }} className="mt-2 text-sm">
                     {f.tagline}
                   </p>
                 </div>
@@ -689,10 +659,10 @@ export default function YCPage() {
                 <ul className="mb-6 space-y-2">
                   {f.credentials.map((c) => (
                     <li key={c} className="flex items-start gap-2 text-sm">
-                      <span style={{ color: '#4AD4AE' }} className="mt-0.5 shrink-0">
+                      <span style={{ color: 'var(--accent-cool)' }} className="mt-0.5 shrink-0">
                         ›
                       </span>
-                      <span style={{ color: '#9CA3AF' }}>{c}</span>
+                      <span style={{ color: 'var(--text-secondary)' }}>{c}</span>
                     </li>
                   ))}
                 </ul>
@@ -700,7 +670,7 @@ export default function YCPage() {
                 <blockquote
                   style={{
                     borderLeft: '2px solid rgba(74,212,174,0.4)',
-                    color: '#FAF9F7',
+                    color: 'var(--text-primary)',
                   }}
                   className="mb-5 pl-4 text-sm italic leading-relaxed"
                 >
@@ -711,7 +681,7 @@ export default function YCPage() {
                   href={f.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ color: '#4AD4AE' }}
+                  style={{ color: 'var(--accent-cool)' }}
                   className="text-sm font-medium underline underline-offset-2 opacity-70 transition-opacity hover:opacity-100"
                 >
                   LinkedIn →
@@ -727,13 +697,13 @@ export default function YCPage() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-4">
             <div
-              style={{ borderColor: 'rgba(250,249,247,0.15)', color: '#9CA3AF' }}
+              style={{ borderColor: 'var(--border)', color: 'var(--text-secondary)' }}
               className="badge-label inline-flex"
             >
               Our Stack
             </div>
           </div>
-          <p style={{ color: '#6B7280' }} className="mb-8 text-sm">
+          <p style={{ color: 'var(--text-muted)' }} className="mb-8 text-sm">
             Production-grade tools, no toy demos.
           </p>
 
@@ -742,11 +712,11 @@ export default function YCPage() {
               <span
                 key={tech}
                 style={{
-                  backgroundColor: '#141416',
-                  border: '1px solid rgba(250,249,247,0.1)',
-                  color: '#9CA3AF',
+                  backgroundColor: 'var(--bg-secondary)',
+                  border: '1px solid var(--border)',
+                  color: 'var(--text-secondary)',
                 }}
-                className="rounded-full px-4 py-2 text-sm font-medium transition-colors hover:border-white/20 hover:text-white"
+                className="rounded-full px-4 py-2 text-sm font-medium transition-opacity hover:opacity-80"
               >
                 {tech}
               </span>
@@ -757,7 +727,7 @@ export default function YCPage() {
 
       {/* ── Final CTA ───────────────────────────────────────────────────────── */}
       <section
-        style={{ borderTop: '1px solid rgba(250,249,247,0.06)' }}
+        style={{ borderTop: '1px solid var(--border)' }}
         className="px-6 py-28 text-center"
       >
         <div className="relative mx-auto max-w-2xl">
@@ -774,7 +744,7 @@ export default function YCPage() {
 
           <div className="relative">
             <div
-              style={{ borderColor: 'rgba(245,160,64,0.3)', color: '#F5A040' }}
+              style={{ borderColor: 'rgba(245,160,64,0.3)', color: 'var(--accent-warm)' }}
               className="badge-label mb-8 inline-flex"
             >
               YC Startup School 2026
@@ -792,7 +762,7 @@ export default function YCPage() {
               Let&apos;s connect in San Francisco
             </h2>
 
-            <p style={{ color: '#9CA3AF' }} className="mx-auto mb-10 max-w-lg text-lg leading-relaxed">
+            <p style={{ color: 'var(--text-secondary)' }} className="mx-auto mb-10 max-w-lg text-lg leading-relaxed">
               We&apos;re applying to YC Startup School 2026. If you&apos;re building at the
               intersection of AI and sales — or want to see our agents in action —
               book 20 minutes with us.
@@ -813,8 +783,8 @@ export default function YCPage() {
               </a>
               <a
                 href="https://verymuch.ai"
-                style={{ borderColor: 'rgba(250,249,247,0.15)', color: '#9CA3AF' }}
-                className="rounded-xl border px-8 py-4 text-base font-medium transition-colors hover:border-white/30 hover:text-white"
+                style={{ borderColor: 'var(--border)', color: 'var(--text-secondary)' }}
+                className="rounded-xl border px-8 py-4 text-base font-medium transition-opacity hover:opacity-80"
               >
                 Explore verymuch.ai
               </a>
@@ -827,8 +797,8 @@ export default function YCPage() {
                   href={f.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ color: '#6B7280' }}
-                  className="text-sm transition-colors hover:text-white"
+                  style={{ color: 'var(--text-muted)' }}
+                  className="text-sm transition-opacity hover:opacity-70"
                 >
                   {f.name} on LinkedIn →
                 </a>
@@ -841,8 +811,8 @@ export default function YCPage() {
       {/* ── Footer ──────────────────────────────────────────────────────────── */}
       <footer
         style={{
-          borderTop: '1px solid rgba(250,249,247,0.06)',
-          color: '#3A3A3C',
+          borderTop: '1px solid var(--border)',
+          color: 'var(--text-muted)',
         }}
         className="px-6 py-8 text-center text-xs"
       >
@@ -850,8 +820,8 @@ export default function YCPage() {
           © {new Date().getFullYear()} Verymuch.ai ·{' '}
           <a
             href="https://verymuch.ai"
-            style={{ color: '#6B7280' }}
-            className="hover:text-white transition-colors"
+            style={{ color: 'var(--text-secondary)' }}
+            className="transition-opacity hover:opacity-70"
           >
             verymuch.ai
           </a>{' '}
