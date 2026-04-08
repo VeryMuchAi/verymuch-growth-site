@@ -110,6 +110,8 @@ export interface LeadMagnetConfig {
    * When omitted, the marquee uses its default global brand set.
    */
   brands?: BrandEntry[];
+  /** Hide the "Descargado por +300 growth builders" trust bar in the hero */
+  hideSocialProof?: boolean;
 }
 
 // ─── Registry — built at the bottom of this file once all configs are defined ──
@@ -1379,6 +1381,12 @@ export const claudeCodeConfig: LeadMagnetConfig = {
   slug: "claude-code-remote-control",
   source: "linkedin",
   campaign: "claude-code-remote-control",
+  hideSocialProof: true,
+  brands: [
+    { name: "Claude Code", dot: "#D4A27F", iconSlug: "anthropic" },
+    { name: "VS Code",     dot: "#007ACC", iconSlug: "visualstudiocode" },
+    { name: "n8n",         dot: "#EA4B71", iconSlug: "n8n" },
+  ],
 
   seo: {
     title: "Claude Code Remote Control — Guía Completa | VeryMuch.ai",

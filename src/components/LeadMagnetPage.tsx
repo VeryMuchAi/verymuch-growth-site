@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type {
   LeadMagnetConfig,
   LeadMagnetSection,
@@ -139,7 +140,7 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
     <div className="min-h-screen bg-brand-dark text-white">
       {/* ── Minimal LP Header ─────────────────────────────────────────────── */}
       <header className="border-b border-white/[0.06]">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Image
             src="/logo-white.png"
             alt="VeryMuch.ai"
@@ -148,6 +149,12 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
             className="h-8 w-auto object-contain"
             priority
           />
+          <Link
+            href="/#resources"
+            className="text-xs font-medium text-white/40 hover:text-brand-mint transition-colors flex items-center gap-1.5"
+          >
+            ← Todos los recursos
+          </Link>
         </div>
       </header>
 
@@ -194,20 +201,22 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
               </ul>
 
               {/* Trust bar */}
-              <div className="flex items-center gap-3 mt-4 pt-6 border-t border-white/[0.08]">
-                <div className="flex -space-x-2">
-                  {["#4AD4AE", "#F5A040", "#8B5CF6"].map((c) => (
-                    <div
-                      key={c}
-                      className="w-7 h-7 rounded-full border-2 border-brand-dark"
-                      style={{ backgroundColor: c }}
-                    />
-                  ))}
+              {!config.hideSocialProof && (
+                <div className="flex items-center gap-3 mt-4 pt-6 border-t border-white/[0.08]">
+                  <div className="flex -space-x-2">
+                    {["#4AD4AE", "#F5A040", "#8B5CF6"].map((c) => (
+                      <div
+                        key={c}
+                        className="w-7 h-7 rounded-full border-2 border-brand-dark"
+                        style={{ backgroundColor: c }}
+                      />
+                    ))}
+                  </div>
+                  <p className="text-xs text-white/40">
+                    Descargado por +300 growth builders
+                  </p>
                 </div>
-                <p className="text-xs text-white/40">
-                  Descargado por +300 growth builders
-                </p>
-              </div>
+              )}
             </div>
 
             {/* Right col — form */}
