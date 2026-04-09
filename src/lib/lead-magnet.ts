@@ -985,7 +985,7 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
   brands: [
     { name: "Claude.ai",      dot: "#E8832A", iconSlug: "anthropic" },
     { name: "Claude Projects", dot: "#4AD4AE", iconSlug: "anthropic" },
-    { name: "LinkedIn",        dot: "#0A66C2", iconSlug: "linkedin" },
+    { name: "LinkedIn",        dot: "#0A66C2", iconSlug: "linkedin", logoUrl: "/logos/linkedin-white.svg" },
   ],
 
   seo: {
