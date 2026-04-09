@@ -1073,7 +1073,7 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
       },
       {
         name: "LinkedIn",
-        logoUrl: "https://cdn.simpleicons.org/linkedin/0A66C2",
+        logoUrl: "/logos/linkedin.svg",
         role: "El canal donde publicas. La Skill escribe con la estructura exacta de LinkedIn: saltos de línea, flechas, punto de tensión y CTA que genera comentarios.",
         url: "https://linkedin.com",
       },
