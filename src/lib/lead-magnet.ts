@@ -982,10 +982,13 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
   slug: "claude-skills-linkedin",
   source: "linkedin",
   campaign: "claude-skills-linkedin",
+  hideSocialProof: true,
+  notionUrl:
+    "https://www.notion.so/Skill-de-Claude-para-Posts-Virales-en-LinkedIn-32e9fc1023f6817db489dd3e859d4ef8",
   brands: [
     { name: "Claude.ai",      dot: "#E8832A", iconSlug: "anthropic" },
     { name: "Claude Projects", dot: "#4AD4AE", iconSlug: "anthropic" },
-    { name: "LinkedIn",        dot: "#0A66C2", iconSlug: "linkedin", logoUrl: "/logos/linkedin-white.svg" },
+    { name: "LinkedIn",        dot: "#0A66C2", logoUrl: "/logos/linkedin-white.svg" },
   ],
 
   seo: {
