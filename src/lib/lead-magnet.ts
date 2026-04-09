@@ -1514,6 +1514,7 @@ export const modeloAnthropicAgentesConfig: LeadMagnetConfig = {
   slug: "modelo-anthropic-agentes",
   source: "linkedin",
   campaign: "modelo-anthropic-agentes",
+  hideSocialProof: true,
   brands: [
     { name: "Claude",     dot: "#E8832A", iconSlug: "anthropic" },
     { name: "Anthropic",  dot: "#4AD4AE", iconSlug: "anthropic" },
