@@ -1508,6 +1508,208 @@ export const claudeCodeConfig: LeadMagnetConfig = {
   },
 };
 
+// ─── Modelo Anthropic Agentes Config ─────────────────────────────────────────
+
+export const modeloAnthropicAgentesConfig: LeadMagnetConfig = {
+  slug: "modelo-anthropic-agentes",
+  source: "linkedin",
+  campaign: "modelo-anthropic-agentes",
+  brands: [
+    { name: "Claude",     dot: "#E8832A", iconSlug: "anthropic" },
+    { name: "Anthropic",  dot: "#4AD4AE", iconSlug: "anthropic" },
+    { name: "n8n",        dot: "#EA4B71", iconSlug: "n8n" },
+  ],
+
+  seo: {
+    title: "El Modelo Anthropic: Sistema de Agentes IA para Marketing y Ventas | VeryMuch.ai",
+    description:
+      "Cómo Anthropic usa Claude Code internamente para multiplicar x10 su equipo de marketing. Los 3 principios + framework replicable para tu empresa B2B. Guía gratuita.",
+    ogTitle:
+      "El Modelo Anthropic: Cómo Construir un Sistema de Agentes que Multiplique tu Equipo",
+    ogDescription:
+      "1 persona gestionó todo el performance marketing de una empresa de $380B. Los 3 principios detrás del sistema + cómo aplicarlos a tu equipo B2B.",
+  },
+
+  content: {
+    badge: "Caso Real Anthropic · Gratuito",
+    headline:
+      "El sistema que usa Anthropic para que 1 persona haga el trabajo de un departamento completo",
+    highlightWords: "1 persona haga el trabajo de un departamento completo",
+    subheadline:
+      "Austin Lau gestionó solo todo el performance marketing de una empresa de $380B. Los 3 principios detrás de su sistema y cómo replicarlos en tu equipo de marketing y ventas.",
+    bullets: [
+      "Los 3 principios de diseño de Anthropic: agentes especializados, datos reales, memoria",
+      "Caso verificado: de 2 horas a 15 minutos en creación de ads, 100 variaciones por batch",
+      "Cómo 10 equipos internos de Anthropic replican el mismo patrón sin background técnico",
+      "Framework de 6 agentes para todo el ciclo comercial B2B: Radar, Productor, Distribuidor, Captador, Conversor, Analítica",
+      "Checklist de 5 preguntas para saber si tu equipo está listo para agentes",
+      "Plan de implementación en 3 pasos con stack técnico real",
+    ],
+    includes: [
+      {
+        icon: "check-circle",
+        title: "Caso real verificado de Anthropic",
+        description:
+          "Datos oficiales del whitepaper + blog + video de Austin Lau. No teoría, resultados reales.",
+      },
+      {
+        icon: "layers",
+        title: "3 principios de diseño replicables",
+        description:
+          "Agentes especializados, conexión a datos reales, y sistema de memoria que aprende.",
+      },
+      {
+        icon: "users",
+        title: "Framework de 6 agentes para marketing y ventas",
+        description:
+          "Radar, Productor, Distribuidor, Captador, Conversor y Analítica. Cada uno con rol, inputs y outputs definidos.",
+      },
+      {
+        icon: "list",
+        title: "Checklist + plan de implementación",
+        description:
+          "5 preguntas de diagnóstico + 3 pasos concretos para empezar mañana.",
+      },
+    ],
+    techStack: [
+      {
+        name: "Claude Code",
+        role: "El agente de código que Anthropic usa internamente para construir y escalar sus sistemas de marketing.",
+        url: "https://anthropic.com",
+      },
+      {
+        name: "Claude.ai",
+        role: "Interfaz para coordinar los agentes del ciclo comercial sin necesidad de infraestructura técnica.",
+        url: "https://claude.ai",
+      },
+      {
+        name: "n8n",
+        role: "Orquestación de los workflows entre agentes. Self-hosteable y adaptable a cualquier stack.",
+        url: "https://n8n.io",
+      },
+    ],
+    extraSections: [
+      {
+        type: "opportunity",
+        title: "El caso Anthropic: datos verificados",
+        subtitle:
+          "Austin Lau, performance marketer de Anthropic, documentó públicamente los resultados de aplicar agentes de IA a su propio trabajo.",
+        tableRows: [
+          ["De 2h a 15 min", "100 variaciones por batch", "1 persona, resultado de equipo"],
+          ["Creación de ads con IA", "Tests A/B automatizados", "Todo el performance marketing"],
+        ],
+      },
+      {
+        type: "changelog",
+        title: "Los 3 principios de diseño de Anthropic",
+        items: [
+          {
+            icon: "cpu",
+            title: "Agentes especializados",
+            description:
+              "Cada agente tiene un rol único y acotado. No un generalist, sino expertos en una tarea concreta: investigar, escribir, distribuir o analizar.",
+          },
+          {
+            icon: "database",
+            title: "Conexión a datos reales",
+            description:
+              "Los agentes no trabajan en el vacío. Se conectan a tu CRM, analytics, histórico de campañas y señales del mercado para tomar decisiones con contexto real.",
+          },
+          {
+            icon: "activity",
+            title: "Sistema de memoria que aprende",
+            description:
+              "Cada interacción mejora al sistema. Los agentes acumulan contexto sobre tu ICP, tu voz y tus resultados — y lo aplican en cada nueva tarea.",
+          },
+        ],
+      },
+      {
+        type: "agents",
+        title: "Los 6 agentes del ciclo comercial B2B",
+        agents: [
+          {
+            icon: "radio",
+            name: "Radar",
+            role: "Detecta oportunidades",
+            description:
+              "Monitoriza señales de compra en LinkedIn, web y plataformas clave. Entrega diariamente una lista de prospectos calientes con contexto exacto.",
+          },
+          {
+            icon: "edit",
+            name: "Productor",
+            role: "Genera contenido",
+            description:
+              "Crea posts, emails y materiales comerciales con tu voz y estructura. Adapta cada pieza al canal y al momento del funnel.",
+          },
+          {
+            icon: "share-2",
+            name: "Distribuidor",
+            role: "Amplifica el alcance",
+            description:
+              "Publica y distribuye contenido en los canales correctos, en el momento óptimo, sin intervención manual.",
+          },
+          {
+            icon: "target",
+            name: "Captador",
+            role: "Convierte interés en leads",
+            description:
+              "Gestiona el primer contacto, cualifica la intención y agenda reuniones con prospectos que ya han mostrado señales reales.",
+          },
+          {
+            icon: "trending-up",
+            name: "Conversor",
+            role: "Cierra oportunidades",
+            description:
+              "Prepara briefings pre-llamada, genera propuestas personalizadas y gestiona el seguimiento hasta el cierre.",
+          },
+          {
+            icon: "bar-chart",
+            name: "Analítica",
+            role: "Mide y optimiza",
+            description:
+              "Monitoriza métricas clave, detecta qué funciona y genera informes semanales con recomendaciones concretas para mejorar el sistema.",
+          },
+        ],
+      },
+    ],
+    form: {
+      fields: [
+        {
+          name: "name",
+          label: "Nombre",
+          type: "text",
+          placeholder: "Tu nombre",
+          required: true,
+        },
+        {
+          name: "email",
+          label: "Correo electrónico",
+          type: "email",
+          placeholder: "tu@empresa.com",
+          required: true,
+        },
+        {
+          name: "company",
+          label: "Empresa (opcional)",
+          type: "text",
+          placeholder: "Tu empresa",
+          required: false,
+        },
+      ],
+      ctaLabel: "Descarga la guía completa",
+      microcopy: "Gratis. Sin spam. Entrega inmediata.",
+    },
+    success: {
+      title: "Tu guía está lista",
+      description:
+        "Accede ahora al caso Anthropic, los 3 principios, el framework de 6 agentes y el plan de implementación.",
+      ctaLabel: "Abrir la guía →",
+    },
+    ctaHeadline: "Replica el modelo Anthropic",
+    ctaHighlight: "en tu equipo B2B",
+  },
+};
+
 // ─── Build registry — single immutable assignment, all configs present ─────────
 // Adding a new lead magnet: just append it to this array. No other changes needed.
 
@@ -1521,6 +1723,7 @@ const _ALL_CONFIGS: LeadMagnetConfig[] = [
   claudeSkillsLinkedinConfig,
   sixAgentsConfig,
   claudeCodeConfig,
+  modeloAnthropicAgentesConfig,
 ];
 
 ALL_LEAD_MAGNETS = Object.fromEntries(_ALL_CONFIGS.map((c) => [c.slug, c]));
