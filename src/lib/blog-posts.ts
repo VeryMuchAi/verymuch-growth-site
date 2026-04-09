@@ -74,4 +74,20 @@ export const blogPosts: BlogPost[] = [
     dateISO: "2026-04-14",
     readTime: { es: "8 min", en: "8 min" },
   },
+  {
+    slug: "gohighlevel-vs-hubspot-ventas-ia",
+    tag: { es: "CRM + IA", en: "CRM + AI" },
+    title: {
+      es: "GoHighLevel vs HubSpot para equipos de ventas con IA: la comparativa definitiva 2026",
+      en: "GoHighLevel vs HubSpot for AI-powered sales teams: the definitive 2026 comparison",
+    },
+    description: {
+      es: "Comparativa completa de GoHighLevel y HubSpot para equipos de ventas B2B que implementan IA. Cuál elegir según tu tamaño, presupuesto y stack de automatización.",
+      en: "Full comparison of GoHighLevel and HubSpot for B2B sales teams implementing AI. Which to choose based on your size, budget, and automation stack.",
+    },
+    author: "Jorge Herrera Cruz",
+    date: { es: "21 de abril, 2026", en: "April 21, 2026" },
+    dateISO: "2026-04-21",
+    readTime: { es: "9 min", en: "9 min" },
+  },
 ];
