@@ -136,7 +136,7 @@
   },
   "Newsletter": {
     "schema_webpage_name": "AI Newsletter for Sales & Marketing Teams",
-    "meta_title": "AI Newsletter for Sales & Marketing Teams | Verymuch.ai",
+    "meta_title": "AI Newsletter for Sales & Marketing Teams",
     "meta_description": "Subscribe to Verymuch.ai's weekly newsletter. Real AI agent case studies, tools, market data, and actionable tactics for B2B sales teams.",
     "og_title": "AI that sells: Verymuch.ai's weekly newsletter",
     "og_description": "What we learn each week installing AI agents in real companies. No theory — just results.",
@@ -195,7 +195,7 @@
     "submitting": "Sending…"
   },
   "TalentMarketplace": {
-    "meta_title": "Verified AI Talent Marketplace | VeryMuch.ai",
+    "meta_title": "Verified AI Talent Marketplace",
     "meta_description": "We connect companies with verified AI, automation, and intelligent agent specialists. Reviewed talent, not self-declared. Milestone-based payments with oversight.",
     "og_title": "Verified AI Talent Marketplace | VeryMuch.ai",
     "og_description": "We connect companies with verified AI, automation, and intelligent agent specialists. Reviewed talent, not self-declared. Milestone-based payments with oversight.",
@@ -238,7 +238,7 @@
     "cta_secondary": "Not sure what you need? Book a free consultation →"
   },
   "AgentesAutomatizacion": {
-    "meta_title": "AI Agents & Automation for Sales and Marketing | VeryMuch.ai",
+    "meta_title": "AI Agents & Automation for Sales and Marketing",
     "meta_description": "We design, build, and install AI agents and automation systems for your entire commercial funnel. From prospecting to close. Real AI in production, not experimental pilots.",
     "og_title": "AI Agents & Automation for Sales and Marketing | VeryMuch.ai",
     "og_description": "We design, build, and install AI agents for your entire commercial funnel. Prospecting, qualification, nurturing, follow-up, and content — all automated.",
@@ -306,7 +306,7 @@
     "cta_secondary": "Or explore our free blueprints →"
   },
   "ConsultoriaIA": {
-    "meta_title": "AI Strategy Consulting for Sales & Marketing | VeryMuch.ai",
+    "meta_title": "AI Strategy Consulting for Sales & Marketing",
     "meta_description": "We diagnose your commercial processes, identify the highest-impact areas, and define an AI implementation roadmap. No generic solutions — we understand your business first.",
     "og_title": "AI Strategy Consulting for Sales & Marketing | VeryMuch.ai",
     "og_description": "We diagnose your commercial processes, identify the highest-impact areas, and define an AI implementation roadmap. No generic solutions.",
