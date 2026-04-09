@@ -85,18 +85,29 @@ export default async function LocaleLayout({ children, params }: Props) {
                   founder: [
                     {
                       "@type": "Person",
+                      "@id": "https://verymuch.ai/autor/jorge-herrera-cruz",
                       name: "Jorge Herrera Cruz",
                       jobTitle: "CEO",
+                      url: "https://verymuch.ai/autor/jorge-herrera-cruz",
+                      sameAs: ["https://www.linkedin.com/in/jorgeherreracruz"],
                     },
                     {
                       "@type": "Person",
+                      "@id": "https://verymuch.ai/autor/edwin-moreno",
                       name: "Edwin Moreno",
                       jobTitle: "COO",
+                      url: "https://verymuch.ai/autor/edwin-moreno",
+                      sameAs: ["https://www.linkedin.com/in/edwinmoreno"],
                     },
                   ],
                   sameAs: [
                     "https://www.linkedin.com/company/verymuch-ai",
+                    "https://www.linkedin.com/company/verymuchai",
                   ],
+                  foundingDate: "2024",
+                  numberOfEmployees: { "@type": "QuantitativeValue", value: 2 },
+                  areaServed: ["ES", "MX", "CO", "US"],
+                  knowsLanguage: ["es", "en"],
                 },
                 {
                   "@type": "WebSite",

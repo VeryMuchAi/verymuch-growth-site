@@ -42,4 +42,20 @@ export const blogPosts: BlogPost[] = [
     dateISO: "2026-03-24",
     readTime: { es: "7 min", en: "7 min" },
   },
+  {
+    slug: "5-senales-equipo-ventas-listo-ia",
+    tag: { es: "Ventas con IA", en: "AI Sales" },
+    title: {
+      es: "5 señales de que tu equipo de ventas está listo para IA",
+      en: "5 signs your sales team is ready for AI",
+    },
+    description: {
+      es: "¿Tu equipo de ventas está preparado para implementar agentes de IA? Estas 5 señales te dicen si es el momento — y qué hacer si no lo es todavía.",
+      en: "Is your sales team prepared to implement AI agents? These 5 signals tell you if it's the right moment — and what to do if it's not yet.",
+    },
+    author: "Edwin Moreno",
+    date: { es: "9 de abril, 2026", en: "April 9, 2026" },
+    dateISO: "2026-04-09",
+    readTime: { es: "5 min", en: "5 min" },
+  },
 ];
