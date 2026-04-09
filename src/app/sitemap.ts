@@ -29,6 +29,7 @@ const routes: Route[] = [
   { path: "/blog/que-es-agente-ia-ventas",                   changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog/automatizacion-marketing-ia-2026",          changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog/5-senales-equipo-ventas-listo-ia",          changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/n8n-vs-make-vs-zapier-agentes-ia-2026",    changeFrequency: "monthly", priority: 0.8 },
   { path: "/servicios/consultoria-ia",                       changeFrequency: "monthly", priority: 0.9 },
   { path: "/servicios/agentes-automatizacion",               changeFrequency: "monthly", priority: 0.9 },
   { path: "/autor/edwin-moreno",                             changeFrequency: "monthly", priority: 0.7 },

@@ -58,4 +58,20 @@ export const blogPosts: BlogPost[] = [
     dateISO: "2026-04-09",
     readTime: { es: "5 min", en: "5 min" },
   },
+  {
+    slug: "n8n-vs-make-vs-zapier-agentes-ia-2026",
+    tag: { es: "Automatización IA", en: "AI Automation" },
+    title: {
+      es: "n8n vs Make vs Zapier para agentes de IA en 2026: la comparativa honesta",
+      en: "n8n vs Make vs Zapier for AI agents in 2026: the honest comparison",
+    },
+    description: {
+      es: "Comparativa honesta de n8n, Make y Zapier para construir agentes de IA en equipos B2B. Cuál elegir según tu caso de uso, presupuesto y equipo técnico.",
+      en: "Honest comparison of n8n, Make, and Zapier for building AI agents in B2B teams. Which to choose based on your use case, budget, and technical team.",
+    },
+    author: "Jorge Herrera Cruz",
+    date: { es: "14 de abril, 2026", en: "April 14, 2026" },
+    dateISO: "2026-04-14",
+    readTime: { es: "8 min", en: "8 min" },
+  },
 ];
