@@ -31,6 +31,7 @@ const routes: Route[] = [
   { path: "/blog/5-senales-equipo-ventas-listo-ia",          changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog/n8n-vs-make-vs-zapier-agentes-ia-2026",    changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog/gohighlevel-vs-hubspot-ventas-ia",         changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog/automatizar-seguimiento-leads-ia",          changeFrequency: "monthly", priority: 0.8 },
   { path: "/servicios/consultoria-ia",                       changeFrequency: "monthly", priority: 0.9 },
   { path: "/servicios/agentes-automatizacion",               changeFrequency: "monthly", priority: 0.9 },
   { path: "/autor/edwin-moreno",                             changeFrequency: "monthly", priority: 0.7 },
