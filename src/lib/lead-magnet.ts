@@ -989,17 +989,17 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
   ],
 
   seo: {
-    title: "Skill de Claude para LinkedIn — Frameworks de +700K Impresiones | VeryMuch.ai",
+    title: "Skill de Claude para LinkedIn - Frameworks de +340K Impresiones | VeryMuch.ai",
     description:
-      "Descarga la Skill personalizada de Claude con los frameworks exactos que generaron +700K impresiones y +500 comentarios por post en LinkedIn en 50 días. Gratis.",
+      "Descarga la Skill personalizada de Claude con los frameworks exactos que generaron +340K impresiones en menos de 10 publicaciones en LinkedIn. Gratis.",
     ogTitle:
       "La Skill de Claude que convierte cualquier tema en un post viral de LinkedIn",
     ogDescription:
       "6 hooks probados, estructura para móvil, guardarrails de tono, CTAs de conversión y 3 plantillas listas. Configúrala una vez, úsala siempre.",
     enTitle:
-      "Claude Skill for LinkedIn — Frameworks Behind +700K Impressions | VeryMuch.ai",
+      "Claude Skill for LinkedIn - Frameworks Behind +340K Impressions | VeryMuch.ai",
     enDescription:
-      "Download the custom Claude Skill with the exact frameworks that generated +700K impressions and +500 comments per post on LinkedIn in 50 days. Free.",
+      "Download the custom Claude Skill with the exact frameworks that generated +340K impressions in under 10 posts on LinkedIn. Free.",
     enOgTitle:
       "The Claude Skill that turns any topic into a viral LinkedIn post",
     enOgDescription:
@@ -1009,23 +1009,23 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
   content: {
     badge: "NUEVO · CLAUDE SKILLS · LINKEDIN",
     headline:
-      "La Skill de Claude que escribe posts de LinkedIn con los frameworks de +700K impresiones",
-    highlightWords: "+700K impresiones",
+      "La Skill de Claude que escribe posts de LinkedIn con los frameworks de +340K impresiones en menos de 10 publicaciones",
+    highlightWords: "+340K impresiones en menos de 10 publicaciones",
     subheadline:
-      "Configúrala una vez en Claude. Dile de qué quieres publicar. Obtén un post con tu voz, tu estructura y tus reglas — sin volver a explicar nada.",
+      "Configúrala una vez en Claude. Dile de qué quieres publicar. Obtén un post con tu voz, tu estructura y tus reglas - sin volver a explicar nada.",
     bullets: [
-      "6 patrones de hook que frenan el scroll (probados en +700K impresiones reales)",
+      "6 patrones de hook que frenan el scroll (con ejemplos por sector)",
       "Estructura optimizada para lectura móvil: una idea por línea, flechas, frases cortas",
       "Guardarrails de tono para que tus posts nunca suenen a IA ni a relleno corporativo",
       "Fórmulas de CTA que generan comentarios de verdad, no solo likes",
-      "3 plantillas listas: Sistema de Agentes, Nueva Herramienta, Tendencia/Cambio",
+      "3 plantillas listas: Sistema/Proceso, Herramienta/Descubrimiento, Tendencia/Cambio",
     ],
     includes: [
       {
         icon: "zap",
         title: "6 patrones de hook probados",
         description:
-          "Número + resultado, declaración contraintuitiva, antes/después con datos, presentación personal, pregunta provocadora, historia + lección. Las 6 estructuras que detienen el scroll.",
+          "Número + resultado, contraste/transformación, desafío de suposiciones, presentación/revelación, tendencia + FOMO, generosidad + especificidad. Las 6 estructuras que detienen el scroll.",
       },
       {
         icon: "list",
@@ -1049,7 +1049,7 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
         icon: "file-text",
         title: "3 plantillas listas para usar",
         description:
-          "Sistema de Agentes: resultado → agentes → CTA. Nueva Herramienta: problema → solución → CTA. Tendencia/Cambio: dato → por qué importa → CTA.",
+          "Sistema o Proceso: resultado → pasos → CTA. Herramienta o Descubrimiento: problema → solución → CTA. Tendencia/Cambio: dato → por qué importa → CTA.",
       },
       {
         icon: "check",
@@ -1087,37 +1087,37 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
             icon: "trending-up",
             title: "Número + resultado concreto",
             description:
-              "\"700K impresiones en 50 días\". Los datos concretos detienen el scroll antes de que el cerebro procese el tema. El número ancla la credibilidad.",
+              "\"He montado 3 automatizaciones que me ahorran 15 horas a la semana.\" Los datos concretos detienen el scroll antes de que el cerebro procese el tema. El número ancla la credibilidad.",
           },
           {
             icon: "alert-triangle",
-            title: "Declaración contraintuitiva",
+            title: "Contraste / Transformación",
             description:
-              "\"Dejé de hacer outbound en frío\". Contradice lo que el lector espera → necesita saber por qué. Genera fricción cognitiva que obliga a seguir leyendo.",
+              "\"He dejado de hacer X. Ahora hago Y.\" Crea contraste. Implica transformación. Genera curiosidad sobre qué ha cambiado.",
           },
           {
             icon: "bar-chart",
-            title: "Antes/después con datos",
+            title: "Desafío de suposiciones",
             description:
-              "\"De 200 impresiones a 300K en 6 semanas\". La transformación concreta genera credibilidad y curiosidad simultáneamente. El lector quiere saber el mecanismo.",
+              "\"Puedes literalmente [cosa impresionante] usando [método inesperado].\" Desafía suposiciones. Hace que lo imposible parezca posible.",
           },
           {
             icon: "users",
-            title: "Presentación personal",
+            title: "Presentación / Revelación",
             description:
-              "\"Os presento a mi nueva contratación\". El formato de presentación dispara el engagement por expectativa de contenido original. Patrón narrativo clásico.",
+              "\"Os presento a [algo inesperado].\" Personificación o revelación. Hace que lo abstracto sea tangible y cercano.",
           },
           {
             icon: "help-circle",
-            title: "Pregunta provocadora",
+            title: "Tendencia + FOMO",
             description:
-              "\"¿Sabíais que el 99% de los SDRs desaparecerán en 3 años?\". La pregunta retórica obliga al cerebro a buscar la respuesta. No se puede leer solo la primera línea.",
+              "\"Hay un nuevo [concepto] que está cambiando [sector].\" Genera FOMO. Te posiciona como alguien que va por delante.",
           },
           {
             icon: "star",
-            title: "Historia + lección",
+            title: "Generosidad + especificidad",
             description:
-              "\"Hace 6 meses mis posts eran invisibles. Hoy tengo 300K impresiones.\". El formato narrativo genera empatía: la audiencia se ve reflejada en el punto de partida.",
+              "\"He documentado [número] [cosas]. Y las regalo.\" Generosidad + especificidad. Valor percibido enorme.",
           },
         ],
       },
@@ -1127,17 +1127,17 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
         agents: [
           {
             icon: "bot",
-            name: "Sistema de Agentes",
-            role: "Post de caso de uso técnico",
+            name: "Sistema o Proceso",
+            role: "Post de caso de uso real",
             description:
-              "Hook con resultado concreto → cómo funciona cada agente del sistema → resultado final medible → CTA con lead magnet o recurso descargable.",
+              "Hook con resultado concreto → cómo funciona cada paso del sistema → resultado final medible → CTA con lead magnet. Funciona para ventas, marketing, operaciones, producto.",
           },
           {
             icon: "zap",
-            name: "Nueva Herramienta",
+            name: "Herramienta o Descubrimiento",
             role: "Post de descubrimiento",
             description:
-              "Problema específico que resuelve → qué hace la herramienta en términos concretos → cómo configurarla en X pasos → CTA con demo o recurso.",
+              "Problema que resuelve → qué hace → cómo configurarlo → CTA. Funciona para tecnología, productividad, automatización.",
           },
           {
             icon: "trending-up",
@@ -1179,11 +1179,11 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
     success: {
       title: "Tu Skill de LinkedIn está lista",
       description:
-        "Descarga el archivo .md, ve a claude.ai, crea un Proyecto, súbelo a Project Knowledge y empieza a escribir posts con los frameworks de +700K impresiones.",
+        "Descarga el archivo .md, ve a claude.ai, crea un Proyecto, súbelo a Project Knowledge y empieza a escribir posts con los frameworks de +340K impresiones en menos de 10 publicaciones.",
       ctaLabel: "Descargar la Skill →",
     },
     ctaHeadline: "Empieza a publicar posts con los frameworks que",
-    ctaHighlight: "generaron +700K impresiones",
+    ctaHighlight: "generaron +340K impresiones en menos de 10 publicaciones",
   },
 };
 
