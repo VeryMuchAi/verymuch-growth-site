@@ -61,14 +61,15 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 .app{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:20px}
 
 /* ══════════ LOGO (Brand Board v3) ══════════ */
-/* PNG logo for light mode, CSS logo for dark mode */
+/* PNG logo for light mode, white PNG logo for dark mode */
 .vm-logo{display:inline-flex;align-items:center;text-decoration:none}
 .vm-logo-img{height:32px;width:auto;display:block}
+.vm-logo-img-white{height:32px;width:auto;display:none}
 .vm-logo-css{display:none}
 .vm-logo-text{font-family:'Sora',sans-serif;font-weight:800;font-size:1.35rem;color:var(--logo-text);letter-spacing:-.03em;line-height:1}
 .vm-logo-icon{font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:var(--logo-icon-text);background:var(--icon-gradient);border-radius:7px;padding:3px 8px;margin-left:1px;line-height:1.3}
 .dark .vm-logo-img{display:none}
-.dark .vm-logo-css{display:inline-flex;align-items:center}
+.dark .vm-logo-img-white{display:block}
 .logo-c{text-align:center;margin-bottom:12px}
 
 /* ══════════ TOP BAR ══════════ */
@@ -294,7 +295,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 
 <!-- LANDING -->
 <div class="section active" id="secLand">
-  <div class="logo-c"><a class="vm-logo" href="https://verymuch.ai" target="_blank"><img src="/logo-light.png" alt="Verymuch.Ai" class="vm-logo-img"><span class="vm-logo-css"><span class="vm-logo-text">Verymuch.</span><span class="vm-logo-icon">Ai</span></span></a></div>
+  <div class="logo-c"><a class="vm-logo" href="https://verymuch.ai" target="_blank"><img src="/logo-light.png" alt="Verymuch.Ai" class="vm-logo-img"><img src="/logo-white.png" alt="Verymuch.Ai" class="vm-logo-img-white"></a></div>
   <div class="hero">
     <div class="badge" id="heroBadge"><i class="fa-solid fa-bolt"></i> AI Readiness Test</div>
     <h1 class="h-title" id="landTitle"></h1>
@@ -309,7 +310,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 
 <!-- ASSESSMENT -->
 <div class="section" id="secAss">
-  <div class="logo-c"><a class="vm-logo" href="https://verymuch.ai" target="_blank"><img src="/logo-light.png" alt="Verymuch.Ai" class="vm-logo-img"><span class="vm-logo-css"><span class="vm-logo-text">Verymuch.</span><span class="vm-logo-icon">Ai</span></span></a></div>
+  <div class="logo-c"><a class="vm-logo" href="https://verymuch.ai" target="_blank"><img src="/logo-light.png" alt="Verymuch.Ai" class="vm-logo-img"><img src="/logo-white.png" alt="Verymuch.Ai" class="vm-logo-img-white"></a></div>
   <div class="pw"><div class="pi"><span class="pl" id="pDim"></span><span class="pc" id="pCnt"></span></div><div class="pbar"><div class="pfill" id="pFill" style="width:12.5%"></div></div></div>
   <div id="qCont"></div>
   <div class="navb"><button class="btn-n" id="bPrev" onclick="prevQ()" disabled></button><button class="btn-n" id="bNext" onclick="nextQ()"></button></div>
@@ -317,7 +318,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 
 <!-- GATE -->
 <div class="section" id="secGate">
-  <div class="logo-c"><a class="vm-logo" href="https://verymuch.ai" target="_blank"><img src="/logo-light.png" alt="Verymuch.Ai" class="vm-logo-img"><span class="vm-logo-css"><span class="vm-logo-text">Verymuch.</span><span class="vm-logo-icon">Ai</span></span></a></div>
+  <div class="logo-c"><a class="vm-logo" href="https://verymuch.ai" target="_blank"><img src="/logo-light.png" alt="Verymuch.Ai" class="vm-logo-img"><img src="/logo-white.png" alt="Verymuch.Ai" class="vm-logo-img-white"></a></div>
   <div class="gate-box" style="max-width:520px;margin:30px auto">
     <div style="margin-bottom:16px"><i class="fa-solid fa-chart-pie" style="font-size:2.2rem;color:var(--accent-warm)"></i></div>
     <h3 id="gateTitle"></h3><p class="gate-sub" id="gateSub"></p>
@@ -337,7 +338,7 @@ body{font-family:'Manrope',sans-serif;background:var(--bg-primary);color:var(--t
 
 <!-- RESULTS -->
 <div class="section" id="secRes">
-  <div class="logo-c"><a class="vm-logo" href="https://verymuch.ai" target="_blank"><img src="/logo-light.png" alt="Verymuch.Ai" class="vm-logo-img"><span class="vm-logo-css"><span class="vm-logo-text">Verymuch.</span><span class="vm-logo-icon">Ai</span></span></a></div>
+  <div class="logo-c"><a class="vm-logo" href="https://verymuch.ai" target="_blank"><img src="/logo-light.png" alt="Verymuch.Ai" class="vm-logo-img"><img src="/logo-white.png" alt="Verymuch.Ai" class="vm-logo-img-white"></a></div>
   <div class="rh"><p class="rfor" id="rFor"></p><h2 class="rname" id="rNm"></h2><p class="rcomp" id="rCo"></p></div>
   <div class="scard"><div class="sbig" id="sBig">0</div><div class="stot" id="sTot"></div><div class="lvlb" id="lvBadge"></div><p class="lvld" id="lvDesc"></p><p class="bnote" id="bNote"></p></div>
   <div class="dimr"><h3 id="dimrH"></h3><div id="dimBars"></div></div>
