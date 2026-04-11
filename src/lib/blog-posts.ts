@@ -90,4 +90,84 @@ export const blogPosts: BlogPost[] = [
     dateISO: "2026-04-21",
     readTime: { es: "9 min", en: "9 min" },
   },
+  {
+    slug: "automatizar-seguimiento-leads-ia",
+    tag: { es: "Automatización de Ventas", en: "Sales Automation" },
+    title: {
+      es: "Cómo automatizar el seguimiento de leads con IA: guía completa 2026",
+      en: "How to automate lead follow-up with AI: complete guide 2026",
+    },
+    description: {
+      es: "Guía práctica para automatizar el seguimiento de leads con agentes de IA. Reduce el tiempo de respuesta de horas a minutos y cierra más oportunidades con menos esfuerzo manual.",
+      en: "Practical guide to automating lead follow-up with AI agents. Reduce response time from hours to minutes and close more deals with less manual effort.",
+    },
+    author: "Edwin Moreno",
+    date: { es: "28 de abril, 2026", en: "April 28, 2026" },
+    dateISO: "2026-04-28",
+    readTime: { es: "10 min", en: "10 min" },
+  },
+  {
+    slug: "velocidad-respuesta-ventas-b2b-ia",
+    tag: { es: "Ventas B2B con IA", en: "B2B Sales with AI" },
+    title: {
+      es: "Velocidad de respuesta en ventas B2B: el impacto real de la IA en 2026",
+      en: "B2B sales response speed: the real impact of AI in 2026",
+    },
+    description: {
+      es: "La velocidad de respuesta es el factor #1 en la tasa de conversión B2B. Descubre cómo la IA reduce el tiempo de respuesta de horas a minutos con impacto real en ventas.",
+      en: "Response speed is the #1 factor in B2B conversion rates. Discover how AI reduces response time from hours to minutes with real sales impact.",
+    },
+    author: "Jorge Herrera Cruz",
+    date: { es: "5 de mayo, 2026", en: "May 5, 2026" },
+    dateISO: "2026-05-05",
+    readTime: { es: "9 min", en: "9 min" },
+  },
+  {
+    slug: "generacion-leads-b2b-inteligencia-artificial",
+    tag: { es: "Generación de Demanda B2B", en: "B2B Demand Generation" },
+    title: {
+      es: "Generación de leads B2B con inteligencia artificial: guía completa 2026",
+      en: "B2B lead generation with artificial intelligence: complete guide 2026",
+    },
+    description: {
+      es: "Canales, automatización, calificación y casos reales de generación de leads B2B con IA. Cómo empresas en México, España y Colombia generan más leads con menos esfuerzo manual.",
+      en: "Channels, automation, qualification, and real cases of B2B lead generation with AI. How companies in Mexico, Spain, and Colombia generate more leads with less manual effort.",
+    },
+    author: "Edwin Moreno",
+    date: { es: "12 de mayo, 2026", en: "May 12, 2026" },
+    dateISO: "2026-05-12",
+    readTime: { es: "11 min", en: "11 min" },
+  },
+  {
+    slug: "agentes-marketing-email-pyme",
+    tag: { es: "Email Marketing con IA", en: "Email Marketing with AI" },
+    title: {
+      es: "Agentes de marketing por email para PYME: guía práctica 2026",
+      en: "AI email marketing agents for SMBs: practical guide 2026",
+    },
+    description: {
+      es: "Cómo las PYME usan agentes de IA para automatizar el email marketing: bienvenidas, nurturing, reactivación y upsell. Más conversiones, menos tiempo manual.",
+      en: "How SMBs use AI agents to automate email marketing: welcome sequences, nurturing, reactivation, and upsell. More conversions, less manual time.",
+    },
+    author: "Jorge Herrera Cruz",
+    date: { es: "19 de mayo, 2026", en: "May 19, 2026" },
+    dateISO: "2026-05-19",
+    readTime: { es: "10 min", en: "10 min" },
+  },
+  {
+    slug: "propuestas-ventas-automatizadas-ia",
+    tag: { es: "Automatización Comercial", en: "Sales Automation" },
+    title: {
+      es: "Propuestas de ventas automatizadas con IA: más cierres, menos tiempo en 2026",
+      en: "Automated sales proposals with AI: more closes, less time in 2026",
+    },
+    description: {
+      es: "Cómo automatizar la creación de propuestas comerciales con IA: de horas a minutos, con personalización real por cliente. 85% menos tiempo de preparación.",
+      en: "How to automate sales proposal creation with AI: from hours to minutes, with real per-client personalization. 85% less preparation time.",
+    },
+    author: "Edwin Moreno",
+    date: { es: "26 de mayo, 2026", en: "May 26, 2026" },
+    dateISO: "2026-05-26",
+    readTime: { es: "9 min", en: "9 min" },
+  },
 ];
