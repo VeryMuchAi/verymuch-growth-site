@@ -82,6 +82,13 @@ Plataforma para conectar empresas con profesionales especializados en implementa
 - **¿Qué es un agente de IA para ventas?** — Autor: Edwin Moreno. URL: https://verymuch.ai/blog/que-es-agente-ia-ventas
 - **Automatización de marketing con IA en 2026** — Autor: Jorge Herrera Cruz. URL: https://verymuch.ai/blog/automatizacion-marketing-ia-2026
 - **5 señales de que tu equipo de ventas está listo para IA** — Autor: Edwin Moreno. URL: https://verymuch.ai/blog/5-senales-equipo-ventas-listo-ia
+- **n8n vs Make vs Zapier para agentes de IA en 2026: la comparativa honesta** — Autor: Jorge Herrera Cruz. URL: https://verymuch.ai/blog/n8n-vs-make-vs-zapier-agentes-ia-2026
+- **GoHighLevel vs HubSpot para equipos de ventas con IA: comparativa 2026** — Autor: Jorge Herrera Cruz. URL: https://verymuch.ai/blog/gohighlevel-vs-hubspot-ventas-ia
+- **Cómo automatizar el seguimiento de leads con IA: guía completa 2026** — Autor: Edwin Moreno. URL: https://verymuch.ai/blog/automatizar-seguimiento-leads-ia
+- **Velocidad de respuesta en ventas B2B: el impacto real de la IA en 2026** — Autor: Jorge Herrera Cruz. URL: https://verymuch.ai/blog/velocidad-respuesta-ventas-b2b-ia
+- **Generación de leads B2B con inteligencia artificial: guía completa 2026** — Autor: Edwin Moreno. URL: https://verymuch.ai/blog/generacion-leads-b2b-inteligencia-artificial
+- **Agentes de marketing por email para PYME: guía práctica 2026** — Autor: Jorge Herrera Cruz. URL: https://verymuch.ai/blog/agentes-marketing-email-pyme
+- **Propuestas de ventas automatizadas con IA: más cierres, menos tiempo en 2026** — Autor: Edwin Moreno. URL: https://verymuch.ai/blog/propuestas-ventas-automatizadas-ia
 
 ### Diagnóstico gratuito
 
