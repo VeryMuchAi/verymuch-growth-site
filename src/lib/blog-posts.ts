@@ -229,4 +229,21 @@ export const blogPosts: BlogPost[] = [
     dateISO: "2026-06-16",
     readTime: { es: "9 min", en: "9 min" },
   },
+  {
+    slug: "automatizacion-onboarding-clientes-ia",
+    draft: true,
+    tag: { es: "Automatización con IA", en: "AI Automation" },
+    title: {
+      es: "Automatización de onboarding de clientes con IA: guía completa 2026",
+      en: "AI customer onboarding automation: complete guide 2026",
+    },
+    description: {
+      es: "Cómo automatizar el onboarding de clientes con IA para reducir el tiempo de activación, aumentar la retención y liberar al equipo de tareas repetitivas. Guía con flujos, herramientas y casos reales.",
+      en: "How to automate customer onboarding with AI to reduce activation time, increase retention, and free your team from repetitive tasks. Guide with flows, tools, and real cases.",
+    },
+    author: "Jorge Herrera Cruz",
+    date: { es: "23 de junio, 2026", en: "June 23, 2026" },
+    dateISO: "2026-06-23",
+    readTime: { es: "10 min", en: "10 min" },
+  },
 ];
