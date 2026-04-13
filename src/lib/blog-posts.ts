@@ -212,4 +212,21 @@ export const blogPosts: BlogPost[] = [
     dateISO: "2026-06-09",
     readTime: { es: "8 min", en: "8 min" },
   },
+  {
+    slug: "como-crear-script-ventas-ia",
+    draft: true,
+    tag: { es: "Ventas con IA", en: "AI Sales" },
+    title: {
+      es: "Cómo crear un script de ventas con IA: guía práctica 2026",
+      en: "How to create an AI sales script: practical guide 2026",
+    },
+    description: {
+      es: "Guía paso a paso para crear scripts de ventas con IA que se adaptan al cliente, superan objeciones y aumentan la tasa de cierre. Con ejemplos reales y plantillas para llamadas, WhatsApp y email.",
+      en: "Step-by-step guide to creating AI sales scripts that adapt to the customer, overcome objections, and increase close rates. With real examples and templates for calls, WhatsApp, and email.",
+    },
+    author: "Edwin Moreno",
+    date: { es: "16 de junio, 2026", en: "June 16, 2026" },
+    dateISO: "2026-06-16",
+    readTime: { es: "9 min", en: "9 min" },
+  },
 ];

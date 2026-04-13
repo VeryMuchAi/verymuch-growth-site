@@ -91,6 +91,7 @@ Plataforma para conectar empresas con profesionales especializados en implementa
 - **Propuestas de ventas automatizadas con IA: más cierres, menos tiempo en 2026** — Autor: Edwin Moreno. URL: https://verymuch.ai/blog/propuestas-ventas-automatizadas-ia
 - **Integración CRM con IA para ventas B2B: guía completa 2026** — Autor: Jorge Herrera Cruz. URL: https://verymuch.ai/blog/integracion-crm-ia-ventas
 - **IA para equipos de ventas pequeños: por dónde empezar en 2026** — Autor: Edwin Moreno. URL: https://verymuch.ai/blog/ia-equipos-ventas-pequenos
+- **Cómo crear un script de ventas con IA: guía práctica 2026** — Autor: Edwin Moreno. URL: https://verymuch.ai/blog/como-crear-script-ventas-ia
 
 ### Diagnóstico gratuito
 
