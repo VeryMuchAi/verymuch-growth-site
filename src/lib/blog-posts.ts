@@ -7,6 +7,7 @@ export interface BlogPost {
   date: { es: string; en: string };
   dateISO: string;
   readTime: { es: string; en: string };
+  draft?: boolean;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -60,6 +61,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "n8n-vs-make-vs-zapier-agentes-ia-2026",
+    draft: true,
     tag: { es: "Automatización IA", en: "AI Automation" },
     title: {
       es: "n8n vs Make vs Zapier para agentes de IA en 2026: la comparativa honesta",
@@ -76,6 +78,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "gohighlevel-vs-hubspot-ventas-ia",
+    draft: true,
     tag: { es: "CRM + IA", en: "CRM + AI" },
     title: {
       es: "GoHighLevel vs HubSpot para equipos de ventas con IA: la comparativa definitiva 2026",
@@ -92,6 +95,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "automatizar-seguimiento-leads-ia",
+    draft: true,
     tag: { es: "Automatización de Ventas", en: "Sales Automation" },
     title: {
       es: "Cómo automatizar el seguimiento de leads con IA: guía completa 2026",
@@ -108,6 +112,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "velocidad-respuesta-ventas-b2b-ia",
+    draft: true,
     tag: { es: "Ventas B2B con IA", en: "B2B Sales with AI" },
     title: {
       es: "Velocidad de respuesta en ventas B2B: el impacto real de la IA en 2026",
@@ -124,6 +129,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "generacion-leads-b2b-inteligencia-artificial",
+    draft: true,
     tag: { es: "Generación de Demanda B2B", en: "B2B Demand Generation" },
     title: {
       es: "Generación de leads B2B con inteligencia artificial: guía completa 2026",
@@ -140,6 +146,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "agentes-marketing-email-pyme",
+    draft: true,
     tag: { es: "Email Marketing con IA", en: "Email Marketing with AI" },
     title: {
       es: "Agentes de marketing por email para PYME: guía práctica 2026",
@@ -156,6 +163,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "propuestas-ventas-automatizadas-ia",
+    draft: true,
     tag: { es: "Automatización Comercial", en: "Sales Automation" },
     title: {
       es: "Propuestas de ventas automatizadas con IA: más cierres, menos tiempo en 2026",
@@ -169,5 +177,39 @@ export const blogPosts: BlogPost[] = [
     date: { es: "26 de mayo, 2026", en: "May 26, 2026" },
     dateISO: "2026-05-26",
     readTime: { es: "9 min", en: "9 min" },
+  },
+  {
+    slug: "integracion-crm-ia-ventas",
+    draft: true,
+    tag: { es: "CRM + IA", en: "CRM + AI" },
+    title: {
+      es: "Integración CRM con IA para ventas B2B: guía completa 2026",
+      en: "CRM integration with AI for B2B sales: complete guide 2026",
+    },
+    description: {
+      es: "Cómo integrar IA en tu CRM para enriquecer datos, calificar leads, automatizar outreach y alertar al equipo en el momento correcto. GoHighLevel, HubSpot, Salesforce y Pipedrive.",
+      en: "How to integrate AI into your CRM to enrich data, qualify leads, automate outreach, and alert the team at the right moment. GoHighLevel, HubSpot, Salesforce, and Pipedrive.",
+    },
+    author: "Jorge Herrera Cruz",
+    date: { es: "2 de junio, 2026", en: "June 2, 2026" },
+    dateISO: "2026-06-02",
+    readTime: { es: "10 min", en: "10 min" },
+  },
+  {
+    slug: "ia-equipos-ventas-pequenos",
+    draft: true,
+    tag: { es: "Ventas con IA", en: "AI Sales" },
+    title: {
+      es: "IA para equipos de ventas pequeños: por dónde empezar en 2026",
+      en: "AI for small sales teams: where to start in 2026",
+    },
+    description: {
+      es: "Guía práctica para equipos de ventas de 1 a 5 personas que quieren implementar IA sin complejidad técnica ni grandes presupuestos. Los 3 primeros pasos que generan impacto inmediato.",
+      en: "Practical guide for sales teams of 1–5 people who want to implement AI without technical complexity or big budgets. The 3 first steps that generate immediate impact.",
+    },
+    author: "Edwin Moreno",
+    date: { es: "9 de junio, 2026", en: "June 9, 2026" },
+    dateISO: "2026-06-09",
+    readTime: { es: "8 min", en: "8 min" },
   },
 ];

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import HomeNav from "@/components/HomeNav";
 import { Link } from "@/i18n/navigation";
 
@@ -353,6 +354,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function VelocidadRespuestaVentasPage({ params }: Props) {
+  notFound();
   const { locale } = await params;
   const c = CONTENT[locale as "es" | "en"] ?? CONTENT.es;
 

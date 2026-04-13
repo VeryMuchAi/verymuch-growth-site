@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import HomeNav from "@/components/HomeNav";
 import { Link } from "@/i18n/navigation";
 
@@ -400,6 +401,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function N8nVsMakeVsZapierPage({ params }: Props) {
+  notFound();
   const { locale } = await params;
   const c = CONTENT[locale as "es" | "en"] ?? CONTENT.es;
   const lang = locale === "en" ? "en" : "es";

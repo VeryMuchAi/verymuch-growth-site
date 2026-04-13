@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import HomeNav from "@/components/HomeNav";
 import { Link } from "@/i18n/navigation";
 
@@ -396,6 +397,7 @@ const WINNER_COLORS: Record<string, string> = {
 };
 
 export default async function GHLvsHubSpotPage({ params }: Props) {
+  notFound();
   const { locale } = await params;
   const c = CONTENT[locale as "es" | "en"] ?? CONTENT.es;
 

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/lib/blog-posts";
 
 const BASE = "https://verymuch.ai";
 
@@ -26,18 +27,6 @@ const routes: Route[] = [
   { path: "/guia/como-elegir-agencia-ia",             changeFrequency: "monthly", priority: 0.9 },
   { path: "/servicios/talent-marketplace",            changeFrequency: "weekly",  priority: 0.9 },
   { path: "/blog",                                             changeFrequency: "weekly",  priority: 0.8 },
-  { path: "/blog/que-es-agente-ia-ventas",                   changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog/automatizacion-marketing-ia-2026",          changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog/5-senales-equipo-ventas-listo-ia",          changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog/n8n-vs-make-vs-zapier-agentes-ia-2026",    changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog/gohighlevel-vs-hubspot-ventas-ia",         changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog/automatizar-seguimiento-leads-ia",          changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog/velocidad-respuesta-ventas-b2b-ia",         changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog/generacion-leads-b2b-inteligencia-artificial", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog/agentes-marketing-email-pyme",              changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog/propuestas-ventas-automatizadas-ia",        changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog/cualificacion-leads-automatizada-ia",       changeFrequency: "monthly", priority: 0.8 },
-  { path: "/blog/integracion-crm-ia-ventas",                 changeFrequency: "monthly", priority: 0.8 },
   { path: "/servicios/consultoria-ia",                       changeFrequency: "monthly", priority: 0.9 },
   { path: "/servicios/agentes-automatizacion",               changeFrequency: "monthly", priority: 0.9 },
   { path: "/autor/edwin-moreno",                             changeFrequency: "monthly", priority: 0.7 },
@@ -47,7 +36,7 @@ const routes: Route[] = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  return routes.flatMap(({ path, changeFrequency, priority }) => [
+  const staticEntries = routes.flatMap(({ path, changeFrequency, priority }) => [
     // Spanish — default locale, no prefix (home → "/", rest → "/path")
     {
       url: `${BASE}${path || "/"}`,
@@ -63,4 +52,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority,
     },
   ]);
+
+  const blogEntries = blogPosts
+    .filter((post) => !post.draft)
+    .flatMap((post) => [
+      {
+        url: `${BASE}/blog/${post.slug}`,
+        lastModified: new Date(post.dateISO),
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+      },
+      {
+        url: `${BASE}/en/blog/${post.slug}`,
+        lastModified: new Date(post.dateISO),
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+      },
+    ]);
+
+  return [...staticEntries, ...blogEntries];
 }
