@@ -119,7 +119,7 @@ export default async function BlogIndexPage({ params }: Props) {
       <section className="px-6 pb-24">
         <div className="max-w-4xl mx-auto">
           <div className="grid sm:grid-cols-2 gap-6">
-            {blogPosts.map((post) => (
+            {blogPosts.filter((post) => !post.draft).map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}` as `/blog/${string}`}
