@@ -108,7 +108,8 @@ export default async function HomePage({ params }: Props) {
     { id: "agente-investigacion",      title: t("lm_2_title"), desc: t("lm_2_desc"), href: "/lead/agente-investigacion-comercial",stack: ["Claude","n8n","Supabase"] },
     { id: "20-agentes-ia-b2b",         title: t("lm_3_title"), desc: t("lm_3_desc"), href: "/lead/20-agentes-ia-b2b",            stack: ["Claude","n8n","Clay","Instantly"] },
     { id: "2-agentes-leads-calientes", title: t("lm_4_title"), desc: t("lm_4_desc"), href: "/lead/2-agentes-leads-calientes",    stack: ["Trigify","Claude","n8n"] },
-    { id: "modelo-anthropic-agentes",  title: t("lm_9_title"), desc: t("lm_9_desc"), href: "/lead/modelo-anthropic-agentes",      stack: ["Claude Code","Claude.ai","n8n"] },
+    { id: "modelo-anthropic-agentes",  title: t("lm_9_title"),  desc: t("lm_9_desc"),  href: "/lead/modelo-anthropic-agentes",  stack: ["Claude Code","Claude.ai","n8n"] },
+    { id: "modelo-anthropic",          title: t("lm_10_title"), desc: t("lm_10_desc"), href: "/modelo-anthropic",                stack: ["Claude Code","Anthropic","n8n"] },
   ];
 
   const LEAD_MAGNETS_SOON = [
