@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { modeloAnthropicAgentesConfig } from "@/lib/lead-magnet";
+import { modeloAnthropicConfig } from "@/lib/lead-magnet";
 import LeadMagnetPage from "@/components/LeadMagnetPage";
 
-const { seo } = modeloAnthropicAgentesConfig;
+const { seo } = modeloAnthropicConfig;
 
 const BASE_URL = "https://verymuch.ai";
 const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
@@ -40,6 +40,5 @@ export const metadata: Metadata = {
 };
 
 export default function ElModeloAnthropicPage() {
-  // guideUrl vacío — la guía se entrega exclusivamente por email vía GHL
-  return <LeadMagnetPage config={modeloAnthropicAgentesConfig} guideUrl="" />;
+  return <LeadMagnetPage config={modeloAnthropicConfig} />;
 }
