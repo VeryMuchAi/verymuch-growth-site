@@ -236,7 +236,7 @@ export const signalsLinkedinConfig: LeadMagnetConfig = {
     success: {
       title: "¡Guía en camino! 📬",
       description:
-        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a info@verymuch.ai.",
       ctaLabel: "",
     },
   },
@@ -427,7 +427,7 @@ export const equipoVentasIa30minConfig: LeadMagnetConfig = {
     success: {
       title: "¡Guía en camino! 📬",
       description:
-        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a info@verymuch.ai.",
       ctaLabel: "",
     },
     ctaHeadline: "Monta tu equipo de ventas IA",
@@ -550,7 +550,7 @@ export const agenteInvestigacionComercialConfig: LeadMagnetConfig = {
     success: {
       title: "¡Guía en camino! 📬",
       description:
-        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a info@verymuch.ai.",
       ctaLabel: "",
     },
   },
@@ -676,7 +676,7 @@ export const agentesIaB2bConfig: LeadMagnetConfig = {
     success: {
       title: "¡Guía en camino! 📬",
       description:
-        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a info@verymuch.ai.",
       ctaLabel: "",
     },
     ctaHeadline: "Empieza a desplegar tus",
@@ -851,7 +851,7 @@ export const dosAgentesLeadsCalientesConfig: LeadMagnetConfig = {
     success: {
       title: "¡Guía en camino! 📬",
       description:
-        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a info@verymuch.ai.",
       ctaLabel: "",
     },
     ctaHeadline: "Empieza a capturar leads calientes",
@@ -969,7 +969,7 @@ export const remoteControlConfig: LeadMagnetConfig = {
     success: {
       title: "¡Guía en camino! 📬",
       description:
-        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a info@verymuch.ai.",
       ctaLabel: "",
     },
     ctaHeadline: "Construye agentes IA desde tu movil",
@@ -1183,7 +1183,7 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
     success: {
       title: "¡Skill en camino! 📬",
       description:
-        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la Skill en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la Skill en los próximos minutos. Si no llega, escríbenos a info@verymuch.ai.",
       ctaLabel: "",
     },
     ctaHeadline: "Empieza a publicar posts con los frameworks que",
@@ -1373,7 +1373,7 @@ export const sixAgentsConfig: LeadMagnetConfig = {
     success: {
       title: "¡Guía en camino! 📬",
       description:
-        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a info@verymuch.ai.",
       ctaLabel: "",
     },
     ctaHeadline: "Monta tu equipo de agentes IA",
@@ -1503,7 +1503,7 @@ export const claudeCodeConfig: LeadMagnetConfig = {
     success: {
       title: "¡Guía en camino! 📬",
       description:
-        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a info@verymuch.ai.",
       ctaLabel: "",
     },
   },
@@ -1704,7 +1704,7 @@ export const modeloAnthropicAgentesConfig: LeadMagnetConfig = {
     success: {
       title: "¡Guía en camino! 📬",
       description:
-        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a info@verymuch.ai.",
       ctaLabel: "",
     },
     ctaHeadline: "Replica el modelo Anthropic",
@@ -1912,7 +1912,7 @@ export const modeloAnthropicConfig: LeadMagnetConfig = {
     success: {
       title: "¡Guía en camino! 📬",
       description:
-        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a info@verymuch.ai.",
       ctaLabel: "",
     },
     ctaHeadline: "Replica el modelo Anthropic",
