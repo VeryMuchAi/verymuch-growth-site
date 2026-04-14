@@ -246,4 +246,21 @@ export const blogPosts: BlogPost[] = [
     dateISO: "2026-06-23",
     readTime: { es: "10 min", en: "10 min" },
   },
+  {
+    slug: "ia-gestion-cuentas-b2b",
+    draft: true,
+    tag: { es: "Ventas con IA", en: "AI Sales" },
+    title: {
+      es: "IA para gestión de cuentas B2B: cómo retener y hacer crecer clientes en 2026",
+      en: "AI for B2B account management: how to retain and grow clients in 2026",
+    },
+    description: {
+      es: "Cómo usar inteligencia artificial para gestionar cuentas B2B: detectar riesgo de churn, identificar oportunidades de expansión, automatizar check-ins y aumentar el LTV de cada cliente.",
+      en: "How to use artificial intelligence to manage B2B accounts: detect churn risk, identify expansion opportunities, automate check-ins, and increase the LTV of every customer.",
+    },
+    author: "Edwin Moreno",
+    date: { es: "30 de junio, 2026", en: "June 30, 2026" },
+    dateISO: "2026-06-30",
+    readTime: { es: "10 min", en: "10 min" },
+  },
 ];
