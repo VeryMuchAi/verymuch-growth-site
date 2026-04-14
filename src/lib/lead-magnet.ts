@@ -1711,6 +1711,214 @@ export const modeloAnthropicAgentesConfig: LeadMagnetConfig = {
   },
 };
 
+// ─── Modelo Anthropic (email-only delivery) Config ────────────────────────────
+
+export const modeloAnthropicConfig: LeadMagnetConfig = {
+  slug: "modelo-anthropic",
+  source: "linkedin",
+  campaign: "modelo-anthropic",
+  hideSocialProof: true,
+  brands: [
+    { name: "Claude",    dot: "#E8832A", iconSlug: "anthropic" },
+    { name: "Anthropic", dot: "#4AD4AE", iconSlug: "anthropic" },
+    { name: "n8n",       dot: "#EA4B71", iconSlug: "n8n" },
+  ],
+
+  seo: {
+    title: "El Modelo Anthropic: Sistema de Agentes para Marketing y Ventas | VeryMuch.ai",
+    description:
+      "Guía gratuita: cómo Anthropic usa agentes IA especializados para que 1 persona haga el trabajo de 10. Los 3 principios aplicados a tu equipo B2B.",
+    ogTitle:
+      "1 persona haciendo el trabajo de 10 — El sistema de agentes que usa Anthropic internamente",
+    ogDescription:
+      "Guía gratuita con los 3 principios de diseño que Anthropic usa para multiplicar equipos. Datos verificados + framework aplicable a marketing y ventas B2B.",
+  },
+
+  content: {
+    badge: "Guía Gratuita",
+    headline:
+      "1 persona haciendo el trabajo de 10 — el sistema de agentes que usa Anthropic internamente",
+    highlightWords: "el sistema de agentes que usa Anthropic",
+    subheadline:
+      "Austin Lau gestionó solo todo el performance marketing de una empresa de $380B. No trabajó 18 horas al día. Construyó un sistema. Esta guía te muestra los 3 principios detrás y cómo aplicarlos a tu equipo B2B.",
+    bullets: [
+      "Los 3 principios de diseño de agentes validados por 10 equipos de Anthropic",
+      "Datos reales: de 2 horas a 15 minutos en creación de ads, 10x más output",
+      "Framework completo de agentes para cada fase del ciclo comercial B2B",
+      "Sistema de memoria que aprende de cada iteración automáticamente",
+      "5 señales para saber si tu equipo está listo + 3 pasos para empezar",
+    ],
+    includes: [
+      {
+        icon: "🏗️",
+        title: "3 Principios de Diseño",
+        description:
+          "Agentes especializados, conexión a datos reales, y memoria que aprende. Documentados con ejemplos de Anthropic.",
+      },
+      {
+        icon: "📊",
+        title: "Datos Verificados",
+        description:
+          "Métricas antes/después de los 10 equipos internos de Anthropic con fuentes primarias.",
+      },
+      {
+        icon: "🎯",
+        title: "Framework B2B Completo",
+        description:
+          "6 agentes especializados para todo el ciclo: desde detección de oportunidades hasta analítica.",
+      },
+      {
+        icon: "🧠",
+        title: "Sistema de Memoria",
+        description:
+          "Cómo implementar un loop de aprendizaje auto-mejorante para tu equipo comercial.",
+      },
+      {
+        icon: "✅",
+        title: "Checklist de Readiness",
+        description:
+          "5 señales para saber si tu equipo puede beneficiarse de agentes IA hoy.",
+      },
+    ],
+    techStack: [
+      {
+        name: "Claude Code",
+        role: "Motor de IA detrás del sistema de agentes de Anthropic. Generación, análisis y automatización.",
+        url: "https://anthropic.com",
+      },
+      {
+        name: "Fuentes Primarias",
+        role: "Whitepaper oficial, blog de Anthropic, video de Austin Lau y entrevista Passionfroot.",
+      },
+      {
+        name: "Framework Verymuch.ai",
+        role: "Metodología propia para aplicar los principios de Anthropic a equipos de marketing y ventas B2B.",
+        url: "https://verymuch.ai",
+      },
+    ],
+    extraSections: [
+      {
+        type: "opportunity",
+        title: "El caso Anthropic: datos verificados",
+        subtitle:
+          "Austin Lau, performance marketer de Anthropic, documentó públicamente los resultados de aplicar agentes de IA a su propio trabajo.",
+        tableRows: [
+          ["De 2h a 15 min", "100 variaciones por batch", "1 persona, resultado de equipo"],
+          ["Creación de ads con IA", "Tests A/B automatizados", "Todo el performance marketing"],
+        ],
+      },
+      {
+        type: "changelog",
+        title: "Los 3 principios de diseño de Anthropic",
+        items: [
+          {
+            icon: "cpu",
+            title: "Agentes especializados",
+            description:
+              "Cada agente tiene un rol único y acotado. No un generalist, sino expertos en una tarea concreta: investigar, escribir, distribuir o analizar.",
+          },
+          {
+            icon: "database",
+            title: "Conexión a datos reales",
+            description:
+              "Los agentes no trabajan en el vacío. Se conectan a tu CRM, analytics, histórico de campañas y señales del mercado para tomar decisiones con contexto real.",
+          },
+          {
+            icon: "activity",
+            title: "Sistema de memoria que aprende",
+            description:
+              "Cada interacción mejora al sistema. Los agentes acumulan contexto sobre tu ICP, tu voz y tus resultados — y lo aplican en cada nueva tarea.",
+          },
+        ],
+      },
+      {
+        type: "agents",
+        title: "Los 6 agentes del ciclo comercial B2B",
+        agents: [
+          {
+            icon: "radio",
+            name: "Radar",
+            role: "Detecta oportunidades",
+            description:
+              "Monitoriza señales de compra en LinkedIn, web y plataformas clave. Entrega diariamente una lista de prospectos calientes con contexto exacto.",
+          },
+          {
+            icon: "edit",
+            name: "Productor",
+            role: "Genera contenido",
+            description:
+              "Crea posts, emails y materiales comerciales con tu voz y estructura. Adapta cada pieza al canal y al momento del funnel.",
+          },
+          {
+            icon: "share-2",
+            name: "Distribuidor",
+            role: "Amplifica el alcance",
+            description:
+              "Publica y distribuye contenido en los canales correctos, en el momento óptimo, sin intervención manual.",
+          },
+          {
+            icon: "target",
+            name: "Captador",
+            role: "Convierte interés en leads",
+            description:
+              "Gestiona el primer contacto, cualifica la intención y agenda reuniones con prospectos que ya han mostrado señales reales.",
+          },
+          {
+            icon: "trending-up",
+            name: "Conversor",
+            role: "Cierra oportunidades",
+            description:
+              "Prepara briefings pre-llamada, genera propuestas personalizadas y gestiona el seguimiento hasta el cierre.",
+          },
+          {
+            icon: "bar-chart",
+            name: "Analítica",
+            role: "Mide y optimiza",
+            description:
+              "Monitoriza métricas clave, detecta qué funciona y genera informes semanales con recomendaciones concretas para mejorar el sistema.",
+          },
+        ],
+      },
+    ],
+    form: {
+      fields: [
+        {
+          name: "name",
+          label: "Nombre",
+          type: "text",
+          placeholder: "Tu nombre",
+          required: true,
+        },
+        {
+          name: "email",
+          label: "Email corporativo",
+          type: "email",
+          placeholder: "tu@empresa.com",
+          required: true,
+        },
+        {
+          name: "company",
+          label: "Empresa (opcional)",
+          type: "text",
+          placeholder: "Tu empresa",
+          required: false,
+        },
+      ],
+      ctaLabel: "Enviar la guía a mi correo",
+      microcopy:
+        "Gratis. Sin spam. Recibirás la guía en tu bandeja en menos de 5 minutos.",
+    },
+    success: {
+      title: "¡Guía en camino! 📬",
+      description:
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+      ctaLabel: "",
+    },
+    ctaHeadline: "Replica el modelo Anthropic",
+    ctaHighlight: "en tu equipo B2B",
+  },
+};
+
 // ─── Build registry — single immutable assignment, all configs present ─────────
 // Adding a new lead magnet: just append it to this array. No other changes needed.
 
@@ -1725,6 +1933,7 @@ const _ALL_CONFIGS: LeadMagnetConfig[] = [
   sixAgentsConfig,
   claudeCodeConfig,
   modeloAnthropicAgentesConfig,
+  modeloAnthropicConfig,
 ];
 
 ALL_LEAD_MAGNETS = Object.fromEntries(_ALL_CONFIGS.map((c) => [c.slug, c]));
