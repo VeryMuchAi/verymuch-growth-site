@@ -40,9 +40,6 @@ export const metadata: Metadata = {
 };
 
 export default function ElModeloAnthropicPage() {
-  const guideUrl =
-    process.env.NOTION_URL_MODELO_ANTHROPIC_AGENTES ??
-    process.env.NOTION_URL ??
-    "#";
-  return <LeadMagnetPage config={modeloAnthropicAgentesConfig} guideUrl={guideUrl} />;
+  // guideUrl vacío — la guía se entrega exclusivamente por email vía GHL
+  return <LeadMagnetPage config={modeloAnthropicAgentesConfig} guideUrl="" />;
 }
