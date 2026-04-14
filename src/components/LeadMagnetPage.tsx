@@ -13,7 +13,6 @@ import BrandMarquee, { type Brand } from "./BrandMarquee";
 
 interface Props {
   config: LeadMagnetConfig;
-  guideUrl: string;
 }
 
 // Wraps a portion of the headline with the brand gradient
@@ -133,7 +132,7 @@ function ExtraSection({ section }: { section: LeadMagnetSection }) {
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
-export default function LeadMagnetPage({ config, guideUrl }: Props) {
+export default function LeadMagnetPage({ config }: Props) {
   const { content } = config;
 
   return (
@@ -221,7 +220,7 @@ export default function LeadMagnetPage({ config, guideUrl }: Props) {
 
             {/* Right col — form */}
             <div className="lg:sticky lg:top-8">
-              <LeadMagnetForm config={config} guideUrl={guideUrl} />
+              <LeadMagnetForm config={config} />
             </div>
           </div>
         </div>

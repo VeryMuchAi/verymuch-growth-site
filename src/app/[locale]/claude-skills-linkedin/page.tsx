@@ -50,11 +50,5 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default function ClaudeSkillsLinkedinPage() {
-  const guideUrl =
-    claudeSkillsLinkedinConfig.notionUrl ??
-    process.env.NOTION_URL_CLAUDE_SKILLS_LINKEDIN ??
-    process.env.NOTION_URL ??
-    "#";
-
-  return <LeadMagnetPage config={claudeSkillsLinkedinConfig} guideUrl={guideUrl} />;
+  return <LeadMagnetPage config={claudeSkillsLinkedinConfig} />;
 }

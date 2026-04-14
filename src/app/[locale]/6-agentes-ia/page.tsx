@@ -76,12 +76,11 @@ const itemListJsonLd = {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function SixAgentesIaPage() {
-  const guideUrl = process.env.NOTION_URL_6_AGENTES ?? process.env.NOTION_URL ?? "#";
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
-      <LeadMagnetPage config={sixAgentsConfig} guideUrl={guideUrl} />
+      <LeadMagnetPage config={sixAgentsConfig} />
     </>
   );
 }

@@ -6,8 +6,6 @@ import { useTranslations } from "next-intl";
 
 interface Props {
   config: LeadMagnetConfig;
-  /** Server-side resolved URL for the guide (e.g. NOTION_URL env var) */
-  guideUrl: string;
 }
 
 type FieldErrors = Record<string, string | "required" | "invalid_email" | "personal_email">;
@@ -64,7 +62,7 @@ function validate(
   return errors;
 }
 
-export default function LeadMagnetForm({ config, guideUrl }: Props) {
+export default function LeadMagnetForm({ config }: Props) {
   const { form, success } = config.content;
   const [loading, setLoading]         = useState(false);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
@@ -149,16 +147,13 @@ export default function LeadMagnetForm({ config, guideUrl }: Props) {
             {success.description}
           </p>
         )}
-        {guideUrl && guideUrl !== "#" && (
-          <a
-            href={guideUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block w-full py-3.5 rounded-[10px] font-bold text-sm text-white btn-animated-bg text-center"
-          >
-            {success.ctaLabel}
-          </a>
-        )}
+        <button
+          type="button"
+          onClick={() => setSubmitted(false)}
+          className="text-xs text-white/30 hover:text-white/60 transition-colors underline underline-offset-2"
+        >
+          ¿Email incorrecto? Volver a intentar
+        </button>
       </div>
     );
   }

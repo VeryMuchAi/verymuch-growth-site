@@ -70,12 +70,5 @@ export default async function LeadMagnetSlugPage({ params }: Props) {
   const config = getLeadMagnetConfig(slug);
   if (!config) notFound();
 
-  const envKey = `NOTION_URL_${slug.toUpperCase().replace(/-/g, "_")}`;
-  const guideUrl =
-    config.notionUrl ??
-    process.env[envKey] ??
-    process.env.NOTION_URL ??
-    "#";
-
-  return <LeadMagnetPage config={config} guideUrl={guideUrl} />;
+  return <LeadMagnetPage config={config} />;
 }

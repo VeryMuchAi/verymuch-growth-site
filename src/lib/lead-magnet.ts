@@ -234,10 +234,10 @@ export const signalsLinkedinConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Entrega inmediata.",
     },
     success: {
-      title: "Tu Blueprint está listo",
+      title: "¡Guía en camino! 📬",
       description:
-        "Accede ahora a la guía completa. Encontrarás el flujo n8n, el sistema de scoring y todas las plantillas.",
-      ctaLabel: "Abrir la guía →",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+      ctaLabel: "",
     },
   },
 };
@@ -425,10 +425,10 @@ export const equipoVentasIa30minConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Entrega inmediata.",
     },
     success: {
-      title: "Tu guía está lista",
+      title: "¡Guía en camino! 📬",
       description:
-        "Accede ahora a la configuración completa de los 4 agentes, los prompts y la estimación de costes.",
-      ctaLabel: "Abrir la guía →",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+      ctaLabel: "",
     },
     ctaHeadline: "Monta tu equipo de ventas IA",
     ctaHighlight: "hoy mismo",
@@ -548,10 +548,10 @@ export const agenteInvestigacionComercialConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Entrega inmediata.",
     },
     success: {
-      title: "Tu guía está lista",
+      title: "¡Guía en camino! 📬",
       description:
-        "Accede ahora a la guía completa. Encontrarás la arquitectura, configuración de cada componente y el agente listo para implementar.",
-      ctaLabel: "Abrir la guía →",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+      ctaLabel: "",
     },
   },
 };
@@ -674,10 +674,10 @@ export const agentesIaB2bConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Los 20 agentes en tu bandeja.",
     },
     success: {
-      title: "Tu guía con 20 agentes está lista",
+      title: "¡Guía en camino! 📬",
       description:
-        "Accede ahora a la guía completa. Encontrarás cada agente con su tech stack, implementación y resultados esperados.",
-      ctaLabel: "Abrir la guía →",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+      ctaLabel: "",
     },
     ctaHeadline: "Empieza a desplegar tus",
     ctaHighlight: "20 agentes comerciales",
@@ -849,10 +849,10 @@ export const dosAgentesLeadsCalientesConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Acceso inmediato.",
     },
     success: {
-      title: "Tu guía está lista",
+      title: "¡Guía en camino! 📬",
       description:
-        "Accede ahora a la guía completa. Encontrarás la configuración de ambos agentes, el setup de Trigify y las plantillas de outreach.",
-      ctaLabel: "Abrir la guía →",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+      ctaLabel: "",
     },
     ctaHeadline: "Empieza a capturar leads calientes",
     ctaHighlight: "esta semana",
@@ -967,9 +967,10 @@ export const remoteControlConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Acceso inmediato.",
     },
     success: {
-      title: "Tu guia esta lista",
-      description: "Accede ahora a la guia completa de configuracion de Remote Control.",
-      ctaLabel: "Abrir la guia →",
+      title: "¡Guía en camino! 📬",
+      description:
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+      ctaLabel: "",
     },
     ctaHeadline: "Construye agentes IA desde tu movil",
     ctaHighlight: "en 10 minutos",
@@ -1180,10 +1181,10 @@ export const claudeSkillsLinkedinConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Descarga inmediata del archivo .md.",
     },
     success: {
-      title: "Tu Skill de LinkedIn está lista",
+      title: "¡Skill en camino! 📬",
       description:
-        "Descarga el archivo .md, ve a claude.ai, crea un Proyecto, súbelo a Project Knowledge y empieza a escribir posts con los frameworks de +340K impresiones en menos de 10 publicaciones.",
-      ctaLabel: "Descargar la Skill →",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la Skill en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+      ctaLabel: "",
     },
     ctaHeadline: "Empieza a publicar posts con los frameworks que",
     ctaHighlight: "generaron +340K impresiones en menos de 10 publicaciones",
@@ -1370,10 +1371,10 @@ export const sixAgentsConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Acceso inmediato.",
     },
     success: {
-      title: "Tu guía está lista",
+      title: "¡Guía en camino! 📬",
       description:
-        "Accede ahora al sistema completo: los 6 agentes, sus workflows, prompts y desglose de costes reales.",
-      ctaLabel: "Abrir la guía →",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+      ctaLabel: "",
     },
     ctaHeadline: "Monta tu equipo de agentes IA",
     ctaHighlight: "esta semana",
@@ -1500,10 +1501,10 @@ export const claudeCodeConfig: LeadMagnetConfig = {
       microcopy: "Gratis. Sin spam. Entrega inmediata.",
     },
     success: {
-      title: "Tu guía está lista 🎉",
+      title: "¡Guía en camino! 📬",
       description:
-        "Accede ahora a Claude Code Remote Control. Encontrarás la instalación, el framework, la plantilla CLAUDE.md y todas las ideas de agentes.",
-      ctaLabel: "Abrir la guía →",
+        "Revisa tu bandeja de entrada (y spam, por si acaso). Recibirás la guía en los próximos minutos. Si no llega, escríbenos a jorge@verymuch.ai.",
+      ctaLabel: "",
     },
   },
 };

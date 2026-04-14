@@ -40,6 +40,5 @@ export const metadata: Metadata = {
 };
 
 export default function SignalsLinkedinPage() {
-  const guideUrl = process.env.NOTION_URL_SIGNALS_LINKEDIN ?? process.env.NOTION_URL ?? "#";
-  return <LeadMagnetPage config={signalsLinkedinConfig} guideUrl={guideUrl} />;
+  return <LeadMagnetPage config={signalsLinkedinConfig} />;
 }

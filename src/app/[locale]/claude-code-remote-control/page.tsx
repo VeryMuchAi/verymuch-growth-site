@@ -37,9 +37,5 @@ export const metadata: Metadata = {
 };
 
 export default function ClaudeCodeRemoteControlPage() {
-  const guideUrl =
-    process.env.NOTION_URL_CLAUDE_CODE_REMOTE_CONTROL ??
-    process.env.NOTION_URL ??
-    "#";
-  return <LeadMagnetPage config={claudeCodeConfig} guideUrl={guideUrl} />;
+  return <LeadMagnetPage config={claudeCodeConfig} />;
 }

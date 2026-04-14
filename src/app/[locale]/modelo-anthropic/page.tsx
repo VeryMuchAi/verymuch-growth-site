@@ -40,6 +40,5 @@ export const metadata: Metadata = {
 };
 
 export default function ModeloAnthropicPage() {
-  // guideUrl vacío — la guía se entrega exclusivamente por email vía GHL
-  return <LeadMagnetPage config={modeloAnthropicConfig} guideUrl="" />;
+  return <LeadMagnetPage config={modeloAnthropicConfig} />;
 }
