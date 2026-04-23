@@ -55,10 +55,38 @@ interface Props {
 
 // ─── Single brand chip ────────────────────────────────────────────────────────
 
+// Map Simple Icons slugs to local SVG files in /public/logos.
+// CDN (cdn.simpleicons.org) has proven unreliable — we self-host.
+const SLUG_TO_LOCAL: Record<string, string> = {
+  anthropic:    "/logos/anthropic.svg",
+  openai:       "/logos/chatgpt.svg",
+  googlegemini: "/logos/gemini.svg",
+  perplexity:   "/logos/perplexity.svg",
+  google:       "/logos/google.svg",
+  n8n:          "/logos/n8n.svg",
+  zapier:       "/logos/zapier.svg",
+  supabase:     "/logos/supabase.svg",
+  vercel:       "/logos/vercel.svg",
+  make:         "/logos/make.svg",
+  hubspot:      "/logos/hubspot.svg",
+  salesforce:   "/logos/salesforce.svg",
+  pipedrive:    "/logos/pipedrive.svg",
+  linkedin:     "/logos/linkedin.svg",
+  gohighlevel:  "/logos/gohighlevel.svg",
+  clay:         "/logos/clay.svg",
+  trigify:      "/logos/trigify.svg",
+  instantly:    "/logos/instantly.svg",
+  claude:       "/logos/claude.svg",
+  chatgpt:      "/logos/chatgpt.svg",
+};
+
 function BrandChip({ brand, dark }: { brand: Brand; dark: boolean }) {
-  // Simple Icons CDN — white on dark, brand color on light
-  const logoUrl = brand.iconSlug
-    ? `https://cdn.simpleicons.org/${brand.iconSlug}/${dark ? "ffffff" : brand.dot.replace("#", "")}`
+  // Prefer local self-hosted logo; dark variant swaps LinkedIn for its white version.
+  const localPath = brand.iconSlug ? SLUG_TO_LOCAL[brand.iconSlug] : null;
+  const logoUrl = localPath
+    ? dark && brand.iconSlug === "linkedin"
+      ? "/logos/linkedin-white.svg"
+      : localPath
     : null;
 
   return (
