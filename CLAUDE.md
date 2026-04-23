@@ -17,31 +17,88 @@ This is the **Verymuch.ai public-facing website and lead generation hub**. It in
 - **Backend/DB:** Supabase (auth + `arri_submissions` table for diagnostics)
 - **Automation:** N8N (`n8n.verymuch.ai`) webhooks for lead processing
 - **CRM:** GoHighLevel (GHL) receives leads via N8N
-- **Fonts:** Plus Jakarta Sans (headings), DM Sans (body) — Google Fonts
+- **Fonts:** Inter (display + body), JetBrains Mono (eyebrows/mono) — Google Fonts
 - **No component library** — custom components, no shadcn/ui here
 
-## Brand Design Tokens
+## Brand Design Tokens — Brand Book v1 (Abril 2026)
+
+**Two-mode system: Day (paper) + Night (ink). Same tokens, different canvas.**
+Full reference: `/Users/jh/Downloads/Verymuch.ai Design System (3)/README.md`.
 
 ```
-Colors:
-  Charcoal:    #363536  (text, dark backgrounds)
-  Amber:       #F5A05E  (CTAs, accents, gradients)
-  Mint:        #5AD4AE  (primary brand, success states)
-  Ice:         #DDEAEE  (light backgrounds, secondary)
-  Cream:       #FDF6EE  (light mode background)
-  Almost Black:#1A1A1A  (dark sections)
-  Error Red:   #F5405E
+DAY (paper mode):
+  Paper:        #F0EEE8  (primary background)
+  Paper soft:   #EAE6D9  (filled inputs)
+  Paper line:   #D8D2C2  (borders)
+  Paper card:   #FDFCF8  (cards)
+  Ink (text):   #151514  (primary text)
+  FG-2:         #4A4A4A  (secondary text)
+  FG-3:         #7A7A7A  (tertiary text)
+  Eyebrow:      #2C6B65  (teal deep)
 
-Gradients:
-  Brand:  linear-gradient(135deg, #5AD4AE 0%, #F5A05E 100%)  — mint to amber
-  Text:   linear-gradient(90deg, #5AD4AE 0%, #F5A05E 100%)
-  CTA:    linear-gradient(135deg, #F5405E 0%, #F5A05E 100%)  — red to amber
+NIGHT (ink mode):
+  Ink:          #151514  (primary background)
+  Ink raised:   #1D1D1C  (cards)
+  Ink line:     #2A2A28  (borders)
+  FG-1:         #F0EEE8  (primary text)
+  FG-2:         #D8D2C2  (secondary text)
+  FG-3:         #9A958A  (tertiary text)
+  Eyebrow:      #ACEDEB  (teal light)
+
+ACCENTS (both modes):
+  Orange:       #D97757  (focus ring, error/terracotta)
+  Teal deep:    #2C6B65  (day eyebrow)
+  Teal light:   #ACEDEB  (night eyebrow)
+  Success:      #2E7D5B (day) / #3FB87F (night)
+  Error:        #B8452C (day) / #E5484D (night)
+
+SIGNATURE GRADIENT (from logo badge — NEVER alter):
+  linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)
+  Rules:
+    - Max 1 use per screen (highlight OR CTA OR stat — never 2 competing)
+    - Always left→right (90°) or diagonal (135°). NEVER inverted
+    - Not "the corporate color" — an accent/signature
+    - As keyword highlight: solid gradient behind 1–2 words, dark text on top
+    - As CTA: wash (soft) primary, intensifies to full gradient on hover
 
 Typography:
-  Headings: Plus Jakarta Sans (bold/extrabold)
-  Body/UI:  DM Sans (regular/medium)
-  Scale:    Display 48/56, H1 36/44, H2 28/36, H3 22/30, Body 16/26, Caption 13/20
+  Display + Body: Inter (800 display, 400–700 body)
+  Mono/Eyebrow:   JetBrains Mono (400–600)
+  Scale:
+    Display XL:  48–96px, weight 800, tracking -0.045em
+    Display L:   36–56px, weight 800, tracking -0.035em
+    Display M:   32px,    weight 800, tracking -0.025em
+    Heading:     22px,    weight 700, tracking -0.015em
+    Body L:      19px,    weight 400
+    Body:        16px,    weight 400
+    Body S:      14px,    weight 400
+    Eyebrow:     12px,    JetBrains Mono 500, uppercase, tracking 0.14em
+
+Components:
+  Buttons:  radius 10px, wash-gradient primary (hover → full gradient)
+  Cards:    raised (shadow) standard, featured (wash gradient) for emphasis.
+            Radius 14–16px.
+  Inputs:   bordered 1.5px, radius 10px, focus ring orange #D97757
+  Nav:      horizontal links, underline 2px gradient on active
+  Hero:     split layout — text left, chat/demo mock right
 ```
+
+**Theme toggle:** `data-theme="light"` (Day) or `data-theme="dark"` (Night) on
+`<html>`. Persisted in `localStorage` under `vm-theme-preference`. No-FOUC init
+script runs synchronously in `src/app/[locale]/layout.tsx`.
+
+**Voice & tone (Brand Book v1):** direct, data-rich, anti-hype. Peninsular
+Spanish (tú, pretérito perfecto compuesto). Every claim has a number. Never
+em dashes (—). Never "revolucionario/disruptivo/sinergia". No decorative
+emoji — only ✓ and →. Accepted anglicisms: lead magnet, outbound, engagement,
+CRM, stack, DM, funnel, pipeline.
+
+**Do NOT use** (removed from Brand Book v1):
+- Old mint `#5AD4AE` or amber `#F5A05E` as primary colors
+- Red-to-amber CTA gradient (CTAs now use signature gradient wash)
+- Plus Jakarta Sans or DM Sans (replaced by Inter)
+- Purple-blue AI gradients, floating 3D icons, emoji decoration
+- Em dashes (—) or en dashes (–) — use short hyphens or periods
 
 ## Project Structure
 

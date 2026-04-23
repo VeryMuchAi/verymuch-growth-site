@@ -2,98 +2,394 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Theme variables ─────────────────────────────────────────────────────── */
+/* ============================================================
+   Verymuch.ai — Brand Book v1 · Abril 2026
+   Two-mode system: Day (paper) and Night (ink).
+   Same gradient, same type, different canvas.
+   ============================================================ */
 
+/* ─── Day (light / paper) ─────────────────────────────────────────────────── */
 :root[data-theme="light"] {
-  --bg-primary:       #F8F5F0;
-  --bg-secondary:     #EEEAE3;       /* warm neutral section bg */
-  --bg-card:          #FFFFFF;
-  --text-primary:     #1A1A1D;
-  --text-secondary:   #6B7280;
-  --text-muted:       #9CA3AF;
-  --accent:           #F5A040;       /* amber — kept for isolated uses */
-  --accent-text:      #1B6B3A;       /* dark green text — 6.2:1 contrast */
-  --accent-cool:      #4AD4AE;
-  --accent-warm:      #F5A040;
-  --accent-warm-text: #9A4200;
-  --accent-gradient:  linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%);
-  --success:          #5BA66B;
-  --success-text:     #1A5E2D;
-  --error:            #E85D5D;
-  --border:           rgba(26, 26, 29, 0.08);
-  --card-shadow:      0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+  /* Legacy token names (kept for backwards compat with existing components) */
+  --bg-primary:       #F0EEE8;
+  --bg-secondary:     #EAE6D9;
+  --bg-card:          #FDFCF8;
+  --bg-card-2:        #FBFAF5;
+  --text-primary:     #151514;
+  --text-secondary:   #4A4A4A;
+  --text-muted:       #7A7A7A;
+  --border:           #D8D2C2;
+  --card-shadow:      0 6px 18px -10px rgba(0, 0, 0, 0.12);
+
+  /* Accents */
+  --accent-orange:    #D97757;
+  --accent-teal:      #2C6B65;
+  --eyebrow:          #2C6B65;
+
+  /* Semantic */
+  --success:          #2E7D5B;
+  --success-text:     #2E7D5B;
+  --error:            #B8452C;
+  --info:             #4E9BCD;
+
+  /* Signature gradient (from logo badge — never alter) */
+  --vm-grad:          linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%);
+  --vm-grad-135:      linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%);
+  --vm-grad-v:        linear-gradient(180deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%);
+  --vm-grad-soft:     linear-gradient(90deg, rgba(172,237,235,.25), rgba(218,184,130,.25));
+
+  /* Legacy alias — many existing components read --accent-gradient */
+  --accent-gradient:  var(--vm-grad);
+  --accent:           var(--accent-orange);
+  --accent-warm:      #DAB882;
+  --accent-text:      var(--accent-teal);
+  --accent-warm-text: var(--accent-orange);
 }
 
+/* ─── Night (dark / ink) ──────────────────────────────────────────────────── */
 :root[data-theme="dark"] {
-  --bg-primary:       #0C0C0E;
-  --bg-secondary:     #141416;
-  --bg-card:          #242428;
-  --text-primary:     #FAF9F7;
-  --text-secondary:   #9CA3AF;
-  --text-muted:       #6B7280;
-  --accent:           #F5A040;
-  --accent-text:      #4AD4AE;
-  --accent-cool:      #4AD4AE;
-  --accent-warm:      #F5A040;
-  --accent-warm-text: #F5A040;
-  --accent-gradient:  linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%);
-  --success:          #5BA66B;
-  --success-text:     #5BA66B;
-  --error:            #E85D5D;
-  --border:           rgba(250, 249, 247, 0.08);
-  --card-shadow:      none;
+  --bg-primary:       #151514;
+  --bg-secondary:     #1D1D1C;
+  --bg-card:          #1D1D1C;
+  --bg-card-2:        #242422;
+  --text-primary:     #F0EEE8;
+  --text-secondary:   #D8D2C2;
+  --text-muted:       #9A958A;
+  --border:           #2A2A28;
+  --card-shadow:      0 12px 30px -10px rgba(0, 0, 0, 0.5);
+
+  --accent-orange:    #D97757;
+  --accent-teal:      #ACEDEB;
+  --eyebrow:          #ACEDEB;
+
+  --success:          #3FB87F;
+  --success-text:     #3FB87F;
+  --error:            #E5484D;
+  --info:             #4E9BCD;
+
+  --vm-grad:          linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%);
+  --vm-grad-135:      linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%);
+  --vm-grad-v:        linear-gradient(180deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%);
+  --vm-grad-soft:     linear-gradient(90deg, rgba(172,237,235,.18), rgba(218,184,130,.22));
+
+  --accent-gradient:  var(--vm-grad);
+  --accent:           var(--accent-orange);
+  --accent-warm:      #DAB882;
+  --accent-text:      var(--accent-teal);
+  --accent-warm-text: var(--accent-orange);
 }
 
-/* ─── Typography scale ────────────────────────────────────────────────────── */
+/* ============================================================
+   Typography scale — Inter + JetBrains Mono
+   ============================================================ */
 
 .font-display, h1, h2, h3, h4 {
-  font-family: var(--font-display), 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-display), 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.025em;
 }
-body, p, span, li, input, button {
-  font-family: var(--font-sans), 'DM Sans', sans-serif;
+body, p, span, li, input, button, textarea, select {
+  font-family: var(--font-sans), 'Inter', system-ui, sans-serif;
+}
+.font-mono, code, pre, kbd, samp {
+  font-family: var(--font-mono), 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  font-feature-settings: 'liga' 0, 'calt' 0;
 }
 
-h1       { font-size: 40px; line-height: 48px; font-weight: 800; letter-spacing: -0.015em; }
-h2       { font-size: 30px; line-height: 38px; font-weight: 700; letter-spacing: -0.01em; }
-h3       { font-size: 22px; line-height: 30px; font-weight: 600; }
-body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
-.caption { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.06em; }
+/* Semantic scale per Brand Book */
+.vm-display-xl {
+  font-family: var(--font-display), 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(48px, 6vw, 96px);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+.vm-display-l {
+  font-family: var(--font-display), 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.vm-display-m {
+  font-family: var(--font-display), 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+.vm-heading {
+  font-family: var(--font-display), 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+.vm-subheading {
+  font-family: var(--font-sans), 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+}
+.vm-body-l { font-size: 19px; line-height: 1.55; font-weight: 400; }
+.vm-body   { font-size: 16px; line-height: 1.6;  font-weight: 400; }
+.vm-body-s { font-size: 14px; line-height: 1.55; font-weight: 400; }
+.vm-caption{ font-size: 12px; line-height: 1.4;  font-weight: 500; letter-spacing: 0.01em; }
 
-/* Hero display — class specificity wins over h1 element */
-.display { font-size: 56px; line-height: 64px; font-weight: 800; letter-spacing: -0.025em; }
+.vm-eyebrow {
+  font-family: var(--font-mono), 'JetBrains Mono', monospace;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--eyebrow);
+}
+
+/* Legacy element defaults — kept so unmigrated pages don't explode */
+h1       { font-size: clamp(36px, 4vw, 56px); line-height: 1;    font-weight: 800; letter-spacing: -0.035em; }
+h2       { font-size: 32px; line-height: 1.05; font-weight: 800; letter-spacing: -0.025em; }
+h3       { font-size: 22px; line-height: 1.2;  font-weight: 700; letter-spacing: -0.015em; }
+body, p  { font-size: 16px; line-height: 1.6;  font-weight: 400; }
+.caption { font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--font-mono), monospace; }
+.display { font-size: clamp(48px, 6vw, 96px); line-height: 0.95; font-weight: 800; letter-spacing: -0.045em; }
 
 .text-accent      { color: var(--accent-text); }
 .text-accent-warm { color: var(--accent-warm-text); }
 
-/* ── Logo variants ────────────────────────────────────────────────────────── */
+/* ============================================================
+   Logo variants — show the right PNG per theme
+   ============================================================ */
 .logo-color { display: none; }
 .logo-white { display: block; }
-
 :root[data-theme="light"] .logo-color { display: block; }
 :root[data-theme="light"] .logo-white { display: none; }
-
 :root[data-theme="dark"]  .logo-color { display: none; }
 :root[data-theme="dark"]  .logo-white { display: block; }
 
-/* ─── Base resets ─────────────────────────────────────────────────────────── */
-
+/* ============================================================
+   Base resets
+   ============================================================ */
 @layer base {
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  html,
-  body {
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body {
     height: 100%;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background 200ms cubic-bezier(.2,.8,.2,1), color 200ms cubic-bezier(.2,.8,.2,1);
+  }
+  ::selection {
+    background: rgba(217, 119, 87, 0.25);
+    color: var(--text-primary);
   }
 }
 
-/* ─── Brand marquee animations ───────────────────────────────────────────── */
+/* ============================================================
+   Utilities
+   ============================================================ */
+@layer utilities {
+  /* Gradient text — signature gradient on 1–2 keywords max */
+  .text-gradient, .vm-grad-text {
+    background: var(--vm-grad);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+  }
+
+  /* Solid gradient highlight — keyword on a gradient wash, dark ink text */
+  .vm-grad-highlight {
+    background: var(--vm-grad);
+    color: #151514;
+    padding: 0 0.12em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  /* Raised card (shadow, border) — standard card treatment */
+  .vm-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--card-shadow);
+    transition: transform 200ms cubic-bezier(.2,.8,.2,1), box-shadow 200ms cubic-bezier(.2,.8,.2,1);
+  }
+  .vm-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px -10px rgba(0,0,0,.18);
+  }
+
+  /* Featured card — wash gradient background */
+  .vm-card-featured {
+    background: var(--vm-grad-soft), var(--bg-card);
+    background-blend-mode: normal;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--card-shadow);
+  }
+
+  /* Buttons — radius 10, wash-gradient primary */
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1;
+    color: #151514;
+    background: var(--vm-grad-soft);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 200ms cubic-bezier(.2,.8,.2,1);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover {
+    background: var(--vm-grad);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px -10px rgba(0,0,0,.2);
+  }
+  :root[data-theme="dark"] .btn-primary {
+    color: #F0EEE8;
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+  :root[data-theme="dark"] .btn-primary:hover { color: #151514; }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1;
+    background: #151514;
+    color: #F0EEE8;
+    border: 1px solid #151514;
+    transition: all 200ms cubic-bezier(.2,.8,.2,1);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn-secondary:hover { transform: translateY(-1px); }
+  :root[data-theme="dark"] .btn-secondary {
+    background: #F0EEE8;
+    color: #151514;
+    border-color: #F0EEE8;
+  }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1;
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid transparent;
+    transition: all 200ms cubic-bezier(.2,.8,.2,1);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn-ghost:hover { background: rgba(0, 0, 0, 0.06); }
+  :root[data-theme="dark"] .btn-ghost:hover { background: rgba(255, 255, 255, 0.08); }
+
+  /* Button sizes */
+  .btn-sm { padding: 8px 14px; font-size: 12.5px; }
+  .btn-lg { padding: 14px 22px; font-size: 15.5px; }
+
+  /* Inputs — bordered 1.5px, radius 10, focus orange ring */
+  .vm-input {
+    display: block;
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1.5px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-family: var(--font-sans), 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.35;
+    transition: border-color 150ms cubic-bezier(.2,.8,.2,1), box-shadow 150ms cubic-bezier(.2,.8,.2,1);
+  }
+  .vm-input:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.18);
+  }
+  .vm-input[aria-invalid="true"],
+  .vm-input.is-error {
+    border-color: var(--error);
+  }
+  .vm-label {
+    font-family: var(--font-mono), 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Nav — underline gradient on active link */
+  .nav-link {
+    position: relative;
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 0.75;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: opacity 150ms cubic-bezier(.2,.8,.2,1);
+  }
+  .nav-link:hover,
+  .nav-link.is-active { opacity: 1; }
+  .nav-link.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: var(--vm-grad);
+    border-radius: 2px;
+  }
+
+  /* Grain texture — add via ::before on paper backgrounds */
+  .vm-grain { position: relative; }
+  .vm-grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle at 23% 17%, rgba(0,0,0,.04) 0 1.5px, transparent 2px),
+      radial-gradient(circle at 67% 43%, rgba(0,0,0,.035) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 88% 89%, rgba(0,0,0,.04) 0 1.2px, transparent 2px),
+      radial-gradient(circle at 14% 72%, rgba(0,0,0,.03) 0 1px, transparent 1.5px);
+    background-size: 180px 180px, 220px 220px, 160px 160px, 200px 200px;
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+  }
+  :root[data-theme="dark"] .vm-grain::before { display: none; }
+
+  /* Legacy utilities — retained so existing components keep rendering
+     until re-skinned in Phase 2/3. Safe to delete once migration completes. */
+  .text-gradient { /* defined above */ }
+  .border-gradient { border-image: linear-gradient(135deg, #ACEDEB, #DAB882) 1; }
+  .card-elevated  { box-shadow: var(--card-shadow, none); }
+  .badge-label {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 12px; border-radius: 100px;
+    border: 1.5px solid currentColor;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    opacity: 0.9;
+  }
+}
+
+/* ============================================================
+   Marquee animations (used by BrandMarquee)
+   ============================================================ */
 @keyframes marquee-left {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -102,147 +398,4 @@ body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
   from { transform: translateX(-50%); }
   to   { transform: translateX(0); }
 }
-/* Pause all child marquee tracks on hover */
-section:hover .marquee-wrap {
-  animation-play-state: paused;
-}
-
-/* ─── Button color-cycle animation ───────────────────────────────────────── */
-@keyframes btn-color-cycle {
-  0%   { background-position: 0%   50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0%   50%; }
-}
-
-@layer utilities {
-  /* Gradient text — teal → amber (brand signature) */
-  .text-gradient {
-    @apply bg-brand-gradient bg-clip-text text-transparent;
-  }
-
-  .border-gradient {
-    border-image: linear-gradient(135deg, #4ad4ae, #f5a040) 1;
-  }
-
-  /* Floating card — shadow only in light mode via CSS var */
-  .card-elevated {
-    box-shadow: var(--card-shadow, none);
-  }
-
-  /* Section label pill badge */
-  .badge-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 12px;
-    border-radius: 100px;
-    border: 1.5px solid currentColor;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    opacity: 0.9;
-  }
-
-  /* ── Animated brand gradient (cycles through full brand palette) ───────── */
-  /*    orange → teal → purple → green → back to orange                      */
-  .btn-animated-bg {
-    background: linear-gradient(
-      90deg,
-      #F5A040 0%,
-      #4AD4AE 25%,
-      #8B5CF6 50%,
-      #5BA66B 75%,
-      #F5A040 100%
-    );
-    background-size: 300% 100%;
-    animation: btn-color-cycle 5s ease infinite;
-  }
-  .btn-animated-bg:hover {
-    animation-play-state: paused;
-    opacity: 0.9;
-  }
-
-  /* Gradient CTA pill button */
-  .btn-gradient {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 32px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 1;
-    color: #FFFFFF;
-    text-decoration: none;
-    background: linear-gradient(
-      90deg,
-      #F5A040 0%,
-      #4AD4AE 25%,
-      #8B5CF6 50%,
-      #5BA66B 75%,
-      #F5A040 100%
-    );
-    background-size: 300% 100%;
-    animation: btn-color-cycle 5s ease infinite;
-    transition: opacity 0.2s ease;
-  }
-  .btn-gradient:hover {
-    animation-play-state: paused;
-    opacity: 0.9;
-  }
-
-  /* Small variant */
-  .btn-gradient-sm {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 22px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 0.875rem;
-    line-height: 1;
-    color: #FFFFFF;
-    text-decoration: none;
-    background: linear-gradient(
-      90deg,
-      #F5A040 0%,
-      #4AD4AE 25%,
-      #8B5CF6 50%,
-      #5BA66B 75%,
-      #F5A040 100%
-    );
-    background-size: 300% 100%;
-    animation: btn-color-cycle 5s ease infinite;
-    transition: opacity 0.2s ease;
-  }
-  .btn-gradient-sm:hover {
-    animation-play-state: paused;
-    opacity: 0.9;
-  }
-
-  /* ── Card hover glow effects ───────────────────────────────────────────── */
-  .card-hover-mint:hover {
-    box-shadow: 0 0 0 1.5px rgba(74, 212, 174, 0.45), 0 10px 40px rgba(74, 212, 174, 0.16);
-    transform: translateY(-2px);
-  }
-
-  .card-hover-amber:hover {
-    box-shadow: 0 0 0 1.5px rgba(245, 160, 64, 0.50), 0 10px 40px rgba(245, 160, 64, 0.16);
-    transform: translateY(-2px);
-  }
-
-  /* ── Mint outlined button (secondary CTA) ──────────────────────────────── */
-  .btn-outline-mint {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1.5px solid rgba(74, 212, 174, 0.40);
-    color: var(--accent-text);
-    transition: background 0.2s ease, border-color 0.2s ease;
-  }
-  .btn-outline-mint:hover {
-    background: rgba(74, 212, 174, 0.08);
-    border-color: rgba(74, 212, 174, 0.65);
-  }
-}
+section:hover .marquee-wrap { animation-play-state: paused; }
