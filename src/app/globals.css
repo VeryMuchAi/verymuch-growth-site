@@ -187,21 +187,8 @@ body, p  { font-size: 16px; line-height: 1.6;  font-weight: 400; }
   }
 }
 
-/* Ambient paper grain — fixed overlay only in Day mode */
-:root[data-theme="light"] body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  background-image:
-    radial-gradient(circle at 23% 17%, rgba(21,21,20,.045) 0 1.2px, transparent 1.8px),
-    radial-gradient(circle at 67% 43%, rgba(21,21,20,.035) 0 1px, transparent 1.5px),
-    radial-gradient(circle at 88% 89%, rgba(21,21,20,.04)  0 1.1px, transparent 1.6px),
-    radial-gradient(circle at 14% 72%, rgba(21,21,20,.03)  0 0.9px, transparent 1.4px);
-  background-size: 180px 180px, 220px 220px, 160px 160px, 200px 200px;
-  mix-blend-mode: multiply;
-}
+/* Ambient paper grain removed from body — was causing z-index conflicts
+   on top of content. Grain is now applied opt-in per section via .vm-grain. */
 
 /* ============================================================
    Utilities
