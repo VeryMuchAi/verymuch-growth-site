@@ -34,7 +34,6 @@ const ROW2: Brand[] = [
   { name: "Clay",        dot: "#C084FC", iconSlug: "clay" },
   { name: "Trigify",     dot: "#F5A040", iconSlug: "trigify" },
   { name: "Instantly",   dot: "#6366F1", iconSlug: "instantly" },
-  { name: "Node.js",     dot: "#339933" },
 ];
 
 // ─── Component props ──────────────────────────────────────────────────────────
@@ -81,7 +80,6 @@ const SLUG_TO_LOCAL: Record<string, string> = {
 };
 
 function BrandChip({ brand, dark }: { brand: Brand; dark: boolean }) {
-  // Prefer local self-hosted logo; dark variant swaps LinkedIn for its white version.
   const localPath = brand.iconSlug ? SLUG_TO_LOCAL[brand.iconSlug] : null;
   const logoUrl = localPath
     ? dark && brand.iconSlug === "linkedin"
@@ -91,42 +89,30 @@ function BrandChip({ brand, dark }: { brand: Brand; dark: boolean }) {
 
   return (
     <span
-      className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-semibold whitespace-nowrap flex-shrink-0 select-none"
-      style={{
-        background:  dark ? "rgba(255,255,255,0.04)" : "var(--bg-card)",
-        borderColor: dark ? "rgba(255,255,255,0.08)" : "var(--border)",
-        color:       dark ? "rgba(255,255,255,0.55)" : "var(--text-secondary)",
-        boxShadow:   dark ? "none" : "var(--card-shadow)",
-      }}
+      className="inline-flex items-center justify-center flex-shrink-0 select-none px-6"
+      title={brand.name}
+      style={{ height: 40 }}
     >
       {logoUrl ? (
-        /* Real brand logo */
-        // eslint-disable-next-line @next/next/no-img-element
+        /* eslint-disable-next-line @next/next/no-img-element */
         <img
           src={logoUrl}
           alt={brand.name}
-          width={14}
-          height={14}
-          className="w-3.5 h-3.5 object-contain flex-shrink-0"
-          loading="lazy"
-          onError={(e) => {
-            // Fallback to dot if CDN image fails
-            const el = e.currentTarget;
-            el.style.display = "none";
-            const dot = el.nextElementSibling as HTMLElement | null;
-            if (dot) dot.style.display = "inline-block";
+          className="h-8 w-auto object-contain"
+          style={{
+            opacity: dark ? 0.85 : 0.9,
+            filter: dark ? "brightness(0) invert(1)" : undefined,
           }}
+          loading="lazy"
         />
-      ) : null}
-      {/* Dot fallback — hidden when logo loads, visible when no iconSlug */}
-      <span
-        className="inline-block w-2 h-2 rounded-full flex-shrink-0"
-        style={{
-          backgroundColor: brand.dot,
-          display: logoUrl ? "none" : "inline-block",
-        }}
-      />
-      {brand.name}
+      ) : (
+        <span
+          className="text-base font-semibold whitespace-nowrap"
+          style={{ color: dark ? "rgba(255,255,255,0.55)" : "var(--text-secondary)" }}
+        >
+          {brand.name}
+        </span>
+      )}
     </span>
   );
 }
