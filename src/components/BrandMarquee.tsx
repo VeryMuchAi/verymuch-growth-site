@@ -22,7 +22,7 @@ const ROW1: Brand[] = [
   { name: "Zapier",      dot: "#FF4A00", iconSlug: "zapier" },
   { name: "Supabase",    dot: "#3ECF8E", iconSlug: "supabase" },
   { name: "Vercel",      dot: "#888888", iconSlug: "vercel" },
-  { name: "Make",        dot: "#7B2CFF" },
+  { name: "Make",        dot: "#7B2CFF", iconSlug: "make" },
 ];
 
 const ROW2: Brand[] = [
@@ -30,11 +30,11 @@ const ROW2: Brand[] = [
   { name: "Salesforce",  dot: "#00A1E0", iconSlug: "salesforce" },
   { name: "Pipedrive",   dot: "#067279", iconSlug: "pipedrive" },
   { name: "LinkedIn",    dot: "#0A66C2", iconSlug: "linkedin" },
-  { name: "GoHighLevel", dot: "#F97316" },
-  { name: "Clay",        dot: "#C084FC" },
-  { name: "Trigify",     dot: "#F5A040" },
-  { name: "Instantly",   dot: "#6366F1" },
-  { name: "Node.js",     dot: "#339933", iconSlug: "nodedotjs" },
+  { name: "GoHighLevel", dot: "#F97316", iconSlug: "gohighlevel" },
+  { name: "Clay",        dot: "#C084FC", iconSlug: "clay" },
+  { name: "Trigify",     dot: "#F5A040", iconSlug: "trigify" },
+  { name: "Instantly",   dot: "#6366F1", iconSlug: "instantly" },
+  { name: "Node.js",     dot: "#339933" },
 ];
 
 // ─── Component props ──────────────────────────────────────────────────────────
