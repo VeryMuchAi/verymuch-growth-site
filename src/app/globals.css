@@ -199,13 +199,26 @@ body, p  { font-size: 16px; line-height: 1.6;  font-weight: 400; }
     color: transparent;
   }
 
-  /* Solid gradient highlight — keyword on a gradient wash, dark ink text */
+  /* Solid gradient highlight — keyword on a gradient wash, dark ink text.
+     This is the Brand Book's signature headline treatment. */
   .vm-grad-highlight {
     background: var(--vm-grad);
     color: #151514;
-    padding: 0 0.12em;
+    padding: 0.04em 0.18em;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
+    border-radius: 2px;
+  }
+
+  /* Serif italic quote — Instrument Serif for testimonial masonry */
+  .vm-quote-serif {
+    font-family: var(--font-serif), 'Instrument Serif', 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
   }
 
   /* Raised card (shadow, border) — standard card treatment */

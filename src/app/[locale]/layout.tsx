@@ -1,4 +1,4 @@
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Instrument_Serif } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -28,6 +28,14 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   display: "swap",
   weight: ["400", "500", "600"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+  weight: ["400"],
+  style: ["normal", "italic"],
 });
 
 const BASE_URL = "https://verymuch.ai";
@@ -71,7 +79,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${inter.variable} ${interDisplay.variable} ${jetbrainsMono.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${interDisplay.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable}`}>
       <head>
         <script
           type="application/ld+json"
