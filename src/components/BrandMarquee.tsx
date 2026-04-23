@@ -156,16 +156,8 @@ export default function BrandMarquee({
 }: Props) {
   const dark = variant === "dark";
 
-  // When custom brands provided: split into two rows (half each, or duplicate)
-  // for a cleaner focused display
-  const row1 = brands ?? ROW1;
-  const row2 = brands
-    ? [...brands].reverse()  // reversed set for visual contrast
-    : ROW2;
-
-  // Durations: custom brand list is shorter so needs faster animation
-  const dur1 = brands ? Math.max(12, brands.length * 3.5) : 28;
-  const dur2 = brands ? Math.max(15, brands.length * 4.2) : 34;
+  const allBrands = brands ?? [...ROW1, ...ROW2];
+  const dur = Math.max(30, allBrands.length * 3.5);
 
   return (
     <section
@@ -195,13 +187,7 @@ export default function BrandMarquee({
           </p>
         )}
 
-        {/* Row 1 — scrolls left */}
-        <MarqueeRow brands={row1} direction="left"  duration={dur1} dark={dark} />
-
-        {/* Row 2 — scrolls right */}
-        <div className="mt-3">
-          <MarqueeRow brands={row2} direction="right" duration={dur2} dark={dark} />
-        </div>
+        <MarqueeRow brands={allBrands} direction="left" duration={dur} dark={dark} />
       </div>
     </section>
   );
