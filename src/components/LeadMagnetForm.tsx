@@ -132,25 +132,27 @@ export default function LeadMagnetForm({ config }: Props) {
   // ── Success state ──────────────────────────────────────────────────────────
   if (submitted) {
     return (
-      <div className="rounded-xl border border-white/10 bg-white/[0.07] backdrop-blur-sm p-8 text-center animate-fade-up">
+      <div className="vm-card p-8 text-center animate-fade-up">
         <div
-          className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-5"
-          style={{ background: "linear-gradient(135deg, #4AD4AE 0%, #F5A040 100%)" }}
+          className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-5 bg-vm-grad"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C0C0E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#151514" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M20 6L9 17l-5-5" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-white mb-3">{success.title}</h3>
+        <h3 className="vm-heading mb-3" style={{ color: "var(--text-primary)" }}>
+          {success.title}
+        </h3>
         {success.description && (
-          <p className="text-brand-mint-dim text-sm leading-relaxed mb-6">
+          <p className="vm-body-s mb-6" style={{ color: "var(--text-secondary)" }}>
             {success.description}
           </p>
         )}
         <button
           type="button"
           onClick={() => setSubmitted(false)}
-          className="text-xs text-white/30 hover:text-white/60 transition-colors underline underline-offset-2"
+          className="vm-caption underline underline-offset-2 hover:opacity-80 transition-opacity"
+          style={{ color: "var(--text-muted)" }}
         >
           ¿Email incorrecto? Volver a intentar
         </button>
@@ -163,18 +165,15 @@ export default function LeadMagnetForm({ config }: Props) {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-xl border border-white/10 bg-white/[0.07] backdrop-blur-sm p-8 flex flex-col gap-5"
+      className="vm-card p-8 flex flex-col gap-5"
     >
-      <p className="text-white font-semibold text-base -mb-1">
+      <p className="vm-subheading -mb-1" style={{ color: "var(--text-primary)" }}>
         {t("heading")}
       </p>
 
       {form.fields.map((field) => (
-        <div key={field.name} className="flex flex-col gap-1.5">
-          <label
-            htmlFor={field.name}
-            className="text-xs font-semibold text-white/60 uppercase tracking-wider"
-          >
+        <div key={field.name} className="flex flex-col">
+          <label htmlFor={field.name} className="vm-label">
             {field.label}
           </label>
           <input
@@ -190,22 +189,25 @@ export default function LeadMagnetForm({ config }: Props) {
                 ? "name"
                 : "organization"
             }
-            className={[
-              "w-full rounded-lg px-4 py-3 text-sm bg-white/[0.06] border text-white placeholder:text-white/30",
-              "focus:outline-none focus:ring-2 focus:ring-brand-mint/50 transition-all",
-              fieldErrors[field.name]
-                ? "border-red-500/60"
-                : "border-white/10 hover:border-white/20",
-            ].join(" ")}
+            aria-invalid={fieldErrors[field.name] ? "true" : undefined}
+            className="vm-input"
           />
           {fieldErrors[field.name] && (
-            <p className="text-red-400 text-xs">{errorMessage(field.name, field.label)}</p>
+            <p className="vm-caption mt-1.5" style={{ color: "var(--error)" }}>
+              {errorMessage(field.name, field.label)}
+            </p>
           )}
         </div>
       ))}
 
       {apiError && (
-        <p className="text-red-400 text-sm bg-red-500/10 rounded-lg px-4 py-2">
+        <p
+          className="vm-body-s rounded-lg px-4 py-2"
+          style={{
+            color: "var(--error)",
+            background: "rgba(184, 69, 44, 0.08)",
+          }}
+        >
           {apiError}
         </p>
       )}
@@ -213,13 +215,15 @@ export default function LeadMagnetForm({ config }: Props) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full py-4 rounded-[10px] font-bold text-sm text-white btn-animated-bg disabled:opacity-50 mt-1"
+        className="btn-primary btn-lg w-full justify-center disabled:opacity-50 mt-1"
       >
         {loading ? t("submitting") : form.ctaLabel}
       </button>
 
       {form.microcopy && (
-        <p className="text-center text-xs text-white/35">{form.microcopy}</p>
+        <p className="text-center vm-caption" style={{ color: "var(--text-muted)" }}>
+          {form.microcopy}
+        </p>
       )}
     </form>
   );

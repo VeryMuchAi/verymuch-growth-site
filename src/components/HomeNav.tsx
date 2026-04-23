@@ -91,19 +91,19 @@ export default function HomeNav() {
         }}
       >
         <div className="w-full max-w-[1800px] mx-auto px-8 md:px-10 xl:px-16 2xl:px-24 h-full flex items-center justify-between gap-8 xl:gap-12">
-          {/* Logo — white for dark mode, color for light mode */}
+          {/* Logo — white wordmark on dark (night), dark wordmark on paper (day) */}
           <Link href="/" className="flex-shrink-0 z-10">
             <Image
-              src="/logo-white.png"
-              alt="VeryMuch.ai"
+              src="/brand/logo-wordmark-light.png"
+              alt="Verymuch.ai"
               width={200}
               height={48}
               className="logo-white h-9 xl:h-10 w-auto object-contain"
               priority
             />
             <Image
-              src="/Verymuch_Logo_transparent_real.png"
-              alt="VeryMuch.ai"
+              src="/brand/logo-wordmark-dark.png"
+              alt="Verymuch.ai"
               width={200}
               height={48}
               className="logo-color h-9 xl:h-10 w-auto object-contain"
@@ -119,8 +119,8 @@ export default function HomeNav() {
                   key={l.label}
                   href={l.href}
                   role="listitem"
-                  className="text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wide whitespace-nowrap transition-opacity hover:opacity-90"
-                  style={{ background: "linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)", color: "#fff" }}
+                  className="vm-caption font-mono font-semibold px-3 py-1.5 rounded-full whitespace-nowrap transition-all hover:brightness-95 bg-vm-grad"
+                  style={{ color: "#151514", letterSpacing: "0.08em" }}
                 >
                   {l.label}
                 </a>
@@ -156,8 +156,7 @@ export default function HomeNav() {
                           style={{ color: "var(--text-primary)", borderColor: "var(--border)" }}
                         >
                           <span
-                            className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                            style={{ background: "linear-gradient(135deg, #5AD4AE, #F5A05E)" }}
+                            className="w-1.5 h-1.5 rounded-full flex-shrink-0 bg-vm-grad"
                           />
                           {locale === "es" ? s.labelEs : s.labelEn}
                         </a>
@@ -218,8 +217,8 @@ export default function HomeNav() {
               )}
             </button>
 
-            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient-sm">
-              {t("cta")}
+            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-primary btn-sm">
+              {t("cta")} →
             </a>
           </div>
 
@@ -298,13 +297,13 @@ export default function HomeNav() {
             {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             className={
               l.highlight
-                ? "text-xl font-bold px-6 py-2 rounded-full transition-opacity hover:opacity-90"
-                : "text-2xl font-semibold transition-opacity hover:opacity-100 opacity-60"
+                ? "vm-heading px-6 py-2 rounded-full transition-all hover:brightness-95 bg-vm-grad"
+                : "vm-display-m transition-opacity hover:opacity-100 opacity-60"
             }
             style={
               l.highlight
-                ? { background: "linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)", color: "#fff" }
-                : { color: "var(--text-primary)" }
+                ? { color: "#151514" }
+                : { color: "var(--text-primary)", fontSize: "26px" }
             }
           >
             {l.label}
@@ -316,9 +315,9 @@ export default function HomeNav() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setMenuOpen(false)}
-          className="btn-gradient mt-2"
+          className="btn-primary btn-lg mt-2"
         >
-          {t("cta")}
+          {t("cta")} →
         </a>
         {/* Mobile locale switcher */}
         <button

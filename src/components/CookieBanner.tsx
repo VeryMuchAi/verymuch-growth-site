@@ -61,18 +61,10 @@ export default function CookieBanner() {
 
         {/* Actions */}
         <div className="flex gap-3 flex-shrink-0">
-          <button
-            onClick={reject}
-            className="px-4 py-2 rounded-xl text-sm font-semibold border transition-opacity hover:opacity-80"
-            style={{ borderColor: "var(--border)", color: "var(--text-secondary)" }}
-          >
+          <button onClick={reject} className="btn-ghost btn-sm">
             {t("reject")}
           </button>
-          <button
-            onClick={accept}
-            className="px-5 py-2 rounded-xl text-sm font-bold text-white transition-opacity hover:opacity-90"
-            style={{ background: "linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)" }}
-          >
+          <button onClick={accept} className="btn-primary btn-sm">
             {t("accept")}
           </button>
         </div>

@@ -77,26 +77,23 @@ export default function NewsletterCTA({ locale }: Props) {
   }
 
   return (
-    <div
-      className="rounded-2xl p-6 md:p-8 border my-8"
-      style={{ background: "var(--bg-secondary)", borderColor: "var(--border)" }}
-    >
+    <div className="vm-card p-6 md:p-8 my-8">
       {success ? (
         <div className="text-center py-2">
-          <p className="text-base font-bold mb-1" style={{ color: "var(--text-primary)" }}>
+          <p className="vm-heading mb-1" style={{ color: "var(--text-primary)" }}>
             {c.successTitle}
           </p>
-          <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+          <p className="vm-body-s" style={{ color: "var(--text-secondary)" }}>
             {c.successSub}
           </p>
         </div>
       ) : (
         <>
           <div className="mb-5">
-            <p className="text-base font-bold mb-1" style={{ color: "var(--text-primary)" }}>
+            <p className="vm-heading mb-1" style={{ color: "var(--text-primary)" }}>
               {c.heading}
             </p>
-            <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+            <p className="vm-body-s" style={{ color: "var(--text-secondary)" }}>
               {c.sub}
             </p>
           </div>
@@ -107,12 +104,7 @@ export default function NewsletterCTA({ locale }: Props) {
               onChange={(e) => setName(e.target.value)}
               placeholder={c.namePlaceholder}
               required
-              className="flex-1 rounded-lg px-4 py-3 text-sm border transition-colors"
-              style={{
-                background: "var(--bg-primary)",
-                borderColor: "var(--border)",
-                color: "var(--text-primary)",
-              }}
+              className="vm-input flex-1"
             />
             <input
               type="email"
@@ -120,24 +112,22 @@ export default function NewsletterCTA({ locale }: Props) {
               onChange={(e) => setEmail(e.target.value)}
               placeholder={c.emailPlaceholder}
               required
-              className="flex-1 rounded-lg px-4 py-3 text-sm border transition-colors"
-              style={{
-                background: "var(--bg-primary)",
-                borderColor: "var(--border)",
-                color: "var(--text-primary)",
-              }}
+              className="vm-input flex-1"
             />
             <button
               type="submit"
               disabled={loading}
-              className="px-6 py-3 rounded-lg font-semibold text-sm text-white whitespace-nowrap disabled:opacity-50 hover:opacity-90 transition-opacity"
-              style={{ backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)" }}
+              className="btn-primary whitespace-nowrap disabled:opacity-50"
             >
               {loading ? c.sending : c.cta}
             </button>
           </form>
-          {error && <p className="text-xs text-red-500 mt-2">{error}</p>}
-          <p className="text-xs mt-3" style={{ color: "var(--text-secondary)", opacity: 0.7 }}>
+          {error && (
+            <p className="vm-body-s mt-2" style={{ color: "var(--error)" }}>
+              {error}
+            </p>
+          )}
+          <p className="vm-caption mt-3" style={{ color: "var(--text-muted)" }}>
             {c.microcopy}
           </p>
         </>
