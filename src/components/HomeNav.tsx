@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import { useTheme } from "@/hooks/useTheme";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import BrandLogo from "@/components/BrandLogo";
 
 const GHL = "https://api.leadconnectorhq.com/widget/booking/zU0QrkmOM9x1eRfwmNye";
 
@@ -91,24 +91,9 @@ export default function HomeNav() {
         }}
       >
         <div className="w-full max-w-[1800px] mx-auto px-8 md:px-10 xl:px-16 2xl:px-24 h-full flex items-center justify-between gap-8 xl:gap-12">
-          {/* Logo — white wordmark on dark (night), dark wordmark on paper (day) */}
-          <Link href="/" className="flex-shrink-0 z-10">
-            <Image
-              src="/brand/logo-wordmark-light.png"
-              alt="Verymuch.ai"
-              width={200}
-              height={48}
-              className="logo-white h-9 xl:h-10 w-auto object-contain"
-              priority
-            />
-            <Image
-              src="/brand/logo-wordmark-dark.png"
-              alt="Verymuch.ai"
-              width={200}
-              height={48}
-              className="logo-color h-9 xl:h-10 w-auto object-contain"
-              priority
-            />
+          {/* Logo — inline Brand Book wordmark with .Ai gradient badge */}
+          <Link href="/" className="flex-shrink-0 z-10" aria-label="Verymuch.ai · Inicio">
+            <BrandLogo size="md" />
           </Link>
 
           {/* Desktop links */}
@@ -165,16 +150,29 @@ export default function HomeNav() {
                   )}
                 </div>
               ) : (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  role="listitem"
-                  {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="text-sm xl:text-[15px] font-medium transition-opacity duration-200 hover:opacity-100 opacity-60 whitespace-nowrap"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  {l.label}
-                </a>
+                (() => {
+                  const isRoute  = !l.href.startsWith("#") && !l.href.startsWith("/#");
+                  const isActive = isRoute && pathname === l.href.split("?")[0];
+                  return (
+                    <a
+                      key={l.label}
+                      href={l.href}
+                      role="listitem"
+                      {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className={`relative text-sm xl:text-[15px] font-medium transition-opacity duration-200 hover:opacity-100 whitespace-nowrap ${isActive ? "opacity-100" : "opacity-60"}`}
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      {l.label}
+                      {isActive && (
+                        <span
+                          aria-hidden
+                          className="absolute left-0 right-0 -bottom-1.5 h-0.5 rounded-full"
+                          style={{ background: "var(--vm-grad)" }}
+                        />
+                      )}
+                    </a>
+                  );
+                })()
               )
             ))}
           </div>

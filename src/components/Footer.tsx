@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -12,10 +13,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
           {/* Brand column */}
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="vm-heading" style={{ color: "var(--text-primary)" }}>
-                Verymuch<span style={{ color: "var(--accent-orange)" }}>.</span>Ai
-              </span>
+            <div className="mb-4">
+              <BrandLogo size="md" />
             </div>
             <p
               className="vm-body-s max-w-md"

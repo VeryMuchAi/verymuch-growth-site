@@ -117,36 +117,33 @@ export default async function NewsletterPage({ params }: Props) {
 
       {/* Hero */}
       <section
-        className="relative overflow-hidden pt-36 pb-16 px-6 md:pt-40 md:pb-20"
+        className="relative overflow-hidden pt-36 pb-16 px-6 md:pt-40 md:pb-20 vm-grain"
         style={{ background: "var(--bg-primary)" }}
       >
         <div
-          className="absolute inset-0 pointer-events-none"
+          aria-hidden
+          className="absolute pointer-events-none"
           style={{
+            top: "-10%",
+            right: "-10%",
+            width: "55%",
+            height: "70%",
             background:
-              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(218,184,130,0.08) 0%, rgba(172,237,235,0.06) 45%, transparent 70%)",
+              "radial-gradient(ellipse at center, rgba(172,237,235,0.18) 0%, rgba(218,184,130,0.12) 50%, transparent 75%)",
+            filter: "blur(40px)",
           }}
         />
         <div className="max-w-3xl mx-auto relative text-center">
-          <p className="mb-5">
-            <span className="badge-label" style={{ color: "var(--accent-text)" }}>
-              {t("badge")}
-            </span>
-          </p>
-          <h1
-            className="display font-extrabold leading-tight mb-6"
-            style={{ color: "var(--text-primary)" }}
-          >
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--eyebrow)" }} />
+            <span className="vm-eyebrow">{t("badge")}</span>
+          </div>
+          <h1 className="vm-display-l mb-6" style={{ color: "var(--text-primary)" }}>
             {t("h1_pre")}{" "}
-            <span className="bg-vm-grad bg-clip-text text-transparent">
-              {t("h1_highlight")}
-            </span>
+            <span className="vm-grad-highlight">{t("h1_highlight")}</span>
             {t("h1_post")}
           </h1>
-          <p
-            className="text-lg leading-relaxed max-w-2xl mx-auto"
-            style={{ color: "var(--text-secondary)" }}
-          >
+          <p className="vm-body-l max-w-2xl mx-auto" style={{ color: "var(--text-secondary)" }}>
             {t("sub")}
           </p>
         </div>
@@ -156,16 +153,12 @@ export default async function NewsletterPage({ params }: Props) {
       <section className="px-6 pb-12" style={{ background: "var(--bg-primary)" }}>
         <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {features.map((f) => (
-            <div
-              key={f.title}
-              className="rounded-2xl p-6 border card-elevated transition-all duration-200"
-              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-            >
+            <div key={f.title} className="vm-card p-6">
               <IconBlock icon={f.icon} color={f.color} size="md" />
-              <h3 className="text-base font-bold mb-2" style={{ color: "var(--text-primary)" }}>
+              <h3 className="vm-heading mb-2 mt-3" style={{ color: "var(--text-primary)" }}>
                 {f.title}
               </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+              <p className="vm-body-s" style={{ color: "var(--text-secondary)" }}>
                 {f.desc}
               </p>
             </div>
@@ -180,36 +173,25 @@ export default async function NewsletterPage({ params }: Props) {
         <div className="max-w-3xl mx-auto">
           <a
             href="/guia/agentes-ia-ventas-b2b"
-            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 card-elevated transition-all duration-200"
-            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            className="vm-card-featured p-7 flex flex-col sm:flex-row sm:items-center gap-6 no-underline"
           >
-            <div
-              className="absolute inset-0 pointer-events-none rounded-2xl"
-              style={{
-                background:
-                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(172,237,235,0.07) 0%, rgba(218,184,130,0.04) 60%, transparent 100%)",
-              }}
-            />
-            <div className="flex-shrink-0 relative">
+            <div className="flex-shrink-0">
               <IconBlock icon="file-text" color="teal" size="lg" />
             </div>
-            <div className="flex-1 min-w-0 relative">
-              <span
-                className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] inline-block mb-3"
-                style={{ background: "rgba(218,184,130,0.15)", color: "var(--accent-warm-text)" }}
-              >
-                Guía completa · Gratis
+            <div className="flex-1 min-w-0">
+              <span className="vm-eyebrow mb-2 block" style={{ color: "var(--text-muted)" }}>
+                GUÍA · GRATIS
               </span>
-              <h3 className="text-lg font-bold leading-snug mb-2" style={{ color: "var(--text-primary)" }}>
+              <h3 className="vm-heading mb-2" style={{ color: "var(--text-primary)" }}>
                 Agentes de IA para Ventas B2B: Guía Completa 2026
               </h3>
-              <p className="text-sm leading-relaxed max-w-xl" style={{ color: "var(--text-secondary)" }}>
-                Datos reales de McKinsey, Gartner, Bain y +80 fuentes. Sin teoría vacía. ROI, implementación y los 5 agentes que necesitas.
+              <p className="vm-body-s" style={{ color: "var(--text-secondary)" }}>
+                Datos reales de McKinsey, Gartner, Bain y +80 fuentes. ROI, implementación y los 5 agentes que necesitas.
               </p>
             </div>
             <span
-              className="flex-shrink-0 text-sm font-bold whitespace-nowrap relative"
-              style={{ color: "var(--accent-text)" }}
+              className="flex-shrink-0 vm-body-s whitespace-nowrap"
+              style={{ color: "var(--text-primary)", fontWeight: 600 }}
             >
               Leer la guía →
             </span>
@@ -234,33 +216,36 @@ export default async function NewsletterPage({ params }: Props) {
 
       {/* FAQ */}
       <section
-        className="px-6 py-20 border-t"
+        className="px-6 py-24 border-t"
         style={{ background: "var(--bg-secondary)", borderColor: "var(--border)" }}
       >
         <div className="max-w-3xl mx-auto">
-          <h2
-            className="text-2xl md:text-3xl font-bold text-center mb-10"
-            style={{ color: "var(--text-primary)" }}
-          >
+          <div className="flex items-center gap-2 mb-6 justify-center">
+            <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--eyebrow)" }} />
+            <span className="vm-eyebrow">PREGUNTAS · FRECUENTES</span>
+          </div>
+          <h2 className="vm-display-m text-center mb-12" style={{ color: "var(--text-primary)" }}>
             {t("faq_title")}
           </h2>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4">
             {[0, 1, 2, 3, 4].map((i) => (
               <details
                 key={i}
-                className="group rounded-xl border p-5 card-elevated transition-all duration-200"
-                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+                className="group vm-card p-5"
               >
                 <summary
-                  className="font-semibold cursor-pointer list-none flex justify-between gap-4 text-left"
+                  className="cursor-pointer list-none flex justify-between gap-4 text-left vm-subheading"
                   style={{ color: "var(--text-primary)" }}
                 >
                   <span>{t(`faq_q${i}`)}</span>
-                  <span className="text-[var(--accent-text)] shrink-0 group-open:rotate-180 transition-transform">
+                  <span
+                    className="shrink-0 group-open:rotate-180 transition-transform font-mono text-sm"
+                    style={{ color: "var(--text-muted)" }}
+                  >
                     ▼
                   </span>
                 </summary>
-                <p className="mt-4 text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                <p className="mt-4 vm-body-s" style={{ color: "var(--text-secondary)" }}>
                   {t(`faq_a${i}`)}
                 </p>
               </details>
