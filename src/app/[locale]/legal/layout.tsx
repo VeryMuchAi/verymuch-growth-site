@@ -20,7 +20,7 @@ export default async function LegalLayout({ children, params }: Props) {
       >
         <Link href="/" className="flex items-center">
           <Image
-            src="/Verymuch_Logo_transparent_real.png"
+            src="/brand/logo-wordmark-dark.png"
             alt="VeryMuch.ai"
             width={140}
             height={34}
@@ -31,7 +31,7 @@ export default async function LegalLayout({ children, params }: Props) {
         <Link
           href="/"
           className="text-sm font-medium transition-opacity hover:opacity-100 opacity-70"
-          style={{ color: "#363536" }}
+          style={{ color: "#151514" }}
         >
           {t("back_home")}
         </Link>
@@ -40,11 +40,11 @@ export default async function LegalLayout({ children, params }: Props) {
         <article
           className={[
             "mx-auto max-w-3xl prose prose-neutral",
-            "prose-headings:font-display prose-headings:text-[#363536] prose-headings:tracking-tight",
-            "prose-p:text-[#363536]/85 prose-p:leading-relaxed",
-            "prose-li:text-[#363536]/85",
-            "prose-a:text-[#F5A05E] prose-a:no-underline hover:prose-a:underline",
-            "prose-strong:text-[#363536]",
+            "prose-headings:font-display prose-headings:text-[#151514] prose-headings:tracking-tight",
+            "prose-p:text-[#151514]/85 prose-p:leading-relaxed",
+            "prose-li:text-[#151514]/85",
+            "prose-a:text-[#D97757] prose-a:no-underline hover:prose-a:underline",
+            "prose-strong:text-[#151514]",
           ].join(" ")}
         >
           {children}

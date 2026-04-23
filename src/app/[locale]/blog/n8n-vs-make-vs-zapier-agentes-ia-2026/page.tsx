@@ -363,7 +363,7 @@ const CONTENT: Record<string, PageContent> = {
   },
 };
 
-const WINNER_COLORS = { n8n: "#5AD4AE", make: "#F5A05E", zapier: "#F5405E", tie: "#888" };
+const WINNER_COLORS = { n8n: "#2C6B65", make: "#D97757", zapier: "#B8452C", tie: "#888" };
 const WINNER_LABELS = { es: { n8n: "n8n", make: "Make", zapier: "Zapier", tie: "—" }, en: { n8n: "n8n", make: "Make", zapier: "Zapier", tie: "—" } };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -455,7 +455,7 @@ export default async function N8nVsMakeVsZapierPage({ params }: Props) {
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <header className="relative overflow-hidden pt-36 pb-12 px-6" style={{ background: "var(--bg-primary)" }}>
-        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(74,212,174,0.07) 0%, rgba(245,160,64,0.05) 45%, transparent 70%)" }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(172,237,235,0.07) 0%, rgba(218,184,130,0.05) 45%, transparent 70%)" }} />
         <div className="relative max-w-3xl mx-auto">
           <nav className="flex items-center gap-2 text-xs mb-8 opacity-60" style={{ color: textSecondary }}>
             <Link href="/">{c.breadcrumb.home}</Link><span>/</span>
@@ -463,8 +463,8 @@ export default async function N8nVsMakeVsZapierPage({ params }: Props) {
             <span>{c.breadcrumb.page}</span>
           </nav>
           <div className="flex items-center gap-2 mb-5">
-            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #5AD4AE 0%, #F5A05E 100%)" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#5AD4AE" }}>{c.hero.badge}</span>
+            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #2C6B65 0%, #D97757 100%)" }} />
+            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#2C6B65" }}>{c.hero.badge}</span>
           </div>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6" style={{ fontFamily: "var(--font-display)", color: textPrimary }}>{c.hero.h1}</h1>
           <p className="text-lg leading-relaxed mb-8 opacity-80" style={{ color: textSecondary }}>{c.hero.sub}</p>
@@ -482,7 +482,7 @@ export default async function N8nVsMakeVsZapierPage({ params }: Props) {
           <p className="text-base leading-relaxed mb-10" style={{ color: textSecondary }}>{c.intro.p2}</p>
 
           {/* Quick verdict */}
-          <div className="p-5 rounded-xl mb-10" style={{ background: "linear-gradient(135deg, rgba(90,212,174,0.08) 0%, rgba(245,160,94,0.08) 100%)", border: "1px solid rgba(90,212,174,0.2)" }}>
+          <div className="p-5 rounded-xl mb-10" style={{ background: "linear-gradient(135deg, rgba(172,237,235,0.08) 0%, rgba(218,184,130,0.08) 100%)", border: "1px solid rgba(172,237,235,0.2)" }}>
             <h2 className="text-base font-bold mb-2" style={{ fontFamily: "var(--font-display)", color: textPrimary }}>{c.verdict.heading}</h2>
             <p className="text-sm leading-relaxed" style={{ color: textSecondary }}>{c.verdict.body}</p>
           </div>
@@ -509,11 +509,11 @@ export default async function N8nVsMakeVsZapierPage({ params }: Props) {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: "#F5405E" }}>{locale === "es" ? "Desventajas" : "Cons"}</h3>
+                    <h3 className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: "#B8452C" }}>{locale === "es" ? "Desventajas" : "Cons"}</h3>
                     <ul className="flex flex-col gap-2">
                       {tool.cons.map((con, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm" style={{ color: textSecondary }}>
-                          <span className="mt-0.5 flex-shrink-0" style={{ color: "#F5405E" }}>✗</span>{con}
+                          <span className="mt-0.5 flex-shrink-0" style={{ color: "#B8452C" }}>✗</span>{con}
                         </li>
                       ))}
                     </ul>
@@ -585,7 +585,7 @@ export default async function N8nVsMakeVsZapierPage({ params }: Props) {
 
           {/* Author box */}
           <div className="p-5 rounded-xl flex items-start gap-4" style={{ border, background: cardBg }}>
-            <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white text-sm" style={{ background: "linear-gradient(135deg, #F5A05E 0%, #5AD4AE 100%)" }}>JH</div>
+            <div className="w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white text-sm" style={{ background: "linear-gradient(135deg, #D97757 0%, #2C6B65 100%)" }}>JH</div>
             <div>
               <p className="text-xs opacity-60 mb-0.5" style={{ color: textSecondary }}>{c.author.label}</p>
               <Link href={c.author.profileLink} className="font-semibold text-sm hover:underline" style={{ color: textPrimary, fontFamily: "var(--font-display)" }}>{c.author.name}</Link>
@@ -601,7 +601,7 @@ export default async function N8nVsMakeVsZapierPage({ params }: Props) {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4" style={{ fontFamily: "var(--font-display)", color: textPrimary }}>{c.cta.heading}</h2>
           <p className="text-base mb-8 opacity-70" style={{ color: textSecondary }}>{c.cta.sub}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={GHL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90" style={{ background: "linear-gradient(135deg, #F5405E 0%, #F5A05E 100%)" }}>{c.cta.ctaPrimary}</a>
+            <a href={GHL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90" style={{ background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}>{c.cta.ctaPrimary}</a>
             <Link href={c.cta.ctaSecondaryLink} className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all border hover:border-opacity-60" style={{ border, color: textPrimary, background: "transparent" }}>{c.cta.ctaSecondary}</Link>
           </div>
         </div>

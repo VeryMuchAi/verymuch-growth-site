@@ -430,7 +430,7 @@ export default async function AgentesEmailPymePage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 35% -15%, rgba(74,212,174,0.07) 0%, rgba(167,139,250,0.05) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 35% -15%, rgba(172,237,235,0.07) 0%, rgba(167,139,250,0.05) 45%, transparent 70%)",
           }}
         />
         <div className="relative max-w-3xl mx-auto">
@@ -443,8 +443,8 @@ export default async function AgentesEmailPymePage({ params }: Props) {
           </nav>
 
           <div className="flex items-center gap-2 mb-5">
-            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #5AD4AE 0%, #A78BFA 100%)" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#5AD4AE" }}>
+            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #2C6B65 0%, #A78BFA 100%)" }} />
+            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#2C6B65" }}>
               {c.hero.badge}
             </span>
           </div>
@@ -485,7 +485,7 @@ export default async function AgentesEmailPymePage({ params }: Props) {
           {/* Problem + Stats */}
           <div
             className="p-6 rounded-2xl mb-12"
-            style={{ background: "linear-gradient(135deg, rgba(90,212,174,0.06) 0%, rgba(167,139,250,0.06) 100%)", border: "1px solid rgba(90,212,174,0.15)" }}
+            style={{ background: "linear-gradient(135deg, rgba(172,237,235,0.06) 0%, rgba(167,139,250,0.06) 100%)", border: "1px solid rgba(172,237,235,0.15)" }}
           >
             <h2 className="text-xl font-bold mb-3" style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)" }}>
               {c.problem.heading}
@@ -494,7 +494,7 @@ export default async function AgentesEmailPymePage({ params }: Props) {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {c.problem.stats.map((s, i) => (
                 <div key={i} className="text-center p-4 rounded-xl" style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)" }}>
-                  <div className="text-3xl font-extrabold mb-1" style={{ color: "#5AD4AE", fontFamily: "var(--font-display)" }}>{s.stat}</div>
+                  <div className="text-3xl font-extrabold mb-1" style={{ color: "#2C6B65", fontFamily: "var(--font-display)" }}>{s.stat}</div>
                   <div className="text-xs leading-relaxed mb-2" style={{ color: "var(--text-secondary)" }}>{s.label}</div>
                   <div className="text-xs opacity-50 italic" style={{ color: "var(--text-secondary)" }}>— {s.source}</div>
                 </div>
@@ -516,7 +516,7 @@ export default async function AgentesEmailPymePage({ params }: Props) {
             {c.usecases.items.map((uc, i) => (
               <div key={i} className="p-5 rounded-2xl border" style={{ border: "1px solid var(--border-color)", background: "var(--bg-card)" }}>
                 <h3 className="text-sm font-bold mb-2" style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)" }}>
-                  <span style={{ color: "#5AD4AE" }}>0{i + 1} </span>{uc.title}
+                  <span style={{ color: "#2C6B65" }}>0{i + 1} </span>{uc.title}
                 </h3>
                 <p className="text-xs leading-relaxed mb-3" style={{ color: "var(--text-secondary)" }}>{uc.description}</p>
                 <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ background: "rgba(167,139,250,0.1)", color: "#A78BFA" }}>
@@ -534,13 +534,13 @@ export default async function AgentesEmailPymePage({ params }: Props) {
             {c.steps.items.map((step, i) => (
               <div key={i} className="p-6 rounded-2xl border" style={{ border: "1px solid var(--border-color)", background: "var(--bg-card)" }}>
                 <div className="flex items-start gap-4">
-                  <div className="text-2xl font-extrabold flex-shrink-0 w-10 leading-none mt-0.5" style={{ color: "#5AD4AE", fontFamily: "var(--font-display)" }}>
+                  <div className="text-2xl font-extrabold flex-shrink-0 w-10 leading-none mt-0.5" style={{ color: "#2C6B65", fontFamily: "var(--font-display)" }}>
                     {step.number}
                   </div>
                   <div className="flex-1">
                     <h3 className="text-base font-bold mb-2" style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)" }}>{step.title}</h3>
                     <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--text-secondary)" }}>{step.description}</p>
-                    <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ background: "rgba(90,212,174,0.1)", color: "#5AD4AE" }}>
+                    <span className="text-xs font-semibold px-3 py-1 rounded-full" style={{ background: "rgba(172,237,235,0.1)", color: "#2C6B65" }}>
                       {step.tool}
                     </span>
                   </div>
@@ -557,7 +557,7 @@ export default async function AgentesEmailPymePage({ params }: Props) {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
             {c.results.items.map((r, i) => (
               <div key={i} className="p-4 rounded-xl text-center" style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)" }}>
-                <div className="text-2xl font-extrabold mb-2" style={{ color: "#5AD4AE", fontFamily: "var(--font-display)" }}>{r.metric}</div>
+                <div className="text-2xl font-extrabold mb-2" style={{ color: "#2C6B65", fontFamily: "var(--font-display)" }}>{r.metric}</div>
                 <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>{r.description}</p>
               </div>
             ))}
@@ -582,7 +582,7 @@ export default async function AgentesEmailPymePage({ params }: Props) {
           <div className="p-5 rounded-xl flex items-start gap-4 mb-2" style={{ border: "1px solid var(--border-color)", background: "var(--bg-card)" }}>
             <div
               className="w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white text-sm"
-              style={{ background: "linear-gradient(135deg, #5AD4AE 0%, #A78BFA 100%)" }}
+              style={{ background: "linear-gradient(135deg, #2C6B65 0%, #A78BFA 100%)" }}
             >
               {c.author.initials}
             </div>
@@ -610,7 +610,7 @@ export default async function AgentesEmailPymePage({ params }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
-              style={{ background: "linear-gradient(135deg, #F5405E 0%, #F5A05E 100%)" }}
+              style={{ background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
             >
               {c.cta.ctaPrimary}
             </a>

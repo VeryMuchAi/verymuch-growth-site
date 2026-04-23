@@ -2,7 +2,7 @@ export default function TermsContentEN() {
   return (
     <>
       <div className="not-prose mb-12 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-[#363536] mb-2">
+        <h1 className="text-4xl font-extrabold tracking-tight text-[#151514] mb-2">
           Terms and Conditions
         </h1>
         <p className="text-lg text-[#666]">Website and Services Use</p>

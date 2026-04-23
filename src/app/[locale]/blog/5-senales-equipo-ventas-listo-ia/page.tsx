@@ -327,7 +327,7 @@ export default async function SenalesEquipoVentasPage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(74,212,174,0.07) 0%, rgba(245,160,64,0.05) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(172,237,235,0.07) 0%, rgba(218,184,130,0.05) 45%, transparent 70%)",
           }}
         />
         <div className="relative max-w-3xl mx-auto">
@@ -342,8 +342,8 @@ export default async function SenalesEquipoVentasPage({ params }: Props) {
 
           {/* Badge */}
           <div className="flex items-center gap-2 mb-5">
-            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #5AD4AE 0%, #F5A05E 100%)" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#5AD4AE" }}>
+            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #2C6B65 0%, #D97757 100%)" }} />
+            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#2C6B65" }}>
               {c.hero.badge}
             </span>
           </div>
@@ -403,7 +403,7 @@ export default async function SenalesEquipoVentasPage({ params }: Props) {
                     className="text-3xl font-extrabold flex-shrink-0 leading-none"
                     style={{
                       fontFamily: "var(--font-display)",
-                      background: "linear-gradient(135deg, #5AD4AE 0%, #F5A05E 100%)",
+                      background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                     }}
@@ -423,7 +423,7 @@ export default async function SenalesEquipoVentasPage({ params }: Props) {
                     {signal.stat && (
                       <blockquote
                         className="border-l-2 pl-4 text-sm italic opacity-80"
-                        style={{ borderColor: "#5AD4AE", color: "var(--text-secondary)" }}
+                        style={{ borderColor: "#2C6B65", color: "var(--text-secondary)" }}
                       >
                         {signal.stat}
                       </blockquote>
@@ -437,7 +437,7 @@ export default async function SenalesEquipoVentasPage({ params }: Props) {
           {/* What next */}
           <div
             className="p-6 rounded-2xl mb-12"
-            style={{ background: "linear-gradient(135deg, rgba(90,212,174,0.08) 0%, rgba(245,160,94,0.08) 100%)", border: "1px solid rgba(90,212,174,0.2)" }}
+            style={{ background: "linear-gradient(135deg, rgba(172,237,235,0.08) 0%, rgba(218,184,130,0.08) 100%)", border: "1px solid rgba(172,237,235,0.2)" }}
           >
             <h2
               className="text-xl font-bold mb-4"
@@ -483,7 +483,7 @@ export default async function SenalesEquipoVentasPage({ params }: Props) {
           >
             <div
               className="w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white text-sm"
-              style={{ background: "linear-gradient(135deg, #5AD4AE 0%, #F5A05E 100%)" }}
+              style={{ background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
             >
               EM
             </div>
@@ -523,7 +523,7 @@ export default async function SenalesEquipoVentasPage({ params }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
-              style={{ background: "linear-gradient(135deg, #F5405E 0%, #F5A05E 100%)" }}
+              style={{ background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
             >
               {c.cta.ctaPrimary}
             </a>

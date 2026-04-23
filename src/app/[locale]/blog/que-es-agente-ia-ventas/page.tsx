@@ -369,8 +369,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 function HighlightBox({ children }: { children: React.ReactNode }) {
   return (
     <blockquote
-      className="rounded-xl p-5 border-l-4 my-6"
-      style={{ background: "rgba(245,160,64,0.06)", borderLeftColor: "var(--accent-warm)" }}
+      className="rounded-xl p-5 my-6"
+      style={{ background: "rgba(218,184,130,0.06)", borderLeftColor: "var(--accent-warm)" }}
     >
       <div className="text-base leading-relaxed" style={{ color: "var(--text-primary)" }}>
         {children}
@@ -382,8 +382,8 @@ function HighlightBox({ children }: { children: React.ReactNode }) {
 function WarningBox({ children }: { children: React.ReactNode }) {
   return (
     <div
-      className="rounded-xl p-5 border-l-4 my-6"
-      style={{ background: "rgba(248,64,94,0.05)", borderLeftColor: "#F5405E" }}
+      className="rounded-xl p-5 my-6"
+      style={{ background: "rgba(248,64,94,0.05)", borderLeftColor: "#B8452C" }}
     >
       <div className="text-base leading-relaxed" style={{ color: "var(--text-primary)" }}>
         {children}
@@ -463,7 +463,7 @@ export default async function QueEsAgentePage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 80% 50% at 60% -10%, rgba(74,212,174,0.07) 0%, transparent 65%)",
+              "radial-gradient(ellipse 80% 50% at 60% -10%, rgba(172,237,235,0.07) 0%, transparent 65%)",
           }}
         />
         <div className="max-w-2xl mx-auto relative">
@@ -581,8 +581,8 @@ export default async function QueEsAgentePage({ params }: Props) {
             </h2>
             <div className="flex flex-col gap-4 mb-6">
               {[
-                { title: c.s3.level1Title, body: c.s3.level1Body, color: "rgba(74,212,174,0.06)", border: "rgba(74,212,174,0.2)" },
-                { title: c.s3.level2Title, body: c.s3.level2Body, color: "rgba(245,160,64,0.06)", border: "rgba(245,160,64,0.2)" },
+                { title: c.s3.level1Title, body: c.s3.level1Body, color: "rgba(172,237,235,0.06)", border: "rgba(172,237,235,0.2)" },
+                { title: c.s3.level2Title, body: c.s3.level2Body, color: "rgba(218,184,130,0.06)", border: "rgba(218,184,130,0.2)" },
                 { title: c.s3.level3Title, body: c.s3.level3Body, color: "rgba(248,64,94,0.05)", border: "rgba(248,64,94,0.18)" },
               ].map((level) => (
                 <div
@@ -627,7 +627,7 @@ export default async function QueEsAgentePage({ params }: Props) {
                   </p>
                   <p
                     className="text-xs font-medium rounded-lg px-3 py-2 inline-block"
-                    style={{ background: "rgba(74,212,174,0.08)", color: "var(--accent-text)" }}
+                    style={{ background: "rgba(172,237,235,0.08)", color: "var(--accent-text)" }}
                   >
                     → {uc.result}
                   </p>
@@ -759,7 +759,7 @@ export default async function QueEsAgentePage({ params }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02] mb-4"
-              style={{ backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)" }}
+              style={{ backgroundImage: "linear-gradient(135deg,#B8452C 0%,#D97757 100%)" }}
             >
               {c.cta.ctaPrimary}
             </a>

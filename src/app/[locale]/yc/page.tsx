@@ -175,7 +175,7 @@ export default function YCPage() {
           aria-hidden="true"
           style={{
             background:
-              'radial-gradient(ellipse 70% 40% at 50% 0%, rgba(74,212,174,0.12) 0%, transparent 70%)',
+              'radial-gradient(ellipse 70% 40% at 50% 0%, rgba(172,237,235,0.12) 0%, transparent 70%)',
             pointerEvents: 'none',
           }}
           className="absolute inset-0"
@@ -183,7 +183,7 @@ export default function YCPage() {
 
         <div className="relative mx-auto max-w-4xl">
           <div
-            style={{ borderColor: 'rgba(74,212,174,0.3)', color: 'var(--accent-cool)' }}
+            style={{ borderColor: 'rgba(172,237,235,0.3)', color: 'var(--accent-cool)' }}
             className="badge-label mb-8 inline-flex"
           >
             YC Startup School 2026 · San Francisco, July 25–26
@@ -201,7 +201,7 @@ export default function YCPage() {
             We build AI agents that automate{' '}
             <span
               style={{
-                backgroundImage: 'linear-gradient(90deg, #4AD4AE 0%, #F5A040 100%)',
+                backgroundImage: 'linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -225,7 +225,7 @@ export default function YCPage() {
             <a
               href="#agents"
               style={{
-                background: 'linear-gradient(90deg, #4AD4AE 0%, #F5A040 100%)',
+                background: 'linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)',
                 color: '#0A0A0A',
               }}
               className="rounded-xl px-8 py-4 text-base font-bold transition-opacity hover:opacity-90"
@@ -279,7 +279,7 @@ export default function YCPage() {
       >
         <div className="mx-auto max-w-3xl">
           <div
-            style={{ borderColor: 'rgba(245,160,64,0.3)', color: 'var(--accent-warm)' }}
+            style={{ borderColor: 'rgba(218,184,130,0.3)', color: 'var(--accent-warm)' }}
             className="badge-label mb-8 inline-flex"
           >
             The Problem
@@ -312,7 +312,7 @@ export default function YCPage() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-4">
             <div
-              style={{ borderColor: 'rgba(74,212,174,0.3)', color: 'var(--accent-cool)' }}
+              style={{ borderColor: 'rgba(172,237,235,0.3)', color: 'var(--accent-cool)' }}
               className="badge-label inline-flex"
             >
               What We&apos;ve Built
@@ -344,14 +344,14 @@ export default function YCPage() {
                     style={
                       agent.status === 'Live'
                         ? {
-                            backgroundColor: 'rgba(74,212,174,0.12)',
-                            color: '#4AD4AE',
-                            border: '1px solid rgba(74,212,174,0.25)',
+                            backgroundColor: 'rgba(172,237,235,0.12)',
+                            color: '#2C6B65',
+                            border: '1px solid rgba(172,237,235,0.25)',
                           }
                         : {
-                            backgroundColor: 'rgba(245,160,64,0.1)',
-                            color: '#F5A040',
-                            border: '1px solid rgba(245,160,64,0.2)',
+                            backgroundColor: 'rgba(218,184,130,0.1)',
+                            color: '#D97757',
+                            border: '1px solid rgba(218,184,130,0.2)',
                           }
                     }
                     className="rounded-full px-3 py-0.5 text-xs font-bold tracking-wide"
@@ -408,7 +408,7 @@ export default function YCPage() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-4">
             <div
-              style={{ borderColor: 'rgba(74,212,174,0.3)', color: 'var(--accent-cool)' }}
+              style={{ borderColor: 'rgba(172,237,235,0.3)', color: 'var(--accent-cool)' }}
               className="badge-label inline-flex"
             >
               Traction
@@ -434,7 +434,7 @@ export default function YCPage() {
                 <div
                   className="font-display mb-2 text-3xl font-extrabold"
                   style={{
-                    backgroundImage: 'linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)',
+                    backgroundImage: 'linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
@@ -456,7 +456,7 @@ export default function YCPage() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-4">
             <div
-              style={{ borderColor: 'rgba(245,160,64,0.3)', color: 'var(--accent-warm)' }}
+              style={{ borderColor: 'rgba(218,184,130,0.3)', color: 'var(--accent-warm)' }}
               className="badge-label inline-flex"
             >
               Why Now
@@ -478,10 +478,10 @@ export default function YCPage() {
           </p>
           <div className="grid gap-3 sm:grid-cols-4 mb-10">
             {[
-              { stat: '600M+', context: 'Native Spanish speakers', color: '#4AD4AE' },
-              { stat: '<10%', context: 'LATAM SMBs using AI in sales', color: '#F5A040' },
-              { stat: '$500B+', context: 'B2B revenue across Spanish markets', color: '#4AD4AE' },
-              { stat: '7 countries', context: 'Where we can sell today', color: '#F5A040' },
+              { stat: '600M+', context: 'Native Spanish speakers', color: '#2C6B65' },
+              { stat: '<10%', context: 'LATAM SMBs using AI in sales', color: '#D97757' },
+              { stat: '$500B+', context: 'B2B revenue across Spanish markets', color: '#2C6B65' },
+              { stat: '7 countries', context: 'Where we can sell today', color: '#D97757' },
             ].map((item) => (
               <div
                 key={item.stat}
@@ -512,7 +512,7 @@ export default function YCPage() {
                 flag: '🇺🇸',
                 market: 'United States',
                 label: 'Primary market',
-                labelColor: '#4AD4AE',
+                labelColor: '#2C6B65',
                 stats: ['41M native Spanish speakers', '$2.7T Hispanic purchasing power', '62% of US Hispanics are business owners or decision-makers'],
                 yc: 'Biggest B2B prize. Our agents close deals in English and Spanish — doubling reach for US sales teams targeting LATAM clients.',
               },
@@ -520,7 +520,7 @@ export default function YCPage() {
                 flag: '🇲🇽',
                 market: 'Mexico',
                 label: 'Operational base',
-                labelColor: '#4AD4AE',
+                labelColor: '#2C6B65',
                 stats: ['$3.7B AI market → $65B by 2030', '$43B nearshoring FDI (2025)', '7% of SMBs use AI in sales today'],
                 yc: 'Where Edwin builds. 400K+ mid-market B2B companies. Nearshoring boom is creating hundreds of new sales teams that need automation — now.',
               },
@@ -528,7 +528,7 @@ export default function YCPage() {
                 flag: '🇪🇸',
                 market: 'Spain',
                 label: 'Operational base',
-                labelColor: '#4AD4AE',
+                labelColor: '#2C6B65',
                 stats: ['€150B+ B2B services market', 'EU headquarters for LATAM ops', '300K+ companies with €1M–€50M revenue'],
                 yc: 'Where Jorge sells. Spain-based companies manage LATAM accounts from Madrid — one agent deployment serves both EU and LatAm markets.',
               },
@@ -536,7 +536,7 @@ export default function YCPage() {
                 flag: '🇦🇷',
                 market: 'Argentina',
                 label: 'High priority',
-                labelColor: '#F5A040',
+                labelColor: '#D97757',
                 stats: ['45M people, 98% literacy', '#1 LATAM tech talent density', 'Devaluation → SaaS costs 60–80% lower in USD'],
                 yc: 'Best LATAM technical talent. Economic pressure creates urgency for automation. Strong startup ecosystem primed for AI sales tools.',
               },
@@ -544,7 +544,7 @@ export default function YCPage() {
                 flag: '🇵🇭',
                 market: 'Philippines',
                 label: 'Expansion target',
-                labelColor: '#F5A040',
+                labelColor: '#D97757',
                 stats: ['115M people, English + Spanish heritage', '$32B BPO industry', '1M+ outbound sales agents'],
                 yc: 'BPO capital of the world. Sales teams already operate in Spanish and English. Our agents plug directly into existing outbound pipelines.',
               },
@@ -583,7 +583,7 @@ export default function YCPage() {
                 <ul className="mb-4 space-y-1">
                   {item.stats.map((s) => (
                     <li key={s} className="flex items-start gap-1.5 text-xs" style={{ color: 'var(--text-secondary)' }}>
-                      <span style={{ color: '#4AD4AE' }} className="shrink-0 mt-0.5">›</span>
+                      <span style={{ color: '#2C6B65' }} className="shrink-0 mt-0.5">›</span>
                       {s}
                     </li>
                   ))}
@@ -591,7 +591,7 @@ export default function YCPage() {
 
                 {/* YC angle */}
                 <div
-                  style={{ backgroundColor: 'rgba(74,212,174,0.05)', borderLeft: '2px solid rgba(74,212,174,0.3)' }}
+                  style={{ backgroundColor: 'rgba(172,237,235,0.05)', borderLeft: '2px solid rgba(172,237,235,0.3)' }}
                   className="mt-auto rounded-r-lg pl-3 py-2"
                 >
                   <p style={{ color: 'var(--text-muted)' }} className="text-xs leading-relaxed italic">
@@ -618,7 +618,7 @@ export default function YCPage() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-4">
             <div
-              style={{ borderColor: 'rgba(74,212,174,0.3)', color: 'var(--accent-cool)' }}
+              style={{ borderColor: 'rgba(172,237,235,0.3)', color: 'var(--accent-cool)' }}
               className="badge-label inline-flex"
             >
               The Team
@@ -669,7 +669,7 @@ export default function YCPage() {
 
                 <blockquote
                   style={{
-                    borderLeft: '2px solid rgba(74,212,174,0.4)',
+                    borderLeft: '2px solid rgba(172,237,235,0.4)',
                     color: 'var(--text-primary)',
                   }}
                   className="mb-5 pl-4 text-sm italic leading-relaxed"
@@ -736,7 +736,7 @@ export default function YCPage() {
             aria-hidden="true"
             style={{
               background:
-                'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(245,160,64,0.08) 0%, transparent 70%)',
+                'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(218,184,130,0.08) 0%, transparent 70%)',
               pointerEvents: 'none',
             }}
             className="absolute inset-0"
@@ -744,7 +744,7 @@ export default function YCPage() {
 
           <div className="relative">
             <div
-              style={{ borderColor: 'rgba(245,160,64,0.3)', color: 'var(--accent-warm)' }}
+              style={{ borderColor: 'rgba(218,184,130,0.3)', color: 'var(--accent-warm)' }}
               className="badge-label mb-8 inline-flex"
             >
               YC Startup School 2026
@@ -774,7 +774,7 @@ export default function YCPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  background: 'linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)',
+                  background: 'linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)',
                   color: '#0A0A0A',
                 }}
                 className="rounded-xl px-8 py-4 text-base font-bold transition-opacity hover:opacity-90"

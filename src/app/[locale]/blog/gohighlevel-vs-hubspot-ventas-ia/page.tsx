@@ -391,8 +391,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const WINNER_COLORS: Record<string, string> = {
-  ghl: "#5AD4AE",
-  hubspot: "#F5A05E",
+  ghl: "#2C6B65",
+  hubspot: "#D97757",
   tie: "#888",
 };
 
@@ -462,7 +462,7 @@ export default async function GHLvsHubSpotPage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(74,212,174,0.07) 0%, rgba(245,160,64,0.05) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(172,237,235,0.07) 0%, rgba(218,184,130,0.05) 45%, transparent 70%)",
           }}
         />
         <div className="relative max-w-3xl mx-auto">
@@ -477,8 +477,8 @@ export default async function GHLvsHubSpotPage({ params }: Props) {
 
           {/* Badge */}
           <div className="flex items-center gap-2 mb-5">
-            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #5AD4AE 0%, #F5A05E 100%)" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#5AD4AE" }}>
+            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #2C6B65 0%, #D97757 100%)" }} />
+            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#2C6B65" }}>
               {c.hero.badge}
             </span>
           </div>
@@ -521,7 +521,7 @@ export default async function GHLvsHubSpotPage({ params }: Props) {
           {/* Verdict box */}
           <div
             className="p-6 rounded-2xl mb-12"
-            style={{ background: "linear-gradient(135deg, rgba(90,212,174,0.08) 0%, rgba(245,160,94,0.08) 100%)", border: "1px solid rgba(90,212,174,0.2)" }}
+            style={{ background: "linear-gradient(135deg, rgba(172,237,235,0.08) 0%, rgba(218,184,130,0.08) 100%)", border: "1px solid rgba(172,237,235,0.2)" }}
           >
             <h2
               className="text-xl font-bold mb-3"
@@ -536,7 +536,7 @@ export default async function GHLvsHubSpotPage({ params }: Props) {
           <div className="grid sm:grid-cols-2 gap-6 mb-12">
             {(["ghl", "hubspot"] as const).map((key) => {
               const p = c.platforms[key];
-              const accent = key === "ghl" ? "#5AD4AE" : "#F5A05E";
+              const accent = key === "ghl" ? "#2C6B65" : "#D97757";
               return (
                 <div
                   key={key}
@@ -614,8 +614,8 @@ export default async function GHLvsHubSpotPage({ params }: Props) {
                   <th className="px-4 py-3 text-left font-semibold text-xs" style={{ color: "var(--text-secondary)" }}>
                     {locale === "en" ? "Feature" : "Característica"}
                   </th>
-                  <th className="px-4 py-3 text-left font-semibold text-xs" style={{ color: "#5AD4AE" }}>GHL</th>
-                  <th className="px-4 py-3 text-left font-semibold text-xs" style={{ color: "#F5A05E" }}>HubSpot</th>
+                  <th className="px-4 py-3 text-left font-semibold text-xs" style={{ color: "#2C6B65" }}>GHL</th>
+                  <th className="px-4 py-3 text-left font-semibold text-xs" style={{ color: "#D97757" }}>HubSpot</th>
                 </tr>
               </thead>
               <tbody>
@@ -639,7 +639,7 @@ export default async function GHLvsHubSpotPage({ params }: Props) {
                     <td
                       className="px-4 py-3 text-xs"
                       style={{
-                        color: row.winner === "ghl" ? "#5AD4AE" : "var(--text-secondary)",
+                        color: row.winner === "ghl" ? "#2C6B65" : "var(--text-secondary)",
                         fontWeight: row.winner === "ghl" ? 600 : 400,
                       }}
                     >
@@ -648,7 +648,7 @@ export default async function GHLvsHubSpotPage({ params }: Props) {
                     <td
                       className="px-4 py-3 text-xs"
                       style={{
-                        color: row.winner === "hubspot" ? "#F5A05E" : "var(--text-secondary)",
+                        color: row.winner === "hubspot" ? "#D97757" : "var(--text-secondary)",
                         fontWeight: row.winner === "hubspot" ? 600 : 400,
                       }}
                     >
@@ -671,7 +671,7 @@ export default async function GHLvsHubSpotPage({ params }: Props) {
           <div className="flex flex-col gap-4 mb-12">
             {c.use_cases.items.map((uc, i) => {
               const isGHL = uc.tool === "GoHighLevel";
-              const accent = isGHL ? "#5AD4AE" : "#F5A05E";
+              const accent = isGHL ? "#2C6B65" : "#D97757";
               return (
                 <div
                   key={i}
@@ -731,7 +731,7 @@ export default async function GHLvsHubSpotPage({ params }: Props) {
           >
             <div
               className="w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white text-sm"
-              style={{ background: "linear-gradient(135deg, #5AD4AE 0%, #F5A05E 100%)" }}
+              style={{ background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
             >
               JH
             </div>
@@ -771,7 +771,7 @@ export default async function GHLvsHubSpotPage({ params }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
-              style={{ background: "linear-gradient(135deg, #F5405E 0%, #F5A05E 100%)" }}
+              style={{ background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
             >
               {c.cta.ctaPrimary}
             </a>

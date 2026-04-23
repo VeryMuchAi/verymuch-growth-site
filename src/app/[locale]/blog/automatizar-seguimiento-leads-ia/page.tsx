@@ -127,9 +127,9 @@ const CONTENT: Record<string, PageContent> = {
     stack: {
       heading: "El stack tecnológico que usamos",
       items: [
-        { name: "n8n", role: "Orquestación de flujos y conexión entre sistemas", color: "#5AD4AE" },
+        { name: "n8n", role: "Orquestación de flujos y conexión entre sistemas", color: "#2C6B65" },
         { name: "Claude (Anthropic)", role: "Calificación inteligente y redacción de emails personalizados", color: "#A78BFA" },
-        { name: "GoHighLevel", role: "CRM, workflows de nurturing y envío multicanal", color: "#F5A05E" },
+        { name: "GoHighLevel", role: "CRM, workflows de nurturing y envío multicanal", color: "#D97757" },
         { name: "Perplexity API", role: "Enriquecimiento de datos del prospecto en tiempo real", color: "#60A5FA" },
         { name: "HubSpot", role: "CRM alternativo para empresas con setup enterprise existente", color: "#FB923C" },
         { name: "Slack", role: "Notificaciones al vendedor cuando el lead entra en fase activa", color: "#4ADE80" },
@@ -276,9 +276,9 @@ const CONTENT: Record<string, PageContent> = {
     stack: {
       heading: "The technology stack we use",
       items: [
-        { name: "n8n", role: "Flow orchestration and system connectivity", color: "#5AD4AE" },
+        { name: "n8n", role: "Flow orchestration and system connectivity", color: "#2C6B65" },
         { name: "Claude (Anthropic)", role: "Intelligent qualification and personalized email drafting", color: "#A78BFA" },
-        { name: "GoHighLevel", role: "CRM, nurturing workflows, and multichannel sending", color: "#F5A05E" },
+        { name: "GoHighLevel", role: "CRM, nurturing workflows, and multichannel sending", color: "#D97757" },
         { name: "Perplexity API", role: "Real-time prospect data enrichment", color: "#60A5FA" },
         { name: "HubSpot", role: "Alternative CRM for companies with existing enterprise setup", color: "#FB923C" },
         { name: "Slack", role: "Sales notifications when lead enters active phase", color: "#4ADE80" },
@@ -462,7 +462,7 @@ export default async function AutomatizarSeguimientoLeadsPage({ params }: Props)
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 35% -15%, rgba(74,212,174,0.07) 0%, rgba(167,139,250,0.05) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 35% -15%, rgba(172,237,235,0.07) 0%, rgba(167,139,250,0.05) 45%, transparent 70%)",
           }}
         />
         <div className="relative max-w-3xl mx-auto">
@@ -477,8 +477,8 @@ export default async function AutomatizarSeguimientoLeadsPage({ params }: Props)
 
           {/* Badge */}
           <div className="flex items-center gap-2 mb-5">
-            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #5AD4AE 0%, #A78BFA 100%)" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#5AD4AE" }}>
+            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #2C6B65 0%, #A78BFA 100%)" }} />
+            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#2C6B65" }}>
               {c.hero.badge}
             </span>
           </div>
@@ -521,7 +521,7 @@ export default async function AutomatizarSeguimientoLeadsPage({ params }: Props)
           {/* Problem + Stats */}
           <div
             className="p-6 rounded-2xl mb-12"
-            style={{ background: "linear-gradient(135deg, rgba(90,212,174,0.06) 0%, rgba(167,139,250,0.06) 100%)", border: "1px solid rgba(90,212,174,0.15)" }}
+            style={{ background: "linear-gradient(135deg, rgba(172,237,235,0.06) 0%, rgba(167,139,250,0.06) 100%)", border: "1px solid rgba(172,237,235,0.15)" }}
           >
             <h2
               className="text-xl font-bold mb-3"
@@ -534,7 +534,7 @@ export default async function AutomatizarSeguimientoLeadsPage({ params }: Props)
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {c.problem.stats.map((s, i) => (
                 <div key={i} className="text-center p-4 rounded-xl" style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)" }}>
-                  <div className="text-3xl font-extrabold mb-1" style={{ color: "#5AD4AE", fontFamily: "var(--font-display)" }}>{s.stat}</div>
+                  <div className="text-3xl font-extrabold mb-1" style={{ color: "#2C6B65", fontFamily: "var(--font-display)" }}>{s.stat}</div>
                   <div className="text-xs leading-relaxed mb-2" style={{ color: "var(--text-secondary)" }}>{s.label}</div>
                   <div className="text-xs opacity-50 italic" style={{ color: "var(--text-secondary)" }}>— {s.source}</div>
                 </div>
@@ -569,7 +569,7 @@ export default async function AutomatizarSeguimientoLeadsPage({ params }: Props)
                 <div className="flex items-start gap-4">
                   <div
                     className="text-2xl font-extrabold flex-shrink-0 w-10 leading-none mt-0.5"
-                    style={{ color: "#5AD4AE", fontFamily: "var(--font-display)" }}
+                    style={{ color: "#2C6B65", fontFamily: "var(--font-display)" }}
                   >
                     {step.number}
                   </div>
@@ -580,7 +580,7 @@ export default async function AutomatizarSeguimientoLeadsPage({ params }: Props)
                     <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--text-secondary)" }}>{step.description}</p>
                     <span
                       className="text-xs font-semibold px-3 py-1 rounded-full"
-                      style={{ background: "rgba(90,212,174,0.1)", color: "#5AD4AE" }}
+                      style={{ background: "rgba(172,237,235,0.1)", color: "#2C6B65" }}
                     >
                       {step.tool}
                     </span>
@@ -606,7 +606,7 @@ export default async function AutomatizarSeguimientoLeadsPage({ params }: Props)
                 className="p-4 rounded-xl text-center"
                 style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)" }}
               >
-                <div className="text-2xl font-extrabold mb-2" style={{ color: "#5AD4AE", fontFamily: "var(--font-display)" }}>{r.metric}</div>
+                <div className="text-2xl font-extrabold mb-2" style={{ color: "#2C6B65", fontFamily: "var(--font-display)" }}>{r.metric}</div>
                 <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>{r.description}</p>
               </div>
             ))}
@@ -652,10 +652,10 @@ export default async function AutomatizarSeguimientoLeadsPage({ params }: Props)
               <div
                 key={i}
                 className="p-5 rounded-xl border"
-                style={{ border: "1px solid rgba(245,160,94,0.3)", background: "rgba(245,160,94,0.04)" }}
+                style={{ border: "1px solid rgba(218,184,130,0.3)", background: "rgba(218,184,130,0.04)" }}
               >
                 <h3 className="text-sm font-bold mb-2 flex items-center gap-2" style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)" }}>
-                  <span style={{ color: "#F5A05E" }}>⚠</span>
+                  <span style={{ color: "#D97757" }}>⚠</span>
                   {m.title}
                 </h3>
                 <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>{m.description}</p>
@@ -697,7 +697,7 @@ export default async function AutomatizarSeguimientoLeadsPage({ params }: Props)
           >
             <div
               className="w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white text-sm"
-              style={{ background: "linear-gradient(135deg, #5AD4AE 0%, #A78BFA 100%)" }}
+              style={{ background: "linear-gradient(135deg, #2C6B65 0%, #A78BFA 100%)" }}
             >
               {c.author.initials}
             </div>
@@ -737,7 +737,7 @@ export default async function AutomatizarSeguimientoLeadsPage({ params }: Props)
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
-              style={{ background: "linear-gradient(135deg, #F5405E 0%, #F5A05E 100%)" }}
+              style={{ background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
             >
               {c.cta.ctaPrimary}
             </a>

@@ -847,7 +847,7 @@ function StatCard({ stat, label }: { stat: string; label: string }) {
   return (
     <div
       className="rounded-xl p-5 text-center border"
-      style={{ background: "rgba(74,212,174,0.06)", borderColor: "rgba(74,212,174,0.18)" }}
+      style={{ background: "rgba(172,237,235,0.06)", borderColor: "rgba(172,237,235,0.18)" }}
     >
       <div className="text-2xl font-extrabold leading-none mb-2" style={{ color: "var(--accent-text)" }}>
         {stat}
@@ -862,8 +862,8 @@ function StatCard({ stat, label }: { stat: string; label: string }) {
 function HighlightBox({ children }: { children: React.ReactNode }) {
   return (
     <blockquote
-      className="rounded-xl p-5 border-l-4 my-6"
-      style={{ background: "rgba(245,160,64,0.06)", borderLeftColor: "var(--accent-warm)" }}
+      className="rounded-xl p-5 my-6"
+      style={{ background: "rgba(218,184,130,0.06)", borderLeftColor: "var(--accent-warm)" }}
     >
       <div className="text-base leading-relaxed" style={{ color: "var(--text-primary)" }}>
         {children}
@@ -938,7 +938,7 @@ export default async function PillarPage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 80% 50% at 60% -10%, rgba(74,212,174,0.07) 0%, transparent 65%)",
+              "radial-gradient(ellipse 80% 50% at 60% -10%, rgba(172,237,235,0.07) 0%, transparent 65%)",
           }}
         />
         <div className="max-w-2xl mx-auto relative">
@@ -960,7 +960,7 @@ export default async function PillarPage({ params }: Props) {
             style={{ fontSize: "clamp(1.9rem,4.5vw,2.8rem)", letterSpacing: "-0.025em" }}
           >
             {c.hero.h1Pre}
-            <span className="bg-brand-gradient bg-clip-text text-transparent">{c.hero.h1Gradient}</span>
+            <span className="bg-vm-grad bg-clip-text text-transparent">{c.hero.h1Gradient}</span>
           </h1>
           <p className="text-lg leading-relaxed mb-6" style={{ color: "var(--text-secondary)" }}>
             {c.hero.sub}
@@ -1040,7 +1040,7 @@ export default async function PillarPage({ params }: Props) {
                   ))}
                 </ul>
               </div>
-              <div className="rounded-xl p-5 border" style={{ background: "rgba(74,212,174,0.04)", borderColor: "rgba(74,212,174,0.2)" }}>
+              <div className="rounded-xl p-5 border" style={{ background: "rgba(172,237,235,0.04)", borderColor: "rgba(172,237,235,0.2)" }}>
                 <h3 className="text-sm font-bold mb-3" style={{ color: "var(--text-primary)" }}>{c.s2.agentTitle}</h3>
                 <ul className="flex flex-col gap-2">
                   {c.s2.agentItems.map((t) => (
@@ -1062,7 +1062,7 @@ export default async function PillarPage({ params }: Props) {
               ))}
             </div>
 
-            <div className="rounded-xl p-5 border-l-4" style={{ background: "var(--bg-secondary)", borderColor: "var(--border)", borderLeftColor: "var(--accent-warm)" }}>
+            <div className="rounded-xl p-5" style={{ background: "var(--bg-secondary)", borderColor: "var(--border)", borderLeftColor: "var(--accent-warm)" }}>
               <p className="text-sm font-bold mb-2" style={{ color: "var(--text-primary)" }}>{c.s2.agentWashTitle}</p>
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{c.s2.agentWashText}</p>
             </div>
@@ -1089,7 +1089,7 @@ export default async function PillarPage({ params }: Props) {
             <ul className="flex flex-col gap-3 mb-6">
               {c.s3.paradox.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--text-secondary)" }}>
-                  <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold" style={{ background: "rgba(245,160,64,0.15)", color: "var(--accent-warm-text)" }}>!</span>
+                  <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold" style={{ background: "rgba(218,184,130,0.15)", color: "var(--accent-warm-text)" }}>!</span>
                   {item}
                 </li>
               ))}
@@ -1254,8 +1254,8 @@ export default async function PillarPage({ params }: Props) {
             </div>
 
             <div
-              className="rounded-xl p-5 border-l-4"
-              style={{ background: "var(--bg-secondary)", borderColor: "var(--border)", borderLeftColor: "var(--accent-text)" }}
+              className="rounded-xl p-5"
+              style={{ background: "var(--bg-secondary)", borderColor: "var(--border)", }}
             >
               <p className="text-sm font-bold mb-3" style={{ color: "var(--text-primary)" }}>{c.s7.modalitiesTitle}</p>
               <div className="grid sm:grid-cols-2 gap-4">
@@ -1284,8 +1284,8 @@ export default async function PillarPage({ params }: Props) {
               {c.s8.errors.map((error) => (
                 <div
                   key={error.title}
-                  className="rounded-xl p-5 border-l-4 border"
-                  style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftColor: "var(--error)" }}
+                  className="rounded-xl p-5 border"
+                  style={{ background: "var(--bg-card)", borderColor: "var(--border)", }}
                 >
                   <h3 className="text-sm font-bold mb-2" style={{ color: "var(--text-primary)" }}>✕ {error.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{error.desc}</p>
@@ -1388,7 +1388,7 @@ export default async function PillarPage({ params }: Props) {
               className="rounded-2xl p-8 text-center border"
               style={{
                 background:
-                  "radial-gradient(ellipse 120% 100% at 50% 0%, rgba(74,212,174,0.08) 0%, transparent 60%), var(--bg-secondary)",
+                  "radial-gradient(ellipse 120% 100% at 50% 0%, rgba(172,237,235,0.08) 0%, transparent 60%), var(--bg-secondary)",
                 borderColor: "var(--border)",
               }}
             >
@@ -1402,7 +1402,7 @@ export default async function PillarPage({ params }: Props) {
                 {c.cta.sub}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient text-sm">
+                <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm">
                   {c.cta.ctaPrimary}
                 </a>
                 <a
@@ -1427,7 +1427,7 @@ export default async function PillarPage({ params }: Props) {
               <Link
                 href="/newsletter"
                 className="group flex flex-col sm:flex-row sm:items-center gap-4 rounded-2xl p-5 border transition-all duration-200 hover:scale-[1.01]"
-                style={{ background: "rgba(74,212,174,0.05)", borderColor: "rgba(74,212,174,0.2)" }}
+                style={{ background: "rgba(172,237,235,0.05)", borderColor: "rgba(172,237,235,0.2)" }}
               >
                 <div className="flex-1 min-w-0">
                   <p className="text-xs font-bold mb-1" style={{ color: "var(--accent-text)" }}>

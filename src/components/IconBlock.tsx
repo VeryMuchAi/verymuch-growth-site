@@ -74,8 +74,8 @@ const ICONS: Record<IconName, LucideIcon> = {
 // ─── Color system — matches brand board ───────────────────────────────────────
 
 const COLORS: Record<ColorVariant, string> = {
-  orange: "linear-gradient(135deg, #F5A040 0%, #E8842A 100%)",
-  teal:   "linear-gradient(135deg, #4AD4AE 0%, #2AB89A 100%)",
+  orange: "linear-gradient(135deg, #D97757 0%, #E8842A 100%)",
+  teal:   "linear-gradient(135deg, #2C6B65 0%, #2AB89A 100%)",
   dark:   "linear-gradient(135deg, #2A2A2E 0%, #1A1A1D 100%)",
   purple: "linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%)",
   green:  "linear-gradient(135deg, #5BA66B 0%, #3D8A4F 100%)",

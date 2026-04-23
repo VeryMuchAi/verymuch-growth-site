@@ -124,7 +124,7 @@ export default async function NewsletterPage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(245,160,64,0.08) 0%, rgba(74,212,174,0.06) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(218,184,130,0.08) 0%, rgba(172,237,235,0.06) 45%, transparent 70%)",
           }}
         />
         <div className="max-w-3xl mx-auto relative text-center">
@@ -138,7 +138,7 @@ export default async function NewsletterPage({ params }: Props) {
             style={{ color: "var(--text-primary)" }}
           >
             {t("h1_pre")}{" "}
-            <span className="bg-brand-gradient bg-clip-text text-transparent">
+            <span className="bg-vm-grad bg-clip-text text-transparent">
               {t("h1_highlight")}
             </span>
             {t("h1_post")}
@@ -158,7 +158,7 @@ export default async function NewsletterPage({ params }: Props) {
           {features.map((f) => (
             <div
               key={f.title}
-              className="rounded-2xl p-6 border card-elevated transition-all duration-200 card-hover-mint"
+              className="rounded-2xl p-6 border card-elevated transition-all duration-200"
               style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
             >
               <IconBlock icon={f.icon} color={f.color} size="md" />
@@ -180,14 +180,14 @@ export default async function NewsletterPage({ params }: Props) {
         <div className="max-w-3xl mx-auto">
           <a
             href="/guia/agentes-ia-ventas-b2b"
-            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 card-elevated transition-all duration-200 card-hover-mint"
+            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 card-elevated transition-all duration-200"
             style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
           >
             <div
               className="absolute inset-0 pointer-events-none rounded-2xl"
               style={{
                 background:
-                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(90,212,174,0.07) 0%, rgba(245,160,64,0.04) 60%, transparent 100%)",
+                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(172,237,235,0.07) 0%, rgba(218,184,130,0.04) 60%, transparent 100%)",
               }}
             />
             <div className="flex-shrink-0 relative">
@@ -196,7 +196,7 @@ export default async function NewsletterPage({ params }: Props) {
             <div className="flex-1 min-w-0 relative">
               <span
                 className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] inline-block mb-3"
-                style={{ background: "rgba(245,160,64,0.15)", color: "var(--accent-warm-text)" }}
+                style={{ background: "rgba(218,184,130,0.15)", color: "var(--accent-warm-text)" }}
               >
                 Guía completa · Gratis
               </span>
@@ -248,7 +248,7 @@ export default async function NewsletterPage({ params }: Props) {
             {[0, 1, 2, 3, 4].map((i) => (
               <details
                 key={i}
-                className="group rounded-xl border p-5 card-elevated transition-all duration-200 card-hover-mint"
+                className="group rounded-xl border p-5 card-elevated transition-all duration-200"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <summary

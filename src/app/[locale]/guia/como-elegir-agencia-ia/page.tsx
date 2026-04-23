@@ -879,7 +879,7 @@ function StatCard({ stat, label, source }: { stat: string; label: string; source
   return (
     <div
       className="rounded-xl p-5 text-center border flex flex-col gap-2"
-      style={{ background: "rgba(74,212,174,0.06)", borderColor: "rgba(74,212,174,0.18)" }}
+      style={{ background: "rgba(172,237,235,0.06)", borderColor: "rgba(172,237,235,0.18)" }}
     >
       <div className="text-2xl font-extrabold leading-none" style={{ color: "var(--accent-text)" }}>
         {stat}
@@ -897,8 +897,8 @@ function StatCard({ stat, label, source }: { stat: string; label: string; source
 function HighlightBox({ children }: { children: React.ReactNode }) {
   return (
     <blockquote
-      className="rounded-xl p-5 border-l-4 my-6"
-      style={{ background: "rgba(245,160,64,0.06)", borderLeftColor: "var(--accent-warm)" }}
+      className="rounded-xl p-5 my-6"
+      style={{ background: "rgba(218,184,130,0.06)", borderLeftColor: "var(--accent-warm)" }}
     >
       <div className="text-base leading-relaxed" style={{ color: "var(--text-primary)" }}>
         {children}
@@ -977,7 +977,7 @@ export default async function ComoElegirAgenciaIaPage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 80% 50% at 60% -10%, rgba(74,212,174,0.07) 0%, transparent 65%)",
+              "radial-gradient(ellipse 80% 50% at 60% -10%, rgba(172,237,235,0.07) 0%, transparent 65%)",
           }}
         />
         <div className="max-w-2xl mx-auto relative">
@@ -1093,8 +1093,8 @@ export default async function ComoElegirAgenciaIaPage({ params }: Props) {
               {c.s1.p2}
             </p>
             <blockquote
-              className="rounded-xl p-5 border-l-4 my-2"
-              style={{ background: "var(--bg-secondary)", borderLeftColor: "var(--accent-text)", borderColor: "var(--border)" }}
+              className="rounded-xl p-5 my-2"
+              style={{ background: "var(--bg-secondary)", borderColor: "var(--border)" }}
             >
               <p className="text-base leading-relaxed italic mb-3" style={{ color: "var(--text-primary)" }}>
                 &ldquo;{c.s1.quoteText}&rdquo;
@@ -1131,7 +1131,7 @@ export default async function ComoElegirAgenciaIaPage({ params }: Props) {
                   ))}
                 </dl>
               </div>
-              <div className="rounded-xl p-5 border" style={{ background: "rgba(74,212,174,0.04)", borderColor: "rgba(74,212,174,0.2)" }}>
+              <div className="rounded-xl p-5 border" style={{ background: "rgba(172,237,235,0.04)", borderColor: "rgba(172,237,235,0.2)" }}>
                 <h3 className="text-sm font-bold mb-4" style={{ color: "var(--text-primary)" }}>
                   {c.s2.col2Title}
                 </h3>
@@ -1182,7 +1182,7 @@ export default async function ComoElegirAgenciaIaPage({ params }: Props) {
                       </p>
                       <div
                         className="rounded-lg p-3 border-l-2"
-                        style={{ background: "rgba(245,160,64,0.06)", borderLeftColor: "var(--accent-warm)" }}
+                        style={{ background: "rgba(218,184,130,0.06)", borderLeftColor: "var(--accent-warm)" }}
                       >
                         <p className="text-xs font-bold mb-1" style={{ color: "var(--accent-warm-text)" }}>
                           {criterion.questionLabel}:
@@ -1207,8 +1207,8 @@ export default async function ComoElegirAgenciaIaPage({ params }: Props) {
               {c.s4.flags.map((flag) => (
                 <div
                   key={flag.title}
-                  className="rounded-xl p-5 border-l-4 border"
-                  style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftColor: "var(--error)" }}
+                  className="rounded-xl p-5 border"
+                  style={{ background: "var(--bg-card)", borderColor: "var(--border)", }}
                 >
                   <h3 className="text-sm font-bold mb-2" style={{ color: "var(--text-primary)" }}>✕ {flag.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{flag.desc}</p>
@@ -1259,8 +1259,8 @@ export default async function ComoElegirAgenciaIaPage({ params }: Props) {
               <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{c.s5.sdrText}</p>
             </div>
             <div
-              className="rounded-xl p-5 border-l-4"
-              style={{ background: "rgba(74,212,174,0.05)", borderColor: "var(--border)", borderLeftColor: "var(--accent-text)" }}
+              className="rounded-xl p-5"
+              style={{ background: "rgba(172,237,235,0.05)", borderColor: "var(--border)", }}
             >
               <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--text-secondary)" }}>
                 {c.s5.vmHighlight}
@@ -1304,7 +1304,7 @@ export default async function ComoElegirAgenciaIaPage({ params }: Props) {
                     </div>
                     <div
                       className="rounded-lg p-3"
-                      style={{ background: "rgba(74,212,174,0.06)", borderLeft: "2px solid var(--accent-text)" }}
+                      style={{ background: "rgba(172,237,235,0.06)", borderLeft: "2px solid var(--accent-text)" }}
                     >
                       <p className="text-xs font-bold mb-1" style={{ color: "var(--accent-text)" }}>
                         {cas.lessonLabel}
@@ -1424,7 +1424,7 @@ export default async function ComoElegirAgenciaIaPage({ params }: Props) {
               className="rounded-2xl p-8 text-center border"
               style={{
                 background:
-                  "radial-gradient(ellipse 120% 100% at 50% 0%, rgba(74,212,174,0.08) 0%, transparent 60%), var(--bg-secondary)",
+                  "radial-gradient(ellipse 120% 100% at 50% 0%, rgba(172,237,235,0.08) 0%, transparent 60%), var(--bg-secondary)",
                 borderColor: "var(--border)",
               }}
             >
@@ -1438,7 +1438,7 @@ export default async function ComoElegirAgenciaIaPage({ params }: Props) {
                 {c.cta.sub}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="/ai-readiness" className="btn-gradient text-sm">
+                <a href="/ai-readiness" className="btn-primary text-sm">
                   {c.cta.ctaPrimary}
                 </a>
                 <a

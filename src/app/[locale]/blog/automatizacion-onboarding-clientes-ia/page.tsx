@@ -501,7 +501,7 @@ export default async function Page({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(74,212,174,0.07) 0%, rgba(245,160,64,0.05) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(172,237,235,0.07) 0%, rgba(218,184,130,0.05) 45%, transparent 70%)",
           }}
         />
         <div className="max-w-3xl mx-auto relative">
@@ -621,7 +621,7 @@ export default async function Page({ params }: Props) {
                   <div className="flex items-center gap-3 mb-3">
                     <span
                       className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
-                      style={{ background: "rgba(74,212,174,0.1)", color: "var(--accent-text)" }}
+                      style={{ background: "rgba(172,237,235,0.1)", color: "var(--accent-text)" }}
                     >
                       {phase.day}
                     </span>

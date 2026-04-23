@@ -160,7 +160,7 @@ export default async function EdwinMorenoPage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(74,212,174,0.07) 0%, rgba(245,160,64,0.04) 50%, transparent 70%)",
+              "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(172,237,235,0.07) 0%, rgba(218,184,130,0.04) 50%, transparent 70%)",
           }}
         />
         <div className="relative max-w-3xl mx-auto">
@@ -175,8 +175,8 @@ export default async function EdwinMorenoPage({ params }: Props) {
 
           {/* Badge */}
           <div className="flex items-center gap-2 mb-6">
-            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #5AD4AE 0%, #F5A05E 100%)" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#5AD4AE" }}>
+            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #2C6B65 0%, #D97757 100%)" }} />
+            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#2C6B65" }}>
               {m.badge}
             </span>
           </div>
@@ -187,7 +187,7 @@ export default async function EdwinMorenoPage({ params }: Props) {
             <div
               className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold flex-shrink-0"
               style={{
-                background: "linear-gradient(135deg, #5AD4AE 0%, #F5A05E 100%)",
+                background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)",
                 color: "#fff",
                 fontFamily: "var(--font-display)",
               }}
@@ -201,7 +201,7 @@ export default async function EdwinMorenoPage({ params }: Props) {
               >
                 Edwin Moreno
               </h1>
-              <p className="text-base font-medium" style={{ color: "#5AD4AE" }}>
+              <p className="text-base font-medium" style={{ color: "#2C6B65" }}>
                 {m.role}
               </p>
               <p className="text-sm mt-1 opacity-70" style={{ color: "var(--text-secondary)" }}>
@@ -247,7 +247,7 @@ export default async function EdwinMorenoPage({ params }: Props) {
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {m.expertiseItems.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="mt-0.5 text-base" style={{ color: "#5AD4AE" }}>✓</span>
+                <span className="mt-0.5 text-base" style={{ color: "#2C6B65" }}>✓</span>
                 <span className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                   {item}
                 </span>
@@ -278,11 +278,11 @@ export default async function EdwinMorenoPage({ params }: Props) {
                     background: "var(--bg-card)",
                   }}
                 >
-                  <span className="text-xs font-semibold uppercase tracking-wider mb-2 block" style={{ color: "#5AD4AE" }}>
+                  <span className="text-xs font-semibold uppercase tracking-wider mb-2 block" style={{ color: "#2C6B65" }}>
                     {post.tag[lang]}
                   </span>
                   <h3
-                    className="text-base font-semibold mb-1 group-hover:text-[#5AD4AE] transition-colors"
+                    className="text-base font-semibold mb-1 group-hover:text-[#2C6B65] transition-colors"
                     style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)" }}
                   >
                     {post.title[lang]}
@@ -308,7 +308,7 @@ export default async function EdwinMorenoPage({ params }: Props) {
           <Link
             href="/"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
-            style={{ background: "linear-gradient(135deg, #F5405E 0%, #F5A05E 100%)" }}
+            style={{ background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
           >
             {locale === "es" ? "Agenda una llamada gratuita →" : "Book a free call →"}
           </Link>

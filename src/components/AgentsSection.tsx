@@ -14,10 +14,10 @@ const FILTERS: { id: Cat; label: string }[] = [
 
 const BADGE: Record<Cat, string> = {
   all:          "",
-  captacion:    "text-[#5AD4AE] bg-[rgba(90,212,174,0.1)] border-[rgba(90,212,174,0.2)]",
+  captacion:    "text-[#2C6B65] bg-[rgba(172,237,235,0.1)] border-[rgba(172,237,235,0.2)]",
   inteligencia: "text-[#818CF8] bg-[rgba(129,140,248,0.1)] border-[rgba(129,140,248,0.2)]",
-  conversion:   "text-[#F5A05E] bg-[rgba(245,160,94,0.1)] border-[rgba(245,160,94,0.2)]",
-  operaciones:  "text-[#F5405E] bg-[rgba(245,64,94,0.1)] border-[rgba(245,64,94,0.2)]",
+  conversion:   "text-[#D97757] bg-[rgba(218,184,130,0.1)] border-[rgba(218,184,130,0.2)]",
+  operaciones:  "text-[#B8452C] bg-[rgba(245,64,94,0.1)] border-[rgba(245,64,94,0.2)]",
 };
 
 const AGENTS = [
@@ -127,7 +127,7 @@ export default function AgentsSection() {
                 <div
                   aria-hidden="true"
                   className="absolute top-0 left-0 right-0 h-[3px] opacity-0 group-hover:opacity-100 transition-opacity"
-                  style={{ background: "linear-gradient(135deg,#F5405E,#F5A05E)" }}
+                  style={{ background: "linear-gradient(135deg,#B8452C,#D97757)" }}
                 />
 
                 {/* Category badge */}
@@ -150,7 +150,7 @@ export default function AgentsSection() {
                   <p className="text-[10px] font-bold text-emerald-500 uppercase tracking-wider mb-1">Resultado</p>
                   <p
                     className="text-sm font-bold bg-clip-text text-transparent"
-                    style={{ backgroundImage: "linear-gradient(90deg,#5AD4AE 0%,#F5A05E 100%)" }}
+                    style={{ backgroundImage: "linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
                   >
                     {agent.result}
                   </p>
@@ -167,11 +167,11 @@ export default function AgentsSection() {
 // ─── Shared helpers (used only inside this file) ──────────────────────────────
 function SectionTagLight({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#5AD4AE] uppercase tracking-[0.08em]">
+    <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#2C6B65] uppercase tracking-[0.08em]">
       <span
         aria-hidden="true"
         className="inline-block w-6 h-[2px] rounded"
-        style={{ background: "linear-gradient(135deg,#5AD4AE,#F5A05E)" }}
+        style={{ background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
       />
       {children}
     </span>
@@ -182,7 +182,7 @@ function GradientText({ children }: { children: React.ReactNode }) {
   return (
     <span
       className="bg-clip-text text-transparent"
-      style={{ backgroundImage: "linear-gradient(90deg,#5AD4AE 0%,#F5A05E 100%)" }}
+      style={{ backgroundImage: "linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
     >
       {children}
     </span>

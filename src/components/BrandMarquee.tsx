@@ -32,7 +32,7 @@ const ROW2: Brand[] = [
   { name: "LinkedIn",    dot: "#0A66C2", iconSlug: "linkedin" },
   { name: "GoHighLevel", dot: "#F97316", iconSlug: "gohighlevel" },
   { name: "Clay",        dot: "#C084FC", iconSlug: "clay" },
-  { name: "Trigify",     dot: "#F5A040", iconSlug: "trigify" },
+  { name: "Trigify",     dot: "#D97757", iconSlug: "trigify" },
   { name: "Instantly",   dot: "#6366F1", iconSlug: "instantly" },
 ];
 

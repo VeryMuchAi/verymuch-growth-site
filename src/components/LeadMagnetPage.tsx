@@ -29,7 +29,7 @@ function HeadlineWithHighlight({
   return (
     <>
       {headline.slice(0, idx)}
-      <span className="bg-brand-gradient bg-clip-text text-transparent">
+      <span className="bg-vm-grad bg-clip-text text-transparent">
         {highlight}
       </span>
       {headline.slice(idx + highlight.length)}
@@ -41,7 +41,7 @@ function HeadlineWithHighlight({
 
 function OpportunitySection({ s }: { s: SectionOpportunity }) {
   return (
-    <section className="border-t border-white/[0.06] bg-brand-dark-3">
+    <section className="border-t border-white/[0.06] bg-vm-bg-3">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <h2 className="text-2xl font-bold text-white mb-2">{s.title}</h2>
         {s.subtitle && (
@@ -57,7 +57,7 @@ function OpportunitySection({ s }: { s: SectionOpportunity }) {
                       key={j}
                       className={`py-5 px-6 text-sm font-semibold text-white/80 border border-white/[0.07] ${
                         i === 0
-                          ? "bg-brand-mint/10 text-brand-mint"
+                          ? "bg-vm-grad/10 text-vm-teal"
                           : "bg-white/[0.02] text-white/50"
                       }`}
                     >
@@ -83,7 +83,7 @@ function ChangelogSection({ s }: { s: SectionChangelog }) {
           {s.items.map((item, i) => (
             <div
               key={item.title}
-              className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-5 flex flex-col gap-3 hover:border-brand-mint/30 transition-all duration-200 card-hover-mint"
+              className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-5 flex flex-col gap-3 hover:border-vm-line/30 transition-all duration-200"
             >
               <IconBlock icon={item.icon} color={cycleColor(i)} size="sm" />
               <h3 className="text-sm font-bold text-white">{item.title}</h3>
@@ -98,14 +98,14 @@ function ChangelogSection({ s }: { s: SectionChangelog }) {
 
 function AgentsSection({ s }: { s: SectionAgents }) {
   return (
-    <section className="border-t border-white/[0.06] bg-brand-dark-2">
+    <section className="border-t border-white/[0.06] bg-vm-bg-2">
       <div className="max-w-6xl mx-auto px-6 py-16">
         <h2 className="text-2xl font-bold text-white mb-10">{s.title}</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {s.agents.map((agent, i) => (
             <div
               key={agent.name}
-              className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-6 flex flex-col gap-3 hover:border-brand-amber/30 transition-all duration-200 card-hover-amber"
+              className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-6 flex flex-col gap-3 hover:border-brand-amber/30 transition-all duration-200"
             >
               <IconBlock icon={agent.icon} color={cycleColor(i)} size="sm" />
               <div>
@@ -136,12 +136,12 @@ export default function LeadMagnetPage({ config }: Props) {
   const { content } = config;
 
   return (
-    <div className="min-h-screen bg-brand-dark text-white">
+    <div className="min-h-screen bg-vm-bg text-white">
       {/* ── Minimal LP Header ─────────────────────────────────────────────── */}
       <header className="border-b border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Image
-            src="/logo-white.png"
+            src="/brand/logo-wordmark-light.png"
             alt="VeryMuch.ai"
             width={160}
             height={40}
@@ -150,7 +150,7 @@ export default function LeadMagnetPage({ config }: Props) {
           />
           <Link
             href="/#resources"
-            className="text-xs font-medium text-white/40 hover:text-brand-mint transition-colors flex items-center gap-1.5"
+            className="text-xs font-medium text-white/40 hover:text-vm-teal transition-colors flex items-center gap-1.5"
           >
             ← Todos los recursos
           </Link>
@@ -163,7 +163,7 @@ export default function LeadMagnetPage({ config }: Props) {
         className="relative overflow-hidden"
         style={{
           background:
-            "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(74,212,174,0.12) 0%, transparent 60%)",
+            "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(172,237,235,0.12) 0%, transparent 60%)",
         }}
       >
         <div className="max-w-6xl mx-auto px-6 py-16 lg:py-24">
@@ -172,7 +172,7 @@ export default function LeadMagnetPage({ config }: Props) {
             {/* Left col */}
             <div className="flex flex-col gap-6">
               {content.badge && (
-                <span className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-mint/30 bg-brand-mint/10 px-4 py-1.5 text-xs font-semibold text-brand-mint uppercase tracking-widest">
+                <span className="inline-flex w-fit items-center gap-2 rounded-full border border-vm-line/30 bg-vm-grad/10 px-4 py-1.5 text-xs font-semibold text-vm-teal uppercase tracking-widest">
                   ✦ {content.badge}
                 </span>
               )}
@@ -191,7 +191,7 @@ export default function LeadMagnetPage({ config }: Props) {
               <ul className="flex flex-col gap-3 mt-2">
                 {content.bullets.map((bullet) => (
                   <li key={bullet} className="flex items-start gap-3 text-sm text-white/80">
-                    <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-brand-mint/15 border border-brand-mint/30 flex items-center justify-center text-brand-mint text-xs font-bold">
+                    <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full bg-vm-grad/15 border border-vm-line/30 flex items-center justify-center text-vm-teal text-xs font-bold">
                       ✓
                     </span>
                     {bullet}
@@ -203,7 +203,7 @@ export default function LeadMagnetPage({ config }: Props) {
               {!config.hideSocialProof && (
                 <div className="flex items-center gap-3 mt-4 pt-6 border-t border-white/[0.08]">
                   <div className="flex -space-x-2">
-                    {["#4AD4AE", "#F5A040", "#8B5CF6"].map((c) => (
+                    {["#2C6B65", "#D97757", "#8B5CF6"].map((c) => (
                       <div
                         key={c}
                         className="w-7 h-7 rounded-full border-2 border-brand-dark"
@@ -264,7 +264,7 @@ export default function LeadMagnetPage({ config }: Props) {
       )}
 
       {/* ── Qué incluye ───────────────────────────────────────────────────── */}
-      <section className="border-t border-white/[0.06] bg-brand-dark-2">
+      <section className="border-t border-white/[0.06] bg-vm-bg-2">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <h2 className="text-2xl font-bold text-white mb-2">Qué incluye</h2>
           <p className="text-white/40 text-sm mb-10">
@@ -274,7 +274,7 @@ export default function LeadMagnetPage({ config }: Props) {
             {content.includes.map((item, i) => (
               <div
                 key={item.title}
-                className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-5 flex flex-col gap-3 hover:border-brand-mint/30 transition-colors"
+                className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-5 flex flex-col gap-3 hover:border-vm-line/30 transition-colors"
               >
                 <IconBlock icon={item.icon} color={cycleColor(i)} size="sm" />
                 <h3 className="text-sm font-bold text-white">{item.title}</h3>
@@ -303,7 +303,7 @@ export default function LeadMagnetPage({ config }: Props) {
             {content.techStack.map((tool) => (
               <div
                 key={tool.name}
-                className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-6 flex flex-col gap-3 transition-all duration-200 card-hover-mint"
+                className="rounded-xl border border-white/[0.10] bg-white/[0.07] p-6 flex flex-col gap-3 transition-all duration-200"
               >
                 {/* Logo — shown when logoUrl is provided */}
                 {tool.logoUrl && (
@@ -324,7 +324,7 @@ export default function LeadMagnetPage({ config }: Props) {
                       href={tool.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-brand-mint/60 hover:text-brand-mint transition-colors flex-shrink-0"
+                      className="text-xs text-vm-teal/60 hover:text-vm-teal transition-colors flex-shrink-0"
                     >
                       ↗
                     </a>
@@ -338,14 +338,14 @@ export default function LeadMagnetPage({ config }: Props) {
       </section>
 
       {/* ── Bottom CTA ────────────────────────────────────────────────────── */}
-      <section className="border-t border-white/[0.06] bg-brand-dark-2">
+      <section className="border-t border-white/[0.06] bg-vm-bg-2">
         <div className="max-w-2xl mx-auto px-6 py-16 text-center flex flex-col items-center gap-6">
-          <span className="text-xs font-semibold text-brand-mint uppercase tracking-widest">
+          <span className="text-xs font-semibold text-vm-teal uppercase tracking-widest">
             ✦ {content.badge ?? "Blueprint Gratuito"}
           </span>
           <h2 className="text-3xl font-extrabold leading-tight">
             {content.ctaHeadline ?? "Empieza a capturar señales de intención"}{" "}
-            <span className="bg-brand-gradient bg-clip-text text-transparent">
+            <span className="bg-vm-grad bg-clip-text text-transparent">
               {content.ctaHighlight ?? "esta semana"}
             </span>
           </h2>
@@ -354,7 +354,7 @@ export default function LeadMagnetPage({ config }: Props) {
           </p>
           <a
             href="#hero"
-            className="inline-block px-8 py-4 rounded-[10px] font-bold text-sm text-white btn-animated-bg"
+            className="inline-block px-8 py-4 rounded-[10px] font-bold text-sm text-white btn-primary"
           >
             {content.form.ctaLabel} →
           </a>
@@ -368,7 +368,7 @@ export default function LeadMagnetPage({ config }: Props) {
       <footer className="border-t border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <Image
-            src="/logo-white.png"
+            src="/brand/logo-wordmark-light.png"
             alt="VeryMuch.ai"
             width={120}
             height={30}

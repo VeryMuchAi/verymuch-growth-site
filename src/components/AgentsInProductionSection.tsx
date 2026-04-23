@@ -87,7 +87,7 @@ function AgentCard({ agent }: { agent: typeof AGENTS[number] }) {
         <span
           className="shrink-0 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
           style={{
-            background: isVentas ? "rgba(170,212,174,0.2)" : "rgba(245,160,94,0.2)",
+            background: isVentas ? "rgba(170,212,174,0.2)" : "rgba(218,184,130,0.2)",
             color: isVentas ? "var(--accent-text)" : "var(--accent-warm-text)",
           }}
         >

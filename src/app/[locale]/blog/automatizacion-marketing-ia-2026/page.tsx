@@ -356,8 +356,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 function HighlightBox({ children }: { children: React.ReactNode }) {
   return (
     <blockquote
-      className="rounded-xl p-5 border-l-4 my-6"
-      style={{ background: "rgba(245,160,64,0.06)", borderLeftColor: "var(--accent-warm)" }}
+      className="rounded-xl p-5 my-6"
+      style={{ background: "rgba(218,184,130,0.06)", borderLeftColor: "var(--accent-warm)" }}
     >
       <div className="text-base leading-relaxed" style={{ color: "var(--text-primary)" }}>
         {children}
@@ -421,10 +421,10 @@ export default async function AutomatizacionMarketingPage({ params }: Props) {
   };
 
   const layerColors = [
-    { bg: "rgba(74,212,174,0.06)", border: "rgba(74,212,174,0.2)", num: "01" },
-    { bg: "rgba(245,160,64,0.06)", border: "rgba(245,160,64,0.2)", num: "02" },
+    { bg: "rgba(172,237,235,0.06)", border: "rgba(172,237,235,0.2)", num: "01" },
+    { bg: "rgba(218,184,130,0.06)", border: "rgba(218,184,130,0.2)", num: "02" },
     { bg: "rgba(248,64,94,0.05)", border: "rgba(248,64,94,0.18)", num: "03" },
-    { bg: "rgba(74,212,174,0.04)", border: "rgba(74,212,174,0.15)", num: "04" },
+    { bg: "rgba(172,237,235,0.04)", border: "rgba(172,237,235,0.15)", num: "04" },
   ];
 
   return (
@@ -444,7 +444,7 @@ export default async function AutomatizacionMarketingPage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 80% 50% at 60% -10%, rgba(245,160,64,0.07) 0%, transparent 65%)",
+              "radial-gradient(ellipse 80% 50% at 60% -10%, rgba(218,184,130,0.07) 0%, transparent 65%)",
           }}
         />
         <div className="max-w-2xl mx-auto relative">
@@ -461,7 +461,7 @@ export default async function AutomatizacionMarketingPage({ params }: Props) {
           <p className="mb-4">
             <span
               className="badge-label"
-              style={{ color: "var(--accent-warm-text)", background: "rgba(245,160,64,0.1)" }}
+              style={{ color: "var(--accent-warm-text)", background: "rgba(218,184,130,0.1)" }}
             >
               {c.hero.badge}
             </span>
@@ -540,7 +540,7 @@ export default async function AutomatizacionMarketingPage({ params }: Props) {
                   <div className="flex items-start gap-4">
                     <span
                       className="text-2xl font-extrabold leading-none shrink-0 mt-0.5"
-                      style={{ color: i < 2 ? "var(--accent-text)" : i === 2 ? "#F5405E" : "var(--accent-text)" }}
+                      style={{ color: i < 2 ? "var(--accent-text)" : i === 2 ? "#B8452C" : "var(--accent-text)" }}
                     >
                       {layerColors[i].num}
                     </span>
@@ -574,7 +574,7 @@ export default async function AutomatizacionMarketingPage({ params }: Props) {
                   style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
                 >
                   <div className="flex items-start gap-3">
-                    <span className="text-base font-bold shrink-0 mt-0.5" style={{ color: "#F5405E" }}>✗</span>
+                    <span className="text-base font-bold shrink-0 mt-0.5" style={{ color: "#B8452C" }}>✗</span>
                     <div>
                       <h3 className="text-base font-bold mb-1" style={{ color: "var(--text-primary)" }}>
                         {item.title}
@@ -688,7 +688,7 @@ export default async function AutomatizacionMarketingPage({ params }: Props) {
                 className="rounded-xl p-5 border"
                 style={{ background: "rgba(248,64,94,0.04)", borderColor: "rgba(248,64,94,0.15)" }}
               >
-                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#F5405E" }}>
+                <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "#B8452C" }}>
                   {locale === "es" ? "Antes" : "Before"}
                 </p>
                 <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
@@ -697,7 +697,7 @@ export default async function AutomatizacionMarketingPage({ params }: Props) {
               </div>
               <div
                 className="rounded-xl p-5 border"
-                style={{ background: "rgba(74,212,174,0.06)", borderColor: "rgba(74,212,174,0.2)" }}
+                style={{ background: "rgba(172,237,235,0.06)", borderColor: "rgba(172,237,235,0.2)" }}
               >
                 <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: "var(--accent-text)" }}>
                   {locale === "es" ? "Después" : "After"}
@@ -709,7 +709,7 @@ export default async function AutomatizacionMarketingPage({ params }: Props) {
             </div>
             <div
               className="rounded-xl p-5 text-center border mb-6"
-              style={{ background: "rgba(74,212,174,0.06)", borderColor: "rgba(74,212,174,0.18)" }}
+              style={{ background: "rgba(172,237,235,0.06)", borderColor: "rgba(172,237,235,0.18)" }}
             >
               <div className="text-2xl font-extrabold leading-none mb-2" style={{ color: "var(--accent-text)" }}>
                 +340%
@@ -760,7 +760,7 @@ export default async function AutomatizacionMarketingPage({ params }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02] mb-4"
-              style={{ backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)" }}
+              style={{ backgroundImage: "linear-gradient(135deg,#B8452C 0%,#D97757 100%)" }}
             >
               {c.cta.ctaPrimary}
             </a>

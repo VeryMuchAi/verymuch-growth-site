@@ -103,7 +103,7 @@ export default async function ConsultoriaIAPage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 60% -15%, rgba(74,212,174,0.09) 0%, rgba(245,160,64,0.06) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 60% -15%, rgba(172,237,235,0.09) 0%, rgba(218,184,130,0.06) 45%, transparent 70%)",
           }}
         />
         <div className="max-w-3xl mx-auto relative text-center">
@@ -129,7 +129,7 @@ export default async function ConsultoriaIAPage({ params }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-            style={{ backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)" }}
+            style={{ backgroundImage: "linear-gradient(135deg,#B8452C 0%,#D97757 100%)" }}
           >
             {t("hero_cta")}
           </a>
@@ -170,7 +170,7 @@ export default async function ConsultoriaIAPage({ params }: Props) {
             {includesCards.map((card) => (
               <div
                 key={card.titleKey}
-                className="rounded-2xl p-6 border card-elevated transition-all duration-200 card-hover-mint"
+                className="rounded-2xl p-6 border card-elevated transition-all duration-200"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <IconBlock icon={card.icon} color={card.color} size="md" />
@@ -210,7 +210,7 @@ export default async function ConsultoriaIAPage({ params }: Props) {
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-sm shrink-0"
                   style={{
-                    backgroundImage: "linear-gradient(135deg,#5AD4AE 0%,#F5A05E 100%)",
+                    backgroundImage: "linear-gradient(135deg,#2C6B65 0%,#D97757 100%)",
                     color: "#fff",
                   }}
                 >
@@ -290,7 +290,7 @@ export default async function ConsultoriaIAPage({ params }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-            style={{ backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)" }}
+            style={{ backgroundImage: "linear-gradient(135deg,#B8452C 0%,#D97757 100%)" }}
           >
             {t("cta_button")}
           </a>

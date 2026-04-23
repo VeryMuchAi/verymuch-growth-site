@@ -120,14 +120,14 @@ const CONTENT: Record<string, PageContent> = {
           tagline: "El mejor para integración IA vía webhooks — flexibilidad máxima",
           aiReadiness: "Alta",
           bestIntegrations: ["Webhooks nativos para n8n", "Workflows visuales + IA externa", "Sub-cuentas para agencias", "API robusta para actualizaciones en tiempo real"],
-          color: "#5AD4AE",
+          color: "#2C6B65",
         },
         {
           name: "HubSpot",
           tagline: "IA nativa (Breeze) + API enterprise — mejor para empresas grandes",
           aiReadiness: "Alta",
           bestIntegrations: ["HubSpot Breeze (IA nativa)", "Workflows con webhooks a n8n", "API para scoring personalizado", "Integraciones nativas con +1,400 apps"],
-          color: "#F5A05E",
+          color: "#D97757",
         },
         {
           name: "Salesforce",
@@ -303,14 +303,14 @@ const CONTENT: Record<string, PageContent> = {
           tagline: "Best for AI integration via webhooks — maximum flexibility",
           aiReadiness: "High",
           bestIntegrations: ["Native webhooks for n8n", "Visual workflows + external AI", "Sub-accounts for agencies", "Robust API for real-time updates"],
-          color: "#5AD4AE",
+          color: "#2C6B65",
         },
         {
           name: "HubSpot",
           tagline: "Native AI (Breeze) + enterprise API — best for larger companies",
           aiReadiness: "High",
           bestIntegrations: ["HubSpot Breeze (native AI)", "Workflows with webhooks to n8n", "API for custom scoring", "Native integrations with 1,400+ apps"],
-          color: "#F5A05E",
+          color: "#D97757",
         },
         {
           name: "Salesforce",
@@ -518,7 +518,7 @@ export default async function IntegracionCrmIaVentasPage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 50% -15%, rgba(74,212,174,0.07) 0%, rgba(167,139,250,0.05) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 50% -15%, rgba(172,237,235,0.07) 0%, rgba(167,139,250,0.05) 45%, transparent 70%)",
           }}
         />
         <div className="relative max-w-3xl mx-auto">
@@ -531,8 +531,8 @@ export default async function IntegracionCrmIaVentasPage({ params }: Props) {
           </nav>
 
           <div className="flex items-center gap-2 mb-5">
-            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #5AD4AE 0%, #A78BFA 100%)" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#5AD4AE" }}>
+            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #2C6B65 0%, #A78BFA 100%)" }} />
+            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#2C6B65" }}>
               {c.hero.badge}
             </span>
           </div>
@@ -573,7 +573,7 @@ export default async function IntegracionCrmIaVentasPage({ params }: Props) {
           {/* Why section */}
           <div
             className="p-6 rounded-2xl mb-12"
-            style={{ background: "linear-gradient(135deg, rgba(90,212,174,0.06) 0%, rgba(167,139,250,0.06) 100%)", border: "1px solid rgba(90,212,174,0.15)" }}
+            style={{ background: "linear-gradient(135deg, rgba(172,237,235,0.06) 0%, rgba(167,139,250,0.06) 100%)", border: "1px solid rgba(172,237,235,0.15)" }}
           >
             <h2 className="text-xl font-bold mb-3" style={{ fontFamily: "var(--font-display)", color: "var(--text-primary)" }}>
               {c.why.heading}
@@ -582,7 +582,7 @@ export default async function IntegracionCrmIaVentasPage({ params }: Props) {
             <ul className="flex flex-col gap-2">
               {c.why.points.map((point, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "var(--text-secondary)" }}>
-                  <span style={{ color: "#5AD4AE", flexShrink: 0 }}>✓</span>
+                  <span style={{ color: "#2C6B65", flexShrink: 0 }}>✓</span>
                   {point}
                 </li>
               ))}
@@ -602,10 +602,10 @@ export default async function IntegracionCrmIaVentasPage({ params }: Props) {
                 </h3>
                 <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-secondary)" }}>{pattern.description}</p>
                 <div className="flex flex-wrap gap-3">
-                  <span className="text-xs px-3 py-1 rounded-full" style={{ background: "rgba(90,212,174,0.1)", color: "#5AD4AE" }}>
+                  <span className="text-xs px-3 py-1 rounded-full" style={{ background: "rgba(172,237,235,0.1)", color: "#2C6B65" }}>
                     {pattern.tools}
                   </span>
-                  <span className="text-xs px-3 py-1 rounded-full font-semibold" style={{ background: "rgba(245,160,94,0.1)", color: "#F5A05E" }}>
+                  <span className="text-xs px-3 py-1 rounded-full font-semibold" style={{ background: "rgba(218,184,130,0.1)", color: "#D97757" }}>
                     {locale === "en" ? "Impact:" : "Impacto:"} {pattern.impact}
                   </span>
                 </div>
@@ -651,7 +651,7 @@ export default async function IntegracionCrmIaVentasPage({ params }: Props) {
             {c.steps.items.map((step, i) => (
               <div key={i} className="p-6 rounded-2xl border" style={{ border: "1px solid var(--border-color)", background: "var(--bg-card)" }}>
                 <div className="flex items-start gap-4">
-                  <div className="text-2xl font-extrabold flex-shrink-0 w-10 leading-none mt-0.5" style={{ color: "#5AD4AE", fontFamily: "var(--font-display)" }}>
+                  <div className="text-2xl font-extrabold flex-shrink-0 w-10 leading-none mt-0.5" style={{ color: "#2C6B65", fontFamily: "var(--font-display)" }}>
                     {step.number}
                   </div>
                   <div>
@@ -671,9 +671,9 @@ export default async function IntegracionCrmIaVentasPage({ params }: Props) {
           </h2>
           <div className="flex flex-col gap-4 mb-12">
             {c.mistakes.items.map((m, i) => (
-              <div key={i} className="p-5 rounded-xl border" style={{ border: "1px solid rgba(245,160,94,0.3)", background: "rgba(245,160,94,0.04)" }}>
+              <div key={i} className="p-5 rounded-xl border" style={{ border: "1px solid rgba(218,184,130,0.3)", background: "rgba(218,184,130,0.04)" }}>
                 <h3 className="text-sm font-bold mb-2 flex items-center gap-2" style={{ color: "var(--text-primary)", fontFamily: "var(--font-display)" }}>
-                  <span style={{ color: "#F5A05E" }}>⚠</span>
+                  <span style={{ color: "#D97757" }}>⚠</span>
                   {m.title}
                 </h3>
                 <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>{m.description}</p>
@@ -702,7 +702,7 @@ export default async function IntegracionCrmIaVentasPage({ params }: Props) {
           <div className="p-5 rounded-xl flex items-start gap-4 mb-2" style={{ border: "1px solid var(--border-color)", background: "var(--bg-card)" }}>
             <div
               className="w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white text-sm"
-              style={{ background: "linear-gradient(135deg, #5AD4AE 0%, #A78BFA 100%)" }}
+              style={{ background: "linear-gradient(135deg, #2C6B65 0%, #A78BFA 100%)" }}
             >
               {c.author.initials}
             </div>
@@ -732,7 +732,7 @@ export default async function IntegracionCrmIaVentasPage({ params }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
-              style={{ background: "linear-gradient(135deg, #F5405E 0%, #F5A05E 100%)" }}
+              style={{ background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
             >
               {c.cta.ctaPrimary}
             </a>

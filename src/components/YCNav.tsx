@@ -21,7 +21,7 @@ export default function YCNav() {
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href="https://verymuch.ai" aria-label="Back to Verymuch.ai homepage">
           <Image
-            src="/logo-white.png"
+            src="/brand/logo-wordmark-light.png"
             alt="Verymuch.ai"
             width={140}
             height={32}
@@ -29,7 +29,7 @@ export default function YCNav() {
             priority
           />
           <Image
-            src="/logo-color.png"
+            src="/brand/logo-wordmark-dark.png"
             alt="Verymuch.ai"
             width={140}
             height={32}
@@ -70,7 +70,7 @@ export default function YCNav() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              background: "linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)",
+              background: "linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)",
               color: "#0A0A0A",
             }}
             className="rounded-lg px-5 py-2 text-sm font-bold transition-opacity hover:opacity-90"

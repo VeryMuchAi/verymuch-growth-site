@@ -93,7 +93,7 @@ const CONTENT: Record<string, PageContent> = {
           name: "Outbound personalizado con IA",
           description: "El agente de IA investiga cada prospecto (LinkedIn, web de la empresa, noticias recientes, tecnologías que usa) y redacta un mensaje de primer contacto con referencias específicas al contexto del destinatario. El volumen es medio (20–50 prospectos/semana) pero la relevancia es alta. Tasas de respuesta típicas: 15–30% vs < 5% del outbound genérico.",
           fit: "Mejor para: tickets > €5K, ciclos de venta > 30 días",
-          color: "#5AD4AE",
+          color: "#2C6B65",
         },
         {
           name: "SEO + contenido con IA",
@@ -111,7 +111,7 @@ const CONTENT: Record<string, PageContent> = {
           name: "Lead magnets con nurturing automatizado",
           description: "Recursos de alto valor (guías, calculadoras, diagnósticos) que capturan datos de contacto a cambio de valor concreto. La IA personaliza la secuencia de nurturing post-descarga según el comportamiento del lead: qué páginas visitó, qué recursos descargó, cuánto tiempo pasó en la página de precios. El resultado es una secuencia que se adapta al nivel de intención real del prospecto.",
           fit: "Mejor para: inbound con volumen medio-alto, productos con ciclo de educación",
-          color: "#F5A05E",
+          color: "#D97757",
         },
       ],
     },
@@ -244,7 +244,7 @@ const CONTENT: Record<string, PageContent> = {
           name: "AI-personalized outbound",
           description: "The AI agent researches each prospect (LinkedIn, company website, recent news, technologies used) and drafts a first-contact message with specific references to the recipient's context. Volume is medium (20–50 prospects/week) but relevance is high. Typical response rates: 15–30% vs < 5% for generic outbound.",
           fit: "Best for: tickets > €5K, sales cycles > 30 days",
-          color: "#5AD4AE",
+          color: "#2C6B65",
         },
         {
           name: "SEO + AI content",
@@ -262,7 +262,7 @@ const CONTENT: Record<string, PageContent> = {
           name: "Lead magnets with automated nurturing",
           description: "High-value resources (guides, calculators, diagnostics) that capture contact data in exchange for concrete value. AI personalizes the post-download nurturing sequence based on lead behavior: what pages they visited, what resources they downloaded, how long they spent on the pricing page. The result is a sequence that adapts to the prospect's actual intent level.",
           fit: "Best for: inbound with medium-high volume, products with education cycles",
-          color: "#F5A05E",
+          color: "#D97757",
         },
       ],
     },
@@ -459,7 +459,7 @@ export default async function GeneracionLeadsB2BPage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 35% -15%, rgba(74,212,174,0.07) 0%, rgba(167,139,250,0.05) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 35% -15%, rgba(172,237,235,0.07) 0%, rgba(167,139,250,0.05) 45%, transparent 70%)",
           }}
         />
         <div className="relative max-w-3xl mx-auto">
@@ -474,8 +474,8 @@ export default async function GeneracionLeadsB2BPage({ params }: Props) {
 
           {/* Badge */}
           <div className="flex items-center gap-2 mb-5">
-            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #5AD4AE 0%, #A78BFA 100%)" }} />
-            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#5AD4AE" }}>
+            <div className="w-1 h-4 rounded-full" style={{ background: "linear-gradient(180deg, #2C6B65 0%, #A78BFA 100%)" }} />
+            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#2C6B65" }}>
               {c.hero.badge}
             </span>
           </div>
@@ -518,7 +518,7 @@ export default async function GeneracionLeadsB2BPage({ params }: Props) {
           {/* Problem + Stats */}
           <div
             className="p-6 rounded-2xl mb-12"
-            style={{ background: "linear-gradient(135deg, rgba(90,212,174,0.06) 0%, rgba(167,139,250,0.06) 100%)", border: "1px solid rgba(90,212,174,0.15)" }}
+            style={{ background: "linear-gradient(135deg, rgba(172,237,235,0.06) 0%, rgba(167,139,250,0.06) 100%)", border: "1px solid rgba(172,237,235,0.15)" }}
           >
             <h2
               className="text-xl font-bold mb-3"
@@ -531,7 +531,7 @@ export default async function GeneracionLeadsB2BPage({ params }: Props) {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {c.problem.stats.map((s, i) => (
                 <div key={i} className="text-center p-4 rounded-xl" style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)" }}>
-                  <div className="text-3xl font-extrabold mb-1" style={{ color: "#5AD4AE", fontFamily: "var(--font-display)" }}>{s.stat}</div>
+                  <div className="text-3xl font-extrabold mb-1" style={{ color: "#2C6B65", fontFamily: "var(--font-display)" }}>{s.stat}</div>
                   <div className="text-xs leading-relaxed mb-2" style={{ color: "var(--text-secondary)" }}>{s.label}</div>
                   <div className="text-xs opacity-50 italic" style={{ color: "var(--text-secondary)" }}>— {s.source}</div>
                 </div>
@@ -597,7 +597,7 @@ export default async function GeneracionLeadsB2BPage({ params }: Props) {
                 <div className="flex items-start gap-4">
                   <div
                     className="text-2xl font-extrabold flex-shrink-0 w-10 leading-none mt-0.5"
-                    style={{ color: "#5AD4AE", fontFamily: "var(--font-display)" }}
+                    style={{ color: "#2C6B65", fontFamily: "var(--font-display)" }}
                   >
                     {step.number}
                   </div>
@@ -608,7 +608,7 @@ export default async function GeneracionLeadsB2BPage({ params }: Props) {
                     <p className="text-sm leading-relaxed mb-3" style={{ color: "var(--text-secondary)" }}>{step.description}</p>
                     <span
                       className="text-xs font-semibold px-3 py-1 rounded-full"
-                      style={{ background: "rgba(90,212,174,0.1)", color: "#5AD4AE" }}
+                      style={{ background: "rgba(172,237,235,0.1)", color: "#2C6B65" }}
                     >
                       {step.tool}
                     </span>
@@ -634,7 +634,7 @@ export default async function GeneracionLeadsB2BPage({ params }: Props) {
                 className="p-4 rounded-xl text-center"
                 style={{ background: "var(--bg-card)", border: "1px solid var(--border-color)" }}
               >
-                <div className="text-2xl font-extrabold mb-2" style={{ color: "#5AD4AE", fontFamily: "var(--font-display)" }}>{r.metric}</div>
+                <div className="text-2xl font-extrabold mb-2" style={{ color: "#2C6B65", fontFamily: "var(--font-display)" }}>{r.metric}</div>
                 <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>{r.description}</p>
               </div>
             ))}
@@ -674,7 +674,7 @@ export default async function GeneracionLeadsB2BPage({ params }: Props) {
           >
             <div
               className="w-12 h-12 rounded-full flex items-center justify-center font-bold flex-shrink-0 text-white text-sm"
-              style={{ background: "linear-gradient(135deg, #5AD4AE 0%, #A78BFA 100%)" }}
+              style={{ background: "linear-gradient(135deg, #2C6B65 0%, #A78BFA 100%)" }}
             >
               {c.author.initials}
             </div>
@@ -714,7 +714,7 @@ export default async function GeneracionLeadsB2BPage({ params }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
-              style={{ background: "linear-gradient(135deg, #F5405E 0%, #F5A05E 100%)" }}
+              style={{ background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
             >
               {c.cta.ctaPrimary}
             </a>

@@ -143,7 +143,7 @@ export default function AgentQuizSection() {
         <div className="text-center mb-12">
           <span
             className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[0.72rem] font-semibold uppercase tracking-widest mb-4"
-            style={{ borderColor: "rgba(90,212,174,0.25)", background: "rgba(90,212,174,0.07)", color: "#5AD4AE" }}
+            style={{ borderColor: "rgba(172,237,235,0.25)", background: "rgba(172,237,235,0.07)", color: "#2C6B65" }}
           >
             ✦ Test de ROI
           </span>
@@ -151,7 +151,7 @@ export default function AgentQuizSection() {
             Encuentra tu Agente IA de{" "}
             <span
               className="bg-clip-text text-transparent"
-              style={{ backgroundImage: "linear-gradient(90deg,#5AD4AE 0%,#F5A05E 100%)" }}
+              style={{ backgroundImage: "linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)" }}
             >
               mayor ROI
             </span>
@@ -169,7 +169,7 @@ export default function AgentQuizSection() {
             <div className="h-1 w-full bg-white/[0.05]">
               <div
                 className="h-full rounded-full transition-all duration-500"
-                style={{ width: `${progress}%`, background: "linear-gradient(90deg,#5AD4AE,#F5A05E)" }}
+                style={{ width: `${progress}%`, background: "linear-gradient(90deg,#2C6B65,#D97757)" }}
               />
             </div>
           )}
@@ -192,7 +192,7 @@ export default function AgentQuizSection() {
                   <button
                     onClick={handleNext}
                     className="self-start px-7 py-3.5 rounded-xl font-bold text-sm text-[#0A0A0B] transition-opacity hover:opacity-90"
-                    style={{ background: "linear-gradient(135deg,#5AD4AE 0%,#F5A05E 100%)" }}
+                    style={{ background: "linear-gradient(135deg,#2C6B65 0%,#D97757 100%)" }}
                   >
                     Empezar el test →
                   </button>
@@ -221,12 +221,12 @@ export default function AgentQuizSection() {
                           className={[
                             "text-left px-4 py-3.5 rounded-xl border text-sm transition-all duration-150",
                             isActive
-                              ? "border-[rgba(90,212,174,0.6)] bg-[rgba(90,212,174,0.08)] text-white font-semibold"
+                              ? "border-[rgba(172,237,235,0.6)] bg-[rgba(172,237,235,0.08)] text-white font-semibold"
                               : "border-white/[0.08] bg-white/[0.03] text-[rgba(255,255,255,0.65)] hover:border-white/20 hover:text-white",
                           ].join(" ")}
                         >
                           {isActive && (
-                            <span className="text-[#5AD4AE] mr-2 text-xs">✓</span>
+                            <span className="text-[#2C6B65] mr-2 text-xs">✓</span>
                           )}
                           {opt.label}
                         </button>
@@ -238,7 +238,7 @@ export default function AgentQuizSection() {
                     onClick={handleNext}
                     disabled={!selected}
                     className="self-start px-7 py-3.5 rounded-xl font-bold text-sm text-[#0A0A0B] transition-opacity hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed"
-                    style={{ background: "linear-gradient(135deg,#5AD4AE 0%,#F5A05E 100%)" }}
+                    style={{ background: "linear-gradient(135deg,#2C6B65 0%,#D97757 100%)" }}
                   >
                     {step < QUESTIONS.length ? "Siguiente →" : "Ver mi recomendación →"}
                   </button>
@@ -248,7 +248,7 @@ export default function AgentQuizSection() {
               {/* RESULT — left side */}
               {isResult && result && (
                 <div className="flex flex-col gap-6 min-h-[320px] justify-center">
-                  <span className="text-[0.72rem] font-semibold text-[#5AD4AE] uppercase tracking-widest">
+                  <span className="text-[0.72rem] font-semibold text-[#2C6B65] uppercase tracking-widest">
                     Tu recomendación personalizada
                   </span>
                   <div className="flex items-start gap-4">
@@ -256,7 +256,7 @@ export default function AgentQuizSection() {
                     <div>
                       <span
                         className="inline-block text-[0.7rem] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full mb-2"
-                        style={{ background: "rgba(90,212,174,0.1)", color: "#5AD4AE", border: "1px solid rgba(90,212,174,0.25)" }}
+                        style={{ background: "rgba(172,237,235,0.1)", color: "#2C6B65", border: "1px solid rgba(172,237,235,0.25)" }}
                       >
                         {result.tag}
                       </span>
@@ -272,7 +272,7 @@ export default function AgentQuizSection() {
                     <Link
                       href={result.href}
                       className="px-7 py-3.5 rounded-xl font-bold text-sm text-[#0A0A0B] hover:opacity-90 transition-opacity"
-                      style={{ background: "linear-gradient(135deg,#5AD4AE 0%,#F5A05E 100%)" }}
+                      style={{ background: "linear-gradient(135deg,#2C6B65 0%,#D97757 100%)" }}
                     >
                       {result.label}
                     </Link>
@@ -302,8 +302,8 @@ export default function AgentQuizSection() {
                         "Guía gratuita para empezar hoy",
                       ].map((item) => (
                         <li key={item} className="flex items-start gap-3 text-sm text-[rgba(255,255,255,0.55)]">
-                          <span className="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold text-[#5AD4AE]"
-                            style={{ background: "rgba(90,212,174,0.1)", border: "1px solid rgba(90,212,174,0.2)" }}>
+                          <span className="mt-0.5 w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold text-[#2C6B65]"
+                            style={{ background: "rgba(172,237,235,0.1)", border: "1px solid rgba(172,237,235,0.2)" }}>
                             ✓
                           </span>
                           {item}
@@ -321,14 +321,14 @@ export default function AgentQuizSection() {
                               className="w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold transition-all"
                               style={{
                                 background: done
-                                  ? "linear-gradient(135deg,#5AD4AE,#F5A05E)"
+                                  ? "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)"
                                   : current
-                                  ? "rgba(90,212,174,0.12)"
+                                  ? "rgba(172,237,235,0.12)"
                                   : "rgba(255,255,255,0.04)",
                                 border: current
-                                  ? "1.5px solid rgba(90,212,174,0.4)"
+                                  ? "1.5px solid rgba(172,237,235,0.4)"
                                   : "1.5px solid rgba(255,255,255,0.07)",
-                                color: done ? "#0A0A0B" : current ? "#5AD4AE" : "rgba(255,255,255,0.2)",
+                                color: done ? "#0A0A0B" : current ? "#2C6B65" : "rgba(255,255,255,0.2)",
                               }}
                             >
                               {done ? "✓" : i + 1}
@@ -357,7 +357,7 @@ export default function AgentQuizSection() {
                         <Link
                           key={slug}
                           href={r.href}
-                          className="flex items-center gap-3 p-3 rounded-xl border border-white/[0.06] hover:border-[rgba(90,212,174,0.2)] hover:bg-white/[0.03] transition-all group"
+                          className="flex items-center gap-3 p-3 rounded-xl border border-white/[0.06] hover:border-[rgba(172,237,235,0.2)] hover:bg-white/[0.03] transition-all group"
                         >
                           <span className="text-xl">{r.icon}</span>
                           <span className="text-[0.8rem] text-white/45 group-hover:text-white/70 transition-colors leading-snug line-clamp-2">

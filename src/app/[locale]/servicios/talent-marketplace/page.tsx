@@ -102,7 +102,7 @@ export default async function TalentMarketplacePage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(245,160,64,0.08) 0%, rgba(90,212,174,0.06) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(218,184,130,0.08) 0%, rgba(172,237,235,0.06) 45%, transparent 70%)",
           }}
         />
         <div className="max-w-3xl mx-auto relative text-center">
@@ -130,7 +130,7 @@ export default async function TalentMarketplacePage({ params }: Props) {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
               style={{
-                backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)",
+                backgroundImage: "linear-gradient(135deg,#B8452C 0%,#D97757 100%)",
               }}
             >
               {t("hero_cta")}
@@ -185,7 +185,7 @@ export default async function TalentMarketplacePage({ params }: Props) {
             {howCards.map((card) => (
               <div
                 key={card.titleKey}
-                className="rounded-2xl p-6 border card-elevated transition-all duration-200 card-hover-mint"
+                className="rounded-2xl p-6 border card-elevated transition-all duration-200"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <IconBlock icon={card.icon} color={card.color} size="md" />
@@ -223,7 +223,7 @@ export default async function TalentMarketplacePage({ params }: Props) {
             {categories.map((cat) => (
               <div
                 key={cat.titleKey}
-                className="rounded-2xl p-6 border card-elevated transition-all duration-200 card-hover-amber"
+                className="rounded-2xl p-6 border card-elevated transition-all duration-200"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <IconBlock icon={cat.icon} color={cat.color} size="md" />
@@ -293,7 +293,7 @@ export default async function TalentMarketplacePage({ params }: Props) {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
             style={{
-              backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)",
+              backgroundImage: "linear-gradient(135deg,#B8452C 0%,#D97757 100%)",
             }}
           >
             {t("cta_button")}

@@ -112,7 +112,7 @@ export default async function AgentesAutomatizacionPage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(74,212,174,0.09) 0%, rgba(245,160,64,0.06) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(172,237,235,0.09) 0%, rgba(218,184,130,0.06) 45%, transparent 70%)",
           }}
         />
         <div className="max-w-3xl mx-auto relative text-center">
@@ -138,7 +138,7 @@ export default async function AgentesAutomatizacionPage({ params }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-            style={{ backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)" }}
+            style={{ backgroundImage: "linear-gradient(135deg,#B8452C 0%,#D97757 100%)" }}
           >
             {t("hero_cta")}
           </a>
@@ -287,7 +287,7 @@ export default async function AgentesAutomatizacionPage({ params }: Props) {
               <div className="flex items-center gap-2 mb-4">
                 <span
                   className="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded-full"
-                  style={{ background: "rgba(74,212,174,0.1)", color: "var(--accent-text)" }}
+                  style={{ background: "rgba(172,237,235,0.1)", color: "var(--accent-text)" }}
                 >
                   {t("model_0_tag")}
                 </span>
@@ -300,7 +300,7 @@ export default async function AgentesAutomatizacionPage({ params }: Props) {
               </p>
               <div
                 className="rounded-xl p-4 text-sm"
-                style={{ background: "rgba(74,212,174,0.06)", borderColor: "rgba(74,212,174,0.15)" }}
+                style={{ background: "rgba(172,237,235,0.06)", borderColor: "rgba(172,237,235,0.15)" }}
               >
                 <p className="font-semibold mb-1" style={{ color: "var(--text-primary)" }}>
                   {t("model_0_price_title")}
@@ -314,13 +314,13 @@ export default async function AgentesAutomatizacionPage({ params }: Props) {
               className="rounded-2xl p-7 border card-elevated"
               style={{
                 background: "var(--bg-card)",
-                borderColor: "rgba(245,160,64,0.25)",
+                borderColor: "rgba(218,184,130,0.25)",
               }}
             >
               <div className="flex items-center gap-2 mb-4">
                 <span
                   className="text-xs font-bold uppercase tracking-widest px-2 py-1 rounded-full"
-                  style={{ background: "rgba(245,160,64,0.12)", color: "var(--accent-warm-text)" }}
+                  style={{ background: "rgba(218,184,130,0.12)", color: "var(--accent-warm-text)" }}
                 >
                   {t("model_1_tag")}
                 </span>
@@ -333,7 +333,7 @@ export default async function AgentesAutomatizacionPage({ params }: Props) {
               </p>
               <div
                 className="rounded-xl p-4 text-sm"
-                style={{ background: "rgba(245,160,64,0.06)" }}
+                style={{ background: "rgba(218,184,130,0.06)" }}
               >
                 <p className="font-semibold mb-1" style={{ color: "var(--text-primary)" }}>
                   {t("model_1_price_title")}
@@ -428,7 +428,7 @@ export default async function AgentesAutomatizacionPage({ params }: Props) {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-            style={{ backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)" }}
+            style={{ backgroundImage: "linear-gradient(135deg,#B8452C 0%,#D97757 100%)" }}
           >
             {t("cta_button")}
           </a>
@@ -457,8 +457,8 @@ function AgentCard({
   accent?: "teal" | "orange" | "purple";
 }) {
   const colors = {
-    teal:   { bg: "rgba(74,212,174,0.06)",  border: "rgba(74,212,174,0.18)",  text: "var(--accent-text)" },
-    orange: { bg: "rgba(245,160,64,0.06)",  border: "rgba(245,160,64,0.18)",  text: "var(--accent-warm-text)" },
+    teal:   { bg: "rgba(172,237,235,0.06)",  border: "rgba(172,237,235,0.18)",  text: "var(--accent-text)" },
+    orange: { bg: "rgba(218,184,130,0.06)",  border: "rgba(218,184,130,0.18)",  text: "var(--accent-warm-text)" },
     purple: { bg: "rgba(139,92,246,0.06)",  border: "rgba(139,92,246,0.18)",  text: "#7C3AED" },
   };
   const c = colors[accent];

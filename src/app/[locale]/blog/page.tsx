@@ -96,7 +96,7 @@ export default async function BlogIndexPage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(74,212,174,0.07) 0%, rgba(245,160,64,0.05) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(172,237,235,0.07) 0%, rgba(218,184,130,0.05) 45%, transparent 70%)",
           }}
         />
         <div className="max-w-3xl mx-auto relative text-center">
@@ -177,7 +177,7 @@ export default async function BlogIndexPage({ params }: Props) {
               {/* Guía 1 — Agentes IA Ventas B2B */}
               <Link
                 href="/guia/agentes-ia-ventas-b2b"
-                className="group rounded-2xl p-6 border flex flex-col sm:flex-row sm:items-center gap-4 card-elevated transition-all duration-200 hover:scale-[1.01] card-hover-mint"
+                className="group rounded-2xl p-6 border flex flex-col sm:flex-row sm:items-center gap-4 card-elevated transition-all duration-200 hover:scale-[1.01]"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <div className="flex-1 min-w-0">
@@ -203,7 +203,7 @@ export default async function BlogIndexPage({ params }: Props) {
               {/* Guía 2 — Cómo elegir agencia IA */}
               <Link
                 href="/guia/como-elegir-agencia-ia"
-                className="group rounded-2xl p-6 border flex flex-col sm:flex-row sm:items-center gap-4 card-elevated transition-all duration-200 hover:scale-[1.01] card-hover-mint"
+                className="group rounded-2xl p-6 border flex flex-col sm:flex-row sm:items-center gap-4 card-elevated transition-all duration-200 hover:scale-[1.01]"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <div className="flex-1 min-w-0">

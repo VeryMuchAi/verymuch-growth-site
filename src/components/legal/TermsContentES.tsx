@@ -3,7 +3,7 @@ export default function TermsContentES() {
     <>
       {/* ── Header ──────────────────────────────────────────── */}
       <div className="not-prose mb-12 text-center">
-        <h1 className="text-4xl font-extrabold tracking-tight text-[#363536] mb-2">
+        <h1 className="text-4xl font-extrabold tracking-tight text-[#151514] mb-2">
           Términos y Condiciones
         </h1>
         <p className="text-lg text-[#666]">

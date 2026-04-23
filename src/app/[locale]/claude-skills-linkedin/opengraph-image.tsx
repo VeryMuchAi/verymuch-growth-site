@@ -36,7 +36,7 @@ export default async function Image() {
             width: "900px",
             height: "500px",
             background:
-              "radial-gradient(ellipse, rgba(90,212,174,0.14) 0%, transparent 70%)",
+              "radial-gradient(ellipse, rgba(172,237,235,0.14) 0%, transparent 70%)",
             display: "flex",
           }}
         />
@@ -52,11 +52,11 @@ export default async function Image() {
         >
           <div
             style={{
-              background: "rgba(90,212,174,0.12)",
-              border: "1px solid rgba(90,212,174,0.35)",
+              background: "rgba(172,237,235,0.12)",
+              border: "1px solid rgba(172,237,235,0.35)",
               borderRadius: "100px",
               padding: "7px 18px",
-              color: "#5AD4AE",
+              color: "#2C6B65",
               fontSize: "13px",
               fontWeight: "700",
               letterSpacing: "0.12em",
@@ -82,7 +82,7 @@ export default async function Image() {
           }}
         >
           La Skill de Claude que escribe posts de LinkedIn con los frameworks de&nbsp;
-          <span style={{ color: "#5AD4AE" }}>+700K impresiones</span>
+          <span style={{ color: "#2C6B65" }}>+700K impresiones</span>
         </div>
 
         {/* Subheadline */}
@@ -120,7 +120,7 @@ export default async function Image() {
                 fontSize: "15px",
               }}
             >
-              <span style={{ color: "#5AD4AE", fontWeight: "700" }}>✓</span>
+              <span style={{ color: "#2C6B65", fontWeight: "700" }}>✓</span>
               {b}
             </div>
           ))}
@@ -151,7 +151,7 @@ export default async function Image() {
           </div>
           <div
             style={{
-              background: "linear-gradient(135deg, #5AD4AE 0%, #F5A05E 100%)",
+              background: "linear-gradient(135deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)",
               borderRadius: "8px",
               padding: "10px 22px",
               color: "white",

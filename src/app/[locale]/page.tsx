@@ -132,7 +132,7 @@ export default async function HomePage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(245,160,64,0.07) 0%, rgba(74,212,174,0.05) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(218,184,130,0.07) 0%, rgba(172,237,235,0.05) 45%, transparent 70%)",
           }}
         />
         <div className="max-w-4xl mx-auto relative">
@@ -146,7 +146,7 @@ export default async function HomePage({ params }: Props) {
             style={{ color: "var(--text-primary)" }}
           >
             {t("hero_h1_pre")}{" "}
-            <span className="bg-brand-gradient bg-clip-text text-transparent">
+            <span className="bg-vm-grad bg-clip-text text-transparent">
               {t("hero_h1_gradient")}
             </span>
             {" "}{t("hero_h1_post")}
@@ -163,7 +163,7 @@ export default async function HomePage({ params }: Props) {
                 href={GHL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gradient text-base"
+                className="btn-primary text-base"
               >
                 {t("hero_cta_primary")}
               </a>
@@ -223,8 +223,8 @@ export default async function HomePage({ params }: Props) {
               {VENTAS_SYMPTOMS.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4 transition-all duration-200 card-hover-mint"
-                  style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftColor: "var(--error)" }}
+                  className="rounded-2xl p-6 border card-elevated flex flex-col gap-4 transition-all duration-200"
+                  style={{ background: "var(--bg-card)", borderColor: "var(--border)", }}
                 >
                   <IconBlock icon={s.icon} color={s.iconColor} size="md" />
                   <div>
@@ -245,8 +245,8 @@ export default async function HomePage({ params }: Props) {
               {MARKETING_SYMPTOMS.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4 transition-all duration-200 card-hover-mint"
-                  style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftColor: "var(--error)" }}
+                  className="rounded-2xl p-6 border card-elevated flex flex-col gap-4 transition-all duration-200"
+                  style={{ background: "var(--bg-card)", borderColor: "var(--border)", }}
                 >
                   <IconBlock icon={s.icon} color={s.iconColor} size="md" />
                   <div>
@@ -304,8 +304,8 @@ export default async function HomePage({ params }: Props) {
 
           {/* Fase 2 */}
           <div
-            className="rounded-2xl p-8 lg:p-10 mb-10 border border-l-4"
-            style={{ background: "rgba(170,212,174,0.06)", borderColor: "var(--border)", borderLeftColor: "var(--accent)" }}
+            className="rounded-2xl p-8 lg:p-10 mb-10 border"
+            style={{ background: "rgba(170,212,174,0.06)", borderColor: "var(--border)", }}
           >
             <p
               className="caption uppercase tracking-widest font-bold mb-4"
@@ -322,7 +322,7 @@ export default async function HomePage({ params }: Props) {
             {CALLOUTS.map((c) => (
               <div
                 key={c.title}
-                className="rounded-2xl p-7 border flex flex-col gap-4 card-elevated transition-all duration-200 card-hover-mint"
+                className="rounded-2xl p-7 border flex flex-col gap-4 card-elevated transition-all duration-200"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <IconBlock icon={c.icon} color={c.iconColor} size="md" />
@@ -344,7 +344,7 @@ export default async function HomePage({ params }: Props) {
           </div>
 
           <div>
-            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient text-base">
+            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-primary text-base">
               {t("how_cta")}
             </a>
           </div>
@@ -450,7 +450,7 @@ export default async function HomePage({ params }: Props) {
               style={{ color: "var(--text-primary)" }}
             >
               {t("team_positioning_pre")}{" "}
-              <span className="bg-brand-gradient bg-clip-text text-transparent">
+              <span className="bg-vm-grad bg-clip-text text-transparent">
                 {t("team_positioning_gradient")}
               </span>{" "}
               {t("team_positioning_post")}
@@ -486,7 +486,7 @@ export default async function HomePage({ params }: Props) {
           {/* Featured tool — AI Readiness Test */}
           <a
             href={`/ai-readiness?lang=${locale}`}
-            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-8 card-elevated transition-all duration-200 card-hover-amber"
+            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-8 card-elevated transition-all duration-200"
             style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
           >
             {/* Ambient glow */}
@@ -494,7 +494,7 @@ export default async function HomePage({ params }: Props) {
               className="absolute inset-0 pointer-events-none rounded-2xl"
               style={{
                 background:
-                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(245,160,64,0.07) 0%, rgba(74,212,174,0.05) 60%, transparent 100%)",
+                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(218,184,130,0.07) 0%, rgba(172,237,235,0.05) 60%, transparent 100%)",
               }}
             />
             <div className="flex-shrink-0 relative">
@@ -503,7 +503,7 @@ export default async function HomePage({ params }: Props) {
             <div className="flex-1 min-w-0 relative">
               <span
                 className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] inline-block mb-3"
-                style={{ background: "rgba(245,160,64,0.15)", color: "var(--accent-warm-text)" }}
+                style={{ background: "rgba(218,184,130,0.15)", color: "var(--accent-warm-text)" }}
               >
                 {t("test_badge")}
               </span>
@@ -525,14 +525,14 @@ export default async function HomePage({ params }: Props) {
           {/* Featured Guide — Agentes de IA para Ventas B2B */}
           <Link
             href="/guia/agentes-ia-ventas-b2b"
-            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-5 card-elevated transition-all duration-200 card-hover-mint"
+            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-5 card-elevated transition-all duration-200"
             style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
           >
             <div
               className="absolute inset-0 pointer-events-none rounded-2xl"
               style={{
                 background:
-                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(90,212,174,0.07) 0%, rgba(245,160,64,0.04) 60%, transparent 100%)",
+                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(172,237,235,0.07) 0%, rgba(218,184,130,0.04) 60%, transparent 100%)",
               }}
             />
             <div className="flex-shrink-0 relative">
@@ -541,7 +541,7 @@ export default async function HomePage({ params }: Props) {
             <div className="flex-1 min-w-0 relative">
               <span
                 className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] inline-block mb-3"
-                style={{ background: "rgba(245,160,64,0.15)", color: "var(--accent-warm-text)" }}
+                style={{ background: "rgba(218,184,130,0.15)", color: "var(--accent-warm-text)" }}
               >
                 Guía completa
               </span>
@@ -563,14 +563,14 @@ export default async function HomePage({ params }: Props) {
           {/* Featured Guide — Cómo elegir agencia IA */}
           <Link
             href="/guia/como-elegir-agencia-ia"
-            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-5 card-elevated transition-all duration-200 card-hover-mint"
+            className="group relative overflow-hidden rounded-2xl p-7 border flex flex-col sm:flex-row sm:items-center gap-6 mb-5 card-elevated transition-all duration-200"
             style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
           >
             <div
               className="absolute inset-0 pointer-events-none rounded-2xl"
               style={{
                 background:
-                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(245,160,64,0.07) 0%, rgba(90,212,174,0.04) 60%, transparent 100%)",
+                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(218,184,130,0.07) 0%, rgba(172,237,235,0.04) 60%, transparent 100%)",
               }}
             />
             <div className="flex-shrink-0 relative">
@@ -579,7 +579,7 @@ export default async function HomePage({ params }: Props) {
             <div className="flex-1 min-w-0 relative">
               <span
                 className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] inline-block mb-3"
-                style={{ background: "rgba(245,160,64,0.15)", color: "var(--accent-warm-text)" }}
+                style={{ background: "rgba(218,184,130,0.15)", color: "var(--accent-warm-text)" }}
               >
                 Guía completa
               </span>
@@ -604,13 +604,13 @@ export default async function HomePage({ params }: Props) {
               <Link
                 key={lm.id}
                 href={lm.href}
-                className="group rounded-2xl p-6 border flex flex-col gap-4 transition-all duration-200 card-elevated card-hover-mint"
+                className="group rounded-2xl p-6 border flex flex-col gap-4 transition-all duration-200 card-elevated"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <div className="flex items-center justify-between gap-3">
                   <span
                     className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px]"
-                    style={{ background: "rgba(91,166,107,0.18)", color: "var(--success-text)" }}
+                    style={{ background: "rgba(46,125,91,0.18)", color: "var(--success-text)" }}
                   >
                     {t("resources_available")}
                   </span>
@@ -647,7 +647,7 @@ export default async function HomePage({ params }: Props) {
               >
                 <span
                   className="caption px-2.5 py-1 rounded-full font-bold uppercase tracking-wider text-[10px] self-start"
-                  style={{ background: "rgba(245,160,94,0.18)", color: "var(--accent-warm-text)" }}
+                  style={{ background: "rgba(218,184,130,0.18)", color: "var(--accent-warm-text)" }}
                 >
                   Q2 2026
                 </span>
@@ -668,7 +668,7 @@ export default async function HomePage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(245,160,64,0.06) 0%, rgba(74,212,174,0.04) 45%, transparent 70%)",
+              "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(218,184,130,0.06) 0%, rgba(172,237,235,0.04) 45%, transparent 70%)",
           }}
         />
         <div className="max-w-2xl mx-auto flex flex-col items-center gap-6 relative">
@@ -677,7 +677,7 @@ export default async function HomePage({ params }: Props) {
             style={{ color: "var(--text-primary)" }}
           >
             {t("cta_h2_pre")}{" "}
-            <span className="bg-brand-gradient bg-clip-text text-transparent">
+            <span className="bg-vm-grad bg-clip-text text-transparent">
               {t("cta_h2_gradient")}
             </span>
           </h2>
@@ -685,7 +685,7 @@ export default async function HomePage({ params }: Props) {
             {t("cta_sub")}
           </p>
           <div className="flex flex-col items-center gap-4">
-            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient text-base">
+            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-primary text-base">
               {t("cta_primary")}
             </a>
             <Link
@@ -707,8 +707,8 @@ export default async function HomePage({ params }: Props) {
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <Image src="/logo-white.png" alt="VeryMuch.ai" width={140} height={34} className="logo-white h-7 w-auto object-contain opacity-80" />
-            <Image src="/Verymuch_Logo_transparent_real.png" alt="VeryMuch.ai" width={140} height={34} className="logo-color h-7 w-auto object-contain" />
+            <Image src="/brand/logo-wordmark-light.png" alt="VeryMuch.ai" width={140} height={34} className="logo-white h-7 w-auto object-contain opacity-80" />
+            <Image src="/brand/logo-wordmark-dark.png" alt="VeryMuch.ai" width={140} height={34} className="logo-color h-7 w-auto object-contain" />
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: "var(--text-secondary)" }}>
               {t("footer_desc")}
             </p>
