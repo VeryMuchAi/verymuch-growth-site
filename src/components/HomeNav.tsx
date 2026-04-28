@@ -102,7 +102,7 @@ export default function HomeNav() {
               priority
             />
             <Image
-              src="/Verymuch_Logo_transparent_real.png"
+              src="/logo-color.png"
               alt="VeryMuch.ai"
               width={200}
               height={48}

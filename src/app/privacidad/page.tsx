@@ -17,7 +17,7 @@ export default function PrivacidadPage() {
       >
         <Link href="/" className="flex items-center">
           <Image src="/logo-white.png" alt="VeryMuch.ai" width={140} height={34} className="logo-white h-7 w-auto object-contain" />
-          <Image src="/Verymuch_Logo_transparent_real.png" alt="VeryMuch.ai" width={140} height={34} className="logo-color h-7 w-auto object-contain" />
+          <Image src="/logo-color.png" alt="VeryMuch.ai" width={140} height={34} className="logo-color h-7 w-auto object-contain" />
         </Link>
         <Link
           href="/"

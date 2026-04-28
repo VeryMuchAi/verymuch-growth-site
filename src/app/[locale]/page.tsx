@@ -708,7 +708,7 @@ export default async function HomePage({ params }: Props) {
           {/* Brand */}
           <div className="flex flex-col gap-4">
             <Image src="/logo-white.png" alt="VeryMuch.ai" width={140} height={34} className="logo-white h-7 w-auto object-contain opacity-80" />
-            <Image src="/Verymuch_Logo_transparent_real.png" alt="VeryMuch.ai" width={140} height={34} className="logo-color h-7 w-auto object-contain" />
+            <Image src="/logo-color.png" alt="VeryMuch.ai" width={140} height={34} className="logo-color h-7 w-auto object-contain" />
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: "var(--text-secondary)" }}>
               {t("footer_desc")}
             </p>
