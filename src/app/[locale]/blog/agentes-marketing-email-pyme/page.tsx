@@ -609,8 +609,7 @@ export default async function AgentesEmailPymePage({ params }: Props) {
               href={GHL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90"
-              style={{ background: "linear-gradient(135deg, #F5405E 0%, #F5A05E 100%)" }}
+              className="btn-vm-primary"
             >
               {c.cta.ctaPrimary}
             </a>

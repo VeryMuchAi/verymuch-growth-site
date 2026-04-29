@@ -601,7 +601,7 @@ export default async function N8nVsMakeVsZapierPage({ params }: Props) {
           <h2 className="text-2xl md:text-3xl font-extrabold mb-4" style={{ fontFamily: "var(--font-display)", color: textPrimary }}>{c.cta.heading}</h2>
           <p className="text-base mb-8 opacity-70" style={{ color: textSecondary }}>{c.cta.sub}</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href={GHL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white transition-all hover:opacity-90" style={{ background: "linear-gradient(135deg, #F5405E 0%, #F5A05E 100%)" }}>{c.cta.ctaPrimary}</a>
+            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-vm-primary">{c.cta.ctaPrimary}</a>
             <Link href={c.cta.ctaSecondaryLink} className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all border hover:border-opacity-60" style={{ border, color: textPrimary, background: "transparent" }}>{c.cta.ctaSecondary}</Link>
           </div>
         </div>

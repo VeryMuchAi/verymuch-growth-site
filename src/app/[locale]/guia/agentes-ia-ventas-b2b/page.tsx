@@ -1402,7 +1402,7 @@ export default async function PillarPage({ params }: Props) {
                 {c.cta.sub}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient text-sm">
+                <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-vm-primary">
                   {c.cta.ctaPrimary}
                 </a>
                 <a

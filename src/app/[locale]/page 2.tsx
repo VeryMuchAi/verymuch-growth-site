@@ -158,7 +158,7 @@ export default async function HomePage({ params }: Props) {
                 href={GHL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gradient text-base"
+                className="btn-vm-primary"
               >
                 {t("hero_cta_primary")}
               </a>
@@ -337,7 +337,7 @@ export default async function HomePage({ params }: Props) {
           </div>
 
           <div>
-            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient text-base">
+            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-vm-primary">
               {t("how_cta")}
             </a>
           </div>
@@ -602,7 +602,7 @@ export default async function HomePage({ params }: Props) {
             {t("cta_sub")}
           </p>
           <div className="flex flex-col items-center gap-4">
-            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient text-base">
+            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-vm-primary">
               {t("cta_primary")}
             </a>
             <Link

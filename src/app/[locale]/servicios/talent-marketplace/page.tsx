@@ -128,10 +128,7 @@ export default async function TalentMarketplacePage({ params }: Props) {
               href={MARKETPLACE}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-              style={{
-                backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)",
-              }}
+              className="btn-vm-primary"
             >
               {t("hero_cta")}
             </a>
@@ -140,7 +137,7 @@ export default async function TalentMarketplacePage({ params }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium transition-colors hover:opacity-80"
-              style={{ color: "var(--accent-warm-text)" }}
+              style={{ color: "var(--accent-text)" }}
             >
               {t("hero_cta_secondary")}
             </a>
@@ -291,10 +288,7 @@ export default async function TalentMarketplacePage({ params }: Props) {
             href={MARKETPLACE}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-            style={{
-              backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)",
-            }}
+            className="btn-vm-primary"
           >
             {t("cta_button")}
           </a>
@@ -304,7 +298,7 @@ export default async function TalentMarketplacePage({ params }: Props) {
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-medium transition-colors hover:opacity-80"
-              style={{ color: "var(--accent-warm-text)" }}
+              style={{ color: "var(--accent-text)" }}
             >
               {t("cta_secondary")}
             </a>
