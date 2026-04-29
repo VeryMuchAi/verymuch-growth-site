@@ -137,8 +137,7 @@ export default async function AgentesAutomatizacionPage({ params }: Props) {
             href={GHL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-            style={{ backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)" }}
+            className="btn-vm-primary"
           >
             {t("hero_cta")}
           </a>
@@ -427,8 +426,7 @@ export default async function AgentesAutomatizacionPage({ params }: Props) {
             href={GHL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:scale-[1.02]"
-            style={{ backgroundImage: "linear-gradient(135deg,#F5405E 0%,#F5A05E 100%)" }}
+            className="btn-vm-primary"
           >
             {t("cta_button")}
           </a>
