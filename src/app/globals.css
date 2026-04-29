@@ -5,65 +5,55 @@
 /* ─── Theme variables ─────────────────────────────────────────────────────── */
 
 :root[data-theme="light"] {
-  --bg-primary:       #F8F5F0;
-  --bg-secondary:     #EEEAE3;       /* warm neutral section bg */
-  --bg-card:          #FFFFFF;
-  --text-primary:     #1A1A1D;
-  --text-secondary:   #6B7280;
-  --text-muted:       #9CA3AF;
-  --accent:           #F5A040;       /* amber — kept for isolated uses */
-  --accent-text:      #1B6B3A;       /* dark green text — 6.2:1 contrast */
-  --accent-cool:      #4AD4AE;
-  --accent-warm:      #F5A040;
-  --accent-warm-text: #9A4200;
-  --accent-gradient:  linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%);
-  --success:          #5BA66B;
-  --success-text:     #1A5E2D;
-  --error:            #E85D5D;
-  --border:           rgba(26, 26, 29, 0.08);
-  --card-shadow:      0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --bg-primary:     #F0EEE8;
+  --bg-secondary:   #EAE6D9;
+  --bg-card:        #FDFCF8;
+  --text-primary:   #151514;
+  --text-secondary: #4A4A4A;
+  --text-muted:     #7A7A7A;
+  --accent-text:    #2C6B65;
+  --border:         #D8D2C2;
+  --card-shadow:    0 6px 18px -10px rgba(0,0,0,.12);
+  --vm-gradient:    linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%);
+  --error:          #E5484D;
 }
 
 :root[data-theme="dark"] {
-  --bg-primary:       #0C0C0E;
-  --bg-secondary:     #141416;
-  --bg-card:          #242428;
-  --text-primary:     #FAF9F7;
-  --text-secondary:   #9CA3AF;
-  --text-muted:       #6B7280;
-  --accent:           #F5A040;
-  --accent-text:      #4AD4AE;
-  --accent-cool:      #4AD4AE;
-  --accent-warm:      #F5A040;
-  --accent-warm-text: #F5A040;
-  --accent-gradient:  linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%);
-  --success:          #5BA66B;
-  --success-text:     #5BA66B;
-  --error:            #E85D5D;
-  --border:           rgba(250, 249, 247, 0.08);
-  --card-shadow:      none;
+  --bg-primary:     #151514;
+  --bg-secondary:   #1D1D1C;
+  --bg-card:        #1D1D1C;
+  --text-primary:   #F0EEE8;
+  --text-secondary: #D8D2C2;
+  --text-muted:     #9A958A;
+  --accent-text:    #ACEDEB;
+  --border:         #2A2A28;
+  --card-shadow:    none;
+  --vm-gradient:    linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%);
+  --error:          #E5484D;
 }
 
 /* ─── Typography scale ────────────────────────────────────────────────────── */
 
 .font-display, h1, h2, h3, h4 {
-  font-family: var(--font-display), 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-sans), 'Inter', sans-serif;
 }
 body, p, span, li, input, button {
-  font-family: var(--font-sans), 'DM Sans', sans-serif;
+  font-family: var(--font-sans), 'Inter', sans-serif;
+}
+.font-mono, .eyebrow {
+  font-family: var(--font-mono), 'JetBrains Mono', monospace;
 }
 
-h1       { font-size: 40px; line-height: 48px; font-weight: 800; letter-spacing: -0.015em; }
-h2       { font-size: 30px; line-height: 38px; font-weight: 700; letter-spacing: -0.01em; }
+h1       { font-size: 36px; line-height: 44px; font-weight: 800; letter-spacing: -0.035em; }
+h2       { font-size: 28px; line-height: 36px; font-weight: 700; letter-spacing: -0.025em; }
 h3       { font-size: 22px; line-height: 30px; font-weight: 600; }
 body, p  { font-size: 16px; line-height: 26px; font-weight: 400; }
 .caption { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.06em; }
 
 /* Hero display — class specificity wins over h1 element */
-.display { font-size: 56px; line-height: 64px; font-weight: 800; letter-spacing: -0.025em; }
+.display { font-size: clamp(48px, 6vw, 72px); line-height: 1.08; font-weight: 800; letter-spacing: -0.045em; }
 
 .text-accent      { color: var(--accent-text); }
-.text-accent-warm { color: var(--accent-warm-text); }
 
 /* ── Logo variants ────────────────────────────────────────────────────────── */
 .logo-color { display: none; }
@@ -107,26 +97,40 @@ section:hover .marquee-wrap {
   animation-play-state: paused;
 }
 
-/* ─── Button color-cycle animation ───────────────────────────────────────── */
-@keyframes btn-color-cycle {
-  0%   { background-position: 0%   50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0%   50%; }
-}
-
 @layer utilities {
-  /* Gradient text — teal → amber (brand signature) */
+  /* VM gradient text */
+  .vm-grad-text {
+    background: var(--vm-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Legacy alias — keep working where bg-brand-gradient bg-clip-text text-transparent is used */
   .text-gradient {
-    @apply bg-brand-gradient bg-clip-text text-transparent;
+    background: var(--vm-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .border-gradient {
-    border-image: linear-gradient(135deg, #4ad4ae, #f5a040) 1;
+    border-image: linear-gradient(135deg, #ACEDEB, #DAB882) 1;
   }
 
   /* Floating card — shadow only in light mode via CSS var */
   .card-elevated {
     box-shadow: var(--card-shadow, none);
+  }
+
+  /* Eyebrow — JetBrains Mono style */
+  .vm-eyebrow {
+    font-family: var(--font-mono), 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-text);
   }
 
   /* Section label pill badge */
@@ -137,99 +141,133 @@ section:hover .marquee-wrap {
     padding: 3px 12px;
     border-radius: 100px;
     border: 1.5px solid currentColor;
+    font-family: var(--font-mono), 'JetBrains Mono', monospace;
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.07em;
+    font-weight: 500;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    opacity: 0.9;
+    color: var(--accent-text);
   }
 
-  /* ── Animated brand gradient (cycles through full brand palette) ───────── */
-  /*    orange → teal → purple → green → back to orange                      */
-  .btn-animated-bg {
-    background: linear-gradient(
-      90deg,
-      #F5A040 0%,
-      #4AD4AE 25%,
-      #8B5CF6 50%,
-      #5BA66B 75%,
-      #F5A040 100%
-    );
-    background-size: 300% 100%;
-    animation: btn-color-cycle 5s ease infinite;
-  }
-  .btn-animated-bg:hover {
-    animation-play-state: paused;
-    opacity: 0.9;
-  }
-
-  /* Gradient CTA pill button */
-  .btn-gradient {
+  /* VM primary button */
+  .btn-vm-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 32px;
+    padding: 14px 22px;
     border-radius: 10px;
-    font-weight: 700;
-    font-size: 1rem;
+    font-weight: 600;
+    font-size: 15.5px;
     line-height: 1;
-    color: #FFFFFF;
     text-decoration: none;
-    background: linear-gradient(
-      90deg,
-      #F5A040 0%,
-      #4AD4AE 25%,
-      #8B5CF6 50%,
-      #5BA66B 75%,
-      #F5A040 100%
-    );
-    background-size: 300% 100%;
-    animation: btn-color-cycle 5s ease infinite;
-    transition: opacity 0.2s ease;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background: rgba(172,237,235,0.25);
+    color: #151514;
+    border: 1px solid rgba(0,0,0,0.10);
   }
-  .btn-gradient:hover {
-    animation-play-state: paused;
-    opacity: 0.9;
+  :root[data-theme="dark"] .btn-vm-primary {
+    background: rgba(172,237,235,0.12);
+    color: #F0EEE8;
+    border: 1px solid rgba(255,255,255,0.14);
+  }
+  .btn-vm-primary:hover {
+    background: linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%);
+    color: #151514;
   }
 
-  /* Small variant */
-  .btn-gradient-sm {
+  /* VM secondary button */
+  .btn-vm-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 22px;
+    padding: 14px 22px;
     border-radius: 10px;
-    font-weight: 700;
-    font-size: 0.875rem;
+    font-weight: 600;
+    font-size: 15.5px;
     line-height: 1;
-    color: #FFFFFF;
     text-decoration: none;
-    background: linear-gradient(
-      90deg,
-      #F5A040 0%,
-      #4AD4AE 25%,
-      #8B5CF6 50%,
-      #5BA66B 75%,
-      #F5A040 100%
-    );
-    background-size: 300% 100%;
-    animation: btn-color-cycle 5s ease infinite;
+    background: #151514;
+    color: #F0EEE8;
+    border: 1px solid transparent;
     transition: opacity 0.2s ease;
   }
-  .btn-gradient-sm:hover {
-    animation-play-state: paused;
-    opacity: 0.9;
+  :root[data-theme="dark"] .btn-vm-secondary {
+    background: #F0EEE8;
+    color: #151514;
   }
+  .btn-vm-secondary:hover { opacity: 0.85; }
 
-  /* ── Card hover glow effects ───────────────────────────────────────────── */
-  .card-hover-mint:hover {
-    box-shadow: 0 0 0 1.5px rgba(74, 212, 174, 0.45), 0 10px 40px rgba(74, 212, 174, 0.16);
+  /* VM ghost button */
+  .btn-vm-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15.5px;
+    line-height: 1;
+    text-decoration: none;
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    transition: background 0.2s ease;
+  }
+  .btn-vm-ghost:hover { background: rgba(0,0,0,.06); }
+  :root[data-theme="dark"] .btn-vm-ghost:hover { background: rgba(255,255,255,.08); }
+
+  /* VM card */
+  .vm-card {
+    border-radius: 14px;
+    border: 1.5px solid var(--border);
+    background: var(--bg-card);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .vm-card:hover {
     transform: translateY(-2px);
+    box-shadow: 0 10px 28px -8px rgba(0,0,0,.16);
   }
 
+  /* Card hover — simple shadow deepening (replaces mint/amber glow) */
+  .card-hover-mint:hover,
   .card-hover-amber:hover {
-    box-shadow: 0 0 0 1.5px rgba(245, 160, 64, 0.50), 0 10px 40px rgba(245, 160, 64, 0.16);
     transform: translateY(-2px);
+    box-shadow: 0 10px 28px -8px rgba(0,0,0,.16);
+  }
+
+  /* ── Backward-compat aliases → all map to btn-vm-primary ──────────────── */
+  .btn-gradient,
+  .btn-gradient-sm,
+  .btn-animated-bg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background: rgba(172,237,235,0.25);
+    color: #151514 !important;
+    border: 1px solid rgba(0,0,0,0.10);
+  }
+  :root[data-theme="dark"] .btn-gradient,
+  :root[data-theme="dark"] .btn-gradient-sm,
+  :root[data-theme="dark"] .btn-animated-bg {
+    background: rgba(172,237,235,0.12);
+    color: #F0EEE8 !important;
+    border: 1px solid rgba(255,255,255,0.14);
+  }
+  .btn-gradient:hover,
+  .btn-gradient-sm:hover,
+  .btn-animated-bg:hover {
+    background: linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%);
+    color: #151514 !important;
   }
 
   /* ── Mint outlined button (secondary CTA) ──────────────────────────────── */
@@ -237,12 +275,12 @@ section:hover .marquee-wrap {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid rgba(74, 212, 174, 0.40);
+    border: 1.5px solid rgba(172, 237, 235, 0.40);
     color: var(--accent-text);
     transition: background 0.2s ease, border-color 0.2s ease;
   }
   .btn-outline-mint:hover {
-    background: rgba(74, 212, 174, 0.08);
-    border-color: rgba(74, 212, 174, 0.65);
+    background: rgba(172, 237, 235, 0.08);
+    border-color: rgba(172, 237, 235, 0.65);
   }
 }

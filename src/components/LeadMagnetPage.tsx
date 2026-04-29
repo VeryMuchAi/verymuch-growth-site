@@ -203,7 +203,7 @@ export default function LeadMagnetPage({ config }: Props) {
               {!config.hideSocialProof && (
                 <div className="flex items-center gap-3 mt-4 pt-6 border-t border-white/[0.08]">
                   <div className="flex -space-x-2">
-                    {["#4AD4AE", "#F5A040", "#8B5CF6"].map((c) => (
+                    {["#ACEDEB", "#BCDAC7", "#DAB882"].map((c) => (
                       <div
                         key={c}
                         className="w-7 h-7 rounded-full border-2 border-brand-dark"

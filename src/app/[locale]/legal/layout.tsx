@@ -20,7 +20,7 @@ export default async function LegalLayout({ children, params }: Props) {
       >
         <Link href="/" className="flex items-center">
           <Image
-            src="/Verymuch_Logo_transparent_real.png"
+            src="/logo-color.png"
             alt="VeryMuch.ai"
             width={140}
             height={34}

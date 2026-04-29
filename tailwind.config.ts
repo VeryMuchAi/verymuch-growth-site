@@ -34,15 +34,15 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        "brand-gradient": "linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)",
+        "brand-gradient": "linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)",
         "hero-glow":
-          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(74,212,174,0.15) 0%, transparent 60%)",
+          "radial-gradient(ellipse 80% 50% at 50% -10%, rgba(172,237,235,0.15) 0%, transparent 60%)",
       },
       fontFamily: {
-        // DM Sans — body text (brand guideline)
-        sans:    ["var(--font-sans)", "system-ui", "sans-serif"],
-        // Plus Jakarta Sans — headings / display (brand guideline)
-        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        // Inter — all text (brand guideline)
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        // JetBrains Mono — eyebrows / mono
+        mono: ["var(--font-mono)", "monospace"],
       },
       animation: {
         "fade-up": "fadeUp 0.5s ease-out forwards",
