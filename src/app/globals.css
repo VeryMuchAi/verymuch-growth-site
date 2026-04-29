@@ -151,7 +151,7 @@ section:hover .marquee-wrap {
     color: var(--accent-text);
   }
 
-  /* VM primary button */
+  /* VM primary button — firma gradient always visible */
   .btn-vm-primary {
     display: inline-flex;
     align-items: center;
@@ -162,20 +162,19 @@ section:hover .marquee-wrap {
     font-size: 15.5px;
     line-height: 1;
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: opacity 0.18s ease, transform 0.18s ease;
     cursor: pointer;
-    background: rgba(172,237,235,0.25);
-    color: #151514;
-    border: 1px solid rgba(0,0,0,0.10);
-  }
-  :root[data-theme="dark"] .btn-vm-primary {
-    background: rgba(172,237,235,0.12);
-    color: #F0EEE8;
-    border: 1px solid rgba(255,255,255,0.14);
-  }
-  .btn-vm-primary:hover {
     background: linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%);
     color: #151514;
+    border: none;
+  }
+  .btn-vm-primary:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+  }
+  .btn-vm-primary:active {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   /* VM secondary button */
