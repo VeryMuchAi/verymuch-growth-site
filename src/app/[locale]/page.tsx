@@ -132,7 +132,7 @@ export default async function HomePage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(245,160,64,0.07) 0%, rgba(74,212,174,0.05) 45%, transparent 70%)",
+              "radial-gradient(ellipse 90% 55% at 65% -15%, rgba(172,237,235,0.12) 0%, rgba(218,184,130,0.08) 45%, transparent 70%)",
           }}
         />
         <div className="max-w-4xl mx-auto relative">
@@ -146,7 +146,7 @@ export default async function HomePage({ params }: Props) {
             style={{ color: "var(--text-primary)" }}
           >
             {t("hero_h1_pre")}{" "}
-            <span className="bg-brand-gradient bg-clip-text text-transparent">
+            <span className="vm-grad-text">
               {t("hero_h1_gradient")}
             </span>
             {" "}{t("hero_h1_post")}
@@ -163,7 +163,7 @@ export default async function HomePage({ params }: Props) {
                 href={GHL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gradient text-base"
+                className="btn-vm-primary"
               >
                 {t("hero_cta_primary")}
               </a>
@@ -223,8 +223,8 @@ export default async function HomePage({ params }: Props) {
               {VENTAS_SYMPTOMS.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4 transition-all duration-200 card-hover-mint"
-                  style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftColor: "var(--error)" }}
+                  className="rounded-2xl p-6 border card-elevated flex flex-col gap-4 transition-all duration-200 card-hover-mint"
+                  style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
                 >
                   <IconBlock icon={s.icon} color={s.iconColor} size="md" />
                   <div>
@@ -245,8 +245,8 @@ export default async function HomePage({ params }: Props) {
               {MARKETING_SYMPTOMS.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4 transition-all duration-200 card-hover-mint"
-                  style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftColor: "var(--error)" }}
+                  className="rounded-2xl p-6 border card-elevated flex flex-col gap-4 transition-all duration-200 card-hover-mint"
+                  style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
                 >
                   <IconBlock icon={s.icon} color={s.iconColor} size="md" />
                   <div>
@@ -304,8 +304,8 @@ export default async function HomePage({ params }: Props) {
 
           {/* Fase 2 */}
           <div
-            className="rounded-2xl p-8 lg:p-10 mb-10 border border-l-4"
-            style={{ background: "rgba(170,212,174,0.06)", borderColor: "var(--border)", borderLeftColor: "var(--accent)" }}
+            className="rounded-2xl p-8 lg:p-10 mb-10 border"
+            style={{ background: "rgba(172,237,235,0.06)", borderColor: "var(--border)" }}
           >
             <p
               className="caption uppercase tracking-widest font-bold mb-4"
@@ -344,7 +344,7 @@ export default async function HomePage({ params }: Props) {
           </div>
 
           <div>
-            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient text-base">
+            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-vm-primary">
               {t("how_cta")}
             </a>
           </div>
@@ -450,7 +450,7 @@ export default async function HomePage({ params }: Props) {
               style={{ color: "var(--text-primary)" }}
             >
               {t("team_positioning_pre")}{" "}
-              <span className="bg-brand-gradient bg-clip-text text-transparent">
+              <span className="vm-grad-text">
                 {t("team_positioning_gradient")}
               </span>{" "}
               {t("team_positioning_post")}
@@ -494,7 +494,7 @@ export default async function HomePage({ params }: Props) {
               className="absolute inset-0 pointer-events-none rounded-2xl"
               style={{
                 background:
-                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(245,160,64,0.07) 0%, rgba(74,212,174,0.05) 60%, transparent 100%)",
+                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(218,184,130,0.08) 0%, rgba(172,237,235,0.05) 60%, transparent 100%)",
               }}
             />
             <div className="flex-shrink-0 relative">
@@ -532,7 +532,7 @@ export default async function HomePage({ params }: Props) {
               className="absolute inset-0 pointer-events-none rounded-2xl"
               style={{
                 background:
-                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(90,212,174,0.07) 0%, rgba(245,160,64,0.04) 60%, transparent 100%)",
+                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(172,237,235,0.08) 0%, rgba(218,184,130,0.04) 60%, transparent 100%)",
               }}
             />
             <div className="flex-shrink-0 relative">
@@ -570,7 +570,7 @@ export default async function HomePage({ params }: Props) {
               className="absolute inset-0 pointer-events-none rounded-2xl"
               style={{
                 background:
-                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(245,160,64,0.07) 0%, rgba(90,212,174,0.04) 60%, transparent 100%)",
+                  "radial-gradient(ellipse 70% 80% at 0% 50%, rgba(218,184,130,0.08) 0%, rgba(172,237,235,0.04) 60%, transparent 100%)",
               }}
             />
             <div className="flex-shrink-0 relative">
@@ -668,7 +668,7 @@ export default async function HomePage({ params }: Props) {
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(245,160,64,0.06) 0%, rgba(74,212,174,0.04) 45%, transparent 70%)",
+              "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(218,184,130,0.08) 0%, rgba(172,237,235,0.05) 45%, transparent 70%)",
           }}
         />
         <div className="max-w-2xl mx-auto flex flex-col items-center gap-6 relative">
@@ -677,7 +677,7 @@ export default async function HomePage({ params }: Props) {
             style={{ color: "var(--text-primary)" }}
           >
             {t("cta_h2_pre")}{" "}
-            <span className="bg-brand-gradient bg-clip-text text-transparent">
+            <span className="vm-grad-text">
               {t("cta_h2_gradient")}
             </span>
           </h2>
@@ -685,7 +685,7 @@ export default async function HomePage({ params }: Props) {
             {t("cta_sub")}
           </p>
           <div className="flex flex-col items-center gap-4">
-            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient text-base">
+            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-vm-primary">
               {t("cta_primary")}
             </a>
             <Link

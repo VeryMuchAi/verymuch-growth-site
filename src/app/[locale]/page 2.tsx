@@ -216,8 +216,8 @@ export default async function HomePage({ params }: Props) {
               {VENTAS_SYMPTOMS.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4"
-                  style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftColor: "var(--error)" }}
+                  className="rounded-2xl p-6 border card-elevated flex flex-col gap-4 transition-all duration-200 card-hover-mint"
+                  style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
                 >
                   <IconBlock icon={s.icon} color={s.iconColor} size="md" />
                   <div>
@@ -238,8 +238,8 @@ export default async function HomePage({ params }: Props) {
               {MARKETING_SYMPTOMS.map((s) => (
                 <div
                   key={s.title}
-                  className="rounded-2xl p-6 border border-l-4 card-elevated flex flex-col gap-4"
-                  style={{ background: "var(--bg-card)", borderColor: "var(--border)", borderLeftColor: "var(--error)" }}
+                  className="rounded-2xl p-6 border card-elevated flex flex-col gap-4 transition-all duration-200 card-hover-mint"
+                  style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
                 >
                   <IconBlock icon={s.icon} color={s.iconColor} size="md" />
                   <div>
@@ -297,8 +297,8 @@ export default async function HomePage({ params }: Props) {
 
           {/* Fase 2 */}
           <div
-            className="rounded-2xl p-8 lg:p-10 mb-10 border border-l-4"
-            style={{ background: "rgba(170,212,174,0.06)", borderColor: "var(--border)", borderLeftColor: "var(--accent)" }}
+            className="rounded-2xl p-8 lg:p-10 mb-10 border"
+            style={{ background: "rgba(172,237,235,0.06)", borderColor: "var(--border)" }}
           >
             <p
               className="caption uppercase tracking-widest font-bold mb-4"

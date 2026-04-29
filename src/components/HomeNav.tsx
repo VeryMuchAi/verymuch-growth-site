@@ -120,7 +120,7 @@ export default function HomeNav() {
                   href={l.href}
                   role="listitem"
                   className="text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wide whitespace-nowrap transition-opacity hover:opacity-90"
-                  style={{ background: "linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)", color: "#fff" }}
+                  style={{ background: "linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)", color: "#151514" }}
                 >
                   {l.label}
                 </a>
@@ -157,7 +157,7 @@ export default function HomeNav() {
                         >
                           <span
                             className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                            style={{ background: "linear-gradient(135deg, #5AD4AE, #F5A05E)" }}
+                            style={{ background: "linear-gradient(90deg, #ACEDEB 0%, #DAB882 100%)" }}
                           />
                           {locale === "es" ? s.labelEs : s.labelEn}
                         </a>
@@ -218,7 +218,7 @@ export default function HomeNav() {
               )}
             </button>
 
-            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-gradient-sm">
+            <a href={GHL} target="_blank" rel="noopener noreferrer" className="btn-vm-primary">
               {t("cta")}
             </a>
           </div>
@@ -303,7 +303,7 @@ export default function HomeNav() {
             }
             style={
               l.highlight
-                ? { background: "linear-gradient(90deg, #F5A040 0%, #4AD4AE 100%)", color: "#fff" }
+                ? { background: "linear-gradient(90deg, #ACEDEB 0%, #BCDAC7 35%, #D7CCA0 65%, #DAB882 100%)", color: "#151514" }
                 : { color: "var(--text-primary)" }
             }
           >
@@ -316,7 +316,7 @@ export default function HomeNav() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setMenuOpen(false)}
-          className="btn-gradient mt-2"
+          className="btn-vm-primary mt-2"
         >
           {t("cta")}
         </a>
