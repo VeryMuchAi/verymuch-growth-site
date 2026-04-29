@@ -95,7 +95,6 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "automatizar-seguimiento-leads-ia",
-    draft: true,
     tag: { es: "Automatización de Ventas", en: "Sales Automation" },
     title: {
       es: "Cómo automatizar el seguimiento de leads con IA: guía completa 2026",
