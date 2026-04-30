@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import Image from "next/image";
 import HomeNav from "@/components/HomeNav";
+import BrandLogo from "@/components/BrandLogo";
 import AgentsInProductionSection from "@/components/AgentsInProductionSection";
 import IconBlock, { type ColorVariant } from "@/components/IconBlock";
 import BrandMarquee from "@/components/BrandMarquee";
@@ -707,8 +707,7 @@ export default async function HomePage({ params }: Props) {
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
           <div className="flex flex-col gap-4">
-            <Image src="/logo-white.png" alt="VeryMuch.ai" width={140} height={34} className="logo-white h-7 w-auto object-contain opacity-80" />
-            <Image src="/logo-color.png" alt="VeryMuch.ai" width={140} height={34} className="logo-color h-7 w-auto object-contain" />
+            <BrandLogo size="md" />
             <p className="text-sm leading-relaxed max-w-xs" style={{ color: "var(--text-secondary)" }}>
               {t("footer_desc")}
             </p>

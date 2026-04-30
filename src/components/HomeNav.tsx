@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import { useTheme } from "@/hooks/useTheme";
+import BrandLogo from "@/components/BrandLogo";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
@@ -91,24 +91,9 @@ export default function HomeNav() {
         }}
       >
         <div className="w-full max-w-[1800px] mx-auto px-8 md:px-10 xl:px-16 2xl:px-24 h-full flex items-center justify-between gap-8 xl:gap-12">
-          {/* Logo — white for dark mode, color for light mode */}
-          <Link href="/" className="flex-shrink-0 z-10">
-            <Image
-              src="/logo-white.png"
-              alt="VeryMuch.ai"
-              width={200}
-              height={48}
-              className="logo-white h-9 xl:h-10 w-auto object-contain"
-              priority
-            />
-            <Image
-              src="/logo-color.png"
-              alt="VeryMuch.ai"
-              width={200}
-              height={48}
-              className="logo-color h-9 xl:h-10 w-auto object-contain"
-              priority
-            />
+          {/* Logo — inline Brand Book wordmark with .Ai gradient badge */}
+          <Link href="/" className="flex-shrink-0 z-10" aria-label="Verymuch.ai · Inicio">
+            <BrandLogo size="md" />
           </Link>
 
           {/* Desktop links */}
