@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useTheme } from "@/hooks/useTheme";
+import BrandLogo from "@/components/BrandLogo";
 
 const BOOKING_URL =
   "https://api.leadconnectorhq.com/widget/bookings/very-much-ai-landing-page";
@@ -20,22 +20,7 @@ export default function YCNav() {
     >
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href="https://verymuch.ai" aria-label="Back to Verymuch.ai homepage">
-          <Image
-            src="/logo-white.png"
-            alt="Verymuch.ai"
-            width={140}
-            height={32}
-            className="logo-white h-7 w-auto"
-            priority
-          />
-          <Image
-            src="/logo-color.png"
-            alt="Verymuch.ai"
-            width={140}
-            height={32}
-            className="logo-color h-7 w-auto"
-            priority
-          />
+          <BrandLogo size="sm" />
         </a>
 
         <div className="flex items-center gap-3">

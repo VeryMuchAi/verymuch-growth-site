@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Size = "sm" | "md" | "lg";
 
 interface Props {
@@ -5,34 +7,34 @@ interface Props {
   className?: string;
 }
 
-const SIZE_MAP: Record<Size, { text: string; badgeText: string; badgePad: string; gap: string; radius: string }> = {
-  sm: { text: "text-[17px]", badgeText: "text-[14px]", badgePad: "px-1.5 py-0.5", gap: "gap-1",   radius: "rounded-[4px]" },
-  md: { text: "text-[22px]", badgeText: "text-[18px]", badgePad: "px-2 py-0.5",   gap: "gap-1.5", radius: "rounded-[6px]" },
-  lg: { text: "text-[30px]", badgeText: "text-[24px]", badgePad: "px-2.5 py-1",   gap: "gap-1.5", radius: "rounded-[8px]" },
+const SIZE_MAP: Record<Size, { h: string; w: number; px: number }> = {
+  sm: { h: "h-7",            w: 140, px: 28 },
+  md: { h: "h-9 xl:h-10",    w: 200, px: 40 },
+  lg: { h: "h-12",           w: 240, px: 48 },
 };
 
 export default function BrandLogo({ size = "md", className = "" }: Props) {
   const s = SIZE_MAP[size];
+  const aspect = 5; // 2000x400 master = 5:1
+  const widthPx = Math.round(s.px * aspect);
   return (
-    <span
-      aria-label="Verymuch.ai"
-      className={`inline-flex items-center ${s.gap} ${className}`}
-      style={{ fontWeight: 800, letterSpacing: "-0.025em", lineHeight: 1, fontFamily: "var(--font-sans, Inter, system-ui, sans-serif)" }}
-    >
-      <span className={s.text} style={{ color: "var(--text-primary)" }}>
-        Verymuch.
-      </span>
-      <span
-        className={`${s.badgeText} ${s.badgePad} ${s.radius} inline-flex items-center`}
-        style={{
-          background: "var(--vm-gradient)",
-          color: "#151514",
-          fontWeight: 800,
-          letterSpacing: "-0.02em",
-        }}
-      >
-        Ai
-      </span>
+    <span className={`inline-flex items-center ${className}`} aria-label="Verymuch.ai">
+      <Image
+        src="/logo-white.png"
+        alt="Verymuch.ai"
+        width={widthPx}
+        height={s.px}
+        className={`logo-white ${s.h} w-auto object-contain`}
+        priority
+      />
+      <Image
+        src="/Verymuch_Logo_transparent_real.png"
+        alt="Verymuch.ai"
+        width={widthPx}
+        height={s.px}
+        className={`logo-color ${s.h} w-auto object-contain`}
+        priority
+      />
     </span>
   );
 }

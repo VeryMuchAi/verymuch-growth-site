@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import BrandLogo from "@/components/BrandLogo";
 
 export const metadata: Metadata = {
   title: "Aviso de privacidad — VeryMuch.ai",
@@ -16,8 +16,7 @@ export default function PrivacidadPage() {
         style={{ borderColor: "var(--border)" }}
       >
         <Link href="/" className="flex items-center">
-          <Image src="/logo-white.png" alt="VeryMuch.ai" width={140} height={34} className="logo-white h-7 w-auto object-contain" />
-          <Image src="/logo-color.png" alt="VeryMuch.ai" width={140} height={34} className="logo-color h-7 w-auto object-contain" />
+          <BrandLogo size="sm" />
         </Link>
         <Link
           href="/"
